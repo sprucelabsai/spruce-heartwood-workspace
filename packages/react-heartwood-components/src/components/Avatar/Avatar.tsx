@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 import ImageSSR from '../../components/ImageSSR/ImageSSR'
 
-interface IProps {
+export interface IAvatarProps {
 	/** Avatar image url. */
 	image: string
 
@@ -38,7 +38,7 @@ interface IProps {
 	className?: string
 }
 
-const Avatar = (props: IProps): React.ReactElement => {
+const Avatar = (props: IAvatarProps): React.ReactElement => {
 	const {
 		image,
 		alt,

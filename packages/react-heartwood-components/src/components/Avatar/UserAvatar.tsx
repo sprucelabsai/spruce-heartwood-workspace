@@ -1,16 +1,14 @@
 // @flow
 import React from 'react'
 import cx from 'classnames'
-import Avatar from './Avatar'
-import type { Props as AvatarProps } from './Avatar'
+import Avatar, { IAvatarProps } from './Avatar'
 
-type Props = {
-	...AvatarProps,
-	user: Object,
+interface IUserAvatarProps extends IAvatarProps {
+	user: Record<string, any>,
 	className?: string
 }
 
-const UserAvatar = (props: Props) => {
+const UserAvatar = (props: IUserAvatarProps) => {
 	const { user, className, ...rest } = props
 	const { profileImages = {}, defaultProfileImages = {} } = user
 

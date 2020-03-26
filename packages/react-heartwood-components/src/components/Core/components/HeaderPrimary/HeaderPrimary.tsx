@@ -1,4 +1,3 @@
-// @flow
 import React, { Component, Fragment } from 'react'
 import Hamburger from './components/Hamburger/Hamburger'
 import DefaultLockup from './components/DefaultLockup/DefaultLockup'
@@ -7,20 +6,20 @@ import LocationMenu from './components/LocationMenu/LocationMenu'
 import Button from '../../../Button/Button'
 import cx from 'classnames'
 
-type State = {
+interface IHeaderPrimaryState {
 	isMenuExpanded: boolean,
 	isUserMenuVisible: boolean,
 	isLocationMenuVisible: boolean
 }
-type Props = {
+interface IHeaderPrimaryProps {
 	/** The logged-in user */
-	user?: Object,
+	user?: Record<string, any>,
 
 	/** The current organization */
-	organization?: Object,
+	organization?: Record<string, any>,
 
 	/** The current location */
-	location?: Object,
+	location?: Record<string, any>,
 
 	/** Handler to set sidebar visibility to true or false */
 	toggleSidebarVisibility: Function,
@@ -56,10 +55,10 @@ type Props = {
 	locationManagementHref?: string,
 
 	/** Menu children (<ListItem> or <li>) */
-	userMenuItems: ReactNode
+	userMenuItems: React.ReactNode
 }
 
-export default class HeaderPrimary extends Component<Props, State> {
+export default class HeaderPrimary extends Component<IHeaderPrimaryProps, IHeaderPrimaryState> {
 	static defaultProps = {
 		enableHamburgerMenu: true,
 		searchPlaceholder: 'Search…',
@@ -80,7 +79,7 @@ export default class HeaderPrimary extends Component<Props, State> {
 	ref: any
 	userMenuRef: any
 
-	hideUserMenu = (e: Event) => {
+	hideUserMenu = (e: React.MouseEvent) => {
 		if (
 			e.key === 'Escape' ||
 			(e.type === 'click' && !this.userMenuRef.contains(e.target)) ||
@@ -147,7 +146,7 @@ export default class HeaderPrimary extends Component<Props, State> {
 		}
 	}
 
-	renderHeader = (organization: Object, location: Object) => {
+	renderHeader = (organization: Record<string, any>, location: Record<string, any>) => {
 		if (organization) {
 			if (location) {
 				return (

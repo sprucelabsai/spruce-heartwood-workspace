@@ -1,13 +1,11 @@
-// @flow
-
 export const checkDeprecatedProps = ({
 	componentName,
 	props,
 	deprecatedProps
 }: {
 	componentName: string,
-	props: Object,
-	deprecatedProps: Object
+	props: Record<string, any>,
+	deprecatedProps: Record<string, any>
 }) => {
 	const propKeys = Object.keys(props)
 	propKeys.forEach(key => {

@@ -21,7 +21,7 @@
 	"scripts": {
 		"build": "npm run clean && npm run icons && npm run compile_javascript",
 		"compile_javascript": "babel --source-maps --extensions \".js\",\".tsx\",\".ts\" ./src --copy-files --out-dir ./lib && tsc --declaration --emitDeclarationOnly --declarationMap",
-		"icons": "node ./scripts/generateIcons.js",
+		"icons": "node ./generators/icons.js",
 		"clean": "rm -rf lib/*",
 		"lint": "eslint --max-warnings=0 --ext=.js,.jsx,.ts,.tsx src && tsc -p . --noEmit",
 		"lint:fix": "eslint --fix --max-warnings=0 --ext=.js,.jsx,.ts,.tsx src",

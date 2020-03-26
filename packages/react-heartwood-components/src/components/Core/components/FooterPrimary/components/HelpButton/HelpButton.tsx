@@ -1,19 +1,18 @@
-// @flow
 import React from 'react'
 import HelpIcon from '../../../../../../../static/assets/icons/Interface-Essential/Help/question-help-square--16w.svg'
 
-type Props = {
+interface IHelpButtonProps {
 	/** Class for the button */
-	className: string,
+	className: string
 
 	/** Class for the icon */
-	iconClassName: string,
+	iconClassName: string
 
 	/** Class for the text */
 	textClassName: string
 }
 
-const HelpButton = (props: Props) => {
+const HelpButton = (props: IHelpButtonProps) => {
 	const { className, iconClassName, textClassName } = props
 	return (
 		<a className={className} href="#" target="_blank" rel="noopener noreferrer">

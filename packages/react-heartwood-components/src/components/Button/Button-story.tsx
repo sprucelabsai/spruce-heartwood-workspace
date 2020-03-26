@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import {
@@ -46,7 +45,7 @@ stories
 			isFullWidth={isFullWidth}
 			text={btnText}
 			kind={text('kind', '') || 'secondary'}
-			disabled={boolean('disabled', false)}
+			isDisabled={boolean('isDisabled', false)}
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
@@ -56,7 +55,6 @@ stories
 			href={text('href', '')}
 			target={text('target', '')}
 			onClick={text('onClick', '() => console.log("you clicked")')}
-			linkProps={object('linkProps', {})}
 		/>
 	))
 	.add('Simple', () => (
@@ -64,7 +62,7 @@ stories
 			isFullWidth={isFullWidth}
 			text={btnText}
 			kind={text('kind', '') || 'simple'}
-			disabled={boolean('disabled', false)}
+			isDisabled={boolean('isDisabled', false)}
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
@@ -74,7 +72,6 @@ stories
 			href={text('href', '')}
 			target={text('target', '')}
 			onClick={text('onClick', '() => console.log("you clicked")')}
-			linkProps={object('linkProps', {})}
 		/>
 	))
 	.add('Default', () => (
@@ -82,7 +79,7 @@ stories
 			isFullWidth={isFullWidth}
 			text={btnText}
 			kind={text('kind', '') || ''}
-			disabled={boolean('disabled', false)}
+			isDisabled={boolean('isDisabled', false)}
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
@@ -100,7 +97,7 @@ stories
 			isFullWidth={isFullWidth}
 			text={btnText}
 			kind={text('kind', '') || 'caution'}
-			disabled={boolean('disabled', false)}
+			isDisabled={boolean('isDisabled', false)}
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
