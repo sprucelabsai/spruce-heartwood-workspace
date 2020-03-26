@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "packages/heartwood-components",
+      "name": "heartwood-components"
+    },
+    {
+      "path": "packages/react-heartwood-components",
+      "name": "react-heartwood-components"
+    }
+  ]
+}
