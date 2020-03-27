@@ -1,10 +1,9 @@
-// @flow
 import React from 'react'
 import cx from 'classnames'
 import Avatar, { IAvatarProps } from './Avatar'
 
 interface IUserAvatarProps extends IAvatarProps {
-	user: Record<string, any>,
+	user: Record<string, any>
 	className?: string
 }
 

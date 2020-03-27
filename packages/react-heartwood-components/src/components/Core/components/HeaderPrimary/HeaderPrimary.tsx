@@ -7,58 +7,61 @@ import Button from '../../../Button/Button'
 import cx from 'classnames'
 
 interface IHeaderPrimaryState {
-	isMenuExpanded: boolean,
-	isUserMenuVisible: boolean,
+	isMenuExpanded: boolean
+	isUserMenuVisible: boolean
 	isLocationMenuVisible: boolean
 }
 interface IHeaderPrimaryProps {
 	/** The logged-in user */
-	user?: Record<string, any>,
+	user?: Record<string, any>
 
 	/** The current organization */
-	organization?: Record<string, any>,
+	organization?: Record<string, any>
 
 	/** The current location */
-	location?: Record<string, any>,
+	location?: Record<string, any>
 
 	/** Handler to set sidebar visibility to true or false */
-	toggleSidebarVisibility: Function,
+	toggleSidebarVisibility: Function
 
 	/** Set true to show the sidebar (small screens only) */
-	isSidebarVisible: boolean,
+	isSidebarVisible: boolean
 
 	/** Whether or not we will need to handle hamburger functionality */
-	enableHamburgerMenu: boolean,
+	enableHamburgerMenu: boolean
 
 	/** Placeholder text for the search field */
-	searchPlaceholder?: string,
+	searchPlaceholder?: string
 
 	/** Handle search click */
-	onClickSearch?: Function,
+	onClickSearch?: Function
 
 	/** Set true to show location management shortcut */
-	isLocationManagmentButtonVisible?: boolean,
+	isLocationManagmentButtonVisible?: boolean
 
 	/** Set true to show skill management shortcut */
-	isSkillManagementButtonVisible: boolean,
+	isSkillManagementButtonVisible: boolean
 
 	/** Destination for the skills link */
-	skillsHref?: string,
+	skillsHref?: string
 
 	/** Destination for the login link */
-	loginHref?: string,
+	loginHref?: string
 
 	/** CTA Copy for the login link */
-	loginCTA?: string,
+	loginCTA?: string
 
 	/** Destination for the location management link */
-	locationManagementHref?: string,
+	locationManagementHref?: string
 
 	/** Menu children (<ListItem> or <li>) */
 	userMenuItems: React.ReactNode
 }
 
-export default class HeaderPrimary extends Component<IHeaderPrimaryProps, IHeaderPrimaryState> {
+export default class HeaderPrimary extends Component<
+	IHeaderPrimaryProps,
+	IHeaderPrimaryState
+> {
 	static defaultProps = {
 		enableHamburgerMenu: true,
 		searchPlaceholder: 'Search…',
@@ -146,7 +149,10 @@ export default class HeaderPrimary extends Component<IHeaderPrimaryProps, IHeade
 		}
 	}
 
-	renderHeader = (organization: Record<string, any>, location: Record<string, any>) => {
+	renderHeader = (
+		organization: Record<string, any>,
+		location: Record<string, any>
+	) => {
 		if (organization) {
 			if (location) {
 				return (

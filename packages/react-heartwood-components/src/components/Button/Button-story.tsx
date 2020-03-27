@@ -26,7 +26,7 @@ stories
 			isFullWidth={isFullWidth}
 			text={btnText}
 			kind={text('kind', '') || 'primary'}
-			disabled={boolean('disabled', false)}
+			isDisabled={boolean('isDisabled', false)}
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			isIconOnly={boolean('isIconOnly', false)}
@@ -37,7 +37,6 @@ stories
 			href={text('href', '')}
 			target={text('target', '')}
 			onClick={text('onClick', '() => console.log("you clicked")')}
-			linkProps={object('linkProps', {})}
 		/>
 	))
 	.add('Secondary', () => (
@@ -89,7 +88,6 @@ stories
 			href={text('href', '')}
 			target={text('target', '')}
 			onClick={text('onClick', '() => console.log("you clicked")')}
-			linkProps={object('linkProps', {})}
 		/>
 	))
 	.add('Caution', () => (
@@ -107,6 +105,5 @@ stories
 			href={text('href', '')}
 			target={text('target', '')}
 			onClick={text('onClick', '() => console.log("you clicked")')}
-			linkProps={object('linkProps', {})}
 		/>
 	))

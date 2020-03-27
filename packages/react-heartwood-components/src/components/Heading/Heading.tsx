@@ -1,4 +1,3 @@
-// @flow
 import React from 'react'
 import cx from 'classnames'
 import { IHWHeading, IHWHeadingWeight } from '@sprucelabs/spruce-types'
