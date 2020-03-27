@@ -7,8 +7,8 @@
 		"packages/react-heartwood-components"
 	],
 	"engines": {
-		"node": "^10",
-		"npm": "^6"
+		"node": ">=10",
+		"npm": ">=6"
 	},
 	"scripts": {
 		"lint": "lerna run lint",
