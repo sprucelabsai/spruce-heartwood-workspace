@@ -8,7 +8,7 @@
 			"allowBranch": [
 				"dev",
 				"canary",
-				"prerelease/*"
+				"prerelease-*"
 			],
 			"conventionalCommits": true,
 			"changelogPreset": "sprucelabs"

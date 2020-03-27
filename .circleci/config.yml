@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run: export SHA=$(git rev-parse --short HEAD) && npm run publish -- prerelease --exact --yes --preid pre-$SHA --message "%s [skip ci]" --no-push --npm-tag prerelease
+      - run: export SHA=$(git rev-parse --short HEAD) && npm run publish -- prerelease --exact --yes --preid pre-$SHA --no-push --npm-tag prerelease
       - run: yarn build-statics
       - run: yarn s3-sync-stylesheets-pre
   canary:
@@ -68,7 +68,7 @@ jobs:
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run: npm run publish -- --exact --yes --canary --preid canary --force-publish --npm-tag canary --message "%s [skip ci]" --no-push --no-git-reset --includeMergedTags
+      - run: npm run publish -- --exact --yes --canary --preid canary --force-publish --npm-tag canary --no-push --no-git-reset --includeMergedTags
       - run: yarn build-statics
       - run: yarn s3-sync-heartwood-canary
       - run: yarn s3-sync-storybook-canary
@@ -84,6 +84,13 @@ jobs:
       - run: echo 'export PATH=$HOME/.local/bin:$PATH' >> $BASH_ENV
       - run: node -v && npm -v && aws --version
       - checkout
+      - run:
+          command: |
+            COMMIT_MSG=$(git log --format=oneline -n 1 $CIRCLE_SHA1)
+            if [[ $COMMIT_MSG == *"[skip-ci-version]"* ]]; then
+              echo "[skip-ci-version] detected. Stopping."
+              circleci step halt
+            fi
       - restore_cache:
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
@@ -94,7 +101,7 @@ jobs:
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-      - run: npm run publish -- --yes --force-publish --dist-tag beta --message "%s [skip ci]" --conventional-graduate
+      - run: 'npm run publish -- --yes --force-publish --dist-tag beta --message "chore(release): %v [skip-ci-version]" --conventional-graduate'
       - run: yarn build-statics
       - run: yarn s3-sync-heartwood-dev
       - run: yarn s3-sync-storybook-dev
