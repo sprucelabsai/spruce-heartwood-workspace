@@ -7,8 +7,8 @@ import { storiesOf } from '@storybook/react'
 import faker from 'faker'
 import React from 'react'
 import Card from '../Card/Card'
-import LayoutSection from './components/LayoutSection/LayoutSection'
-import LayoutSpacing from './components/LayoutSpacing/LayoutSpacing'
+import { default as LayoutSection } from './components/LayoutSection/LayoutSection'
+import { default as LayoutSpacing } from './components/LayoutSpacing/LayoutSpacing'
 import Layout from './Layout'
 
 const stories = storiesOf('Layout', module)
