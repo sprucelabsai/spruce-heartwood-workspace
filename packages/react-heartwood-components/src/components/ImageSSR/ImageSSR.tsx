@@ -1,11 +1,12 @@
 import React from 'react'
 
 interface IImageSSRProps {
+	id: string
 	src: string
 	alt: string
 	className: string
-	width: string
-	height: string
+	width: number
+	height: number
 }
 
 // This component returns a wrapped img element that will handle image sources that fail to load.
@@ -22,7 +23,7 @@ const ImageSSR = (props: IImageSSRProps) => {
 					<img class=${className} alt=${alt} id=${id} src="${src}"
 					onerror="this.onerror=null;this.classList.add('error');"
 					width=${width}
-					height=${height} 
+					height=${height}
 					/>
 				`
 			}}

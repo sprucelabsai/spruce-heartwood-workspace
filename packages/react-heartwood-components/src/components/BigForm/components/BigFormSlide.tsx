@@ -21,8 +21,8 @@ export interface IBigFormSlideProps {
 }
 
 class BigFormSlide extends React.Component<IBigFormSlideProps> {
-	headerRef = React.createRef<BigFormSlideHeader>()
-	bodyRef = React.createRef<BigFormSlideBody>()
+	public headerRef = React.createRef<BigFormSlideHeader>()
+	public bodyRef = React.createRef<BigFormSlideBody>()
 
 	public focus = (options?: FocusOptions) => {
 		this.headerRef.current && this.headerRef.current.focus()

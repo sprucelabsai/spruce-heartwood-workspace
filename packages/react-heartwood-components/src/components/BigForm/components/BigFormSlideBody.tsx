@@ -17,7 +17,7 @@ export interface IBigFormSlideBodyProps {
 }
 
 class BigFormSlideBody extends React.Component<IBigFormSlideBodyProps> {
-	inputRef = React.createRef<TextInput & HTMLInputElement>()
+	public inputRef = React.createRef<TextInput & HTMLInputElement>()
 
 	public handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
