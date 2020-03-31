@@ -7,25 +7,25 @@ import ShopIcon from '../../../static/assets/icons/Shopping-E-Commerce/Shops/sho
 
 const stories = storiesOf('ImageCropper', module)
 
-interface ImageCropperExampleProps {
+interface IImageCropperExampleProps {
 	isCircular: boolean
 	width: number
 	height: number
 }
 
-interface ImageCropperExampleState {
+interface IImageCropperExampleState {
 	image: string
 }
 
 class ImageCropperExample extends Component<
-	ImageCropperExampleProps,
-	ImageCropperExampleState
+	IImageCropperExampleProps,
+	IImageCropperExampleState
 > {
-	state = {
+	public state = {
 		image: ''
 	}
 
-	handleDrop = (files: any) => {
+	public handleDrop = (files: any) => {
 		files.forEach(file => {
 			const reader = new FileReader()
 			reader.onload = () => {
@@ -38,7 +38,7 @@ class ImageCropperExample extends Component<
 		})
 	}
 
-	render() {
+	public render() {
 		const { isCircular, width, height } = this.props
 
 		return (

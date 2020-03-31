@@ -21,12 +21,12 @@ export default class LocationMenu extends Component<
 	ILocationMenuProps,
 	ILocationMenuState
 > {
-	state = {
+	public state = {
 		menuPosX: 0
 	}
-	menuWrapper: any
+	public menuWrapper: any
 
-	componentDidMount = () => {
+	public componentDidMount = () => {
 		this.updateMenuPosition()
 
 		if (typeof window !== 'undefined') {
@@ -34,7 +34,7 @@ export default class LocationMenu extends Component<
 		}
 	}
 
-	componentWillUnmount = () => {
+	public componentWillUnmount = () => {
 		this.updateMenuPosition()
 
 		if (typeof window !== 'undefined') {
@@ -42,7 +42,7 @@ export default class LocationMenu extends Component<
 		}
 	}
 
-	updateMenuPosition = () => {
+	public updateMenuPosition = () => {
 		const { menuPosX } = this.state
 		const menuWidth = 256
 		const minMargin = 2
@@ -62,7 +62,7 @@ export default class LocationMenu extends Component<
 		}
 	}
 
-	render() {
+	public render() {
 		const {
 			isMenuVisible,
 			onClick,

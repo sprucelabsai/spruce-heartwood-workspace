@@ -3,18 +3,18 @@ import cx from 'classnames'
 import Button, { IButtonProps } from '../../../../../Button/Button'
 import Icon from '../../../../../Icon/Icon'
 
-interface ItemProps {
+interface IItemProps {
 	text: string
 	href: string
 	className?: string
 	action?: IButtonProps
 	icon?: React.ReactNode
 	isCurrent?: boolean
-	items: Array<ItemProps>
+	items: Array<IItemProps>
 }
 
 export interface ISidebarItemProps {
-	items?: Array<ItemProps>
+	items?: Array<IItemProps>
 	className?: string
 	text: string
 	href: string

@@ -62,7 +62,7 @@ export default class HeaderPrimary extends Component<
 	IHeaderPrimaryProps,
 	IHeaderPrimaryState
 > {
-	static defaultProps = {
+	public static defaultProps = {
 		enableHamburgerMenu: true,
 		searchPlaceholder: 'Search…',
 		isLocationManagmentButtonVisible: false,
@@ -73,16 +73,16 @@ export default class HeaderPrimary extends Component<
 		locationManagementHref: ''
 	}
 
-	state = {
+	public state = {
 		isMenuExpanded: false,
 		isUserMenuVisible: false,
 		isLocationMenuVisible: false
 	}
 
-	ref: any
-	userMenuRef: any
+	public ref: any
+	public userMenuRef: any
 
-	hideUserMenu = (e: React.MouseEvent) => {
+	public hideUserMenu = (e: React.MouseEvent) => {
 		if (
 			e.key === 'Escape' ||
 			(e.type === 'click' && !this.userMenuRef.contains(e.target)) ||
@@ -97,7 +97,7 @@ export default class HeaderPrimary extends Component<
 		}
 	}
 
-	hideLocationMenu = (e: Event) => {
+	public hideLocationMenu = (e: Event) => {
 		if (e.key === 'Escape' || e.target.contains(this.ref)) {
 			this.setState(
 				{
@@ -108,11 +108,11 @@ export default class HeaderPrimary extends Component<
 		}
 	}
 
-	handleSearchClick = () => {
+	public handleSearchClick = () => {
 		this.props.onClickSearch && this.props.onClickSearch()
 	}
 
-	toggleUserMenuVisibility = () => {
+	public toggleUserMenuVisibility = () => {
 		this.setState(
 			prevState => ({
 				isUserMenuVisible: !prevState.isUserMenuVisible
@@ -121,7 +121,7 @@ export default class HeaderPrimary extends Component<
 		)
 	}
 
-	toggleLocationMenuVisibility = () => {
+	public toggleLocationMenuVisibility = () => {
 		this.setState(
 			prevState => ({
 				isLocationMenuVisible: !prevState.isLocationMenuVisible
@@ -130,7 +130,7 @@ export default class HeaderPrimary extends Component<
 		)
 	}
 
-	manageListeners = () => {
+	public manageListeners = () => {
 		if (typeof window !== 'undefined') {
 			if (this.state.isUserMenuVisible) {
 				window.addEventListener('click', this.hideUserMenu, false)
@@ -149,7 +149,7 @@ export default class HeaderPrimary extends Component<
 		}
 	}
 
-	renderHeader = (
+	public renderHeader = (
 		organization: Record<string, any>,
 		location: Record<string, any>
 	) => {
@@ -183,7 +183,7 @@ export default class HeaderPrimary extends Component<
 		}
 	}
 
-	render() {
+	public render() {
 		const { isUserMenuVisible, isLocationMenuVisible } = this.state
 
 		const {

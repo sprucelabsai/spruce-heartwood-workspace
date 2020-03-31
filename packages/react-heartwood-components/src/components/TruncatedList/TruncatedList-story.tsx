@@ -4,7 +4,6 @@ import { generateLocations } from '../../../.storybook/data/tableData'
 import { map, sampleSize, cloneDeep } from 'lodash'
 import {
 	withKnobs,
-	// WithKnobsOptions,
 	text,
 	boolean,
 	object,
@@ -16,12 +15,6 @@ import Card, { CardHeader, CardBody, CardSection } from '../Card'
 import TruncatedList from './TruncatedList'
 
 const stories = storiesOf('TruncatedList', module)
-
-// Stories.addDecorator(
-// 	withKnobsOptions({
-// 		escapeHTML: false
-// 	})
-// )
 
 stories.addDecorator(withKnobs)
 
@@ -45,7 +38,7 @@ class TruncatedListExample extends Component<
 	TruncatedListExampleProps,
 	TruncatedListExampleState
 > {
-	constructor(props) {
+	public constructor(props) {
 		super(props)
 
 		let selectedIds = props.recordSelectionListItems.map(loc => loc.id)
@@ -71,7 +64,7 @@ class TruncatedListExample extends Component<
 		}
 	}
 
-	render() {
+	public render() {
 		const {
 			header,
 			canSelect,

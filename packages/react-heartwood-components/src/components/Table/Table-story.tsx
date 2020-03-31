@@ -59,14 +59,14 @@ type State = {
 type Props = {}
 
 class ExpandableEditableTable extends React.Component<Props, State> {
-	constructor(props) {
+	public constructor(props) {
 		super(props)
 		this.state = {
 			locations: generateLocations({ amount: 149 })
 		}
 	}
 
-	handleChangeHours = (e, location, dayId) => {
+	public handleChangeHours = (e, location, dayId) => {
 		const { locations } = this.state
 
 		locations.forEach(l => {
@@ -88,7 +88,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		this.setState({ locations })
 	}
 
-	handleValidation = async (location: Record<string, any>, dayId) => {
+	public handleValidation = async (location: Record<string, any>, dayId) => {
 		const errors = {}
 
 		const { locations } = this.state
@@ -106,7 +106,11 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		return errors
 	}
 
-	handleSaveHours = async (location: Record<string, any>, dayId, values) => {
+	public handleSaveHours = async (
+		location: Record<string, any>,
+		dayId,
+		values
+	) => {
 		const { locations } = this.state
 
 		const updatedLocation = locations.find(l => l.id === location.id)
@@ -121,7 +125,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		}
 	}
 
-	renderStoreScheduleForRow = (row: Record<string, any>) => {
+	public renderStoreScheduleForRow = (row: Record<string, any>) => {
 		const location = this.state.locations[row.index]
 		const schedule = location && location.schedule
 		return schedule ? (
@@ -204,7 +208,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		) : null
 	}
 
-	render() {
+	public render() {
 		const { locations } = this.state
 
 		return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-export interface TextContainerProps {
+export interface ITextContainerProps {
 	/** Contents of the component. */
 	children: React.ReactNode
 
@@ -15,7 +15,7 @@ export interface TextContainerProps {
 	isCentered?: boolean
 }
 
-const TextContainer = (props: TextContainerProps) => {
+const TextContainer = (props: ITextContainerProps) => {
 	const { children, className, spacing, isCentered } = props
 
 	return (

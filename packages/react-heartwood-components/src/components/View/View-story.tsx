@@ -141,7 +141,7 @@ const generateTonsOfContent = () => (
 )
 
 class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
-	state = {
+	public state = {
 		sidebarsExpanded: {
 			right: true,
 			left: true
@@ -152,19 +152,19 @@ class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
 		}
 	}
 
-	componentDidMount = () => {
+	public componentDidMount = () => {
 		if (typeof window !== 'undefined') {
 			window.addEventListener('resize', this.onResize, false)
 		}
 	}
 
-	componentWillUnmount = () => {
+	public componentWillUnmount = () => {
 		if (typeof window !== 'undefined') {
 			window.removeEventListener('resize', this.onResize, false)
 		}
 	}
 
-	onResize = () => {
+	public onResize = () => {
 		const { sidebarsMobileExpanded } = this.state
 		if (typeof window !== 'undefined') {
 			if (window.innerWidth > 990 && sidebarsMobileExpanded.right) {
@@ -176,7 +176,7 @@ class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
 		}
 	}
 
-	handleSidebarToggle = (side: string) => {
+	public handleSidebarToggle = (side: string) => {
 		this.setState(prevState => ({
 			sidebarsExpanded: {
 				...prevState.sidebarsExpanded,
@@ -185,7 +185,7 @@ class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
 		}))
 	}
 
-	handleMobileSidebarToggle = (side: string) => {
+	public handleMobileSidebarToggle = (side: string) => {
 		this.setState(prevState => ({
 			sidebarsMobileExpanded: {
 				...prevState.sidebarsMobileExpanded,
@@ -198,7 +198,7 @@ class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
 		}))
 	}
 
-	hideRightSidebar = () => {
+	public hideRightSidebar = () => {
 		this.setState(prevState => ({
 			sidebarsMobileExpanded: {
 				...prevState.sidebarsMobileExpanded,
@@ -207,7 +207,7 @@ class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
 		}))
 	}
 
-	hideLeftSidebar = () => {
+	public hideLeftSidebar = () => {
 		this.setState(prevState => ({
 			sidebarsMobileExpanded: {
 				...prevState.sidebarsMobileExpanded,
@@ -216,7 +216,7 @@ class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
 		}))
 	}
 
-	render() {
+	public render() {
 		const { sidebarsExpanded, sidebarsMobileExpanded } = this.state
 		return (
 			<View

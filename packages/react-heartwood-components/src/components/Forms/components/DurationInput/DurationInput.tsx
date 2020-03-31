@@ -50,7 +50,7 @@ export default class DurationInput extends Component<
 	IDurationInputProps,
 	IDurationInputState
 > {
-	static defaultProps = {
+	public static defaultProps = {
 		minMinutes: 5,
 		maxMinutes: 180,
 		skipMinutes: 5,
@@ -58,67 +58,7 @@ export default class DurationInput extends Component<
 		noResultsSubtitle: 'Please adjust your search and try again.'
 	}
 
-	static getDerivedStateFromProps(props, state) {
-		if (props.value !== state.prevPropsValue) {
-			return {
-				prevPropsValue: props.value,
-				value: DurationInput.minutesToStr(props.value)
-			}
-		}
-		return null
-	}
-
-	static minutesToStr = (num: number): string => {
-		const hours = Math.floor(num / 60)
-		const minutes = num % 60
-
-		let value = ''
-
-		if (hours > 0) {
-			value += `${hours}hr`
-		}
-
-		if (minutes > 0) {
-			value += `${minutes}min`
-		}
-
-		return value.trim()
-	}
-
-	constructor(props: IDurationInputProps) {
-		super(props)
-		this.state = {
-			value:
-				props.defaultValue || props.value
-					? DurationInput.minutesToStr(props.defaultValue || props.value)
-					: '',
-			prevPropsValue: props.value,
-			validationError: null
-		}
-	}
-
-	renderSuggestion = (suggestion: any) => {
-		if (suggestion.isEmptyMessage) {
-			const { noResultsTitle, noResultsSubtitle } = this.props
-			return (
-				<div className="autosuggest__no-results">
-					<p className="autosuggest__no-results-title">{noResultsTitle}</p>
-					<p className="autosuggest__no-results-subtitle">
-						{noResultsSubtitle}
-					</p>
-				</div>
-			)
-		}
-		return (
-			<Button
-				isSmall
-				className="autosuggest__list-item-inner"
-				text={suggestion.text}
-			/>
-		)
-	}
-
-	generateSuggestions = memoize((min, max, skip) => {
+	public generateSuggestions = memoize((min, max, skip) => {
 		return range(min, max + skip, skip).map(minutes => {
 			const duration = DurationInput.minutesToStr(minutes)
 			return {
@@ -129,80 +69,7 @@ export default class DurationInput extends Component<
 		})
 	})
 
-	strToMinutes = (str: string): number => {
-		const { minMinutes, maxMinutes, skipMinutes } = this.props
-		const suggestions = this.generateSuggestions(
-			minMinutes,
-			maxMinutes,
-			skipMinutes
-		)
-		const idx = findIndex(suggestions, suggestion => suggestion.text === str)
-
-		const suggestion = suggestions[idx]
-		return suggestion.minutes
-	}
-
-	handleChange = e => {
-		const { value } = e.target
-		this.setState({ value })
-	}
-
-	handleBlur = e => {
-		const { onBlur, onChange, required } = this.props
-
-		if (!required && (!value || value.length === 0)) {
-			this.setState({ value: '', validationError: null })
-			onChange && onChange(null, e)
-		}
-
-		const value = e.target.value
-		const matches = this.searchSuggestions(value)
-
-		if (value.length > 0 && matches.length > 0) {
-			this.setState({ value: matches[0].text, validationError: null })
-			// Only fire on change if the new value is valid
-			onChange && onChange(this.strToMinutes(matches[0].text), e)
-		} else if (required && value.length > 0) {
-			this.setState({ validationError: 'You must select a valid duration.' })
-		}
-
-		onBlur && onBlur(e)
-	}
-
-	handleSelectSuggestion = (
-		e: KeyboardEvent,
-		suggestion: Record<string, any>
-	) => {
-		const { onChange } = this.props
-
-		const value = suggestion.suggestionValue
-
-		this.setState({ value })
-		const matches = this.searchSuggestions(value)
-
-		if (value.length > 0 && matches.length > 0) {
-			this.setState({ value: matches[0].text, validationError: null })
-			// Only fire on change if the new value is valid
-			onChange && onChange(this.strToMinutes(matches[0].text), e)
-		}
-	}
-
-	handleGetSuggestions = value => {
-		const matches = this.searchSuggestions(value)
-		// Here you could add click events to buttons or whatever else they need
-		// No Results Message
-		if (matches.length === 0) {
-			return [
-				{
-					text: 'NO RESULTS',
-					isEmptyMessage: true
-				}
-			]
-		}
-		return matches
-	}
-
-	searchSuggestions = memoize(
+	public searchSuggestions = memoize(
 		(value): Array<string> => {
 			const { minMinutes, maxMinutes, skipMinutes } = this.props
 
@@ -227,7 +94,140 @@ export default class DurationInput extends Component<
 		}
 	)
 
-	render() {
+	public constructor(props: IDurationInputProps) {
+		super(props)
+		this.state = {
+			value:
+				props.defaultValue || props.value
+					? DurationInput.minutesToStr(props.defaultValue || props.value)
+					: '',
+			prevPropsValue: props.value,
+			validationError: null
+		}
+	}
+
+	public static getDerivedStateFromProps(props, state) {
+		if (props.value !== state.prevPropsValue) {
+			return {
+				prevPropsValue: props.value,
+				value: DurationInput.minutesToStr(props.value)
+			}
+		}
+		return null
+	}
+
+	public static minutesToStr = (num: number): string => {
+		const hours = Math.floor(num / 60)
+		const minutes = num % 60
+
+		let value = ''
+
+		if (hours > 0) {
+			value += `${hours}hr`
+		}
+
+		if (minutes > 0) {
+			value += `${minutes}min`
+		}
+
+		return value.trim()
+	}
+
+	public renderSuggestion = (suggestion: any) => {
+		if (suggestion.isEmptyMessage) {
+			const { noResultsTitle, noResultsSubtitle } = this.props
+			return (
+				<div className="autosuggest__no-results">
+					<p className="autosuggest__no-results-title">{noResultsTitle}</p>
+					<p className="autosuggest__no-results-subtitle">
+						{noResultsSubtitle}
+					</p>
+				</div>
+			)
+		}
+		return (
+			<Button
+				isSmall
+				className="autosuggest__list-item-inner"
+				text={suggestion.text}
+			/>
+		)
+	}
+
+	public strToMinutes = (str: string): number => {
+		const { minMinutes, maxMinutes, skipMinutes } = this.props
+		const suggestions = this.generateSuggestions(
+			minMinutes,
+			maxMinutes,
+			skipMinutes
+		)
+		const idx = findIndex(suggestions, suggestion => suggestion.text === str)
+
+		const suggestion = suggestions[idx]
+		return suggestion.minutes
+	}
+
+	public handleChange = e => {
+		const { value } = e.target
+		this.setState({ value })
+	}
+
+	public handleBlur = e => {
+		const { onBlur, onChange, required } = this.props
+
+		if (!required && (!value || value.length === 0)) {
+			this.setState({ value: '', validationError: null })
+			onChange && onChange(null, e)
+		}
+
+		const value = e.target.value
+		const matches = this.searchSuggestions(value)
+
+		if (value.length > 0 && matches.length > 0) {
+			this.setState({ value: matches[0].text, validationError: null })
+			// Only fire on change if the new value is valid
+			onChange && onChange(this.strToMinutes(matches[0].text), e)
+		} else if (required && value.length > 0) {
+			this.setState({ validationError: 'You must select a valid duration.' })
+		}
+
+		onBlur && onBlur(e)
+	}
+
+	public handleSelectSuggestion = (
+		e: KeyboardEvent,
+		suggestion: Record<string, any>
+	) => {
+		const { onChange } = this.props
+
+		const value = suggestion.suggestionValue
+
+		this.setState({ value })
+		const matches = this.searchSuggestions(value)
+
+		if (value.length > 0 && matches.length > 0) {
+			this.setState({ value: matches[0].text, validationError: null })
+			// Only fire on change if the new value is valid
+			onChange && onChange(this.strToMinutes(matches[0].text), e)
+		}
+	}
+
+	public handleGetSuggestions = value => {
+		const matches = this.searchSuggestions(value)
+		// Here you could add click events to buttons or whatever else they need
+		// No Results Message
+		if (matches.length === 0) {
+			return [
+				{
+					text: 'NO RESULTS',
+					isEmptyMessage: true
+				}
+			]
+		}
+		return matches
+	}
+
+	public render() {
 		const {
 			minMinutes,
 			maxMinutes,

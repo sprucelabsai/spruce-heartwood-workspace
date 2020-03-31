@@ -72,26 +72,26 @@ class MessageController extends React.Component<
 	IMessageControllerProps,
 	IMessageControllerState
 > {
-	messageRef = React.createRef<SprucebotTypedMessage>()
+	public messageRef = React.createRef<SprucebotTypedMessage>()
 
-	constructor(props: IMessageControllerState) {
+	public constructor(props: IMessageControllerState) {
 		super(props)
 		this.state = {
 			playing: true
 		}
 	}
 
-	play = () => {
+	public play = () => {
 		this.setState({ playing: true })
 		this.messageRef.current && this.messageRef.current.play()
 	}
 
-	pause = () => {
+	public pause = () => {
 		this.setState({ playing: false })
 		this.messageRef.current && this.messageRef.current.pause()
 	}
 
-	reset = () => {
+	public reset = () => {
 		this.messageRef.current && this.messageRef.current.reset()
 	}
 
@@ -171,9 +171,9 @@ class AddSentenceController extends React.Component<
 	IAddSentenceControllerProps,
 	IAddSentenceControllerState
 > {
-	messageRef = React.createRef<SprucebotTypedMessage>()
+	public messageRef = React.createRef<SprucebotTypedMessage>()
 
-	constructor(props: IMessageControllerState) {
+	public constructor(props: IMessageControllerState) {
 		super(props)
 		this.state = {
 			nextSentence: 'this is the next sentence',
@@ -185,7 +185,7 @@ class AddSentenceController extends React.Component<
 		}
 	}
 
-	addSentence = async () => {
+	public addSentence = async () => {
 		const { nextSentence } = this.state
 
 		if (this.messageRef.current) {

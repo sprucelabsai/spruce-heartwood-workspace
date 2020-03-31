@@ -2,13 +2,13 @@ import React from 'react'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
 
-export interface InputPreProps {
+export interface IInputPreProps {
 	id: string
 	label: string
 	postLabel?: string
 }
 
-export const InputPre = (props: InputPreProps) => {
+export const InputPre = (props: IInputPreProps) => {
 	const { id, label, postLabel } = props
 	return (
 		<div className="text-input__pre">
@@ -20,7 +20,7 @@ export const InputPre = (props: InputPreProps) => {
 	)
 }
 
-export interface InputInnerProps {
+export interface IInputInnerProps {
 	kind?: string
 	iconBefore?: string
 	iconAfter?: any
@@ -28,7 +28,7 @@ export interface InputInnerProps {
 	handleClear?: Function
 }
 
-export const InputInner = (props: InputInnerProps) => {
+export const InputInner = (props: IInputInnerProps) => {
 	const { kind, iconBefore, iconAfter, appendix, handleClear, ...rest } = props
 	return (
 		<div className="text-input__inner">
@@ -49,12 +49,12 @@ export const InputInner = (props: InputInnerProps) => {
 	)
 }
 
-export interface InputHelperProps {
+export interface IInputHelperProps {
 	error?: string
 	helper?: any
 }
 
-export const InputHelper = (props: InputHelperProps) => {
+export const InputHelper = (props: IInputHelperProps) => {
 	const { error, helper } = props
 	return <p className="text-input__helper"> {error || helper}</p>
 }

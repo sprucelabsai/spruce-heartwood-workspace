@@ -25,21 +25,20 @@ export default class Modal extends React.PureComponent<
 	IModalProps,
 	IModalState
 > {
-	static defaultProps = {
+	public static defaultProps = {
 		isFullHeight: false,
 		size: 'small',
 		isOpen: false
 	}
+	public static Header = ModalHeader
+	public static Body = ModalBody
+	public static Footer = ModalFooter
 
-	static setAppElement = (selector: string) => {
+	public static setAppElement = (selector: string) => {
 		ReactModal.setAppElement(selector)
 	}
 
-	static Header = ModalHeader
-	static Body = ModalBody
-	static Footer = ModalFooter
-
-	render() {
+	public render() {
 		const { isOpen, size, isFullHeight, className, ...rest } = this.props
 		const modalClassName = cx('modal', className, {
 			'modal-small': size === 'small',

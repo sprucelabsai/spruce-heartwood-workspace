@@ -20,11 +20,11 @@ export default class FontLoader extends Component<
 	IFontLoaderProps,
 	IFrontLoaderState
 > {
-	state = {
+	public state = {
 		results: []
 	}
 
-	async componentDidMount() {
+	public async componentDidMount() {
 		const { fonts } = this.props
 		const fontsToObserve = []
 
@@ -61,7 +61,7 @@ export default class FontLoader extends Component<
 			})
 	}
 
-	render() {
+	public render() {
 		const { fonts } = this.props
 
 		if (fonts.some(font => font.link)) {

@@ -41,14 +41,14 @@ export default class ImageCropper extends Component<
 	IImageCropperProps,
 	IImageCropperState
 > {
-	state = {
+	public state = {
 		scale: 1,
 		sliderValue: 0,
 		rotate: 0,
 		isSubmitting: false
 	}
 
-	handleScale = (e: any) => {
+	public handleScale = (e: any) => {
 		const newVal = e.currentTarget.value
 
 		this.setState({
@@ -57,7 +57,7 @@ export default class ImageCropper extends Component<
 		})
 	}
 
-	handleRotate = (dir: 'left' | 'right') => {
+	public handleRotate = (dir: 'left' | 'right') => {
 		this.setState(prevState => {
 			const newRotate =
 				dir === 'left' ? prevState.rotate - 90 : prevState.rotate + 90
@@ -67,7 +67,7 @@ export default class ImageCropper extends Component<
 		})
 	}
 
-	handleSubmit = async () => {
+	public handleSubmit = async () => {
 		const canvasImg = this.avatarEditor.getImageScaledToCanvas()
 
 		if (this.props.onSubmit) {
@@ -77,7 +77,7 @@ export default class ImageCropper extends Component<
 		}
 	}
 
-	render() {
+	public render() {
 		const {
 			image,
 			width,

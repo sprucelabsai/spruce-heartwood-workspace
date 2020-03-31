@@ -23,7 +23,7 @@ class BigFormSlideHeader extends React.Component<IBigFormSlideHeaderProps> {
 		sprucebotStateOfMind: IHWSprucebotAvatarStateOfMind.Chill
 	}
 
-	messageRef = React.createRef<SprucebotTypedMessage>()
+	public messageRef = React.createRef<SprucebotTypedMessage>()
 
 	public focus = async () => {
 		if (this.messageRef.current) {

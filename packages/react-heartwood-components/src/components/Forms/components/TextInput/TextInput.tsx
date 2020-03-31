@@ -38,7 +38,7 @@ interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
 }
 
 class TextInput extends React.Component<ITextInputProps> {
-	wrapperRef = React.createRef<HTMLDivElement>()
+	public wrapperRef = React.createRef<HTMLDivElement>()
 
 	public focus = (options?: FocusOptions) => {
 		const wrapper = this.wrapperRef.current

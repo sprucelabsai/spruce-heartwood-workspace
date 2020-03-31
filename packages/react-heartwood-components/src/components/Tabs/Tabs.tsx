@@ -35,13 +35,13 @@ const getActiveTabIndex = (tabs: Array<ITabProps>) => {
 }
 
 export default class Tabs extends Component<ITabsProps, ITabsState> {
-	static defaultProps = {
+	public static defaultProps = {
 		isPadded: true,
 		isTruncatable: true,
 		className: ''
 	}
 
-	state: ITabsState = {
+	public state: ITabsState = {
 		activeTabIndex: getActiveTabIndex(this.props.tabs),
 		contextTabWidth: null,
 		disclosureTabWidth: [],
@@ -50,12 +50,12 @@ export default class Tabs extends Component<ITabsProps, ITabsState> {
 		tabWidths: []
 	}
 
-	tabGroup: any
-	contextTab: any
+	public tabGroup: any
+	public contextTab: any
 
-	debouncedResize = debounce(() => this.handleWindowResize(), 500)
+	public debouncedResize = debounce(() => this.handleWindowResize(), 500)
 
-	componentDidMount() {
+	public componentDidMount() {
 		const { isTruncatable } = this.props
 
 		if (isTruncatable) {
@@ -65,7 +65,7 @@ export default class Tabs extends Component<ITabsProps, ITabsState> {
 		}
 	}
 
-	componentWillUnmount() {
+	public componentWillUnmount() {
 		const { isTruncatable } = this.props
 
 		if (isTruncatable) {
@@ -75,11 +75,11 @@ export default class Tabs extends Component<ITabsProps, ITabsState> {
 		}
 	}
 
-	handleWindowResize = () => {
+	public handleWindowResize = () => {
 		this.handleMeasurement()
 	}
 
-	handleInitialMeasurement = () => {
+	public handleInitialMeasurement = () => {
 		// Purpose: get the initial measurements for child tabs
 		if (this.tabGroup) {
 			const wrapper = this.tabGroup
@@ -105,7 +105,7 @@ export default class Tabs extends Component<ITabsProps, ITabsState> {
 		}
 	}
 
-	handleMeasurement = () => {
+	public handleMeasurement = () => {
 		// TODO: Make this fire when sidebars change
 		if (this.tabGroup) {
 			const wrapper = this.tabGroup
@@ -138,12 +138,12 @@ export default class Tabs extends Component<ITabsProps, ITabsState> {
 		}
 	}
 
-	setRef = ref => {
+	public setRef = ref => {
 		this.tabGroup = ref
 		setTimeout(() => this.handleInitialMeasurement(), 250)
 	}
 
-	render() {
+	public render() {
 		const { tabs, isPadded, isTruncatable, className } = this.props
 		const { hiddenTabIndices, isContextTabVisible, activeTabIndex } = this.state
 		const hiddenTabs: ITabProps[] = []

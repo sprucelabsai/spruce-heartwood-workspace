@@ -41,17 +41,17 @@ const backLink = {
 }
 
 class Example extends Component {
-	state = {
+	public state = {
 		showSidebar: true
 	}
 
-	handleToggleSidebar = () => {
+	public handleToggleSidebar = () => {
 		this.setState(prevState => ({
 			showSidebar: !prevState.showSidebar
 		}))
 	}
 
-	render() {
+	public render() {
 		const { showSidebar } = this.state
 
 		return (

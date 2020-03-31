@@ -3,23 +3,23 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react'
 import Dropzone from './Dropzone'
 
-interface DropzoneExampleProps {}
-interface DropzoneExampleState {
+interface IDropzoneExampleProps {}
+interface IDropzoneExampleState {
 	uploadProgress: number
 	fileWasUploaded: boolean
 }
 
 class DropzoneExample extends Component<
-	DropzoneExampleProps,
-	DropzoneExampleState
+	IDropzoneExampleProps,
+	IDropzoneExampleState
 > {
-	interval: any
-	state = {
+	public interval: any
+	public state = {
 		uploadProgress: 0,
 		fileWasUploaded: false
 	}
 
-	fakeUpload = () => {
+	public fakeUpload = () => {
 		const { uploadProgress } = this.state
 		if (uploadProgress >= 100) {
 			clearInterval(this.interval)
@@ -34,11 +34,11 @@ class DropzoneExample extends Component<
 		}
 	}
 
-	onDropAccepted = () => {
+	public onDropAccepted = () => {
 		this.interval = setInterval(this.fakeUpload, 10)
 	}
 
-	render() {
+	public render() {
 		const { uploadProgress, fileWasUploaded } = this.state
 		return (
 			<Dropzone

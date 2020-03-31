@@ -39,9 +39,7 @@ export default class SaveBar extends React.PureComponent<
 	ISaveBarProps,
 	ISaveBarState
 > {
-	_element = null
-
-	static defaultProps = {
+	public static defaultProps = {
 		message: 'Unsaved changes',
 		isVisible: false,
 		isDiscarding: false,
@@ -50,12 +48,14 @@ export default class SaveBar extends React.PureComponent<
 		isSaveDisabled: false
 	}
 
-	componentDidMount() {
+	private _element: HTMLElement | null = null
+
+	public componentDidMount() {
 		this._element = document.body
 		this.forceUpdate()
 	}
 
-	render() {
+	public render() {
 		const {
 			location,
 			message,

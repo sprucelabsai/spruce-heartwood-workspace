@@ -18,7 +18,7 @@ import { IFormLayoutProps } from '../../../FormLayout/FormLayout'
 import { IButtonProps } from '../../../../../Button/Button'
 import { IToggleProps } from '../../../Toggle/Toggle'
 
-export interface FormInnerFieldProps {
+export interface IFormInnerFieldProps {
 	/** Unique name/id for the field */
 	name: string
 
@@ -31,7 +31,7 @@ export interface FormInnerFieldProps {
 
 export interface IFormInnerProps {
 	/** Fields in this form */
-	fields: Array<FormInnerFieldProps>
+	fields: Array<IFormInnerFieldProps>
 
 	/** Layout properties for the form layout */
 	formLayout: IFormLayoutProps
@@ -60,7 +60,7 @@ type BooleanProps = IToggleProps & {
 }
 
 class BooleanField extends React.PureComponent<BooleanProps> {
-	handleChange = e => {
+	public handleChange = e => {
 		const { onBlur, name } = this.props
 		const {
 			formikProps: { setFieldValue }
@@ -68,7 +68,7 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 		setFieldValue(name, e.target.checked)
 		onBlur(e)
 	}
-	render() {
+	public render() {
 		const { label, helper, value, ...rest } = this.props
 		const toggleId = this.props.name || ''
 		const toggleProps = { ...rest, onChange: this.handleChange }
@@ -92,12 +92,12 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 }
 
 class FormInner extends React.PureComponent<IFormInnerProps> {
-	static defaultProps = {
+	public static defaultProps = {
 		primaryCTA: null,
 		secondaryCTA: null
 	}
 
-	handleChange = (
+	public handleChange = (
 		name: string,
 		type: string,
 		eOrValue: KeyboardEvent | any,
@@ -120,7 +120,7 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 		onChange && onChange(value, eOrNull || eOrValue)
 	}
 
-	renderChild = (child: FormInnerFieldProps) => {
+	public renderChild = (child: IFormInnerFieldProps) => {
 		const Elements = {
 			text: TextInput,
 			boolean: BooleanField,
@@ -133,7 +133,7 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 		return !Handler.prototype.render ? Handler(props) : <Handler {...props} />
 	}
 
-	render() {
+	public render() {
 		const {
 			formLayout,
 			formikProps,

@@ -30,17 +30,17 @@ interface ISliderState {
 }
 
 export default class Slider extends Component<ISliderProps, ISliderState> {
-	state = {
+	public state = {
 		uncontrolledValue: this.props.value
 	}
 
-	handleUncontrolledChange = (e: any) => {
+	public handleUncontrolledChange = (e: any) => {
 		this.setState({
 			uncontrolledValue: e.target.value
 		})
 	}
 
-	render() {
+	public render() {
 		const { uncontrolledValue } = this.state
 		const {
 			label,

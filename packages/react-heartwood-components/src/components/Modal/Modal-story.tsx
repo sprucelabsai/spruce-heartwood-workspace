@@ -47,24 +47,24 @@ interface IModalExampleState {
 }
 
 class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
-	state = {
+	public state = {
 		isOpen: false
 	}
 
-	toggleVisibility = () => {
+	public toggleVisibility = () => {
 		this.setState(prevState => ({
 			isOpen: !prevState.isOpen
 		}))
 	}
 
-	onAfterOpen = () => {}
+	public onAfterOpen = () => {}
 
-	onRequestClose = () => {
+	public onRequestClose = () => {
 		this.setState({
 			isOpen: false
 		})
 	}
-	render() {
+	public render() {
 		const { isOpen } = this.state
 		const { title, canGoBack, hasSecondaryButton, includeFooter } = this.props
 		return (

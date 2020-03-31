@@ -18,24 +18,24 @@ interface ISearchProps {
 }
 
 export default class Search extends Component<ISearchProps, ISearchState> {
-	state = {
+	public state = {
 		value: this.props.defaultValue || ''
 	}
 
-	handleChange = (e: any) => {
+	public handleChange = (e: any) => {
 		const value = e.target.value
 		this.setState({
 			value
 		})
 	}
 
-	handleClear = () => {
+	public handleClear = () => {
 		this.setState({
 			value: ''
 		})
 	}
 
-	render() {
+	public render() {
 		const { className, isSmall, ...rest } = this.props
 		const { value } = this.state
 		return (

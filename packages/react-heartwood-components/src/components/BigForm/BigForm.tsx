@@ -68,14 +68,14 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 		transitionStyle: BigFormTransitionStyle.Stack
 	}
 
-	bigFormRef = React.createRef<HTMLDivElement>()
-	slideRefs: BigFormSlide[] = []
-	theOneSprucebotRef = React.createRef<SprucebotTypedMessage>()
+	public bigFormRef = React.createRef<HTMLDivElement>()
+	public slideRefs: BigFormSlide[] = []
+	public theOneSprucebotRef = React.createRef<SprucebotTypedMessage>()
 
 	/** All the header props when usingOneSprucebot */
-	headerProps: IBigFormSlideHeaderProps[] = []
+	public headerProps: IBigFormSlideHeaderProps[] = []
 
-	constructor(props: IBigFormProps) {
+	public constructor(props: IBigFormProps) {
 		super(props)
 		this.state = {
 			currentSlide: this.props.currentSlide || 0
@@ -89,7 +89,7 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 		this.jumpToSlide(this.props.currentSlide || 0)
 	}
 
-	componentDidUpdate = (prevProps: IBigFormProps) => {
+	public componentDidUpdate = (prevProps: IBigFormProps) => {
 		// Update header props
 		this.headerProps = this.getHeaderProps()
 
