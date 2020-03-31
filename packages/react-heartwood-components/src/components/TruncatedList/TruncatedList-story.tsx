@@ -4,7 +4,7 @@ import { generateLocations } from '../../../.storybook/data/tableData'
 import { map, sampleSize, cloneDeep } from 'lodash'
 import {
 	withKnobs,
-	// withKnobsOptions,
+	// WithKnobsOptions,
 	text,
 	boolean,
 	object,
@@ -17,7 +17,7 @@ import TruncatedList from './TruncatedList'
 
 const stories = storiesOf('TruncatedList', module)
 
-// stories.addDecorator(
+// Stories.addDecorator(
 // 	withKnobsOptions({
 // 		escapeHTML: false
 // 	})
@@ -29,7 +29,7 @@ type TruncatedListExampleProps = {
 	header?: string
 	canSelect?: 'many' | 'one'
 	canRemove: boolean
-	recordSelectionListItems: Array<Object>
+	recordSelectionListItems: Array<Record<string, any>>
 	maxItemsVisible: number
 	noItemsText?: string
 	truncatedActionItemType?: string
@@ -38,7 +38,7 @@ type TruncatedListExampleProps = {
 type TruncatedListExampleState = {
 	selectedIds: Array<string>
 	unselectableIds: Array<string>
-	loadedRecordSelectionListItems: Array<Object>
+	loadedRecordSelectionListItems: Array<Record<string, any>>
 }
 
 class TruncatedListExample extends Component<

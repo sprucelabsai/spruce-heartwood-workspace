@@ -30,10 +30,10 @@ export interface IAutosuggestInterfaceProps {
 	/** Placeholder for the input */
 	placeholder?: string
 
-	/** optionally pass a default value for this input */
+	/** Optionally pass a default value for this input */
 	defaultValue?: string
 
-	/** optional label */
+	/** Optional label */
 	label?: string
 
 	/** Text after label */
@@ -51,13 +51,13 @@ export interface IAutosuggestInterfaceProps {
 	/** Adds a class to the Autosuggest's wrapper */
 	wrapperClassName?: string
 
-	/** passed through to react autosuggest */
+	/** Passed through to react autosuggest */
 	inputProps?: Record<string, any>
 
-	/** optional class name for wrapper */
+	/** Optional class name for wrapper */
 	className?: string
 
-	/** disable this input */
+	/** Disable this input */
 	disabled?: boolean
 
 	/** Optional; adds an icon to the beginning of the text input */

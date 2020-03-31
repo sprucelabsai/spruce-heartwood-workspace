@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
-	// withKnobsOptions,
+	// WithKnobsOptions,
 	text,
 	boolean,
 	object
@@ -13,7 +13,7 @@ const btnText = text('text', 'Hello World')
 const isFullWidth = boolean('isFullWidth', false)
 
 const stories = storiesOf('Button', module)
-// stories.addDecorator(
+// Stories.addDecorator(
 // 	withKnobsOptions({
 // 		escapeHTML: false
 // 	})

@@ -3,16 +3,16 @@ import cx from 'classnames'
 import Button from '../../Button/Button'
 
 export interface IBigFormControlsProps {
-	/** is back button enabled? */
+	/** Is back button enabled? */
 	canGoBack?: boolean
 
-	/** is next button enabled */
+	/** Is next button enabled */
 	canGoNext?: boolean
 
-	/** when back is clicked */
+	/** When back is clicked */
 	onBack?: () => void
 
-	/** when next is clicked */
+	/** When next is clicked */
 	onNext?: () => void
 }
 

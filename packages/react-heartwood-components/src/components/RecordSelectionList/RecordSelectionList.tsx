@@ -69,7 +69,7 @@ export interface IRecordSelectionListProps {
 	/** Respond to changes to the search value */
 	onSearchChange?: (value: string) => any
 
-	/** delays invoking search until after a certain ms have elapsed since the last time the
+	/** Delays invoking search until after a certain ms have elapsed since the last time the
 	 * search was invoked */
 	searchDelayMs?: number
 

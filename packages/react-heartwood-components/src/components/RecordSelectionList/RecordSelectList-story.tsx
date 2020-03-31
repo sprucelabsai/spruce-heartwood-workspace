@@ -15,7 +15,7 @@ stories.addDecorator(withKnobs)
 type RSLExampleProps = {
 	canSelect?: 'many' | 'one'
 	canRemove: boolean
-	locations: Array<Object>
+	locations: Array<Record<string, any>>
 	totalRecordCount: number
 	maxRowsVisible?: number | 'auto'
 }
@@ -24,7 +24,7 @@ type RSLExampleState = {
 	isModalOpen?: boolean
 	selectedIds: Array<string>
 	unselectableIds: Array<string>
-	locations: Array<Object>
+	locations: Array<Record<string, any>>
 	emptyState?: any
 }
 
@@ -270,7 +270,7 @@ stories.add('Empty State', () => (
 ))
 
 interface RecordSelectionListSearchExampleProps {
-	locations: Array<Object>
+	locations: Array<Record<string, any>>
 }
 interface RecordSelectionListSearchExampleState {}
 

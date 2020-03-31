@@ -10,13 +10,13 @@ export enum BigFormSlidePosition {
 }
 
 export interface IBigFormSlideProps {
-	/** our position in the show */
+	/** Our position in the show */
 	position?: BigFormSlidePosition
 
-	/** should container a header and body */
+	/** Should container a header and body */
 	children?: React.ReactNode
 
-	/** called when submitting a step, probably hitting return in a text field */
+	/** Called when submitting a step, probably hitting return in a text field */
 	onSubmit?: <T>(value: T | null) => void
 }
 

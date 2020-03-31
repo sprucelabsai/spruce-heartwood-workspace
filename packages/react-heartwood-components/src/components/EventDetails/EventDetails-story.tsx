@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import EventDetails from './EventDetails'
 
 import { Sidebar, SidebarHeader } from '../Core'
-// import Page from '../Page'
+// Import Page from '../Page'
 
 import {
 	appointment,

@@ -24,7 +24,7 @@ export interface ITableProps extends Partial<TableProps> {
 	/** Set true if the table rows can be selected */
 	isSelectable?: boolean
 
-	/** any Id's that are selected by default when the page loads */
+	/** Any Id's that are selected by default when the page loads */
 	initialSelectedIds?: (string | number)[]
 
 	/** The kind of data this table displays. This will affect the text shown when at least one row is selected. */
@@ -407,7 +407,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 	private handleClickRow = (e, handleOriginal) => {
 		const { onClickRow = () => {} } = this.props
 
-		// determine which row we clicked
+		// Determine which row we clicked
 		const children = [...e.currentTarget.parentNode.parentNode.children]
 		const idx = children.indexOf(e.currentTarget.parentNode)
 

@@ -32,7 +32,7 @@ export interface IListItemProps
 		| 'lists'
 		| 'title'
 	> {
-	/** unique id for view caching */
+	/** Unique id for view caching */
 	id?: string
 
 	/** Inline svg icon */

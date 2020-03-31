@@ -3,7 +3,7 @@ import moment from 'moment-timezone'
 import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
-	// withKnobsOptions,
+	// WithKnobsOptions,
 	object
 } from '@storybook/addon-knobs/react'
 import Message, { MessageBuilder } from './index'
@@ -88,7 +88,7 @@ const messageJSON = {
 
 const stories = storiesOf('Message', module)
 
-// stories.addDecorator(
+// Stories.addDecorator(
 // 	withKnobsOptions({
 // 		escapeHTML: false
 // 	})

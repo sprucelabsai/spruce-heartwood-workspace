@@ -65,7 +65,7 @@ const TemplateEngine = (text = '', context = {}): ReactNode[] => {
 }
 
 export interface ITextProps extends Omit<IHWText, 'id'> {
-	/** id for visual caching */
+	/** Id for visual caching */
 	id?: string
 
 	/** Contents of the component. */

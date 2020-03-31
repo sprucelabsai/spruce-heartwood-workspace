@@ -3,13 +3,13 @@ import cx from 'classnames'
 import { IHWHeading, IHWHeadingWeight } from '@sprucelabs/spruce-types'
 
 export interface IHeadingProps extends Omit<IHWHeading, 'id'> {
-	/** id for view caching */
+	/** Id for view caching */
 	id?: string
 
-	/** classname */
+	/** Classname */
 	className?: string
 
-	/** any children (dropped in after whatever is in text prop) */
+	/** Any children (dropped in after whatever is in text prop) */
 	children?: React.ReactNode
 }
 

@@ -3,8 +3,8 @@ export const checkDeprecatedProps = ({
 	props,
 	deprecatedProps
 }: {
-	componentName: string,
-	props: Record<string, any>,
+	componentName: string
+	props: Record<string, any>
 	deprecatedProps: Record<string, any>
 }) => {
 	const propKeys = Object.keys(props)

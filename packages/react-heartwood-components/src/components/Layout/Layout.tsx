@@ -15,7 +15,7 @@ export interface ILayoutProps {
 	/** Sets the width of the layout */
 	width?: 'base' | 'tight' | 'wide' | 'full-width'
 
-	/** any classes applied to the div */
+	/** Any classes applied to the div */
 	className?: string
 }
 

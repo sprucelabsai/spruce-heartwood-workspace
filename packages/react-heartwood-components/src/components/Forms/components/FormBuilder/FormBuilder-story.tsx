@@ -10,7 +10,7 @@ import Layout, { LayoutSection } from '../../../Layout'
 const stories = storiesOf('FormBuilder', module)
 
 stories.addDecorator(withKnobs)
-// stories.addDecorator(withLayout)
+// Stories.addDecorator(withLayout)
 
 stories
 	.add('Basic', () => (
@@ -22,7 +22,7 @@ stories
 							<CardBody>
 								<FormBuilder
 									kind="page"
-									// validate={console.log}
+									// Validate={console.log}
 									sections={object('sections', [
 										{
 											title: 'Appointment Settings',
@@ -68,7 +68,7 @@ stories
 								<FormBuilder
 									validate={values => {
 										console.log('Validate: ', { values })
-										let errors = {}
+										const errors = {}
 										if (!values.publicName) {
 											errors.publicName = 'Please include a public name'
 										}
@@ -198,7 +198,7 @@ stories
 						apptReminder2Buffer: '2hrs'
 					}}
 					validate={values => {
-						let errors = {}
+						const errors = {}
 						if (!values.pastApptEditingCutoff) {
 							errors.pastApptEditingCutoff = 'Please include a cutoff time'
 						}
@@ -348,7 +348,7 @@ stories
 							groupName: ''
 						}}
 						validate={() => {
-							let errors = {}
+							const errors = {}
 
 							// TODO: Hook up groupName custom error
 							// if (!groupName) {

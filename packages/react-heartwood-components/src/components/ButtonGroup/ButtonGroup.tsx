@@ -8,7 +8,7 @@ export interface IButtonGroupProps extends Omit<IHWButtonGroup, 'actions'> {
 	/** Array of actions to render the group's buttons. */
 	actions: Action[]
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

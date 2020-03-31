@@ -6,7 +6,7 @@ import ReactPhoneInput, {
 import cx from 'classnames'
 import { InputPre, InputHelper } from '../../FormPartials'
 
-// for validating and formatting
+// For validating and formatting
 export {
 	formatPhoneNumber,
 	formatPhoneNumberIntl

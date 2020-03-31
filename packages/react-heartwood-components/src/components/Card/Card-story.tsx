@@ -204,7 +204,7 @@ const cardJSON5: ICardBuilderProps = {
 
 const stories = storiesOf('Card', module)
 
-// stories.addDecorator(
+// Stories.addDecorator(
 // 	withKnobsOptions({
 // 		escapeHTML: false
 // 	})

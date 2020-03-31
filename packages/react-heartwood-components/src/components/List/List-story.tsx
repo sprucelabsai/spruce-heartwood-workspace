@@ -85,7 +85,7 @@ class TabbedList extends Component<ITabbedProps, ITabbedState> {
 	}
 }
 
-// stories.addDecorator(
+// Stories.addDecorator(
 // 	withKnobsOptions({
 // 		escapeHTML: false
 // 	})

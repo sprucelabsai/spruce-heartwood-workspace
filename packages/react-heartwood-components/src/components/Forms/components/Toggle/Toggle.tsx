@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { IHWToggle } from '@sprucelabs/spruce-types'
 
 export interface IToggleProps extends IHWToggle {
-	/** optional class name applied to the toggle */
+	/** Optional class name applied to the toggle */
 	className?: string
 }
 

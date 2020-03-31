@@ -53,7 +53,7 @@ const columns = [
 ]
 
 type State = {
-	locations: Array<Object>
+	locations: Array<Record<string, any>>
 }
 
 type Props = {}
@@ -89,7 +89,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 	}
 
 	handleValidation = async (location: Record<string, any>, dayId) => {
-		let errors = {}
+		const errors = {}
 
 		const { locations } = this.state
 
@@ -121,7 +121,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		}
 	}
 
-	renderStoreScheduleForRow = (row: Object) => {
+	renderStoreScheduleForRow = (row: Record<string, any>) => {
 		const location = this.state.locations[row.index]
 		const schedule = location && location.schedule
 		return schedule ? (
@@ -157,7 +157,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 									validate={values =>
 										this.handleValidation(location, row.original.id, values)
 									}
-									render={(formikProps: Object) => {
+									render={(formikProps: Record<string, any>) => {
 										const { handleChange, values } = formikProps
 
 										return (

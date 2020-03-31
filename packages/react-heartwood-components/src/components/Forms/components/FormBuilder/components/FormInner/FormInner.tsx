@@ -26,7 +26,7 @@ export interface FormInnerFieldProps {
 	type: string
 
 	/** Props to pass through to the field */
-	props?: Object
+	props?: Record<string, any>
 }
 
 export interface IFormInnerProps {
@@ -45,7 +45,7 @@ export interface IFormInnerProps {
 	/** Optional when including a secondary cta in the form */
 	secondaryCTA?: IButtonProps
 
-	/** handle some on change */
+	/** Handle some on change */
 	onChange?: Function
 }
 
@@ -108,7 +108,7 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 		switch (type) {
 			case 'boolean':
 				value = value === 'on'
-				shouldValidate = false // it can only be valid values
+				shouldValidate = false // It can only be valid values
 				break
 		}
 		const {

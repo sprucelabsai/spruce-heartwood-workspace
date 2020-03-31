@@ -15,7 +15,7 @@ export interface ISaveBarProps {
 	isVisible: boolean
 
 	/** Set to true to disable the discard button */
-	isDiscardDisabled: Boolean
+	isDiscardDisabled: boolean
 
 	/** Set to true to disable the save button */
 	isSaveDisabled: boolean

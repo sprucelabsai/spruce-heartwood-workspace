@@ -92,7 +92,7 @@ const TemplateEngine = (text = '', context = {}) => {
 		cursor = 0,
 		match
 
-	let add = function(line, js) {
+	const add = function(line, js) {
 		if (line !== '') {
 			children.push({
 				props: { element: 'span', children: line.replace(/"/g, '\\"') }

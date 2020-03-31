@@ -18,10 +18,10 @@ export interface IEventDetailsProps
 	/** In a loading state, loading placeholders will be dropped in */
 	isLoading?: boolean
 
-	/** all the items that make up this event details component */
+	/** All the items that make up this event details component */
 	items: (IEventDetailsItemProps | IHWCalendarEventDetailsItem)[]
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

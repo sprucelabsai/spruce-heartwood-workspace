@@ -10,10 +10,10 @@ interface IToastHeaderProps {
 	/** Function to remove the toast */
 	onRemove?: Function
 
-	/** headline */
+	/** Headline */
 	headline?: string
 
-	/** is this toast removable */
+	/** Is this toast removable */
 	canRemove?: boolean
 }
 
@@ -36,10 +36,10 @@ export interface IToastProps extends Omit<IHWToast, 'id'> {
 	/** Handle toast removal */
 	onRemove?: Function
 
-	/** override how long before the toast goes away, in milis */
+	/** Override how long before the toast goes away, in milis */
 	timeout?: number | 'never'
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

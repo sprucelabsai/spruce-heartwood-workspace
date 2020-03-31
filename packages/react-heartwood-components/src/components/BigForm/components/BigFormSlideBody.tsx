@@ -3,16 +3,16 @@ import cx from 'classnames'
 import { TextInput } from '../../Forms'
 
 export interface IBigFormSlideBodyProps {
-	/** what type of question are you asking */
+	/** What type of question are you asking */
 	answerType: string
 
-	/** any other children you want passed through */
+	/** Any other children you want passed through */
 	children?: React.ReactNode
 
-	/** what i the placeholder on the input */
+	/** What i the placeholder on the input */
 	placeholder?: string
 
-	/** called when trying to submit a step (probably hitting return on an input) */
+	/** Called when trying to submit a step (probably hitting return on an input) */
 	onSubmit?: <T>(value: T | null) => void
 }
 

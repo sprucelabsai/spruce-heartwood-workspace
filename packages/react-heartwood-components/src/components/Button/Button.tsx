@@ -40,13 +40,13 @@ export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	/** Component used to render anchor */
 	AnchorComponent?: any
 
-	/** optional target, whatever an anchor tag takes */
+	/** Optional target, whatever an anchor tag takes */
 	target?: string
 
-	/** optional payload to be sent with onclick (different than the payload attached to action.) */
+	/** Optional payload to be sent with onclick (different than the payload attached to action.) */
 	payload?: Record<string, any>
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

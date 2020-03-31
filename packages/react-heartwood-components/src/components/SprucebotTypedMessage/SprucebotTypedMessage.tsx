@@ -50,10 +50,10 @@ export default class SprucebotTypedMessage extends Component<
 			const { sentences } = this.props
 			const { sentenceQueue } = this.state
 
-			// add sentence to the queue and re-render of children of Typing
+			// Add sentence to the queue and re-render of children of Typing
 			this.setState({ sentenceQueue: [...sentenceQueue, sentence] })
 
-			// need to calculate delete count or reset
+			// Need to calculate delete count or reset
 			const all = [...sentences, ...sentenceQueue]
 			const last = all.pop()
 
@@ -90,7 +90,7 @@ export default class SprucebotTypedMessage extends Component<
 	}
 
 	componentDidUpdate = prevProps => {
-		// if paused prop changed at all, it wins (calling play manually starts it again)
+		// If paused prop changed at all, it wins (calling play manually starts it again)
 		if (prevProps.paused !== this.props.paused) {
 			switch (this.props.paused) {
 				case true:
@@ -136,21 +136,21 @@ export default class SprucebotTypedMessage extends Component<
 		;[...sentences, ...sentenceQueue].forEach((sentence, idx) => {
 			let startCharacterIdx = 0
 
-			// delete the last words
+			// Delete the last words
 			if (lastSentence) {
 				const firstUniqueIdx = this.findFirstUniqueCharacter(
 					sentence.words,
 					lastSentence.words
 				)
 
-				// how far back should we delete to start typing the next sentence?
+				// How far back should we delete to start typing the next sentence?
 				const howManyToDelete = lastSentence.words.length - firstUniqueIdx
 
-				// the next sentence was additive so only add the characters that are new
+				// The next sentence was additive so only add the characters that are new
 				if (firstUniqueIdx === -1) {
 					startCharacterIdx = lastSentence.words.length
 				} else if (howManyToDelete === lastSentence.words.length) {
-					// if we are deleting the whole thing, just clear the line entirely
+					// If we are deleting the whole thing, just clear the line entirely
 					elements.push(
 						<Typing.Reset
 							key={`reset-${idx}`}
@@ -201,7 +201,7 @@ export default class SprucebotTypedMessage extends Component<
 			}
 		}
 
-		// if this test
+		// If this test
 		if (
 			sentences[sentenceIdxBeingTyped] &&
 			sentences[sentenceIdxBeingTyped].avatar
@@ -216,7 +216,7 @@ export default class SprucebotTypedMessage extends Component<
 	}
 
 	handleTyping = (text: string[]) => {
-		// to track when the animation has started the next sentence, we need to check when text has a different amonut of elements
+		// To track when the animation has started the next sentence, we need to check when text has a different amonut of elements
 		const { sentenceIdxBeingTyped, lastLineNum } = this.state
 		const { sentences } = this.props
 		const line = compact(text).length - 1

@@ -9,34 +9,34 @@ import { IAutosuggestInterfaceProps } from '../Autosuggest/Autosuggest'
 
 interface IDurationInputProps
 	extends Omit<IAutosuggestInterfaceProps, 'defaultValue'> {
-	/** minimum time someone can select */
+	/** Minimum time someone can select */
 	minMinutes?: number
 
-	/** maximum time someone can select */
+	/** Maximum time someone can select */
 	maxMinutes?: number
 
-	/** when generating suggestions, how much much time is there between suggestions */
+	/** When generating suggestions, how much much time is there between suggestions */
 	skipMinutes?: number
 
 	/** Default value (in minutes)  */
 	defaultValue?: number
 
-	/** placeholder to be formatted nicely (expects minutes) */
+	/** Placeholder to be formatted nicely (expects minutes) */
 	placeholder?: string
 
-	/** title rendered when no results are found */
+	/** Title rendered when no results are found */
 	noResultsTitle?: string
 
-	/** subtitle rendered when no results are found */
+	/** Subtitle rendered when no results are found */
 	noResultsSubtitle?: string
 
-	/** pass an error message to the input, this is show only after a valid duration is selected */
+	/** Pass an error message to the input, this is show only after a valid duration is selected */
 	error?: string
 
-	/** is this field required? */
+	/** Is this field required? */
 	required?: boolean
 
-	/** a slighly different onChange */
+	/** A slighly different onChange */
 	onChange?: (durationInMinutes: number | null, e: KeyboardEvent) => {}
 }
 
@@ -69,8 +69,8 @@ export default class DurationInput extends Component<
 	}
 
 	static minutesToStr = (num: number): string => {
-		let hours = Math.floor(num / 60)
-		let minutes = num % 60
+		const hours = Math.floor(num / 60)
+		const minutes = num % 60
 
 		let value = ''
 
@@ -160,7 +160,7 @@ export default class DurationInput extends Component<
 
 		if (value.length > 0 && matches.length > 0) {
 			this.setState({ value: matches[0].text, validationError: null })
-			// only fire on change if the new value is valid
+			// Only fire on change if the new value is valid
 			onChange && onChange(this.strToMinutes(matches[0].text), e)
 		} else if (required && value.length > 0) {
 			this.setState({ validationError: 'You must select a valid duration.' })
@@ -169,7 +169,10 @@ export default class DurationInput extends Component<
 		onBlur && onBlur(e)
 	}
 
-	handleSelectSuggestion = (e: KeyboardEvent, suggestion: Object) => {
+	handleSelectSuggestion = (
+		e: KeyboardEvent,
+		suggestion: Record<string, any>
+	) => {
 		const { onChange } = this.props
 
 		const value = suggestion.suggestionValue
@@ -179,7 +182,7 @@ export default class DurationInput extends Component<
 
 		if (value.length > 0 && matches.length > 0) {
 			this.setState({ value: matches[0].text, validationError: null })
-			// only fire on change if the new value is valid
+			// Only fire on change if the new value is valid
 			onChange && onChange(this.strToMinutes(matches[0].text), e)
 		}
 	}
@@ -205,7 +208,7 @@ export default class DurationInput extends Component<
 
 			const search = value.replace(/[^0-9hm]/g, '')
 
-			// we typed something, but it was nothing valid
+			// We typed something, but it was nothing valid
 			if (value.length > 0 && search.length === 0) {
 				return []
 			}

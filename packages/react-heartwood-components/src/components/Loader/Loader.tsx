@@ -2,10 +2,10 @@ import React from 'react'
 import cx from 'classnames'
 
 interface ILoaderProps {
-	/* set to true if loader is on a dark background */
+	/* Set to true if loader is on a dark background */
 	isLight: boolean
 
-	/* set to true if loader should be centered within parent */
+	/* Set to true if loader should be centered within parent */
 	isCentered: boolean
 }
 

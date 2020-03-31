@@ -129,7 +129,7 @@ const skillViewTabs = [
 interface SkillViewProps {}
 interface SkillViewState {
 	sidebarsExpanded: Record<string, any>
-	sidebarsMobileExpanded: Object
+	sidebarsMobileExpanded: Record<string, any>
 }
 
 const generateTonsOfContent = () => (
@@ -352,7 +352,7 @@ stories
 		</div>
 	))
 	.add('Guest Profile', () => {
-		let messages = generateMessages({ count: 50, interval: 31 })
+		const messages = generateMessages({ count: 50, interval: 31 })
 		return (
 			<div STORYBOOKdoNotWrap style={{ height: '100vh' }}>
 				<View

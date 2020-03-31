@@ -3,7 +3,7 @@ import { Tag } from '../../../Forms'
 
 interface ITableFiltersProps {
 	/** Filters applied to the table */
-	filters: Array<Object>
+	filters: Array<Record<string, any>>
 }
 
 const TableFilters = (props: ITableFiltersProps) => {

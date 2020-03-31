@@ -21,28 +21,28 @@ export interface IDropzoneProps {
 	/** Displays progress while uploading */
 	uploadProgress: number
 
-	/** onDragEnter callback */
+	/** OnDragEnter callback */
 	onDragEnter?: Function
 
-	/** onDragLeave callback */
+	/** OnDragLeave callback */
 	onDragLeave?: Function
 
-	/** onDragOver callback */
+	/** OnDragOver callback */
 	onDragOver?: Function
 
 	/** Callback when file(s) are dropped */
 	onDrop?: Function
 
-	/** onDropAccepted callback */
+	/** OnDropAccepted callback */
 	onDropAccepted: Function
 
-	/** onDropRejected callback */
+	/** OnDropRejected callback */
 	onDropRejected?: Function
 
-	/** onFileDialogCancel callback */
+	/** OnFileDialogCancel callback */
 	onFileDialogCancel?: Function
 
-	/** onDragStart callback */
+	/** OnDragStart callback */
 	onDragStart?: Function
 
 	/** Optional label for the Dropzone */
