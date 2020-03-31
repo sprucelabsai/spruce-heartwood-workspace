@@ -11,7 +11,7 @@ export interface ITabProps {
 	icon?: IIconProps | null
 
 	/** Method used to render anchor, if isAnchor is true */
-	AnchorComponent?: Node
+	AnchorComponent?: React.ReactNode
 
 	/** Set true if this is the current tab */
 	isCurrent?: boolean

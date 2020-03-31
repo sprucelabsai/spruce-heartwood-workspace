@@ -24,7 +24,7 @@ type FromProps = {
 
 interface IMessageProps {
 	/** Message children. */
-	children: Node
+	children: React.ReactNode
 
 	/** Information about the sender */
 	from: FromProps

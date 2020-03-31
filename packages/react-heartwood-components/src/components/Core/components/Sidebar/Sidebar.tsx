@@ -24,10 +24,10 @@ interface ISidebarProps {
 	backLink?: ISidebarItemProps
 
 	/** Children to add to the sidebar */
-	children?: Node
+	children?: React.ReactNode
 
 	/** Include a footer in the sidebar */
-	footer?: Node
+	footer?: React.ReactNode
 
 	/** Set which side the sidebar is on. Must be either 'left' or 'right */
 	side: 'left' | 'right'

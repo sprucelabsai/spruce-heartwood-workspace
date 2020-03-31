@@ -10,7 +10,7 @@ interface ModalPageProps {
   title: string;
 
   /** The modal body for this page */
-  body: Node;
+  body: React.ReactNode;
 
   /** The modal footer primary action for this page */
   footerPrimaryAction?: IButtonProps;

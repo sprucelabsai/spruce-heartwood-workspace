@@ -1,23 +1,13 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import {
-	withKnobs,
-	// WithKnobsOptions,
-	text,
-	boolean,
-	object
-} from '@storybook/addon-knobs/react'
+import { withKnobs, text, boolean } from '@storybook/addon-knobs/react'
 import Button from './Button'
 
 const btnText = text('text', 'Hello World')
 const isFullWidth = boolean('isFullWidth', false)
 
 const stories = storiesOf('Button', module)
-// Stories.addDecorator(
-// 	withKnobsOptions({
-// 		escapeHTML: false
-// 	})
-// )
+
 stories.addDecorator(withKnobs)
 
 stories

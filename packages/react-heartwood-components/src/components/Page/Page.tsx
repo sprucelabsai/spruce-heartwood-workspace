@@ -7,7 +7,7 @@ import { IPageHeaderProps } from './components/PageHeader/PageHeader'
 // Card
 interface IPageProps {
 	/** Should be Card Header, Card Body, and Card Footer, unless using the card background for styling only. */
-	children: Node
+	children: React.ReactNode
 
 	/** Set true to make page content center aligned. */
 	isCentered?: boolean

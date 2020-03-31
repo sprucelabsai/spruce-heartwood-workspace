@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 export interface ILayoutSectionProps {
 	/** Contents of the Layout Section */
-	children: Node
+	children: React.ReactNode
 
 	/** Class name for the section */
 	className?: string

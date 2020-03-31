@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 export interface IFormLayoutGroupProps {
 	/** Contents of the FormLayoutGroup. Should be FormLayoutItem components */
-	children: Node
+	children: React.ReactNode
 
 	/** Class name for the group */
 	className?: string

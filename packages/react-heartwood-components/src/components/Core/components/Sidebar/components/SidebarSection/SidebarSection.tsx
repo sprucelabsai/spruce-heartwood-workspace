@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 interface ISidebarSectionProps {
 	/** Children to show in the sidebar section */
-	children: Node
+	children: React.ReactNode
 
 	/** Optional classname to add to the section */
 	className?: string

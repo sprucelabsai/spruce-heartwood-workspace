@@ -4,7 +4,7 @@ import LayoutSection from './components/LayoutSection/LayoutSection'
 
 export interface ILayoutProps {
 	/** Contents of the Layout. Should be LayoutSection components */
-	children?: Node
+	children?: React.ReactNode
 
 	/** Set true to center align layout content. */
 	isCentered?: boolean

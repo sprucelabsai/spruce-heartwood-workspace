@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 export interface TextContainerProps {
 	/** Contents of the component. */
-	children: Node
+	children: React.ReactNode
 
 	/** Class name for the component */
 	className?: string

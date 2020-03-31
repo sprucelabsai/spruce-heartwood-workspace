@@ -8,7 +8,7 @@ interface ItemProps {
 	href: string
 	className?: string
 	action?: IButtonProps
-	icon?: Node
+	icon?: React.ReactNode
 	isCurrent?: boolean
 	items: Array<ItemProps>
 }

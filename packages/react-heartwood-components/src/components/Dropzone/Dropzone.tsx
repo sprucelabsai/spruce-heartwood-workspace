@@ -61,7 +61,7 @@ export interface IDropzoneProps {
 	fileWasUploaded?: boolean
 
 	/** The icon to display before an upload has happened */
-	defaultIcon?: Node
+	defaultIcon?: React.ReactNode
 }
 
 interface IDropZoneState {

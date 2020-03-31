@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface IPageContentProps {
 	/** Contents of the Page */
-	children: Node
+	children: React.ReactNode
 }
 
 const PageContent = (props: IPageContentProps) => {

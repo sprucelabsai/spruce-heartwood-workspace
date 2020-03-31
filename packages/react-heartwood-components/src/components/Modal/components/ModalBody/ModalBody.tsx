@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 interface IModalBodyProps {
 	/** Modal children */
-	children: Node
+	children: React.ReactNode
 
 	/** Optional class name */
 	className?: string

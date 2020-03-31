@@ -19,11 +19,11 @@ class FeedBuilderExample extends Component<
 	IFeedBuilderExampleProps,
 	IFeedBuilderExampleState
 > {
-	state = {
+	public state = {
 		messages: generateMessages({ count: 50, interval: 31 })
 	}
 
-	onRowsRequested = () => {
+	public onRowsRequested = () => {
 		this.setState(prevState => {
 			const lastMessageDate =
 				prevState.messages[prevState.messages.length - 1].dateSent
@@ -43,7 +43,7 @@ class FeedBuilderExample extends Component<
 		})
 	}
 
-	render() {
+	public render() {
 		const { messages } = this.state
 		return (
 			<FeedBuilder

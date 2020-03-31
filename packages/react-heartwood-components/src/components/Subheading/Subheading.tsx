@@ -4,7 +4,7 @@ import { IHWHeadingWeight } from '@sprucelabs/spruce-types'
 
 export type ISubheadingProps = {
 	/** Contents of the component. */
-	children: Node
+	children: React.ReactNode
 
 	/** Class name for the component */
 	className?: string

@@ -13,7 +13,7 @@ import TextStyle from '../../TextStyle/TextStyle'
 import Button from '../../Button/Button'
 import Image from '../../Image/Image'
 
-interface FromProps {
+interface IFromProps {
 	/** Unique id of the sender */
 	id: string
 
@@ -29,7 +29,7 @@ interface FromProps {
 
 export interface IMessageBuilderProps {
 	/** Information about the sender */
-	from: FromProps
+	from: IFromProps
 
 	/** Message body */
 	dateSent?: Date
@@ -86,19 +86,22 @@ const renderAttachmentChild = child => {
 	)
 }
 
-const TemplateEngine = (text = '', context = {}) => {
-	let re = /{{([^}}]+)?}}/g,
-		children = [],
-		cursor = 0,
-		match
+const TemplateEngine = (
+	text = '',
+	context: Record<string, any> = {}
+): React.ReactNode => {
+	const re = /{{([^}}]+)?}}/g
+	const children: Record<string, any>[] = []
+	let cursor = 0
+	let match
 
-	const add = function(line, js) {
+	const add = function(line, js?: string) {
 		if (line !== '') {
 			children.push({
 				props: { element: 'span', children: line.replace(/"/g, '\\"') }
 			})
 		}
-		if (context[js]) {
+		if (js && context[js]) {
 			children.push(context[js])
 		}
 	}
