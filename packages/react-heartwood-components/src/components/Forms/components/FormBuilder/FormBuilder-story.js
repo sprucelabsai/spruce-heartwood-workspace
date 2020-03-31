@@ -1,16 +1,18 @@
-import React from 'react'
+// @flow
+import { object, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, object } from '@storybook/addon-knobs/react'
-import FormBuilder from './FormBuilder'
+import React from 'react'
+import { Card, CardBody } from '../../../Card'
+import LayoutSection from '../../../Layout/components/LayoutSection/LayoutSection'
+import Layout from '../../../Layout/Layout'
 import Modal from '../../../Modal/Modal'
 import Page, { PageContent } from '../../../Page'
-import { Card, CardBody } from '../../../Card'
-import Layout, { LayoutSection } from '../../../Layout'
+import FormBuilder from './FormBuilder'
 
 const stories = storiesOf('FormBuilder', module)
 
 stories.addDecorator(withKnobs)
-// Stories.addDecorator(withLayout)
+// stories.addDecorator(withLayout)
 
 stories
 	.add('Basic', () => (
@@ -22,7 +24,7 @@ stories
 							<CardBody>
 								<FormBuilder
 									kind="page"
-									// Validate={console.log}
+									// validate={console.log}
 									sections={object('sections', [
 										{
 											title: 'Appointment Settings',
@@ -68,7 +70,7 @@ stories
 								<FormBuilder
 									validate={values => {
 										console.log('Validate: ', { values })
-										const errors = {}
+										let errors = {}
 										if (!values.publicName) {
 											errors.publicName = 'Please include a public name'
 										}
@@ -198,7 +200,7 @@ stories
 						apptReminder2Buffer: '2hrs'
 					}}
 					validate={values => {
-						const errors = {}
+						let errors = {}
 						if (!values.pastApptEditingCutoff) {
 							errors.pastApptEditingCutoff = 'Please include a cutoff time'
 						}
@@ -348,7 +350,7 @@ stories
 							groupName: ''
 						}}
 						validate={() => {
-							const errors = {}
+							let errors = {}
 
 							// TODO: Hook up groupName custom error
 							// if (!groupName) {

@@ -1,12 +1,13 @@
-import React from 'react'
+import { IHWLayoutWidth } from '@sprucelabs/spruce-types'
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
-
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs/react'
-import { Page } from './index'
+import React from 'react'
 import { manyTabs } from '../../../.storybook/data/tabs'
+import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
+import Page from './index'
 
-import README from './README.md'
+// import README from './README.md'
 
 const buttonKinds = {
 	Primary: 'primary',
@@ -14,11 +15,12 @@ const buttonKinds = {
 	Simple: 'simple'
 }
 
-const stories = storiesOf('Page', module).addParameters({
-	readme: {
-		sidebar: README
-	}
-})
+const stories = storiesOf('Page', module)
+// .addParameters({
+// 	readme: {
+// 		sidebar: README
+// 	}
+// })
 
 stories.addDecorator(withKnobs)
 
@@ -33,9 +35,9 @@ stories
 		>
 			<Page.Content>
 				<Layout>
-					<Layout.Section>
+					<LayoutSection>
 						See Layout for examples of page layouts.
-					</Layout.Section>
+					</LayoutSection>
 				</Layout>
 			</Page.Content>
 		</Page>
@@ -64,6 +66,7 @@ stories
 			header={{
 				title: text('title', 'Page Title'),
 				primaryAction: {
+					id: 'do-something',
 					text: boolean('text', 'Do something'),
 					kind: select('kind', buttonKinds, 'primary'),
 					icon: text('icon', ''),
@@ -89,6 +92,7 @@ stories
 				backLinkHref: '#',
 				backLinkText: text('backLinkText', 'Back'),
 				primaryAction: {
+					id: 'do-something',
 					text: boolean('text', 'Do something'),
 					kind: select('kind', buttonKinds, 'primary'),
 					icon: text('icon', ''),
@@ -123,6 +127,7 @@ stories
 					backLinkHref: '#',
 					backLinkText: text('backLinkText', 'Back'),
 					primaryAction: {
+						id: 'do-something',
 						text: boolean('text', 'Do something'),
 						kind: select('kind', buttonKinds, 'primary'),
 						icon: text('icon', ''),
@@ -133,7 +138,7 @@ stories
 				}}
 			>
 				<Page.Content>
-					<Layout width="full-width">
+					<Layout width={IHWLayoutWidth.FullWidth}>
 						<Layout.Section>
 							See Layout for examples of page layouts. Lorem ipsum dolor sit
 							amet, consectetur adipiscing elit. Vestibulum dapibus dapibus

@@ -1,14 +1,16 @@
-import React from 'react'
-import moment from 'moment-timezone'
-import { storiesOf } from '@storybook/react'
+// @flow
 import {
-	withKnobs,
-	// WithKnobsOptions,
-	object
+	// withKnobsOptions,
+	object,
+	withKnobs
 } from '@storybook/addon-knobs/react'
-import Message, { MessageBuilder } from './index'
+import { storiesOf } from '@storybook/react'
+import moment from 'moment-timezone'
+import React from 'react'
+import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
+import Layout from '../Layout/Layout'
 import Page, { PageContent } from '../Page'
-import Layout, { LayoutSection } from '../Layout'
+import Message, { MessageBuilder } from './index'
 
 const fromName = 'Sprucebot'
 const fromImage =
@@ -88,7 +90,7 @@ const messageJSON = {
 
 const stories = storiesOf('Message', module)
 
-// Stories.addDecorator(
+// stories.addDecorator(
 // 	withKnobsOptions({
 // 		escapeHTML: false
 // 	})

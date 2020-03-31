@@ -59,13 +59,18 @@ export {
 export { default as Icon, IIconProps } from './components/Icon/Icon'
 export { default as Heading } from './components/Heading/Heading'
 export { default as Subheading } from './components/Subheading/Subheading'
-export { default as TextContainer } from './components/TextContainer/TextContainer'
+export {
+	default as TextContainer
+} from './components/TextContainer/TextContainer'
 export { default as Text, Span } from './components/Text/Text'
 export { default as TextStyle } from './components/TextStyle/TextStyle'
 export { default as Image } from './components/Image/Image'
 export { default as ImageSSR } from './components/ImageSSR/ImageSSR'
 export { default as ImageCropper } from './components/ImageCropper/ImageCropper'
-export { default as Layout, LayoutSection } from './components/Layout'
+export { default as Layout } from './components/Layout/Layout'
+export {
+	default as LayoutSection
+} from './components/Layout/components/LayoutSection/LayoutSection'
 export {
 	ExpandableListItem,
 	IListItemProps,
@@ -83,7 +88,9 @@ export { default as PagedModal } from './components/PagedModal/PagedModal'
 export { default as Pagination } from './components/Pagination/Pagination'
 export { default as Tabs } from './components/Tabs/Tabs'
 export { default as Tab } from './components/Tabs/components/Tab/Tab'
-export { default as ToastWrapper } from './components/Toast/components/ToastWrapper/ToastWrapper'
+export {
+	default as ToastWrapper
+} from './components/Toast/components/ToastWrapper/ToastWrapper'
 export { default as Toast } from './components/Toast/Toast'
 export { default as View } from './components/View/View'
 export { default as Page, PageHeader, PageContent } from './components/Page'
@@ -98,17 +105,25 @@ export {
 	default as RecordSelectionList,
 	IRecordSelectionListItemProps
 } from './components/RecordSelectionList/RecordSelectionList'
-export { default as RecordSelectionListItem } from './components/RecordSelectionList/RecordSelectionListItem'
+export {
+	default as RecordSelectionListItem
+} from './components/RecordSelectionList/RecordSelectionListItem'
 export { default as EmptyState } from './components/EmptyState/EmptyState'
 export {
 	default as EventDetails,
 	IEventDetailsProps
 } from './components/EventDetails/EventDetails'
-export { IEventDetailsItemProps } from './components/EventDetails/components/EventDetailsItem/EventDetailsItem'
-export { applyUIEnhancementsToEventDetails } from './components/EventDetails/EventDetailsUtilities'
+export {
+	IEventDetailsItemProps
+} from './components/EventDetails/components/EventDetailsItem/EventDetailsItem'
+export {
+	applyUIEnhancementsToEventDetails
+} from './components/EventDetails/EventDetailsUtilities'
 export { default as CircleLoader } from './components/CircleLoader/CircleLoader'
 export { default as SplitButton } from './components/SplitButton/SplitButton'
-export { default as TruncatedList } from './components/TruncatedList/TruncatedList'
+export {
+	default as TruncatedList
+} from './components/TruncatedList/TruncatedList'
 
 export type ArrayElem<A> = A extends Array<infer Elem> ? Elem : never
 
@@ -116,4 +131,6 @@ export function unionArray<T>(array: T): Array<ArrayElem<T>> {
 	return array as any
 }
 
-export { default as SprucebotAvatar } from './components/SprucebotAvatar/SprucebotAvatar'
+export {
+	default as SprucebotAvatar
+} from './components/SprucebotAvatar/SprucebotAvatar'

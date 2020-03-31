@@ -1,53 +1,55 @@
+// @flow
 import React, { Fragment } from 'react'
 import { Formik, Form } from 'formik'
 import FormInner from './components/FormInner/FormInner'
 import { Card, CardBody, CardHeader } from '../../../Card'
-import { Layout, LayoutSection } from '../../../Layout'
+import Layout from '../../../Layout/Layout'
+import LayoutSection from '../../../Layout/components/LayoutSection/LayoutSection'
 import { SaveBar } from '../../../Core'
 import Modal from '../../../Modal/Modal'
 
-import { FormInnerFieldProps } from './components/FormInner/FormInner'
-import { IFormLayoutProps } from '../FormLayout/FormLayout'
-import { IButtonProps } from '../../../Button/Button'
+import type { FormInnerFieldProps } from './components/FormInner/FormInner'
+import type { FormLayoutProps } from '../FormLayout/FormLayout'
+import type { Props as ButtonProps } from '../../../Button/Button'
 
 type SectionProps = {
 	/** Unique id for the section */
-	id: string
+	id: string,
 
 	/** Optional title to show at the top of the card */
-	title?: string
+	title?: string,
 
 	/** Fields for this card */
 	fields: Array<FormInnerFieldProps & { currentValue: any }>
 }
 
-interface IFormBuilderProps {
+type Props = {
 	/** Determines how the form should be build. Default builds a simple form */
-	kind?: 'default' | 'page' | 'modal'
+	kind?: 'default' | 'page' | 'modal',
 
 	/** Initial values to be passed into the form */
-	initialValues: Record<string, any>
+	initialValues: Object,
 
 	/** Submit handler */
-	onSubmit: Function
+	onSubmit: Function,
 
 	/** Use sections when the form to be built is a full page */
-	sections: Array<SectionProps>
+	sections: Array<SectionProps>,
 
 	/** Form layout props */
-	formLayout: IFormLayoutProps
+	formLayout: FormLayoutProps,
 
 	/** Validation handler. This isn't needed when the form is made of toggles only. */
-	validate?: Function
+	validate?: Function,
 
 	/** Optional when rendering a primary cta in the form */
-	primaryCTA?: IButtonProps
+	primaryCTA?: ButtonProps,
 
 	/** Optional when using a secondary cta in the form */
-	secondaryCTA?: IButtonProps
+	secondaryCTA?: ButtonProps
 }
 
-const FormBuilder = (props: IFormBuilderProps) => {
+const FormBuilder = (props: Props) => {
 	const {
 		kind,
 		onSubmit,

@@ -1,19 +1,21 @@
-import React, { Fragment } from 'react'
+// @flow
+import { boolean, text, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs/react'
-import { generateLocations } from '../../../.storybook/data/tableData'
 import { Formik } from 'formik'
-import Table, { TableSearch, TableFilters } from './index'
-import { Layout, LayoutSection } from '../Layout'
-import Card, { CardHeader, CardBody } from '../Card'
+import React, { Fragment } from 'react'
+import { generateLocations } from '../../../.storybook/data/tableData'
 import Button from '../Button/Button'
-import Tabs from '../Tabs/Tabs'
+import Card, { CardBody, CardHeader } from '../Card'
 import {
-	TextInput,
 	FormLayout,
 	FormLayoutGroup,
-	FormLayoutItem
+	FormLayoutItem,
+	TextInput
 } from '../Forms'
+import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
+import Layout from '../Layout/Layout'
+import Tabs from '../Tabs/Tabs'
+import Table, { TableFilters, TableSearch } from './index'
 
 const stories = storiesOf('Table', module)
 
@@ -53,20 +55,20 @@ const columns = [
 ]
 
 type State = {
-	locations: Array<Record<string, any>>
+	locations: Array<Object>
 }
 
 type Props = {}
 
 class ExpandableEditableTable extends React.Component<Props, State> {
-	public constructor(props) {
+	constructor(props) {
 		super(props)
 		this.state = {
 			locations: generateLocations({ amount: 149 })
 		}
 	}
 
-	public handleChangeHours = (e, location, dayId) => {
+	handleChangeHours = (e, location, dayId) => {
 		const { locations } = this.state
 
 		locations.forEach(l => {
@@ -88,8 +90,8 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		this.setState({ locations })
 	}
 
-	public handleValidation = async (location: Record<string, any>, dayId) => {
-		const errors = {}
+	handleValidation = async (location: Object, dayId) => {
+		let errors = {}
 
 		const { locations } = this.state
 
@@ -106,11 +108,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		return errors
 	}
 
-	public handleSaveHours = async (
-		location: Record<string, any>,
-		dayId,
-		values
-	) => {
+	handleSaveHours = async (location: Object, dayId, values) => {
 		const { locations } = this.state
 
 		const updatedLocation = locations.find(l => l.id === location.id)
@@ -125,7 +123,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		}
 	}
 
-	public renderStoreScheduleForRow = (row: Record<string, any>) => {
+	renderStoreScheduleForRow = (row: Object) => {
 		const location = this.state.locations[row.index]
 		const schedule = location && location.schedule
 		return schedule ? (
@@ -161,7 +159,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 									validate={values =>
 										this.handleValidation(location, row.original.id, values)
 									}
-									render={(formikProps: Record<string, any>) => {
+									render={(formikProps: Object) => {
 										const { handleChange, values } = formikProps
 
 										return (
@@ -186,7 +184,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 																		values
 																	)
 																}
-																isDisabled={!row.original.isDirty}
+																disabled={!row.original.isDirty}
 																text="Save"
 															/>
 														</FormLayoutItem>
@@ -208,7 +206,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		) : null
 	}
 
-	public render() {
+	render() {
 		const { locations } = this.state
 
 		return (
