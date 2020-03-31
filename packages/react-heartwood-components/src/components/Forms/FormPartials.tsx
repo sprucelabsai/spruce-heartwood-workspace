@@ -5,7 +5,7 @@ import Icon from '../Icon/Icon'
 export interface IInputPreProps {
 	id: string
 	label: string
-	postLabel?: string
+	postLabel?: string | React.ReactNode
 }
 
 export const InputPre = (props: IInputPreProps) => {

@@ -30,6 +30,9 @@ interface IDurationInputProps
 	/** Subtitle rendered when no results are found */
 	noResultsSubtitle?: string
 
+	/** The initial value */
+	value?: number
+
 	/** Pass an error message to the input, this is show only after a valid duration is selected */
 	error?: string
 
@@ -41,9 +44,11 @@ interface IDurationInputProps
 }
 
 interface IDurationInputState {
+	/** The current value in state */
 	value?: string
-	prevPropsValue?: string
-	validationError?: string
+	/** The last value */
+	prevPropsValue?: number | null
+	validationError?: string | null
 }
 
 export default class DurationInput extends Component<
@@ -96,11 +101,9 @@ export default class DurationInput extends Component<
 
 	public constructor(props: IDurationInputProps) {
 		super(props)
+		const val = props.defaultValue || props.value
 		this.state = {
-			value:
-				props.defaultValue || props.value
-					? DurationInput.minutesToStr(props.defaultValue || props.value)
-					: '',
+			value: val ? DurationInput.minutesToStr(val) : '',
 			prevPropsValue: props.value,
 			validationError: null
 		}

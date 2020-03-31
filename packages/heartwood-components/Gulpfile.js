@@ -9,8 +9,7 @@ const cssnano = require('cssnano')
 const sourcemaps = require('gulp-sourcemaps')
 const through = require('through2')
 
-// A task to import base variables first, then from within our import file, fetch component styles and add them to a concatenated output file
-gulp.task('styles', function() {
+function styles() {
 	return gulp
 		.src(['stylesheets/heartwood-components.scss'])
 		.pipe(sourcemaps.init())
@@ -19,9 +18,9 @@ gulp.task('styles', function() {
 		.pipe(postcss([autoprefixer]))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./public/stylesheets'))
-})
+}
 
-gulp.task('styles-minify', function() {
+function stylesMinify() {
 	return gulp
 		.src(['stylesheets/heartwood-components.scss'])
 		.pipe(sassGlob())
@@ -33,15 +32,15 @@ gulp.task('styles-minify', function() {
 			})
 		)
 		.pipe(gulp.dest('./public/stylesheets'))
-})
+}
 
-gulp.task('js', function() {
+function js() {
 	return gulp
 		.src(['components/**/*.js', '!components/**/*.config.js'])
 		.pipe(gulp.dest('./public/js'))
-})
+}
 
-gulp.task('svg', function() {
+function svg() {
 	const cwd = process.cwd()
 	const all = {}
 
@@ -74,14 +73,24 @@ gulp.task('svg', function() {
 		.on('end', () => {
 			fs.writeJson('./icons.json', all)
 		})
-})
+}
+
+// A task to import base variables first, then from within our import file, fetch component styles and add them to a concatenated output file
+gulp.task('styles', styles)
+
+gulp.task('styles-minify', stylesMinify)
+
+gulp.task('js', js)
+
+gulp.task('svg', svg)
 
 // Watcher
 gulp.task('watch', function() {
 	// Don't watch our import file for changes, watch the underlying partials for changes. If changes, run styles task to re-compile
 	gulp.watch(
 		['stylesheets/**/*.scss', 'components/**/*.scss', 'components/**/*.js'],
-		['styles', 'styles-minify', 'js']
+		// ['styles', 'styles-minify', 'js']
+		gulp.series(styles, stylesMinify, js)
 	)
 })
 

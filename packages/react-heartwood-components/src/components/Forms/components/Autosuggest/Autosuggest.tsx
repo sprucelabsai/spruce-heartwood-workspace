@@ -24,6 +24,8 @@ export interface IAutosuggestInterfaceProps {
 	/** Will be called every time suggestion is selected via mouse or keyboard. */
 	onSuggestionSelected: Function
 
+	shouldRenderSuggestions?: Function
+
 	/** Supply default suggestions that can be shown without input */
 	defaultSuggestions?: any[]
 
