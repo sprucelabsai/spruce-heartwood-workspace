@@ -34,7 +34,7 @@
 		"@babel/polyfill": "^7.0.0",
 		"@babel/register": "^7.0.0",
 		"@sprucelabs/heartwood-components": "^10.0.0",
-		"@sprucelabs/spruce-types": "9.1.1-canary.103",
+		"@sprucelabs/spruce-types": "9.1.1-canary.130",
 		"@types/react-dom": "^16.8.2",
 		"@types/react-table": "^6.8.4",
 		"axios": "^0.18.0",

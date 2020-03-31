@@ -2759,10 +2759,10 @@
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@sprucelabs/spruce-types@9.1.1-canary.103":
-  version "9.1.1-canary.103"
-  resolved "https://registry.yarnpkg.com/@sprucelabs/spruce-types/-/spruce-types-9.1.1-canary.103.tgz#937e73be5d9464d1214872d87ce7ecb6b1f2ce94"
-  integrity sha512-tw+lNfoQ9Psh2BshVVPkReMIUbDx5j4qOI/jpNg/h6qz00ZmhcTmjElKUaVzqGIG5gSCRQbyjZA+YB1q1nQmIA==
+"@sprucelabs/spruce-types@9.1.1-canary.130":
+  version "9.1.1-canary.130"
+  resolved "https://registry.yarnpkg.com/@sprucelabs/spruce-types/-/spruce-types-9.1.1-canary.130.tgz#71cb7d2fa4d62ece639bc208bfac270664a0d210"
+  integrity sha512-kxyRHezHx6So1u3nnmQ0s7kIILkl1lNZE2DqEtsbXVQGoYsjSMKjikEMllBhTZRRh7f/tuBCt8+MTfeUXpoh2A==
   dependencies:
     graphql-iso-date "^3.6.1"
     graphql-type-json "^0.3.0"
