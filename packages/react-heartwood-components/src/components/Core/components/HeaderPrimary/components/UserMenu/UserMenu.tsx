@@ -4,10 +4,10 @@ import Avatar from '../../../../../Avatar/Avatar'
 
 interface IUserMenuProps {
 	/** User image to show in the avatar */
-	image: string
+	image?: string | null
 
 	/** User name */
-	name: string
+	name?: string | null
 
 	/** Set true to show the menu */
 	menuIsVisible: boolean
@@ -40,7 +40,9 @@ const UserMenu = (props: IUserMenuProps) => {
 				ref={userMenuRef}
 			>
 				<span className="btn__inner">
-					<Avatar image={image} alt={name} width={32} height={32} />
+					{image && name && (
+						<Avatar image={image} alt={name} width={32} height={32} />
+					)}
 				</span>
 			</button>
 			<VelocityTransitionGroup

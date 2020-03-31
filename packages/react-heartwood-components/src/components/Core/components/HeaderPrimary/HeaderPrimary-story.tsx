@@ -31,6 +31,7 @@ const organization = {
 stories
 	.add('Default', () => (
 		<HeaderPrimary
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 			isSidebarVisible={boolean('isSidebarVisible', false)}
 			toggleSidebarVisibility={() => null}
@@ -40,6 +41,7 @@ stories
 	))
 	.add('Logged In', () => (
 		<HeaderPrimary
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 			user={object('user', user)}
 			isSidebarVisible={boolean('isSidebarVisible', false)}
@@ -50,6 +52,7 @@ stories
 	))
 	.add('Logged In to Organization', () => (
 		<HeaderPrimary
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 			user={object('user', user)}
 			organization={object('organization', organization)}
@@ -61,6 +64,7 @@ stories
 	))
 	.add('Logged In to location', () => (
 		<HeaderPrimary
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 			user={object('user', user)}
 			organization={object('organization', organization)}
@@ -73,6 +77,7 @@ stories
 	))
 	.add('Location, Group Manager', () => (
 		<HeaderPrimary
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 			user={object('user', user)}
 			organization={object('organization', organization)}
@@ -86,6 +91,7 @@ stories
 	))
 	.add('Location, Owner', () => (
 		<HeaderPrimary
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 			user={object('user', user)}
 			organization={object('organization', organization)}

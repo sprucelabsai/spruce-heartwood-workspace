@@ -9,7 +9,7 @@ import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 interface ILocationMenuProps {
 	isMenuVisible: boolean
 	onClick: Function
-	locationManagementHref: string
+	locationManagementHref?: string
 	locationName: string
 	locationAddress: string
 }

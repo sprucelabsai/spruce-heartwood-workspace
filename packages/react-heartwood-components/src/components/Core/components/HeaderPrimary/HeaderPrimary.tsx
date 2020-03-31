@@ -5,6 +5,7 @@ import UserMenu from './components/UserMenu/UserMenu'
 import LocationMenu from './components/LocationMenu/LocationMenu'
 import Button from '../../../Button/Button'
 import cx from 'classnames'
+import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 interface IHeaderPrimaryState {
 	isMenuExpanded: boolean
@@ -22,7 +23,7 @@ interface IHeaderPrimaryProps {
 	location?: Record<string, any>
 
 	/** Handler to set sidebar visibility to true or false */
-	toggleSidebarVisibility: Function
+	toggleSidebarVisibility: (event: React.MouseEvent) => void
 
 	/** Set true to show the sidebar (small screens only) */
 	isSidebarVisible: boolean
@@ -82,9 +83,9 @@ export default class HeaderPrimary extends Component<
 	public ref: any
 	public userMenuRef: any
 
-	public hideUserMenu = (e: React.MouseEvent | React.KeyboardEvent) => {
+	public hideUserMenu = (e: Event) => {
 		if (
-			(e as React.KeyboardEvent).key === 'Escape' ||
+			(e as KeyboardEvent).key === 'Escape' ||
 			(e.type === 'click' && !this.userMenuRef.contains(e.target)) ||
 			(e.type === 'blur' && !this.userMenuRef.contains(document.activeElement))
 		) {
@@ -97,11 +98,8 @@ export default class HeaderPrimary extends Component<
 		}
 	}
 
-	public hideLocationMenu = (e: React.MouseEvent | React.KeyboardEvent) => {
-		if (
-			(e as React.KeyboardEvent).key === 'Escape' ||
-			e.target.contains(this.ref)
-		) {
+	public hideLocationMenu = (e: Event) => {
+		if ((e as KeyboardEvent).key === 'Escape') {
 			this.setState(
 				{
 					isLocationMenuVisible: false
@@ -153,8 +151,8 @@ export default class HeaderPrimary extends Component<
 	}
 
 	public renderHeader = (
-		organization: Record<string, any>,
-		location: Record<string, any>
+		organization?: Record<string, any>,
+		location?: Record<string, any>
 	) => {
 		if (organization) {
 			if (location) {
@@ -265,7 +263,12 @@ export default class HeaderPrimary extends Component<
 						</Fragment>
 					) : (
 						<Fragment>
-							<Button kind="primary" isSmall text={loginCTA} href={loginHref} />
+							<Button
+								kind={IHWButtonKinds.Primary}
+								isSmall
+								text={loginCTA}
+								href={loginHref}
+							/>
 						</Fragment>
 					)}
 				</div>
