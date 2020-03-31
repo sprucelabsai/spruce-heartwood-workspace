@@ -6,35 +6,38 @@ import {
 	CellMeasurerCache,
 	InfiniteLoader
 } from 'react-virtualized'
-import { MessageBuilder } from '../../../Message'
+import MessageBuilder, {
+	IMessageProps,
+	IFromProps
+} from '../../../Message/Message'
 import Text from '../../../Text/Text'
+import { IButtonProps } from '../../../Button/Button'
 
-type MessageProps = {
+interface IFeedBuilderMessageProps extends IMessageProps {
 	/** Unique id for the message */
-	id: string,
-	...MessageBuilderProps
+	id: string
 }
 
 interface IFeedBuilderProps {
 	/** Messages for the feed */
-	messages?: Array<MessageProps>,
+	messages?: Array<IFeedBuilderMessageProps>
 
 	/** Text for the empty state of this feed */
-	emptyText?: string,
+	emptyText?: string
 
 	/** Callback to load rows */
-	onRowsRequested: Function,
+	onRowsRequested: Function
 
 	/** Number of messages to load at a time */
 	pageSize?: number
 }
 
 interface IFeedBuilderState {
-	rows: Array<MessageProps>,
+	rows: Array<IFeedBuilderMessageProps>
 	groups: Record<string, any>
-	rowCount: number,
-	scrollToIndex: number,
-	isLoading: boolean,
+	rowCount: number
+	scrollToIndex: number
+	isLoading: boolean
 	allLoaded: boolean
 }
 
@@ -42,10 +45,23 @@ interface IFeedBuilderState {
 // should include an image
 const compareDiff = 30
 
-const formatMessages = (messages: Array<MessageProps>) => {
-	const formattedMessages = []
+export interface IFormattedMessage {
+	id: string
+	children: React.ReactNode
+	from: IFromProps
+	dateSent?: any
+	replies?: any
+	attachments?: any
+	detail?: string | undefined
+	primaryAction?: IButtonProps | undefined
+	className?: string | undefined
+	isFromSprucebot?: boolean | undefined
+}
+
+const formatMessages = (messages: Array<IFeedBuilderMessageProps>) => {
+	const formattedMessages: IFormattedMessage[] = []
 	messages.forEach((message, idx) => {
-		let formattedMessage = { ...message }
+		const formattedMessage = { ...message }
 		// Check if messages are from the same source
 		if (
 			idx + 1 < messages.length &&
@@ -70,7 +86,7 @@ const formatMessages = (messages: Array<MessageProps>) => {
 	return formattedMessages
 }
 
-const groupMessages = (messages: Array<MessageProps>) => {
+const groupMessages = (messages: Array<IFeedBuilderMessageProps>) => {
 	const groupedMessages = []
 	const groups = {}
 
@@ -112,12 +128,20 @@ const groupMessages = (messages: Array<MessageProps>) => {
 	return groups
 }
 
-export default class FeedBuilder extends Component<IFeedBuilderProps, IFeedBuilderState> {
-	list: any
-	cache = new CellMeasurerCache({
+export default class FeedBuilder extends Component<
+	IFeedBuilderProps,
+	IFeedBuilderState
+> {
+	public static defaultProps = {
+		messages: [],
+		emptyText: 'No messages',
+		pageSize: 50
+	}
+	public list: any
+	public cache = new CellMeasurerCache({
 		fixedWidth: true
 	})
-	state = {
+	public state = {
 		rows: [],
 		groups: {},
 		rowCount: 0,
@@ -126,13 +150,10 @@ export default class FeedBuilder extends Component<IFeedBuilderProps, IFeedBuild
 		allLoaded: false
 	}
 
-	static defaultProps = {
-		messages: [],
-		emptyText: 'No messages',
-		pageSize: 50
-	}
-
-	static getDerivedStateFromProps(props: IFeedBuilderProps, state: IFeedBuilderState) {
+	public static getDerivedStateFromProps(
+		props: IFeedBuilderProps,
+		state: IFeedBuilderState
+	) {
 		const { messages } = props
 		const { rowCount } = state
 		const formattedMessages = formatMessages(messages)
@@ -158,7 +179,7 @@ export default class FeedBuilder extends Component<IFeedBuilderProps, IFeedBuild
 		}
 	}
 
-	onResize = () => {
+	public onResize = () => {
 		if (this.list && this.cache) {
 			this.cache.clearAll()
 			this.list.recomputeRowHeights(0)
@@ -166,11 +187,11 @@ export default class FeedBuilder extends Component<IFeedBuilderProps, IFeedBuild
 		}
 	}
 
-	isRowLoaded = ({ index }) => {
+	public isRowLoaded = ({ index }) => {
 		return index > 0
 	}
 
-	loadMoreRows = () => {
+	public loadMoreRows = () => {
 		const { onRowsRequested } = this.props
 		const { isLoading, allLoaded } = this.state
 		// Do API Stuff™
@@ -191,7 +212,7 @@ export default class FeedBuilder extends Component<IFeedBuilderProps, IFeedBuild
 		return new Promise(resolve => resolve)
 	}
 
-	renderRow = ({ index, key, parent, style, isScrolling }) => {
+	public renderRow = ({ index, key, parent, style, isScrolling }) => {
 		const { rows, groups } = this.state
 		const groupMatch = groups[index]
 
@@ -219,7 +240,7 @@ export default class FeedBuilder extends Component<IFeedBuilderProps, IFeedBuild
 		)
 	}
 
-	render() {
+	public render() {
 		const { pageSize } = this.props
 		const { rowCount } = this.state
 		return (

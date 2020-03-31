@@ -8,12 +8,12 @@ import Icon from '../Icon/Icon'
 
 import { IButtonProps } from '../Button/Button'
 
-type FromProps = {
+export interface IFromProps {
 	/** Unique id of the sender */
 	id: string
 
 	/** Image associated with message sender */
-	image?: string
+	image?: string | null
 
 	/** Name associated with message sender */
 	name?: string
@@ -22,12 +22,12 @@ type FromProps = {
 	alt?: string
 }
 
-interface IMessageProps {
+export interface IMessageProps {
 	/** Message children. */
 	children: React.ReactNode
 
 	/** Information about the sender */
-	from: FromProps
+	from: IFromProps
 
 	/** Date the message was sent */
 	dateSent?: moment
