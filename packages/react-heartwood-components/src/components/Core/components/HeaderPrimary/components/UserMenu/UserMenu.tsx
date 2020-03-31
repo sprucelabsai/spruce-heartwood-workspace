@@ -13,10 +13,10 @@ interface IUserMenuProps {
 	menuIsVisible: boolean
 
 	/** Handler to toggle menu visibility */
-	toggleMenu: Function
+	toggleMenu: (event: React.MouseEvent) => void
 
 	/** Menu children (<ListItem> or <li>) */
-	userMenuItems: ReactNode
+	userMenuItems: React.ReactNode
 
 	/** Optional ref used to access UserMenu element */
 	userMenuRef?: any

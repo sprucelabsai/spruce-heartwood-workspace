@@ -1,6 +1,7 @@
 import {
 	IHWButtonTypes,
-	IHWCardBuilderBodyItemType
+	IHWCardBuilderBodyItemType,
+	IHWHeadingWeight
 } from '@sprucelabs/spruce-types'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
@@ -306,7 +307,10 @@ stories
 					alt="Rosamund Mueleer"
 				/>
 				<TextContainer spacing="tight">
-					<Subheading className="card-header__title" element="h3">
+					<Subheading
+						className="card-header__title"
+						element={IHWHeadingWeight.H3}
+					>
 						{`Say "Happy Birthday"`}
 					</Subheading>
 					<Text>

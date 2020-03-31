@@ -14,7 +14,33 @@ export type ISubheadingProps = {
 }
 
 const Subheading = (props: ISubheadingProps) => {
-	const { children, className, element: Element } = props
+	const { children, className, element } = props
+	let Element
+	switch (element) {
+		case IHWHeadingWeight.H1:
+			Element = <h1 />
+			break
+		case IHWHeadingWeight.H2:
+			Element = <h2 />
+			break
+		case IHWHeadingWeight.H3:
+			Element = <h3 />
+			break
+		case IHWHeadingWeight.H4:
+			Element = <h4 />
+			break
+		case IHWHeadingWeight.H5:
+			Element = <h5 />
+			break
+		case IHWHeadingWeight.H6:
+			Element = <h6 />
+			break
+		case IHWHeadingWeight.P:
+		default:
+			Element = <p />
+			break
+	}
+
 	if (typeof children === 'string') {
 		return (
 			<Element

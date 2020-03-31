@@ -47,7 +47,7 @@ export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	payload?: Record<string, any>
 
 	/** Whether the button should be disabled */
-	isDisabled?: boolean
+	isDisabled?: boolean | null
 
 	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
@@ -55,7 +55,7 @@ export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 
 export type Action = IButtonProps | IHWButton
 
-const Button = (props: IButtonProps | IHWButton): React.ReactElement => {
+const Button = (props: IButtonProps): React.ReactElement => {
 	const reactHeartwoodProps = props as IButtonProps
 
 	const {

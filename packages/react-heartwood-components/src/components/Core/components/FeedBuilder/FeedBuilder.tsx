@@ -86,8 +86,11 @@ const formatMessages = (messages: Array<IFeedBuilderMessageProps>) => {
 	return formattedMessages
 }
 
-const groupMessages = (messages: Array<IFeedBuilderMessageProps>) => {
-	const groupedMessages = []
+const groupMessages = (messages: IFeedBuilderMessageProps[]) => {
+	const groupedMessages: {
+		name: string
+		messages: number[]
+	}[] = []
 	const groups = {}
 
 	messages.forEach((message, idx) => {
@@ -150,11 +153,13 @@ export default class FeedBuilder extends Component<
 		allLoaded: false
 	}
 
+	private infiniteLoader?: React.RefObject<HTMLDivElement>
+
 	public static getDerivedStateFromProps(
 		props: IFeedBuilderProps,
 		state: IFeedBuilderState
 	) {
-		const { messages } = props
+		const { messages = [] } = props
 		const { rowCount } = state
 		const formattedMessages = formatMessages(messages)
 		const reversedMessages = [...formattedMessages].reverse()
@@ -241,7 +246,7 @@ export default class FeedBuilder extends Component<
 	}
 
 	public render() {
-		const { pageSize } = this.props
+		const { pageSize = FeedBuilder.defaultProps.pageSize } = this.props
 		const { rowCount } = this.state
 		return (
 			<div className="message-feed__wrapper">

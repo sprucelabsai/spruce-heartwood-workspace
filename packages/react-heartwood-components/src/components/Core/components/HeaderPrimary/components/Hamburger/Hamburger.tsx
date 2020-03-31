@@ -7,7 +7,7 @@ interface IHamburgerProps {
 	isSidebarVisible: boolean
 
 	/** Click handler to toggle sidebar visibility */
-	onClick: Function
+	onClick: (event: React.MouseEvent) => void
 }
 
 const Hamburger = (props: IHamburgerProps) => {

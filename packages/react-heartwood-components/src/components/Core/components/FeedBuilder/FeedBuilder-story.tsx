@@ -10,7 +10,9 @@ const stories = storiesOf('Feed Builder', module)
 
 stories.addDecorator(ProvideStyles)
 
-interface IFeedBuilderExampleProps {}
+interface IFeedBuilderExampleProps {
+	STORYBOOKdoNotWrap?: boolean
+}
 interface IFeedBuilderExampleState {
 	messages: Record<string, any>[]
 }
@@ -48,7 +50,6 @@ class FeedBuilderExample extends Component<
 		return (
 			<FeedBuilder
 				messages={messages}
-				messageCount={500}
 				onRowsRequested={this.onRowsRequested}
 				pageSize={50}
 			/>
