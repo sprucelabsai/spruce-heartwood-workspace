@@ -37,7 +37,7 @@ const LayoutSpacing = (props: ILayoutSpacingProps) => {
 				// Note: We have to cast this since ILayoutBuilderProps
 				// enforces typematching. All that interface is, is a stricter
 				// version of IHWLayoutBuilder.
-				<LayoutBuilder {...layoutBuilder as ILayoutBuilderProps} />
+				<LayoutBuilder {...(layoutBuilder as ILayoutBuilderProps)} />
 			)}
 		</div>
 	)

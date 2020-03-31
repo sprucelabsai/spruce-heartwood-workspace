@@ -82,9 +82,9 @@ export default class HeaderPrimary extends Component<
 	public ref: any
 	public userMenuRef: any
 
-	public hideUserMenu = (e: React.MouseEvent) => {
+	public hideUserMenu = (e: React.MouseEvent | React.KeyboardEvent) => {
 		if (
-			e.key === 'Escape' ||
+			(e as React.KeyboardEvent).key === 'Escape' ||
 			(e.type === 'click' && !this.userMenuRef.contains(e.target)) ||
 			(e.type === 'blur' && !this.userMenuRef.contains(document.activeElement))
 		) {
@@ -97,8 +97,11 @@ export default class HeaderPrimary extends Component<
 		}
 	}
 
-	public hideLocationMenu = (e: Event) => {
-		if (e.key === 'Escape' || e.target.contains(this.ref)) {
+	public hideLocationMenu = (e: React.MouseEvent | React.KeyboardEvent) => {
+		if (
+			(e as React.KeyboardEvent).key === 'Escape' ||
+			e.target.contains(this.ref)
+		) {
 			this.setState(
 				{
 					isLocationMenuVisible: false

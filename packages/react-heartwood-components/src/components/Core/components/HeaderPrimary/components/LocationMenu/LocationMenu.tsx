@@ -4,6 +4,7 @@ import { VelocityTransitionGroup } from 'velocity-react'
 import Button from '../../../../../Button/Button'
 import Card from '../../../../../Card/Card'
 import List from '../../../../../List/List'
+import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 interface ILocationMenuProps {
 	isMenuVisible: boolean
@@ -124,7 +125,7 @@ export default class LocationMenu extends Component<
 										]}
 									/>
 									<Button
-										kind="simple"
+										kind={IHWButtonKinds.Simple}
 										className="header-primary__location-management-btn"
 										text="Manage locations"
 										href={locationManagementHref}

@@ -3,13 +3,13 @@ import cx from 'classnames'
 
 export interface ILayoutSectionProps {
 	/** Contents of the Layout Section */
-	children: React.ReactNode
+	children?: React.ReactNode | null
 
 	/** Class name for the section */
-	className?: string
+	className?: string | null
 
 	/** Whether this is a secondary Layout Section */
-	isSecondary: boolean
+	isSecondary?: boolean | null
 }
 
 const LayoutSection = (props: ILayoutSectionProps) => {
