@@ -32,7 +32,7 @@ class RecordListItemsExample extends Component<
 	RSLExampleProps,
 	RSLExampleState
 > {
-	constructor(props) {
+	public constructor(props) {
 		super(props)
 
 		let selectedIds = props.locations.map(loc => loc.node.id)
@@ -52,7 +52,7 @@ class RecordListItemsExample extends Component<
 		this.state = { selectedIds, locations: props.locations, unselectableIds }
 	}
 
-	render() {
+	public render() {
 		const {
 			canSearch = true,
 			canSelect,
@@ -172,9 +172,9 @@ stories.add('In a Card', () => (
 ))
 
 class ExternalStateExample extends React.Component {
-	state = { searchValue: '' }
+	public state = { searchValue: '' }
 
-	render() {
+	public render() {
 		const { searchValue } = this.state
 
 		return (
@@ -269,16 +269,16 @@ stories.add('Empty State', () => (
 	</div>
 ))
 
-interface RecordSelectionListSearchExampleProps {
+interface IRecordSelectionListSearchExampleProps {
 	locations: Array<Record<string, any>>
 }
-interface RecordSelectionListSearchExampleState {}
+interface IRecordSelectionListSearchExampleState {}
 
 class RecordSelectionListSearchExample extends Component<
-	RecordSelectionListSearchExampleProps,
-	RecordSelectionListSearchExampleState
+	IRecordSelectionListSearchExampleProps,
+	IRecordSelectionListSearchExampleState
 > {
-	render() {
+	public render() {
 		const { locations } = this.props
 
 		return (
@@ -296,7 +296,7 @@ class RecordSelectionListSearchExample extends Component<
 						}, Math.random() * 1000)
 					)
 
-					let results = []
+					let results: Record<string, any>[] = []
 
 					if (search) {
 						const filteredLocations = locations.filter(location => {

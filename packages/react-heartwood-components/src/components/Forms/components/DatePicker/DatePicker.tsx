@@ -30,16 +30,16 @@ export default class DatePicker extends Component<
 	IDatePickerProps,
 	IDatePickerState
 > {
-	datePickerRef: any
-
-	static defaultProps = {
+	public static defaultProps = {
 		kind: 'singleDate',
 		initialStartDate: null,
 		initialEndDate: null,
 		daySize: 40
 	}
 
-	constructor(props) {
+	public datePickerRef: any
+
+	public constructor(props) {
 		super(props)
 		this.state = {
 			isFocused: true,
@@ -52,26 +52,26 @@ export default class DatePicker extends Component<
 		this.datePickerRef = React.createRef()
 	}
 
-	componentWillReceiveProps(nextProps) {
+	public componentWillReceiveProps(nextProps) {
 		if (this.props.date !== nextProps.date) {
 			this.setState({ date: nextProps.date })
 		}
 	}
 
-	toggleFocus = () => {
+	public toggleFocus = () => {
 		this.setState(prevState => ({
 			isFocused: !prevState.isFocused
 		}))
 	}
 
-	handleFocusChange = focusedInput => {
+	public handleFocusChange = focusedInput => {
 		this.setState({
 			// Force the focusedInput to always be truthy so that dates are always selectable
 			focusedInput: !focusedInput ? 'startDate' : focusedInput
 		})
 	}
 
-	handleDateChange = async (date: any) => {
+	public handleDateChange = async (date: any) => {
 		this.datePickerRef.current.setState({ currentMonth: date })
 
 		this.setState({
@@ -82,7 +82,7 @@ export default class DatePicker extends Component<
 		}
 	}
 
-	handleDatesChange = async ({ startDate, endDate }) => {
+	public handleDatesChange = async ({ startDate, endDate }) => {
 		this.setState({
 			startDate,
 			endDate
@@ -93,7 +93,7 @@ export default class DatePicker extends Component<
 		}
 	}
 
-	render() {
+	public render() {
 		const { isFocused, focusedInput, date, startDate, endDate } = this.state
 		const { kind, ...rest } = this.props
 
