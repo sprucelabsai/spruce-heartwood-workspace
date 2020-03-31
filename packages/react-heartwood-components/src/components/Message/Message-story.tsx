@@ -1,6 +1,6 @@
 // @flow
 import {
-	// withKnobsOptions,
+	// WithKnobsOptions,
 	object,
 	withKnobs
 } from '@storybook/addon-knobs/react'
@@ -90,7 +90,7 @@ const messageJSON = {
 
 const stories = storiesOf('Message', module)
 
-// stories.addDecorator(
+// Stories.addDecorator(
 // 	withKnobsOptions({
 // 		escapeHTML: false
 // 	})

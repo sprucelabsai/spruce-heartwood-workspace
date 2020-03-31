@@ -4,28 +4,28 @@ import { withKnobs, boolean } from '@storybook/addon-knobs/react'
 import PagedModal from './PagedModal'
 import { TextInput, FormLayout, FormLayoutItem } from '../Forms'
 
-interface PageModalExampleProps {}
+interface IPageModalExampleProps {}
 
-interface PageMoodalExampleState {
+interface IPageMoodalExampleState {
 	currentPageIndex: number
 }
 
 class PageModalExample extends Component<
-	PageModalExampleProps,
-	PageMoodalExampleState
+	IPageModalExampleProps,
+	IPageMoodalExampleState
 > {
-	state = {
+	public state = {
 		currentPageIndex: 0
 	}
 
-	handleBack = () => {
+	public handleBack = () => {
 		this.setState(prevState => ({
 			currentPageIndex:
 				prevState.currentPageIndex > 0 ? prevState.currentPageIndex - 1 : 0
 		}))
 	}
 
-	render() {
+	public render() {
 		const { currentPageIndex } = this.state
 
 		return (

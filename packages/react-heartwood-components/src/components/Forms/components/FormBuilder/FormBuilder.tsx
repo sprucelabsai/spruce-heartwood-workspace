@@ -8,45 +8,46 @@ import LayoutSection from '../../../Layout/components/LayoutSection/LayoutSectio
 import { SaveBar } from '../../../Core'
 import Modal from '../../../Modal/Modal'
 
-import type { FormInnerFieldProps } from './components/FormInner/FormInner'
-import type { FormLayoutProps } from '../FormLayout/FormLayout'
-import type { Props as ButtonProps } from '../../../Button/Button'
+import { IFormInnerFieldProps } from './components/FormInner/FormInner'
+import { IFormLayoutProps } from '../FormLayout/FormLayout'
+import { IButtonProps } from '../../../Button/Button'
+import { IHWButtonTypes } from '@sprucelabs/spruce-types'
 
 type SectionProps = {
 	/** Unique id for the section */
-	id: string,
+	id: string
 
 	/** Optional title to show at the top of the card */
-	title?: string,
+	title?: string
 
 	/** Fields for this card */
-	fields: Array<FormInnerFieldProps & { currentValue: any }>
+	fields: Array<IFormInnerFieldProps & { currentValue: any }>
 }
 
 type Props = {
 	/** Determines how the form should be build. Default builds a simple form */
-	kind?: 'default' | 'page' | 'modal',
+	kind?: 'default' | 'page' | 'modal'
 
 	/** Initial values to be passed into the form */
-	initialValues: Object,
+	initialValues: Record<string, any>
 
 	/** Submit handler */
-	onSubmit: Function,
+	onSubmit: Function
 
 	/** Use sections when the form to be built is a full page */
-	sections: Array<SectionProps>,
+	sections: Array<SectionProps>
 
 	/** Form layout props */
-	formLayout: FormLayoutProps,
+	formLayout: IFormLayoutProps
 
 	/** Validation handler. This isn't needed when the form is made of toggles only. */
-	validate?: Function,
+	validate?: Function
 
 	/** Optional when rendering a primary cta in the form */
-	primaryCTA?: ButtonProps,
+	primaryCTA?: IButtonProps
 
 	/** Optional when using a secondary cta in the form */
-	secondaryCTA?: ButtonProps
+	secondaryCTA?: IButtonProps
 }
 
 const FormBuilder = (props: Props) => {
@@ -112,11 +113,7 @@ const FormBuilder = (props: Props) => {
 									isDiscardDisabled={isSubmitting}
 								/>
 								{/* NOTE: The form won't submit on enter key pressed without this hidden button */}
-								<button
-									type="submit"
-									text="submit"
-									style={{ display: 'none' }}
-								/>
+								<button type="submit" style={{ display: 'none' }} />
 							</Layout>
 						)}
 						{kind === 'default' &&
@@ -150,13 +147,13 @@ const FormBuilder = (props: Props) => {
 									<Modal.Footer
 										primaryAction={{
 											...primaryCTA,
-											type: 'submit',
-											disabled: !isValid || isSubmitting,
+											type: IHWButtonTypes.Submit,
+											isDisabled: !isValid || isSubmitting,
 											isLoading: isSubmitting
 										}}
 										secondaryAction={{
 											...secondaryCTA,
-											disabled: isSubmitting
+											isDisabled: isSubmitting
 										}}
 									/>
 								)}

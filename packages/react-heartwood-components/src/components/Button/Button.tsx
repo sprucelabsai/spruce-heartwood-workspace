@@ -46,6 +46,9 @@ export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	/** Optional payload to be sent with onclick (different than the payload attached to action.) */
 	payload?: Record<string, any>
 
+	/** Whether the button should be disabled */
+	isDisabled?: boolean
+
 	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }

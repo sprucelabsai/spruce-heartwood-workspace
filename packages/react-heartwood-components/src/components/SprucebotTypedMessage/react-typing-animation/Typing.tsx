@@ -10,17 +10,17 @@ import Speed from './Speed'
 import Cursor from './Cursor'
 
 class Typing extends Component {
-	state = {
+	public state = {
 		isFinished: false,
 		text: []
 	}
 
-	hasMounted = false
-	isPaused = true
-	/** was play hit too soon */
-	pendingPlay = false
+	public hasMounted = false
+	public isPaused = true
+	/** Was play hit too soon */
+	public pendingPlay = false
 
-	componentDidMount() {
+	public componentDidMount() {
 		this.hasMounted = true
 		this.resetState().then(async () => {
 			if (this.props.beginTypingOnMount || this.pendingPlay) {
@@ -29,11 +29,11 @@ class Typing extends Component {
 		})
 	}
 
-	componentWillUnmount() {
+	public componentWillUnmount() {
 		this.hasMounted = false
 	}
 
-	updateState = async state => {
+	public updateState = async state => {
 		if (!this.hasMounted) {
 			return
 		}
@@ -42,7 +42,7 @@ class Typing extends Component {
 		})
 	}
 
-	play = async () => {
+	public play = async () => {
 		if (!this.hasMounted) {
 			this.pendingPlay = true
 			return
@@ -55,25 +55,25 @@ class Typing extends Component {
 		}
 	}
 
-	pause = () => {
+	public pause = () => {
 		if (!this.isPaused) {
 			this.isPaused = true
 			this.props.onPausedTyping()
 		}
 	}
 
-	addToTypingQueue = async lines => {
+	public addToTypingQueue = async lines => {
 		const { toType } = this.state
 		const newToType = [...toType, ...lines]
 		return this.updateState({ toType: newToType, isFinished: false })
 	}
 
-	reset = async () => {
+	public reset = async () => {
 		const wasPaused = this.isPaused
 
 		const { text } = this.state
 
-		// nothing to reset
+		// Nothing to reset
 		if (text.length === 0) {
 			return
 		}
@@ -81,7 +81,7 @@ class Typing extends Component {
 		this.isPaused = true
 		await this.updateState({ text: [] })
 
-		// give pause time to hit if a timeout as pending
+		// Give pause time to hit if a timeout as pending
 		return new Promise(resolve => {
 			setTimeout(async () => {
 				await this.resetState()
@@ -93,7 +93,7 @@ class Typing extends Component {
 		})
 	}
 
-	resetState = async () =>
+	public resetState = async () =>
 		this.updateState({
 			toType: extractText(this.props.children),
 			cursor: {
@@ -107,7 +107,7 @@ class Typing extends Component {
 			}
 		})
 
-	beginTyping = async () => {
+	public beginTyping = async () => {
 		if (this.isPaused) {
 			return
 		}
@@ -123,7 +123,7 @@ class Typing extends Component {
 			if (this.props.loop) {
 				await this.resetState()
 			} else {
-				// pause when done
+				// Pause when done
 				this.isPaused = true
 				return this.updateState({ isFinished: true })
 			}
@@ -134,7 +134,7 @@ class Typing extends Component {
 		}
 	}
 
-	type = async () => {
+	public type = async () => {
 		const toType = [...this.state.toType]
 		let cursor = { ...this.state.cursor }
 
@@ -154,7 +154,7 @@ class Typing extends Component {
 		return this.animateNextStep()
 	}
 
-	animateNextStep = async () => {
+	public animateNextStep = async () => {
 		if (this.isPaused) {
 			return
 		}
@@ -182,7 +182,7 @@ class Typing extends Component {
 		})
 	}
 
-	typeCharacter = async () => {
+	public typeCharacter = async () => {
 		if (this.isPaused) {
 			return
 		}
@@ -210,7 +210,7 @@ class Typing extends Component {
 		})
 	}
 
-	erase = async () => {
+	public erase = async () => {
 		if (this.isPaused) {
 			return
 		}
@@ -264,7 +264,7 @@ class Typing extends Component {
 		})
 	}
 
-	render() {
+	public render() {
 		const { children, className, cursorClassName, hideCursor } = this.props
 
 		const { text, isFinished } = this.state

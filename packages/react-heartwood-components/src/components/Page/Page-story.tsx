@@ -7,7 +7,7 @@ import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
 import Page from './index'
 
-// import README from './README.md'
+// Import README from './README.md'
 
 const buttonKinds = {
 	Primary: 'primary',
