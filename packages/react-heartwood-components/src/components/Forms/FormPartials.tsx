@@ -33,7 +33,7 @@ export const InputInner = (props: IInputInnerProps) => {
 	return (
 		<div className="text-input__inner">
 			{iconBefore && (
-				<Icon icon={iconBefore} className={'text-input__icon-pre'} />
+				<Icon name={iconBefore} className={'text-input__icon-pre'} />
 			)}
 			{kind === 'credit-card' && <p>CC</p>}
 			<input className="text-input__input" {...rest} />

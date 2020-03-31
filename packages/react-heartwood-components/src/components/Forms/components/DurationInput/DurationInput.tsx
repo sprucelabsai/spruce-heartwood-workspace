@@ -41,6 +41,8 @@ interface IDurationInputProps
 
 	/** A slighly different onChange */
 	onChange?: (durationInMinutes: number | null, e: KeyboardEvent) => {}
+
+	onBlur?: (e: KeyboardEvent) => {}
 }
 
 interface IDurationInputState {
@@ -178,12 +180,12 @@ export default class DurationInput extends Component<
 	public handleBlur = e => {
 		const { onBlur, onChange, required } = this.props
 
+		const value = e.target.value
 		if (!required && (!value || value.length === 0)) {
 			this.setState({ value: '', validationError: null })
 			onChange && onChange(null, e)
 		}
 
-		const value = e.target.value
 		const matches = this.searchSuggestions(value)
 
 		if (value.length > 0 && matches.length > 0) {

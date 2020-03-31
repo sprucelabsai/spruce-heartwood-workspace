@@ -23,6 +23,9 @@ interface IPageProps {
 
 	/** Set true if the page has a sidebar that is collapsed. Defaults to false. */
 	sidebarIsCollapsed?: boolean
+
+	/** Page sidebar */
+	sidebar?: React.ReactNode
 }
 
 export const Page = (props: IPageProps) => {
