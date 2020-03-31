@@ -1,7 +1,6 @@
 import React from 'react'
 
-// eslint-disable-next-line no-unused-vars
-const Backspace = props => <noscript />
+const Backspace = () => <noscript />
 
 Backspace.updateCursor = (cursor, { speed, count, delay }) => {
 	return {

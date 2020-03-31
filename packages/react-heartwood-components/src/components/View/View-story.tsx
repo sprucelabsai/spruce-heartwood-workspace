@@ -126,8 +126,8 @@ const skillViewTabs = [
 	}
 ]
 
-interface SkillViewProps {}
-interface SkillViewState {
+interface ISkillViewProps {}
+interface ISkillViewState {
 	sidebarsExpanded: Record<string, any>
 	sidebarsMobileExpanded: Record<string, any>
 }
@@ -140,7 +140,7 @@ const generateTonsOfContent = () => (
 	</TextContainer>
 )
 
-class SkillViewExample extends Component<SkillViewProps, SkillViewState> {
+class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 	public state = {
 		sidebarsExpanded: {
 			right: true,

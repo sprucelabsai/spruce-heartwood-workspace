@@ -55,20 +55,20 @@ const columns = [
 ]
 
 type State = {
-	locations: Array<Object>
+	locations: Array<Record<string, any>>
 }
 
 type Props = {}
 
 class ExpandableEditableTable extends React.Component<Props, State> {
-	constructor(props) {
+	public constructor(props) {
 		super(props)
 		this.state = {
 			locations: generateLocations({ amount: 149 })
 		}
 	}
 
-	handleChangeHours = (e, location, dayId) => {
+	public handleChangeHours = (e, location, dayId) => {
 		const { locations } = this.state
 
 		locations.forEach(l => {
@@ -90,8 +90,8 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		this.setState({ locations })
 	}
 
-	handleValidation = async (location: Object, dayId) => {
-		let errors = {}
+	public handleValidation = async (location: Record<string, any>, dayId) => {
+		const errors = {}
 
 		const { locations } = this.state
 
@@ -108,7 +108,11 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		return errors
 	}
 
-	handleSaveHours = async (location: Object, dayId, values) => {
+	public handleSaveHours = async (
+		location: Record<string, any>,
+		dayId,
+		values
+	) => {
 		const { locations } = this.state
 
 		const updatedLocation = locations.find(l => l.id === location.id)
@@ -123,7 +127,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		}
 	}
 
-	renderStoreScheduleForRow = (row: Object) => {
+	public renderStoreScheduleForRow = (row: Record<string, any>) => {
 		const location = this.state.locations[row.index]
 		const schedule = location && location.schedule
 		return schedule ? (
@@ -159,7 +163,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 									validate={values =>
 										this.handleValidation(location, row.original.id, values)
 									}
-									render={(formikProps: Object) => {
+									render={(formikProps: Record<string, any>) => {
 										const { handleChange, values } = formikProps
 
 										return (
@@ -206,7 +210,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 		) : null
 	}
 
-	render() {
+	public render() {
 		const { locations } = this.state
 
 		return (

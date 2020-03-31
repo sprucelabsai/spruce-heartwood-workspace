@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// eslint-disable-next-line no-unused-vars
-const Delay = props => <noscript />
+const Delay = () => <noscript />
 
 Delay.updateCursor = (cursor, { ms }) => {
 	return {

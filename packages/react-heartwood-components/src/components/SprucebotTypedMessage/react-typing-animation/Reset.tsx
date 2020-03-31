@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// eslint-disable-next-line no-unused-vars
-const Reset = props => <noscript />
+const Reset = () => <noscript />
 
 Reset.updateCursor = (cursor, { count, delay, speed }) => {
 	return {
