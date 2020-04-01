@@ -1,19 +1,20 @@
+// @flow
 import React from 'react'
 import Button from '../../../../../Button/Button'
 import ToggleCollapseIcon from '../../../../../../../static/assets/icons/ic_keyboard_arrow_right.svg'
 
-interface ISidebarExpanderProps {
+type Props = {
 	/** Set true to expand the sidebar */
-	isExpanded?: boolean
+	isExpanded: boolean,
 
 	/** Handler to toggle sidebar visibility (large screens only) */
-	toggleExpanded?: () => void
+	toggleExpanded: Function,
 
 	/** Handler to force the sidebar closed */
-	forceCloseSidebar?: () => void
+	forceCloseSidebar: Function
 }
 
-const SidebarExpander = (props: ISidebarExpanderProps) => {
+const SidebarExpander = (props: Props) => {
 	const { toggleExpanded, forceCloseSidebar } = props
 	return (
 		<div className="sidebar-collapse">
@@ -22,8 +23,8 @@ const SidebarExpander = (props: ISidebarExpanderProps) => {
 					customIcon: ToggleCollapseIcon
 				}}
 				onClick={() => {
-					toggleExpanded && toggleExpanded()
-					forceCloseSidebar && forceCloseSidebar()
+					toggleExpanded()
+					forceCloseSidebar()
 				}}
 				isSmall
 			/>

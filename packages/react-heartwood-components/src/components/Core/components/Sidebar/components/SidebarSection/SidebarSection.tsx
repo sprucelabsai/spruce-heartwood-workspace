@@ -1,23 +1,14 @@
-import React from 'react'
+import { IHWSidebarSection, IHWSidebarSpacing } from '@sprucelabs/spruce-types'
 import cx from 'classnames'
+import React, { ReactNode } from 'react'
+import {
+	ILayoutBuilderProps,
+	LayoutBuilder
+} from '../../../../../LayoutBuilder/LayoutBuilder'
 
-interface ISidebarSectionProps {
+interface ISidebarSectionProps extends IHWSidebarSection {
 	/** Children to show in the sidebar section */
-	children: React.ReactNode
-
-	/** Optional classname to add to the section */
-	className?: string
-
-	/** Set true to center align horizontally */
-	isCentered?: boolean
-
-	isOnlyForMobile?: boolean
-
-	/** Horizontal Spacing options */
-	horizontalSpacing?: 'base' | 'loose'
-
-	/** Vertical Spacing options */
-	verticalSpacing?: 'base' | 'loose'
+	children?: ReactNode
 }
 
 const SidebarSection = (props: ISidebarSectionProps) => {
@@ -27,18 +18,27 @@ const SidebarSection = (props: ISidebarSectionProps) => {
 		isCentered,
 		isOnlyForMobile,
 		horizontalSpacing,
-		verticalSpacing
+		verticalSpacing,
+		layoutBuilder
 	} = props
 	return (
 		<div
 			className={cx('sidebar-section', className, {
 				'sidebar-section--show-only-on-mobile': isOnlyForMobile,
 				'sidebar-section--centered': isCentered,
-				'sidebar-section--horizontal-loose': horizontalSpacing === 'loose',
-				'sidebar-section--vertical-loose': verticalSpacing === 'loose'
+				'sidebar-section--horizontal-loose':
+					horizontalSpacing === IHWSidebarSpacing.Loose,
+				'sidebar-section--vertical-loose':
+					verticalSpacing === IHWSidebarSpacing.Loose
 			})}
 		>
 			{children}
+			{layoutBuilder && (
+				// Note: We have to cast this since ILayoutBuilderProps
+				// enforces typematching. All that interface is, is a stricter
+				// version of IHWLayoutBuilder.
+				<LayoutBuilder {...layoutBuilder as ILayoutBuilderProps} />
+			)}
 		</div>
 	)
 }
@@ -46,7 +46,7 @@ const SidebarSection = (props: ISidebarSectionProps) => {
 SidebarSection.defaultProps = {
 	className: '',
 	isCentered: false,
-	spacing: 'base'
+	spacing: IHWSidebarSpacing.Base
 }
 
 export default SidebarSection
