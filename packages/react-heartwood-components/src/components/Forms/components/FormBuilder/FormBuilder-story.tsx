@@ -68,9 +68,8 @@ stories
 						<Card>
 							<CardBody>
 								<FormBuilder
-									validate={values => {
-										console.log('Validate: ', { values })
-										const errors = {}
+									validate={(values: Record<string, any>) => {
+										const errors: Record<string, string> = {}
 										if (!values.publicName) {
 											errors.publicName = 'Please include a public name'
 										}
@@ -199,8 +198,8 @@ stories
 						apptReminder2: '1hr',
 						apptReminder2Buffer: '2hrs'
 					}}
-					validate={values => {
-						const errors = {}
+					validate={(values: Record<string, any>) => {
+						const errors: Record<string, string> = {}
 						if (!values.pastApptEditingCutoff) {
 							errors.pastApptEditingCutoff = 'Please include a cutoff time'
 						}
@@ -343,7 +342,7 @@ stories
 	.add('In a modal', () => (
 		<Page>
 			<PageContent>
-				<Modal isOpen isSmall>
+				<Modal isOpen size={'small'}>
 					<Modal.Header title="New location group" />
 					<FormBuilder
 						initialValues={{
@@ -366,6 +365,7 @@ stories
 						kind="modal"
 						sections={[
 							{
+								id: 'group',
 								fields: [
 									{
 										name: 'groupName',

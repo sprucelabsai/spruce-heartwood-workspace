@@ -19,6 +19,10 @@ import { IButtonProps } from '../../../../../Button/Button'
 import { IToggleProps } from '../../../Toggle/Toggle'
 import { IHWButtonTypes, IHWButtonKinds } from '@sprucelabs/spruce-types'
 
+interface IFormValues {
+	[key: string]: string
+}
+
 export interface IFormInnerFieldProps {
 	/** Unique name/id for the field */
 	name: string
@@ -32,13 +36,13 @@ export interface IFormInnerFieldProps {
 
 export interface IFormInnerProps {
 	/** Fields in this form */
-	fields: Array<IFormInnerFieldProps>
+	fields: IFormInnerFieldProps[]
 
 	/** Layout properties for the form layout */
 	formLayout: IFormLayoutProps
 
 	/** Props to pass through from Formik */
-	formikProps: FormikProps<IFormInnerFieldProps>
+	formikProps: FormikProps<IFormValues>
 
 	/** Optional when using a primary cta in the form */
 	primaryCTA?: IButtonProps
@@ -56,8 +60,9 @@ type BooleanProps = IToggleProps & {
 	value?: boolean
 	helper?: string
 	defaultValue?: boolean
+	defaultChecked?: boolean
 	onBlur: Function
-	formikProps: FormikProps<IFormInnerFieldProps>
+	formikProps: FormikProps<IFormValues>
 }
 
 class BooleanField extends React.PureComponent<BooleanProps> {
@@ -81,7 +86,7 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 			<List
 				items={[
 					{
-						title: label,
+						title: label || '',
 						subtitle: helper,
 						toggleId,
 						toggleProps

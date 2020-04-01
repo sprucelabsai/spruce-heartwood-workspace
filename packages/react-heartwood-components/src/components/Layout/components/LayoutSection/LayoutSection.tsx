@@ -2,6 +2,9 @@ import React from 'react'
 import cx from 'classnames'
 
 export interface ILayoutSectionProps {
+	/** The id for the created layout div */
+	id?: string
+
 	/** Contents of the Layout Section */
 	children?: React.ReactNode | null
 

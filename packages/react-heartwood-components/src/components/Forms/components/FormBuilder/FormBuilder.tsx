@@ -1,6 +1,6 @@
 // @flow
 import React, { Fragment } from 'react'
-import { Formik, Form } from 'formik'
+import { Formik, Form, FormikErrors, FormikActions } from 'formik'
 import FormInner from './components/FormInner/FormInner'
 import { Card, CardBody, CardHeader } from '../../../Card'
 import Layout from '../../../Layout/Layout'
@@ -21,7 +21,7 @@ type SectionProps = {
 	title?: string
 
 	/** Fields for this card */
-	fields: Array<IFormInnerFieldProps & { currentValue: any }>
+	fields: Array<IFormInnerFieldProps & { currentValue?: any }>
 }
 
 type Props = {
@@ -32,7 +32,7 @@ type Props = {
 	initialValues: Record<string, any>
 
 	/** Submit handler */
-	onSubmit: Function
+	onSubmit: (values: {}, formikActions: FormikActions<{}>) => void
 
 	/** Use sections when the form to be built is a full page */
 	sections: Array<SectionProps>
@@ -41,7 +41,7 @@ type Props = {
 	formLayout: IFormLayoutProps
 
 	/** Validation handler. This isn't needed when the form is made of toggles only. */
-	validate?: Function
+	validate?: (values: {}) => void | object | Promise<FormikErrors<{}>>
 
 	/** Optional when rendering a primary cta in the form */
 	primaryCTA?: IButtonProps

@@ -9,6 +9,7 @@ import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon, { IIconProps } from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
+import { instanceOf } from 'prop-types'
 
 export {
 	IHWButtonKinds as ButtonKinds,
@@ -35,7 +36,7 @@ export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	icon?: IIconProps | null
 
 	/** Click handler. */
-	onClick?: Function
+	onClick?: (e?: React.MouseEvent, payload?: Record<string, any>) => void
 
 	/** Component used to render anchor */
 	AnchorComponent?: any
@@ -94,8 +95,10 @@ const Button = (props: IButtonProps): React.ReactElement => {
 		'visually-hidden': isIconOnly
 	})
 
-	const handleClick = (e: any): any => {
-		e.currentTarget.blur()
+	const handleClick = (e: React.MouseEvent): any => {
+		if (e.currentTarget instanceof HTMLElement) {
+			e.currentTarget.blur()
+		}
 
 		if (onAction && action) {
 			onAction(action)

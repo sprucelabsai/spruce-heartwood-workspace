@@ -12,10 +12,10 @@ export interface IModalHeaderProps {
 	isPaginated: boolean
 
 	/** Callback to close the modal */
-	onRequestClose: Function
+	onRequestClose?: () => void
 
 	/** Function to handle navigating backwards in a modal */
-	onClickBack?: Function
+	onClickBack?: () => void
 }
 
 const ModalHeader = (props: IModalHeaderProps) => {

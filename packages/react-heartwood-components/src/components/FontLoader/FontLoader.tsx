@@ -7,9 +7,18 @@ type LoadResult = {
 	loaded: boolean
 }
 
+export interface IFont {
+	name: string
+	weight: string
+	style: string
+	link: {
+		href: string
+	}
+}
+
 interface IFontLoaderProps {
 	/** Fonts that need to be loaded */
-	fonts: Array<string>
+	fonts: IFont[]
 }
 interface IFrontLoaderState {
 	/** Results of font loading attempts */
@@ -26,7 +35,7 @@ export default class FontLoader extends Component<
 
 	public async componentDidMount() {
 		const { fonts } = this.props
-		const fontsToObserve = []
+		const fontsToObserve: Promise<void>[] = []
 
 		if (typeof document !== 'undefined') {
 			document.body.classList.add('fonts-loading')
