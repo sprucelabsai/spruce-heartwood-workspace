@@ -7,6 +7,7 @@ import DefaultIcon from '../../../static/assets/icons/Interface-Essential/Time-F
 import UploadedIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-check.svg'
 import DropIcon from '../../../static/assets/icons/Interface-Essential/Select/cursor-select-4.svg'
 import WarnIcon from '../../../static/assets/icons/Interface-Essential/Alerts/alert-triangle--56w.svg'
+import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 export interface IDropzoneProps {
 	/** Unique identifier for the dropzone */
@@ -22,25 +23,25 @@ export interface IDropzoneProps {
 	uploadProgress: number
 
 	/** OnDragEnter callback */
-	onDragEnter?: Function
+	onDragEnter?: () => void
 
 	/** OnDragLeave callback */
-	onDragLeave?: Function
+	onDragLeave?: () => void
 
 	/** OnDragOver callback */
-	onDragOver?: Function
+	onDragOver?: () => void
 
 	/** Callback when file(s) are dropped */
-	onDrop?: Function
+	onDrop?: () => void
 
 	/** OnDropAccepted callback */
-	onDropAccepted: Function
+	onDropAccepted: () => void
 
 	/** OnDropRejected callback */
-	onDropRejected?: Function
+	onDropRejected?: () => void
 
 	/** OnFileDialogCancel callback */
-	onFileDialogCancel?: Function
+	onFileDialogCancel?: () => void
 
 	/** OnDragStart callback */
 	onDragStart?: Function
@@ -156,7 +157,8 @@ export default class Dropzone extends Component<
 			defaultIcon,
 			...rest
 		} = this.props
-		const defaultClass = cx('dropzone', {
+
+		const defaultClass: string = cx('dropzone', {
 			'dropzone-small': isSmall,
 			'dropzone-circular': isCircular
 		})
@@ -165,13 +167,25 @@ export default class Dropzone extends Component<
 				{label && <InputPre id={id} label={label} postLabel={postLabel} />}
 				<ReactDropzone
 					ref={ref => (this.dropzone = ref)}
-					className={defaultClass}
-					activeClassName="dropzone--is-hovered"
-					rejectClassName="dropzone--has-error"
-					disabledClassName="dropzone--is-disabled"
+					onDragEnter={this.onDragEnter}
+					onDragLeave={this.onDragLeave}
+					onDragOver={this.onDragOver}
+					onDragStart={this.onDragStart}
+					onDrop={this.onDrop}
+					onDropAccepted={this.onDropAccepted}
+					onDropRejected={this.onDropRejected}
+					onFileDialogCancel={this.onFileDialogCancel}
+					disabled={!!uploadProgress}
+					{...rest}
 				>
-					{({ isDragAccept, isDragReject }) => (
-						<Fragment>
+					{({ getRootProps, getInputProps, isDragAccept, isDragReject }) => (
+						<div
+							{...getRootProps({
+								className: defaultClass
+							})}
+						>
+							<input {...getInputProps()} />
+
 							{!!uploadProgress && (
 								<Fragment>
 									<p className="dropzone__helper-text">Uploading…</p>
@@ -201,7 +215,9 @@ export default class Dropzone extends Component<
 								)}
 							</div>
 							<Button
-								kind={isSmall ? 'simple' : 'secondary'}
+								kind={
+									isSmall ? IHWButtonKinds.Simple : IHWButtonKinds.Secondary
+								}
 								isSmall={isSmall}
 								text={buttonText}
 								className="dropzone__btn"
@@ -222,7 +238,7 @@ export default class Dropzone extends Component<
 									)}
 								</Fragment>
 							)}
-						</Fragment>
+						</div>
 					)}
 				</ReactDropzone>
 			</Fragment>
