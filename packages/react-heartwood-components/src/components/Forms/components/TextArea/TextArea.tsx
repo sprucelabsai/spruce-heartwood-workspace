@@ -23,6 +23,12 @@ interface ITextAreaProps {
 
 	/** Set true to make the text area resizeable */
 	resizeable?: boolean
+
+	/** Text field placeholder */
+	placeholder?: string
+
+	/** The number of rows for the text area */
+	rows?: number
 }
 
 const TextArea = (props: ITextAreaProps) => {

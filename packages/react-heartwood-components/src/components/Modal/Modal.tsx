@@ -5,7 +5,7 @@ import ModalHeader from './components/ModalHeader/ModalHeader'
 import ModalBody from './components/ModalBody/ModalBody'
 import ModalFooter from './components/ModalFooter/ModalFooter'
 
-export interface IModalProps {
+export interface IModalProps extends ReactModal.Props {
 	/** Set true to show the modal */
 	isOpen: boolean
 

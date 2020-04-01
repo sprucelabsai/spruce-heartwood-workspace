@@ -13,6 +13,7 @@ import {
 } from '../Forms'
 
 import countries from '../../../.storybook/data/countries'
+import { IHWButtonTypes, IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 const renderSuggestion = (suggestion: any) => {
 	if (suggestion.isEmptyMessage) {
@@ -70,7 +71,7 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 		return (
 			<Fragment>
 				<Button
-					kind="secondary"
+					kind={IHWButtonKinds.Secondary}
 					text="Give me modal"
 					onClick={this.toggleVisibility}
 				/>
@@ -78,21 +79,28 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 					isOpen={isOpen}
 					onAfterOpen={this.onAfterOpen}
 					onRequestClose={this.onRequestClose}
-					isSmall={boolean('isSmall', true)}
+					size={boolean('isSmall', true) ? 'small' : undefined}
 				>
 					<Modal.Header
 						title={title}
 						onRequestClose={this.onRequestClose}
-						handleGoBack={canGoBack ? () => console.log('take me home') : null}
+						onClickBack={
+							canGoBack ? () => console.log('take me home') : undefined
+						}
 					/>
 					<form>
 						<Modal.Body>
 							<FormLayout>
 								<FormLayoutItem>
-									<TextInput label="Category Name" placeholder="e.g. Barber" />
+									<TextInput
+										id="category"
+										label="Category Name"
+										placeholder="e.g. Barber"
+									/>
 								</FormLayoutItem>
 								<FormLayoutItem>
 									<TextInput
+										id="teaser"
 										label="Teaser"
 										postLabel="0/64"
 										placeholder="Haircuts, shaves, and touch-ups."
@@ -101,6 +109,7 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 								</FormLayoutItem>
 								<FormLayoutItem>
 									<TextArea
+										id="description"
 										label="Description"
 										placeholder="Optional category description…"
 										helper="Add a short teaser for your guests to see when they browse your services."
@@ -121,13 +130,15 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 								primaryAction={{
 									text: 'Create Category',
 									onClick: () => console.log('Next'),
-									type: 'submit'
+									type: IHWButtonTypes.Submit
 								}}
 								secondaryAction={
-									hasSecondaryButton && {
-										text: 'Cancel',
-										onClick: () => console.log('Cancel')
-									}
+									hasSecondaryButton
+										? {
+												text: 'Cancel',
+												onClick: () => console.log('Cancel')
+										  }
+										: undefined
 								}
 							/>
 						)}
@@ -156,23 +167,30 @@ stories
 			isOpen={boolean('isOpen', true)}
 			onAfterOpen={() => console.log('onAfterOpen')}
 			onRequestClose={() => console.log('onRequestClose')}
-			isSmall={boolean('isSmall', true)}
+			size={boolean('isSmall', true) ? 'small' : undefined}
 		>
 			<Modal.Header
 				title={text('title', 'New Service Category')}
 				onRequestClose={() => console.log('onRequestClose')}
-				handleGoBack={
-					boolean('canGoBack', false) ? () => console.log('take me home') : null
+				onClickBack={
+					boolean('canGoBack', false)
+						? () => console.log('take me home')
+						: undefined
 				}
 			/>
 			<form>
 				<Modal.Body>
 					<FormLayout>
 						<FormLayoutItem>
-							<TextInput label="Category Name" placeholder="e.g. Barber" />
+							<TextInput
+								id="category"
+								label="Category Name"
+								placeholder="e.g. Barber"
+							/>
 						</FormLayoutItem>
 						<FormLayoutItem>
 							<TextInput
+								id="teaser"
 								label="Teaser"
 								postLabel="0/64"
 								placeholder="Haircuts, shaves, and touch-ups."
@@ -181,6 +199,7 @@ stories
 						</FormLayoutItem>
 						<FormLayoutItem>
 							<TextArea
+								id="description"
 								label="Description"
 								placeholder="Optional category description…"
 								helper="Add a short teaser for your guests to see when they browse your services."

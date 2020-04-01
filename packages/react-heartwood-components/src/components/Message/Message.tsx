@@ -33,10 +33,10 @@ export interface IMessageProps {
 	dateSent?: moment
 
 	/** Informative replies to the message */
-	replies?: Array
+	replies?: string[]
 
 	/** Additional content related to the message */
-	attachments?: Array
+	attachments?: string[]
 
 	/** Gives additional context for the message */
 	detail?: string
@@ -72,8 +72,8 @@ export const Message = (props: IMessageProps) => {
 
 	const renderReply = reply => {
 		const { type, children } = reply
-		let icon = null
-		let iconClass = null
+		let icon: string | null = null
+		let iconClass: string | null = null
 
 		if (type) {
 			switch (type) {
@@ -99,7 +99,7 @@ export const Message = (props: IMessageProps) => {
 		return (
 			<p className="message__reply">
 				{icon && (
-					<Icon icon={icon} className={cx('message__reply-icon', iconClass)} />
+					<Icon name={icon} className={cx('message__reply-icon', iconClass)} />
 				)}
 				<span className="message__reply-text">{children}</span>
 			</p>

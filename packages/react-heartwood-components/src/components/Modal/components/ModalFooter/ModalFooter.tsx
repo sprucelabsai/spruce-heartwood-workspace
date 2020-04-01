@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../../Button/Button'
 import { IButtonProps } from '../../../Button/Button'
+import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 export interface IModalFooterProps {
 	/** The primary action in the footer */
@@ -14,8 +15,10 @@ const ModalFooter = (props: IModalFooterProps) => {
 	const { primaryAction, secondaryAction } = props
 	return (
 		<div className="modal-footer">
-			<Button kind="primary" {...primaryAction} />
-			{secondaryAction && <Button kind="secondary" {...secondaryAction} />}
+			<Button kind={IHWButtonKinds.Primary} {...primaryAction} />
+			{secondaryAction && (
+				<Button kind={IHWButtonKinds.Secondary} {...secondaryAction} />
+			)}
 		</div>
 	)
 }
