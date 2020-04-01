@@ -23,6 +23,8 @@ interface ISidebarProps extends IHWSidebar {
 
 	/** Handler to toggle the visibility of the sidebar */
 	toggleExpanded?: () => void
+
+	style?: React.CSSProperties
 }
 
 const Sidebar = (props: ISidebarProps) => {

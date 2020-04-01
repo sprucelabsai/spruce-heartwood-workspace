@@ -4,10 +4,10 @@ import CloseIcon from '../../../../../../../static/assets/icons/ic_close.svg'
 
 interface IHamburgerProps {
 	/** Set true when the sidebar is visible */
-	isSidebarVisible: boolean
+	isSidebarVisible?: boolean
 
 	/** Click handler to toggle sidebar visibility */
-	onClick: (event: React.MouseEvent) => void
+	onClick?: (event?: React.MouseEvent) => void
 }
 
 const Hamburger = (props: IHamburgerProps) => {

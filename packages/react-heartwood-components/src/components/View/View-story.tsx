@@ -20,6 +20,7 @@ import FeedBuilder from '../Core/components/FeedBuilder/FeedBuilder'
 import { generateMessages } from '../../../.storybook/data/feed'
 
 import View from './View'
+import { IHWSidebarItem } from '@sprucelabs/spruce-types'
 
 const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>
 
@@ -49,27 +50,27 @@ const personalItems = [
 	}
 ]
 
-const orgItems = [
+const orgItems: IHWSidebarItem[] = [
 	{
 		text: 'Organization Dashboard',
-		icon: { icon: 'dashboard' },
+		icon: { name: 'dashboard' },
 		isCurrent: false,
 		href: '#'
 	},
 	{
 		text: 'Locations',
-		icon: { icon: 'location' },
+		icon: { name: 'location' },
 		isCurrent: true,
 		href: '#'
 	},
 	{
 		text: 'Team',
-		icon: { icon: 'team' },
+		icon: { name: 'team' },
 		href: '#'
 	},
 	{
 		text: 'Skills',
-		icon: { icon: 'skill' },
+		icon: { name: 'skill' },
 		href: '#',
 		action: {
 			text: 'Get Skills',
@@ -79,7 +80,7 @@ const orgItems = [
 	},
 	{
 		text: 'Settings',
-		icon: { icon: 'settings' },
+		icon: { name: 'settings' },
 		href: '#'
 	}
 ]

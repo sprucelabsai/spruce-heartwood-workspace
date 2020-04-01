@@ -23,10 +23,10 @@ interface IHeaderPrimaryProps {
 	location?: Record<string, any>
 
 	/** Handler to set sidebar visibility to true or false */
-	toggleSidebarVisibility: (event: React.MouseEvent) => void
+	toggleSidebarVisibility?: (event?: React.MouseEvent) => void
 
 	/** Set true to show the sidebar (small screens only) */
-	isSidebarVisible: boolean
+	isSidebarVisible?: boolean
 
 	/** Whether or not we will need to handle hamburger functionality */
 	enableHamburgerMenu: boolean
@@ -35,7 +35,7 @@ interface IHeaderPrimaryProps {
 	searchPlaceholder?: string
 
 	/** Handle search click */
-	onClickSearch?: Function
+	onClickSearch?: () => void
 
 	/** Set true to show location management shortcut */
 	isLocationManagmentButtonVisible?: boolean
