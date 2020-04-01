@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import ReactDropzone from 'react-dropzone'
+import ReactDropzone, { DropEvent } from 'react-dropzone'
 import cx from 'classnames'
 import { InputPre } from '../Forms/FormPartials'
 import Button from '../Button/Button'
@@ -23,28 +23,32 @@ export interface IDropzoneProps {
 	uploadProgress: number
 
 	/** OnDragEnter callback */
-	onDragEnter?: () => void
+	onDragEnter?: (event?: React.DragEvent<HTMLElement>) => void
 
 	/** OnDragLeave callback */
-	onDragLeave?: () => void
+	onDragLeave?: (event?: React.DragEvent<HTMLElement>) => void
 
 	/** OnDragOver callback */
-	onDragOver?: () => void
+	onDragOver?: (event?: React.DragEvent<HTMLElement>) => void
 
 	/** Callback when file(s) are dropped */
-	onDrop?: () => void
+	onDrop?: (
+		acceptedFiles: File[],
+		rejecFileedFiles: File[],
+		event: DropEvent
+	) => void
 
 	/** OnDropAccepted callback */
-	onDropAccepted: () => void
+	onDropAccepted: (files?: File[], event?: DropEvent) => void
 
 	/** OnDropRejected callback */
-	onDropRejected?: () => void
+	onDropRejected?: (files?: File[], event?: DropEvent) => void
 
 	/** OnFileDialogCancel callback */
 	onFileDialogCancel?: () => void
 
 	/** OnDragStart callback */
-	onDragStart?: Function
+	onDragStart?: (...args: any) => void
 
 	/** Optional label for the Dropzone */
 	label?: string
@@ -83,64 +87,68 @@ export default class Dropzone extends Component<
 	}
 	public dropzone: any
 
-	public onDragEnter = () => {
+	public onDragEnter = (event: React.DragEvent<HTMLElement>) => {
 		const { onDragEnter } = this.props
 		if (onDragEnter) {
-			onDragEnter()
+			onDragEnter(event)
 		}
 		this.setState({
 			userCanDrop: true
 		})
 	}
-	public onDragLeave = (...args) => {
+	public onDragLeave = (event: React.DragEvent<HTMLElement>) => {
 		const { onDragLeave } = this.props
 		if (onDragLeave) {
-			onDragLeave(...args)
+			onDragLeave(event)
 		}
 		this.setState({
 			userCanDrop: false
 		})
 	}
-	public onDragOver = (...args) => {
+	public onDragOver = (event: React.DragEvent<HTMLElement>) => {
 		const { onDragOver } = this.props
 		if (onDragOver) {
-			onDragOver(...args)
+			onDragOver(event)
 		}
 	}
-	public onDragStart = (...args) => {
+	public onDragStart = (...args: any) => {
 		const { onDragStart } = this.props
 		if (onDragStart) {
 			onDragStart(...args)
 		}
 	}
-	public onDrop = (...args) => {
+	public onDrop = (
+		acceptedFiles: File[],
+		rejecFileedFiles: File[],
+		event: DropEvent
+	) => {
 		const { onDrop } = this.props
 		if (onDrop) {
-			onDrop(...args)
+			onDrop(acceptedFiles, rejecFileedFiles, event)
 		}
 	}
-	public onDropAccepted = (...args) => {
+	public onDropAccepted = (files: File[], event: DropEvent) => {
 		const { onDropAccepted } = this.props
 		if (onDropAccepted) {
-			onDropAccepted(...args)
+			onDropAccepted(files, event)
 		}
 		this.setState({
 			userCanDrop: false
 		})
 	}
-	public onDropRejected = (...args) => {
+	public onDropRejected = (files?: File[], event?: DropEvent) => {
 		const { onDropRejected } = this.props
 		if (onDropRejected) {
-			onDropRejected(...args)
+			onDropRejected(files, event)
 		}
 		this.setState({
 			userCanDrop: false
 		})
 	}
-	public onFileDialogCancel = (...args) => {
+	public onFileDialogCancel = () => {
 		const { onFileDialogCancel } = this.props
 		if (onFileDialogCancel) {
-			onFileDialogCancel(...args)
+			onFileDialogCancel()
 		}
 	}
 	public render() {

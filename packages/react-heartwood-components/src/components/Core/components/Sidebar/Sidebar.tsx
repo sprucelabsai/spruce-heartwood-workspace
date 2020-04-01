@@ -45,10 +45,10 @@ interface ISidebarProps {
 	isMobileExpanded?: boolean
 
 	/** Handler to force the sidebar to collapse */
-	forceCloseSidebar: () => void
+	forceCloseSidebar?: () => void
 
 	/** Handler to toggle the visibility of the sidebar */
-	toggleExpanded: () => void
+	toggleExpanded?: () => void
 }
 
 const Sidebar = (props: ISidebarProps) => {

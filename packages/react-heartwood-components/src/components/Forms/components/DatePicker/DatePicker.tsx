@@ -20,8 +20,8 @@ export interface IDatePickerProps {
 
 interface IDatePickerState {
 	date: Record<string, any>
-	startDate: Record<string, any>
-	endDate: Record<string, any>
+	startDate?: Record<string, any>
+	endDate?: Record<string, any>
 	isFocused: boolean
 	focusedInput: string
 }

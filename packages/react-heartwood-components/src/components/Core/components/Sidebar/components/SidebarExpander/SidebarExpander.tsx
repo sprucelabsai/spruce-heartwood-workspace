@@ -7,10 +7,10 @@ interface ISidebarExpanderProps {
 	isExpanded?: boolean
 
 	/** Handler to toggle sidebar visibility (large screens only) */
-	toggleExpanded: () => void
+	toggleExpanded?: () => void
 
 	/** Handler to force the sidebar closed */
-	forceCloseSidebar: () => void
+	forceCloseSidebar?: () => void
 }
 
 const SidebarExpander = (props: ISidebarExpanderProps) => {
@@ -22,8 +22,8 @@ const SidebarExpander = (props: ISidebarExpanderProps) => {
 					customIcon: ToggleCollapseIcon
 				}}
 				onClick={() => {
-					toggleExpanded()
-					forceCloseSidebar()
+					toggleExpanded && toggleExpanded()
+					forceCloseSidebar && forceCloseSidebar()
 				}}
 				isSmall
 			/>

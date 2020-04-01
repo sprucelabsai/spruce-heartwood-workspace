@@ -1,10 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
 import EventDetails from './EventDetails'
-
 import { Sidebar, SidebarHeader } from '../Core'
-// Import Page from '../Page'
 
 import {
 	appointment,

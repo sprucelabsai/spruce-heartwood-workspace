@@ -17,6 +17,7 @@ import { FormikProps } from 'formik'
 import { IFormLayoutProps } from '../../../FormLayout/FormLayout'
 import { IButtonProps } from '../../../../../Button/Button'
 import { IToggleProps } from '../../../Toggle/Toggle'
+import { IHWButtonTypes, IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 export interface IFormInnerFieldProps {
 	/** Unique name/id for the field */
@@ -37,7 +38,7 @@ export interface IFormInnerProps {
 	formLayout: IFormLayoutProps
 
 	/** Props to pass through from Formik */
-	formikProps: FormikProps
+	formikProps: FormikProps<IFormInnerFieldProps>
 
 	/** Optional when using a primary cta in the form */
 	primaryCTA?: IButtonProps
@@ -56,7 +57,7 @@ type BooleanProps = IToggleProps & {
 	helper?: string
 	defaultValue?: boolean
 	onBlur: Function
-	formikProps: FormikProps
+	formikProps: FormikProps<IFormInnerFieldProps>
 }
 
 class BooleanField extends React.PureComponent<BooleanProps> {
@@ -189,8 +190,8 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 						)}
 						<FormLayoutItem>
 							<Button
-								kind="primary"
-								type="submit"
+								kind={IHWButtonKinds.Primary}
+								type={IHWButtonTypes.Submit}
 								isDisabled={!isValid || isSubmitting}
 								isLoading={isSubmitting}
 								{...primaryCTA}
