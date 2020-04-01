@@ -16,13 +16,13 @@ export interface IAutosuggestInterfaceProps {
 	getSuggestions: (value: string) => Promise<Record<string, any>[]> | null
 
 	/** Implement it to teach Autosuggest what should be the input value when suggestion is clicked. */
-	getSuggestionValue: Function
+	getSuggestionValue: (suggestion: any) => string
 
 	/** Defines how suggestions will be rendered */
-	renderSuggestion: Function
+	renderSuggestion: (suggestion: any, params: any) => React.ReactNode
 
 	/** Will be called every time suggestion is selected via mouse or keyboard. */
-	onSuggestionSelected: Function
+	onSuggestionSelected: (event: React.FormEvent<any>, data: any) => void
 
 	shouldRenderSuggestions?: Function
 
@@ -186,7 +186,7 @@ export default class Autosuggest extends Component<
 				<div className={cx('autosuggest__wrapper', wrapperClassName)}>
 					<ReactAutosuggest
 						ref={this.autosuggestRef}
-						suggestions={suggestions}
+						suggestions={suggestions ?? []}
 						onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
 						onSuggestionsClearRequested={this.onSuggestionsClearRequested}
 						getSuggestionValue={getSuggestionValue}

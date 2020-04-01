@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs/react'
@@ -43,7 +44,7 @@ const backLink = {
 interface IProps {}
 
 interface IState {
-	showSidebar: boolean
+	showSidebar?: boolean
 }
 
 class Example extends Component<IProps, IState> {

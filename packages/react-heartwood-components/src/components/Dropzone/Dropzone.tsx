@@ -20,7 +20,7 @@ export interface IDropzoneProps {
 	error: string
 
 	/** Displays progress while uploading */
-	uploadProgress: number
+	uploadProgress?: number
 
 	/** OnDragEnter callback */
 	onDragEnter?: (event?: React.DragEvent<HTMLElement>) => void

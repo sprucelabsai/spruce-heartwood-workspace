@@ -1,12 +1,13 @@
 // NOTE: Relies on https://github.com/mosch/react-avatar-editor
 import React, { Component } from 'react'
 import AvatarEditor from 'react-avatar-editor'
-import Button from '../Button/Button'
+import Button, { ButtonOnClick } from '../Button/Button'
 import Dropzone from '../Dropzone/Dropzone'
 import { IDropzoneProps } from '../Dropzone/Dropzone'
 import { Slider } from '../Forms'
 import RotateLeftIcon from '../../../static/assets/icons/Design/Rotate/rotate-back.svg'
 import RotateRightIcon from '../../../static/assets/icons/Design/Rotate/rotate-forward.svg'
+import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 interface IImageCropperProps {
 	/** The image. If null, this will render a Dropzone. */
@@ -28,13 +29,17 @@ interface IImageCropperProps {
 	onSubmit?: Function
 
 	/** Callback when upload new button is clicked */
-	onUploadNewImage?: Function
+	onUploadNewImage?: ButtonOnClick
+
+	/** Optional color */
+	color?: [number, number, number, number]
 }
 
 interface IImageCropperState {
 	scale: number
 	rotate: number
 	isSubmitting: boolean
+	sliderValue: number
 }
 
 export default class ImageCropper extends Component<
@@ -47,6 +52,8 @@ export default class ImageCropper extends Component<
 		rotate: 0,
 		isSubmitting: false
 	}
+
+	private avatarEditor: any
 
 	public handleScale = (e: any) => {
 		const newVal = e.currentTarget.value
@@ -112,7 +119,7 @@ export default class ImageCropper extends Component<
 				</div>
 				<div className="image-cropper__controls-row">
 					<Button
-						kind="secondary"
+						kind={IHWButtonKinds.Secondary}
 						className="image-cropper__rotate-btn"
 						text="Rotate Left"
 						icon={{
@@ -123,7 +130,7 @@ export default class ImageCropper extends Component<
 						onClick={() => this.handleRotate('left')}
 					/>
 					<Button
-						kind="secondary"
+						kind={IHWButtonKinds.Secondary}
 						className="image-cropper__rotate-btn"
 						text="Rotate Right"
 						icon={{
@@ -149,14 +156,14 @@ export default class ImageCropper extends Component<
 				<div className="image-cropper__controls-row">
 					{image && (
 						<Button
-							kind="simple"
+							kind={IHWButtonKinds.Simple}
 							text="Upload another image"
 							isDisabled={isSubmitting}
 							onClick={onUploadNewImage}
 						/>
 					)}
 					<Button
-						kind="primary"
+						kind={IHWButtonKinds.Primary}
 						isFullWidth={image ? false : true}
 						text="Save Image"
 						isDisabled={!image || isSubmitting}

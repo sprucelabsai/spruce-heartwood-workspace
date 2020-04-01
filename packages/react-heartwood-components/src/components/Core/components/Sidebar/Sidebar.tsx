@@ -19,10 +19,10 @@ interface ISidebarProps extends IHWSidebar {
 	footer?: ReactNode
 
 	/** Handler to force the sidebar to collapse */
-	forceCloseSidebar?: Function
+	forceCloseSidebar?: () => void
 
 	/** Handler to toggle the visibility of the sidebar */
-	toggleExpanded?: Function
+	toggleExpanded?: () => void
 }
 
 const Sidebar = (props: ISidebarProps) => {

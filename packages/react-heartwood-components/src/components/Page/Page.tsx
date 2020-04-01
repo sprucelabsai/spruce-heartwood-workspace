@@ -50,7 +50,7 @@ export const Page = (props: IPageProps) => {
 					// Note: We have to cast this since ILayoutBuilderProps
 					// enforces typematching. All that interface is, is a stricter
 					// version of IHWLayoutBuilder.
-					<LayoutBuilder {...contentLayoutBuilder as ILayoutBuilderProps} />
+					<LayoutBuilder {...(contentLayoutBuilder as ILayoutBuilderProps)} />
 				)}
 			</div>
 			{(sidebar || sidebarLayoutBuilder) && (
@@ -61,7 +61,7 @@ export const Page = (props: IPageProps) => {
 						// Note: We have to cast this since ILayoutBuilderProps
 						// enforces typematching. All that interface is, is a stricter
 						// version of IHWLayoutBuilder.
-						<LayoutBuilder {...sidebarLayoutBuilder as ILayoutBuilderProps} />
+						<LayoutBuilder {...(sidebarLayoutBuilder as ILayoutBuilderProps)} />
 					)}
 				</div>
 			)}

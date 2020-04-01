@@ -1,6 +1,6 @@
 import React from 'react'
 import SidebarSection from '../SidebarSection/SidebarSection'
-import Button from '../../../../../Button/Button'
+import Button, { ButtonOnClick } from '../../../../../Button/Button'
 import Text from '../../../../../Text/Text'
 import { IHWSidebarHeader } from '@sprucelabs/spruce-types'
 
@@ -9,7 +9,7 @@ interface ISidebarHeaderProps extends IHWSidebarHeader {
 	onClose?: () => void
 
 	/** Optional; adds a back arrow and destination */
-	onGoBack?: (destination: string) => void
+	onGoBack?: ButtonOnClick
 }
 
 const SidebarHeader = (props: ISidebarHeaderProps): React.ReactElement => {

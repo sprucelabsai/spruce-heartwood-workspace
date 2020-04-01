@@ -31,11 +31,9 @@ class PageModalExample extends Component<
 		return (
 			<PagedModal
 				isOpen={boolean('isOpen', true)}
-				onAfterOpen={() => console.log('onAfterOpen')}
 				onRequestClose={() => console.log('onRequestClose')}
 				onClickBack={this.handleBack}
 				canGoBack={currentPageIndex > 0}
-				isSmall={boolean('isSmall', true)}
 				pages={[
 					{
 						title: 'Page 1',
@@ -44,6 +42,7 @@ class PageModalExample extends Component<
 							<FormLayout>
 								<FormLayoutItem>
 									<TextInput
+										id="phone"
 										label="Phone Number"
 										placeholder="(555)-555-5555"
 									/>
@@ -61,7 +60,7 @@ class PageModalExample extends Component<
 						body: (
 							<FormLayout>
 								<FormLayoutItem>
-									<TextInput label="First Name" />
+									<TextInput id="firstName" label="First Name" />
 								</FormLayoutItem>
 							</FormLayout>
 						),

@@ -78,7 +78,7 @@ export default class PhoneInput extends Component<
 					'text-input-small': isSmall
 				})}
 			>
-				<InputPre label={label} />
+				<InputPre id={label} label={label} />
 
 				<ReactPhoneInput
 					inputClassName="text-input__input"

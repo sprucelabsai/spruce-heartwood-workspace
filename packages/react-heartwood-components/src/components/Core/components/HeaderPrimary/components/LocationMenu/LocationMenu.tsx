@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 import { VelocityTransitionGroup } from 'velocity-react'
-import Button from '../../../../../Button/Button'
+import Button, { ButtonOnClick } from '../../../../../Button/Button'
 import Card from '../../../../../Card/Card'
 import List from '../../../../../List/List'
 import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 interface ILocationMenuProps {
 	isMenuVisible: boolean
-	onClick: Function
+	onClick: ButtonOnClick
 	locationManagementHref?: string
 	locationName: string
 	locationAddress: string

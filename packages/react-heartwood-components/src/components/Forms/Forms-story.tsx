@@ -31,7 +31,6 @@ import {
 	FormLayoutItem
 } from './index'
 import countries from '../../../.storybook/data/countries'
-import { stringify } from 'querystring'
 
 const spacingOptions = {
 	Base: null,
@@ -124,13 +123,13 @@ stories
 				return results
 			}}
 			icon={{
-				icon: 'search'
+				name: 'search'
 			}}
 		/>
 	))
 	.add('Duration Input', () => (
 		<DurationInput
-			label={stringify('label', 'Duration')}
+			label={'Duration'}
 			placeholder={text('placeholder', 'How long is this going to take?')}
 			minMinutes={number('minMinutes', 5)}
 			maxMinutes={number('maxMinutes', 60 * 4)}

@@ -9,12 +9,18 @@ import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon, { IIconProps } from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
-import { instanceOf } from 'prop-types'
 
 export {
 	IHWButtonKinds as ButtonKinds,
 	IHWButtonTypes as ButtonTypes
 } from '@sprucelabs/spruce-types'
+
+export type ButtonOnClick = (
+	e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>,
+	payload?: Record<string, any>
+) => void
+
+// (e?: React.FormEvent<HTMLFormElement> | undefined) => void
 
 export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	/** Optional ID for view caching */

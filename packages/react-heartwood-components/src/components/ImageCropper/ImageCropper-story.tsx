@@ -14,7 +14,7 @@ interface IImageCropperExampleProps {
 }
 
 interface IImageCropperExampleState {
-	image: string
+	image: string | ArrayBuffer | null
 }
 
 class ImageCropperExample extends Component<
@@ -22,7 +22,7 @@ class ImageCropperExample extends Component<
 	IImageCropperExampleState
 > {
 	public state = {
-		image: ''
+		image: null
 	}
 
 	public handleDrop = (files: any) => {

@@ -106,6 +106,8 @@ const FormBuilder = (props: Props) => {
 								))}
 								<SaveBar
 									isVisible={dirty}
+									// TODO: Figue out the proper signature to convert formik submit handler
+									// @ts-ignore
 									onSave={handleSubmit}
 									onDiscard={handleReset}
 									isSaveDisabled={!isValid}

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import cx from 'classnames'
-import Button from '../../../Button/Button'
+import Button, { ButtonOnClick } from '../../../Button/Button'
 import { CSSTransition } from 'react-transition-group'
 import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
@@ -28,10 +28,10 @@ export interface ISaveBarProps {
 	isSaving: boolean
 
 	/** The function to execute when user selects discard */
-	onDiscard?: Function
+	onDiscard?: ButtonOnClick
 
 	/** The function to execute when user selects save */
-	onSave: Function
+	onSave: ButtonOnClick
 }
 
 interface ISaveBarState {}

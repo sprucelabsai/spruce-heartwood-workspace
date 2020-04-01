@@ -40,7 +40,7 @@ interface IDurationInputProps
 	required?: boolean
 
 	/** A slighly different onChange */
-	onChange?: (durationInMinutes: number | null, e: KeyboardEvent) => {}
+	onChange?: (durationInMinutes: number | null, e: KeyboardEvent) => void
 
 	onBlur?: (e: KeyboardEvent) => {}
 }

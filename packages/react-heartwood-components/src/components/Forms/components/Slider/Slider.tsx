@@ -22,7 +22,10 @@ interface ISliderProps {
 
 	/** Callback after the slider updates its own value.
 	 * Using this property will place the slider in controlled mode. */
-	onChange?: Function
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+
+	/** Disable the slider input */
+	disabled?: boolean
 }
 
 interface ISliderState {
@@ -53,6 +56,12 @@ export default class Slider extends Component<ISliderProps, ISliderState> {
 			...rest
 		} = this.props
 
+		const styles: Record<string, string | number> = {
+			'--min': min,
+			'--max': max,
+			'--val': onChange ? value : uncontrolledValue
+		}
+
 		return (
 			<div className="slider-wrapper slider--split-color">
 				{label && <InputPre id={id} label={label} postLabel={postLabel} />}
@@ -63,11 +72,7 @@ export default class Slider extends Component<ISliderProps, ISliderState> {
 					max={max}
 					value={onChange ? value : uncontrolledValue}
 					className="slider"
-					style={{
-						'--min': min,
-						'--max': max,
-						'--val': onChange ? value : uncontrolledValue
-					}}
+					style={styles}
 					onChange={onChange ? onChange : this.handleUncontrolledChange}
 				/>
 			</div>

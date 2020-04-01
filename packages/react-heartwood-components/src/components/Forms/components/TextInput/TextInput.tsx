@@ -35,6 +35,9 @@ interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
 
 	/** Set true to make the input less tall */
 	isSmall?: boolean
+
+	/** The value */
+	value?: string
 }
 
 class TextInput extends React.Component<ITextInputProps> {

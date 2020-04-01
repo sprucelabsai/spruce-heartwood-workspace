@@ -24,13 +24,13 @@ interface IModalPageProps {
 
 interface IPageModalProps extends IModalProps {
 	/** Callback to close the modal */
-	onRequestClose: Function
+	onRequestClose: () => void
 
 	/** Whether the back button should be displayed */
 	canGoBack: boolean
 
 	/** Function to handle navigating backwards in the modal */
-	onClickBack?: Function
+	onClickBack?: () => void
 
 	/** Set true to show the modal */
 	pages: Array<IModalPageProps>
@@ -64,7 +64,7 @@ export default class PagedModal extends React.PureComponent<IPageModalProps> {
 				<Modal.Header
 					title={(currentPage && currentPage.title) || ''}
 					onRequestClose={onRequestClose}
-					onClickBack={canGoBack && onClickBack}
+					onClickBack={canGoBack ? onClickBack : undefined}
 					isPaginated
 				/>
 				{pages.map((page, idx) => (

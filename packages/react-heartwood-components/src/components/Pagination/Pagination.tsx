@@ -1,10 +1,11 @@
 import React from 'react'
 import cx from 'classnames'
-import Button from '../Button/Button'
+import Button, { ButtonOnClick } from '../Button/Button'
 import Text, { Span } from '../Text/Text'
 import { InputInner } from '../Forms/FormPartials'
 import ArrowNext from '../../../static/assets/icons/ic_arrow_forward.svg'
 import ArrowBack from '../../../static/assets/icons/ic_arrow_back.svg'
+import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 export interface IPaginationProps {
 	/** The current page */
@@ -14,16 +15,16 @@ export interface IPaginationProps {
 	totalPages: number
 
 	/** Go forward one page */
-	onClickNext: Function
+	onClickNext: ButtonOnClick
 
 	/** Go back one page */
-	onClickBack: Function
+	onClickBack: ButtonOnClick
 
 	/** Navigate to the clicked/tapped page */
-	onPageButtonClick?: Function
+	onPageButtonClick?: (page: number) => void
 
 	/** Navigate throught the jump input */
-	onJump?: Function
+	onJump?: (page: number) => void
 
 	/** Set true to display pages between arrows */
 	showPages?: boolean
@@ -34,6 +35,9 @@ export interface IPaginationProps {
 	/** Set true to use simple buttons */
 	isSimple?: boolean
 }
+
+type DisplayPageText = { text: string }
+type DisplayPage = number | DisplayPageText
 
 const Pagination = (props: IPaginationProps) => {
 	const {
@@ -47,8 +51,8 @@ const Pagination = (props: IPaginationProps) => {
 		onJump,
 		isSimple
 	} = props
-	const pagesArray = []
-	let displayPages = []
+	const pagesArray: number[] = []
+	let displayPages: DisplayPage[] = []
 	for (let i = 0; i < totalPages; i++) {
 		pagesArray.push(i)
 	}
@@ -79,7 +83,9 @@ const Pagination = (props: IPaginationProps) => {
 		displayPages.splice(displayPages.length - 1, 0, { text: '…' })
 	}
 
-	const kind = isSimple ? 'simple' : 'secondary'
+	const kind: IHWButtonKinds = isSimple
+		? IHWButtonKinds.Simple
+		: IHWButtonKinds.Secondary
 
 	return (
 		<div
@@ -98,7 +104,7 @@ const Pagination = (props: IPaginationProps) => {
 			{showPages &&
 				onPageButtonClick &&
 				displayPages.map((page, idx) => {
-					if (page.text === '…') {
+					if ((page as DisplayPageText).text === '…') {
 						return (
 							<Text key={idx} className="pagination__page-ellipse">
 								<Span>…</Span>
@@ -108,9 +114,9 @@ const Pagination = (props: IPaginationProps) => {
 					return (
 						<Button
 							key={idx}
-							onClick={() => onPageButtonClick(page)}
-							kind={currentPage === page ? 'simple' : ''}
-							text={(page + 1).toString()}
+							onClick={() => onPageButtonClick(page as number)}
+							kind={currentPage === page ? IHWButtonKinds.Simple : undefined}
+							text={((page as number) + 1).toString()}
 							isSmall
 							className="pagination__page-btn"
 						/>

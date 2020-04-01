@@ -1,6 +1,6 @@
 import React from 'react'
 import Avatar from '../../../Avatar/Avatar'
-import Button from '../../../Button/Button'
+import Button, { ButtonOnClick } from '../../../Button/Button'
 import Text from '../../../Text/Text'
 
 interface IProfileSummaryProps {
@@ -11,7 +11,7 @@ interface IProfileSummaryProps {
 	name: string
 
 	/** Function for the button */
-	onButtonClick: Function
+	onButtonClick: ButtonOnClick
 }
 
 const ProfileSummary = (props: IProfileSummaryProps) => {

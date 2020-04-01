@@ -6,6 +6,7 @@ import { IHWSidebarItem } from '@sprucelabs/spruce-types'
 
 export interface ISidebarItemProps extends IHWSidebarItem {
 	icon?: any
+	className?: string | null
 }
 
 const isCurrentParent = (items: ISidebarItemProps[]) => {

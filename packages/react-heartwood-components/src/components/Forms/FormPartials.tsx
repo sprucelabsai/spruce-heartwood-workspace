@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../Button/Button'
+import Button, { ButtonOnClick } from '../Button/Button'
 import Icon from '../Icon/Icon'
 
 export interface IInputPreProps {
@@ -25,7 +25,12 @@ export interface IInputInnerProps {
 	iconBefore?: string
 	iconAfter?: any
 	appendix?: string
-	handleClear?: Function
+	handleClear?: ButtonOnClick
+	/** The input value */
+	value?: string | number
+	name?: string
+	/** When the value changes */
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const InputInner = (props: IInputInnerProps) => {
