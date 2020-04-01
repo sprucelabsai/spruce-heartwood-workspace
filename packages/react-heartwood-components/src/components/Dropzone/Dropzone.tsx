@@ -62,6 +62,9 @@ export interface IDropzoneProps {
 
 	/** The icon to display before an upload has happened */
 	defaultIcon?: React.ReactNode
+
+	/** Type of files to accept */
+	accept?: string
 }
 
 interface IDropZoneState {
@@ -166,16 +169,6 @@ export default class Dropzone extends Component<
 					activeClassName="dropzone--is-hovered"
 					rejectClassName="dropzone--has-error"
 					disabledClassName="dropzone--is-disabled"
-					onDragEnter={this.onDragEnter}
-					onDragLeave={this.onDragLeave}
-					onDragOver={this.onDragOver}
-					onDragStart={this.onDragStart}
-					onDrop={this.onDrop}
-					onDropAccepted={this.onDropAccepted}
-					onDropRejected={this.onDropRejected}
-					onFileDialogCancel={this.onFileDialogCancel}
-					disabled={!!uploadProgress}
-					{...rest}
 				>
 					{({ isDragAccept, isDragReject }) => (
 						<Fragment>

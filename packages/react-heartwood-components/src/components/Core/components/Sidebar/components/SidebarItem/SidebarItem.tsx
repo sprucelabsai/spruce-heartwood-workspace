@@ -14,7 +14,7 @@ interface IItemProps {
 }
 
 export interface ISidebarItemProps {
-	items?: Array<IItemProps>
+	items?: IItemProps[]
 	className?: string
 	text: string
 	href: string
@@ -23,19 +23,20 @@ export interface ISidebarItemProps {
 	isCurrent?: boolean
 }
 
-const isCurrentParent = (props: ISidebarItemProps) => {
+const isCurrentParent = (props: { items?: IItemProps[] }) => {
 	const { items } = props
 	if (items) {
 		if (items.find(item => item.isCurrent)) {
 			return true
 		}
-		items.forEach(item => {
+		for (let i = 0; i < items.length; i += 1) {
+			const item = items[i]
 			if (item.items) {
 				if (item.items.find(item => item.isCurrent)) {
 					return true
 				}
 			}
-		})
+		}
 	}
 	return false
 }

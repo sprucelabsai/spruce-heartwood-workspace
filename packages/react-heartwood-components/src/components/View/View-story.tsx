@@ -220,6 +220,7 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 		const { sidebarsExpanded, sidebarsMobileExpanded } = this.state
 		return (
 			<View
+				// @ts-ignore
 				STORYBOOKdoNotWrap
 				sidebarItems={orgItems}
 				user={user}
@@ -307,8 +308,10 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 
 stories
 	.add('Default', () => (
+		// @ts-ignore
 		<div STORYBOOKdoNotWrap style={{ height: '100vh' }}>
 			<View
+				// @ts-ignore
 				STORYBOOKdoNotWrap
 				sidebarItems={personalItems}
 				user={user}
@@ -327,8 +330,10 @@ stories
 		</div>
 	))
 	.add('Save Bar', () => (
+		// @ts-ignore
 		<div STORYBOOKdoNotWrap style={{ height: '100vh' }}>
 			<View
+				// @ts-ignore
 				STORYBOOKdoNotWrap
 				sidebarItems={personalItems}
 				user={user}
@@ -347,6 +352,7 @@ stories
 		</div>
 	))
 	.add('Skill View', () => (
+		// @ts-ignore
 		<div STORYBOOKdoNotWrap style={{ height: '100vh' }}>
 			<SkillViewExample />
 		</div>
@@ -354,8 +360,10 @@ stories
 	.add('Guest Profile', () => {
 		const messages = generateMessages({ count: 50, interval: 31 })
 		return (
+			// @ts-ignore
 			<div STORYBOOKdoNotWrap style={{ height: '100vh' }}>
 				<View
+					// @ts-ignore
 					STORYBOOKdoNotWrap
 					sidebarItems={bizItems}
 					user={user}
@@ -428,6 +436,7 @@ stories
 	})
 	.add('No Left Sidebar Items', () => {
 		return (
+			// @ts-ignore
 			<div STORYBOOKdoNotWrap style={{ height: '100vh' }}>
 				<View
 					sidebarItems={[]}

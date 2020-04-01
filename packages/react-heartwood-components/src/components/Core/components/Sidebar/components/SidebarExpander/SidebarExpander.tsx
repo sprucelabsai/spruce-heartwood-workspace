@@ -4,13 +4,13 @@ import ToggleCollapseIcon from '../../../../../../../static/assets/icons/ic_keyb
 
 interface ISidebarExpanderProps {
 	/** Set true to expand the sidebar */
-	isExpanded: boolean
+	isExpanded?: boolean
 
 	/** Handler to toggle sidebar visibility (large screens only) */
-	toggleExpanded: Function
+	toggleExpanded: () => void
 
 	/** Handler to force the sidebar closed */
-	forceCloseSidebar: Function
+	forceCloseSidebar: () => void
 }
 
 const SidebarExpander = (props: ISidebarExpanderProps) => {

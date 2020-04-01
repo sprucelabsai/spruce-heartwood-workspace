@@ -40,7 +40,13 @@ const backLink = {
 	href: '#'
 }
 
-class Example extends Component {
+interface IProps {}
+
+interface IState {
+	showSidebar: boolean
+}
+
+class Example extends Component<IProps, IState> {
 	public state = {
 		showSidebar: true
 	}
@@ -61,6 +67,7 @@ class Example extends Component {
 				isExpanded={showSidebar}
 				toggleExpanded={this.handleToggleSidebar}
 				forceCloseSidebar={() => null}
+				// @ts-ignore
 				STORYBOOKdoNotWrap
 			/>
 		)

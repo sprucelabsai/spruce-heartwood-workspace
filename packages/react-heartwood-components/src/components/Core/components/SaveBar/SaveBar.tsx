@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import cx from 'classnames'
 import Button from '../../../Button/Button'
 import { CSSTransition } from 'react-transition-group'
+import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 export interface ISaveBarProps {
 	/** The current location */
@@ -92,7 +93,7 @@ export default class SaveBar extends React.PureComponent<
 						<p className="save-bar__title">{message}</p>
 						{onDiscard && (
 							<Button
-								kind="simple"
+								kind={IHWButtonKinds.Simple}
 								text="Discard"
 								onClick={onDiscard}
 								isDisabled={isDiscardDisabled || isDiscarding || isSaving}
@@ -101,7 +102,7 @@ export default class SaveBar extends React.PureComponent<
 							/>
 						)}
 						<Button
-							kind="primary"
+							kind={IHWButtonKinds.Primary}
 							text="Save"
 							onClick={onSave}
 							isDisabled={isSaveDisabled || isDiscarding || isSaving}

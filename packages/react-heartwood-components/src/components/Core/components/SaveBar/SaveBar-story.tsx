@@ -21,6 +21,7 @@ stories
 			isDiscardDisabled={boolean('isDiscardDisabled', false)}
 			onDiscard={() => console.log('DISCARD')}
 			onSave={() => console.log('SAVE')}
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 		/>
 	))
@@ -33,6 +34,7 @@ stories
 			isDiscardDisabled={boolean('isDiscardDisabled', false)}
 			onDiscard={() => console.log('DISCARD')}
 			onSave={() => console.log('SAVE')}
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 		/>
 	))
@@ -45,6 +47,7 @@ stories
 			isDiscardDisabled={boolean('isDiscardDisabled', false)}
 			onDiscard={() => console.log('DISCARD')}
 			onSave={() => console.log('SAVE')}
+			// @ts-ignore
 			STORYBOOKdoNotWrap
 		/>
 	))
