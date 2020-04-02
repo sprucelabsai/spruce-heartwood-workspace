@@ -217,7 +217,10 @@ export default class SprucebotTypedMessage extends Component<
 		return avatar
 	}
 
-	public handleTyping = (text: string[]) => {
+	public handleTyping = (text?: string[]) => {
+		if (!Array.isArray(text)) {
+			return
+		}
 		// To track when the animation has started the next sentence, we need to check when text has a different amonut of elements
 		const { sentenceIdxBeingTyped, lastLineNum } = this.state
 		const { sentences } = this.props

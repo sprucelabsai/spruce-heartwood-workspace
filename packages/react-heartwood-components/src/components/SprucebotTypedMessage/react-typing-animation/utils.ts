@@ -3,8 +3,8 @@ import React, { Children } from 'react'
 const shortid = {
 	count: 0,
 	generate: () => {
-		this.count++
-		return `shortid-${this.count}`
+		shortid.count++
+		return `shortid-${shortid.count}`
 	}
 }
 
@@ -66,14 +66,19 @@ export const randomize = (avg, randomPercentage = 0.2) => {
 }
 
 export const extractText = (...args) => {
-	const traverse = node => {
+	const traverse = (...node) => {
 		if (isTypingComponent(node)) {
 			return node
 		} else if (React.isValidElement(node)) {
-			if (voidHTMLElements.indexOf(node.type) !== -1) {
+			if (
+				typeof node.type === 'string' &&
+				voidHTMLElements.indexOf(node.type) !== -1
+			) {
 				return '\n'
 			}
-			return Children.map(node.props.children, child => traverse(child))
+			return Children.map((node as React.ReactElement).props.children, child =>
+				traverse(child)
+			)
 		} else if (Array.isArray(node)) {
 			return node.map(el => traverse(el))
 		}
@@ -94,7 +99,10 @@ export const replaceTreeText = (tree, txt, cursor, hideCursor) => {
 		if (isTypingComponent(node)) {
 			return undefined
 		} else if (React.isValidElement(node)) {
-			if (voidHTMLElements.indexOf(node.type) !== -1) {
+			if (
+				typeof node.type === 'string' &&
+				voidHTMLElements.indexOf(node.type) !== -1
+			) {
 				if (text.length === 1) {
 					return Children.toArray([
 						text.shift() === '' ? undefined : node,
@@ -107,13 +115,13 @@ export const replaceTreeText = (tree, txt, cursor, hideCursor) => {
 			return React.createElement(
 				node.type,
 				{
-					...node.props,
+					...(node as React.ReactElement).props,
 					key: node.key || `Typing.${shortid.generate()}`
 				},
 				removeUndefined(
-					Children.toArray(node.props.children).map(child =>
-						traverse(child, text)
-					)
+					Children.toArray(
+						(node as React.ReactElement).props.children
+					).map(child => traverse(child, text))
 				)
 			)
 		} else if (Array.isArray(node)) {

@@ -1,7 +1,7 @@
 import React, { Component, Fragment, ReactElement } from 'react'
 import cx from 'classnames'
 
-import Button, { ButtonKinds } from '../Button/Button'
+import Button, { ButtonKinds, ButtonOnClick } from '../Button/Button'
 import EmptyState from '../EmptyState/EmptyState'
 import RecordSelectionList from '../RecordSelectionList/RecordSelectionList'
 
@@ -21,7 +21,7 @@ interface ITruncatedListProps {
 	truncatedActionText?: string
 
 	/** Method called when truncated action is clicked */
-	onClickTruncatedAction?: Function
+	onClickTruncatedAction?: ButtonOnClick
 
 	/** RecordSelectionListItems to be displayed in the list */
 	recordSelectionListItems: IRecordSelectionListItemProps[]

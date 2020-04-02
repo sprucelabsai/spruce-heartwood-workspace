@@ -2,12 +2,26 @@ import React, { Component } from 'react'
 import requestAnimationFrame from 'raf'
 
 import { randomize, extractText, replaceTreeText } from './utils'
-import Backspace from './Backspace'
-import Reset from './Reset'
-import Delay from './Delay'
-import Speed from './Speed'
-import Cursor from './Cursor'
+import { default as Backspace } from './Backspace'
+import { default as Reset } from './Reset'
+import { default as Delay } from './Delay'
+import { default as Speed } from './Speed'
+import { default as Cursor } from './Cursor'
 
+export enum Step {
+	Line = 'line',
+	Char = 'char'
+}
+
+export interface ICursor {
+	lineNum: number
+	charPos: number
+	numToErase: number
+	preEraseLineNum: number
+	delay: number
+	speed: number
+	step: Step
+}
 interface IProps {
 	children: React.ReactNode
 	className?: string
@@ -15,16 +29,22 @@ interface IProps {
 	cursorClassName?: string
 	speed?: number
 	startDelay?: number
-	loop?: boolean
+	loop?: boolean | null
+	beginTypingOnMount?: boolean
+	hideCursor?: boolean
 	onStartedTyping?: () => void
 	onPausedTyping?: () => void
-	onBeforeType?: () => void
-	onAfterType?: () => void
+	onBeforeType?: (text?: string[], cursor?: ICursor) => void
+	onAfterType?: (text?: string[], cursor?: ICursor) => void
 	onFinishedTyping?: () => void
-	beginTypingOnMount?: boolean
 }
 
-interface IState {}
+interface IState {
+	isFinished: boolean
+	text: string[]
+	toType: any[]
+	cursor: ICursor
+}
 
 class Typing extends Component<IProps, IState> {
 	public static defaultProps = {
@@ -47,16 +67,28 @@ class Typing extends Component<IProps, IState> {
 	public static Speed = Speed
 	public static Cursor = Cursor
 
-	public state = {
-		isFinished: false,
-		text: [],
-		toType: () => {}
-	}
-
 	public hasMounted = false
 	public isPaused = true
 	/** Was play hit too soon */
 	public pendingPlay = false
+
+	public constructor(props: IProps) {
+		super(props)
+		this.state = {
+			isFinished: false,
+			text: [],
+			toType: [],
+			cursor: {
+				lineNum: 0,
+				charPos: 0,
+				numToErase: 0,
+				preEraseLineNum: 0,
+				delay: Typing.defaultProps.startDelay,
+				speed: Typing.defaultProps.speed,
+				step: Step.Char
+			}
+		}
+	}
 
 	public componentDidMount() {
 		this.hasMounted = true
@@ -128,7 +160,7 @@ class Typing extends Component<IProps, IState> {
 			setTimeout(async () => {
 				await this.resetState()
 				if (!wasPaused) {
-					await this.play(true)
+					await this.play()
 				}
 				resolve()
 			}, 100)
@@ -156,11 +188,11 @@ class Typing extends Component<IProps, IState> {
 		const cursor = { ...this.state.cursor }
 
 		if (this.state.toType.length > 0 || cursor.numToErase > 0) {
-			await this.props.onBeforeType(this.state.text, this.state.cursor)
+			await this.handleBeforeType(this.state.text, this.state.cursor)
 			await this.type()
-			await this.props.onAfterType(this.state.text, this.state.cursor)
+			await this.handleAfterType(this.state.text, this.state.cursor)
 		} else {
-			await this.props.onFinishedTyping()
+			await this.handleFinishedTyping()
 
 			if (this.props.loop) {
 				await this.resetState()
@@ -284,19 +316,19 @@ class Typing extends Component<IProps, IState> {
 				if (cursor.numToErase < 1) {
 					cursor.lineNum = cursor.preEraseLineNum
 					cursor.charPos = 0
-					cursor.step = 'char'
+					cursor.step = Step.Char
 				}
 			} else if (cursor.step === 'line' && cursor.numToErase > 0) {
 				text[cursor.lineNum] = ''
 				cursor.lineNum -= 1
 				cursor.numToErase -= 1
 				cursor.charPos = 0
-				cursor.step = 'char'
+				cursor.step = Step.Char
 			} else if (cursor.step === 'line') {
 				cursor.lineNum = 0
 				cursor.charPos = 0
 				cursor.numToErase = 0
-				cursor.step = 'char'
+				cursor.step = Step.Char
 				text.length = 0
 			}
 
@@ -321,6 +353,24 @@ class Typing extends Component<IProps, IState> {
 		)
 
 		return <div className={className}>{filled}</div>
+	}
+
+	private handleBeforeType(text?: string[], cursor?: ICursor) {
+		if (this.props.onBeforeType) {
+			this.props.onBeforeType(text, cursor)
+		}
+	}
+
+	private handleAfterType(text?: string[], cursor?: ICursor) {
+		if (this.props.onAfterType) {
+			this.props.onAfterType(text, cursor)
+		}
+	}
+
+	private handleFinishedTyping() {
+		if (this.props.onFinishedTyping) {
+			this.props.onFinishedTyping()
+		}
 	}
 }
 
