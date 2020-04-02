@@ -16,7 +16,7 @@ interface IControllerState {
 }
 
 class Controller extends React.Component<IControllerProps, IControllerState> {
-	constructor(props) {
+	public constructor(props) {
 		super(props)
 		this.state = {
 			currentSlide: 0

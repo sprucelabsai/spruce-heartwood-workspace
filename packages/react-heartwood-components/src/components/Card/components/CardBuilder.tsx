@@ -27,17 +27,17 @@ import Scores from './Scores'
 export interface ICardBuilderFooter extends IHWCardBuilderFooter {}
 export interface ICardBuilderBodyItem extends IHWCardBuilderBodyItem {}
 export interface ICardBuilderBodyProps extends IHWCardBuilderBody {
-	/** optional child that will be rendered as the body */
+	/** Optional child that will be rendered as the body */
 	children?: React.ReactNode
 }
 
 export interface ICardBuilderProps extends IHWCardBuilder {
 	body?: (IHWCardBuilder['body'] & { children?: any }) | null
 
-	/** so we can use directly and set our own children */
+	/** So we can use directly and set our own children */
 	children?: React.ReactNode
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

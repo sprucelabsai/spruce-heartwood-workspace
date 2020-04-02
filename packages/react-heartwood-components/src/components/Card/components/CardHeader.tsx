@@ -19,7 +19,7 @@ export interface ICardHeaderProps
 	/** Renders a Context Menu in the Card Header */
 	contextMenu?: IContextMenuProps | null
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

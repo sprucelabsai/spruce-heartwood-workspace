@@ -7,13 +7,13 @@ import {
 } from '@sprucelabs/spruce-types'
 
 export interface IBigFormSlideHeaderProps {
-	/** what question are we asking (fed to typed message) */
+	/** What question are we asking (fed to typed message) */
 	question: string
-	/** the state of mind of sprucebot for this header */
+	/** The state of mind of sprucebot for this header */
 	sprucebotStateOfMind?: IHWSprucebotAvatarStateOfMind
-	/** how big should sprubot be? */
+	/** How big should sprubot be? */
 	sprucebotSize?: IHWSprucebotTypedMessageSize
-	/** all children */
+	/** All children */
 	children?: React.ReactElement
 }
 
@@ -23,7 +23,7 @@ class BigFormSlideHeader extends React.Component<IBigFormSlideHeaderProps> {
 		sprucebotStateOfMind: IHWSprucebotAvatarStateOfMind.Chill
 	}
 
-	messageRef = React.createRef<SprucebotTypedMessage>()
+	public messageRef = React.createRef<SprucebotTypedMessage>()
 
 	public focus = async () => {
 		if (this.messageRef.current) {

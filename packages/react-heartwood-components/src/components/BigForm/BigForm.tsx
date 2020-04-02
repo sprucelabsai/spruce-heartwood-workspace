@@ -20,33 +20,33 @@ export enum BigFormTransitionStyle {
 }
 
 interface IBigFormProps {
-	/** should the same sprucebot just delete and retype messages */
+	/** Should the same sprucebot just delete and retype messages */
 	useOneSprucebot?: boolean
 
-	/** transition style */
+	/** Transition style */
 	transitionStyle?: BigFormTransitionStyle
 
-	/** which slide is selected? */
+	/** Which slide is selected? */
 	currentSlide?: number
 
-	/** children should be big form slides */
+	/** Children should be big form slides */
 	children?: React.ReactNode
 
-	/** can go back a step (unless) */
+	/** Can go back a step (unless) */
 	canGoBack?: boolean
 
-	/** can go to the next step? */
+	/** Can go to the next step? */
 	canGoNext?: boolean
 
-	/** called when hitting back butto */
+	/** Called when hitting back butto */
 	onBack?: () => void
 
-	/** called when hitting next button or hitting enter in a text field */
+	/** Called when hitting next button or hitting enter in a text field */
 	onNext?: () => void
 }
 
 interface IBigFormState {
-	/** this is what actually drives the
+	/** This is what actually drives the
 	 * selected slide, delayed from prop
 	 * changes to handle positioning before
 	 * transition */
@@ -54,11 +54,11 @@ interface IBigFormState {
 }
 
 class BigForm extends React.Component<IBigFormProps, IBigFormState> {
-	/** a slide for the form */
+	/** A slide for the form */
 	public static Slide = BigFormSlide
-	/** the body of a slide */
+	/** The body of a slide */
 	public static SlideBody = BigFormSlideBody
-	/** the header for a slide (uses sprucebot typed question) */
+	/** The header for a slide (uses sprucebot typed question) */
 	public static SlideHeader = BigFormSlideHeader
 
 	public static defaultProps = {
@@ -68,14 +68,14 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 		transitionStyle: BigFormTransitionStyle.Stack
 	}
 
-	bigFormRef = React.createRef<HTMLDivElement>()
-	slideRefs: BigFormSlide[] = []
-	theOneSprucebotRef = React.createRef<SprucebotTypedMessage>()
+	public bigFormRef = React.createRef<HTMLDivElement>()
+	public slideRefs: BigFormSlide[] = []
+	public theOneSprucebotRef = React.createRef<SprucebotTypedMessage>()
 
-	/** all the header props when usingOneSprucebot */
-	headerProps: IBigFormSlideHeaderProps[] = []
+	/** All the header props when usingOneSprucebot */
+	public headerProps: IBigFormSlideHeaderProps[] = []
 
-	constructor(props: IBigFormProps) {
+	public constructor(props: IBigFormProps) {
 		super(props)
 		this.state = {
 			currentSlide: this.props.currentSlide || 0
@@ -89,11 +89,11 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 		this.jumpToSlide(this.props.currentSlide || 0)
 	}
 
-	componentDidUpdate = (prevProps: IBigFormProps) => {
-		// update header props
+	public componentDidUpdate = (prevProps: IBigFormProps) => {
+		// Update header props
 		this.headerProps = this.getHeaderProps()
 
-		// jump to a slide if current slide has changed OR if we enabledOneSprucebot
+		// Jump to a slide if current slide has changed OR if we enabledOneSprucebot
 		if (
 			prevProps.currentSlide !== this.props.currentSlide ||
 			prevProps.useOneSprucebot !== this.props.useOneSprucebot
@@ -146,9 +146,9 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 				}
 			}
 
-			// give styles a chance to position everything before changing the current index
+			// Give styles a chance to position everything before changing the current index
 			this.setState({ currentSlide: destinationSlide }, () => {
-				// let all css transitions finish (1 second max)
+				// Let all css transitions finish (1 second max)
 				setTimeout(() => {
 					this.bigFormRef.current &&
 						this.bigFormRef.current.classList.remove('transitioning')
@@ -186,7 +186,7 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 				const slideElement = child as ReactElement
 				let children = slideElement.props.children
 
-				// if we are using one sprucebot, filter out all header fields
+				// If we are using one sprucebot, filter out all header fields
 				if (useOneSprucebot) {
 					children = []
 					React.Children.forEach(slideElement.props.children, child => {

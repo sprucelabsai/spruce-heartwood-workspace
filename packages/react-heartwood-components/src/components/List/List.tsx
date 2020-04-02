@@ -17,7 +17,7 @@ import ListItem, { IListItemProps } from './components/ListItem/ListItem'
 export type IWrappedItemProps = IListItemProps | IExpandableListItemProps
 
 export interface IListProps extends Omit<IHWList, 'id' | 'header' | 'items'> {
-	/** optional id for view caching */
+	/** Optional id for view caching */
 	id?: string
 
 	/** List Header */
@@ -29,13 +29,13 @@ export interface IListProps extends Omit<IHWList, 'id' | 'header' | 'items'> {
 	/** Class for the list */
 	className?: string
 
-	/** any passthrough to render in the body of the list */
+	/** Any passthrough to render in the body of the list */
 	children?: React.ReactNode
 
 	/** Is this whole list in a loading state? Sets all list items to loading only if true. */
 	isLoading?: boolean
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 
@@ -56,7 +56,7 @@ const List = (props: IListProps): React.ReactElement => {
 		onAction
 	} = props
 
-	// seperators a true by default
+	// Seperators a true by default
 	const areSeparatorsVisible =
 		typeof areSeparatorsVisibleProp === 'boolean'
 			? areSeparatorsVisibleProp

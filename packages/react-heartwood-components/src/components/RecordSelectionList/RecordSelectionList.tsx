@@ -69,7 +69,7 @@ export interface IRecordSelectionListProps {
 	/** Respond to changes to the search value */
 	onSearchChange?: (value: string) => any
 
-	/** delays invoking search until after a certain ms have elapsed since the last time the
+	/** Delays invoking search until after a certain ms have elapsed since the last time the
 	 * search was invoked */
 	searchDelayMs?: number
 
@@ -316,7 +316,7 @@ export default class RecordSelectionList extends Component<
 
 				{canSearch && loadedRecords.length > 0 && (
 					<Fragment>
-						{searchLabel && <InputPre label={searchLabel} />}
+						{searchLabel && <InputPre id={searchLabel} label={searchLabel} />}
 						<TextInput
 							id={'record-selection-list-filter'}
 							type="text"

@@ -3,10 +3,12 @@ import cx from 'classnames'
 import HeaderPrimary from '../Core/components/HeaderPrimary/HeaderPrimary'
 import { Sidebar, SidebarFooter } from '../Core'
 import moment from 'moment'
+import { IHWSidebarSide } from '@sprucelabs/spruce-types'
+import { ISidebarItemProps } from '../Core/components/Sidebar/components/SidebarItem/SidebarItem'
 
 interface IViewProps {
 	children: ReactNode
-	forceCloseSidebar?: Function
+	forceCloseSidebar?: () => void
 
 	/** Should view chrome be shown? (Header, left sidebar) */
 	isChromeless?: boolean
@@ -15,19 +17,19 @@ interface IViewProps {
 	isSidebarMobileExpanded?: boolean
 	isSidebarVisible?: boolean
 	location?: Record<string, any>
-	onClickSearch?: Function
+	onClickSearch?: () => void
 	organization?: Record<string, any>
 	privacyLink?: string
 	searchPlaceholder?: string
-	sidebarBackLink?: Record<string, any>
-	sidebarItems?: Record<string, any>[]
+	sidebarBackLink?: ISidebarItemProps
+	sidebarItems?: ISidebarItemProps[]
 	termsLink?: string
-	toggleSidebarExpanded?: Function
-	toggleSidebarVisibility?: Function
+	toggleSidebarExpanded?: () => void
+	toggleSidebarVisibility?: (event?: React.MouseEvent) => void
 	user?: Record<string, any>
 
 	/** Menu children (<ListItem> or <li>) */
-	userMenuItems: ReactNode
+	userMenuItems?: ReactNode
 }
 
 const View = (props: IViewProps): ReactElement => {
@@ -84,12 +86,11 @@ const View = (props: IViewProps): ReactElement => {
 							items={sidebarItems}
 							backLink={sidebarBackLink}
 							footer={<SidebarFooter />}
-							isSidebarVisible={isSidebarVisible}
 							isExpanded={isSidebarExpanded}
 							isMobileExpanded={isSidebarMobileExpanded}
 							toggleExpanded={toggleSidebarExpanded}
 							forceCloseSidebar={forceCloseSidebar}
-							side="left"
+							side={IHWSidebarSide.Left}
 						/>
 					</div>
 				)}

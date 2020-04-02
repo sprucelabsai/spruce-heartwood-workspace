@@ -15,6 +15,13 @@ export {
 	IHWButtonTypes as ButtonTypes
 } from '@sprucelabs/spruce-types'
 
+export type ButtonOnClick = (
+	e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>,
+	payload?: Record<string, any>
+) => void
+
+// (e?: React.FormEvent<HTMLFormElement> | undefined) => void
+
 export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	/** Optional ID for view caching */
 	id?: string
@@ -35,24 +42,27 @@ export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	icon?: IIconProps | null
 
 	/** Click handler. */
-	onClick?: Function
+	onClick?: (e?: React.MouseEvent, payload?: Record<string, any>) => void
 
 	/** Component used to render anchor */
 	AnchorComponent?: any
 
-	/** optional target, whatever an anchor tag takes */
+	/** Optional target, whatever an anchor tag takes */
 	target?: string
 
-	/** optional payload to be sent with onclick (different than the payload attached to action.) */
+	/** Optional payload to be sent with onclick (different than the payload attached to action.) */
 	payload?: Record<string, any>
 
-	/** optional, provide a handler for Actions */
+	/** Whether the button should be disabled */
+	isDisabled?: boolean | null
+
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 
 export type Action = IButtonProps | IHWButton
 
-const Button = (props: IButtonProps | IHWButton): React.ReactElement => {
+const Button = (props: IButtonProps): React.ReactElement => {
 	const reactHeartwoodProps = props as IButtonProps
 
 	const {
@@ -91,8 +101,10 @@ const Button = (props: IButtonProps | IHWButton): React.ReactElement => {
 		'visually-hidden': isIconOnly
 	})
 
-	const handleClick = (e: any): any => {
-		e.currentTarget.blur()
+	const handleClick = (e: React.MouseEvent): any => {
+		if (e.currentTarget instanceof HTMLElement) {
+			e.currentTarget.blur()
+		}
 
 		if (onAction && action) {
 			onAction(action)

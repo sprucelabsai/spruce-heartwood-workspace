@@ -29,14 +29,14 @@ export default class SprucebotTypedMessage extends Component<
 	IHWSprucebotTypedMessage,
 	ISprucebotTypedMessageState
 > {
-	static defaultProps = {
+	public static defaultProps = {
 		startDelayMs: 1000,
 		size: IHWSprucebotTypedMessageSize.Small
 	}
 
-	typingRef = React.createRef<Typing>()
+	public typingRef = React.createRef<Typing>()
 
-	constructor(props: IHWSprucebotTypedMessage) {
+	public constructor(props: IHWSprucebotTypedMessage) {
 		super(props)
 		this.state = {
 			sentenceIdxBeingTyped: 0,
@@ -45,15 +45,17 @@ export default class SprucebotTypedMessage extends Component<
 		}
 	}
 
-	addToTypingQueue = async (sentence: IHWSprucebotTypedMessageSentence) => {
+	public addToTypingQueue = async (
+		sentence: IHWSprucebotTypedMessageSentence
+	) => {
 		if (this.typingRef.current) {
 			const { sentences } = this.props
 			const { sentenceQueue } = this.state
 
-			// add sentence to the queue and re-render of children of Typing
+			// Add sentence to the queue and re-render of children of Typing
 			this.setState({ sentenceQueue: [...sentenceQueue, sentence] })
 
-			// need to calculate delete count or reset
+			// Need to calculate delete count or reset
 			const all = [...sentences, ...sentenceQueue]
 			const last = all.pop()
 
@@ -89,8 +91,8 @@ export default class SprucebotTypedMessage extends Component<
 		}
 	}
 
-	componentDidUpdate = prevProps => {
-		// if paused prop changed at all, it wins (calling play manually starts it again)
+	public componentDidUpdate = prevProps => {
+		// If paused prop changed at all, it wins (calling play manually starts it again)
 		if (prevProps.paused !== this.props.paused) {
 			switch (this.props.paused) {
 				case true:
@@ -102,19 +104,19 @@ export default class SprucebotTypedMessage extends Component<
 		}
 	}
 
-	pause = async () => {
+	public pause = async () => {
 		return this.typingRef.current && this.typingRef.current.pause()
 	}
 
-	play = async () => {
+	public play = async () => {
 		return this.typingRef.current && this.typingRef.current.play()
 	}
 
-	reset = async () => {
+	public reset = async () => {
 		return this.typingRef.current && this.typingRef.current.reset()
 	}
 
-	findFirstUniqueCharacter = (words1: string, words2: string) => {
+	public findFirstUniqueCharacter = (words1: string, words2: string) => {
 		for (let i = 0; i < words1.length; i++) {
 			if (words1[i] !== words2[i]) {
 				return i
@@ -123,7 +125,7 @@ export default class SprucebotTypedMessage extends Component<
 		return -1
 	}
 
-	buildMarkup = () => {
+	public buildMarkup = () => {
 		const { sentences, startDelayMs, loop } = this.props
 		const { sentenceQueue } = this.state
 		const elements: React.ReactNode[] = []
@@ -136,21 +138,21 @@ export default class SprucebotTypedMessage extends Component<
 		;[...sentences, ...sentenceQueue].forEach((sentence, idx) => {
 			let startCharacterIdx = 0
 
-			// delete the last words
+			// Delete the last words
 			if (lastSentence) {
 				const firstUniqueIdx = this.findFirstUniqueCharacter(
 					sentence.words,
 					lastSentence.words
 				)
 
-				// how far back should we delete to start typing the next sentence?
+				// How far back should we delete to start typing the next sentence?
 				const howManyToDelete = lastSentence.words.length - firstUniqueIdx
 
-				// the next sentence was additive so only add the characters that are new
+				// The next sentence was additive so only add the characters that are new
 				if (firstUniqueIdx === -1) {
 					startCharacterIdx = lastSentence.words.length
 				} else if (howManyToDelete === lastSentence.words.length) {
-					// if we are deleting the whole thing, just clear the line entirely
+					// If we are deleting the whole thing, just clear the line entirely
 					elements.push(
 						<Typing.Reset
 							key={`reset-${idx}`}
@@ -188,7 +190,7 @@ export default class SprucebotTypedMessage extends Component<
 		return elements
 	}
 
-	buildAvatar = (): IHWSprucebotAvatar | undefined => {
+	public buildAvatar = (): IHWSprucebotAvatar | undefined => {
 		const { defaultAvatar, size, sentences } = this.props
 		const { sentenceIdxBeingTyped } = this.state
 
@@ -201,7 +203,7 @@ export default class SprucebotTypedMessage extends Component<
 			}
 		}
 
-		// if this test
+		// If this test
 		if (
 			sentences[sentenceIdxBeingTyped] &&
 			sentences[sentenceIdxBeingTyped].avatar
@@ -215,8 +217,11 @@ export default class SprucebotTypedMessage extends Component<
 		return avatar
 	}
 
-	handleTyping = (text: string[]) => {
-		// to track when the animation has started the next sentence, we need to check when text has a different amonut of elements
+	public handleTyping = (text?: string[]) => {
+		if (!Array.isArray(text)) {
+			return
+		}
+		// To track when the animation has started the next sentence, we need to check when text has a different amonut of elements
 		const { sentenceIdxBeingTyped, lastLineNum } = this.state
 		const { sentences } = this.props
 		const line = compact(text).length - 1

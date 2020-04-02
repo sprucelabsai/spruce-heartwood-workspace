@@ -6,7 +6,7 @@ import ReactPhoneInput, {
 import cx from 'classnames'
 import { InputPre, InputHelper } from '../../FormPartials'
 
-// for validating and formatting
+// For validating and formatting
 export {
 	formatPhoneNumber,
 	formatPhoneNumberIntl
@@ -78,7 +78,7 @@ export default class PhoneInput extends Component<
 					'text-input-small': isSmall
 				})}
 			>
-				<InputPre label={label} />
+				<InputPre id={label} label={label} />
 
 				<ReactPhoneInput
 					inputClassName="text-input__input"

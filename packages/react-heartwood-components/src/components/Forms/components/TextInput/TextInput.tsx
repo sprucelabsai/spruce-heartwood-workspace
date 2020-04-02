@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import cx from 'classnames'
 import { InputPre, InputInner, InputHelper } from '../../FormPartials'
 
-interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
+export interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
 	/** Unique identifier */
 	id: string
 
@@ -35,10 +35,13 @@ interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
 
 	/** Set true to make the input less tall */
 	isSmall?: boolean
+
+	/** The value */
+	value?: string
 }
 
 class TextInput extends React.Component<ITextInputProps> {
-	wrapperRef = React.createRef<HTMLDivElement>()
+	public wrapperRef = React.createRef<HTMLDivElement>()
 
 	public focus = (options?: FocusOptions) => {
 		const wrapper = this.wrapperRef.current

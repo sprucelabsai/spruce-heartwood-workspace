@@ -8,7 +8,8 @@ import Icon, { IIconProps } from '../../../Icon/Icon'
 import { InputPre, InputHelper } from '../../FormPartials'
 import ClearIcon from '../../../../../static/assets/icons/ic_cancel.svg'
 
-export interface IAutosuggestInterfaceProps {
+export interface IAutosuggestInterfaceProps
+	extends Partial<ReactAutosuggest.AutosuggestPropsBase<any>> {
 	/** Unique identifier */
 	id: string
 
@@ -16,13 +17,15 @@ export interface IAutosuggestInterfaceProps {
 	getSuggestions: (value: string) => Promise<Record<string, any>[]> | null
 
 	/** Implement it to teach Autosuggest what should be the input value when suggestion is clicked. */
-	getSuggestionValue: Function
+	getSuggestionValue: (suggestion: any) => string
 
 	/** Defines how suggestions will be rendered */
-	renderSuggestion: Function
+	renderSuggestion: (suggestion: any, params: any) => React.ReactNode
 
 	/** Will be called every time suggestion is selected via mouse or keyboard. */
-	onSuggestionSelected: Function
+	onSuggestionSelected?: (event: React.FormEvent<any>, data: any) => void
+
+	shouldRenderSuggestions?: () => boolean
 
 	/** Supply default suggestions that can be shown without input */
 	defaultSuggestions?: any[]
@@ -30,10 +33,10 @@ export interface IAutosuggestInterfaceProps {
 	/** Placeholder for the input */
 	placeholder?: string
 
-	/** optionally pass a default value for this input */
+	/** Optionally pass a default value for this input */
 	defaultValue?: string
 
-	/** optional label */
+	/** Optional label */
 	label?: string
 
 	/** Text after label */
@@ -51,17 +54,18 @@ export interface IAutosuggestInterfaceProps {
 	/** Adds a class to the Autosuggest's wrapper */
 	wrapperClassName?: string
 
-	/** passed through to react autosuggest */
-	inputProps?: Record<string, any>
-
-	/** optional class name for wrapper */
+	/** Optional class name for wrapper */
 	className?: string
 
-	/** disable this input */
+	/** Disable this input */
 	disabled?: boolean
 
 	/** Optional; adds an icon to the beginning of the text input */
 	icon?: IIconProps
+
+	multiSection?: boolean
+
+	inputProps?: ReactAutosuggest.InputProps<any>
 }
 
 interface IAutosuggestInterfaceState {
@@ -93,6 +97,17 @@ const theme = (props: IThemeProps): any => ({
 	suggestion: 'autosuggest__list-item'
 })
 
+interface IAutoSuggestRefCurrent extends ReactAutosuggest<any, any> {
+	autowhatever?: {
+		input: any
+	}
+	suggestionsContainer?: any
+}
+
+interface IAutoSuggestRef extends React.RefObject<ReactAutosuggest> {
+	current: IAutoSuggestRefCurrent | null
+}
+
 export default class Autosuggest extends Component<
 	IAutosuggestInterfaceProps,
 	IAutosuggestInterfaceState
@@ -102,7 +117,7 @@ export default class Autosuggest extends Component<
 	}
 
 	private domNodeRef: React.RefObject<HTMLDivElement>
-	private autosuggestRef: React.RefObject<ReactAutosuggest>
+	private autosuggestRef: IAutoSuggestRef
 
 	private debouncedResize = debounce(() => this.handleWindowResize(), 500)
 
@@ -157,19 +172,20 @@ export default class Autosuggest extends Component<
 			id,
 			postLabel,
 			wrapperClassName,
-			inputProps: originalInputProps = {},
+			inputProps: originalInputProps,
 			className,
 			disabled,
 			icon,
+			multiSection,
 			...rest
 		} = this.props
 
 		const inputProps = {
 			...originalInputProps,
-			placeholder: originalInputProps.placeholder || placeholder || '',
-			value: originalInputProps.value || value,
-			onChange: originalInputProps.onChange || this.onChange,
-			onBlur: originalInputProps.onBlur || this.onBlur,
+			placeholder: originalInputProps?.placeholder || placeholder || '',
+			value: originalInputProps?.value || value,
+			onChange: originalInputProps?.onChange || this.onChange,
+			onBlur: originalInputProps?.onBlur || this.onBlur,
 			disabled
 		}
 
@@ -183,8 +199,9 @@ export default class Autosuggest extends Component<
 				{label && <InputPre label={label} id={id} postLabel={postLabel} />}
 				<div className={cx('autosuggest__wrapper', wrapperClassName)}>
 					<ReactAutosuggest
+						multiSection={multiSection === true}
 						ref={this.autosuggestRef}
-						suggestions={suggestions}
+						suggestions={suggestions ?? []}
 						onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
 						onSuggestionsClearRequested={this.onSuggestionsClearRequested}
 						getSuggestionValue={getSuggestionValue}

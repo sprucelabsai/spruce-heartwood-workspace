@@ -10,19 +10,19 @@ export enum BigFormSlidePosition {
 }
 
 export interface IBigFormSlideProps {
-	/** our position in the show */
+	/** Our position in the show */
 	position?: BigFormSlidePosition
 
-	/** should container a header and body */
+	/** Should container a header and body */
 	children?: React.ReactNode
 
-	/** called when submitting a step, probably hitting return in a text field */
+	/** Called when submitting a step, probably hitting return in a text field */
 	onSubmit?: <T>(value: T | null) => void
 }
 
 class BigFormSlide extends React.Component<IBigFormSlideProps> {
-	headerRef = React.createRef<BigFormSlideHeader>()
-	bodyRef = React.createRef<BigFormSlideBody>()
+	public headerRef = React.createRef<BigFormSlideHeader>()
+	public bodyRef = React.createRef<BigFormSlideBody>()
 
 	public focus = (options?: FocusOptions) => {
 		this.headerRef.current && this.headerRef.current.focus()

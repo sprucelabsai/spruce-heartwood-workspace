@@ -34,28 +34,28 @@ export interface IRecordTableProps extends ITableProps {
 	/** Plural noun describing the contents of this table */
 	pluralKind?: string
 
-	/** for handling when a tab is selected, return false to stop tab form being set */
+	/** For handling when a tab is selected, return false to stop tab form being set */
 	onClickTab?: (
 		e: MouseEvent,
 		data: { idx?: number; key: string; payload?: Record<string, any> }
 	) => boolean
 
-	/** the tabs to render, passed to Tabs component. onClick is ignored */
+	/** The tabs to render, passed to Tabs component. onClick is ignored */
 	tabs?: any[]
 
 	/** Should rows be selectable? */
 	isSelectable?: boolean
 
-	/** which tab to select at first */
+	/** Which tab to select at first */
 	initialSelectedTab?: string
 
-	/** how to sort to start */
+	/** How to sort to start */
 	initialSortColumn: string
 
-	/** direction to start (defaults to desc) */
+	/** Direction to start (defaults to desc) */
 	initialSortDirection?: 'asc' | 'desc'
 
-	/** starting limit, defaults to RECORD_TABLE_INITIAL_LIMIT  */
+	/** Starting limit, defaults to RECORD_TABLE_INITIAL_LIMIT  */
 	initialLimit?: number
 
 	/** The rows that should be visible when the table mounts */
@@ -64,45 +64,45 @@ export interface IRecordTableProps extends ITableProps {
 	/** The total possible number of rows this table may contain */
 	totalRows: number
 
-	/** should we enable searching? */
+	/** Should we enable searching? */
 	enableSearch?: boolean
 
-	/** should we enable filtering? */
+	/** Should we enable filtering? */
 	enableFilter?: boolean
 
-	/** placeholder to show for search */
+	/** Placeholder to show for search */
 	searchPlaceholder?: string
 
-	/** props to pass through to the table search component */
+	/** Props to pass through to the table search component */
 	tableSearchProps?: ITableSearchProps
 
-	/** when rendering search results, this is how i'll know what to output */
+	/** When rendering search results, this is how i'll know what to output */
 	searchSuggestionAccessor?: (suggestion: Record<string, any>) => any
 
-	/** called anytime records need to be fetched */
+	/** Called anytime records need to be fetched */
 	fetchRecords: (
 		options: IRecordTableFetchOptions
 	) => Promise<IRecordTableFetchResults>
 
-	/** table columns to be rendered TODO(TR) import Column interfaces  */
+	/** Table columns to be rendered TODO(TR) import Column interfaces  */
 	columns: Record<string, any>[]
 
-	/** should I fetch all my data on mount? */
+	/** Should I fetch all my data on mount? */
 	fetchOnMount?: boolean
 
 	/** Flag for error on fetching data */
 	fetchError?: boolean
 
-	/** passthrough to Table component */
+	/** Passthrough to Table component */
 	handleClickRow?: (
 		e: MouseEvent,
 		meta: { idx: number; item: Record<string, any> }
 	) => void
 
-	/** called when search suggestion is selected */
+	/** Called when search suggestion is selected */
 	onSelection?: (options: { selectedIds: (string | number)[] }) => void
 
-	/** called when navigating to page */
+	/** Called when navigating to page */
 	onNavigateToPage?: Function
 
 	/** Icon to show if no results match the current filter */

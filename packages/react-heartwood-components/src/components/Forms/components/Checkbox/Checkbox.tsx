@@ -9,14 +9,16 @@ export interface ICheckboxProps extends Omit<IHWCheckbox, 'isIndeterminate'> {
 	/** Class for the checkbox wrapper */
 	className?: string
 
-	/** triggered on change */
+	/** Triggered on change */
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 
 	/** Is this 3 states, on, off, or half */
 	isIndeterminate?: boolean
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
+
+	disabled?: boolean
 }
 
 interface ICheckboxState {}

@@ -50,7 +50,7 @@ export interface IEventDetailsItemProps
 	extends Omit<IHWCalendarEventDetailsItem, 'viewModel'> {
 	viewModel: ViewModel | IHWCalendarEventDetailsItemViewModel
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

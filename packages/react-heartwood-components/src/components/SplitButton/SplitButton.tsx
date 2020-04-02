@@ -16,7 +16,7 @@ export interface ISplitButtonProps
 	/** All the secondary nested actions */
 	actions: IButtonProps[]
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

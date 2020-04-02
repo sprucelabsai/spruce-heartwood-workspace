@@ -1,10 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
 import EventDetails from './EventDetails'
-
 import { Sidebar, SidebarHeader } from '../Core'
-// import Page from '../Page'
 
 import {
 	appointment,
@@ -14,6 +11,7 @@ import {
 	ptoBlock
 } from './eventDetailsMock'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { IHWSidebarSide } from '@sprucelabs/spruce-types'
 
 const stories = storiesOf('EventDetails', module)
 
@@ -26,7 +24,7 @@ stories.addDecorator(withKnobs)
 
 stories
 	.add('Booking: Appointment', () => (
-		<Sidebar side="right" isCollapsible={false} isLarge>
+		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
 			<SidebarHeader title="Appointment details" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
@@ -38,7 +36,7 @@ stories
 		</Sidebar>
 	))
 	.add('Booking: Appointment has warning', () => (
-		<Sidebar side="right" isCollapsible={false} isLarge>
+		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
 			<SidebarHeader title="Appointment details" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
@@ -50,7 +48,7 @@ stories
 		</Sidebar>
 	))
 	.add('Booking: Past Appointment', () => (
-		<Sidebar side="right" isCollapsible={false} isLarge>
+		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
 			<SidebarHeader title="Appointment details" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
@@ -62,7 +60,7 @@ stories
 		</Sidebar>
 	))
 	.add('Scheduling: Lunch Break', () => (
-		<Sidebar side="right" isCollapsible={false} isLarge>
+		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
 			<SidebarHeader title="Lunch break" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
@@ -75,7 +73,7 @@ stories
 	))
 
 	.add('Scheduling: PTO', () => (
-		<Sidebar side="right" isCollapsible={false} isLarge>
+		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
 			<SidebarHeader title="PTO" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}

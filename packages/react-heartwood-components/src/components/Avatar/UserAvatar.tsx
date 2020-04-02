@@ -1,0 +1,29 @@
+import React from 'react'
+import cx from 'classnames'
+import Avatar, { IAvatarProps } from './Avatar'
+
+interface IUserAvatarProps extends IAvatarProps {
+	user: Record<string, any>
+	className?: string
+}
+
+const UserAvatar = (props: IUserAvatarProps) => {
+	const { user, className, ...rest } = props
+	const { profileImages = {}, defaultProfileImages = {} } = user
+
+	const profileImage =
+		(profileImages && profileImages.profile150) ||
+		(defaultProfileImages && defaultProfileImages.profile150)
+
+	return (
+		<Avatar
+			image={profileImage}
+			className={cx(className, {
+				'default-avatar': !profileImages || !profileImages.profile150
+			})}
+			{...rest}
+		/>
+	)
+}
+
+export default UserAvatar

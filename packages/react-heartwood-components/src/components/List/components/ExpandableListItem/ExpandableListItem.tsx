@@ -15,7 +15,7 @@ export interface IExpandableListItemProps
 	/** Optional; adds multiple lists nested at the same level */
 	lists?: IListProps[]
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 interface IExpandableListItemState {

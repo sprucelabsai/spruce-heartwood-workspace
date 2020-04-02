@@ -5,7 +5,7 @@ import RadioIconYes from '../../../../../static/assets/icons/ic_radio_button_che
 import RadioIconNo from '../../../../../static/assets/icons/ic_radio_button_unchecked.svg'
 
 export interface IRadioProps extends Omit<IHWRadio, 'id'> {
-	/** optional id for the radio */
+	/** Optional id for the radio */
 	id?: string
 
 	/** Parent class */
@@ -14,7 +14,7 @@ export interface IRadioProps extends Omit<IHWRadio, 'id'> {
 	/** Change handler */
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 
-	/** optional, provide a handler for Actions */
+	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
 }
 

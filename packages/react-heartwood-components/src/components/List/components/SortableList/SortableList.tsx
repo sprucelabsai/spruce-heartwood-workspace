@@ -10,7 +10,7 @@ import ListHeader from '../ListHeader/ListHeader'
 import ListItem, { IListItemProps } from '../ListItem/ListItem'
 
 export interface ISortableListProps extends IListProps {
-	/** onConfirm callback */
+	/** OnConfirm callback */
 	onConfirm?: () => void
 
 	/** Optional classname for the parent */
