@@ -1,9 +1,10 @@
 import React from 'react'
 import { Tag } from '../../../Forms'
+import { ITagProps } from '../../../Forms/components/Tag/Tag'
 
 interface ITableFiltersProps {
 	/** Filters applied to the table */
-	filters: Array<Record<string, any>>
+	filters: ITagProps[]
 }
 
 const TableFilters = (props: ITableFiltersProps) => {

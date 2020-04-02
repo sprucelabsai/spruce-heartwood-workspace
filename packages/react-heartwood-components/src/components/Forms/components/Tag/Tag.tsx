@@ -3,7 +3,7 @@ import cx from 'classnames'
 import Button from '../../../Button/Button'
 import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
 
-interface ITagProps extends React.HTMLProps<HTMLInputElement> {
+export interface ITagProps extends React.HTMLProps<HTMLInputElement> {
 	/** Tag text */
 	text: string
 

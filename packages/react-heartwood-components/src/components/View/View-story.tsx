@@ -255,6 +255,8 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 						backLinkText: 'Locations',
 						sidebarExpander: {
 							icon: { id: 'more', name: 'more_vertical', isLineIcon: true },
+							// TODO: Set proper onclick type
+							// @ts-ignore
 							onClick: () => this.handleMobileSidebarToggle('right')
 						},
 						tabs: skillViewTabs
@@ -273,6 +275,8 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 								action: {
 									icon: { id: 'close', name: 'close' },
 									isSmall: true,
+									// TODO: Set proper onclick type
+									// @ts-ignore
 									onClick: () => this.handleMobileSidebarToggle('right')
 								}
 							}}

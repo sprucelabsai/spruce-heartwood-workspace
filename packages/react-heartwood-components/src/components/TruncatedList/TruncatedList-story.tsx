@@ -13,6 +13,7 @@ import { userList, userList02 } from '../../../.storybook/data/people'
 
 import Card, { CardHeader, CardBody, CardSection } from '../Card'
 import TruncatedList from './TruncatedList'
+import { IRecordSelectionListItemProps } from '../RecordSelectionList/RecordSelectionList'
 
 const stories = storiesOf('TruncatedList', module)
 
@@ -23,7 +24,6 @@ type TruncatedListExampleProps = {
 	canSelect?: 'many' | 'one'
 	canRemove: boolean
 	recordSelectionListItems: Array<Record<string, any>>
-	maxItemsVisible: number
 	noItemsText?: string
 	truncatedActionItemType?: string
 }
@@ -31,7 +31,7 @@ type TruncatedListExampleProps = {
 type TruncatedListExampleState = {
 	selectedIds: Array<string>
 	unselectableIds: Array<string>
-	loadedRecordSelectionListItems: Array<Record<string, any>>
+	loadedRecordSelectionListItems: IRecordSelectionListItemProps[]
 }
 
 class TruncatedListExample extends Component<

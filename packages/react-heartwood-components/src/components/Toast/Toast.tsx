@@ -1,6 +1,6 @@
 import React from 'react'
 import cx from 'classnames'
-import Button from '../Button/Button'
+import Button, { ButtonOnClick } from '../Button/Button'
 import { IHWToast, IHWAction } from '@sprucelabs/spruce-types'
 
 interface IToastHeaderProps {
@@ -8,7 +8,7 @@ interface IToastHeaderProps {
 	id?: string
 
 	/** Function to remove the toast */
-	onRemove?: Function
+	onRemove?: ButtonOnClick
 
 	/** Headline */
 	headline?: string

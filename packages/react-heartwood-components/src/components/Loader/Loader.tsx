@@ -6,7 +6,7 @@ interface ILoaderProps {
 	isLight: boolean
 
 	/* Set to true if loader should be centered within parent */
-	isCentered: boolean
+	isCentered?: boolean
 }
 
 const Loader = (props: ILoaderProps) => {

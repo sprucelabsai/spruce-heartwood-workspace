@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import requestAnimationFrame from 'raf'
 
 import { randomize, extractText, replaceTreeText } from './utils'
@@ -9,10 +8,49 @@ import Delay from './Delay'
 import Speed from './Speed'
 import Cursor from './Cursor'
 
-class Typing extends Component {
+interface IProps {
+	children: React.ReactNode
+	className?: string
+	cursor?: React.ReactNode
+	cursorClassName?: string
+	speed?: number
+	startDelay?: number
+	loop?: boolean
+	onStartedTyping?: () => void
+	onPausedTyping?: () => void
+	onBeforeType?: () => void
+	onAfterType?: () => void
+	onFinishedTyping?: () => void
+	beginTypingOnMount?: boolean
+}
+
+interface IState {}
+
+class Typing extends Component<IProps, IState> {
+	public static defaultProps = {
+		className: '',
+		cursorClassName: '',
+		speed: 50,
+		startDelay: 0,
+		loop: false,
+		beginTypingOnMount: true,
+		onStartedTyping: () => {},
+		onPausedTyping: () => {},
+		onBeforeType: () => {},
+		onAfterType: () => {},
+		onFinishedTyping: () => {}
+	}
+
+	public static Backspace = Backspace
+	public static Reset = Reset
+	public static Delay = Delay
+	public static Speed = Speed
+	public static Cursor = Cursor
+
 	public state = {
 		isFinished: false,
-		text: []
+		text: [],
+		toType: () => {}
 	}
 
 	public hasMounted = false
@@ -50,7 +88,9 @@ class Typing extends Component {
 
 		if (this.isPaused || this.state.isFinished) {
 			this.isPaused = false
-			await this.props.onStartedTyping()
+			if (this.props.onStartedTyping) {
+				await this.props.onStartedTyping()
+			}
 			requestAnimationFrame(this.beginTyping)
 		}
 	}
@@ -58,7 +98,9 @@ class Typing extends Component {
 	public pause = () => {
 		if (!this.isPaused) {
 			this.isPaused = true
-			this.props.onPausedTyping()
+			if (this.props.onPausedTyping) {
+				this.props.onPausedTyping()
+			}
 		}
 	}
 
@@ -281,41 +323,5 @@ class Typing extends Component {
 		return <div className={className}>{filled}</div>
 	}
 }
-
-Typing.propTypes = {
-	children: PropTypes.node.isRequired,
-	className: PropTypes.string,
-	cursor: PropTypes.node,
-	cursorClassName: PropTypes.string,
-	speed: PropTypes.number,
-	startDelay: PropTypes.number,
-	loop: PropTypes.bool,
-	onStartedTyping: PropTypes.func,
-	onPausedTyping: PropTypes.func,
-	onBeforeType: PropTypes.func,
-	onAfterType: PropTypes.func,
-	onFinishedTyping: PropTypes.func,
-	beginTypingOnMount: PropTypes.bool
-}
-
-Typing.defaultProps = {
-	className: '',
-	cursorClassName: '',
-	speed: 50,
-	startDelay: 0,
-	loop: false,
-	beginTypingOnMount: true,
-	onStartedTyping: () => {},
-	onPausedTyping: () => {},
-	onBeforeType: () => {},
-	onAfterType: () => {},
-	onFinishedTyping: () => {}
-}
-
-Typing.Backspace = Backspace
-Typing.Reset = Reset
-Typing.Delay = Delay
-Typing.Speed = Speed
-Typing.Cursor = Cursor
 
 export default Typing

@@ -208,6 +208,7 @@ stories
 						</FormLayoutItem>
 						<FormLayoutItem>
 							<Autosuggest
+								id="country-select"
 								label={'Country'}
 								placeholder={'Select a country...'}
 								defaultSuggestions={object('defaultSuggestions', countries)}
