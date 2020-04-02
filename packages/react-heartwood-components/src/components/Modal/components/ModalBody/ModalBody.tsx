@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-interface IModalBodyProps {
+export interface IModalBodyProps {
 	/** Modal children */
 	children: React.ReactNode
 

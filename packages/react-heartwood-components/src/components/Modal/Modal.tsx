@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 import cx from 'classnames'
-import ModalHeader from './components/ModalHeader/ModalHeader'
-import ModalBody from './components/ModalBody/ModalBody'
-import ModalFooter from './components/ModalFooter/ModalFooter'
+import { default as ModalHeader } from './components/ModalHeader/ModalHeader'
+import { default as ModalBody } from './components/ModalBody/ModalBody'
+import { default as ModalFooter } from './components/ModalFooter/ModalFooter'
 
 export interface IModalProps extends ReactModal.Props {
 	/** Set true to show the modal */
