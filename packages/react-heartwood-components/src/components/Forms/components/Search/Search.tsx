@@ -6,15 +6,21 @@ interface ISearchState {
 	value: string
 }
 
-interface ISearchProps {
+interface ISearchProps
+	extends React.DetailedHTMLProps<
+		React.InputHTMLAttributes<HTMLInputElement>,
+		HTMLInputElement
+	> {
 	/** Parent class */
-	className: string
+	className?: string
 
 	/** Default input value */
 	defaultValue?: string
 
 	/** Set true to make the input less tall */
 	isSmall?: boolean
+
+	value?: string
 }
 
 export default class Search extends Component<ISearchProps, ISearchState> {

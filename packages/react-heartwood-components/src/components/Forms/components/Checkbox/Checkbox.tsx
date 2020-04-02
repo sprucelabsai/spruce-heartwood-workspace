@@ -17,6 +17,8 @@ export interface ICheckboxProps extends Omit<IHWCheckbox, 'isIndeterminate'> {
 
 	/** Optional, provide a handler for Actions */
 	onAction?: (action: IHWAction) => any
+
+	disabled?: boolean
 }
 
 interface ICheckboxState {}

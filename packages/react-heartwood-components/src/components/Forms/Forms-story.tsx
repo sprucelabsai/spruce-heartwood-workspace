@@ -66,9 +66,10 @@ stories.addDecorator(withKnobs)
 stories
 	.add('Autosuggest', () => (
 		<Autosuggest
+			id="suggest"
 			alwaysRenderSuggestions={false}
 			label={text('label', 'Country')}
-			inputHelper={object('inputHelper', {
+			helper={object('inputHelper', {
 				helper: 'We use this information to improve your shopping experience.'
 			})}
 			placeholder={text('placeholder', 'Select your country')}
@@ -98,6 +99,7 @@ stories
 	))
 	.add('Autosuggest Search', () => (
 		<Autosuggest
+			id="suggest-search"
 			alwaysRenderSuggestions={false}
 			placeholder={text('placeholder', 'Search countries…')}
 			defaultSuggestions={object('defaultSuggestions', countries)}
@@ -129,6 +131,7 @@ stories
 	))
 	.add('Duration Input', () => (
 		<DurationInput
+			id="duration"
 			label={'Duration'}
 			placeholder={text('placeholder', 'How long is this going to take?')}
 			minMinutes={number('minMinutes', 5)}
@@ -196,6 +199,7 @@ stories
 	.add('Subdomain', () => (
 		<Fragment>
 			<DomainInput
+				id="shopify"
 				label={text('label', 'Shopify Store URL')}
 				placeholder={text('placeholder', 'my-spruce-org')}
 				appendix={text('appendix', '.spruce.ai')}
@@ -330,6 +334,7 @@ stories
 		>
 			<FormLayoutItem>
 				<TextInput
+					id="biz-name"
 					type="text"
 					label="Name of Business"
 					placeholder="e.g. Annie's Bagels"
@@ -337,21 +342,31 @@ stories
 			</FormLayoutItem>
 			<FormLayoutGroup>
 				<FormLayoutItem>
-					<TextInput type="text" label="First Name" placeholder="e.g. Annie" />
+					<TextInput
+						id="first"
+						type="text"
+						label="First Name"
+						placeholder="e.g. Annie"
+					/>
 				</FormLayoutItem>
 				<FormLayoutItem>
-					<TextInput type="text" label="Last Name" placeholder="e.g. Smith" />
+					<TextInput
+						id="last"
+						type="text"
+						label="Last Name"
+						placeholder="e.g. Smith"
+					/>
 				</FormLayoutItem>
 			</FormLayoutGroup>
 			<FormLayoutGroup isCondensed>
 				<FormLayoutItem>
-					<TextInput type="text" label="Price" />
+					<TextInput id="price" type="text" label="Price" />
 				</FormLayoutItem>
 				<FormLayoutItem>
-					<TextInput type="text" label="Duration" />
+					<TextInput id="duration" type="text" label="Duration" />
 				</FormLayoutItem>
 				<FormLayoutItem>
-					<TextInput type="text" label="Commission" />
+					<TextInput id="commission" type="text" label="Commission" />
 				</FormLayoutItem>
 			</FormLayoutGroup>
 		</FormLayout>

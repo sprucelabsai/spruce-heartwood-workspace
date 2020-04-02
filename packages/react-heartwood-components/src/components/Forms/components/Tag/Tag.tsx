@@ -3,12 +3,12 @@ import cx from 'classnames'
 import Button from '../../../Button/Button'
 import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
 
-interface ITagProps {
+interface ITagProps extends React.HTMLProps<HTMLInputElement> {
 	/** Tag text */
 	text: string
 
 	/** Additional parent class */
-	className: string
+	className?: string
 
 	/** Sets the tag variation */
 	kind?: 'primary' | 'secondary'

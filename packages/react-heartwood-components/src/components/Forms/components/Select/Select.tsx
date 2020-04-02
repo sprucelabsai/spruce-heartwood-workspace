@@ -3,7 +3,7 @@ import cx from 'classnames'
 import ArrowIcon from '../../../../../static/assets/icons/ic_arrow_drop_down.svg'
 import { InputPre, InputHelper } from '../../FormPartials'
 
-interface ISelectProps {
+interface ISelectProps extends React.HTMLProps<HTMLSelectElement> {
 	/** Unique identifier */
 	id: string
 

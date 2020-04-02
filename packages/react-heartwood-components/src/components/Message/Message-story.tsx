@@ -90,12 +90,6 @@ const messageJSON = {
 
 const stories = storiesOf('Message', module)
 
-// Stories.addDecorator(
-// 	withKnobsOptions({
-// 		escapeHTML: false
-// 	})
-// )
-
 stories.addDecorator(story => (
 	<Page>
 		<PageContent>
@@ -117,6 +111,6 @@ stories
 			{`It's lonely over here.`}
 		</Message>
 	))
-	.add('MessageBuilder', () => [
-		<MessageBuilder key="foo" {...object('json', messageJSON)} />
-	])
+	.add('MessageBuilder', () => {
+		return <MessageBuilder key="foo" {...object('json', messageJSON)} />
+	})

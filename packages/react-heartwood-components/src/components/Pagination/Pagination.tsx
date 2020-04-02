@@ -136,9 +136,13 @@ const Pagination = (props: IPaginationProps) => {
 					onSubmit={e => {
 						e.preventDefault()
 						for (let i = 0; i < e.currentTarget.elements.length; i++) {
+							// TODO: What is the proper type here for "Element" to access name, value, placeholder?
+							// @ts-ignore
 							if (e.currentTarget.elements[i].name === 'jump') {
 								onJump(
+									// @ts-ignore
 									e.currentTarget.elements[i].value ||
+										// @ts-ignore
 										e.currentTarget.elements[i].placeholder
 								)
 							}
@@ -149,9 +153,9 @@ const Pagination = (props: IPaginationProps) => {
 					<InputInner
 						name="jump"
 						autoComplete="off"
-						placeholder={currentPage}
+						placeholder={currentPage.toString()}
 						onBlur={e => {
-							onJump(e.currentTarget.value || e.currentTarget.placeholder)
+							onJump(+(e.currentTarget.value || e.currentTarget.placeholder))
 						}}
 					/>
 				</form>

@@ -7,6 +7,7 @@ import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
 
 import { IButtonProps } from '../Button/Button'
+import { IMessageReply } from './components/MessageBuilder'
 
 export interface IFromProps {
 	/** Unique id of the sender */
@@ -33,10 +34,10 @@ export interface IMessageProps {
 	dateSent?: moment
 
 	/** Informative replies to the message */
-	replies?: string[]
+	replies?: IMessageReply[]
 
 	/** Additional content related to the message */
-	attachments?: string[]
+	attachments?: React.ReactNode[]
 
 	/** Gives additional context for the message */
 	detail?: string

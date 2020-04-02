@@ -27,6 +27,17 @@ interface IFromProps {
 	alt?: string
 }
 
+export interface IMessageReply {
+	type: string
+	children: React.ReactNode
+}
+
+export interface IMessageReplyProps {
+	type: string
+	text: string
+	context?: Record<string, any>
+}
+
 export interface IMessageBuilderProps {
 	/** Information about the sender */
 	from: IFromProps
@@ -44,10 +55,10 @@ export interface IMessageBuilderProps {
 	primaryAction?: IButtonProps
 
 	/** Contextual information and additional actions associated to the message */
-	replies?: Array
+	replies?: IMessageReplyProps[]
 
 	/** Attachment content associated to the message */
-	attachments?: Array
+	attachments?: {}[]
 
 	/** Set true if the message is from Sprucebot */
 	isFromSprucebot?: boolean
@@ -128,8 +139,8 @@ const MessageBuilder = (props: IMessageBuilderProps) => {
 
 	const { text: messageText, context: messageContext } = message || {}
 
-	let messageReplies = []
-	let messageAttachments = []
+	let messageReplies: IMessageReply[] = []
+	let messageAttachments: React.ReactNode[] = []
 
 	if (replies) {
 		messageReplies = replies.map(reply => {

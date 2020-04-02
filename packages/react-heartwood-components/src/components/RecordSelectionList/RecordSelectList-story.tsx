@@ -4,7 +4,9 @@ import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react'
 
 import { generateLocations } from '../../../.storybook/data/tableData'
-import RecordSelectionList from './RecordSelectionList'
+import RecordSelectionList, {
+	IRecordSelectionListItemProps
+} from './RecordSelectionList'
 import Modal from '../Modal/Modal'
 import Card, { CardHeader, CardBody } from '../Card'
 
@@ -18,9 +20,9 @@ type RSLExampleProps = {
 	locations: Array<Record<string, any>>
 	totalRecordCount: number
 	maxRowsVisible?: number | 'auto'
-	canSearch: boolean
+	canSearch?: boolean
 	searchValue?: string
-	onSearchChange: () => void
+	onSearchChange?: (newVal: string) => void
 }
 
 type RSLExampleState = {
@@ -76,7 +78,11 @@ class RecordListItemsExample extends Component<
 				searchLabel={'Search Label'}
 				selectedIds={selectedIds}
 				unselectableIds={unselectableIds}
-				loadRecordListItems={async ({ limit, offset, search }) => {
+				loadRecordListItems={async ({
+					limit,
+					offset,
+					search
+				}): Promise<IRecordSelectionListItemProps[]> => {
 					// Artificial API wait time
 					await new Promise(resolve =>
 						setTimeout(() => {
@@ -103,8 +109,9 @@ class RecordListItemsExample extends Component<
 							subtitle: result.node.address,
 							isDisabled: unselectableIds.indexOf(result.node.id) >= 0,
 							note:
-								unselectableIds.indexOf(result.node.id) >= 0 &&
-								'Location already in group!'
+								unselectableIds.indexOf(result.node.id) >= 0
+									? 'Location already in group!'
+									: ''
 						}
 					})
 
@@ -140,8 +147,8 @@ class RecordListItemsExample extends Component<
 				totalRecordCount={totalRecordCount}
 				maxRowsVisible={
 					maxRowsVisible && maxRowsVisible !== 'auto'
-						? parseInt(maxRowsVisible, 10)
-						: maxRowsVisible
+						? +maxRowsVisible
+						: undefined
 				}
 				noSearchResultsEmptyState={{
 					headline: "Nothin' here...",

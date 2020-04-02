@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { InputPre } from '../../FormPartials'
 
-interface ISliderProps {
+interface ISliderProps extends React.HTMLProps<HTMLInputElement> {
 	/** Label text */
 	label: string
 

@@ -16,6 +16,7 @@ import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
 import Tabs from '../Tabs/Tabs'
 import Table, { TableFilters, TableSearch } from './index'
+import { IHWButtonKinds, IHWLayoutWidth } from '@sprucelabs/spruce-types'
 
 const stories = storiesOf('Table', module)
 
@@ -134,6 +135,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 			<Fragment>
 				<CardHeader title={'Store Schedule'} />
 				<Table
+					totalRows={schedule.length}
 					isSelectable
 					className="store-schedule-table"
 					data={schedule}
@@ -159,10 +161,14 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 						return (
 							<CardBody>
 								<Formik
+									onSubmit={values => {
+										console.log('Form submitted', values)
+									}}
 									initialValues={row.original}
-									validate={values =>
-										this.handleValidation(location, row.original.id, values)
-									}
+									validate={values => {
+										console.log('Validate values: ', values)
+										this.handleValidation(location, row.original.id)
+									}}
 									render={(formikProps: Record<string, any>) => {
 										const { handleChange, values } = formikProps
 
@@ -172,6 +178,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 													<FormLayoutGroup>
 														<FormLayoutItem>
 															<TextInput
+																id="store-hours"
 																label={`${row.original.day} Store Hours`}
 																onChange={handleChange}
 																name="hours"
@@ -180,7 +187,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 														</FormLayoutItem>
 														<FormLayoutItem spacerTop={true}>
 															<Button
-																kind="primary"
+																kind={IHWButtonKinds.Primary}
 																onClick={() =>
 																	this.handleSaveHours(
 																		location,
@@ -188,7 +195,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 																		values
 																	)
 																}
-																disabled={!row.original.isDirty}
+																isDisabled={!row.original.isDirty}
 																text="Save"
 															/>
 														</FormLayoutItem>
@@ -204,7 +211,6 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 					rowIsDirty={row => {
 						return row.original.isDirty
 					}}
-					keyField="id"
 				/>
 			</Fragment>
 		) : null
@@ -215,6 +221,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 
 		return (
 			<Table
+				totalRows={locations.length}
 				className="store-locations-table"
 				data={locations}
 				columns={columns}
@@ -238,7 +245,6 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 					return row.original.isDirty
 				}}
 				subComponentForRow={this.renderStoreScheduleForRow}
-				keyField="id"
 			/>
 		)
 	}
@@ -247,7 +253,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 stories
 	.add('Table', () => {
 		return (
-			<Layout width="full-width">
+			<Layout width={IHWLayoutWidth.FullWidth}>
 				<LayoutSection>
 					<Card>
 						{boolean('Show Title', false) && (
@@ -263,7 +269,21 @@ stories
 								isPadded
 							/>
 						)}
-						<TableSearch placeholder="Search locations…" />
+						<TableSearch
+							id="location-search"
+							placeholder="Search locations…"
+							getSuggestions={val => {
+								console.log(val)
+								return null
+							}}
+							getSuggestionValue={suggestion => {
+								console.log(suggestion)
+								return 'suggestion'
+							}}
+							renderSuggestion={() => {
+								return null
+							}}
+						/>
 						{boolean('Is Filtered', false) && (
 							<TableFilters
 								filters={[
@@ -278,6 +298,7 @@ stories
 							/>
 						)}
 						<Table
+							totalRows={staticLocations.length}
 							className="services-table"
 							data={staticLocations}
 							columns={columns}
@@ -296,7 +317,6 @@ stories
 								totalPages: Math.ceil(staticLocations.length / 50),
 								currentPage: 0
 							}}
-							keyField="id"
 						/>
 					</Card>
 				</LayoutSection>
@@ -305,7 +325,7 @@ stories
 	})
 	.add('Expandable Table', () => {
 		return (
-			<Layout width="full-width">
+			<Layout width={IHWLayoutWidth.FullWidth}>
 				<LayoutSection>
 					<Card>
 						<ExpandableEditableTable />
@@ -315,7 +335,7 @@ stories
 		)
 	})
 	.add('Selectable Table', () => (
-		<Layout width="full-width">
+		<Layout width={IHWLayoutWidth.FullWidth}>
 			<LayoutSection>
 				<Card>
 					{boolean('Show Title', false) && (
@@ -331,7 +351,21 @@ stories
 							isPadded
 						/>
 					)}
-					<TableSearch placeholder="Search locations…" />
+					<TableSearch
+						id="location-search"
+						placeholder="Search locations…"
+						getSuggestions={val => {
+							console.log(val)
+							return null
+						}}
+						getSuggestionValue={suggestion => {
+							console.log(suggestion)
+							return 'suggestion'
+						}}
+						renderSuggestion={() => {
+							return null
+						}}
+					/>
 					{boolean('Is Filtered', false) && (
 						<TableFilters
 							filters={[
@@ -346,6 +380,7 @@ stories
 						/>
 					)}
 					<Table
+						totalRows={staticLocations.length}
 						className="services-table-selectable"
 						data={staticLocations}
 						columns={columns}
@@ -366,7 +401,6 @@ stories
 						}}
 						isSelectable
 						kind="location"
-						selectType="checkbox"
 						bulkActions={[
 							{
 								text: 'Add to location group',
@@ -385,7 +419,6 @@ stories
 								onClick: () => console.log('Click')
 							}
 						]}
-						keyField="id"
 					/>
 				</Card>
 			</LayoutSection>

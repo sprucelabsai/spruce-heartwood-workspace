@@ -4,7 +4,7 @@ import {
 	DayPickerSingleDateController,
 	DayPickerRangeController
 } from 'react-dates'
-import moment from 'moment'
+import moment, { Moment } from 'moment'
 import ArrowNext from '../../../../../static/assets/icons/ic_arrow_forward.svg'
 import ArrowBack from '../../../../../static/assets/icons/ic_arrow_back.svg'
 
@@ -16,6 +16,8 @@ export interface IDatePickerProps {
 	initialStartDate?: Record<string, any>
 	initialEndDate?: Record<string, any>
 	daySize?: number
+	numberOfMonths?: number
+	isDayBlocked?: (day: Moment) => boolean
 }
 
 interface IDatePickerState {

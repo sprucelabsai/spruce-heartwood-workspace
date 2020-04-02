@@ -1,10 +1,9 @@
 // TODO: May be better as a stateful component in order to trim itself
 import React from 'react'
-import TextInput from '../TextInput/TextInput'
+import TextInput, { ITextInputProps } from '../TextInput/TextInput'
 
-interface IDomainInputProps {
-	/** Unique identifier */
-	id: string
+interface IDomainInputProps extends ITextInputProps {
+	ref?: any
 }
 
 const DomainInput = (props: IDomainInputProps) => {

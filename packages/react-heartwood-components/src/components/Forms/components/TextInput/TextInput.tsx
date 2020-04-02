@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import cx from 'classnames'
 import { InputPre, InputInner, InputHelper } from '../../FormPartials'
 
-interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
+export interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
 	/** Unique identifier */
 	id: string
 

@@ -5,6 +5,8 @@ import { IHWToggle } from '@sprucelabs/spruce-types'
 export interface IToggleProps extends IHWToggle {
 	/** Optional class name applied to the toggle */
 	className?: string
+
+	name?: string
 }
 
 const Toggle = (props: IToggleProps): React.ReactElement => {

@@ -20,7 +20,11 @@ export const InputPre = (props: IInputPreProps) => {
 	)
 }
 
-export interface IInputInnerProps {
+export interface IInputInnerProps
+	extends React.DetailedHTMLProps<
+		React.InputHTMLAttributes<HTMLInputElement>,
+		HTMLInputElement
+	> {
 	kind?: string
 	iconBefore?: string
 	iconAfter?: any

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, FormEvent } from 'react'
 import { range, findIndex } from 'lodash'
 import memoize from 'memoize-one'
 
@@ -8,7 +8,8 @@ import Button from '../../../Button/Button'
 import { IAutosuggestInterfaceProps } from '../Autosuggest/Autosuggest'
 
 interface IDurationInputProps
-	extends Omit<IAutosuggestInterfaceProps, 'defaultValue'> {
+	extends Partial<Omit<IAutosuggestInterfaceProps, 'defaultValue'>> {
+	id: string
 	/** Minimum time someone can select */
 	minMinutes?: number
 
@@ -40,9 +41,13 @@ interface IDurationInputProps
 	required?: boolean
 
 	/** A slighly different onChange */
-	onChange?: (durationInMinutes: number | null, e: KeyboardEvent) => void
+	onChange?: (durationInMinutes: number | null, e: FormEvent) => void
 
 	onBlur?: (e: KeyboardEvent) => {}
+
+	getSuggestions?: (value: string) => Promise<Record<string, any>[]> | null
+	getSuggestionValue?: (suggestion: any) => string
+	onSuggestionSelected?: (event: React.FormEvent<any>, data: any) => void
 }
 
 interface IDurationInputState {
@@ -200,8 +205,8 @@ export default class DurationInput extends Component<
 	}
 
 	public handleSelectSuggestion = (
-		e: KeyboardEvent,
-		suggestion: Record<string, any>
+		e: React.FormEvent<any>,
+		suggestion: any
 	) => {
 		const { onChange } = this.props
 
@@ -239,6 +244,7 @@ export default class DurationInput extends Component<
 			skipMinutes,
 			error,
 			placeholder,
+			defaultValue,
 			...props
 		} = this.props
 
@@ -253,7 +259,7 @@ export default class DurationInput extends Component<
 		return (
 			<Autosuggest
 				inputProps={{
-					value,
+					value: value ?? '',
 					onChange: this.handleChange,
 					onBlur: this.handleBlur
 				}}
@@ -269,6 +275,7 @@ export default class DurationInput extends Component<
 						? DurationInput.minutesToStr(placeholder)
 						: placeholder
 				}
+				defaultValue={defaultValue ? defaultValue.toString() : undefined}
 				{...props}
 			/>
 		)
