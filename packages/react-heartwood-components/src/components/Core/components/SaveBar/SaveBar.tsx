@@ -31,7 +31,7 @@ export interface ISaveBarProps {
 	onDiscard?: ButtonOnClick
 
 	/** The function to execute when user selects save */
-	onSave: ButtonOnClick
+	onSave?: ButtonOnClick
 }
 
 interface ISaveBarState {}

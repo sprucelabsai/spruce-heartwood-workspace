@@ -316,7 +316,7 @@ export default class RecordSelectionList extends Component<
 
 				{canSearch && loadedRecords.length > 0 && (
 					<Fragment>
-						{searchLabel && <InputPre label={searchLabel} />}
+						{searchLabel && <InputPre id={searchLabel} label={searchLabel} />}
 						<TextInput
 							id={'record-selection-list-filter'}
 							type="text"

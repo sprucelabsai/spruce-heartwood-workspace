@@ -20,7 +20,12 @@ import FeedBuilder from '../Core/components/FeedBuilder/FeedBuilder'
 import { generateMessages } from '../../../.storybook/data/feed'
 
 import View from './View'
-import { IHWSidebarItem } from '@sprucelabs/spruce-types'
+import {
+	IHWButtonKinds,
+	IHWSidebarSide,
+	IHWSidebarSpacing
+} from '@sprucelabs/spruce-types'
+import { ISidebarItemProps } from '../Core/components/Sidebar/components/SidebarItem/SidebarItem'
 
 const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>
 
@@ -50,29 +55,30 @@ const personalItems = [
 	}
 ]
 
-const orgItems: IHWSidebarItem[] = [
+const orgItems: ISidebarItemProps[] = [
 	{
 		text: 'Organization Dashboard',
-		icon: { name: 'dashboard' },
+		icon: { icon: 'dashboard' },
 		isCurrent: false,
 		href: '#'
 	},
 	{
 		text: 'Locations',
-		icon: { name: 'location' },
+		icon: { icon: 'location' },
 		isCurrent: true,
 		href: '#'
 	},
 	{
 		text: 'Team',
-		icon: { name: 'team' },
+		icon: { icon: 'team' },
 		href: '#'
 	},
 	{
 		text: 'Skills',
-		icon: { name: 'skill' },
+		icon: { icon: 'skill' },
 		href: '#',
 		action: {
+			id: 'getSkills',
 			text: 'Get Skills',
 			href: '#',
 			isSmall: true
@@ -80,26 +86,30 @@ const orgItems: IHWSidebarItem[] = [
 	},
 	{
 		text: 'Settings',
-		icon: { name: 'settings' },
+		icon: { icon: 'settings' },
 		href: '#'
 	}
 ]
 
-const bizItems = [
+const bizItems: ISidebarItemProps[] = [
 	{
+		href: '#',
 		text: 'Dashboard',
 		icon: { icon: 'dashboard' }
 	},
 	{
+		href: '#',
 		text: 'Guests',
 		icon: { icon: 'guests' },
 		isCurrent: true
 	},
 	{
+		href: '#',
 		text: 'Team',
 		icon: { icon: 'team' }
 	},
 	{
+		href: '#',
 		text: 'Calendar',
 		icon: { icon: 'calendar' }
 	}
@@ -235,15 +245,16 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 					header={{
 						title: 'Chimera Hair Salon at the Point',
 						primaryAction: {
+							id: 'header',
 							text: 'Go to location dashboard',
-							icon: { name: 'new_tab' },
-							kind: 'simple',
+							icon: { id: 'newtab', name: 'new_tab' },
+							kind: IHWButtonKinds.Simple,
 							isSmall: true
 						},
 						backLinkHref: '#',
 						backLinkText: 'Locations',
 						sidebarExpander: {
-							icon: { name: 'more_vertical', isLineIcon: true },
+							icon: { id: 'more', name: 'more_vertical', isLineIcon: true },
 							onClick: () => this.handleMobileSidebarToggle('right')
 						},
 						tabs: skillViewTabs
@@ -251,7 +262,7 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 					sidebarIsCollapsed={!sidebarsExpanded.right}
 					sidebar={
 						<Sidebar
-							side="right"
+							side={IHWSidebarSide.Right}
 							isCollapsible={false}
 							isLarge
 							isExpanded={sidebarsExpanded.right}
@@ -260,7 +271,7 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 							mobileHeader={{
 								title: 'Chimera Salon at the Point',
 								action: {
-									icon: { name: 'close' },
+									icon: { id: 'close', name: 'close' },
 									isSmall: true,
 									onClick: () => this.handleMobileSidebarToggle('right')
 								}
@@ -284,12 +295,12 @@ class SkillViewExample extends Component<ISkillViewProps, ISkillViewState> {
 											actions={[
 												{
 													text: 'Preview as guest',
-													kind: 'simple',
+													kind: IHWButtonKinds.Simple,
 													isSmall: true
 												},
 												{
 													text: 'Make location live',
-													kind: 'primary',
+													kind: IHWButtonKinds.Primary,
 													isSmall: true
 												}
 											]}
@@ -373,15 +384,19 @@ stories
 				>
 					<Page
 						sidebar={
-							<Sidebar isLarge isCollapsible={false} side="right">
+							<Sidebar
+								isLarge
+								isCollapsible={false}
+								side={IHWSidebarSide.Right}
+							>
 								<SidebarSection
 									isCentered
-									verticalSpacing="loose"
-									horizontalSpacing="loose"
+									verticalSpacing={IHWSidebarSpacing.Loose}
+									horizontalSpacing={IHWSidebarSpacing.Loose}
 								>
 									<Avatar
+										alt="avatar"
 										isLarge
-										isCentered
 										image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&h=200&q=80"
 									/>
 									<Heading>
@@ -389,12 +404,12 @@ stories
 									</Heading>
 								</SidebarSection>
 								<SidebarSection
-									horizontalSpacing="loose"
+									horizontalSpacing={IHWSidebarSpacing.Loose}
 									className="u-flex-row"
 								>
 									<Button
 										isSmall
-										kind="secondary"
+										kind={IHWButtonKinds.Secondary}
 										className="u-flex-child-grow"
 										text="Call Dorian"
 										icon={{
@@ -425,11 +440,7 @@ stories
 							</Sidebar>
 						}
 					>
-						<FeedBuilder
-							messages={messages}
-							messageCount={50}
-							onRowsRequested={() => null}
-						/>
+						<FeedBuilder messages={messages} onRowsRequested={() => null} />
 					</Page>
 				</View>
 			</div>
@@ -442,7 +453,7 @@ stories
 				<View
 					sidebarItems={[]}
 					user={user}
-					business={organization}
+					organization={organization}
 					isSidebarExpanded
 					termsLink="#"
 					privacyLink="#"

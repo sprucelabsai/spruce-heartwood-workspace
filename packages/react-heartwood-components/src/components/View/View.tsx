@@ -3,7 +3,7 @@ import cx from 'classnames'
 import HeaderPrimary from '../Core/components/HeaderPrimary/HeaderPrimary'
 import { Sidebar, SidebarFooter } from '../Core'
 import moment from 'moment'
-import { IHWSidebarItem, IHWSidebarSide } from '@sprucelabs/spruce-types'
+import { IHWSidebarSide } from '@sprucelabs/spruce-types'
 import { ISidebarItemProps } from '../Core/components/Sidebar/components/SidebarItem/SidebarItem'
 
 interface IViewProps {
@@ -22,14 +22,14 @@ interface IViewProps {
 	privacyLink?: string
 	searchPlaceholder?: string
 	sidebarBackLink?: ISidebarItemProps
-	sidebarItems?: IHWSidebarItem[]
+	sidebarItems?: ISidebarItemProps[]
 	termsLink?: string
 	toggleSidebarExpanded?: () => void
 	toggleSidebarVisibility?: (event?: React.MouseEvent) => void
 	user?: Record<string, any>
 
 	/** Menu children (<ListItem> or <li>) */
-	userMenuItems: ReactNode
+	userMenuItems?: ReactNode
 }
 
 const View = (props: IViewProps): ReactElement => {

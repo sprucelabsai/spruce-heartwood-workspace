@@ -18,6 +18,9 @@ type RSLExampleProps = {
 	locations: Array<Record<string, any>>
 	totalRecordCount: number
 	maxRowsVisible?: number | 'auto'
+	canSearch: boolean
+	searchValue?: string
+	onSearchChange: () => void
 }
 
 type RSLExampleState = {
@@ -81,7 +84,7 @@ class RecordListItemsExample extends Component<
 						}, Math.random() * 1000)
 					)
 
-					let results = []
+					let results: Record<string, any>[] = []
 
 					if (search) {
 						const filteredLocations = locations.filter(location => {
