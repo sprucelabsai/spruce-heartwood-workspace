@@ -1,6 +1,4 @@
-# Sprucebot for React [![Build Status](https://travis-ci.org/sprucelabsai/react-sprucebot.svg?branch=master)](https://travis-ci.org/sprucelabsai/react-sprucebot)
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/sprucelabsai/react-sprucebot.svg)](https://greenkeeper.io/)
+# Sprucebot for React
 
 ## Goals
 
@@ -26,7 +24,7 @@ Any `.js` file that ends with `-story.js` will be automatically added to Storybo
 2. Import components:
 
 ```js
-import { Button } from '@sprucelabs/react-heartwood-components'
+import { Button } from "@sprucelabs/react-heartwood-components";
 ```
 
 ## React Docgen
@@ -37,9 +35,9 @@ To add a description to a prop, write a comment above it:
 
 ```js
 type Props = {
-	/** This is the component's title */
-	title: string
-}
+  /** This is the component's title */
+  title: string
+};
 ```
 
 This will add it to the description cell in the props table.
