@@ -39,9 +39,9 @@ export interface IAvatarProps {
 	className?: string
 }
 
-const Avatar = (props: IAvatar): React.ReactElement => {
+const Avatar = (props: IAvatarProps): React.ReactElement => {
 	const {
-		src,
+		image,
 		alt,
 		isLarge,
 		isVertical,
@@ -82,7 +82,7 @@ const Avatar = (props: IAvatar): React.ReactElement => {
 				<ImageSSR
 					id="avatar"
 					className="avatar"
-					src={src}
+					src={image}
 					alt={alt}
 					width={imgWidth}
 					height={imgHeight}
