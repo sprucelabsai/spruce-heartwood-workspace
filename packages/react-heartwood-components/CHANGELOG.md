@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [10.0.1](https://github.com/sprucelabsai/spruce-heartwood-workspace/compare/v9.2.0...v10.0.1) (2020-04-10)
+
+**Note:** Version bump only for package @sprucelabs/react-heartwood-components
+
+
+
+
+
 # [9.1.0](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/compare/v9.0.0...v9.1.0) (2020-02-11)
 
 

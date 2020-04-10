@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [10.0.1](https://github.com/sprucelabsai/spruce-heartwood-workspace/compare/v9.2.0...v10.0.1) (2020-04-10)
 
-**Note:** Version bump only for package spruce-heartwood-workspace
+**Note:** Version bump only for package @sprucelabs/heartwood-skill
