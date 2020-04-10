@@ -5,6 +5,7 @@ import ImageSSR from '../../components/ImageSSR/ImageSSR'
 
 export interface IAvatarProps {
 	/** Avatar image url. */
+
 	image: string
 
 	/** Alt text. */
@@ -38,9 +39,9 @@ export interface IAvatarProps {
 	className?: string
 }
 
-const Avatar = (props: IAvatarProps): React.ReactElement => {
+const Avatar = (props: IAvatar): React.ReactElement => {
 	const {
-		image,
+		src,
 		alt,
 		isLarge,
 		isVertical,
@@ -81,7 +82,7 @@ const Avatar = (props: IAvatarProps): React.ReactElement => {
 				<ImageSSR
 					id="avatar"
 					className="avatar"
-					src={image}
+					src={src}
 					alt={alt}
 					width={imgWidth}
 					height={imgHeight}

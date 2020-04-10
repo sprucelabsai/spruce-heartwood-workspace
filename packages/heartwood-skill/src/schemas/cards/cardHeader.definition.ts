@@ -1,0 +1,44 @@
+import { FieldType, buildSchemaDefinition } from '@sprucelabs/schema'
+
+const cardHeaderDefinition = buildSchemaDefinition({
+	id: 'CardHeader',
+	name: 'CardHeader',
+	description: 'Header of a card',
+	fields: {
+		title: {
+			type: FieldType.Text,
+			label: 'Title',
+			hint: 'Title for the card'
+		},
+		labelText: {
+			type: FieldType.Text,
+			label: 'Label text',
+			hint: 'Optional label to show above title'
+		},
+		labelIcon: {
+			type: FieldType.Schema,
+			label: 'Label icon',
+			hint: 'Optional icon to show above the title and before the label',
+			options: {
+				schemaId: 'Icon'
+			}
+		},
+		actions: {
+			type: FieldType.Action,
+			label: 'Actions',
+			isRequired: true,
+			isArray: true,
+			hint: 'Render buttons in the Card Header'
+		},
+		contextMenu: {
+			type: FieldType.Schema,
+			label: 'Context menu',
+			hint: 'Renders a Context Menu in the Card Header',
+			options: {
+				schemaId: 'ContextMenu'
+			}
+		}
+	}
+})
+
+export default cardHeaderDefinition

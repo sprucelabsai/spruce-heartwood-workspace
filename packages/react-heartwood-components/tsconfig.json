@@ -1,14 +1,19 @@
 {
-	"compilerOptions": {
-		"target": "es6",
-		"jsx": "react",
-		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true,
-		"rootDir": "./src",
-		"outDir": "./lib",
-		"strict": true,
-		"noImplicitAny": false
-	},
-	"include": ["src"],
-	"exclude": ["node_modules", "lib", ".storybook"]
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "strict": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "#spruce:fieldTypes": ["../heartwood-skill/.spruce/schemas/fields.types"],
+      "#spruce/*": ["../heartwood-skill/.spruce/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", ".storybook"]
 }

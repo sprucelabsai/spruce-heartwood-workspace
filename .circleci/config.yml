@@ -135,13 +135,13 @@ workflows:
   version: 2
   do_build:
     jobs:
-      - test:
-          context: public_package_publish
-          filters:
-            branches:
-              ignore:
-                - master
-                - canary
+      # - test:
+      #     context: public_package_publish
+      #     filters:
+      #       branches:
+      #         ignore:
+      #           - master
+      #           - canary
       - pre_release:
           context: public_package_publish
           requires:
@@ -158,8 +158,8 @@ workflows:
                 - canary
       - dev_release:
           context: public_package_publish
-          requires:
-            - test
+          # requires:
+          #   - test
           filters:
             branches:
               only:

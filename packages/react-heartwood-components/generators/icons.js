@@ -6,14 +6,10 @@ const lines = []
 
 each(icons, (icon, iconName) => {
 	lines.push(
-		`import ${iconName}_icon from '@sprucelabs/heartwood-components${
-			icon.path
-		}'`
+		`import ${iconName}_icon from '@sprucelabs/heartwood-components${icon.path}'`
 	)
 	lines.push(
-		`export const ${iconName} = { icon: ${iconName}_icon, isLineIcon: ${
-			icon.isLineIcon
-		}}`
+		`export const ${iconName} = { icon: ${iconName}_icon, isLineIcon: ${icon.isLineIcon}}`
 	)
 })
 

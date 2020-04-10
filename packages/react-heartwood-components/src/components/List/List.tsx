@@ -56,7 +56,7 @@ const List = (props: IListProps): React.ReactElement => {
 		onAction
 	} = props
 
-	// Seperators a true by default
+	// Separators are true by default
 	const areSeparatorsVisible =
 		typeof areSeparatorsVisibleProp === 'boolean'
 			? areSeparatorsVisibleProp
@@ -75,7 +75,7 @@ const List = (props: IListProps): React.ReactElement => {
 				{items &&
 					items.map((item, idx) => {
 						const listItem = item as IListItemProps
-						const expandablListItem = item as IExpandableListItemProps
+						const expandableListItem = item as IExpandableListItemProps
 
 						if (listItem.title) {
 							return (
@@ -99,7 +99,7 @@ const List = (props: IListProps): React.ReactElement => {
 						return (
 							<ExpandableListItem
 								key={idx}
-								{...expandablListItem}
+								{...expandableListItem}
 								onAction={onAction}
 							/>
 						)
