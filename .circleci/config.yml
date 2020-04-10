@@ -144,8 +144,8 @@ workflows:
       #           - canary
       - pre_release:
           context: public_package_publish
-          requires:
-            - test
+          # requires:
+          #   - test
           filters:
             branches:
               only:
