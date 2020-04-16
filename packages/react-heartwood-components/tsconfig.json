@@ -11,8 +11,10 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
-      "#spruce:fieldTypes": ["../heartwood-skill/.spruce/schemas/fields.types"],
-      "#spruce/*": ["../heartwood-skill/.spruce/*"]
+      "#spruce:schema/*": [
+        "../heartwood-skill/build/.spruce/schemas/*"
+      ],
+      "#spruce/*": ["../heartwood-skill/build/.spruce/*"]
     }
   },
   "include": ["src"],
