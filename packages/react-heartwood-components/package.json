@@ -33,14 +33,12 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@babel/register": "^7.0.0",
-    "@sprucelabs/heartwood-components": "^10.0.0",
-    "@sprucelabs/spruce-types": "9.1.1-canary.130",
+    "@sprucelabs/heartwood-components": "^10.0.1-pre-0784135.0",
+    "@sprucelabs/heartwood-skill": "^10.0.2",
     "@types/react-dom": "^16.8.2",
     "@types/react-table": "^6.8.4",
-    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "cookies": "^0.8.0",
-    "debug": "^3.1.0",
     "es6-tween": "^5.3.1",
     "exenv": "^1.2.2",
     "exif-orientation-image": "^1.0.1",
@@ -55,8 +53,6 @@
     "memoize-one": "^4.0.2",
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.21",
-    "next": "^7.0.0",
-    "next-redux-wrapper": "^1.0.0",
     "prop-types": "^15.6.0",
     "qs": "^6.5.1",
     "rc-time-picker": "^3.3.1",
@@ -152,10 +148,7 @@
     "uuid": "^3.3.2",
     "webpack": "^4.29.6"
   },
-  "peerDependencies": {
-    "graphql": "^14.5.4",
-    "graphql-tag": "^2.10.3"
-  },
+  "peerDependencies": {},
   "jest": {
     "roots": [
       "<rootDir>/src/"

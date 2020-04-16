@@ -1,5 +1,5 @@
 import { IAction } from '../schemas/actions/types'
-import { FieldType } from '../../.spruce/schemas/fields.types'
+import { FieldType } from '#spruce:schema/fields/fieldType'
 import { AbstractField } from '@sprucelabs/schema'
 import { IFieldDefinition } from '@sprucelabs/schema'
 
@@ -14,7 +14,7 @@ export interface IActionFieldDefinition extends IFieldDefinition {
 export default class ActionField extends AbstractField<IActionFieldDefinition> {
 	public static templateDetails() {
 		return {
-			definitionInterface: 'IActionFieldDefinition',
+			description: 'An action field',
 			valueType: 'IAction'
 		}
 	}

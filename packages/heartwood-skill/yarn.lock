@@ -107,15 +107,6 @@
   resolved "https://registry.yarnpkg.com/@sprucelabs/error/-/error-1.0.11.tgz#05c74c0b272bd5b2cc62aaf62bbecc7bac45702d"
   integrity sha512-ehuKZuQZe8BM9jfjN2k2apqkDSTryexC+ChePSQYAjO9K/My31RMWQ0g3KEGcSwNbtEUobHr6O8DxIfnnWW0eQ==
 
-"@sprucelabs/schema@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@sprucelabs/schema/-/schema-1.0.7.tgz#b62d8be4ee49ab9cf832b60d973292c969c5c7db"
-  integrity sha512-rk6AD/MJnT+45f3fNIUdgxSXYLUdzN1k7E9DxnwoFT8AZXNieWQczrbyjQ19IAhvztXUA8elU6Ch9MHsn6YXNw==
-  dependencies:
-    "@sprucelabs/error" "^1.0.7"
-    google-libphonenumber "^3.2.8"
-    libphonenumber-js "^1.7.48"
-
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"

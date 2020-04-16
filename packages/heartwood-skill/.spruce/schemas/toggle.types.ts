@@ -2,7 +2,7 @@ import Schema, {
 	SchemaDefinitionValues
 } from '@sprucelabs/schema'
 
-import toggleDefinition from '../../src/schemas/toggle.definition'
+import toggleDefinition from '../../src/schemas/forms/toggle.definition'
 
 type ToggleDefinition = typeof toggleDefinition
 export interface IToggleDefinition extends ToggleDefinition {}

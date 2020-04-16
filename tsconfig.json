@@ -1,19 +1,26 @@
 {
-	"compilerOptions": {
-		"module": "commonjs",
-		"esModuleInterop": true,
-		"target": "ES2017",
-		"lib": ["es2017"],
-		"allowJs": true,
-		"declaration": true,
-		"noImplicitAny": true,
-		"forceConsistentCasingInFileNames": true,
-		"noImplicitReturns": true,
-		"strict": true,
-		"noUnusedLocals": true,
-		"resolveJsonModule": true,
-		"moduleResolution": "node",
-		"sourceMap": true
-	},
-	"exclude": ["**/node_modules/**"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "ES2017",
+    "lib": ["es2017", "DOM"],
+    "allowJs": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "preserveSymlinks": true,
+    "sourceMap": true,
+    "outDir": "build",
+    "baseUrl": ".",
+    "paths": {
+      "#spruce:schema/*": ["packages/heartwood-skill/.spruce/schemas/*"]
+    }
+  },
+  "include": ["./*.ts", "./**/*.ts"],
+  "exclude": ["**/node_modules/**"]
 }

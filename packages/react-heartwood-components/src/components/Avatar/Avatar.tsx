@@ -2,46 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 
 import ImageSSR from '../../components/ImageSSR/ImageSSR'
+import { IAvatar } from '@sprucelabs/heartwood-skill'
 
-export interface IAvatarProps {
-	/** Avatar image url. */
-
-	image: string
-
-	/** Alt text. */
-	alt: string
-
-	/** Set this true to use a large variation */
-	isLarge?: boolean
-
-	/** Set true to center align with name and text. */
-	isVertical?: boolean
-
-	/** Set true to show a status indicator. */
-	showIndicator?: boolean
-
-	/** Status (online or offline) of this person */
-	status?: 'online' | 'offline'
-
-	/** Name of this person. */
-	name?: string | Node
-
-	/** Optional additional text to show below name. */
-	text?: string
-
-	/** Manual width override. */
-	width?: number | null | void
-
-	/** Manual height override. */
-	height?: number | null | void
-
-	/** Provided HTML classNames. */
-	className?: string
-}
-
-const Avatar = (props: IAvatarProps): React.ReactElement => {
+const Avatar = (props: IAvatar): React.ReactElement => {
 	const {
-		image,
+		src,
 		alt,
 		isLarge,
 		isVertical,
@@ -82,7 +47,7 @@ const Avatar = (props: IAvatarProps): React.ReactElement => {
 				<ImageSSR
 					id="avatar"
 					className="avatar"
-					src={image}
+					src={src}
 					alt={alt}
 					width={imgWidth}
 					height={imgHeight}
