@@ -1,14 +1,3 @@
-# Spruce CLI
+# Heartwood skill
 
-## Local CLI Development
-
-```
-yarn
-yarn local <command>
-```
-
-Example:
-
-```
-yarn local user:login
-```
+The skill that introduces the heartwood design system into the platform

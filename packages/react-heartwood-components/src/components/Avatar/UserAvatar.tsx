@@ -5,11 +5,10 @@ import { IUserAvatar } from '@sprucelabs/heartwood-skill'
 
 const UserAvatar = (props: IUserAvatar) => {
 	const { user, ...avatar } = props
-	const { profileImages = {}, defaultProfileImages = {} } = user
+	const { profileImages, defaultProfileImages } = user
 
 	const profileImage =
-		(profileImages && profileImages.profile150) ||
-		(defaultProfileImages && defaultProfileImages.profile150)
+		profileImages?.['profile150@2x'] ?? defaultProfileImages['profile150@2x']
 
 	return (
 		<Avatar

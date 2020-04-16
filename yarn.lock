@@ -2619,17 +2619,6 @@
   resolved "https://registry.yarnpkg.com/@sprucelabs/error/-/error-1.0.11.tgz#05c74c0b272bd5b2cc62aaf62bbecc7bac45702d"
   integrity sha512-ehuKZuQZe8BM9jfjN2k2apqkDSTryexC+ChePSQYAjO9K/My31RMWQ0g3KEGcSwNbtEUobHr6O8DxIfnnWW0eQ==
 
-"@sprucelabs/heartwood-components@^10.0.1-pre-0784135.0":
-  version "10.0.1-pre-0784135.0"
-  resolved "https://registry.yarnpkg.com/@sprucelabs/heartwood-components/-/heartwood-components-10.0.1-pre-0784135.0.tgz#c28904f92aa98d98d18c44fc8c6cd28331d79f7e"
-  integrity sha512-0XLbcLR7xyuYQCfaiNFcmx6pv2Xcg7bWmqDyhSbzV86G1Q5lTICTXSph5KcpDSjrx+s/T82+6Pps7opEYV2DlA==
-  dependencies:
-    "@frctl/fractal" "^1.1.5"
-    "@frctl/handlebars" "^1.1.5"
-    "@frctl/mandelbrot" "^1.2.0"
-    browser-sync "^2.18.13"
-    gulp-cli "2.0.1"
-
 "@sprucelabs/log@^10.2.1":
   version "10.2.1"
   resolved "https://registry.yarnpkg.com/@sprucelabs/log/-/log-10.2.1.tgz#acd368915e5d763ec4588165e8ccc69db6ed8c42"

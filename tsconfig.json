@@ -15,10 +15,9 @@
     "moduleResolution": "node",
     "preserveSymlinks": true,
     "sourceMap": true,
-    "outDir": "build",
     "baseUrl": ".",
     "paths": {
-      "#spruce:schema/*": ["packages/heartwood-skill/.spruce/schemas/*"]
+      "#spruce:schema/*": ["packages/heartwood-skill/build/.spruce/schemas/*"]
     }
   },
   "include": ["./*.ts", "./**/*.ts"],
