@@ -3,11 +3,9 @@ import { FieldType } from '#spruce:schema/fields/fieldType'
 import { AbstractField } from '@sprucelabs/schema'
 import { IFieldDefinition } from '@sprucelabs/schema'
 
-export interface IActionFieldDefinition extends IFieldDefinition {
+export type IActionFieldDefinition = IFieldDefinition<IAction> & {
 	/** * .Action - An action to be invoked when a person interacts with a component */
 	type: FieldType.Action
-	value?: IAction
-	defaultValue?: IAction
 	options?: {}
 }
 

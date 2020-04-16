@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@sprucelabs/path-resolver": "^1.0.10",
-    "@sprucelabs/schema": "^1.0.18"
+    "@sprucelabs/schema": "^1.0.21"
   },
   "devDependencies": {
     "chokidar-cli": "^2.1.0",

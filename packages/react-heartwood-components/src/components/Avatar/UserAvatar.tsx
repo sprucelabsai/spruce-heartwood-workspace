@@ -1,14 +1,10 @@
 import React from 'react'
 import cx from 'classnames'
-import Avatar, { IAvatarProps } from './Avatar'
+import Avatar from './Avatar'
+import { IUserAvatar } from '@sprucelabs/heartwood-skill'
 
-interface IUserAvatarProps extends IAvatarProps {
-	user: Record<string, any>
-	className?: string
-}
-
-const UserAvatar = (props: IUserAvatarProps) => {
-	const { user, className, ...rest } = props
+const UserAvatar = (props: IUserAvatar) => {
+	const { user, ...avatar } = props
 	const { profileImages = {}, defaultProfileImages = {} } = user
 
 	const profileImage =
@@ -17,11 +13,11 @@ const UserAvatar = (props: IUserAvatarProps) => {
 
 	return (
 		<Avatar
-			image={profileImage}
-			className={cx(className, {
+			src={profileImage}
+			className={cx(avatar.className, {
 				'default-avatar': !profileImages || !profileImages.profile150
 			})}
-			{...rest}
+			{...avatar}
 		/>
 	)
 }

@@ -1,19 +1,9 @@
-import {
-	IHWButton,
-	IHWButtonTypes as ButtonTypes,
-	IHWButtonKinds as ButtonKinds,
-	IHWAction
-} from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon, { IIconProps } from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
-
-export {
-	IHWButtonKinds as ButtonKinds,
-	IHWButtonTypes as ButtonTypes
-} from '@sprucelabs/spruce-types'
+import { IButton } from '@sprucelabs/heartwood-skill'
 
 export type ButtonOnClick = (
 	e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>,
@@ -60,11 +50,7 @@ export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
 	onAction?: (action: IHWAction) => any
 }
 
-export type Action = IButtonProps | IHWButton
-
-const Button = (props: IButtonProps): React.ReactElement => {
-	const reactHeartwoodProps = props as IButtonProps
-
+const Button = (props: IButton): React.ReactElement => {
 	const {
 		action,
 		AnchorComponent = BasicAnchor,
@@ -84,7 +70,7 @@ const Button = (props: IButtonProps): React.ReactElement => {
 		payload,
 		htmlAttributes,
 		...rest
-	} = reactHeartwoodProps
+	} = props
 
 	const btnClass = cx(className, {
 		btn: true,

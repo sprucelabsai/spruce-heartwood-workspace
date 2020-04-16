@@ -1,5 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
+import avatarDefinition from './avatar.definition'
 
 const userAvatarDefinition = buildSchemaDefinition({
 	id: 'userAvatar',
@@ -14,12 +15,7 @@ const userAvatarDefinition = buildSchemaDefinition({
 				schema: SpruceSchemas.core.User.definition
 			}
 		},
-		fieldName2: {
-			type: FieldType.Number,
-			label: 'Second Field',
-			isRequired: true,
-			hint: 'A hint'
-		}
+		...avatarDefinition.fields
 	}
 })
 
