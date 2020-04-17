@@ -9,7 +9,7 @@ stories.addDecorator(withKnobs({ escapeHtml: false }))
 
 stories.add('Avatar', () => (
 	<Avatar
-		image={text(
+		src={text(
 			'image',
 			boolean('isLarge', false)
 				? '/assets/users/user-placeholder.png'

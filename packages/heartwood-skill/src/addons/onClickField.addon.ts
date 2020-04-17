@@ -1,8 +1,8 @@
 import { registerFieldType } from '@sprucelabs/schema'
-import ActionField from '../fields/ActionField'
+import OnClickField from '../fields/OnClickField'
 
 export default registerFieldType({
-	type: 'Action',
-	class: ActionField,
+	type: 'OnClick',
+	class: OnClickField,
 	package: '@sprucelabs/heartwood-skill'
 })

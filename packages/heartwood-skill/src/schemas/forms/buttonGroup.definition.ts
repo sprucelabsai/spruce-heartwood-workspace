@@ -1,4 +1,9 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import {
+	buildSchemaDefinition,
+	FieldType,
+	buildSelectChoices
+} from '@sprucelabs/schema'
+import buttonDefinition from './button.definition'
 
 const buttonGroupDefinition = buildSchemaDefinition({
 	id: 'buttonGroup',
@@ -11,7 +16,7 @@ const buttonGroupDefinition = buildSchemaDefinition({
 			isRequired: true,
 			isArray: true,
 			options: {
-				schemaId: 'button'
+				schema: buttonDefinition
 			}
 		},
 		kind: {
@@ -19,7 +24,7 @@ const buttonGroupDefinition = buildSchemaDefinition({
 			label: 'Kind',
 			hint: 'Visual appearance of the group.',
 			options: {
-				choices: [
+				choices: buildSelectChoices([
 					{
 						label: 'Default',
 						value: 'default'
@@ -32,7 +37,7 @@ const buttonGroupDefinition = buildSchemaDefinition({
 						label: 'Floating',
 						value: 'floating'
 					}
-				]
+				])
 			}
 		},
 		isFullWidth: {

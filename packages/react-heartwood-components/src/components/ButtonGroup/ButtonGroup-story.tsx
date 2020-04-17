@@ -10,7 +10,7 @@ stories.addDecorator(withKnobs)
 stories.add('Button Group', () => (
 	<ButtonGroup
 		kind={text('kind', '')}
-		actions={object('actions', [
+		buttons={object('buttons', [
 			{ text: 'Confirm Changes', kind: 'primary' },
 			{ text: 'Cancel', kind: 'secondary' }
 		])}

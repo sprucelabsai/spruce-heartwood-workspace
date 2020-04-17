@@ -24,6 +24,12 @@ export enum FieldType {
 	Select = 'select',
 	/** A text field. Converts non-strings into strings by calling toString(). Size set by options. */
 	Text = 'text',
-	/** An action field */
+	/** For when you need to click on a component that supports actions */
+	ActionClick = 'actionClick',
+	/** An action field that is invoked when an interaction takes place on a Heartwood component */
 	Action = 'action',
+	/** A react node */
+	Node = 'node',
+	/** A universal onclick handler for react components */
+	OnClick = 'onClick',
 }

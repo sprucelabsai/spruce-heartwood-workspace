@@ -1,25 +1,19 @@
-import { IHWAction, IHWButtonGroup } from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React from 'react'
-import Button, { ButtonKinds, Action } from '../Button/Button'
 import { unionArray } from '../..'
+import Button from '../Button/Button'
+import { Action,IButtonGroup } from '@sprucelabs/heartwood-skill'
 
-export interface IButtonGroupProps extends Omit<IHWButtonGroup, 'actions'> {
-	/** Array of actions to render the group's buttons. */
-	actions: Action[]
-
+export interface IButtonGroupProps extends IButtonGroup {
 	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
+	onAction?: (action: Action) => any
 }
 
 const ButtonGroup = (
-	props: IButtonGroupProps | IHWButtonGroup
+	props: IButtonGroupProps
 ): React.ReactElement => {
-	const reactHeartwoodProps = props as IButtonGroupProps
-	const commonProps = props as IHWButtonGroup
-
-	const { actions, kind, isFullWidth, highlightedIndex } = commonProps
-	const { onAction } = reactHeartwoodProps
+	
+	const { buttons, kind, isFullWidth, highlightedIndex, onAction } = props
 
 	const parentClass = cx('button-group', {
 		'button-group-segmented': kind === 'segmented',
@@ -28,30 +22,25 @@ const ButtonGroup = (
 	})
 	return (
 		<ul className={parentClass}>
-			{unionArray(actions).map((action, idx) => {
+			{unionArray(buttons).map((button, idx) => {
 				return (
 					<li
-						key={action.id}
+						key={button.id}
 						className={cx('button-group__item', {
 							'button-group__item--is-highlighted': highlightedIndex === idx
 						})}
 					>
 						<Button
+						id={button.id}
 							isFullWidth={kind === 'floating'}
-							// TODO: This is necessary since the older "action" interface
-							// (meaning a button) doesn't work with the newer IHWAction
-							// interface. We need to refactor the legacy case broadly to
-							// remove this.
-							action={(action as unknown) as IHWAction}
-							{...action}
 							kind={
 								kind === 'floating'
-									? ButtonKinds.Simple
+									? 'simple'
 									: kind === 'segmented'
-									? ButtonKinds.Secondary
-									: action.kind
+									? 'secondary'
+									: button.kind
 							}
-							onAction={onAction}
+							onAction={(action: Action) => onAction && onAction(action)}
 						/>
 					</li>
 				)

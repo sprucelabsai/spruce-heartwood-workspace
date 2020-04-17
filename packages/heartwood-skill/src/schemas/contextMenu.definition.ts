@@ -1,23 +1,32 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import {
+	buildSchemaDefinition,
+	FieldType,
+	buildSelectChoices
+} from '@sprucelabs/schema'
+import buttonDefinition from './forms/button.definition'
+import iconDefinition from './icon.definition'
 
 const contextMenuDefinition = buildSchemaDefinition({
 	id: 'ContextMenu',
 	name: 'ContextMenu',
-	description: '**missing description**',
+	description:
+		'A contextual menu comprised of buttons (tip: set the action on each button).',
 	fields: {
-		actions: {
-			type: FieldType.Action,
-			label: 'Actions',
+		buttons: {
+			type: FieldType.Schema,
+			label: 'Buttons',
 			isRequired: true,
 			isArray: true,
-			hint: 'The actions to be shown on tap/click'
+			options: {
+				schema: buttonDefinition
+			}
 		},
 		size: {
 			type: FieldType.Select,
 			label: 'Size',
 			hint: 'Set the width of the menu. Helpful for longer text in buttons',
 			options: {
-				choices: [
+				choices: buildSelectChoices([
 					{
 						label: 'Medium',
 						value: 'medium'
@@ -26,7 +35,7 @@ const contextMenuDefinition = buildSchemaDefinition({
 						label: 'Large',
 						value: 'large'
 					}
-				]
+				])
 			}
 		},
 		text: {
@@ -39,7 +48,7 @@ const contextMenuDefinition = buildSchemaDefinition({
 			label: 'Icon',
 			hint: 'Overrides the default icon',
 			options: {
-				schemaId: 'Icon'
+				schema: iconDefinition
 			}
 		},
 		isSimple: {
@@ -52,15 +61,20 @@ const contextMenuDefinition = buildSchemaDefinition({
 			label: 'Is small',
 			hint: 'Set true to make the button smaller'
 		},
-		closeOnSelectAction: {
+		closeOnSelect: {
 			type: FieldType.Boolean,
-			label: 'Close on select action',
-			hint: 'Set to true makes the menu close when any action is selected'
+			label: 'Close on select',
+			hint: 'Set to true makes the menu close when any option is selected'
 		},
 		isTextOnly: {
 			type: FieldType.Boolean,
 			label: 'Is text only',
 			hint: 'Hide the icon entirely'
+		},
+		className: {
+			type: FieldType.Text,
+			label: 'Classname',
+			isPrivate: true
 		}
 	}
 })

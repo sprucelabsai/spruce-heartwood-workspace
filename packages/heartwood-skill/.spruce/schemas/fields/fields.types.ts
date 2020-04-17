@@ -12,17 +12,20 @@ import { IRawFieldDefinition, RawField } from "@sprucelabs/schema"
 import { ISchemaFieldDefinition, SchemaField } from "@sprucelabs/schema"
 import { ISelectFieldDefinition, SelectField } from "@sprucelabs/schema"
 import { ITextFieldDefinition, TextField } from "@sprucelabs/schema"
+import ActionClickField, { IActionClickFieldDefinition } from "../../../src/fields/ActionClickField"
 import ActionField, { IActionFieldDefinition } from "../../../src/fields/ActionField"
+import NodeField, { INodeFieldDefinition } from "../../../src/fields/NodeField"
+import OnClickField, { IOnClickFieldDefinition } from "../../../src/fields/OnClickField"
 
 
 /** Field definition union */
-export type FieldDefinition = | IAddressFieldDefinition| IBooleanFieldDefinition| IDateTimeFieldDefinition| IDurationFieldDefinition| IFileFieldDefinition| IIdFieldDefinition| INumberFieldDefinition| IPhoneFieldDefinition| IRawFieldDefinition| ISchemaFieldDefinition| ISelectFieldDefinition| ITextFieldDefinition| IActionFieldDefinition
+export type FieldDefinition = | IAddressFieldDefinition| IBooleanFieldDefinition| IDateTimeFieldDefinition| IDurationFieldDefinition| IFileFieldDefinition| IIdFieldDefinition| INumberFieldDefinition| IPhoneFieldDefinition| IRawFieldDefinition| ISchemaFieldDefinition| ISelectFieldDefinition| ITextFieldDefinition| IActionClickFieldDefinition| IActionFieldDefinition| INodeFieldDefinition| IOnClickFieldDefinition
 
 /** Field class union */
-export type FieldClass = | typeof AddressField| typeof BooleanField| typeof DateTimeField| typeof DurationField| typeof FileField| typeof IdField| typeof NumberField| typeof PhoneField| typeof RawField| typeof SchemaField| typeof SelectField| typeof TextField| typeof ActionField
+export type FieldClass = | typeof AddressField| typeof BooleanField| typeof DateTimeField| typeof DurationField| typeof FileField| typeof IdField| typeof NumberField| typeof PhoneField| typeof RawField| typeof SchemaField| typeof SelectField| typeof TextField| typeof ActionClickField| typeof ActionField| typeof NodeField| typeof OnClickField
 
 /** Field instance union **/
-export type Field = | AddressField| BooleanField| DateTimeField| DurationField| FileField| IdField| NumberField| PhoneField| RawField| SchemaField| SelectField| TextField| ActionField
+export type Field = | AddressField| BooleanField| DateTimeField| DurationField| FileField| IdField| NumberField| PhoneField| RawField| SchemaField| SelectField| TextField| ActionClickField| ActionField| NodeField| OnClickField
 
 
 /** Type for looking up field definitions by field type */
@@ -39,7 +42,10 @@ export type FieldDefinitionMap = {
 	[FieldType.Schema]: ISchemaFieldDefinition
 	[FieldType.Select]: ISelectFieldDefinition
 	[FieldType.Text]: ITextFieldDefinition
+	[FieldType.ActionClick]: IActionClickFieldDefinition
 	[FieldType.Action]: IActionFieldDefinition
+	[FieldType.Node]: INodeFieldDefinition
+	[FieldType.OnClick]: IOnClickFieldDefinition
 }
 
 /** Value for looking up field classes by field type */
@@ -56,7 +62,10 @@ export const FieldClassMap: Record<FieldType, FieldClass> = {
 		[FieldType.Schema]: SchemaField,
 		[FieldType.Select]: SelectField,
 		[FieldType.Text]: TextField,
+		[FieldType.ActionClick]: ActionClickField,
 		[FieldType.Action]: ActionField,
+		[FieldType.Node]: NodeField,
+		[FieldType.OnClick]: OnClickField,
 }
 
 /** Interface for looking up classes by field type */
@@ -73,5 +82,8 @@ export interface IFieldClassMap {
 		[FieldType.Schema]: SchemaField,
 		[FieldType.Select]: SelectField,
 		[FieldType.Text]: TextField,
+		[FieldType.ActionClick]: ActionClickField,
 		[FieldType.Action]: ActionField,
+		[FieldType.Node]: NodeField,
+		[FieldType.OnClick]: OnClickField,
 }

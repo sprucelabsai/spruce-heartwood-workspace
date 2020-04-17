@@ -1,4 +1,8 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import {
+	buildSchemaDefinition,
+	FieldType,
+	buildSelectChoices
+} from '@sprucelabs/schema'
 
 const avatarDefinition = buildSchemaDefinition({
 	id: 'avatar',
@@ -36,10 +40,10 @@ const avatarDefinition = buildSchemaDefinition({
 			type: FieldType.Select,
 			label: 'Status',
 			options: {
-				choices: [
+				choices: buildSelectChoices([
 					{ value: 'online', label: 'Online' },
 					{ value: 'offline', label: 'Offline' }
-				]
+				])
 			}
 		},
 		name: {

@@ -1,4 +1,8 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import {
+	buildSchemaDefinition,
+	FieldType,
+	buildSelectChoices
+} from '@sprucelabs/schema'
 
 const buttonDefinition = buildSchemaDefinition({
 	id: 'button',
@@ -18,7 +22,7 @@ const buttonDefinition = buildSchemaDefinition({
 			hint:
 				'Sets the visual appearance of the button. May be primary, secondary, simple, or caution.',
 			options: {
-				choices: [
+				choices: buildSelectChoices([
 					{
 						label: 'Primary',
 						value: 'primary'
@@ -35,7 +39,7 @@ const buttonDefinition = buildSchemaDefinition({
 						label: 'Caution',
 						value: 'caution'
 					}
-				]
+				])
 			}
 		},
 		isSmall: {
@@ -83,7 +87,7 @@ const buttonDefinition = buildSchemaDefinition({
 			label: 'Type',
 			hint: "Type attribute for HTML button element. Defaults to 'button'.",
 			options: {
-				choices: [
+				choices: buildSelectChoices([
 					{
 						label: 'Button',
 						value: 'button'
@@ -96,7 +100,7 @@ const buttonDefinition = buildSchemaDefinition({
 						label: 'Reset',
 						value: 'reset'
 					}
-				]
+				])
 			}
 		},
 		isDisabled: {
@@ -108,6 +112,20 @@ const buttonDefinition = buildSchemaDefinition({
 			type: FieldType.Action,
 			label: 'Action',
 			hint: 'Optional action to invoke when tapped'
+		},
+		className: {
+			type: FieldType.Text,
+			label: 'classname',
+			isPrivate: true
+		},
+		onClick: {
+			type: FieldType.OnClick,
+			label: 'On click handler',
+			isPrivate: true
+		},
+		children: {
+			type: FieldType.Node,
+			isPrivate: true
 		}
 	}
 })

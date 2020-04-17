@@ -1,41 +1,24 @@
-import {
-	IHWAction,
-	IHWButtonGroupKind,
-	IHWContextMenu
-} from '@sprucelabs/spruce-types'
+
 import cx from 'classnames'
 import { debounce } from 'lodash'
 import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import MoreIcon from '../../../static/assets/icons/Interface-Essential/Menu/navigation-menu-horizontal.svg'
-import Button, { ButtonKinds, IButtonProps } from '../Button/Button'
+import Button, { IButtonProps } from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { IIconProps } from '../Icon/Icon'
+import { Action, IContextMenu } from '@sprucelabs/heartwood-skill'
 
 export interface IContextMenuProps
-	extends Omit<IHWContextMenu, 'actions' | 'icon'> {
-	/** The actions to be shown on tap/click */
-	actions: IButtonProps[]
+	extends Omit<IContextMenu, 'buttons'>{
 
-	/** DEPRECATED Set true to left align the menu */
-	isLeftAligned?: boolean
+		/** the buttons that make up this context menu */
+		buttons: IButtonProps[]
 
-	/** DEPRECATED Set true to right align the menu */
-	isRightAligned?: boolean
-
-	/** DEPRECATED Set true to align menu above button */
-	isBottomAligned?: boolean
-
-	/** Overrides the default icon */
-	icon?: IIconProps | null
-
-	/** Optional classname that applies to the button */
-	className?: string
-
+		/** triggered when the context menu visibility changes */
 	onToggleContextMenuVisible?: Function
 
 	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
+	onAction?: (action: Action) => any
 }
 
 interface IContextMenuState {
@@ -53,7 +36,7 @@ interface IContextMenuState {
 }
 
 export default class ContextMenu extends Component<
-	IContextMenuProps | IHWContextMenu,
+	IContextMenuProps,
 	IContextMenuState
 > {
 	public static defaultProps = {
@@ -124,14 +107,17 @@ export default class ContextMenu extends Component<
 	}
 
 	public getMenuPlacement = () => {
-		const reactHeartwoodProps = this.props as IContextMenuProps
-		const { isRightAligned, isBottomAligned } = reactHeartwoodProps
-
 		const triggerPosition = this.getTriggerPlacement()
 
 		if (!triggerPosition) {
 			return
 		}
+
+		// TODO position this menu based on screen size
+		const isBottomAligned = true
+		const isRightAligned = false
+
+
 		const menuPosition = {
 			top: isBottomAligned
 				? triggerPosition.y
@@ -254,30 +240,25 @@ export default class ContextMenu extends Component<
 	}
 
 	public handleClickAction = (payload, callback) => {
-		if (this.props.closeOnSelectAction) {
+		if (this.props.closeOnSelect) {
 			this.handleToggle()
 		}
 		callback && callback(payload)
 	}
 
 	public render(): React.ReactElement {
-		const reactHeartwoodProps = this.props as IContextMenuProps
-		const commonProps = this.props as IHWContextMenu
 
 		const { isVisible, overflowBottom, overflowLeft, menuPosition } = this.state
-		const { icon, isSimple, isSmall, isTextOnly, size, text } = commonProps
-
-		const {
-			actions,
-			className,
-			isBottomAligned,
-			isRightAligned,
-			onAction
-		} = reactHeartwoodProps
+		const { icon, isSimple, isSmall, isTextOnly, size, text,onAction,buttons, className } = this.props
 
 		const buttonClass = cx('context-menu', className, {
 			'context-menu--is-visible': isVisible
 		})
+
+		// TODO calculate position to know how to align
+		const isBottomAligned = true
+		const isRightAligned = false
+
 		const menuClass = cx('context-menu__menu', {
 			'context-menu__menu-left': isRightAligned || overflowLeft,
 			'context-menu__menu-large': size === 'large',
@@ -287,7 +268,8 @@ export default class ContextMenu extends Component<
 		return (
 			<div className={buttonClass} ref={this.ref}>
 				<Button
-					kind={isSimple ? ButtonKinds.Simple : undefined}
+					id="context-menu-button"
+					kind={isSimple ? 'simple' : undefined}
 					className="context-menu__button"
 					onClick={this.handleToggle}
 					icon={
@@ -317,9 +299,9 @@ export default class ContextMenu extends Component<
 							}}
 						>
 							<ButtonGroup
-								kind={IHWButtonGroupKind.Floating}
-								actions={actions.map(action => {
-									const btnAction = { ...action }
+								kind={'floating'}
+								buttons={buttons.map(button => {
+									const btnAction = { ...button }
 									const oldOnclick = btnAction.onClick
 									btnAction.onClick = () => {
 										this.handleClickAction(btnAction.payload, oldOnclick)

@@ -3,54 +3,28 @@ import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon, { IIconProps } from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
-import { IButton } from '@sprucelabs/heartwood-skill'
+import { IButton,Action } from '@sprucelabs/heartwood-skill'
 
 export type ButtonOnClick = (
-	e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>,
-	payload?: Record<string, any>
+	e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>
 ) => void
 
-// (e?: React.FormEvent<HTMLFormElement> | undefined) => void
-
-export interface IButtonProps extends Omit<IHWButton, 'id' | 'icon'> {
-	/** Optional ID for view caching */
-	id?: string
-
-	/** The kind of button, primary, secondary, etc. */
-	kind?: ButtonKinds | null
-
-	/** Submit/Button */
-	type?: ButtonTypes | null
-
-	/** Optional class to add to the button. */
-	className?: string
+export interface IButtonProps extends IButton {
+	// TODO figure out why this is any
+	/** override the anchor component if href is true */
+	AnchorComponent?: any
 
 	/** Optional children passed into button */
 	children?: React.ReactNode
 
-	/** Icon for the button. */
-	icon?: IIconProps | null
-
 	/** Click handler. */
-	onClick?: (e?: React.MouseEvent, payload?: Record<string, any>) => void
-
-	/** Component used to render anchor */
-	AnchorComponent?: any
-
-	/** Optional target, whatever an anchor tag takes */
-	target?: string
-
-	/** Optional payload to be sent with onclick (different than the payload attached to action.) */
-	payload?: Record<string, any>
-
-	/** Whether the button should be disabled */
-	isDisabled?: boolean | null
+	onClick?: ButtonOnClick
 
 	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
+	onAction?: (action: Action) => any
 }
 
-const Button = (props: IButton): React.ReactElement => {
+const Button = (props: IButtonProps): React.ReactElement => {
 	const {
 		action,
 		AnchorComponent = BasicAnchor,
@@ -67,17 +41,15 @@ const Button = (props: IButton): React.ReactElement => {
 		onClick,
 		text,
 		type,
-		payload,
-		htmlAttributes,
 		...rest
 	} = props
 
 	const btnClass = cx(className, {
 		btn: true,
-		'btn-primary': kind === ButtonKinds.Primary,
-		'btn-secondary': kind === ButtonKinds.Secondary,
-		'btn-caution': kind === ButtonKinds.Caution,
-		'btn-simple': kind === ButtonKinds.Simple,
+		'btn-primary': kind === 'primary',
+		'btn-secondary': kind === 'secondary',
+		'btn-caution': kind === 'caution',
+		'btn-simple': kind === 'simple',
 		'btn-full-width': isFullWidth,
 		'btn--loading': isLoading,
 		'btn-small': isSmall,
@@ -97,7 +69,7 @@ const Button = (props: IButton): React.ReactElement => {
 		}
 
 		if (onClick) {
-			onClick(e, payload)
+			onClick(e)
 		}
 	}
 
@@ -128,7 +100,7 @@ const Button = (props: IButton): React.ReactElement => {
 					{isLoading && (
 						<CircleLoader
 							light={
-								kind === ButtonKinds.Primary || kind === ButtonKinds.Caution
+								kind === 'primary' || kind === 'caution'
 							}
 						/>
 					)}
@@ -148,11 +120,14 @@ const Button = (props: IButton): React.ReactElement => {
 			type={type || 'button'}
 			onClick={handleClick}
 			disabled={isDisabled || false}
-			{...htmlAttributes}
 		>
 			<Inner />
 		</button>
 	)
+
+	if (!AnchorComponent) {
+		throw new Error('what the?')
+	}
 
 	const anchor = (
 		<AnchorComponent

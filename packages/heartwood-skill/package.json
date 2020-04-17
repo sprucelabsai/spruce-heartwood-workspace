@@ -24,13 +24,18 @@
     "watch": "chokidar 'src/**/*' 'index.ts' '.spruce' -c 'npm run build'",
     "clean": "rm -rf build/",
     "lint": "eslint '**/*.ts' && tsc -p . --noEmit",
-    "lint:fix": "eslint --fix '**/*.ts'"
+    "lint:fix": "eslint --fix '**/*.ts'",
+    "test": "ava **/*.test.ts",
+    "test:watch": "ava  **/*.test.ts --watch"
   },
   "dependencies": {
     "@sprucelabs/path-resolver": "^1.0.10",
-    "@sprucelabs/schema": "^1.0.21"
+    "@sprucelabs/schema": "^1.1.1",
+    "react": "^16.13.1"
   },
   "devDependencies": {
+    "@sprucelabs/test": "^1.0.0",
+    "ava": "^3.7.0",
     "chokidar-cli": "^2.1.0",
     "concurrently": "^5.0.2",
     "conventional-changelog-sprucelabs": "^1.1.0",
@@ -40,5 +45,13 @@
     "ts-node": "^8.8.2",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.8.3"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   }
 }
