@@ -3,6 +3,7 @@ import {
 	FieldType,
 	buildSelectChoices
 } from '@sprucelabs/schema'
+import iconDefinition from '../icon.definition'
 
 const buttonDefinition = buildSchemaDefinition({
 	id: 'button',
@@ -79,7 +80,7 @@ const buttonDefinition = buildSchemaDefinition({
 			label: 'Icon',
 			hint: 'Icon for the button.',
 			options: {
-				schemaId: 'Icon'
+				schema: iconDefinition
 			}
 		},
 		type: {
@@ -125,6 +126,16 @@ const buttonDefinition = buildSchemaDefinition({
 		},
 		children: {
 			type: FieldType.Node,
+			isPrivate: true
+		},
+		onAction: {
+			type: FieldType.ActionClick,
+			hint: 'Invoked when the button is clicked',
+			isPrivate: true
+		},
+		AnchorComponent: {
+			type: FieldType.Node,
+			hint: 'Lets you override the element used when rendering a link',
 			isPrivate: true
 		}
 	}

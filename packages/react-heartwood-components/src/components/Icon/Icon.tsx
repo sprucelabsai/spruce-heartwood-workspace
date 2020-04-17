@@ -1,37 +1,20 @@
-// TODO(george): Figure out why icons busts this rule.
-/* eslint import/namespace: off */
-
-// NOTE: This component should only include a few of the most commonly
-// used icons for developer convenience
 import React, { Fragment } from 'react'
 import cx from 'classnames'
 
 import * as icons from '../../icons.js'
-import { IHWIcon } from '@sprucelabs/spruce-types'
+import { IIcon } from '@sprucelabs/heartwood-skill'
 
-export interface IIconProps extends Omit<IHWIcon, 'id'> {
-	/** Optional id for view caching */
-	id?: string
+const Icon = (props: IIcon): React.ReactElement => {
+	const { name, customIcon, isLineIcon, className, ...rest } = props
 
-	/** Pass a custom icon to use one that isn't keyed to a name */
-	customIcon?: any
+	const iconKey = name && name.toLowerCase()
 
-	/** Optional classname for the icon */
-	className?: string
-}
-
-const Icon = (props: IIconProps): React.ReactElement => {
-	const { name: icon, customIcon, isLineIcon, className, ...rest } = props
-
-	const iconKey = icon && icon.toLowerCase()
-
-	if (!customIcon && (!icon || !icons[iconKey])) {
-		console.warn(`<Icon /> could not find an icon with key `, icon)
+	if (!customIcon && (!name || !icons[iconKey])) {
+		console.warn(`<Icon /> could not find an icon with key:`, name)
 		return <Fragment />
 	}
 
 	const isFillIcon = !customIcon && icons[iconKey] && !icons[iconKey].isLineIcon
-
 	const Handler = customIcon || icons[iconKey].icon
 
 	return (

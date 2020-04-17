@@ -75,6 +75,11 @@ const contextMenuDefinition = buildSchemaDefinition({
 			type: FieldType.Text,
 			label: 'Classname',
 			isPrivate: true
+		},
+		onAction: {
+			type: FieldType.ActionClick,
+			hint: 'Invoked when the button is clicked',
+			isPrivate: true
 		}
 	}
 })

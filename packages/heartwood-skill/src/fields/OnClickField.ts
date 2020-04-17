@@ -1,14 +1,10 @@
 import React from 'react'
 import { IFieldDefinition, FieldType, AbstractField } from '@sprucelabs/schema'
 
-export interface IOnClickFieldDefinitionValue {
+export type IOnClickFieldDefinition = IFieldDefinition<
 	(
 		e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>
-	): void
-}
-
-export type IOnClickFieldDefinition = IFieldDefinition<
-	IOnClickFieldDefinitionValue
+	) => void
 > & {
 	type: FieldType.OnClick
 }
@@ -19,7 +15,8 @@ export default class OnClickField extends AbstractField<
 	public static templateDetails() {
 		return {
 			description: 'A universal onclick handler for react components',
-			valueType: 'IOnClickFieldDefinitionValue'
+			valueType:
+				'(e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void'
 		}
 	}
 }

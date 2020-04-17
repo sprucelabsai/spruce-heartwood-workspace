@@ -4,13 +4,8 @@ import { unionArray } from '../..'
 import Button from '../Button/Button'
 import { Action,IButtonGroup } from '@sprucelabs/heartwood-skill'
 
-export interface IButtonGroupProps extends IButtonGroup {
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: Action) => any
-}
-
 const ButtonGroup = (
-	props: IButtonGroupProps
+	props: IButtonGroup
 ): React.ReactElement => {
 	
 	const { buttons, kind, isFullWidth, highlightedIndex, onAction } = props

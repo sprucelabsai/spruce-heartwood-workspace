@@ -50,6 +50,10 @@ const buttonGroupDefinition = buildSchemaDefinition({
 			label: 'Highlighted index',
 			hint:
 				'Index of the button that is currently highlighted, e.g. by arrow keys'
+		},
+		onAction: {
+			type: FieldType.ActionClick,
+			isPrivate: true
 		}
 	}
 })

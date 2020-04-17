@@ -1,30 +1,17 @@
 import cx from 'classnames'
 import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
-import Icon, { IIconProps } from '../Icon/Icon'
+import Icon from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
-import { IButton,Action } from '@sprucelabs/heartwood-skill'
+import { IButton } from '@sprucelabs/heartwood-skill'
 
 export type ButtonOnClick = (
 	e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>
 ) => void
 
-export interface IButtonProps extends IButton {
-	// TODO figure out why this is any
-	/** override the anchor component if href is true */
-	AnchorComponent?: any
 
-	/** Optional children passed into button */
-	children?: React.ReactNode
 
-	/** Click handler. */
-	onClick?: ButtonOnClick
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: Action) => any
-}
-
-const Button = (props: IButtonProps): React.ReactElement => {
+const Button = (props: IButton): React.ReactElement => {
 	const {
 		action,
 		AnchorComponent = BasicAnchor,
@@ -108,10 +95,7 @@ const Button = (props: IButtonProps): React.ReactElement => {
 			)}
 		</span>
 	)
-
-	// TODO: We probably need to create explicit whitelists of what we want to
-	// allow to be spread onto native DOM elements, since applying non-standard
-	// attributes throws a warning.
+	
 	const { isDisabled } = rest
 
 	const button = (

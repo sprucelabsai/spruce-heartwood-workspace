@@ -3,12 +3,8 @@ import { FieldType } from '#spruce:schema/fields/fieldType'
 import { AbstractField } from '@sprucelabs/schema'
 import { IFieldDefinition } from '@sprucelabs/schema'
 
-export interface IActionClickFieldDefinitionValue {
-	(action: Action): any
-}
-
 export type IActionClickFieldDefinition = IFieldDefinition<
-	IActionClickFieldDefinitionValue
+	(action: Action) => any
 > & {
 	/** * .Action - An action to be invoked when a person interacts with a component */
 	type: FieldType.ActionClick
@@ -22,7 +18,7 @@ export default class ActionClickField extends AbstractField<
 		return {
 			description:
 				'For when you need to click on a component that supports actions',
-			valueType: 'IActionClickFieldDefinitionValue'
+			valueType: '(action: Action) => any'
 		}
 	}
 }

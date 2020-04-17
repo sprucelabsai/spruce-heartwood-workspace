@@ -21,6 +21,15 @@ const iconDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Is line icon',
 			hint: 'Set true to render an icon with a stroke, but no fill'
+		},
+		className: {
+			type: FieldType.Text,
+			isPrivate: true
+		},
+		customIcon: {
+			type: FieldType.Node,
+			isPrivate: true,
+			hint: 'Lets you pass an icon node'
 		}
 	}
 })

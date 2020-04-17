@@ -4,22 +4,22 @@ import { debounce } from 'lodash'
 import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import MoreIcon from '../../../static/assets/icons/Interface-Essential/Menu/navigation-menu-horizontal.svg'
-import Button, { IButtonProps } from '../Button/Button'
+import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { Action, IContextMenu } from '@sprucelabs/heartwood-skill'
+import { IContextMenu } from '@sprucelabs/heartwood-skill'
 
-export interface IContextMenuProps
-	extends Omit<IContextMenu, 'buttons'>{
+// export interface IContextMenuProps
+// 	extends Omit<IContextMenu, 'buttons'>{
 
-		/** the buttons that make up this context menu */
-		buttons: IButtonProps[]
+// 		/** the buttons that make up this context menu */
+// 		buttons: IButtonProps[]
 
-		/** triggered when the context menu visibility changes */
-	onToggleContextMenuVisible?: Function
+// 		/** triggered when the context menu visibility changes */
+// 	onToggleContextMenuVisible?: Function
 
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: Action) => any
-}
+// 	/** Optional, provide a handler for Actions */
+// 	onAction?: (action: Action) => any
+// }
 
 interface IContextMenuState {
 	/** Show the menu */
@@ -36,7 +36,7 @@ interface IContextMenuState {
 }
 
 export default class ContextMenu extends Component<
-	IContextMenuProps,
+	IContextMenu,
 	IContextMenuState
 > {
 	public static defaultProps = {
@@ -62,7 +62,7 @@ export default class ContextMenu extends Component<
 		}
 	}
 
-	public constructor(props: IContextMenuProps) {
+	public constructor(props: IContextMenu) {
 		super(props)
 
 		this.portalEl =
@@ -207,7 +207,7 @@ export default class ContextMenu extends Component<
 	}
 
 	public handleToggle = (): void => {
-		const { onToggleContextMenuVisible } = this.props as IContextMenuProps
+		const { onToggleContextMenuVisible } = this.props
 
 		this.setState(
 			prevState => ({
