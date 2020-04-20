@@ -1,7 +1,6 @@
 import {
 	buildSchemaDefinition,
 	FieldType,
-	buildSelectChoices
 } from '@sprucelabs/schema'
 import buttonDefinition from './forms/button.definition'
 import iconDefinition from './icon.definition'
@@ -26,7 +25,7 @@ const contextMenuDefinition = buildSchemaDefinition({
 			label: 'Size',
 			hint: 'Set the width of the menu. Helpful for longer text in buttons',
 			options: {
-				choices: buildSelectChoices([
+				choices: [
 					{
 						label: 'Medium',
 						value: 'medium'
@@ -35,7 +34,7 @@ const contextMenuDefinition = buildSchemaDefinition({
 						label: 'Large',
 						value: 'large'
 					}
-				])
+				]
 			}
 		},
 		text: {
@@ -65,11 +64,6 @@ const contextMenuDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Close on select',
 			hint: 'Set to true makes the menu close when any option is selected'
-		},
-		isTextOnly: {
-			type: FieldType.Boolean,
-			label: 'Is text only',
-			hint: 'Hide the icon entirely'
 		},
 		className: {
 			type: FieldType.Text,

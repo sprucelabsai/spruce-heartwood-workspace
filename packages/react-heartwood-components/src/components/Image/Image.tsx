@@ -1,23 +1,9 @@
 import React from 'react'
-import { IHWImage } from '@sprucelabs/spruce-types'
+import {IImage} from '@sprucelabs/heartwood-skill'
 
-export interface IImageProps extends Omit<IHWImage, 'id'> {
-	id?: string
 
-	alt?: string | null
-
-	width?: number
-
-	height?: number
-}
-
-const Image = (props: IImageProps | IHWImage): React.ReactElement => {
-	const reactHeartwoodProps = props as IImageProps
-	const commonProps = props as IHWImage
-
-	const { id, alt, src } = commonProps
-	const { width, height } = reactHeartwoodProps
-
+const Image = (props: IImage): React.ReactElement => {
+	const { id, alt, src, width, height } = props
 	const imageProps = {
 		id: id || undefined,
 		alt: alt || undefined,

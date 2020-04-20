@@ -1,5 +1,6 @@
 import React from 'react'
-import { IFieldDefinition, FieldType, AbstractField } from '@sprucelabs/schema'
+import { FieldType } from '@sprucelabs/schema'
+import AbstractField, { IFieldDefinition }  from '@sprucelabs/schema/build/fields/AbstractField'
 
 export type IOnClickFieldDefinition = IFieldDefinition<
 	(

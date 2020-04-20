@@ -1,21 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
+import { ILayoutSection} from '@sprucelabs/heartwood-skill'
 
-export interface ILayoutSectionProps {
-	/** The id for the created layout div */
-	id?: string
-
-	/** Contents of the Layout Section */
-	children?: React.ReactNode | null
-
-	/** Class name for the section */
-	className?: string | null
-
-	/** Whether this is a secondary Layout Section */
-	isSecondary?: boolean | null
-}
-
-const LayoutSection = (props: ILayoutSectionProps) => {
+const LayoutSection = (props: ILayoutSection) => {
 	const { className, isSecondary, children, ...rest } = props
 
 	return (

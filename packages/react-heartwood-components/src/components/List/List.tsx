@@ -1,9 +1,3 @@
-import {
-	IHWAction,
-	IHWList,
-	IHWListHeader,
-	IHWListItemTypes
-} from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React, { Fragment } from 'react'
 import ExpandableListItem, {
@@ -13,37 +7,38 @@ import ListHeader, {
 	IListHeaderProps
 } from './components/ListHeader/ListHeader'
 import ListItem, { IListItemProps } from './components/ListItem/ListItem'
+import {IList} from '@sprucelabs/heartwood-skill'
 
 export type IWrappedItemProps = IListItemProps | IExpandableListItemProps
 
-export interface IListProps extends Omit<IHWList, 'id' | 'header' | 'items'> {
-	/** Optional id for view caching */
-	id?: string
+// export interface IListProps extends Omit<IHWList, 'id' | 'header' | 'items'> {
+// 	/** Optional id for view caching */
+// 	id?: string
 
-	/** List Header */
-	header?: IListHeaderProps | IHWListHeader | null
+// 	/** List Header */
+// 	header?: IListHeaderProps | IHWListHeader | null
 
-	/** List items */
-	items?: Array<IWrappedItemProps | IHWListItemTypes> | null
+// 	/** List items */
+// 	items?: Array<IWrappedItemProps | IHWListItemTypes> | null
 
-	/** Class for the list */
-	className?: string
+// 	/** Class for the list */
+// 	className?: string
 
-	/** Any passthrough to render in the body of the list */
-	children?: React.ReactNode
+// 	/** Any passthrough to render in the body of the list */
+// 	children?: React.ReactNode
 
-	/** Is this whole list in a loading state? Sets all list items to loading only if true. */
-	isLoading?: boolean
+// 	/** Is this whole list in a loading state? Sets all list items to loading only if true. */
+// 	isLoading?: boolean
 
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-}
+// 	/** Optional, provide a handler for Actions */
+// 	onAction?: (action: IHWAction) => any
+// }
 
 export const ListWrapper = (props): React.ReactElement => (
 	<div className="list-wrapper">{props.children}</div>
 )
 
-const List = (props: IListProps): React.ReactElement => {
+const List = (props: IList): React.ReactElement => {
 	const {
 		header,
 		items,
@@ -74,9 +69,8 @@ const List = (props: IListProps): React.ReactElement => {
 			<ul className={parentClass}>
 				{items &&
 					items.map((item, idx) => {
-						const listItem = item as IListItemProps
-						const expandableListItem = item as IExpandableListItemProps
-
+						const listItem = item
+						
 						if (listItem.title) {
 							return (
 								<ListItem

@@ -21,6 +21,14 @@ const imageDefinition = buildSchemaDefinition({
 			type: FieldType.Text,
 			label: 'Alt',
 			hint: 'Rendered as the alt tag for hovers'
+		},
+		width: {
+			type: FieldType.Number,
+			isPrivate: true
+		},
+		height: {
+			type: FieldType.Number,
+			isPrivate: true
 		}
 	}
 })

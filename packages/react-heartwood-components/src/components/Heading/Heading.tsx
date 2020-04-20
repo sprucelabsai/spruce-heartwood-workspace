@@ -1,22 +1,11 @@
 import React from 'react'
 import cx from 'classnames'
-import { IHWHeading, IHWHeadingWeight } from '@sprucelabs/spruce-types'
+import {IHeading} from '@sprucelabs/heartwood-skill'
 
-export interface IHeadingProps extends Omit<IHWHeading, 'id'> {
-	/** Id for view caching */
-	id?: string
-
-	/** Classname */
-	className?: string
-
-	/** Any children (dropped in after whatever is in text prop) */
-	children?: React.ReactNode
-}
-
-const Heading = (props: IHeadingProps): React.ReactElement => {
+const Heading = (props: IHeading): React.ReactElement => {
 	const { text, className, weight, children } = props
 
-	const Element = weight || IHWHeadingWeight.H2
+	const Element = weight || 'h2'
 
 	return (
 		<Element

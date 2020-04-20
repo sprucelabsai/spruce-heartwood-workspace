@@ -1,7 +1,4 @@
-import {
-	IHWLayoutSpacingDirection,
-	IHWLayoutWidth
-} from '@sprucelabs/spruce-types'
+
 import { select, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 import faker from 'faker'

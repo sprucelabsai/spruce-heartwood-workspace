@@ -1,7 +1,6 @@
 import { Action } from '../schemas/actions/types'
 import { FieldType } from '#spruce:schema/fields/fieldType'
-import { AbstractField } from '@sprucelabs/schema'
-import { IFieldDefinition } from '@sprucelabs/schema'
+import AbstractField, { IFieldDefinition }  from '@sprucelabs/schema/build/fields/AbstractField'
 
 export type IActionClickFieldDefinition = IFieldDefinition<
 	(action: Action) => any
@@ -10,7 +9,6 @@ export type IActionClickFieldDefinition = IFieldDefinition<
 	type: FieldType.ActionClick
 	options?: {}
 }
-
 export default class ActionClickField extends AbstractField<
 	IActionClickFieldDefinition
 > {

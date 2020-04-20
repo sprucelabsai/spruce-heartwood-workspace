@@ -1,61 +1,30 @@
 import React from 'react'
 import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
+import { IEmptyState } from '@sprucelabs/heartwood-skill'
 
-export interface IEmptyStateProps {
-	/** Headline text to be displayed */
-	headline: string
-
-	/** Subheadline text to be displayed (optional) */
-	subheadline?: string
-	/** Primary icon to be displayed above the headline (optional) */
-	icon?: string
-
-	/** Primary icon as line art (optional) */
-	isLineIcon?: boolean
-
-	/** Primary action in the footer (optional) */
-	// TODO: Import button props once it's converted to tsx
-	primaryAction?: any
-
-	/** Primary action in the footer (optional) */
-	primaryActionButtonKind?: string
-
-	/** Primary action in the footer (optional) */
-	primaryActionButtonIcon?: string
-}
-
-const EmptyState = (props: IEmptyStateProps): React.ReactElement => {
+const EmptyState = (props: IEmptyState): React.ReactElement => {
 	const {
-		headline,
-		subheadline,
+		heading,
+		subheading,
 		icon,
-		isLineIcon,
-		primaryAction,
-		primaryActionButtonKind,
-		primaryActionButtonIcon
+		primaryButton,
 	} = props
 
 	return (
 		<div className="empty-state">
 			{icon && (
 				<span className="empty-state__icon">
-					<Icon name={icon} isLineIcon={isLineIcon} />
+					<Icon {...icon} />
 				</span>
 			)}
-			<h3 className="empty-state__headline">{headline}</h3>
-			{subheadline && (
-				<div className="empty-state__subheadline">{subheadline}</div>
+			<h3 className="empty-state__heading">{heading}</h3>
+			{subheading && (
+				<div className="empty-state__subheading">{subheading}</div>
 			)}
-			{primaryAction && (
+			{primaryButton && (
 				<Button
-					icon={
-						primaryActionButtonIcon
-							? { name: primaryActionButtonIcon, className: `btn__line-icon` }
-							: null
-					}
-					kind={primaryActionButtonKind}
-					{...primaryAction}
+					{...primaryButton}
 				/>
 			)}
 		</div>
@@ -63,10 +32,15 @@ const EmptyState = (props: IEmptyStateProps): React.ReactElement => {
 }
 
 EmptyState.defaultProps = {
-	icon: 'empty_box',
-	headline: 'Nothing to see here',
-	isLineIcon: true,
-	primaryActionButtonKind: 'simple'
-}
+	icon: {
+		id: 'empty',
+		name: 'empty_box',
+		isLineIcon: true
+	},
+	heading: 'Nothing to see here',
+	primaryButton: {
+		kind: 'simple'
+	}
+} as Partial<IEmptyState>
 
 export default EmptyState

@@ -1,7 +1,6 @@
 import {
 	buildSchemaDefinition,
 	FieldType,
-	buildSelectChoices
 } from '@sprucelabs/schema'
 import buttonDefinition from './button.definition'
 
@@ -24,7 +23,7 @@ const buttonGroupDefinition = buildSchemaDefinition({
 			label: 'Kind',
 			hint: 'Visual appearance of the group.',
 			options: {
-				choices: buildSelectChoices([
+				choices: [
 					{
 						label: 'Default',
 						value: 'default'
@@ -37,7 +36,7 @@ const buttonGroupDefinition = buildSchemaDefinition({
 						label: 'Floating',
 						value: 'floating'
 					}
-				])
+				]
 			}
 		},
 		isFullWidth: {

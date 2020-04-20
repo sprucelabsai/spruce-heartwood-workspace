@@ -1,14 +1,9 @@
-import { IHWLayout, IHWLayoutWidth } from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React from 'react'
+import {ILayout} from '@sprucelabs/heartwood-skill'
 import LayoutSection from './components/LayoutSection/LayoutSection'
 
-interface ILayoutProps extends IHWLayout {
-	/** Contents of the Layout. Should be LayoutSection components */
-	children?: React.ReactNode
-}
-
-const Layout = (props: ILayoutProps) => {
+const Layout = (props: ILayout) => {
 	const {
 		children,
 		isCentered,
@@ -22,16 +17,16 @@ const Layout = (props: ILayoutProps) => {
 		<div
 			className={cx('layout', className, {
 				'layout--centered': isCentered,
-				'layout--wide': width === IHWLayoutWidth.Wide,
-				'layout--tight': width === IHWLayoutWidth.Tight,
-				'layout--full-width': width === IHWLayoutWidth.FullWidth,
+				'layout--wide': width === 'wide',
+				'layout--tight': width === 'tight',
+				'layout--full-width': width === 'fullWidth',
 				'layout--full-bleed': isFullBleed
 			})}
 		>
 			{children}
 			{sections &&
-				sections.map((section, idx) => (
-					<LayoutSection key={`section-${idx}`} {...section} />
+				sections.map((section) => (
+					<LayoutSection key={section.id} {...section} />
 				))}
 		</div>
 	)
@@ -41,8 +36,8 @@ Layout.Section = LayoutSection
 
 Layout.defaultProps = {
 	isCentered: false,
-	width: IHWLayoutWidth.Base,
+	width: 'base',
 	isFullBleed: false
-}
+} as Partial<ILayout>
 
 export default Layout

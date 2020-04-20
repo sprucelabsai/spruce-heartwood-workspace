@@ -1,4 +1,8 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import buttonDefinition from '../forms/button.definition'
+import iconDefinition from '../icon.definition'
+import toggleDefinition from '../forms/toggle.definition'
+import contextMenuDefinition from '../contextMenu.definition'
 
 const listItemDefinition = buildSchemaDefinition({
 	id: 'listItem',
@@ -47,7 +51,7 @@ const listItemDefinition = buildSchemaDefinition({
 			label: 'Icon',
 			hint: 'Inline svg icon',
 			options: {
-				schemaId: 'Icon'
+				schema: iconDefinition
 			}
 		},
 		isIconHidden: {
@@ -81,7 +85,7 @@ const listItemDefinition = buildSchemaDefinition({
 			label: 'Toggle props',
 			hint: 'Props passed to the toggle if toggleId is set',
 			options: {
-				schemaId: 'toggle'
+				schema: toggleDefinition
 			}
 		},
 		primaryAction: {
@@ -90,18 +94,21 @@ const listItemDefinition = buildSchemaDefinition({
 			hint:
 				'A primary action that turns the entire list item into a clickable action'
 		},
-		actions: {
-			type: FieldType.Action,
-			label: 'Actions',
+		buttons: {
+			type: FieldType.Schema,
+			label: 'Buttons',
 			isArray: true,
-			hint: 'Actions associated with the list item'
+			hint: 'Actions associated with the list item',
+			options: {
+				schema: buttonDefinition
+			}
 		},
 		contextMenu: {
 			type: FieldType.Schema,
 			label: 'Context menu',
 			hint: 'Context Menu associated with the list it',
 			options: {
-				schemaId: 'contextMenu'
+				schema: contextMenuDefinition
 			}
 		},
 		isSeparatorVisible: {
@@ -113,6 +120,7 @@ const listItemDefinition = buildSchemaDefinition({
 		className: {
 			type: FieldType.Text,
 			label: 'Class name',
+			isPrivate: true,
 			hint: 'Optional class name for list item'
 		},
 		selectableType: {

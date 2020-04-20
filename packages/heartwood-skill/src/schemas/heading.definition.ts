@@ -1,4 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import {
+	buildSchemaDefinition,
+	FieldType,
+} from '@sprucelabs/schema'
 
 const headingDefinition = buildSchemaDefinition({
 	id: 'Heading',
@@ -14,12 +17,21 @@ const headingDefinition = buildSchemaDefinition({
 		html: {
 			type: FieldType.Text,
 			label: 'Html',
-			hint: 'HTML rendered directly'
+			hint: 'HTML rendered directly',
+			isPrivate: true
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
 			hint: 'Text rendered in the header'
+		},
+		className: {
+			type: FieldType.Text,
+			isPrivate: true
+		},
+		children: {
+			type: FieldType.Node,
+			isPrivate: true
 		},
 		weight: {
 			type: FieldType.Select,

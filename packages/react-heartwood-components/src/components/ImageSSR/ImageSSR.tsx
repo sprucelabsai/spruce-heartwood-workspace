@@ -10,7 +10,7 @@ interface IImageSSRProps {
 }
 
 // This component returns a wrapped img element that will handle image sources that fail to load.
-// Regular JSX <img /> tag onError event does not work correclty with SSR so
+// Regular JSX <img /> tag onError event does not work correctly with SSR so
 // this component is used as a workaround.
 
 const ImageSSR = (props: IImageSSRProps) => {

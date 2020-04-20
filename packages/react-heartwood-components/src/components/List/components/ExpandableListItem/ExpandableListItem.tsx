@@ -1,30 +1,14 @@
-import { IHWAction, IHWExpandableListItem } from '@sprucelabs/spruce-types'
 import React, { Component } from 'react'
-import { ButtonKinds } from '../../../Button/Button'
-import { IListProps } from '../../List'
-import ListItem, { IListItemProps } from '../ListItem/ListItem'
+import ListItem from '../ListItem/ListItem'
+import {IExpandableListItem} from '@sprucelabs/heartwood-skill'
 
-export interface IExpandableListItemProps
-	extends Omit<IHWExpandableListItem, 'item' | 'list' | 'lists'> {
-	/** Base list item props */
-	item: IListItemProps
-
-	/** Optional; adds a nested list */
-	list?: IListProps
-
-	/** Optional; adds multiple lists nested at the same level */
-	lists?: IListProps[]
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-}
 interface IExpandableListItemState {
 	/** Is the list item expanded */
 	isExpanded: boolean
 }
 
 export default class ExpandableListItem extends Component<
-	IExpandableListItemProps,
+	IExpandableListItem,
 	IExpandableListItemState
 > {
 	public state = {
@@ -40,26 +24,27 @@ export default class ExpandableListItem extends Component<
 	public render(): React.ReactElement {
 		const {
 			item,
-			list,
-			lists,
-			collapsedIconName,
-			expandedIconName,
+			// list,
+			// lists,
+			collapsedIcon:collapsedIconProps,
+			expandedIcon:expandedIconProps,
 			onAction
 		} = this.props
 		const { isExpanded } = this.state
+
+		const collapsedIcon = collapsedIconProps ?? { name: 'keyboard'}
+const expandedIcon = collapsedIconProps ?? { name: 'keyboard'}
+const icon = isExpanded ? expandedIcon : collapsedIcon
+
 		return (
 			<ListItem
 				{...item}
-				list={isExpanded ? list : undefined}
-				lists={isExpanded ? lists : undefined}
+				// list={isExpanded ? list : undefined}
+				// lists={isExpanded ? lists : undefined}
 				actions={[
 					{
-						icon: {
-							name: isExpanded
-								? expandedIconName || 'keyboard_arrow_down'
-								: collapsedIconName || 'keyboard_arrow_right'
-						},
-						kind: isExpanded ? undefined : ButtonKinds.Simple,
+						icon,
+						kind: isExpanded ? undefined : 'simple',
 						onClick: this.toggleExpanded
 					}
 				]}

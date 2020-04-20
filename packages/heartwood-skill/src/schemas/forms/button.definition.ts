@@ -1,7 +1,6 @@
 import {
 	buildSchemaDefinition,
 	FieldType,
-	buildSelectChoices
 } from '@sprucelabs/schema'
 import iconDefinition from '../icon.definition'
 
@@ -23,7 +22,7 @@ const buttonDefinition = buildSchemaDefinition({
 			hint:
 				'Sets the visual appearance of the button. May be primary, secondary, simple, or caution.',
 			options: {
-				choices: buildSelectChoices([
+				choices: [
 					{
 						label: 'Primary',
 						value: 'primary'
@@ -40,7 +39,7 @@ const buttonDefinition = buildSchemaDefinition({
 						label: 'Caution',
 						value: 'caution'
 					}
-				])
+				]
 			}
 		},
 		isSmall: {
@@ -88,7 +87,7 @@ const buttonDefinition = buildSchemaDefinition({
 			label: 'Type',
 			hint: "Type attribute for HTML button element. Defaults to 'button'.",
 			options: {
-				choices: buildSelectChoices([
+				choices: [
 					{
 						label: 'Button',
 						value: 'button'
@@ -101,7 +100,7 @@ const buttonDefinition = buildSchemaDefinition({
 						label: 'Reset',
 						value: 'reset'
 					}
-				])
+				]
 			}
 		},
 		isDisabled: {

@@ -1,4 +1,7 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import listHeaderDefinition from './listHeader.definition'
+import listItemDefinition from './listItem.definition'
+import expandableListItemDefinition from '../expandableListItem.definition'
 
 const listDefinition = buildSchemaDefinition({
 	id: 'list',
@@ -16,7 +19,7 @@ const listDefinition = buildSchemaDefinition({
 			label: 'Header',
 			hint: 'List Header',
 			options: {
-				schemaId: 'ListHeader'
+				schema: listHeaderDefinition
 			}
 		},
 		items: {
@@ -26,7 +29,7 @@ const listDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'List items',
 			options: {
-				schemaId: 'listItem'
+				schemas: [listItemDefinition,expandableListItemDefinition]
 			}
 		},
 		isSmall: {
@@ -38,6 +41,24 @@ const listDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Are separators visible',
 			hint: 'Set to true to show separators between list items'
+		},
+		onAction: {
+			type: FieldType.ActionClick,
+			label: 'On action'
+		},
+		className: {
+			type: FieldType.Text,
+			label: 'Class name',
+			isPrivate: true
+		},
+		children: {
+			type: FieldType.Node,
+			isPrivate: true
+		},
+		isLoading: {
+			type: FieldType.Boolean,
+			label: 'Is loading',
+			hint: 'Show loading'
 		},
 		selectableType: {
 			type: FieldType.Select,

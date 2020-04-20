@@ -1,25 +1,10 @@
-
 import cx from 'classnames'
 import { debounce } from 'lodash'
 import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
-import MoreIcon from '../../../static/assets/icons/Interface-Essential/Menu/navigation-menu-horizontal.svg'
 import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
 import { IContextMenu } from '@sprucelabs/heartwood-skill'
-
-// export interface IContextMenuProps
-// 	extends Omit<IContextMenu, 'buttons'>{
-
-// 		/** the buttons that make up this context menu */
-// 		buttons: IButtonProps[]
-
-// 		/** triggered when the context menu visibility changes */
-// 	onToggleContextMenuVisible?: Function
-
-// 	/** Optional, provide a handler for Actions */
-// 	onAction?: (action: Action) => any
-// }
 
 interface IContextMenuState {
 	/** Show the menu */
@@ -207,7 +192,7 @@ export default class ContextMenu extends Component<
 	}
 
 	public handleToggle = (): void => {
-		const { onToggleContextMenuVisible } = this.props
+		// const { onToggleContextMenuVisible } = this.props
 
 		this.setState(
 			prevState => ({
@@ -216,9 +201,9 @@ export default class ContextMenu extends Component<
 			() => {
 				this.manageListeners()
 
-				if (onToggleContextMenuVisible) {
-					onToggleContextMenuVisible(this.state.isVisible)
-				}
+				// if (onToggleContextMenuVisible) {
+				// 	onToggleContextMenuVisible(this.state.isVisible)
+				// }
 
 				if (this.state.isVisible) {
 					this.updateMenuPlacement()
@@ -239,18 +224,17 @@ export default class ContextMenu extends Component<
 		}
 	}
 
-	public handleClickAction = (payload, callback) => {
+	public handleClickAction = (callback) => {
 		if (this.props.closeOnSelect) {
 			this.handleToggle()
 		}
-		callback && callback(payload)
+		callback && callback()
 	}
 
 	public render(): React.ReactElement {
 
 		const { isVisible, overflowBottom, overflowLeft, menuPosition } = this.state
-		const { icon, isSimple, isSmall, isTextOnly, size, text,onAction,buttons, className } = this.props
-
+		const { icon, isSimple, isSmall, size, text,onAction,buttons, className } = this.props
 		const buttonClass = cx('context-menu', className, {
 			'context-menu--is-visible': isVisible
 		})
@@ -272,11 +256,7 @@ export default class ContextMenu extends Component<
 					kind={isSimple ? 'simple' : undefined}
 					className="context-menu__button"
 					onClick={this.handleToggle}
-					icon={
-						(!isTextOnly &&
-							(icon || { customIcon: MoreIcon, isLineIcon: true })) ||
-						undefined
-					}
+					icon={icon}
 					text={text}
 					isSmall={isSmall}
 				/>
@@ -304,7 +284,7 @@ export default class ContextMenu extends Component<
 									const btnAction = { ...button }
 									const oldOnclick = btnAction.onClick
 									btnAction.onClick = () => {
-										this.handleClickAction(btnAction.payload, oldOnclick)
+										this.handleClickAction(oldOnclick)
 									}
 									btnAction.className = 'context-menu__item-btn'
 									return btnAction
