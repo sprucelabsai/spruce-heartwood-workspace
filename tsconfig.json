@@ -3,7 +3,10 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "target": "ES2017",
-        "lib": ["es2017", "DOM"],
+        "lib": [
+            "es2017",
+            "DOM"
+        ],
         "allowJs": true,
         "declaration": true,
         "noImplicitAny": true,
@@ -23,6 +26,13 @@
             ]
         }
     },
-    "include": ["./*.ts", "./**/*.ts"],
-    "exclude": ["**/node_modules/**"]
+    "include": [
+        "./*.ts",
+        "./**/*.ts",
+        "./*.tsx",
+        "./**/*.tsx"
+    ],
+    "exclude": [
+        "**/node_modules/**"
+    ]
 }

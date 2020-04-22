@@ -4,8 +4,10 @@
     "esModuleInterop": true,
     "target": "ES2017",
     "lib": [
-      "es2017"
+      "es2017",
+      "DOM"
     ],
+    "jsx": "react",
     "declaration": true,
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
@@ -29,7 +31,9 @@
   },
   "include": [
     "./*.ts",
-    "./**/*.ts"
+    "./**/*.ts",
+    "./*.tsx",
+    "./**/*.tsx"
   ],
   "exclude": [
     "**/node_modules/*",

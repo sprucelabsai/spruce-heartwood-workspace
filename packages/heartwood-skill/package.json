@@ -25,33 +25,49 @@
         "clean": "rm -rf build/",
         "lint": "eslint '**/*.ts' && tsc -p . --noEmit",
         "lint:fix": "eslint --fix '**/*.ts'",
-        "test": "ava **/*.test.ts",
-        "test:watch": "ava  **/*.test.ts --watch"
+        "test": "jest",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@sprucelabs/path-resolver": "^1.2.0",
+        "@sprucelabs/path-resolver": "^1.2.1",
         "@sprucelabs/schema": "^1.3.2",
         "react": "^16.13.1"
     },
     "devDependencies": {
-        "@sprucelabs/test": "^1.0.0",
-        "ava": "^3.7.0",
+        "@sprucelabs/test": "1.2.0-prerelease-jest.3",
         "chokidar-cli": "^2.1.0",
         "concurrently": "^5.0.2",
         "conventional-changelog-sprucelabs": "^1.1.0",
         "eslint": "^5",
-        "eslint-config-spruce": "^10.0.5",
+        "eslint-config-spruce": "^10.2.0",
         "prettier": "^1.13",
         "ts-node": "^8.8.2",
         "tsconfig-paths": "^3.9.0",
         "typescript": "^3.8.3"
     },
-    "ava": {
-        "extensions": [
-            "ts"
-        ],
-        "require": [
-            "ts-node/register/transpile-only"
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "node": "current"
+                    }
+                }
+            ],
+            "@babel/preset-typescript"
         ]
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "testPathIgnorePatterns": [
+            "<rootDir>/build/",
+            "<rootDir>/node_modules/"
+        ],
+        "moduleNameMapper": {
+            "^#spruce:schema/(.*)$": "<rootDir>/.spruce/schemas/$1",
+            "^#spruce/(.*)$": "<rootDir>/.spruce/$1"
+        }
     }
 }
