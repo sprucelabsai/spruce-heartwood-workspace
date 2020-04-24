@@ -1,6 +1,8 @@
 import { Action } from '../schemas/actions/types'
 import { FieldType } from '#spruce:schema/fields/fieldType'
-import AbstractField, { IFieldDefinition }  from '@sprucelabs/schema/build/fields/AbstractField'
+import AbstractField, {
+	IFieldDefinition
+} from '@sprucelabs/schema/build/fields/AbstractField'
 
 export type IActionClickFieldDefinition = IFieldDefinition<
 	(action: Action) => any

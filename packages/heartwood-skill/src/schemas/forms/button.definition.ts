@@ -1,7 +1,4 @@
-import {
-	buildSchemaDefinition,
-	FieldType,
-} from '@sprucelabs/schema'
+import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import iconDefinition from '../icon.definition'
 
 const buttonDefinition = buildSchemaDefinition({
@@ -108,11 +105,6 @@ const buttonDefinition = buildSchemaDefinition({
 			label: 'Is disabled',
 			hint: 'Set true to disable the button'
 		},
-		action: {
-			type: FieldType.Action,
-			label: 'Action',
-			hint: 'Optional action to invoke when tapped'
-		},
 		className: {
 			type: FieldType.Text,
 			label: 'classname',
@@ -120,20 +112,14 @@ const buttonDefinition = buildSchemaDefinition({
 		},
 		onClick: {
 			type: FieldType.OnClick,
-			label: 'On click handler',
-			isPrivate: true
+			label: 'On click handler'
 		},
 		children: {
 			type: FieldType.Node,
 			isPrivate: true
 		},
-		onAction: {
-			type: FieldType.ActionClick,
-			hint: 'Invoked when the button is clicked',
-			isPrivate: true
-		},
 		AnchorComponent: {
-			type: FieldType.Node,
+			type: FieldType.Element,
 			hint: 'Lets you override the element used when rendering a link',
 			isPrivate: true
 		}

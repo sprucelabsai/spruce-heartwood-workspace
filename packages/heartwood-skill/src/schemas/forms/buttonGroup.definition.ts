@@ -1,7 +1,4 @@
-import {
-	buildSchemaDefinition,
-	FieldType,
-} from '@sprucelabs/schema'
+import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import buttonDefinition from './button.definition'
 
 const buttonGroupDefinition = buildSchemaDefinition({
@@ -50,8 +47,8 @@ const buttonGroupDefinition = buildSchemaDefinition({
 			hint:
 				'Index of the button that is currently highlighted, e.g. by arrow keys'
 		},
-		onAction: {
-			type: FieldType.ActionClick,
+		onClick: {
+			type: FieldType.OnClick,
 			isPrivate: true
 		}
 	}

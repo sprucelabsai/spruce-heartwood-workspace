@@ -1,8 +1,9 @@
 import { FieldType, buildSchemaDefinition } from '@sprucelabs/schema'
+import buttonGroupDefinition from '../forms/buttonGroup.definition'
 
-const cardBuilderFooterDefinition = buildSchemaDefinition({
-	id: 'CardBuilderFooter',
-	name: 'CardBuilderFooter',
+const cardFooterDefinition = buildSchemaDefinition({
+	id: 'cardFooter',
+	name: 'cardFooter',
 	description: 'Header of a card',
 	fields: {
 		buttonGroup: {
@@ -10,7 +11,7 @@ const cardBuilderFooterDefinition = buildSchemaDefinition({
 			label: 'Button group',
 			hint: 'Render buttons in the Card Footer',
 			options: {
-				schemaId: 'ButtonGroup'
+				schema: buttonGroupDefinition
 			}
 		},
 		helper: {
@@ -21,4 +22,4 @@ const cardBuilderFooterDefinition = buildSchemaDefinition({
 	}
 })
 
-export default cardBuilderFooterDefinition
+export default cardFooterDefinition

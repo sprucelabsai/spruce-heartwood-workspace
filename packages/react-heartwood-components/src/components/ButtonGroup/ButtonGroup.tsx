@@ -2,13 +2,13 @@ import cx from 'classnames'
 import React from 'react'
 import { unionArray } from '../..'
 import Button from '../Button/Button'
-import { Action,IButtonGroup } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const ButtonGroup = (
-	props: IButtonGroup
+	props: SpruceSchemas.local.IButtonGroup
 ): React.ReactElement => {
 	
-	const { buttons, kind, isFullWidth, highlightedIndex, onAction } = props
+	const { buttons, kind, isFullWidth, highlightedIndex } = props
 
 	const parentClass = cx('button-group', {
 		'button-group-segmented': kind === 'segmented',
@@ -35,7 +35,6 @@ const ButtonGroup = (
 									? 'secondary'
 									: button.kind
 							}
-							onAction={(action: Action) => onAction && onAction(action)}
 						/>
 					</li>
 				)

@@ -43,9 +43,9 @@ const checkboxDefinition = buildSchemaDefinition({
 			label: 'Is checked',
 			hint: 'is this checkbox checked?'
 		},
-		action: {
-			type: FieldType.Action,
-			label: 'Action',
+		onClick: {
+			type: FieldType.OnClick,
+			label: 'On click',
 			hint: 'Optional action to invoke when tapped'
 		}
 	}

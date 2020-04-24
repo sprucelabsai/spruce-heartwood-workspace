@@ -1,9 +1,10 @@
 import { FieldType, buildSchemaDefinition } from '@sprucelabs/schema'
+import buttonDefinition from '../forms/button.definition'
 
 const listHeaderDefinition = buildSchemaDefinition({
-	id: 'ListHeader',
-	name: 'ListHeader',
-	description: '**missing description**',
+	id: 'listHeader',
+	name: 'List header',
+	description: 'The header of a list',
 	fields: {
 		title: {
 			type: FieldType.Text,
@@ -21,14 +22,14 @@ const listHeaderDefinition = buildSchemaDefinition({
 			label: 'Is small',
 			hint: 'Set true for small lists'
 		},
-		actions: {
+		buttons: {
 			type: FieldType.Schema,
-			label: 'Actions',
+			label: 'Buttons',
 			isRequired: true,
 			isArray: true,
 			hint: 'Buttons to associate with the list header',
 			options: {
-				schemaId: 'Button'
+				schema: buttonDefinition
 			}
 		}
 	}

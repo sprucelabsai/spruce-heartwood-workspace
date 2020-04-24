@@ -29,7 +29,7 @@ const toastDefinition = buildSchemaDefinition({
 				'Optional; controls whether the toast can be removed. Defaults to true'
 		},
 		removeAction: {
-			type: FieldType.Action,
+			type: FieldType.OnClick,
 			label: 'Remove action',
 			hint: 'Action to be invoked when hitting the dismiss button'
 		},
@@ -44,7 +44,7 @@ const toastDefinition = buildSchemaDefinition({
 			hint: 'Text for the followup action'
 		},
 		followupAction: {
-			type: FieldType.Action,
+			type: FieldType.OnClick,
 			label: 'Followup action',
 			hint: 'Action to be invoked when hitting the followup CTA'
 		}

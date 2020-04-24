@@ -1,7 +1,7 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
 const cardBuilderDefinition = buildSchemaDefinition({
-	id: 'CardBuilder',
+	id: 'cardBuilder',
 	name: 'CardBuilder',
 	description: 'Build a card to show something to the user',
 	fields: {
@@ -40,7 +40,7 @@ const cardBuilderDefinition = buildSchemaDefinition({
 			label: 'Body',
 			hint: 'Card Body props',
 			options: {
-				schemaId: 'CardBuilderBody'
+				schemaId: 'cardBody'
 			}
 		},
 		footer: {
@@ -48,7 +48,7 @@ const cardBuilderDefinition = buildSchemaDefinition({
 			label: 'Footer',
 			hint: 'The footer of the card',
 			options: {
-				schemaId: 'CardFooter'
+				schemaId: 'cardFooter'
 			}
 		}
 	}

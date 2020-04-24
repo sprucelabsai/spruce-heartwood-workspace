@@ -1,7 +1,7 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
 const markdownDefinition = buildSchemaDefinition({
-	id: 'Markdown',
+	id: 'markdown',
 	name: 'Markdown',
 	description: 'Render markdown beautifully',
 	fields: {

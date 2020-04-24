@@ -1,7 +1,7 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import listHeaderDefinition from './listHeader.definition'
-import listItemDefinition from './listItem.definition'
-import expandableListItemDefinition from '../expandableListItem.definition'
+import radioDefinition from '../forms/radio.definition'
+import checkboxDefinition from '../checkbox.definition'
 
 const listDefinition = buildSchemaDefinition({
 	id: 'list',
@@ -29,7 +29,7 @@ const listDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'List items',
 			options: {
-				schemas: [listItemDefinition,expandableListItemDefinition]
+				schemasIds: ['listItem', 'expandableListItem']
 			}
 		},
 		isSmall: {
@@ -41,10 +41,6 @@ const listDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Are separators visible',
 			hint: 'Set to true to show separators between list items'
-		},
-		onAction: {
-			type: FieldType.ActionClick,
-			label: 'On action'
 		},
 		className: {
 			type: FieldType.Text,
@@ -60,22 +56,13 @@ const listDefinition = buildSchemaDefinition({
 			label: 'Is loading',
 			hint: 'Show loading'
 		},
-		selectableType: {
-			type: FieldType.Select,
-			label: 'Selectable type',
+		selectable: {
+			type: FieldType.Schema,
+			label: 'Selectable',
 			hint:
 				'Optional: set whether to use checkbox or radio for selectable list items',
 			options: {
-				choices: [
-					{
-						label: 'Checkbox',
-						value: 'checkbox'
-					},
-					{
-						label: 'Radio',
-						value: 'radio'
-					}
-				]
+				schemas: [checkboxDefinition, radioDefinition]
 			}
 		}
 	}

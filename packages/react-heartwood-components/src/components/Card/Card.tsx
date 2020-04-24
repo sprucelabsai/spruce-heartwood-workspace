@@ -4,35 +4,7 @@ import CardHeader, { ICardHeaderProps } from './components/CardHeader'
 import CardBody from './components/CardBody'
 import CardSection from './components/CardSection'
 import CardFooter from './components/CardFooter'
-
-export interface ICardProps {
-	/** Should be Card Header, Card Body, and Card Footer, unless using the card background for styling only. */
-	children?: React.ReactNode
-
-	/** Set true to make all content center aligned. */
-	isCentered?: boolean
-
-	/** Set true if this card is mission-critical for the person who sees it. */
-	isCritical?: boolean
-
-	/** Set true to render a smaller card variation */
-	isSmall?: boolean
-
-	/** Set true to fill space of parent */
-	isFullSize?: boolean
-
-	/** Optional classname */
-	className?: string
-
-	/** Optional; makes the card expandable */
-	expandable?: boolean
-
-	/** Optional; for expandable cards, sets the default expanded state */
-	defaultExpanded?: boolean
-
-	/** Optional; render the card header */
-	headerProps?: ICardHeaderProps
-}
+import {SpruceSchemas, defaultPropsForDefinition} from '@sprucelabs/heartwood-skill'
 
 interface ICardDefaultProps {
 	isCentered: boolean
@@ -45,21 +17,15 @@ interface ICardState {
 	isExpanded: boolean
 }
 
-export default class Card extends Component<ICardProps, ICardState> {
+export default class Card extends Component<SpruceSchemas.local.ICard, ICardState> {
 	public static Header = CardHeader
 	public static Body = CardBody
 	public static Section = CardSection
 	public static Footer = CardFooter
 
-	public static defaultProps = {
-		isCentered: false,
-		expandable: false,
-		defaultExpanded: true
-	}
+	public static defaultProps = defaultPropsForDefinition(SpruceSchemas.local.Card.definition)
 
-	// TODO: TS/React should be inferring this, but it isn't.
-	// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/11640
-	public constructor(props: ICardProps & ICardDefaultProps) {
+	public constructor(props: SpruceSchemas.local.ICard & ICardDefaultProps) {
 		super(props)
 
 		this.state = {
@@ -79,10 +45,9 @@ export default class Card extends Component<ICardProps, ICardState> {
 			isCentered,
 			isCritical,
 			isSmall,
-			isFullSize,
 			className,
-			expandable,
-			headerProps
+			isExpandable,
+			header
 		} = this.props
 
 		const { isExpanded } = this.state
@@ -92,13 +57,12 @@ export default class Card extends Component<ICardProps, ICardState> {
 					'card--centered': isCentered,
 					'card--critical': isCritical,
 					'card--small': isSmall,
-					'card--full-size': isFullSize,
-					'card--is-collapsed': expandable && !isExpanded
+					'card--is-collapsed': isExpandable && !isExpanded
 				})}
 			>
-				{expandable && (
+				{isExpandable && (
 					<CardHeader
-						{...headerProps}
+						{...header}
 						actions={[
 							{
 								icon: {

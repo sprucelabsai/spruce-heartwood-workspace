@@ -16,13 +16,10 @@ const toggleDefinition = buildSchemaDefinition({
 			label: 'Post text',
 			hint: 'Text after the toggle'
 		},
-		action: {
-			type: FieldType.Action,
-			label: 'Action',
-			hint: 'Optional action to invoke when tapped',
-			options: {
-				schemaId: 'Action'
-			}
+		onClick: {
+			type: FieldType.OnClick,
+			label: 'On click',
+			hint: 'Optional on click to invoke when tapped'
 		}
 	}
 })

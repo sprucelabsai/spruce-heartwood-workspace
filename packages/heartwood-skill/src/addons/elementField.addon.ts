@@ -1,9 +1,9 @@
 import { registerFieldType } from '@sprucelabs/schema'
-import NodeField from '../fields/NodeField'
+import ElementField from '../fields/ElementField'
 
 export default registerFieldType({
-	type: 'Node',
-	class: NodeField,
+	type: 'Element',
+	class: ElementField,
 	package: '@sprucelabs/heartwood-skill',
 	importAs: 'HeartwoodSchemas'
 })

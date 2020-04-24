@@ -1,7 +1,4 @@
-import {
-	buildSchemaDefinition,
-	FieldType,
-} from '@sprucelabs/schema'
+import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
 const avatarDefinition = buildSchemaDefinition({
 	id: 'avatar',

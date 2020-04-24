@@ -1,8 +1,19 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
-const calendarEventDetailsItemDefinition = buildSchemaDefinition({
-	id: 'calendarEventDetailsItem',
-	name: 'CalendarEventDetailsItem',
+/** So we can point to anything consider and event details item */
+export const calendarEventDetailItems: string[] = [
+	'list',
+	'button',
+	'splitButton',
+	'cardBuilder',
+	'toast',
+	'text',
+	'markdown'
+]
+
+const calendarEventDetailsDefinition = buildSchemaDefinition({
+	id: 'calendarEventDetails',
+	name: 'Calendar event details',
 	description:
 		'All the details attached to an event. Shown on click of the event.',
 	fields: {
@@ -12,58 +23,17 @@ const calendarEventDetailsItemDefinition = buildSchemaDefinition({
 			hint:
 				'An optional ID for this item; used to allow association with UI Enhancements'
 		},
-		type: {
-			type: FieldType.Select,
-			label: 'Type',
-			isRequired: true,
-			hint: 'How the view should be rendered',
-			options: {
-				choices: [
-					{
-						label: 'List',
-						value: 'list'
-					},
-					{
-						label: 'Button',
-						value: 'button'
-					},
-					{
-						label: 'SplitButton',
-						value: 'splitButton'
-					},
-					{
-						label: 'CardBuilder',
-						value: 'cardBuilder'
-					},
-					{
-						label: 'Toast',
-						value: 'toast'
-					},
-					{
-						label: 'Text',
-						value: 'text'
-					},
-					{
-						label: 'Markdown',
-						value: 'markdown'
-					},
-					{
-						label: 'UiEnhancementSection',
-						value: 'uiEnhancementSection'
-					}
-				]
-			}
-		},
-		viewModel: {
+		items: {
 			type: FieldType.Schema,
-			label: 'View model',
+			label: 'Items',
 			isRequired: true,
-			hint: 'The data fed into the view to configure it.',
+			isArray: true,
+			hint: 'The items that make up the event details',
 			options: {
-				schemaId: 'CalendarEventDetailsItemViewModel'
+				schemaIds: calendarEventDetailItems
 			}
 		}
 	}
 })
 
-export default calendarEventDetailsItemDefinition
+export default calendarEventDetailsDefinition

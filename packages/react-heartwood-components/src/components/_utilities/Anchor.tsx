@@ -1,8 +1,14 @@
 import React from 'react'
-
-const BasicAnchor = ({ className, children, href, target, onClick }) => (
-	<a className={className} href={href} target={target} onClick={onClick}>
-		{children}
+export interface IBasicAnchorProps {
+	 className?: string, 
+	 children?: React.ReactNode, 
+	 href?: string, 
+	 target?: string, 
+	 onClick :any
+}
+const BasicAnchor = (props: IBasicAnchorProps) => (
+	<a className={props.className} href={props.href} target={props.target} onClick={props.onClick}>
+		{props.children}
 	</a>
 )
 

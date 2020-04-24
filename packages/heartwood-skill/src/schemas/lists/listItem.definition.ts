@@ -3,6 +3,10 @@ import buttonDefinition from '../forms/button.definition'
 import iconDefinition from '../icon.definition'
 import toggleDefinition from '../forms/toggle.definition'
 import contextMenuDefinition from '../contextMenu.definition'
+import radioDefinition from '../forms/radio.definition'
+import checkboxDefinition from '../checkbox.definition'
+import listItemWarningDefinition from './listItemWarning.definition'
+import avatarDefinition from '../avatar.definition'
 
 const listItemDefinition = buildSchemaDefinition({
 	id: 'listItem',
@@ -37,9 +41,11 @@ const listItemDefinition = buildSchemaDefinition({
 			hint: 'Can render this item as expandable'
 		},
 		avatar: {
-			type: FieldType.Text,
+			type: FieldType.Schema,
 			label: 'Avatar',
-			hint: 'URL to show a user avatar'
+			options: {
+				schema: avatarDefinition
+			}
 		},
 		image: {
 			type: FieldType.Text,
@@ -75,12 +81,7 @@ const listItemDefinition = buildSchemaDefinition({
 			label: 'Is disabled',
 			hint: 'Set true when the list can be reordered'
 		},
-		toggleId: {
-			type: FieldType.Text,
-			label: 'Toggle id',
-			hint: 'Makes the list item a setting'
-		},
-		toggleProps: {
+		toggle: {
 			type: FieldType.Schema,
 			label: 'Toggle props',
 			hint: 'Props passed to the toggle if toggleId is set',
@@ -88,11 +89,14 @@ const listItemDefinition = buildSchemaDefinition({
 				schema: toggleDefinition
 			}
 		},
-		primaryAction: {
-			type: FieldType.Action,
-			label: 'Primary action',
+		primaryButton: {
+			type: FieldType.Schema,
+			label: 'Primary button',
 			hint:
-				'A primary action that turns the entire list item into a clickable action'
+				'A primary button that turns the entire list item into a clickable button',
+			options: {
+				schema: buttonDefinition
+			}
 		},
 		buttons: {
 			type: FieldType.Schema,
@@ -123,31 +127,13 @@ const listItemDefinition = buildSchemaDefinition({
 			isPrivate: true,
 			hint: 'Optional class name for list item'
 		},
-		selectableType: {
-			type: FieldType.Select,
-			label: 'Selectable type',
-			hint:
-				'Optional: set whether to use checkbox or radio for selectable list items',
-			options: {
-				choices: [
-					{
-						label: 'Checkbox',
-						value: 'checkbox'
-					},
-					{
-						label: 'Radio',
-						value: 'radio'
-					}
-				]
-			}
-		},
-		selectableProps: {
+		selectable: {
 			type: FieldType.Schema,
-			label: 'Selectable props',
+			label: 'Selectable element',
 			hint:
 				'Any props you want sent down to the selectable component being rendered',
 			options: {
-				schemaId: 'ListItemSelectablePropsType'
+				schemas: [radioDefinition, checkboxDefinition]
 			}
 		},
 		warnings: {
@@ -155,7 +141,7 @@ const listItemDefinition = buildSchemaDefinition({
 			label: 'Warnings',
 			hint: 'Highlight title, subtitle, note with warning colors',
 			options: {
-				schemaId: 'ListItemWarningConfig'
+				schema: listItemWarningDefinition
 			}
 		},
 		list: {
@@ -163,7 +149,7 @@ const listItemDefinition = buildSchemaDefinition({
 			label: 'List',
 			hint: 'Optional; adds a nested list',
 			options: {
-				schemaId: 'List'
+				schemaId: 'list'
 			}
 		},
 		lists: {
@@ -173,7 +159,7 @@ const listItemDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Optional; adds multiple lists nested at the same level',
 			options: {
-				schemaId: 'List'
+				schemaId: 'list'
 			}
 		}
 	}

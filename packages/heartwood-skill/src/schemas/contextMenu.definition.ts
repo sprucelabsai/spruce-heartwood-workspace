@@ -1,7 +1,4 @@
-import {
-	buildSchemaDefinition,
-	FieldType,
-} from '@sprucelabs/schema'
+import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import buttonDefinition from './forms/button.definition'
 import iconDefinition from './icon.definition'
 
@@ -70,8 +67,8 @@ const contextMenuDefinition = buildSchemaDefinition({
 			label: 'Classname',
 			isPrivate: true
 		},
-		onAction: {
-			type: FieldType.ActionClick,
+		onClick: {
+			type: FieldType.OnClick,
 			hint: 'Invoked when the button is clicked',
 			isPrivate: true
 		}

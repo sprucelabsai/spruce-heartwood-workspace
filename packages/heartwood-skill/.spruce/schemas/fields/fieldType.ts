@@ -12,23 +12,21 @@ export enum FieldType {
 	File = 'file',
 	/** A unique identifier field, UUID\'s in our case. */
 	Id = 'id',
-	/** Casts things to numbers. String numbers are supported. */
+	/** Handles all types of numbers with min/max and clamp support */
 	Number = 'number',
 	/** Takes anything close to a phone number and formats it. Also great at validating numbers. */
 	Phone = 'phone',
 	/** Deprecated. For internal purposes only (will be deleted soon) */
 	Raw = 'raw',
-	/** A way to map relationships. You only need to map relationships one way, two way is currently not supported. */
+	/** A way to map relationships. */
 	Schema = 'schema',
 	/** Stored as string, lets user select between available options. */
 	Select = 'select',
 	/** A text field. Converts non-strings into strings by calling toString(). Size set by options. */
 	Text = 'text',
-	/** For when you need to click on a component that supports actions */
-	ActionClick = 'actionClick',
-	/** An action field that is invoked when an interaction takes place on a Heartwood component */
-	Action = 'action',
-	/** A react node */
+	/** A React.Element */
+	Element = 'element',
+	/** A React.Node */
 	Node = 'node',
 	/** A universal onclick handler for react components */
 	OnClick = 'onClick',

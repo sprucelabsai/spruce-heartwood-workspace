@@ -1,4 +1,5 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import buttonDefinition from './button.definition'
 
 const splitButtonDefinition = buildSchemaDefinition({
 	id: 'splitButton',
@@ -10,45 +11,30 @@ const splitButtonDefinition = buildSchemaDefinition({
 			label: 'Id',
 			isRequired: true
 		},
-		defaultAction: {
+		defaultButton: {
 			type: FieldType.Schema,
 			label: 'Default action',
 			isRequired: true,
 			hint: 'The main action readily surfaced to the user',
 			options: {
-				schemaId: 'Button'
+				schema: buttonDefinition
 			}
 		},
-		actions: {
-			type: FieldType.Action,
+		buttons: {
+			type: FieldType.Schema,
 			label: 'Actions',
-			isRequired: true,
 			isArray: true,
-			hint: 'All the secondary nested actions'
+			hint: 'All the secondary nested buttons',
+			options: {
+				schema: buttonDefinition
+			}
 		},
 		kind: {
 			type: FieldType.Select,
 			label: 'Kind',
 			hint: 'Sets the visual hierarchy of the button',
 			options: {
-				choices: [
-					{
-						value: 'Primary',
-						label: 'Primary'
-					},
-					{
-						value: 'Secondary',
-						label: 'Secondary'
-					},
-					{
-						value: 'Simple',
-						label: 'Simple'
-					},
-					{
-						value: 'Caution',
-						label: 'Caution'
-					}
-				]
+				choices: buttonDefinition.fields.kind.options.choices
 			}
 		},
 		isFullWidth: {

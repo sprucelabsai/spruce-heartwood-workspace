@@ -1,6 +1,9 @@
 import React from 'react'
 import { FieldType } from '#spruce:schema/fields/fieldType'
-import AbstractField, { IFieldDefinition }  from '@sprucelabs/schema/build/fields/AbstractField'
+import AbstractField, {
+	IFieldDefinition
+} from '@sprucelabs/schema/build/fields/AbstractField'
+import { IFieldTemplateDetailOptions } from '@sprucelabs/schema'
 
 export type INodeFieldDefinitionValue =
 	| React.ReactChild
@@ -11,16 +14,23 @@ export type INodeFieldDefinitionValue =
 export type INodeFieldDefinition = IFieldDefinition<
 	INodeFieldDefinitionValue
 > & {
-	/** * .Action - An action to be invoked when a person interacts with a component */
+	/** * .Node - The return type from render or the type of children on a component */
 	type: FieldType.Node
 	options?: {}
 }
 
 export default class NodeField extends AbstractField<INodeFieldDefinition> {
-	public static templateDetails() {
+	public static get description() {
+		return 'A React.Node'
+	}
+
+	public static templateDetails(
+		options: IFieldTemplateDetailOptions<INodeFieldDefinition>
+	) {
 		return {
-			description: 'A react node',
-			valueType: 'INodeFieldDefinitionValue'
+			valueType: `${options.importAs}.INodeFieldDefinitionValue${
+				options.definition.isArray ? '[]' : ''
+			}`
 		}
 	}
 }

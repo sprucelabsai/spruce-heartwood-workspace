@@ -37,13 +37,10 @@ const radioDefinition = buildSchemaDefinition({
 			label: 'Is checked',
 			hint: 'Is this control checked?'
 		},
-		action: {
-			type: FieldType.Schema,
+		onClick: {
+			type: FieldType.OnClick,
 			label: 'Action',
-			hint: 'Optional action to invoke when tapped',
-			options: {
-				schemaId: 'Action'
-			}
+			hint: 'Optional action to invoke when tapped'
 		}
 	}
 })

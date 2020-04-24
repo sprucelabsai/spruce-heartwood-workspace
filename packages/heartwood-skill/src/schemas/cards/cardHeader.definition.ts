@@ -1,4 +1,5 @@
 import { FieldType, buildSchemaDefinition } from '@sprucelabs/schema'
+import buttonDefinition from '../forms/button.definition'
 
 const cardHeaderDefinition = buildSchemaDefinition({
 	id: 'CardHeader',
@@ -23,12 +24,15 @@ const cardHeaderDefinition = buildSchemaDefinition({
 				schemaId: 'Icon'
 			}
 		},
-		actions: {
-			type: FieldType.Action,
-			label: 'Actions',
+		buttons: {
+			type: FieldType.Schema,
+			label: 'Buttons',
 			isRequired: true,
 			isArray: true,
-			hint: 'Render buttons in the Card Header'
+			hint: 'Render buttons in the Card Header',
+			options: {
+				schema: buttonDefinition
+			}
 		},
 		contextMenu: {
 			type: FieldType.Schema,

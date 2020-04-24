@@ -1,8 +1,18 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
-const cardBuilderDefinition = buildSchemaDefinition({
-	id: 'cardBuilder',
-	name: 'Card builder',
+export const cardBuilderBodyItems: string[] = [
+	'button',
+	'image',
+	'heading',
+	'text',
+	'scoreCard',
+	'toast',
+	'list'
+]
+
+const cardBodyDefinition = buildSchemaDefinition({
+	id: 'cardBody',
+	name: 'Card body',
 	description:
 		'The builder of Cards, a fundamental visualization concept pervasive in the Heartwood design system.',
 	fields: {
@@ -13,7 +23,7 @@ const cardBuilderDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Children to show in the Card',
 			options: {
-				schemaId: 'CardBuilderBodyItem'
+				schemaIds: cardBuilderBodyItems
 			}
 		},
 		isSectioned: {
@@ -44,4 +54,4 @@ const cardBuilderDefinition = buildSchemaDefinition({
 	}
 })
 
-export default cardBuilderDefinition
+export default cardBodyDefinition

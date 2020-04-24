@@ -3,17 +3,10 @@ import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
-import { IButton } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export type ButtonOnClick = (
-	e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>
-) => void
-
-
-
-const Button = (props: IButton): React.ReactElement => {
+const Button = (props: SpruceSchemas.local.IButton): React.ReactElement => {
 	const {
-		action,
 		AnchorComponent = BasicAnchor,
 		children,
 		className,
@@ -24,7 +17,6 @@ const Button = (props: IButton): React.ReactElement => {
 		isLoading,
 		isSmall,
 		kind,
-		onAction,
 		onClick,
 		text,
 		type,
@@ -49,10 +41,6 @@ const Button = (props: IButton): React.ReactElement => {
 	const handleClick = (e: React.MouseEvent): any => {
 		if (e.currentTarget instanceof HTMLElement) {
 			e.currentTarget.blur()
-		}
-
-		if (onAction && action) {
-			onAction(action)
 		}
 
 		if (onClick) {

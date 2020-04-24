@@ -1,6 +1,8 @@
 import React from 'react'
-import { FieldType } from '@sprucelabs/schema'
-import AbstractField, { IFieldDefinition }  from '@sprucelabs/schema/build/fields/AbstractField'
+import { FieldType, IFieldTemplateDetailOptions } from '@sprucelabs/schema'
+import AbstractField, {
+	IFieldDefinition
+} from '@sprucelabs/schema/build/fields/AbstractField'
 
 export type IOnClickFieldDefinition = IFieldDefinition<
 	(
@@ -13,11 +15,16 @@ export type IOnClickFieldDefinition = IFieldDefinition<
 export default class OnClickField extends AbstractField<
 	IOnClickFieldDefinition
 > {
-	public static templateDetails() {
+	public static get description() {
+		return 'A universal onclick handler for react components'
+	}
+	public static templateDetails(
+		options: IFieldTemplateDetailOptions<IOnClickFieldDefinition>
+	) {
 		return {
-			description: 'A universal onclick handler for react components',
-			valueType:
-				'(e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void'
+			valueType: `((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)${
+				options.definition.isArray ? '[]' : ''
+			}`
 		}
 	}
 }
