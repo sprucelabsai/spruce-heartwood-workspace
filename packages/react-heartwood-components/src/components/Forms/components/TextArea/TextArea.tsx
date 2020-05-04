@@ -1,68 +1,32 @@
 import React from 'react'
 import cx from 'classnames'
-import { InputPre, InputHelper } from '../../FormPartials'
+import { SpruceSchemas, defaultProps, stripNulls } from '@sprucelabs/heartwood-skill'
+import Label from '../Label/Label'
+import InputHelper from '../InputHelper/InputHelper'
 
-interface ITextAreaProps {
-	/** Unique identifier */
-	id: string
+const defaults = defaultProps(SpruceSchemas.Local.Textarea.definition)
 
-	/** Additional class */
-	className?: string
-
-	/** Input label */
-	label?: string
-
-	/** Text after label */
-	postLabel?: string
-
-	/** Error text */
-	error?: string
-
-	/** Helper text */
-	helper?: string
-
-	/** Set true to make the text area resizeable */
-	resizeable?: boolean
-
-	/** Text field placeholder */
-	placeholder?: string
-
-	/** The number of rows for the text area */
-	rows?: number
-}
-
-const TextArea = (props: ITextAreaProps) => {
-	const {
-		id,
-		className,
-		label,
-		postLabel,
-		error,
-		helper,
-		resizeable,
-		...rest
-	} = props
+const TextArea = (props: SpruceSchemas.Local.ITextarea & typeof defaults) => {
+	const { id, className, label, helper, isResizeable, ...textareaProps } = props
 
 	const parentClass = cx('text-input', {
 		className,
-		'text-input--has-error': error
+		'text-input--has-error': !!helper?.error
 	})
 
 	const inputClass = cx('text-area__input', {
-		'text-area__input-no-resize': !resizeable
+		'text-area__input-no-resize': !isResizeable
 	})
 
 	return (
 		<div className={parentClass}>
-			{label && <InputPre label={label} id={id} postLabel={postLabel} />}
-			<textarea className={inputClass} {...rest} />
-			{(helper || error) && <InputHelper helper={helper} error={error} />}
+			{label && <Label {...label} />}
+			<textarea id={id ?? undefined} className={inputClass} {...stripNulls(textareaProps)} />
+			{helper && <InputHelper {...helper} />}
 		</div>
 	)
 }
 
-TextArea.defaultProps = {
-	resizeable: false
-}
+TextArea.defaultProps = defaults
 
 export default TextArea

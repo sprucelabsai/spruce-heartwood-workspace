@@ -2,22 +2,11 @@ import React from 'react'
 import cx from 'classnames'
 import Button from '../../../Button/Button'
 import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
+import { defaultProps, SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export interface ITagProps extends React.HTMLProps<HTMLInputElement> {
-	/** Tag text */
-	text: string
+const defaults = defaultProps(SpruceSchemas.Local.Tag.definition)
 
-	/** Additional parent class */
-	className?: string
-
-	/** Sets the tag variation */
-	kind?: 'primary' | 'secondary'
-
-	/** Set true to make the tag smaller */
-	isSmall?: boolean
-}
-
-const Tag = (props: ITagProps) => {
+const Tag = (props: SpruceSchemas.Local.ITag & typeof defaults) => {
 	const { text, kind, className, isSmall } = props
 	const parentClass = cx('tag', className, {
 		'tag-primary': kind === 'primary',
@@ -38,9 +27,6 @@ const Tag = (props: ITagProps) => {
 	)
 }
 
-Tag.defaultProps = {
-	kind: 'primary',
-	isSmall: false
-}
+Tag.defaultProps = defaults
 
 export default Tag

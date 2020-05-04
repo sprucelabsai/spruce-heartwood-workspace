@@ -9,7 +9,6 @@ const calendarEventDefinition = buildSchemaDefinition({
 		id: {
 			type: FieldType.Id,
 			label: 'Id',
-			isRequired: true,
 			hint: 'Id of the calendar event'
 		},
 		startAt: {

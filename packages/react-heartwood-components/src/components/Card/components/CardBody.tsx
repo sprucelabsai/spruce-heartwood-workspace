@@ -1,29 +1,9 @@
 import React from 'react'
 import cx from 'classnames'
 import CardSection from './CardSection'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-// Card Body
-export interface ICardBodyProps {
-	/** Children to show in the Card */
-	children?: React.ReactNode
-
-	/** Whether to wrap children in CardSection */
-	isSectioned?: boolean
-
-	/** Set true to display line separators between CardSection components */
-	areSectionSeparatorsVisible?: boolean
-
-	/** Does card include top padding */
-	hasTopPadding?: boolean
-
-	/** Does card include bottom padding */
-	hasBottomPadding?: boolean
-
-	/** Set to true to remove horizontal padding */
-	isFullBleed?: boolean
-}
-
-const CardBody = (props: ICardBodyProps): React.ReactElement => {
+const CardBody = (props: SpruceSchemas.Local.ICardBody): React.ReactElement => {
 	const {
 		children,
 		isSectioned,

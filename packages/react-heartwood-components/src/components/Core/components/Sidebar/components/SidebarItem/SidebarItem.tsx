@@ -2,14 +2,9 @@ import React from 'react'
 import cx from 'classnames'
 import Button from '../../../../../Button/Button'
 import Icon from '../../../../../Icon/Icon'
-import { IHWSidebarItem } from '@sprucelabs/spruce-types'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export interface ISidebarItemProps extends IHWSidebarItem {
-	icon?: any
-	className?: string | null
-}
-
-const isCurrentParent = (items: ISidebarItemProps[]) => {
+const isCurrentParent = (items: SpruceSchemas.Local.ISidebarItem[]) => {
 	if (items) {
 		if (items.find(item => item.isCurrent)) {
 			return true
@@ -25,8 +20,8 @@ const isCurrentParent = (items: ISidebarItemProps[]) => {
 	return false
 }
 
-const SidebarItem = (props: ISidebarItemProps) => {
-	const { text, href, action, icon, isCurrent, items, className } = props
+const SidebarItem = (props: SpruceSchemas.Local.ISidebarItem) => {
+	const { text, href, button, icon, isCurrent, items, className } = props
 	const parentClass = cx('sidebar-item', className, {
 		'sidebar-item--is-current': isCurrent,
 		'sidebar-item--is-current-parent': items && isCurrentParent(items)
@@ -34,7 +29,7 @@ const SidebarItem = (props: ISidebarItemProps) => {
 	return (
 		<li className={parentClass}>
 			<div className="sidebar-item__inner">
-				<a className="sidebar-item__link" href={href}>
+				<a className="sidebar-item__link" href={href ?? undefined}>
 					{icon && (
 						<Icon
 							{...icon}
@@ -43,7 +38,7 @@ const SidebarItem = (props: ISidebarItemProps) => {
 					)}
 					<span className="sidebar-item__text">{text}</span>
 				</a>
-				{action && <Button {...action} />}
+				{button && <Button {...button} />}
 			</div>
 			{items && items.length > 0 && (
 				<ul className="sidebar__sub-list">
@@ -56,7 +51,7 @@ const SidebarItem = (props: ISidebarItemProps) => {
 						return (
 							<li key={idx} className={subClass}>
 								<div className="sidebar-item__inner">
-									<a href={item.href} className="sidebar-item__link">
+									<a href={item.href ?? undefined} className="sidebar-item__link">
 										{item.text}
 									</a>
 								</div>
@@ -73,7 +68,7 @@ const SidebarItem = (props: ISidebarItemProps) => {
 											return (
 												<li key={idx} className={subSubClass}>
 													<div className="sidebar-item__inner">
-														<a className="sidebar-item__link" href={item.href}>
+														<a className="sidebar-item__link" href={item.href ?? undefined}>
 															{item.text}
 														</a>
 													</div>

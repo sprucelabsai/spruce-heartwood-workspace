@@ -1,42 +1,18 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 
-import {
-	IHWCalendarEventDetails,
-	IHWCalendarEventDetailsItemType,
-	IHWCalendarEventDetailsItem,
-	IHWAction
-} from '@sprucelabs/spruce-types'
-
-import EventDetailsItem, {
-	IEventDetailsItemProps
-} from './components/EventDetailsItem/EventDetailsItem'
+import EventDetailsItem from './components/EventDetailsItem/EventDetailsItem'
 import { unionArray } from '../..'
-
-export interface IEventDetailsProps
-	extends Omit<IHWCalendarEventDetails, 'items'> {
-	/** In a loading state, loading placeholders will be dropped in */
-	isLoading?: boolean
-
-	/** All the items that make up this event details component */
-	items: (IEventDetailsItemProps | IHWCalendarEventDetailsItem)[]
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-}
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IEventDetailsState {}
 
 export default class EventDetails extends Component<
-	IEventDetailsProps | IHWCalendarEventDetails,
+	SpruceSchemas.Local.ICalendarEventDetails,
 	IEventDetailsState
 > {
 	public render(): React.ReactElement {
-		const reactHeartwoodProps = this.props as IEventDetailsProps
-		const commonProps = this.props as IHWCalendarEventDetails
-
-		const { items } = commonProps
-		const { isLoading, onAction } = reactHeartwoodProps
+		const { items, isLoading } = this.props
 
 		const className = cx('event-details', {
 			'loading-placeholder': isLoading
@@ -44,23 +20,18 @@ export default class EventDetails extends Component<
 
 		return (
 			<div className={className}>
-				{unionArray(items).map(item => (
+				{unionArray(items).map((item, idx) => (
 					<div
-						key={item.viewModel.id}
+						key={item.values.id ?? `item-${idx}`}
 						className={cx('event-details__section', {
 							'event-details__button-wrapper':
-								item.type === IHWCalendarEventDetailsItemType.Button ||
-								item.type === IHWCalendarEventDetailsItemType.SplitButton,
-							'event-details__markdown-wrapper':
-								item.type === IHWCalendarEventDetailsItemType.Markdown,
-							'event-details__card-wrapper':
-								item.type === IHWCalendarEventDetailsItemType.CardBuilder
+								item.schemaId === 'button' || item.schemaId === 'splitButton',
+							'event-details__markdown-wrapper': item.schemaId === 'markdown',
+							'event-details__card-wrapper': item.schemaId === 'cardBuilder'
 						})}
 					>
 						<EventDetailsItem
-							type={item.type}
-							viewModel={item.viewModel}
-							onAction={onAction}
+							item={item}
 						/>
 					</div>
 				))}

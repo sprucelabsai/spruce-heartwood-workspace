@@ -1,12 +1,8 @@
 import React, { ReactElement } from 'react'
-import {
-	default as Autosuggest,
-	IAutosuggestInterfaceProps
-} from '../../../Forms/components/Autosuggest/Autosuggest'
+import { default as Autosuggest } from '../../../Forms/components/Autosuggest/Autosuggest'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export interface ITableSearchProps extends IAutosuggestInterfaceProps {}
-
-const TableSearch = (props: ITableSearchProps): ReactElement => {
+const TableSearch = (props: SpruceSchemas.Local.IAutosuggest): ReactElement => {
 	const { ...rest } = props
 
 	return (

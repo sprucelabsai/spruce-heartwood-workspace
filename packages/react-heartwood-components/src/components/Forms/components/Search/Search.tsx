@@ -1,31 +1,26 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
-import { InputInner } from '../../FormPartials'
+import {
+	SpruceSchemas,
+	defaultProps,
+	DefaultProps
+} from '@sprucelabs/heartwood-skill'
+import TextInput from '../TextInput/TextInput'
 
 interface ISearchState {
 	value: string
 }
 
-interface ISearchProps
-	extends React.DetailedHTMLProps<
-		React.InputHTMLAttributes<HTMLInputElement>,
-		HTMLInputElement
-	> {
-	/** Parent class */
-	className?: string
+const defaults = defaultProps(SpruceSchemas.Local.Search.definition)
 
-	/** Default input value */
-	defaultValue?: string
+export default class Search extends Component<
+	SpruceSchemas.Local.ISearch & typeof defaults,
+	ISearchState
+> {
+	public static defaultProps = defaults
 
-	/** Set true to make the input less tall */
-	isSmall?: boolean
-
-	value?: string
-}
-
-export default class Search extends Component<ISearchProps, ISearchState> {
 	public state = {
-		value: this.props.defaultValue || ''
+		value: this.props.value || ''
 	}
 
 	public handleChange = (e: any) => {
@@ -42,18 +37,21 @@ export default class Search extends Component<ISearchProps, ISearchState> {
 	}
 
 	public render() {
-		const { className, isSmall, ...rest } = this.props
+		const { className, isSmall, type, ...rest } = this.props
 		const { value } = this.state
 		return (
 			<div
 				className={cx('text-input', className, { 'text-input-small': isSmall })}
 			>
-				<InputInner
-					iconBefore="search"
-					iconAfter={value && value.length > 0 && 'cancel'}
+				<TextInput
+					iconBefore={{ name: 'search' }}
+					clearButtonIcon={
+						(value && value.length > 0 && { name: 'cancel' }) || undefined
+					}
 					onChange={this.handleChange}
 					value={value}
-					handleClear={this.handleClear}
+					onClear={this.handleClear}
+					type={type}
 					{...rest}
 				/>
 			</div>

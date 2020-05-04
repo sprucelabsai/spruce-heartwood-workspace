@@ -6,8 +6,8 @@ import Avatar from '../Avatar/Avatar'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
 
-import { IButtonProps } from '../Button/Button'
 import { IMessageReply } from './components/MessageBuilder'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface IFromProps {
 	/** Unique id of the sender */
@@ -43,7 +43,7 @@ export interface IMessageProps {
 	detail?: string
 
 	/** An action related to this message */
-	primaryAction?: IButtonProps
+	primaryButton?: SpruceSchemas.Local.IButton
 
 	/** Optional classname */
 	className?: string
@@ -61,7 +61,7 @@ export const Message = (props: IMessageProps) => {
 		replies,
 		attachments,
 		detail,
-		primaryAction,
+		primaryButton,
 		isFromSprucebot
 	} = props
 
@@ -123,7 +123,7 @@ export const Message = (props: IMessageProps) => {
 				/>
 			)
 		}
-		return <Avatar image={image || ''} alt={alt || ''} />
+		return <Avatar src={image || ''} alt={alt || ''} />
 	}
 
 	return (
@@ -156,10 +156,10 @@ export const Message = (props: IMessageProps) => {
 				)}
 				<p className="message__body">{children}</p>
 				{detail && <p className="message__detail">{detail}</p>}
-				{primaryAction && (
+				{primaryButton && (
 					<Button
 						className="btn-small message__primary-action-btn"
-						{...primaryAction}
+						{...primaryButton}
 					/>
 				)}
 				{replies && replies.length > 0 && (

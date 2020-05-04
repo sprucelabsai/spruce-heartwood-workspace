@@ -9,7 +9,7 @@ import moment from 'moment-timezone'
 import React from 'react'
 import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
-import Page, { PageContent } from '../Page'
+import Page, { SkillViewContent } from '../SkillView'
 import Message, { MessageBuilder } from './index'
 
 const fromName = 'Sprucebot'
@@ -92,11 +92,11 @@ const stories = storiesOf('Message', module)
 
 stories.addDecorator(story => (
 	<Page>
-		<PageContent>
+		<SkillViewContent>
 			<Layout>
 				<LayoutSection>{story()}</LayoutSection>
 			</Layout>
-		</PageContent>
+		</SkillViewContent>
 	</Page>
 ))
 

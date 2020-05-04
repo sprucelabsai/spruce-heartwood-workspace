@@ -1,35 +1,19 @@
-import { IHWAction, IHWCheckbox } from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React, { ChangeEvent, Component } from 'react'
 import CheckIconYes from '../../../../../static/assets/icons/ic_check_box.svg'
 import CheckIconNo from '../../../../../static/assets/icons/ic_check_box_outline_blank.svg'
 import CheckIconMaybe from '../../../../../static/assets/icons/ic_indeterminate_check_box.svg'
-
-export interface ICheckboxProps extends Omit<IHWCheckbox, 'isIndeterminate'> {
-	/** Class for the checkbox wrapper */
-	className?: string
-
-	/** Triggered on change */
-	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-
-	/** Is this 3 states, on, off, or half */
-	isIndeterminate?: boolean
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-
-	disabled?: boolean
-}
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ICheckboxState {}
 
 export default class Checkbox extends Component<
-	ICheckboxProps,
+	SpruceSchemas.Local.ICheckbox,
 	ICheckboxState
 > {
 	private checkboxRef: React.RefObject<HTMLInputElement>
 
-	public constructor(props: ICheckboxProps) {
+	public constructor(props: SpruceSchemas.Local.ICheckbox) {
 		super(props)
 		this.checkboxRef = React.createRef()
 	}
@@ -54,15 +38,13 @@ export default class Checkbox extends Component<
 
 	public render(): React.ReactElement {
 		const {
-			action,
 			className,
 			id,
 			isChecked,
 			isDisabled,
 			label,
 			name,
-			onAction,
-			postText
+			helper
 		} = this.props
 		const parentClass = cx('checkbox-item', className)
 
@@ -76,18 +58,12 @@ export default class Checkbox extends Component<
 						autoComplete={'off'}
 						className="checkbox-item__input"
 						disabled={isDisabled || false}
-						id={id}
+						id={id ?? undefined}
 						// Always use internal change handler
-						onChange={(...args) => {
-							this.handleChange(...args)
-
-							if (onAction && action) {
-								onAction(action)
-							}
-						}}
+						onChange={this.handleChange}
 						type="checkbox"
 					/>
-					<label className="checkbox-item__label" htmlFor={id}>
+					<label className="checkbox-item__label" htmlFor={id ?? undefined}>
 						{label}
 					</label>
 					<div className="checkbox-item__icons">
@@ -96,7 +72,11 @@ export default class Checkbox extends Component<
 						<CheckIconMaybe className="checkbox-item__icon checkbox-item__icon-maybe" />
 					</div>
 				</div>
-				{postText && <p className="checkbox-item__post-text">{postText}</p>}
+				{helper && (
+					<p className="checkbox-item__post-text">
+						{helper.error || helper.hint}
+					</p>
+				)}
 			</div>
 		)
 	}

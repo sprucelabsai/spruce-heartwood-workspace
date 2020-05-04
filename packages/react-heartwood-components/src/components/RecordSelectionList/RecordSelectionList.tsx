@@ -12,14 +12,16 @@ import cx from 'classnames'
 import { checkDeprecatedProps } from '../../utilities'
 
 import { TextInput, Radio, Checkbox } from '../Forms'
-import { InputPre } from '../Forms/FormPartials'
 import TextContainer from '../TextContainer/TextContainer'
 import Text from '../Text/Text'
-import Button, { ButtonKinds } from '../Button/Button'
-import ListItem, { IListItemProps } from '../List/components/ListItem/ListItem'
-import EmptyState, { IEmptyStateProps } from '../EmptyState/EmptyState'
+import Button from '../Button/Button'
+import ListItem from '../List/components/ListItem/ListItem'
+import EmptyState from '../EmptyState/EmptyState'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import Label from '../Forms/components/Label/Label'
 
-export interface IRecordSelectionListItemProps extends IListItemProps {
+export interface IRecordSelectionListItemProps
+	extends SpruceSchemas.Local.IListItem {
 	id: string
 }
 
@@ -109,10 +111,10 @@ export interface IRecordSelectionListProps {
 	hideSearchResultsEmptyState?: boolean
 
 	/** Props for the no-result empty state */
-	noSearchResultsEmptyState?: IEmptyStateProps
+	noSearchResultsEmptyState?: SpruceSchemas.Local.IEmptyState
 
 	/** Props for the no-data empty state */
-	noDataEmptyState?: IEmptyStateProps
+	noDataEmptyState?: SpruceSchemas.Local.IEmptyState
 }
 
 interface IRecordSelectionListState {
@@ -316,11 +318,11 @@ export default class RecordSelectionList extends Component<
 
 				{canSearch && loadedRecords.length > 0 && (
 					<Fragment>
-						{searchLabel && <InputPre id={searchLabel} label={searchLabel} />}
+						{searchLabel && <Label id={searchLabel} text={searchLabel} />}
 						<TextInput
 							id={'record-selection-list-filter'}
 							type="text"
-							iconBefore="search"
+							iconBefore={{ name: 'search' }}
 							placeholder={searchPlaceholder || 'Search...'}
 							value={search}
 							onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -390,7 +392,7 @@ export default class RecordSelectionList extends Component<
 							{search
 								? !hideSearchResultsEmptyState && (
 										<EmptyState
-											icon="no_matches"
+											icon={{ name: 'no_matches' }}
 											headline="No search results"
 											{...noSearchResultsEmptyState}
 											primaryAction={{
@@ -618,7 +620,7 @@ export default class RecordSelectionList extends Component<
 
 					{onRemove && canRemove && (
 						<Button
-							kind={ButtonKinds.Simple}
+							kind={'simple'}
 							className="record-selection__record-remove-btn"
 							isDisabled={false}
 							isSmall

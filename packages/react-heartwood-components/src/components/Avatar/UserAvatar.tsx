@@ -3,7 +3,7 @@ import cx from 'classnames'
 import Avatar from './Avatar'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-const UserAvatar = (props: SpruceSchemas.local.IUserAvatar) => {
+const UserAvatar = (props: SpruceSchemas.Local.IUserAvatar) => {
 	const { user, ...avatar } = props
 	const { profileImages, defaultProfileImages } = user
 

@@ -1,8 +1,7 @@
 import React from 'react'
-import {IImage} from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-
-const Image = (props: IImage): React.ReactElement => {
+const Image = (props: SpruceSchemas.Local.IImage): React.ReactElement => {
 	const { id, alt, src, width, height } = props
 	const imageProps = {
 		id: id || undefined,

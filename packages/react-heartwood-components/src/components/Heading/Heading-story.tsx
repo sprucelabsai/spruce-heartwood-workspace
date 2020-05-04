@@ -7,5 +7,5 @@ const stories = storiesOf('Heading', module)
 stories.addDecorator(withKnobs)
 
 stories.add('Heading', () => (
-	<Heading>{text('children', 'Hello, world')}</Heading>
+	<Heading id="heading">{text('children', 'Hello, world')}</Heading>
 ))

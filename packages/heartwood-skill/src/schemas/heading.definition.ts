@@ -7,9 +7,7 @@ const headingDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'Id for view caching'
+			label: 'Id'
 		},
 		html: {
 			type: FieldType.Text,
@@ -34,6 +32,7 @@ const headingDefinition = buildSchemaDefinition({
 			type: FieldType.Select,
 			label: 'Weight',
 			hint: 'The weight of the heading, H1 and beyond',
+			defaultValue: 'h1',
 			options: {
 				choices: [
 					{

@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
-import CardHeader, { ICardHeaderProps } from './components/CardHeader'
+import CardHeader from './components/CardHeader'
 import CardBody from './components/CardBody'
 import CardSection from './components/CardSection'
 import CardFooter from './components/CardFooter'
-import {SpruceSchemas, defaultPropsForDefinition} from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	DefaultProps
+} from '@sprucelabs/heartwood-skill'
 
 interface ICardDefaultProps {
 	isCentered: boolean
@@ -17,19 +21,24 @@ interface ICardState {
 	isExpanded: boolean
 }
 
-export default class Card extends Component<SpruceSchemas.local.ICard, ICardState> {
+export default class Card extends Component<
+	SpruceSchemas.Local.ICard,
+	ICardState
+> {
 	public static Header = CardHeader
 	public static Body = CardBody
 	public static Section = CardSection
 	public static Footer = CardFooter
 
-	public static defaultProps = defaultPropsForDefinition(SpruceSchemas.local.Card.definition)
+	public static defaultProps = defaultProps(SpruceSchemas.Local.Card.definition)
 
-	public constructor(props: SpruceSchemas.local.ICard & ICardDefaultProps) {
+	public constructor(
+		props: SpruceSchemas.Local.ICard &
+			DefaultProps<SpruceSchemas.Local.Card.IDefinition>
+	) {
 		super(props)
-
 		this.state = {
-			isExpanded: props.defaultExpanded
+			isExpanded: props.defaultExpanded ?? true
 		}
 	}
 
@@ -47,7 +56,7 @@ export default class Card extends Component<SpruceSchemas.local.ICard, ICardStat
 			isSmall,
 			className,
 			isExpandable,
-			header
+			header = {}
 		} = this.props
 
 		const { isExpanded } = this.state

@@ -5,11 +5,11 @@ import {
 	SortableElement,
 	arrayMove
 } from 'react-sortable-hoc'
-import { IListProps } from '../../List'
 import ListHeader from '../ListHeader/ListHeader'
-import ListItem, { IListItemProps } from '../ListItem/ListItem'
+import ListItem from '../ListItem/ListItem'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export interface ISortableListProps extends IListProps {
+export interface ISortableListProps extends SpruceSchemas.Local.IList {
 	/** OnConfirm callback */
 	onConfirm?: () => void
 
@@ -20,17 +20,15 @@ export interface ISortableListProps extends IListProps {
 	disabled?: boolean
 
 	/** Callback when sorting starts */
-	onSortStart: (item: IListItemProps) => void
+	onSortStart: (item: SpruceSchemas.Local.IListItem) => void
 
-	/** Callabck when sorting ends */
+	/** Callback when sorting ends */
 	onSortEnd: (props: any) => void
 
-	/** List items you want to be sortable */
-	items?: IListItemProps[]
 }
 
 interface ISortableListState {
-	items?: IListItemProps[]
+	items?: SpruceSchemas.Local.IListItem[]
 	isSorting: boolean
 }
 const SortableItem = SortableElement(
@@ -55,7 +53,7 @@ const SortableList = SortableContainer(
 	}
 )
 
-const headerActions = ({
+const headerButtons = ({
 	isSorting,
 	onClickToggle,
 	onClickCancel,
@@ -138,7 +136,7 @@ export default class SortableComponent extends Component<
 				{header && (
 					<ListHeader
 						isSmall={isSmall}
-						actions={headerActions({
+						buttons={headerButtons({
 							isSorting,
 							onClickToggle: this.toggleSorting,
 							onClickConfirm: this.onConfirm,

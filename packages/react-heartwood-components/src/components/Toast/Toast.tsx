@@ -1,61 +1,31 @@
 import React from 'react'
 import cx from 'classnames'
-import Button, { ButtonOnClick } from '../Button/Button'
-import { IHWToast, IHWAction } from '@sprucelabs/spruce-types'
+import Button from '../Button/Button'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-interface IToastHeaderProps {
-	/**  Optional id for view caching */
-	id?: string
-
-	/** Function to remove the toast */
-	onRemove?: ButtonOnClick
-
-	/** Headline */
-	headline?: string
-
-	/** Is this toast removable */
-	canRemove?: boolean
-}
-
-const ToastHeader = (props: IToastHeaderProps): React.ReactElement => {
-	const { headline, onRemove, canRemove } = props
+const ToastHeader = (
+	props: SpruceSchemas.Local.IToastHeader
+): React.ReactElement => {
+	const { headline, onClickDismiss } = props
 	return (
 		<div className="toast__header">
 			<p>{headline}</p>
-			{canRemove && onRemove && (
-				<Button icon={{ name: 'close' }} onClick={onRemove} />
+			{onClickDismiss && (
+				<Button icon={{ name: 'close' }} onClick={onClickDismiss} />
 			)}
 		</div>
 	)
 }
 
-export interface IToastProps extends Omit<IHWToast, 'id'> {
-	/** Unique ID for the toast */
-	id: string | number
-
-	/** Handle toast removal */
-	onRemove?: Function
-
-	/** Override how long before the toast goes away, in milis */
-	timeout?: number | 'never'
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-}
-
-const Toast = (props: IToastProps | IHWToast): React.ReactElement => {
-	const commonProps = props as IHWToast
-	const reactHeartwoodProps = props as IToastProps
-
+const Toast = (props: SpruceSchemas.Local.IToast): React.ReactElement => {
 	const {
 		headline,
+		onClickDismiss,
 		kind,
 		text,
-		followupAction,
-		followupText,
-		removeAction
-	} = commonProps
-	const { canRemove, onAction, onRemove } = reactHeartwoodProps
+		onClickFollowup,
+		followupText
+	} = props
 
 	const toastClass = cx('toast', {
 		'toast-positive': kind === 'positive',
@@ -65,32 +35,19 @@ const Toast = (props: IToastProps | IHWToast): React.ReactElement => {
 	})
 	return (
 		<div className={toastClass}>
-			<ToastHeader
-				headline={headline}
-				onRemove={() => {
-					removeAction && onAction && onAction(removeAction)
-					onRemove && onRemove()
-				}}
-				canRemove={canRemove || false}
-			/>
+			<ToastHeader headline={headline} onClickDismiss={onClickDismiss} />
 			{text && (
 				<div className="toast__body">
 					<p>{text}</p>
 				</div>
 			)}
-			{followupAction && onAction && (
-				<Button text={followupText} onAction={() => onAction(followupAction)} />
+			{followupText && onClickFollowup && (
+				<Button text={followupText} onClick={onClickFollowup} />
 			)}
 		</div>
 	)
 }
 
-Toast.defaultProps = {
-	kind: 'neutral',
-	followupAction: null,
-	followupText: 'Undo',
-	text: '',
-	canRemove: true
-}
+Toast.defaultProps = defaultProps(SpruceSchemas.Local.Toast.definition)
 
 export default Toast

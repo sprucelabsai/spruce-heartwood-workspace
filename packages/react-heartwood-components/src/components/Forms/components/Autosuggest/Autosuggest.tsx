@@ -4,69 +4,11 @@ import debounce from 'lodash/debounce'
 import { default as ReactAutosuggest } from 'react-autosuggest'
 import cx from 'classnames'
 import Button from '../../../Button/Button'
-import Icon, { IIconProps } from '../../../Icon/Icon'
-import { InputPre, InputHelper } from '../../FormPartials'
 import ClearIcon from '../../../../../static/assets/icons/ic_cancel.svg'
-
-export interface IAutosuggestInterfaceProps
-	extends Partial<ReactAutosuggest.AutosuggestPropsBase<any>> {
-	/** Unique identifier */
-	id: string
-
-	/** Teach Autosuggest how to calculate suggestions for any given input value. */
-	getSuggestions: (value: string) => Promise<Record<string, any>[]> | null
-
-	/** Implement it to teach Autosuggest what should be the input value when suggestion is clicked. */
-	getSuggestionValue: (suggestion: any) => string
-
-	/** Defines how suggestions will be rendered */
-	renderSuggestion: (suggestion: any, params: any) => React.ReactNode
-
-	/** Will be called every time suggestion is selected via mouse or keyboard. */
-	onSuggestionSelected?: (event: React.FormEvent<any>, data: any) => void
-
-	shouldRenderSuggestions?: () => boolean
-
-	/** Supply default suggestions that can be shown without input */
-	defaultSuggestions?: any[]
-
-	/** Placeholder for the input */
-	placeholder?: string
-
-	/** Optionally pass a default value for this input */
-	defaultValue?: string
-
-	/** Optional label */
-	label?: string
-
-	/** Text after label */
-	postLabel?: string | React.ReactNode
-
-	/** Error text */
-	error?: string
-
-	/** Helper text */
-	helper?: string | React.ReactNode
-
-	/** Set true to make the input less tall */
-	isSmall?: boolean
-
-	/** Adds a class to the Autosuggest's wrapper */
-	wrapperClassName?: string
-
-	/** Optional class name for wrapper */
-	className?: string
-
-	/** Disable this input */
-	disabled?: boolean
-
-	/** Optional; adds an icon to the beginning of the text input */
-	icon?: IIconProps
-
-	multiSection?: boolean
-
-	inputProps?: ReactAutosuggest.InputProps<any>
-}
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import Label from '../Label/Label'
+import InputHelper from '../InputHelper/InputHelper'
+import Icon from '../../../Icon/Icon'
 
 interface IAutosuggestInterfaceState {
 	value: string
@@ -83,6 +25,7 @@ interface IThemeProps {
 	isSmall?: boolean
 	hasIcon?: boolean
 }
+
 
 const theme = (props: IThemeProps): any => ({
 	container: cx('text-input', {
@@ -108,20 +51,20 @@ interface IAutoSuggestRef extends React.RefObject<ReactAutosuggest> {
 	current: IAutoSuggestRefCurrent | null
 }
 
+const defaults = defaultProps(SpruceSchemas.Local.Autosuggest.definition)
+
 export default class Autosuggest extends Component<
-	IAutosuggestInterfaceProps,
+	SpruceSchemas.Local.IAutosuggest & typeof defaults,
 	IAutosuggestInterfaceState
 > {
-	private static defaultProps = {
-		defaultSuggestions: []
-	}
+	private static defaultProps = defaults
 
 	private domNodeRef: React.RefObject<HTMLDivElement>
 	private autosuggestRef: IAutoSuggestRef
 
 	private debouncedResize = debounce(() => this.handleWindowResize(), 500)
 
-	public constructor(props: IAutosuggestInterfaceProps) {
+	public constructor(props: SpruceSchemas.Local.IAutosuggest & typeof defaults) {
 		super(props)
 
 		this.domNodeRef = React.createRef()
@@ -161,45 +104,40 @@ export default class Autosuggest extends Component<
 		} = this.state
 
 		const {
-			getSuggestionValue,
-			renderSuggestion,
+			getSuggestionValue = (suggestion: Record<string, any>) =>
+				`missing getter`,
+			renderSuggestion = (suggestion: Record<string, any>) => (
+				<div>Not finished</div>
+			),
 			onSuggestionSelected,
 			placeholder,
 			label,
-			error,
 			helper,
 			isSmall,
-			id,
-			postLabel,
 			wrapperClassName,
-			inputProps: originalInputProps,
 			className,
-			disabled,
-			icon,
-			multiSection,
-			...rest
+			isDisabled,
+			icon
 		} = this.props
 
 		const inputProps = {
-			...originalInputProps,
-			placeholder: originalInputProps?.placeholder || placeholder || '',
-			value: originalInputProps?.value || value,
-			onChange: originalInputProps?.onChange || this.onChange,
-			onBlur: originalInputProps?.onBlur || this.onBlur,
-			disabled
+			placeholder: placeholder ?? '',
+			value,
+			onChange: this.onChange,
+			onBlur: this.onBlur,
+			disabled: isDisabled ?? undefined
 		}
 
 		const parentClass = cx('text-input', {
 			className,
-			'text-input--has-error': error
+			'text-input--has-error': !!helper?.error
 		})
 
 		return (
 			<div className={parentClass} ref={this.domNodeRef}>
-				{label && <InputPre label={label} id={id} postLabel={postLabel} />}
+				{label && <Label {...label} />}
 				<div className={cx('autosuggest__wrapper', wrapperClassName)}>
 					<ReactAutosuggest
-						multiSection={multiSection === true}
 						ref={this.autosuggestRef}
 						suggestions={suggestions ?? []}
 						onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -225,10 +163,9 @@ export default class Autosuggest extends Component<
 								document.body
 							)
 						}}
-						onSuggestionSelected={onSuggestionSelected}
+						onSuggestionSelected={onSuggestionSelected ?? undefined}
 						inputProps={inputProps}
-						theme={theme({ isSmall, hasIcon: icon ? true : false })}
-						{...rest}
+						theme={theme({ isSmall: !!isSmall, hasIcon: icon ? true : false })}
 					/>
 					{showClearButton && (
 						<Button
@@ -243,7 +180,7 @@ export default class Autosuggest extends Component<
 					)}
 					{icon && <Icon {...icon} className="text-input__icon-pre" />}
 				</div>
-				{(helper || error) && <InputHelper helper={helper} error={error} />}
+				{helper && <InputHelper {...helper} />}
 			</div>
 		)
 	}
@@ -307,7 +244,7 @@ export default class Autosuggest extends Component<
 		// Do some stuff to get suggestions
 		// May be async/passed by parent
 		const { getSuggestions } = this.props
-		const suggestions = await getSuggestions(value)
+		const suggestions = getSuggestions && await getSuggestions(value)
 		await this.setState({
 			suggestions: suggestions || []
 		})

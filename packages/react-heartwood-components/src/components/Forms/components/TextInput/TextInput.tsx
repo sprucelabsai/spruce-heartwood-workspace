@@ -1,46 +1,21 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import cx from 'classnames'
-import { InputPre, InputInner, InputHelper } from '../../FormPartials'
+import Label from '../Label/Label'
+import Icon from '../../../Icon/Icon'
+import Button from '../../../Button/Button'
+import InputHelper from '../InputHelper/InputHelper'
+import {
+	SpruceSchemas,
+	defaultProps,
+	stripNulls
+} from '@sprucelabs/heartwood-skill'
 
-export interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
-	/** Unique identifier */
-	id: string
+const defaults = defaultProps(SpruceSchemas.Local.TextInput.definition)
 
-	/** Optional class */
-	className?: string
-
-	/** Label text */
-	label?: string
-
-	/** Text after label */
-	postLabel?: string
-
-	/** Useful for credit cards */
-	kind?: string
-
-	/** Optional icon to show in the input */
-	iconBefore?: string
-
-	/** Optional icon to show at the end of the input */
-	iconAfter?: any
-
-	/** Optional; helpful for subdomains */
-	appendix?: string
-
-	/** Error text */
-	error?: string
-
-	/** Helper text */
-	helper?: string | ReactNode
-
-	/** Set true to make the input less tall */
-	isSmall?: boolean
-
-	/** The value */
-	value?: string
-}
-
-class TextInput extends React.Component<ITextInputProps> {
+class TextInput extends React.Component<
+	SpruceSchemas.Local.ITextInput & typeof defaults
+> {
+	public static defaultProps = defaults
 	public wrapperRef = React.createRef<HTMLDivElement>()
 
 	public focus = (options?: FocusOptions) => {
@@ -54,37 +29,46 @@ class TextInput extends React.Component<ITextInputProps> {
 	}
 	public render(): React.ReactElement {
 		const {
-			id,
 			className,
 			label,
-			postLabel,
-			kind,
 			iconBefore,
-			iconAfter,
+			clearButtonIcon,
 			appendix,
-			error,
 			helper,
 			isSmall,
+			onClear,
+			children,
+			enableAutoComplete,
 			...rest
-		} = this.props
+		} = stripNulls(this.props)
 
 		const parentClass = cx('text-input', {
 			className,
-			'text-input--has-error': error,
+			'text-input--has-error': !!helper?.error,
 			'text-input-small': isSmall
 		})
 
 		return (
 			<div className={parentClass} ref={this.wrapperRef}>
-				{label && <InputPre label={label} id={id} postLabel={postLabel} />}
-				<InputInner
-					kind={kind}
-					iconBefore={iconBefore}
-					iconAfter={iconAfter}
-					appendix={appendix}
-					{...rest}
-				/>
-				{(helper || error) && <InputHelper helper={helper} error={error} />}
+				{label && <Label {...label} />}
+				<div className="text-input__inner">
+					{iconBefore && <Icon {...iconBefore} />}
+					<input
+						className="text-input__input"
+						{...rest}
+						autoComplete={enableAutoComplete ? 'on' : 'off'}
+					/>
+					{appendix && <p className="text-input__appendix">{appendix}</p>}
+					{clearButtonIcon && onClear && (
+						<Button
+							onClick={onClear}
+							className="text-input__clear-btn"
+							icon={clearButtonIcon}
+						/>
+					)}
+				</div>
+				{children}
+				{helper && <InputHelper {...helper} />}
 			</div>
 		)
 	}

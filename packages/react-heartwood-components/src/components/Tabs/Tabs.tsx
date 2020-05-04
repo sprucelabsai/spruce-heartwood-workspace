@@ -3,22 +3,8 @@ import React, { Component, Fragment } from 'react'
 import debounce from 'lodash/debounce'
 import cx from 'classnames'
 import Tab from './components/Tab/Tab'
-import { ITabProps } from './components/Tab/Tab'
 import ContextMenu from '../ContextMenu/ContextMenu'
-
-export interface ITabsProps {
-	/** The tabs for this group */
-	tabs: Array<ITabProps>
-
-	/** Adds horizontal Padding */
-	isPadded?: boolean
-
-	/** Set false to prevent truncation behavior */
-	isTruncatable?: boolean
-
-	/** Optional class to add to the tab group */
-	className?: string
-}
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface ITabsState {
 	activeTabIndex: number
@@ -29,12 +15,15 @@ export interface ITabsState {
 	tabWidths: number[]
 }
 
-const getActiveTabIndex = (tabs: Array<ITabProps>) => {
+const getActiveTabIndex = (tabs: Array<SpruceSchemas.Local.ITab>) => {
 	const activeTabIndex = tabs.findIndex(tab => tab.isCurrent)
 	return activeTabIndex
 }
 
-export default class Tabs extends Component<ITabsProps, ITabsState> {
+export default class Tabs extends Component<
+	SpruceSchemas.Local.ITabs,
+	ITabsState
+> {
 	public static defaultProps = {
 		isPadded: true,
 		isTruncatable: true,
@@ -146,7 +135,7 @@ export default class Tabs extends Component<ITabsProps, ITabsState> {
 	public render() {
 		const { tabs, isPadded, isTruncatable, className } = this.props
 		const { hiddenTabIndices, isContextTabVisible, activeTabIndex } = this.state
-		const hiddenTabs: ITabProps[] = []
+		const hiddenTabs: SpruceSchemas.Local.ITab[] = []
 		const activeTab = tabs.find(tab => tab.isCurrent)
 		if (hiddenTabIndices.length > 0) {
 			hiddenTabIndices.forEach(idx => {

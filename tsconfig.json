@@ -3,10 +3,7 @@
         "module": "commonjs",
         "esModuleInterop": true,
         "target": "ES2017",
-        "lib": [
-            "es2017",
-            "DOM"
-        ],
+        "lib": ["es2017", "DOM"],
         "allowJs": true,
         "declaration": true,
         "noImplicitAny": true,
@@ -20,23 +17,17 @@
         "sourceMap": true,
         "experimentalDecorators": true,
         "baseUrl": ".",
-		"paths": {
-			"#spruce:schema/*": [
-			  "packages/heartwood-skill/build/.spruce/schemas/*",
-			  "packages/heartwood-skill/.spruce/schemas/*"
-			],
-			"#spruce/*": [
-			  ".spruce/*"
-			]
-		  }
+        "paths": {
+            "#spruce:schema/*": [
+                "packages/heartwood-skill/build/.spruce/schemas/*",
+                "packages/heartwood-skill/.spruce/schemas/*"
+            ],
+            "#spruce/*": [
+                "packages/heartwood-skill/build/.spruce/*",
+                "packages/heartwood-skill/.spruce/*"
+            ]
+        }
     },
-    "include": [
-        "./*.ts",
-        "./**/*.ts",
-        "./*.tsx",
-        "./**/*.tsx"
-    ],
-    "exclude": [
-        "**/node_modules/**"
-    ]
+    "include": ["./*.ts", "./**/*.ts", "./*.tsx", "./**/*.tsx"],
+    "exclude": ["**/node_modules/**"]
 }

@@ -6,7 +6,7 @@ import { Card, CardBody } from '../../../Card'
 import LayoutSection from '../../../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../../../Layout/Layout'
 import Modal from '../../../Modal/Modal'
-import Page, { PageContent } from '../../../Page'
+import Page, { SkillViewContent } from '../../../SkillView'
 import FormBuilder from './FormBuilder'
 
 const stories = storiesOf('FormBuilder', module)
@@ -17,7 +17,7 @@ stories.addDecorator(withKnobs)
 stories
 	.add('Basic', () => (
 		<Page>
-			<PageContent>
+			<SkillViewContent>
 				<Layout>
 					<LayoutSection>
 						<Card>
@@ -57,12 +57,12 @@ stories
 						</Card>
 					</LayoutSection>
 				</Layout>
-			</PageContent>
+			</SkillViewContent>
 		</Page>
 	))
 	.add('With Submit', () => (
 		<Page>
-			<PageContent>
+			<SkillViewContent>
 				<Layout>
 					<LayoutSection>
 						<Card>
@@ -180,12 +180,12 @@ stories
 						</Card>
 					</LayoutSection>
 				</Layout>
-			</PageContent>
+			</SkillViewContent>
 		</Page>
 	))
 	.add('Settings page', () => (
 		<Page>
-			<PageContent>
+			<SkillViewContent>
 				<FormBuilder
 					kind="page"
 					initialValues={{
@@ -336,12 +336,12 @@ stories
 						}
 					])}
 				/>
-			</PageContent>
+			</SkillViewContent>
 		</Page>
 	))
 	.add('In a modal', () => (
 		<Page>
-			<PageContent>
+			<SkillViewContent>
 				<Modal isOpen size={'small'}>
 					<Modal.Header title="New location group" />
 					<FormBuilder
@@ -386,6 +386,6 @@ stories
 						}}
 					/>
 				</Modal>
-			</PageContent>
+			</SkillViewContent>
 		</Page>
 	))

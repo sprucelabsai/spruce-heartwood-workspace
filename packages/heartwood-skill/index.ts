@@ -1,3 +1,11 @@
 export * from '#spruce/schemas/fields/fields.types'
+export * from '#spruce/schemas/fields/fieldClassMap'
 export * from '#spruce/schemas/schemas.types'
-export { default as defaultPropsForDefinition } from './src/utilities/defaultPropsForDefinition'
+
+export { default as defaultProps } from './src/utilities/defaultProps'
+export { default as buildEventDetailsItem } from './src/utilities/buildEventDetailsItem'
+export { default as buildEventDetails } from './src/utilities/buildEventDetails'
+export { default as buildCard } from './src/utilities/buildCard'
+export { default as stripNulls } from './src/utilities/stripNulls'
+export * from './src/utilities/utilities.types'
+export { IFileFieldValue } from '@sprucelabs/schema'

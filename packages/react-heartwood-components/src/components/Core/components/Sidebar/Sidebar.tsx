@@ -1,41 +1,22 @@
-import { IHWSidebar, IHWSidebarSide } from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React, { ReactNode } from 'react'
 import Button from '../../../Button/Button'
 import Text from '../../../Text/Text'
 import SidebarExpander from './components/SidebarExpander/SidebarExpander'
-import SidebarItem, {
-	ISidebarItemProps
-} from './components/SidebarItem/SidebarItem'
+import SidebarItem from './components/SidebarItem/SidebarItem'
 import SidebarSection from './components/SidebarSection/SidebarSection'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-interface ISidebarProps extends IHWSidebar {
-	backLink?: ISidebarItemProps | null
+const defaults = defaultProps(SpruceSchemas.Local.Sidebar.definition)
 
-	/** Children to add to the sidebar */
-	children?: ReactNode
-
-	/** Include a footer in the sidebar */
-	footer?: ReactNode
-
-	/** Handler to force the sidebar to collapse */
-	forceCloseSidebar?: () => void
-
-	/** Handler to toggle the visibility of the sidebar */
-	toggleExpanded?: () => void
-
-	style?: React.CSSProperties
-}
-
-const Sidebar = (props: ISidebarProps) => {
+const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 	const {
 		items,
 		sections,
 		backLink,
 		children,
-		footer,
-		forceCloseSidebar,
-		toggleExpanded,
+		footerChildren,
+
 		isExpanded,
 		isLarge,
 		isCollapsible,
@@ -44,11 +25,14 @@ const Sidebar = (props: ISidebarProps) => {
 		mobileHeader
 	} = props
 
+	const forceCloseSidebar = () => {window.alert('coming soon')}
+	const toggleExpanded = () => {window.alert('coming soon')}
+
 	return (
 		<aside
 			className={cx('sidebar', {
-				'sidebar--left': side === IHWSidebarSide.Left,
-				'sidebar--right': side === IHWSidebarSide.Right,
+				'sidebar--left': side === 'left',
+				'sidebar--right': side === 'right',
 				'sidebar--large': isLarge,
 				'sidebar--is-collapsed': !isExpanded,
 				'sidebar--is-mobile-expanded': isMobileExpanded
@@ -57,7 +41,7 @@ const Sidebar = (props: ISidebarProps) => {
 			{mobileHeader && (
 				<SidebarSection className="sidebar-header sidebar-header--mobile">
 					<Text className="sidebar-header__title">{mobileHeader.title}</Text>
-					{mobileHeader.action && <Button {...mobileHeader.action} />}
+					{mobileHeader.button && <Button {...mobileHeader.button} />}
 				</SidebarSection>
 			)}
 			<div className="sidebar__inner">
@@ -90,7 +74,7 @@ const Sidebar = (props: ISidebarProps) => {
 						))}
 				</div>
 			</div>
-			{footer && footer}
+			{footerChildren && footerChildren}
 			{isCollapsible && (
 				<SidebarExpander
 					toggleExpanded={toggleExpanded}
@@ -102,15 +86,6 @@ const Sidebar = (props: ISidebarProps) => {
 	)
 }
 
-Sidebar.defaultProps = {
-	isExpanded: true,
-	isLarge: false,
-	isCollapsible: true,
-	items: [],
-	children: null,
-	footer: null,
-	isMobileExpanded: false,
-	mobileHeader: null
-}
+Sidebar.defaultProps = defaults
 
 export default Sidebar

@@ -1,17 +1,13 @@
-import { IHWSidebarSection, IHWSidebarSpacing } from '@sprucelabs/spruce-types'
 import cx from 'classnames'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import {
-	ILayoutBuilderProps,
 	LayoutBuilder
 } from '../../../../../LayoutBuilder/LayoutBuilder'
+import { defaultProps, SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-interface ISidebarSectionProps extends IHWSidebarSection {
-	/** Children to show in the sidebar section */
-	children?: ReactNode
-}
+const defaults = defaultProps(SpruceSchemas.Local.SidebarSection.definition)
 
-const SidebarSection = (props: ISidebarSectionProps) => {
+const SidebarSection = (props: SpruceSchemas.Local.ISidebarSection) => {
 	const {
 		children,
 		className,
@@ -19,7 +15,7 @@ const SidebarSection = (props: ISidebarSectionProps) => {
 		isOnlyForMobile,
 		horizontalSpacing,
 		verticalSpacing,
-		layoutBuilder
+		items
 	} = props
 	return (
 		<div
@@ -27,26 +23,19 @@ const SidebarSection = (props: ISidebarSectionProps) => {
 				'sidebar-section--show-only-on-mobile': isOnlyForMobile,
 				'sidebar-section--centered': isCentered,
 				'sidebar-section--horizontal-loose':
-					horizontalSpacing === IHWSidebarSpacing.Loose,
+					horizontalSpacing === 'loose',
 				'sidebar-section--vertical-loose':
-					verticalSpacing === IHWSidebarSpacing.Loose
+					verticalSpacing === 'loose'
 			})}
 		>
 			{children}
-			{layoutBuilder && (
-				// Note: We have to cast this since ILayoutBuilderProps
-				// enforces typematching. All that interface is, is a stricter
-				// version of IHWLayoutBuilder.
-				<LayoutBuilder {...(layoutBuilder as ILayoutBuilderProps)} />
+			{items && (
+				<LayoutBuilder items={items} />
 			)}
 		</div>
 	)
 }
 
-SidebarSection.defaultProps = {
-	className: '',
-	isCentered: false,
-	spacing: IHWSidebarSpacing.Base
-}
+SidebarSection.defaultProps = defaults
 
 export default SidebarSection

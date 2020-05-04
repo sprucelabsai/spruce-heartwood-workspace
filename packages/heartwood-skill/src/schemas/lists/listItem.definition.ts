@@ -4,9 +4,10 @@ import iconDefinition from '../icon.definition'
 import toggleDefinition from '../forms/toggle.definition'
 import contextMenuDefinition from '../contextMenu.definition'
 import radioDefinition from '../forms/radio.definition'
-import checkboxDefinition from '../checkbox.definition'
+import checkboxDefinition from '../forms/checkbox.definition'
 import listItemWarningDefinition from './listItemWarning.definition'
 import avatarDefinition from '../avatar.definition'
+import imageDefinition from '../image.definition'
 
 const listItemDefinition = buildSchemaDefinition({
 	id: 'listItem',
@@ -16,8 +17,7 @@ const listItemDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true
+			label: 'Id'
 		},
 		title: {
 			type: FieldType.Text,
@@ -48,9 +48,11 @@ const listItemDefinition = buildSchemaDefinition({
 			}
 		},
 		image: {
-			type: FieldType.Text,
+			type: FieldType.Schema,
 			label: 'Image',
-			hint: 'URL to show an image'
+			options: {
+				schema: imageDefinition
+			}
 		},
 		icon: {
 			type: FieldType.Schema,
@@ -102,7 +104,7 @@ const listItemDefinition = buildSchemaDefinition({
 			type: FieldType.Schema,
 			label: 'Buttons',
 			isArray: true,
-			hint: 'Actions associated with the list item',
+			hint: 'Additional buttons that get dropped into this item',
 			options: {
 				schema: buttonDefinition
 			}
@@ -126,6 +128,11 @@ const listItemDefinition = buildSchemaDefinition({
 			label: 'Class name',
 			isPrivate: true,
 			hint: 'Optional class name for list item'
+		},
+		isLoading: {
+			type: FieldType.Boolean,
+			label: 'Loading',
+			hint: 'Makes the item look like a loading placeholder'
 		},
 		selectable: {
 			type: FieldType.Schema,
@@ -155,11 +162,18 @@ const listItemDefinition = buildSchemaDefinition({
 		lists: {
 			type: FieldType.Schema,
 			label: 'Lists',
-			isRequired: true,
 			isArray: true,
 			hint: 'Optional; adds multiple lists nested at the same level',
 			options: {
 				schemaId: 'list'
+			}
+		},
+		onClick: {
+			type: FieldType.EventCallback,
+			label: 'Click handler',
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLDivElement'
 			}
 		}
 	}

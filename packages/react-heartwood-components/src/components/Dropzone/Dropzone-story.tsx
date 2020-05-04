@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react'
+import {
+	withKnobs,
+	text,
+	boolean,
+	number,
+	object,
+	array
+} from '@storybook/addon-knobs/react'
 import Dropzone from './Dropzone'
 
 interface IDropzoneExampleProps {}
@@ -43,14 +50,13 @@ class DropzoneExample extends Component<
 		return (
 			<Dropzone
 				id={text('id', 'photos')}
-				label={text('label', 'Profile Photo')}
-				postLabel={text('postLabel', '')}
-				accept={text('accept', 'image/*')}
+				label={object('label', { text: 'Profile Photo' })}
+				acceptedMimeTypes={array('acceptedMimeTypes', ['image/*'])}
 				onDropAccepted={this.onDropAccepted}
-				buttonText={text('buttonText', 'Upload an Image')}
+				uploadButtonText={text('buttonText', 'Upload an Image')}
 				fileWasUploaded={fileWasUploaded}
 				uploadProgress={uploadProgress}
-				error={text('error', 'Please upload an image file.')}
+				errorMessage={text('error', 'Please upload an image file.')}
 				isSmall={boolean('isSmall', false)}
 				isCircular={boolean('isCircular', false)}
 			/>
@@ -67,14 +73,13 @@ stories
 	.add('Static', () => (
 		<Dropzone
 			id={text('id', 'photos')}
-			label={text('label', 'Profile Photo')}
-			postLabel={text('postLabel', '')}
-			accept={text('accpet', 'image/*')}
+			label={object('label', { text: 'Profile Photo' })}
+			acceptedMimeTypes={text('acceptedMimeTypes', 'image/*')}
 			onDropAccepted={() => console.log('onDropAccepted')}
-			buttonText={text('buttonText', 'Upload an Image')}
+			uploadButtonText={text('buttonText', 'Upload an Image')}
 			fileWasUploaded={boolean('fileWasUploaded', false)}
 			uploadProgress={number('uploadProgress', 0)}
-			error={text('error', 'Please upload an image file.')}
+			errorMessage={text('error', 'Please upload an image file.')}
 			isSmall={boolean('isSmall', false)}
 			isCircular={boolean('isCircular', false)}
 		/>

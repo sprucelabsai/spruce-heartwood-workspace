@@ -5,13 +5,13 @@ import cx from 'classnames'
 import Message from '../Message'
 
 import {} from '../Message'
-import { IButtonProps } from '../../Button/Button'
 
 // COMPONENTS THAT CAN GO INTO THIS COMPONENT, KEEP MINIMAL
 import Text from '../../Text/Text'
 import TextStyle from '../../TextStyle/TextStyle'
 import Button from '../../Button/Button'
 import Image from '../../Image/Image'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IFromProps {
 	/** Unique id of the sender */
@@ -52,7 +52,7 @@ export interface IMessageBuilderProps {
 	detail?: string
 
 	/** An action related to this message */
-	primaryAction?: IButtonProps
+	primaryButton?: SpruceSchemas.Local.IButton
 
 	/** Contextual information and additional actions associated to the message */
 	replies?: IMessageReplyProps[]
@@ -131,7 +131,7 @@ const MessageBuilder = (props: IMessageBuilderProps) => {
 		dateSent,
 		message,
 		detail,
-		primaryAction,
+		primaryButton,
 		replies,
 		attachments,
 		isFromSprucebot
@@ -160,7 +160,7 @@ const MessageBuilder = (props: IMessageBuilderProps) => {
 			from={from}
 			dateSent={dateSent}
 			detail={detail}
-			primaryAction={primaryAction}
+			primaryButton={primaryButton}
 			replies={messageReplies}
 			attachments={messageAttachments}
 			isFromSprucebot={isFromSprucebot}

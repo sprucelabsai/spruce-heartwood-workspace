@@ -7,9 +7,7 @@ const imageDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'For UI caching'
+			label: 'Id'
 		},
 		src: {
 			type: FieldType.Text,
@@ -28,6 +26,10 @@ const imageDefinition = buildSchemaDefinition({
 		},
 		height: {
 			type: FieldType.Number,
+			isPrivate: true
+		},
+		className: {
+			type: FieldType.Text,
 			isPrivate: true
 		}
 	}

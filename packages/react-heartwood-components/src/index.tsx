@@ -1,12 +1,6 @@
 export { default as Avatar } from './components/Avatar/Avatar'
 export { default as UserAvatar } from './components/Avatar/UserAvatar'
-export { default as BotText } from './components/BotText/BotText'
-export {
-	default as Button,
-	IButtonProps,
-	ButtonKinds,
-	ButtonTypes
-} from './components/Button/Button'
+export { default as Button } from './components/Button/Button'
 export { default as ButtonGroup } from './components/ButtonGroup/ButtonGroup'
 export {
 	Card,
@@ -56,7 +50,7 @@ export {
 	isValidPhoneNumber,
 	DatePicker
 } from './components/Forms'
-export { default as Icon, IIconProps } from './components/Icon/Icon'
+export { default as Icon } from './components/Icon/Icon'
 export { default as Heading } from './components/Heading/Heading'
 export { default as Subheading } from './components/Subheading/Subheading'
 export { default as TextContainer } from './components/TextContainer/TextContainer'
@@ -86,8 +80,9 @@ export { default as Tabs } from './components/Tabs/Tabs'
 export { default as Tab } from './components/Tabs/components/Tab/Tab'
 export { default as ToastWrapper } from './components/Toast/components/ToastWrapper/ToastWrapper'
 export { default as Toast } from './components/Toast/Toast'
-export { default as View } from './components/View/View'
-export { default as Page, PageHeader, PageContent } from './components/Page'
+export { default as SkillView } from './components/SkillView/SkillView'
+export { default as SkillViewBuilder } from './components/SkillView'
+export { default as SkillViewHeader } from './components/SkillView/components/SkillViewHeader/SkillViewHeader'
 export { default as Table, TableSearch, TableFilters } from './components/Table'
 export {
 	default as RecordTable,
@@ -101,11 +96,7 @@ export {
 } from './components/RecordSelectionList/RecordSelectionList'
 export { default as RecordSelectionListItem } from './components/RecordSelectionList/RecordSelectionListItem'
 export { default as EmptyState } from './components/EmptyState/EmptyState'
-export {
-	default as EventDetails,
-	IEventDetailsProps
-} from './components/EventDetails/EventDetails'
-export { IEventDetailsItemProps } from './components/EventDetails/components/EventDetailsItem/EventDetailsItem'
+export { default as EventDetails } from './components/EventDetails/EventDetails'
 export { applyUIEnhancementsToEventDetails } from './components/EventDetails/EventDetailsUtilities'
 export { default as CircleLoader } from './components/CircleLoader/CircleLoader'
 export { default as SplitButton } from './components/SplitButton/SplitButton'

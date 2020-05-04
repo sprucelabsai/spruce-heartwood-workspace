@@ -1,41 +1,21 @@
 import React, { Fragment } from 'react'
 import cx from 'classnames'
-import Button, { ButtonKinds } from '../../Button/Button'
-import Icon, { IIconProps } from '../../Icon/Icon'
-import ContextMenu, { IContextMenuProps } from '../../ContextMenu/ContextMenu'
-
-import { IButtonProps } from '../../Button/Button'
-import { IHWAction, IHWCardHeader } from '@sprucelabs/spruce-types'
+import Button from '../../Button/Button'
+import Icon from '../../Icon/Icon'
+import ContextMenu from '../../ContextMenu/ContextMenu'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 // Card Header
-export interface ICardHeaderProps
-	extends Omit<IHWCardHeader, 'labelIcon' | 'actions' | 'contextMenu'> {
-	/** Optional icon to show above the title and before the label */
-	labelIcon?: IIconProps | null
-
-	/** Render buttons in the Card Header */
-	actions?: IButtonProps[] | null
-
-	/** Renders a Context Menu in the Card Header */
-	contextMenu?: IContextMenuProps | null
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-}
-
 const CardHeader = (
-	props: ICardHeaderProps | IHWCardHeader
+	props: SpruceSchemas.Local.ICardHeader
 ): React.ReactElement => {
-	const reactHeartwoodProps = props as ICardHeaderProps
-	const commonProps = props as IHWCardHeader
-
-	const { title, labelText, actions, contextMenu } = commonProps
-	const { labelIcon, onAction } = reactHeartwoodProps
+	const { title, labelText, buttons, contextMenu, labelIcon } = props
 
 	return (
 		<div className="card__header">
 			{(title || labelText || labelIcon) && (
 				<div className="card__header-text">
+					{title && <h3 className="card__title">{title}</h3>}
 					{(labelText || labelIcon) && (
 						<div className="card__header-label">
 							{labelIcon && (
@@ -53,21 +33,19 @@ const CardHeader = (
 							)}
 						</div>
 					)}
-					{title && <h3 className="card__title">{title}</h3>}
 				</div>
 			)}
-			{(actions || contextMenu) && (
+			{(buttons || contextMenu) && (
 				<div className="card__header-actions">
 					<Fragment>
-						{actions &&
-							actions.length > 0 &&
-							actions.map(action => (
+						{buttons &&
+							buttons.length > 0 &&
+							buttons.map((button, idx) => (
 								<Button
-									key={action.id}
-									kind={ButtonKinds.Simple}
+									key={button.id || `header-button-${idx}`}
+									kind={'simple'}
 									isSmall
-									onAction={onAction}
-									{...action}
+									{...button}
 								/>
 							))}
 						{contextMenu && <ContextMenu {...contextMenu} />}
@@ -79,12 +57,8 @@ const CardHeader = (
 }
 
 CardHeader.displayName = 'Card.Header'
-CardHeader.defaultProps = {
-	title: '',
-	labelText: '',
-	labelIcon: null,
-	headerActions: [],
-	contextMenu: null
-}
+CardHeader.defaultProps = defaultProps(
+	SpruceSchemas.Local.CardHeader.definition
+)
 
 export default CardHeader

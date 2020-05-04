@@ -1,9 +1,9 @@
 import cx from 'classnames'
 import React from 'react'
-import {ILayout} from '@sprucelabs/heartwood-skill'
 import LayoutSection from './components/LayoutSection/LayoutSection'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const Layout = (props: ILayout) => {
+const Layout = (props: SpruceSchemas.Local.ILayout) => {
 	const {
 		children,
 		isCentered,
@@ -25,19 +25,14 @@ const Layout = (props: ILayout) => {
 		>
 			{children}
 			{sections &&
-				sections.map((section) => (
-					<LayoutSection key={section.id} {...section} />
+				sections.map(section => (
+					<LayoutSection key={section.id ?? undefined} {...section} />
 				))}
 		</div>
 	)
 }
 
 Layout.Section = LayoutSection
-
-Layout.defaultProps = {
-	isCentered: false,
-	width: 'base',
-	isFullBleed: false
-} as Partial<ILayout>
+Layout.defaultProps = defaultProps(SpruceSchemas.Local.Layout.definition)
 
 export default Layout

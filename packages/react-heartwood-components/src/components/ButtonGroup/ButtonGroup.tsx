@@ -5,9 +5,8 @@ import Button from '../Button/Button'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const ButtonGroup = (
-	props: SpruceSchemas.local.IButtonGroup
+	props: SpruceSchemas.Local.IButtonGroup
 ): React.ReactElement => {
-	
 	const { buttons, kind, isFullWidth, highlightedIndex } = props
 
 	const parentClass = cx('button-group', {
@@ -20,13 +19,13 @@ const ButtonGroup = (
 			{unionArray(buttons).map((button, idx) => {
 				return (
 					<li
-						key={button.id}
+						key={button.id ?? undefined}
 						className={cx('button-group__item', {
 							'button-group__item--is-highlighted': highlightedIndex === idx
 						})}
 					>
 						<Button
-						id={button.id}
+							id={button.id}
 							isFullWidth={kind === 'floating'}
 							kind={
 								kind === 'floating'

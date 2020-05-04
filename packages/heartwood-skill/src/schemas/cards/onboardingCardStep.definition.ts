@@ -1,15 +1,13 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
 const onboardingCardStepDefinition = buildSchemaDefinition({
-	id: 'OnboardingCardStep',
+	id: 'onboardingCardStep',
 	name: 'OnboardingCardStep',
 	description: 'Header of a card',
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'Unique identifier'
+			label: 'Id'
 		},
 		tabTitle: {
 			type: FieldType.Text,
@@ -22,7 +20,7 @@ const onboardingCardStepDefinition = buildSchemaDefinition({
 			label: 'Tab icon',
 			hint: 'Icon for the tab',
 			options: {
-				schemaId: 'Icon'
+				schemaId: 'icon'
 			}
 		},
 		panelTitle: {
@@ -33,22 +31,26 @@ const onboardingCardStepDefinition = buildSchemaDefinition({
 		},
 		panelCopy: {
 			type: FieldType.Text,
-			label: 'Panel copy',
+			label: 'Panel text',
 			isRequired: true,
 			hint: "Copy describing the step in the card's body"
 		},
 		panelCTA: {
 			type: FieldType.Schema,
-			label: 'Panel c t a',
+			label: 'Panel CTA',
 			hint: 'Primary CTA of this step',
 			options: {
-				schemaId: 'Button'
+				schemaId: 'button'
 			}
 		},
 		isComplete: {
 			type: FieldType.Boolean,
 			label: 'Is complete',
 			hint: 'Is this step complete?'
+		},
+		className: {
+			type: FieldType.Text,
+			isPrivate: true
 		}
 	}
 })

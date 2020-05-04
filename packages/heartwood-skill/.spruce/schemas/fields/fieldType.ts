@@ -5,6 +5,8 @@ export enum FieldType {
 	/** A true/false. Converts false string to false, all other strings to true. */
 	Boolean = 'boolean',
 	/** Date and time support. */
+	Date = 'date',
+	/** Date and time support. */
 	DateTime = 'dateTime',
 	/** A span of time represented in { hours, minutes, seconds, ms } */
 	Duration = 'duration',
@@ -24,10 +26,12 @@ export enum FieldType {
 	Select = 'select',
 	/** A text field. Converts non-strings into strings by calling toString(). Size set by options. */
 	Text = 'text',
+	/** Set my signature to \'(someArg: SomeType, maybeOption?: boolean) => Promise<AnotherType>\' and I\'ll do the rest! */
+	Callback = 'callback',
 	/** A React.Element */
 	Element = 'element',
+	/** A universal event handler */
+	EventCallback = 'eventCallback',
 	/** A React.Node */
 	Node = 'node',
-	/** A universal onclick handler for react components */
-	OnClick = 'onClick',
 }

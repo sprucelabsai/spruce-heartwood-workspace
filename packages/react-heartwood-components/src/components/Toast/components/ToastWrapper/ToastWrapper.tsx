@@ -2,18 +2,20 @@ import React, { Component } from 'react'
 import { VelocityTransitionGroup } from 'velocity-react'
 import uniqBy from 'lodash/uniqBy'
 import Toast from '../../Toast'
-import { IToastProps } from '../../Toast'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+
+type ToastProps = SpruceSchemas.Local.IToast
 
 export interface IToastWrapperProps {
 	/** The toasts */
-	toasts: IToastProps[]
+	toasts: ToastProps[]
 
 	/** Handle toast removal */
 	handleRemove: Function
 }
 
 interface IToastWrapperState {
-	toasts: IToastProps[]
+	toasts: ToastProps[]
 	timeouts: any
 }
 
@@ -33,7 +35,7 @@ export default class ToastWrapper extends Component<
 	public static getDerivedStateFromProps(
 		props: IToastWrapperProps,
 		state: IToastWrapperState
-	): { toasts: IToastProps[]; timeouts: any[] } {
+	): { toasts: ToastProps[]; timeouts: any[] } {
 		const uniqToasts = uniqBy(props.toasts, 'id')
 		const timeouts = { ...state.timeouts }
 		uniqToasts.forEach(toast => {
@@ -81,7 +83,10 @@ export default class ToastWrapper extends Component<
 				>
 					{toasts.map(toast => (
 						<div key={toast.id} className="toast-wrapper">
-							<Toast onRemove={() => this.onRemoveClick(toast.id)} {...toast} />
+							<Toast
+								onClickDismiss={() => this.onRemoveClick(toast.id)}
+								{...toast}
+							/>
 						</div>
 					))}
 				</VelocityTransitionGroup>

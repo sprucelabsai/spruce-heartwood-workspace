@@ -1,42 +1,43 @@
 import React, { Component } from 'react'
 import Typing from './react-typing-animation/Typing'
-import {
-	IHWSprucebotTypedMessage,
-	IHWSprucebotTypedMessageSentence,
-	IHWSprucebotAvatar,
-	IHWSprucebotTypedMessageSize,
-	IHWSprucebotAvatarSize
-} from '@sprucelabs/spruce-types'
 
 import cx from 'classnames'
 import compact from 'lodash/compact'
 
 import SprucebotAvatar from '../SprucebotAvatar/SprucebotAvatar'
+import {
+	SpruceSchemas,
+	defaultProps,
+	definitionChoicesToHash,
+	selectChoicesToHash
+} from '@sprucelabs/heartwood-skill'
+
+type Message = SpruceSchemas.Local.ISprucebotTypedMessage
+type Sentence = SpruceSchemas.Local.ISprucebotTypedMessageSentence
 
 export interface ISprucebotTypedMessageState {
 	sentenceIdxBeingTyped: number
 	lastLineNum: number
-	sentenceQueue: IHWSprucebotTypedMessageSentence[]
+	sentenceQueue: Sentence[]
 }
 
-const SIZE_MAP = {
-	[IHWSprucebotTypedMessageSize.Small]: IHWSprucebotAvatarSize.Small,
-	[IHWSprucebotTypedMessageSize.Medium]: IHWSprucebotAvatarSize.Medium,
-	[IHWSprucebotTypedMessageSize.Large]: IHWSprucebotAvatarSize.Large
-}
+const SIZE_MAP = selectChoicesToHash(
+	SpruceSchemas.Local.SprucebotTypedMessage.definition.fields.size.options
+		.choices
+)
+const defaults = defaultProps(
+	SpruceSchemas.Local.SprucebotTypedMessage.definition
+)
 
 export default class SprucebotTypedMessage extends Component<
-	IHWSprucebotTypedMessage,
+	Message,
 	ISprucebotTypedMessageState
 > {
-	public static defaultProps = {
-		startDelayMs: 1000,
-		size: IHWSprucebotTypedMessageSize.Small
-	}
+	public static defaultProps = defaults
 
 	public typingRef = React.createRef<Typing>()
 
-	public constructor(props: IHWSprucebotTypedMessage) {
+	public constructor(props: Message & typeof defaults) {
 		super(props)
 		this.state = {
 			sentenceIdxBeingTyped: 0,
@@ -45,9 +46,7 @@ export default class SprucebotTypedMessage extends Component<
 		}
 	}
 
-	public addToTypingQueue = async (
-		sentence: IHWSprucebotTypedMessageSentence
-	) => {
+	public addToTypingQueue = async (sentence: Sentence) => {
 		if (this.typingRef.current) {
 			const { sentences } = this.props
 			const { sentenceQueue } = this.state
@@ -126,15 +125,17 @@ export default class SprucebotTypedMessage extends Component<
 	}
 
 	public buildMarkup = () => {
-		const { sentences, startDelayMs, loop } = this.props
+		const { sentences, startDelay, loop } = this.props
 		const { sentenceQueue } = this.state
 		const elements: React.ReactNode[] = []
 
-		if (startDelayMs && startDelayMs > 0) {
-			elements.push(<Typing.Delay ms={startDelayMs} key={'start-delay'} />)
+		if (startDelay && startDelay?.ms > 0) {
+			elements.push(<Typing.Delay ms={startDelay.ms} key={'start-delay'} />)
 		}
 
-		let lastSentence: IHWSprucebotTypedMessageSentence | undefined
+		let lastSentence:
+			| SpruceSchemas.Local.ISprucebotTypedMessageSentence
+			| undefined
 		;[...sentences, ...sentenceQueue].forEach((sentence, idx) => {
 			let startCharacterIdx = 0
 
@@ -156,7 +157,7 @@ export default class SprucebotTypedMessage extends Component<
 					elements.push(
 						<Typing.Reset
 							key={`reset-${idx}`}
-							delay={lastSentence.endDelayMs}
+							delay={lastSentence.endDelay?.ms}
 						/>
 					)
 				} else {
@@ -165,7 +166,7 @@ export default class SprucebotTypedMessage extends Component<
 					elements.push(
 						<Typing.Backspace
 							key={`backspace-${idx}`}
-							delay={lastSentence.endDelayMs}
+							delay={lastSentence.endDelay?.ms}
 							count={howManyToDelete}
 						/>
 					)
@@ -180,7 +181,7 @@ export default class SprucebotTypedMessage extends Component<
 			elements.push(
 				<Typing.Backspace
 					key={`last-backspace`}
-					delay={lastSentence.endDelayMs}
+					delay={lastSentence.endDelay?.ms}
 					count={lastSentence.words.length}
 				/>
 			)
@@ -190,7 +191,7 @@ export default class SprucebotTypedMessage extends Component<
 		return elements
 	}
 
-	public buildAvatar = (): IHWSprucebotAvatar | undefined => {
+	public buildAvatar = (): SpruceSchemas.Local.ISprucebotAvatar | undefined => {
 		const { defaultAvatar, size, sentences } = this.props
 		const { sentenceIdxBeingTyped } = this.state
 
@@ -250,9 +251,9 @@ export default class SprucebotTypedMessage extends Component<
 		return (
 			<div
 				className={cx('sprucebot-typed-message', {
-					small: size === IHWSprucebotTypedMessageSize.Small,
-					medium: size === IHWSprucebotTypedMessageSize.Medium,
-					large: size === IHWSprucebotTypedMessageSize.Large
+					small: size === 'small',
+					medium: size === 'medium',
+					large: size === 'large'
 				})}
 			>
 				{avatar && <SprucebotAvatar {...avatar} />}

@@ -1,7 +1,15 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
 /** So we can point to anything consider and event details item */
-export const calendarEventDetailItems: string[] = [
+export const calendarEventDetailItems: [
+	'list',
+	'button',
+	'splitButton',
+	'cardBuilder',
+	'toast',
+	'text',
+	'markdown'
+] = [
 	'list',
 	'button',
 	'splitButton',
@@ -22,6 +30,11 @@ const calendarEventDetailsDefinition = buildSchemaDefinition({
 			label: 'Id',
 			hint:
 				'An optional ID for this item; used to allow association with UI Enhancements'
+		},
+		isLoading: {
+			type: FieldType.Boolean,
+			label: 'Loading',
+			hint: 'Hides everything while loading'
 		},
 		items: {
 			type: FieldType.Schema,

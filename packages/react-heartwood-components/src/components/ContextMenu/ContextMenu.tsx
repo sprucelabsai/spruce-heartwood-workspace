@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { IContextMenu } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IContextMenuState {
 	/** Show the menu */
@@ -21,7 +21,7 @@ interface IContextMenuState {
 }
 
 export default class ContextMenu extends Component<
-	IContextMenu,
+	SpruceSchemas.Local.IContextMenu,
 	IContextMenuState
 > {
 	public static defaultProps = {
@@ -47,7 +47,7 @@ export default class ContextMenu extends Component<
 		}
 	}
 
-	public constructor(props: IContextMenu) {
+	public constructor(props: SpruceSchemas.Local.IContextMenu) {
 		super(props)
 
 		this.portalEl =
@@ -101,7 +101,6 @@ export default class ContextMenu extends Component<
 		// TODO position this menu based on screen size
 		const isBottomAligned = true
 		const isRightAligned = false
-
 
 		const menuPosition = {
 			top: isBottomAligned
@@ -192,7 +191,7 @@ export default class ContextMenu extends Component<
 	}
 
 	public handleToggle = (): void => {
-		// const { onToggleContextMenuVisible } = this.props
+		// Const { onToggleContextMenuVisible } = this.props
 
 		this.setState(
 			prevState => ({
@@ -201,7 +200,7 @@ export default class ContextMenu extends Component<
 			() => {
 				this.manageListeners()
 
-				// if (onToggleContextMenuVisible) {
+				// If (onToggleContextMenuVisible) {
 				// 	onToggleContextMenuVisible(this.state.isVisible)
 				// }
 
@@ -224,7 +223,7 @@ export default class ContextMenu extends Component<
 		}
 	}
 
-	public handleClickAction = (callback) => {
+	public handleClickAction = callback => {
 		if (this.props.closeOnSelect) {
 			this.handleToggle()
 		}
@@ -232,9 +231,17 @@ export default class ContextMenu extends Component<
 	}
 
 	public render(): React.ReactElement {
-
 		const { isVisible, overflowBottom, overflowLeft, menuPosition } = this.state
-		const { icon, isSimple, isSmall, size, text,onAction,buttons, className } = this.props
+		const {
+			icon,
+			isSimple,
+			isSmall,
+			size,
+			text,
+			onClick,
+			buttons,
+			className
+		} = this.props
 		const buttonClass = cx('context-menu', className, {
 			'context-menu--is-visible': isVisible
 		})
@@ -289,7 +296,7 @@ export default class ContextMenu extends Component<
 									btnAction.className = 'context-menu__item-btn'
 									return btnAction
 								})}
-								onAction={onAction}
+								onClick={onClick}
 							/>
 						</div>,
 						this.portalEl

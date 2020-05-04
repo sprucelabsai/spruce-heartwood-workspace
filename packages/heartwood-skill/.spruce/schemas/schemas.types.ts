@@ -1,11 +1,12 @@
 import { default as Schema } from '@sprucelabs/schema'
 import * as SpruceSchema from '@sprucelabs/schema'
-import * as generated_import_0 from '#spruce/../src/fields/ElementField'
-import * as generated_import_1 from '#spruce/../src/fields/NodeField'
-import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
+import * as generated_import_0 from '#spruce/../src/fields/CallbackField'
+import * as generated_import_1 from '#spruce/../src/fields/ElementField'
+import * as generated_import_2 from '#spruce/../src/fields/EventCallbackField'
+import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 
 
-	export namespace SpruceSchemas.core {
+	export namespace SpruceSchemas.Core {
 		/** Profile images at various helpful sizes and resolutions. */
 		export interface IProfileImage {
 			
@@ -20,7 +21,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 	}	 
 
-	export namespace SpruceSchemas.core.ProfileImage {
+	export namespace SpruceSchemas.Core.ProfileImage {
 		export const id = 'profileImage'
 
 		/** The interface for the schema definition for a Profile Image Sizes */
@@ -87,7 +88,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Profile Image Sizes */
-		export const definition: SpruceSchemas.core.ProfileImage.IDefinition = {
+		export const definition: SpruceSchemas.Core.ProfileImage.IDefinition = {
 			id: 'profileImage',
 			name: 'Profile Image Sizes',
 			description: 'Profile images at various helpful sizes and resolutions.',
@@ -150,32 +151,32 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.core.ProfileImage.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Core.ProfileImage.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.core {
+	export namespace SpruceSchemas.Core {
 		/** A human being. */
 		export interface IUser {
 			
 				/** Id. */
 				'id': string
 				/** First name. */
-				'firstName'?: string| undefined
+				'firstName'?: string| undefined | null
 				/** Last name. */
-				'lastName'?: string| undefined
+				'lastName'?: string| undefined | null
 				/** Casual name. Generated name that defaults to Friend! */
 				'casualName': string
 				/** Phone. The person's phone number! */
-				'phoneNumber'?: string| undefined
+				'phoneNumber'?: string| undefined | null
 				/** Profile photos. */
-				'profileImages'?: SpruceSchemas.core.IProfileImage| undefined
+				'profileImages'?: SpruceSchemas.Core.IProfileImage| undefined | null
 				/** Default profile photos. */
-				'defaultProfileImages': SpruceSchemas.core.IProfileImage
+				'defaultProfileImages': SpruceSchemas.Core.IProfileImage
 		}
 	}	 
 
-	export namespace SpruceSchemas.core.User {
+	export namespace SpruceSchemas.Core.User {
 		export const id = 'user'
 
 		/** The interface for the schema definition for a User */
@@ -262,7 +263,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.ProfileImage.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.ProfileImage.IDefinition[],}
 			            },
 			            /** Default profile photos. */
 			            'defaultProfileImages': {
@@ -275,13 +276,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.ProfileImage.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.ProfileImage.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a User */
-		export const definition: SpruceSchemas.core.User.IDefinition = {
+		export const definition: SpruceSchemas.Core.User.IDefinition = {
 			id: 'user',
 			name: 'User',
 			description: 'A human being.',
@@ -364,7 +365,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.ProfileImage.definition],}
+			                options: {schemas: [SpruceSchemas.Core.ProfileImage.definition],}
 			            },
 			            /** Default profile photos. */
 			            'defaultProfileImages': {
@@ -377,17 +378,17 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.ProfileImage.definition],}
+			                options: {schemas: [SpruceSchemas.Core.ProfileImage.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.core.User.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Core.User.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.core {
+	export namespace SpruceSchemas.Core {
 		/** An ability Sprucebot has learned. */
 		export interface ISkill {
 			
@@ -398,15 +399,15 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 				/** Name. */
 				'name': string
 				/** Description. */
-				'description'?: string| undefined
+				'description'?: string| undefined | null
 				/** Slug. */
-				'slug'?: string| undefined
+				'slug'?: string| undefined | null
 				/** Icon. */
-				'icon'?: string| undefined
+				'icon'?: string| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.core.Skill {
+	export namespace SpruceSchemas.Core.Skill {
 		export const id = 'skill'
 
 		/** The interface for the schema definition for a Skill */
@@ -499,7 +500,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Skill */
-		export const definition: SpruceSchemas.core.Skill.IDefinition = {
+		export const definition: SpruceSchemas.Core.Skill.IDefinition = {
 			id: 'skill',
 			name: 'Skill',
 			description: 'An ability Sprucebot has learned.',
@@ -588,32 +589,32 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.core.Skill.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Core.Skill.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.core {
+	export namespace SpruceSchemas.Core {
 		/** A physical location where people meet. An organization has at least one of them. */
 		export interface ILocation {
 			
 				/** Id. */
-				'id'?: string| undefined
+				'id'?: string| undefined | null
 				/** Name. */
 				'name': string
 				/** Store number. You can use other symbols, like # or dashes. #123 or 32-US-5 */
-				'num'?: string| undefined
+				'num'?: string| undefined | null
 				/** Public. Is this location viewable by guests? */
-				'isPublic'?: boolean| undefined
+				'isPublic'?: boolean| undefined | null
 				/** Main Phone. */
-				'phone'?: string| undefined
+				'phone'?: string| undefined | null
 				/** Timezone. */
-				'timezone'?: ("etc/gmt+12" | "pacific/midway" | "pacific/honolulu" | "us/alaska" | "america/los_Angeles" | "america/tijuana" | "us/arizona" | "america/chihuahua" | "us/mountain" | "america/managua" | "us/central" | "america/mexico_City" | "Canada/Saskatchewan" | "america/bogota" | "us/eastern" | "us/east-indiana" | "Canada/atlantic" | "america/caracas" | "america/manaus" | "america/Santiago" | "Canada/Newfoundland" | "america/Sao_Paulo" | "america/argentina/buenos_Aires" | "america/godthab" | "america/montevideo" | "america/Noronha" | "atlantic/cape_Verde" | "atlantic/azores" | "africa/casablanca" | "etc/gmt" | "europe/amsterdam" | "europe/belgrade" | "europe/brussels" | "europe/Sarajevo" | "africa/lagos" | "asia/amman" | "europe/athens" | "asia/beirut" | "africa/cairo" | "africa/Harare" | "europe/Helsinki" | "asia/Jerusalem" | "europe/minsk" | "africa/Windhoek" | "asia/Kuwait" | "europe/moscow" | "africa/Nairobi" | "asia/tbilisi" | "asia/tehran" | "asia/muscat" | "asia/baku" | "asia/Yerevan" | "asia/Kabul" | "asia/Yekaterinburg" | "asia/Karachi" | "asia/calcutta" | "asia/calcutta" | "asia/Katmandu" | "asia/almaty" | "asia/Dhaka" | "asia/Rangoon" | "asia/bangkok" | "asia/Krasnoyarsk" | "asia/Hong_Kong" | "asia/Kuala_Lumpur" | "asia/Irkutsk" | "Australia/Perth" | "asia/taipei" | "asia/tokyo" | "asia/Seoul" | "asia/Yakutsk" | "Australia/adelaide" | "Australia/Darwin" | "Australia/brisbane" | "Australia/canberra" | "Australia/Hobart" | "pacific/guam" | "asia/Vladivostok" | "asia/magadan" | "pacific/auckland" | "pacific/Fiji" | "pacific/tongatapu")| undefined
+				'timezone'?: ("etc/gmt+12" | "pacific/midway" | "pacific/honolulu" | "us/alaska" | "america/los_Angeles" | "america/tijuana" | "us/arizona" | "america/chihuahua" | "us/mountain" | "america/managua" | "us/central" | "america/mexico_City" | "Canada/Saskatchewan" | "america/bogota" | "us/eastern" | "us/east-indiana" | "Canada/atlantic" | "america/caracas" | "america/manaus" | "america/Santiago" | "Canada/Newfoundland" | "america/Sao_Paulo" | "america/argentina/buenos_Aires" | "america/godthab" | "america/montevideo" | "america/Noronha" | "atlantic/cape_Verde" | "atlantic/azores" | "africa/casablanca" | "etc/gmt" | "europe/amsterdam" | "europe/belgrade" | "europe/brussels" | "europe/Sarajevo" | "africa/lagos" | "asia/amman" | "europe/athens" | "asia/beirut" | "africa/cairo" | "africa/Harare" | "europe/Helsinki" | "asia/Jerusalem" | "europe/minsk" | "africa/Windhoek" | "asia/Kuwait" | "europe/moscow" | "africa/Nairobi" | "asia/tbilisi" | "asia/tehran" | "asia/muscat" | "asia/baku" | "asia/Yerevan" | "asia/Kabul" | "asia/Yekaterinburg" | "asia/Karachi" | "asia/calcutta" | "asia/calcutta" | "asia/Katmandu" | "asia/almaty" | "asia/Dhaka" | "asia/Rangoon" | "asia/bangkok" | "asia/Krasnoyarsk" | "asia/Hong_Kong" | "asia/Kuala_Lumpur" | "asia/Irkutsk" | "Australia/Perth" | "asia/taipei" | "asia/tokyo" | "asia/Seoul" | "asia/Yakutsk" | "Australia/adelaide" | "Australia/Darwin" | "Australia/brisbane" | "Australia/canberra" | "Australia/Hobart" | "pacific/guam" | "asia/Vladivostok" | "asia/magadan" | "pacific/auckland" | "pacific/Fiji" | "pacific/tongatapu")| undefined | null
 				/** Address. */
 				'address': SpruceSchema.IAddressFieldValue
 		}
 	}	 
 
-	export namespace SpruceSchemas.core.Location {
+	export namespace SpruceSchemas.Core.Location {
 		export const id = 'location'
 
 		/** The interface for the schema definition for a Location */
@@ -671,7 +672,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Is this location viewable by guests?',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -719,7 +720,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Location */
-		export const definition: SpruceSchemas.core.Location.IDefinition = {
+		export const definition: SpruceSchemas.Core.Location.IDefinition = {
 			id: 'location',
 			name: 'Location',
 			description: 'A physical location where people meet. An organization has at least one of them.',
@@ -773,7 +774,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Is this location viewable by guests?',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -821,11 +822,11 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.core.Location.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Core.Location.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.core {
+	export namespace SpruceSchemas.Core {
 		/**  */
 		export interface IAcl {
 				/** Permissions grouped by slug. */
@@ -833,7 +834,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 	}	 
 
-	export namespace SpruceSchemas.core.Acl {
+	export namespace SpruceSchemas.Core.Acl {
 		export const id = 'acl'
 
 		/** The interface for the schema definition for a Access control list lookup table */
@@ -857,7 +858,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Access control list lookup table */
-		export const definition: SpruceSchemas.core.Acl.IDefinition = {
+		export const definition: SpruceSchemas.Core.Acl.IDefinition = {
 			id: 'acl',
 			name: 'Access control list lookup table',
 			description: '',
@@ -877,16 +878,16 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.core.Acl.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Core.Acl.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.core {
+	export namespace SpruceSchemas.Core {
 		/** A position at a company. The answer to the question; What is your job? */
 		export interface IJob {
 			
 				/** Id. */
-				'id'?: string| undefined
+				'id'?: string| undefined | null
 				/** Is default. Is this job one that comes with every org? Mapped to roles (owner, groupManager, managar, guest). */
 				'isDefault': string
 				/** Name. */
@@ -894,13 +895,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 				/** Role. */
 				'role': ("owner" | "groupManager" | "manager" | "teammate" | "guest")
 				/** On work permissions. */
-				'inStoreAcls'?: SpruceSchemas.core.IAcl| undefined
+				'inStoreAcls'?: SpruceSchemas.Core.IAcl| undefined | null
 				/** Off work permissions. */
-				'acls'?: SpruceSchemas.core.IAcl| undefined
+				'acls'?: SpruceSchemas.Core.IAcl| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.core.Job {
+	export namespace SpruceSchemas.Core.Job {
 		export const id = 'job'
 
 		/** The interface for the schema definition for a Job */
@@ -974,7 +975,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.Acl.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.Acl.IDefinition[],}
 			            },
 			            /** Off work permissions. */
 			            'acls': {
@@ -987,13 +988,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.Acl.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.Acl.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a Job */
-		export const definition: SpruceSchemas.core.Job.IDefinition = {
+		export const definition: SpruceSchemas.Core.Job.IDefinition = {
 			id: 'job',
 			name: 'Job',
 			description: 'A position at a company. The answer to the question; What is your job?',
@@ -1063,7 +1064,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.Acl.definition],}
+			                options: {schemas: [SpruceSchemas.Core.Acl.definition],}
 			            },
 			            /** Off work permissions. */
 			            'acls': {
@@ -1076,40 +1077,40 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.Acl.definition],}
+			                options: {schemas: [SpruceSchemas.Core.Acl.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.core.Job.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Core.Job.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.core {
+	export namespace SpruceSchemas.Core {
 		/** A location a person has given access to themselves. */
 		export interface IUserLocation {
 			
 				/** Id. */
-				'id'?: string| undefined
+				'id'?: string| undefined | null
 				/** Name. */
 				'role': ("owner" | "groupManager" | "manager" | "teammate" | "guest")
 				/** Status. */
-				'status'?: string| undefined
+				'status'?: string| undefined | null
 				/** Total visits. */
 				'visits': number
 				/** Last visit. */
-				'lastRecordedVisit'?: SpruceSchema.IDateTimeFieldValue| undefined
+				'lastRecordedVisit'?: SpruceSchema.IDateTimeFieldValue| undefined | null
 				/** Job. */
-				'job': SpruceSchemas.core.IJob
+				'job': SpruceSchemas.Core.IJob
 				/** Location. */
-				'location': SpruceSchemas.core.ILocation
+				'location': SpruceSchemas.Core.ILocation
 				/** User. */
-				'user': SpruceSchemas.core.IUser
+				'user': SpruceSchemas.Core.IUser
 		}
 	}	 
 
-	export namespace SpruceSchemas.core.UserLocation {
+	export namespace SpruceSchemas.Core.UserLocation {
 		export const id = 'userLocation'
 
 		/** The interface for the schema definition for a User location */
@@ -1196,7 +1197,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.Job.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.Job.IDefinition[],}
 			            },
 			            /** Location. */
 			            'location': {
@@ -1209,7 +1210,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.Location.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.Location.IDefinition[],}
 			            },
 			            /** User. */
 			            'user': {
@@ -1222,13 +1223,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.User.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.User.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a User location */
-		export const definition: SpruceSchemas.core.UserLocation.IDefinition = {
+		export const definition: SpruceSchemas.Core.UserLocation.IDefinition = {
 			id: 'userLocation',
 			name: 'User location',
 			description: 'A location a person has given access to themselves.',
@@ -1311,7 +1312,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.Job.definition],}
+			                options: {schemas: [SpruceSchemas.Core.Job.definition],}
 			            },
 			            /** Location. */
 			            'location': {
@@ -1324,7 +1325,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.Location.definition],}
+			                options: {schemas: [SpruceSchemas.Core.Location.definition],}
 			            },
 			            /** User. */
 			            'user': {
@@ -1337,17 +1338,17 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.User.definition],}
+			                options: {schemas: [SpruceSchemas.Core.User.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.core.UserLocation.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Core.UserLocation.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** A photo of a person that is generally round */
 		export interface IAvatar {
 			
@@ -1356,27 +1357,27 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 				/** Alternate text. Provides alternative information for an image if a user for some reason cannot view it */
 				'alt': string
 				/** Is large. True will show large variation of the avatar */
-				'isLarge'?: boolean| undefined
+				'isLarge'?: boolean| undefined | null
 				/** Is large. Align text and name center */
-				'isVertical'?: boolean| undefined
+				'isVertical'?: boolean| undefined | null
 				/** Show online indicator. Should I should the status indicator */
-				'showIndicator'?: boolean| undefined
+				'showIndicator'?: boolean| undefined | null
 				/** Status. */
-				'status'?: ("online" | "offline")| undefined
+				'status'?: ("online" | "offline")| undefined | null
 				/** Name. */
-				'name'?: string| undefined
+				'name'?: string| undefined | null
 				/** Text. Additional text to show below the name */
-				'text'?: string| undefined
+				'text'?: string| undefined | null
 				/** Class name. Set the "class" attribute */
-				'className'?: string| undefined
+				'className'?: string| undefined | null
 				/** Width. */
-				'width'?: number| undefined
+				'width'?: number| undefined | null
 				/** Height. */
-				'height'?: number| undefined
+				'height'?: number| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Avatar {
+	export namespace SpruceSchemas.Local.Avatar {
 		export const id = 'avatar'
 
 		/** The interface for the schema definition for a Avatar */
@@ -1534,7 +1535,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Avatar */
-		export const definition: SpruceSchemas.local.Avatar.IDefinition = {
+		export const definition: SpruceSchemas.Local.Avatar.IDefinition = {
 			id: 'avatar',
 			name: 'Avatar',
 			description: 'A photo of a person that is generally round',
@@ -1688,283 +1689,22 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Avatar.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Avatar.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** The one, the only, checkbox! */
-		export interface ICheckbox {
-			
-				/** Id. Unique identifier */
-				'id': string
-				/** Name. A name attached to this checkbox */
-				'name'?: string| undefined
-				/** Label. Input label and text after checkbox icon */
-				'label'?: string| undefined
-				/** Post text. Optional text to show below the label */
-				'postText'?: string| undefined
-				/** Is disabled. is this checkbox disabled */
-				'isDisabled'?: boolean| undefined
-				/** Is indeterminate. Set true if the checkbox is indeterminate (the half checked thing you've seen in some places) */
-				'isIndeterminate': boolean
-				/** Is checked. is this checkbox checked? */
-				'isChecked'?: boolean| undefined
-				/** On click. Optional action to invoke when tapped */
-				'onClick'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
-		}
-	}	 
-
-	export namespace SpruceSchemas.local.Checkbox {
-		export const id = 'checkbox'
-
-		/** The interface for the schema definition for a Checkbox */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'checkbox',
-			name: 'Checkbox',
-			description: 'The one, the only, checkbox!',
-			
-			
-			    fields: {
-			            /** Id. Unique identifier */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                hint: 'Unique identifier',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Name. A name attached to this checkbox */
-			            'name': {
-			                label: 'Name',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'A name attached to this checkbox',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Label. Input label and text after checkbox icon */
-			            'label': {
-			                label: 'Label',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Input label and text after checkbox icon',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Post text. Optional text to show below the label */
-			            'postText': {
-			                label: 'Post text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional text to show below the label',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is disabled. is this checkbox disabled */
-			            'isDisabled': {
-			                label: 'Is disabled',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'is this checkbox disabled',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is indeterminate. Set true if the checkbox is indeterminate (the half checked thing you've seen in some places) */
-			            'isIndeterminate': {
-			                label: 'Is indeterminate',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                isRequired: true,
-			                hint: 'Set true if the checkbox is indeterminate (the half checked thing you\'ve seen in some places)',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is checked. is this checkbox checked? */
-			            'isChecked': {
-			                label: 'Is checked',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'is this checkbox checked?',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** On click. Optional action to invoke when tapped */
-			            'onClick': {
-			                label: 'On click',
-			                type: SpruceSchema.FieldType.OnClick,
-			                
-			                
-			                hint: 'Optional action to invoke when tapped',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a Checkbox */
-		export const definition: SpruceSchemas.local.Checkbox.IDefinition = {
-			id: 'checkbox',
-			name: 'Checkbox',
-			description: 'The one, the only, checkbox!',
-			
-			
-			    fields: {
-			            /** Id. Unique identifier */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                hint: 'Unique identifier',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Name. A name attached to this checkbox */
-			            'name': {
-			                label: 'Name',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'A name attached to this checkbox',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Label. Input label and text after checkbox icon */
-			            'label': {
-			                label: 'Label',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Input label and text after checkbox icon',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Post text. Optional text to show below the label */
-			            'postText': {
-			                label: 'Post text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional text to show below the label',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is disabled. is this checkbox disabled */
-			            'isDisabled': {
-			                label: 'Is disabled',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'is this checkbox disabled',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is indeterminate. Set true if the checkbox is indeterminate (the half checked thing you've seen in some places) */
-			            'isIndeterminate': {
-			                label: 'Is indeterminate',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                isRequired: true,
-			                hint: 'Set true if the checkbox is indeterminate (the half checked thing you\'ve seen in some places)',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is checked. is this checkbox checked? */
-			            'isChecked': {
-			                label: 'Is checked',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'is this checkbox checked?',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** On click. Optional action to invoke when tapped */
-			            'onClick': {
-			                label: 'On click',
-			                type: SpruceSchema.FieldType.OnClick,
-			                
-			                
-			                hint: 'Optional action to invoke when tapped',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Checkbox.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** a confirmation dialog */
 		export interface IConfirmModal {
 			
 				/** Title. Title of the confirmation dialog */
-				'title'?: string| undefined
+				'title'?: string| undefined | null
 				/** Text. Text shown in the dialog */
-				'text'?: string| undefined
+				'text'?: string| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ConfirmModal {
+	export namespace SpruceSchemas.Local.ConfirmModal {
 		export const id = 'confirm Modal'
 
 		/** The interface for the schema definition for a ConfirmModal */
@@ -2005,7 +1745,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a ConfirmModal */
-		export const definition: SpruceSchemas.local.ConfirmModal.IDefinition = {
+		export const definition: SpruceSchemas.Local.ConfirmModal.IDefinition = {
 			id: 'confirm Modal',
 			name: 'ConfirmModal',
 			description: 'a confirmation dialog',
@@ -2042,28 +1782,28 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ConfirmModal.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.ConfirmModal.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** **missing description** */
 		export interface IIcon {
 			
-				/** Id. Id for ui caching */
-				'id': string
+				/** Id. */
+				'id'?: string| undefined | null
 				/** Name. The name of the icon to render. If not found, this will return null. */
-				'name'?: string| undefined
+				'name'?: string| undefined | null
 				/** Is line icon. Set true to render an icon with a stroke, but no fill */
-				'isLineIcon'?: boolean| undefined
-				/** . */
-				'className'?: string| undefined
+				'isLineIcon'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
 				/** . Lets you pass an icon node */
-				'customIcon'?: generated_import_1.INodeFieldDefinitionValue| undefined
+				'customIcon'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Icon {
+	export namespace SpruceSchemas.Local.Icon {
 		export const id = 'Icon'
 
 		/** The interface for the schema definition for a Icon */
@@ -2074,13 +1814,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			
 			
 			    fields: {
-			            /** Id. Id for ui caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Id for ui caching',
+			                
+			                
 			                
 			                
 			                
@@ -2143,20 +1883,20 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Icon */
-		export const definition: SpruceSchemas.local.Icon.IDefinition = {
+		export const definition: SpruceSchemas.Local.Icon.IDefinition = {
 			id: 'Icon',
 			name: 'Icon',
 			description: '**missing description**',
 			
 			
 			    fields: {
-			            /** Id. Id for ui caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Id for ui caching',
+			                
+			                
 			                
 			                
 			                
@@ -2219,48 +1959,48 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Icon.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Icon.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** A interactive element you can touch or click to invoke an Action */
 		export interface IButton {
 			
-				/** Id. Unique ID for rendering in lists */
-				'id': string
+				/** Id. */
+				'id'?: string| undefined | null
 				/** Kind. Sets the visual appearance of the button. May be primary, secondary, simple, or caution. */
-				'kind'?: ("primary" | "secondary" | "simple" | "caution")| undefined
+				'kind'?: ("primary" | "secondary" | "simple" | "caution")| undefined | null
 				/** Is small. Set true to make the button less tall. */
-				'isSmall'?: boolean| undefined
+				'isSmall'?: boolean| undefined | null
 				/** Is full width. Set true to make the button fill its parent's width. */
-				'isFullWidth'?: boolean| undefined
+				'isFullWidth'?: boolean| undefined | null
 				/** Is loading. Set true to hide any text or icon in the button and show a loader instead. */
-				'isLoading'?: boolean| undefined
+				'isLoading'?: boolean| undefined | null
 				/** Is icon only. Set true to hide any text in the button. Text should still be provided for accessibility. */
-				'isIconOnly'?: boolean| undefined
+				'isIconOnly'?: boolean| undefined | null
 				/** Text. Text for the button. */
-				'text'?: string| undefined
+				'text'?: string| undefined | null
 				/** Href. Will render a link. May be relative or absolute. */
-				'href'?: string| undefined
+				'href'?: string| undefined | null
 				/** Icon. Icon for the button. */
-				'icon'?: SpruceSchemas.local.IIcon| undefined
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
 				/** Type. Type attribute for HTML button element. Defaults to 'button'. */
-				'type'?: ("button" | "submit" | "reset")| undefined
+				'type'?: ("button" | "submit" | "reset")| undefined | null
 				/** Is disabled. Set true to disable the button */
-				'isDisabled'?: boolean| undefined
+				'isDisabled'?: boolean| undefined | null
 				/** classname. */
-				'className'?: string| undefined
+				'className'?: string| undefined | null
 				/** On click handler. */
-				'onClick'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
-				/** . */
-				'children'?: generated_import_1.INodeFieldDefinitionValue| undefined
+				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				/** . Lets you override the element used when rendering a link */
-				'AnchorComponent'?: React.ReactElement| undefined
+				'AnchorComponent'?: JSX.Element| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Button {
+	export namespace SpruceSchemas.Local.Button {
 		export const id = 'button'
 
 		/** The interface for the schema definition for a Button */
@@ -2271,13 +2011,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			
 			
 			    fields: {
-			            /** Id. Unique ID for rendering in lists */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique ID for rendering in lists',
+			                
+			                
 			                
 			                
 			                
@@ -2386,7 +2126,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			            /** Type. Type attribute for HTML button element. Defaults to 'button'. */
 			            'type': {
@@ -2396,7 +2136,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Type attribute for HTML button element. Defaults to \'button\'.',
 			                
-			                
+			                defaultValue: "button",
 			                
 			                
 			                options: {choices: [{"label":"Button","value":"button"},{"label":"Submit","value":"submit"},{"label":"Reset","value":"reset"}],}
@@ -2430,7 +2170,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			            /** On click handler. */
 			            'onClick': {
 			                label: 'On click handler',
-			                type: SpruceSchema.FieldType.OnClick,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                
@@ -2438,7 +2178,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: undefined
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
 			            },
 			            /** . */
 			            'children': {
@@ -2470,20 +2210,20 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Button */
-		export const definition: SpruceSchemas.local.Button.IDefinition = {
+		export const definition: SpruceSchemas.Local.Button.IDefinition = {
 			id: 'button',
 			name: 'Button',
 			description: 'A interactive element you can touch or click to invoke an Action',
 			
 			
 			    fields: {
-			            /** Id. Unique ID for rendering in lists */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique ID for rendering in lists',
+			                
+			                
 			                
 			                
 			                
@@ -2592,7 +2332,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			            /** Type. Type attribute for HTML button element. Defaults to 'button'. */
 			            'type': {
@@ -2602,7 +2342,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Type attribute for HTML button element. Defaults to \'button\'.',
 			                
-			                
+			                defaultValue: "button",
 			                
 			                
 			                options: {choices: [{"label":"Button","value":"button"},{"label":"Submit","value":"submit"},{"label":"Reset","value":"reset"}],}
@@ -2636,7 +2376,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			            /** On click handler. */
 			            'onClick': {
 			                label: 'On click handler',
-			                type: SpruceSchema.FieldType.OnClick,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                
@@ -2644,7 +2384,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: undefined
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
 			            },
 			            /** . */
 			            'children': {
@@ -2676,36 +2416,36 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Button.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Button.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** A contextual menu comprised of buttons (tip: set the action on each button). */
 		export interface IContextMenu {
 			
 				/** Buttons. */
-				'buttons': SpruceSchemas.local.IButton[]
+				'buttons': SpruceSchemas.Local.IButton[]
 				/** Size. Set the width of the menu. Helpful for longer text in buttons */
-				'size'?: ("medium" | "large")| undefined
+				'size'?: ("medium" | "large")| undefined | null
 				/** Text. Adds text to the collapsed menu */
-				'text'?: string| undefined
+				'text'?: string| undefined | null
 				/** Icon. Overrides the default icon */
-				'icon'?: SpruceSchemas.local.IIcon| undefined
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
 				/** Is simple. Set true to make the button blue */
-				'isSimple'?: boolean| undefined
+				'isSimple'?: boolean| undefined | null
 				/** Is small. Set true to make the button smaller */
-				'isSmall'?: boolean| undefined
+				'isSmall'?: boolean| undefined | null
 				/** Close on select. Set to true makes the menu close when any option is selected */
-				'closeOnSelect'?: boolean| undefined
+				'closeOnSelect'?: boolean| undefined | null
 				/** Classname. */
-				'className'?: string| undefined
+				'className'?: string| undefined | null
 				/** . Invoked when the button is clicked */
-				'onClick'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
+				'onClick'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ContextMenu {
+	export namespace SpruceSchemas.Local.ContextMenu {
 		export const id = 'ContextMenu'
 
 		/** The interface for the schema definition for a ContextMenu */
@@ -2727,7 +2467,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Size. Set the width of the menu. Helpful for longer text in buttons */
 			            'size': {
@@ -2766,7 +2506,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			            /** Is simple. Set true to make the button blue */
 			            'isSimple': {
@@ -2823,7 +2563,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			            /** . Invoked when the button is clicked */
 			            'onClick': {
 			                label: '',
-			                type: SpruceSchema.FieldType.OnClick,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                hint: 'Invoked when the button is clicked',
@@ -2831,13 +2571,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: undefined
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
 			            },
 			    }
 		}
 
 		/** The schema definition for a ContextMenu */
-		export const definition: SpruceSchemas.local.ContextMenu.IDefinition = {
+		export const definition: SpruceSchemas.Local.ContextMenu.IDefinition = {
 			id: 'ContextMenu',
 			name: 'ContextMenu',
 			description: 'A contextual menu comprised of buttons (tip: set the action on each button).',
@@ -2855,7 +2595,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Size. Set the width of the menu. Helpful for longer text in buttons */
 			            'size': {
@@ -2894,7 +2634,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			            /** Is simple. Set true to make the button blue */
 			            'isSimple': {
@@ -2951,10 +2691,131 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			            /** . Invoked when the button is clicked */
 			            'onClick': {
 			                label: '',
-			                type: SpruceSchema.FieldType.OnClick,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                hint: 'Invoked when the button is clicked',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.ContextMenu.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** The label for any input */
+		export interface ILabel {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Label. */
+				'text': string
+				/** Post label text. */
+				'postLabel'?: string| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Label {
+		export const id = 'label'
+
+		/** The interface for the schema definition for a Label */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'label',
+			name: 'Label',
+			description: 'The label for any input',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'text': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Post label text. */
+			            'postLabel': {
+			                label: 'Post label text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Label */
+		export const definition: SpruceSchemas.Local.Label.IDefinition = {
+			id: 'label',
+			name: 'Label',
+			description: 'The label for any input',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'text': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Post label text. */
+			            'postLabel': {
+			                label: 'Post label text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
 			                
 			                
 			                
@@ -2965,26 +2826,585 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ContextMenu.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Label.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
+		/** Drop a file to upload */
+		export interface IDropzone {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Upload btn text. Text  */
+				'uploadButtonText'?: string| undefined | null
+				/** Upload progress. */
+				'uploadProgress'?: number| undefined | null
+				/** Error message. Output an error message */
+				'errorMessage'?: string| undefined | null
+				/** On drag enter. */
+				'onDragEnter'?: ((event?: React.DragEvent<HTMLElement>) => void)| undefined | null
+				/** On drag leave. */
+				'onDragLeave'?: ((event?: React.DragEvent<HTMLElement>) => void)| undefined | null
+				/** On drag over. */
+				'onDragOver'?: ((event?: React.DragEvent<HTMLElement>) => void)| undefined | null
+				/** On drop. */
+				'onDrop'?: ((
+								acceptedFiles: File[],
+								rejectedFiles: File[],
+								event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
+							) => void)| undefined | null
+				/** On drop. */
+				'onDropped'?: ((
+								files: File[]
+							) => void)| undefined | null
+				
+				'onDropAccepted'?: ((files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void)| undefined | null
+				
+				'onDropRejected'?: ((files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void)| undefined | null
+				
+				'onFileDialogCancel'?: (() => void)| undefined | null
+				
+				'onDragStart'?: ((...args: any) => void)| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Small. */
+				'isSmall'?: boolean| undefined | null
+				/** Circular. Render upload as a circle (only use if isSmall is true) */
+				'isCircular'?: boolean| undefined | null
+				/** File uploaded. Show file uploaded */
+				'fileWasUploaded'?: boolean| undefined | null
+				/** Accept types. */
+				'acceptedMimeTypes'?: string[]| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Dropzone {
+		export const id = 'dropzone'
+
+		/** The interface for the schema definition for a Dropzone */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'dropzone',
+			name: 'Dropzone',
+			description: 'Drop a file to upload',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Upload btn text. Text  */
+			            'uploadButtonText': {
+			                label: 'Upload btn text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Text ',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Upload progress. */
+			            'uploadProgress': {
+			                label: 'Upload progress',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Error message. Output an error message */
+			            'errorMessage': {
+			                label: 'Error message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Output an error message',
+			                
+			                defaultValue: "Oops, something went wrong!",
+			                
+			                
+			                options: undefined
+			            },
+			            /** On drag enter. */
+			            'onDragEnter': {
+			                label: 'On drag enter',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(event?: React.DragEvent<HTMLElement>) => void`,}
+			            },
+			            /** On drag leave. */
+			            'onDragLeave': {
+			                label: 'On drag leave',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(event?: React.DragEvent<HTMLElement>) => void`,}
+			            },
+			            /** On drag over. */
+			            'onDragOver': {
+			                label: 'On drag over',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(event?: React.DragEvent<HTMLElement>) => void`,}
+			            },
+			            /** On drop. */
+			            'onDrop': {
+			                label: 'On drop',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(
+			                					acceptedFiles: File[],
+			                					rejectedFiles: File[],
+			                					event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
+			                				) => void`,}
+			            },
+			            /** On drop. */
+			            'onDropped': {
+			                label: 'On drop',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(
+			                					files: File[]
+			                				) => void`,}
+			            },
+			            /** . */
+			            'onDropAccepted': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void`,}
+			            },
+			            /** . */
+			            'onDropRejected': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void`,}
+			            },
+			            /** . */
+			            'onFileDialogCancel': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'onDragStart': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(...args: any) => void`,}
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Small. */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Circular. Render upload as a circle (only use if isSmall is true) */
+			            'isCircular': {
+			                label: 'Circular',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render upload as a circle (only use if isSmall is true)',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** File uploaded. Show file uploaded */
+			            'fileWasUploaded': {
+			                label: 'File uploaded',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Show file uploaded',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Accept types. */
+			            'acceptedMimeTypes': {
+			                label: 'Accept types',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                defaultValue: ["image/*"],
+			                isArray: true,
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Dropzone */
+		export const definition: SpruceSchemas.Local.Dropzone.IDefinition = {
+			id: 'dropzone',
+			name: 'Dropzone',
+			description: 'Drop a file to upload',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Upload btn text. Text  */
+			            'uploadButtonText': {
+			                label: 'Upload btn text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Text ',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Upload progress. */
+			            'uploadProgress': {
+			                label: 'Upload progress',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Error message. Output an error message */
+			            'errorMessage': {
+			                label: 'Error message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Output an error message',
+			                
+			                defaultValue: "Oops, something went wrong!",
+			                
+			                
+			                options: undefined
+			            },
+			            /** On drag enter. */
+			            'onDragEnter': {
+			                label: 'On drag enter',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(event?: React.DragEvent<HTMLElement>) => void`,}
+			            },
+			            /** On drag leave. */
+			            'onDragLeave': {
+			                label: 'On drag leave',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(event?: React.DragEvent<HTMLElement>) => void`,}
+			            },
+			            /** On drag over. */
+			            'onDragOver': {
+			                label: 'On drag over',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(event?: React.DragEvent<HTMLElement>) => void`,}
+			            },
+			            /** On drop. */
+			            'onDrop': {
+			                label: 'On drop',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(
+			                					acceptedFiles: File[],
+			                					rejectedFiles: File[],
+			                					event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
+			                				) => void`,}
+			            },
+			            /** On drop. */
+			            'onDropped': {
+			                label: 'On drop',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(
+			                					files: File[]
+			                				) => void`,}
+			            },
+			            /** . */
+			            'onDropAccepted': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void`,}
+			            },
+			            /** . */
+			            'onDropRejected': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void`,}
+			            },
+			            /** . */
+			            'onFileDialogCancel': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'onDragStart': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(...args: any) => void`,}
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Small. */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Circular. Render upload as a circle (only use if isSmall is true) */
+			            'isCircular': {
+			                label: 'Circular',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render upload as a circle (only use if isSmall is true)',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** File uploaded. Show file uploaded */
+			            'fileWasUploaded': {
+			                label: 'File uploaded',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Show file uploaded',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Accept types. */
+			            'acceptedMimeTypes': {
+			                label: 'Accept types',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                defaultValue: ["image/*"],
+			                isArray: true,
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Dropzone.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** Used for the empty state of lists */
 		export interface IEmptyState {
 			
 				/** Heading. */
 				'heading': string
 				/** Subheading. */
-				'subheading'?: string| undefined
+				'subheading'?: string| undefined | null
 				/** Icon. */
-				'icon'?: SpruceSchemas.local.IIcon| undefined
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
 				/** Primary button. */
-				'primaryButton'?: SpruceSchemas.local.IButton| undefined
+				'primaryButton'?: SpruceSchemas.Local.IButton| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.EmptyState {
+	export namespace SpruceSchemas.Local.EmptyState {
 		export const id = 'emptyState'
 
 		/** The interface for the schema definition for a Empty state */
@@ -3003,7 +3423,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                isRequired: true,
 			                
 			                
-			                
+			                defaultValue: "Nothing to see here",
 			                
 			                
 			                options: undefined
@@ -3029,10 +3449,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
+			                defaultValue: {"name":"empty_box","isLineIcon":true},
 			                
 			                
-			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			            /** Primary button. */
 			            'primaryButton': {
@@ -3042,16 +3462,16 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
+			                defaultValue: {"kind":"simple"},
 			                
 			                
-			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a Empty state */
-		export const definition: SpruceSchemas.local.EmptyState.IDefinition = {
+		export const definition: SpruceSchemas.Local.EmptyState.IDefinition = {
 			id: 'emptyState',
 			name: 'Empty state',
 			description: 'Used for the empty state of lists',
@@ -3066,7 +3486,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                isRequired: true,
 			                
 			                
-			                
+			                defaultValue: "Nothing to see here",
 			                
 			                
 			                options: undefined
@@ -3092,10 +3512,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
+			                defaultValue: {"name":"empty_box","isLineIcon":true},
 			                
 			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			            /** Primary button. */
 			            'primaryButton': {
@@ -3105,39 +3525,39 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
+			                defaultValue: {"kind":"simple"},
 			                
 			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.EmptyState.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.EmptyState.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** **missing description** */
 		export interface IHeading {
 			
-				/** Id. Id for view caching */
-				'id': string
+				/** Id. */
+				'id'?: string| undefined | null
 				/** Html. HTML rendered directly */
-				'html'?: string| undefined
+				'html'?: string| undefined | null
 				/** Text. Text rendered in the header */
-				'text'?: string| undefined
-				/** . */
-				'className'?: string| undefined
-				/** . */
-				'children'?: generated_import_1.INodeFieldDefinitionValue| undefined
+				'text'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				/** Weight. The weight of the heading, H1 and beyond */
-				'weight'?: ("h1" | "h2" | "h3" | "h4" | "h5" | "h6")| undefined
+				'weight'?: ("h1" | "h2" | "h3" | "h4" | "h5" | "h6")| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Heading {
+	export namespace SpruceSchemas.Local.Heading {
 		export const id = 'Heading'
 
 		/** The interface for the schema definition for a Heading */
@@ -3148,13 +3568,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			
 			
 			    fields: {
-			            /** Id. Id for view caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Id for view caching',
+			                
+			                
 			                
 			                
 			                
@@ -3221,7 +3641,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'The weight of the heading, H1 and beyond',
 			                
-			                
+			                defaultValue: "h1",
 			                
 			                
 			                options: {choices: [{"label":"H1","value":"h1"},{"label":"H2","value":"h2"},{"label":"H3","value":"h3"},{"label":"H4","value":"h4"},{"label":"H5","value":"h5"},{"label":"H6","value":"h6"}],}
@@ -3230,20 +3650,20 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Heading */
-		export const definition: SpruceSchemas.local.Heading.IDefinition = {
+		export const definition: SpruceSchemas.Local.Heading.IDefinition = {
 			id: 'Heading',
 			name: 'Heading',
 			description: '**missing description**',
 			
 			
 			    fields: {
-			            /** Id. Id for view caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Id for view caching',
+			                
+			                
 			                
 			                
 			                
@@ -3310,7 +3730,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'The weight of the heading, H1 and beyond',
 			                
-			                
+			                defaultValue: "h1",
 			                
 			                
 			                options: {choices: [{"label":"H1","value":"h1"},{"label":"H2","value":"h2"},{"label":"H3","value":"h3"},{"label":"H4","value":"h4"},{"label":"H5","value":"h5"},{"label":"H6","value":"h6"}],}
@@ -3319,28 +3739,30 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Heading.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Heading.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** A basic image tag */
 		export interface IImage {
 			
-				/** Id. For UI caching */
-				'id': string
+				/** Id. */
+				'id'?: string| undefined | null
 				/** Src. Where to pull the image from */
 				'src': string
 				/** Alt. Rendered as the alt tag for hovers */
-				'alt'?: string| undefined
-				/** . */
-				'width'?: number| undefined
-				/** . */
-				'height'?: number| undefined
+				'alt'?: string| undefined | null
+				
+				'width'?: number| undefined | null
+				
+				'height'?: number| undefined | null
+				
+				'className'?: string| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Image {
+	export namespace SpruceSchemas.Local.Image {
 		export const id = 'Image'
 
 		/** The interface for the schema definition for a Image */
@@ -3351,13 +3773,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			
 			
 			    fields: {
-			            /** Id. For UI caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'For UI caching',
+			                
+			                
 			                
 			                
 			                
@@ -3407,6 +3829,19 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			            'height': {
 			                label: '',
 			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
 			                
@@ -3420,20 +3855,20 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Image */
-		export const definition: SpruceSchemas.local.Image.IDefinition = {
+		export const definition: SpruceSchemas.Local.Image.IDefinition = {
 			id: 'Image',
 			name: 'Image',
 			description: 'A basic image tag',
 			
 			
 			    fields: {
-			            /** Id. For UI caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'For UI caching',
+			                
+			                
 			                
 			                
 			                
@@ -3492,245 +3927,6 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Image.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.local {
-		/**  */
-		export interface ILayoutSection {
-			
-				/** Id. */
-				'id': string
-				/** Children. */
-				'children'?: generated_import_1.INodeFieldDefinitionValue| undefined
-				/** Classname. */
-				'className'?: string| undefined
-				/** Is secondary. Makes this section thinner */
-				'isSecondary'?: boolean| undefined
-		}
-	}	 
-
-	export namespace SpruceSchemas.local.LayoutSection {
-		export const id = 'layoutSection'
-
-		/** The interface for the schema definition for a Layout section */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'layoutSection',
-			name: 'Layout section',
-			description: '',
-			
-			
-			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Classname. */
-			            'className': {
-			                label: 'Classname',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is secondary. Makes this section thinner */
-			            'isSecondary': {
-			                label: 'Is secondary',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Makes this section thinner',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a Layout section */
-		export const definition: SpruceSchemas.local.LayoutSection.IDefinition = {
-			id: 'layoutSection',
-			name: 'Layout section',
-			description: '',
-			
-			
-			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Classname. */
-			            'className': {
-			                label: 'Classname',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is secondary. Makes this section thinner */
-			            'isSecondary': {
-			                label: 'Is secondary',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Makes this section thinner',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.LayoutSection.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.local {
-		/** Layout  */
-		export interface ILayout {
-			
-				/** Children. */
-				'children'?: generated_import_1.INodeFieldDefinitionValue| undefined
-				/** Is centered. A hint */
-				'isCentered': boolean
-				/** Is full bleed. */
-				'isFullBleed'?: boolean| undefined
-				/** Sections. Layout sections that makeup this layout */
-				'sections'?: SpruceSchemas.local.ILayoutSection[]| undefined
-				/** . */
-				'className'?: string| undefined
-				/** Width. */
-				'width'?: ("base" | "wide" | "tight" | "fullWidth")| undefined
-		}
-	}	 
-
-	export namespace SpruceSchemas.local.Layout {
-		export const id = 'layout'
-
-		/** The interface for the schema definition for a Layout */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'layout',
-			name: 'Layout',
-			description: 'Layout ',
-			
-			
-			    fields: {
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is centered. A hint */
-			            'isCentered': {
-			                label: 'Is centered',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                isRequired: true,
-			                hint: 'A hint',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is full bleed. */
-			            'isFullBleed': {
-			                label: 'Is full bleed',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Sections. Layout sections that makeup this layout */
-			            'sections': {
-			                label: 'Sections',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Layout sections that makeup this layout',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: SpruceSchemas.local.LayoutSection.IDefinition[],}
-			            },
 			            /** . */
 			            'className': {
 			                label: '',
@@ -3744,128 +3940,26 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Width. */
-			            'width': {
-			                label: 'Width',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Layout */
-		export const definition: SpruceSchemas.local.Layout.IDefinition = {
-			id: 'layout',
-			name: 'Layout',
-			description: 'Layout ',
-			
-			
-			    fields: {
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is centered. A hint */
-			            'isCentered': {
-			                label: 'Is centered',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                isRequired: true,
-			                hint: 'A hint',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is full bleed. */
-			            'isFullBleed': {
-			                label: 'Is full bleed',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Sections. Layout sections that makeup this layout */
-			            'sections': {
-			                label: 'Sections',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Layout sections that makeup this layout',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.local.LayoutSection.definition],}
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Width. */
-			            'width': {
-			                label: 'Width',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
-			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Layout.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Image.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Render markdown beautifully */
 		export interface IMarkdown {
 			
 				/** Id. Unique ID for view caching. */
-				'id': string
+				'id'?: string| undefined | null
 				/** Source. Markdown text to be rendered */
 				'source': string
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Markdown {
+	export namespace SpruceSchemas.Local.Markdown {
 		export const id = 'markdown'
 
 		/** The interface for the schema definition for a Markdown */
@@ -3881,7 +3975,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Unique ID for view caching.',
 			                
 			                
@@ -3906,7 +4000,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Markdown */
-		export const definition: SpruceSchemas.local.Markdown.IDefinition = {
+		export const definition: SpruceSchemas.Local.Markdown.IDefinition = {
 			id: 'markdown',
 			name: 'Markdown',
 			description: 'Render markdown beautifully',
@@ -3918,7 +4012,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Unique ID for view caching.',
 			                
 			                
@@ -3943,31 +4037,37 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Markdown.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Markdown.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** Make it great! */
-		export interface ISprucebotAvatar {
+	export namespace SpruceSchemas.Local {
+		/** Defaults to h2 */
+		export interface ISubheading {
 			
 				/** Id. */
-				'id': string
-				/** Second Field. A hint */
-				'stateOfMind': ("chill" | "contemplative" | "curious" | "accomplished")
-				/** Size. */
-				'size': ("small" | "medium" | "large")
+				'id'?: string| undefined | null
+				/** Html. HTML rendered directly */
+				'html'?: string| undefined | null
+				/** Text. Text rendered in the header */
+				'text'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Weight. The weight of the sub heading, H2 and beyond */
+				'weight'?: ("h1" | "h2" | "h3" | "h4" | "h5" | "h6")| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.SprucebotAvatar {
-		export const id = 'sprucebotAvatar'
+	export namespace SpruceSchemas.Local.Subheading {
+		export const id = 'subheading'
 
-		/** The interface for the schema definition for a SprucebotAvatar */
+		/** The interface for the schema definition for a Subheading */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'sprucebotAvatar',
-			name: 'SprucebotAvatar',
-			description: 'Make it great!',
+			id: 'subheading',
+			name: 'Subheading',
+			description: 'Defaults to h2',
 			
 			
 			    fields: {
@@ -3976,7 +4076,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                
 			                
 			                
@@ -3984,40 +4084,79 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Second Field. A hint */
-			            'stateOfMind': {
-			                label: 'Second Field',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                isRequired: true,
-			                hint: 'A hint',
+			            /** Html. HTML rendered directly */
+			            'html': {
+			                label: 'Html',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
+			                hint: 'HTML rendered directly',
 			                
 			                
-			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
+			                
+			                
+			                options: undefined
 			            },
-			            /** Size. */
-			            'size': {
-			                label: 'Size',
+			            /** Text. Text rendered in the header */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Text rendered in the header',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Weight. The weight of the sub heading, H2 and beyond */
+			            'weight': {
+			                label: 'Weight',
 			                type: SpruceSchema.FieldType.Select,
 			                
-			                isRequired: true,
+			                
+			                hint: 'The weight of the sub heading, H2 and beyond',
+			                
+			                defaultValue: "h2",
 			                
 			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
+			                options: {choices: [{"label":"H1","value":"h1"},{"label":"H2","value":"h2"},{"label":"H3","value":"h3"},{"label":"H4","value":"h4"},{"label":"H5","value":"h5"},{"label":"H6","value":"h6"}],}
 			            },
 			    }
 		}
 
-		/** The schema definition for a SprucebotAvatar */
-		export const definition: SpruceSchemas.local.SprucebotAvatar.IDefinition = {
-			id: 'sprucebotAvatar',
-			name: 'SprucebotAvatar',
-			description: 'Make it great!',
+		/** The schema definition for a Subheading */
+		export const definition: SpruceSchemas.Local.Subheading.IDefinition = {
+			id: 'subheading',
+			name: 'Subheading',
+			description: 'Defaults to h2',
 			
 			
 			    fields: {
@@ -4026,7 +4165,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                
 			                
 			                
@@ -4034,97 +4173,181 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Second Field. A hint */
-			            'stateOfMind': {
-			                label: 'Second Field',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                isRequired: true,
-			                hint: 'A hint',
+			            /** Html. HTML rendered directly */
+			            'html': {
+			                label: 'Html',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
+			                hint: 'HTML rendered directly',
 			                
 			                
-			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
+			                
+			                
+			                options: undefined
 			            },
-			            /** Size. */
-			            'size': {
-			                label: 'Size',
+			            /** Text. Text rendered in the header */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Text rendered in the header',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Weight. The weight of the sub heading, H2 and beyond */
+			            'weight': {
+			                label: 'Weight',
 			                type: SpruceSchema.FieldType.Select,
 			                
-			                isRequired: true,
+			                
+			                hint: 'The weight of the sub heading, H2 and beyond',
+			                
+			                defaultValue: "h2",
 			                
 			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
+			                options: {choices: [{"label":"H1","value":"h1"},{"label":"H2","value":"h2"},{"label":"H3","value":"h3"},{"label":"H4","value":"h4"},{"label":"H5","value":"h5"},{"label":"H6","value":"h6"}],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.SprucebotAvatar.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Subheading.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/**  */
-		export interface ISprucebotTypedMessageSentence {
+	export namespace SpruceSchemas.Local {
+		/** A tabs control */
+		export interface ITab {
 			
-				/** . A way to override the Sprucebot avatar for this sentence */
-				'avatar'?: SpruceSchemas.local.ISprucebotAvatar| undefined
-				/** Words. The words being typed out */
-				'words'?: string| undefined
-				/** End delay. How long should I hold on this sentence after it's typed? */
-				'endDelay'?: SpruceSchema.IDurationFieldValue| undefined
+				/** Text. The text shown on the tab */
+				'text': string
+				/** Icon. An icon shown on the tab next to the text */
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
+				
+				'AnchorComponent'?: JSX.Element| undefined | null
+				/** Is current. Is the currently selected tab */
+				'isCurrent'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Panel. Rendered as the body of the selected tab */
+				'panel'?: JSX.Element| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.SprucebotTypedMessageSentence {
-		export const id = 'sprucebotTypedMessageSentence'
+	export namespace SpruceSchemas.Local.Tab {
+		export const id = 'tab'
 
-		/** The interface for the schema definition for a Sprucebot Typed sentence */
+		/** The interface for the schema definition for a Tab */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'sprucebotTypedMessageSentence',
-			name: 'Sprucebot Typed sentence',
-			description: '',
+			id: 'tab',
+			name: 'Tab',
+			description: 'A tabs control',
 			
 			
 			    fields: {
-			            /** . A way to override the Sprucebot avatar for this sentence */
-			            'avatar': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'A way to override the Sprucebot avatar for this sentence',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.SprucebotAvatar.IDefinition[],}
-			            },
-			            /** Words. The words being typed out */
-			            'words': {
-			                label: 'Words',
+			            /** Text. The text shown on the tab */
+			            'text': {
+			                label: 'Text',
 			                type: SpruceSchema.FieldType.Text,
 			                
-			                
-			                hint: 'The words being typed out',
+			                isRequired: true,
+			                hint: 'The text shown on the tab',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** End delay. How long should I hold on this sentence after it's typed? */
-			            'endDelay': {
-			                label: 'End delay',
-			                type: SpruceSchema.FieldType.Duration,
+			            /** Icon. An icon shown on the tab next to the text */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
-			                hint: 'How long should I hold on this sentence after it\'s typed?',
+			                hint: 'An icon shown on the tab next to the text',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** . */
+			            'AnchorComponent': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Element,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is current. Is the currently selected tab */
+			            'isCurrent': {
+			                label: 'Is current',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the currently selected tab',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Panel. Rendered as the body of the selected tab */
+			            'panel': {
+			                label: 'Panel',
+			                type: SpruceSchema.FieldType.Element,
+			                
+			                
+			                hint: 'Rendered as the body of the selected tab',
 			                
 			                
 			                
@@ -4134,47 +4357,86 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			    }
 		}
 
-		/** The schema definition for a Sprucebot Typed sentence */
-		export const definition: SpruceSchemas.local.SprucebotTypedMessageSentence.IDefinition = {
-			id: 'sprucebotTypedMessageSentence',
-			name: 'Sprucebot Typed sentence',
-			description: '',
+		/** The schema definition for a Tab */
+		export const definition: SpruceSchemas.Local.Tab.IDefinition = {
+			id: 'tab',
+			name: 'Tab',
+			description: 'A tabs control',
 			
 			
 			    fields: {
-			            /** . A way to override the Sprucebot avatar for this sentence */
-			            'avatar': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'A way to override the Sprucebot avatar for this sentence',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.SprucebotAvatar.definition],}
-			            },
-			            /** Words. The words being typed out */
-			            'words': {
-			                label: 'Words',
+			            /** Text. The text shown on the tab */
+			            'text': {
+			                label: 'Text',
 			                type: SpruceSchema.FieldType.Text,
 			                
-			                
-			                hint: 'The words being typed out',
+			                isRequired: true,
+			                hint: 'The text shown on the tab',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** End delay. How long should I hold on this sentence after it's typed? */
-			            'endDelay': {
-			                label: 'End delay',
-			                type: SpruceSchema.FieldType.Duration,
+			            /** Icon. An icon shown on the tab next to the text */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
-			                hint: 'How long should I hold on this sentence after it\'s typed?',
+			                hint: 'An icon shown on the tab next to the text',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** . */
+			            'AnchorComponent': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Element,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is current. Is the currently selected tab */
+			            'isCurrent': {
+			                label: 'Is current',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the currently selected tab',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Panel. Rendered as the body of the selected tab */
+			            'panel': {
+			                label: 'Panel',
+			                type: SpruceSchema.FieldType.Element,
+			                
+			                
+			                hint: 'Rendered as the body of the selected tab',
 			                
 			                
 			                
@@ -4185,124 +4447,79 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.SprucebotTypedMessageSentence.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Tab.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/**  */
-		export interface ISprucebotTypedMessage {
+	export namespace SpruceSchemas.Local {
+		/** A tabs control */
+		export interface ITabs {
 			
-				/** Id. */
-				'id': string
-				/** Sentences. Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold) */
-				'sentences': SpruceSchemas.local.ISprucebotTypedMessageSentence[]
-				/** Default avatar. How should Sprucebot be rendered by default */
-				'defaultAvatar'?: SpruceSchemas.local.ISprucebotAvatar| undefined
-				/** Start delay. How long should I wait before starting to type? */
-				'startDelay'?: SpruceSchema.IDurationFieldValue| undefined
-				/** Loop. */
-				'loop'?: boolean| undefined
-				/** Size. */
-				'size'?: ("small" | "medium" | "large")| undefined
-				/** Paused. */
-				'paused'?: boolean| undefined
+				/** Tabs. */
+				'tabs': SpruceSchemas.Local.ITab[]
+				/** Horizontal padding. Adds horizontal padding */
+				'isPadded'?: boolean| undefined | null
+				/** Truncate tabs. Should tabs render 3 dots if they all don't fit */
+				'isTruncatable'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.SprucebotTypedMessage {
-		export const id = 'sprucebotTypedMessage'
+	export namespace SpruceSchemas.Local.Tabs {
+		export const id = 'tabs'
 
-		/** The interface for the schema definition for a Sprucebot typed message */
+		/** The interface for the schema definition for a Tabs */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'sprucebotTypedMessage',
-			name: 'Sprucebot typed message',
-			description: '',
+			id: 'tabs',
+			name: 'Tabs',
+			description: 'A tabs control',
 			
 			
 			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Sentences. Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold) */
-			            'sentences': {
-			                label: 'Sentences',
+			            /** Tabs. */
+			            'tabs': {
+			                label: 'Tabs',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                isRequired: true,
-			                hint: 'Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold)',
+			                
 			                
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.SprucebotTypedMessageSentence.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Tab.IDefinition[],}
 			            },
-			            /** Default avatar. How should Sprucebot be rendered by default */
-			            'defaultAvatar': {
-			                label: 'Default avatar',
-			                type: SpruceSchema.FieldType.Schema,
+			            /** Horizontal padding. Adds horizontal padding */
+			            'isPadded': {
+			                label: 'Horizontal padding',
+			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
-			                hint: 'How should Sprucebot be rendered by default',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.SprucebotAvatar.IDefinition[],}
-			            },
-			            /** Start delay. How long should I wait before starting to type? */
-			            'startDelay': {
-			                label: 'Start delay',
-			                type: SpruceSchema.FieldType.Duration,
-			                
-			                
-			                hint: 'How long should I wait before starting to type?',
+			                hint: 'Adds horizontal padding',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Loop. */
-			            'loop': {
-			                label: 'Loop',
+			            /** Truncate tabs. Should tabs render 3 dots if they all don't fit */
+			            'isTruncatable': {
+			                label: 'Truncate tabs',
 			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
-			                
+			                hint: 'Should tabs render 3 dots if they all don\'t fit',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Size. */
-			            'size': {
-			                label: 'Size',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
-			            },
-			            /** Paused. */
-			            'paused': {
-			                label: 'Paused',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
 			                
@@ -4315,96 +4532,57 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			    }
 		}
 
-		/** The schema definition for a Sprucebot typed message */
-		export const definition: SpruceSchemas.local.SprucebotTypedMessage.IDefinition = {
-			id: 'sprucebotTypedMessage',
-			name: 'Sprucebot typed message',
-			description: '',
+		/** The schema definition for a Tabs */
+		export const definition: SpruceSchemas.Local.Tabs.IDefinition = {
+			id: 'tabs',
+			name: 'Tabs',
+			description: 'A tabs control',
 			
 			
 			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Sentences. Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold) */
-			            'sentences': {
-			                label: 'Sentences',
+			            /** Tabs. */
+			            'tabs': {
+			                label: 'Tabs',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                isRequired: true,
-			                hint: 'Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold)',
+			                
 			                
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.SprucebotTypedMessageSentence.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Tab.definition],}
 			            },
-			            /** Default avatar. How should Sprucebot be rendered by default */
-			            'defaultAvatar': {
-			                label: 'Default avatar',
-			                type: SpruceSchema.FieldType.Schema,
+			            /** Horizontal padding. Adds horizontal padding */
+			            'isPadded': {
+			                label: 'Horizontal padding',
+			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
-			                hint: 'How should Sprucebot be rendered by default',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.SprucebotAvatar.definition],}
-			            },
-			            /** Start delay. How long should I wait before starting to type? */
-			            'startDelay': {
-			                label: 'Start delay',
-			                type: SpruceSchema.FieldType.Duration,
-			                
-			                
-			                hint: 'How long should I wait before starting to type?',
+			                hint: 'Adds horizontal padding',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Loop. */
-			            'loop': {
-			                label: 'Loop',
+			            /** Truncate tabs. Should tabs render 3 dots if they all don't fit */
+			            'isTruncatable': {
+			                label: 'Truncate tabs',
 			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
-			                
+			                hint: 'Should tabs render 3 dots if they all don\'t fit',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Size. */
-			            'size': {
-			                label: 'Size',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
-			            },
-			            /** Paused. */
-			            'paused': {
-			                label: 'Paused',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
 			                
@@ -4418,22 +4596,30 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.SprucebotTypedMessage.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Tabs.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Basic text to be rendered */
 		export interface IText {
 			
-				/** Id. Unique id for UI caching */
-				'id': string
-				/** Text. the text to render */
-				'text'?: string| undefined
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Text. the text to render, supports {{handlebars}} and pulls off {{context}} */
+				'text'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Inline. If true, renders text in a <span /> vs a <p /> */
+				'isInline'?: boolean| undefined | null
+				/** Context. A key/value pair used to populate the {{handlebars}} placeholders of the text prop */
+				'context'?: (Record<string, any>)| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Text {
+	export namespace SpruceSchemas.Local.Text {
 		export const id = 'Text'
 
 		/** The interface for the schema definition for a Text */
@@ -4444,26 +4630,78 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			
 			
 			    fields: {
-			            /** Id. Unique id for UI caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Text,
 			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
+			                
+			                
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Text. the text to render */
+			            /** Text. the text to render, supports {{handlebars}} and pulls off {{context}} */
 			            'text': {
 			                label: 'Text',
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
-			                hint: 'the text to render',
+			                hint: 'the text to render, supports {{handlebars}} and pulls off {{context}}',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Inline. If true, renders text in a <span /> vs a <p /> */
+			            'isInline': {
+			                label: 'Inline',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If true, renders text in a <span /> vs a <p />',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Context. A key/value pair used to populate the {{handlebars}} placeholders of the text prop */
+			            'context': {
+			                label: 'Context',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                hint: 'A key/value pair used to populate the {{handlebars}} placeholders of the text prop',
+			                
+			                
+			                
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
 			                
 			                
 			                
@@ -4474,33 +4712,85 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Text */
-		export const definition: SpruceSchemas.local.Text.IDefinition = {
+		export const definition: SpruceSchemas.Local.Text.IDefinition = {
 			id: 'Text',
 			name: 'Text',
 			description: 'Basic text to be rendered',
 			
 			
 			    fields: {
-			            /** Id. Unique id for UI caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Text,
 			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
+			                
+			                
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Text. the text to render */
+			            /** Text. the text to render, supports {{handlebars}} and pulls off {{context}} */
 			            'text': {
 			                label: 'Text',
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
-			                hint: 'the text to render',
+			                hint: 'the text to render, supports {{handlebars}} and pulls off {{context}}',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Inline. If true, renders text in a <span /> vs a <p /> */
+			            'isInline': {
+			                label: 'Inline',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If true, renders text in a <span /> vs a <p />',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Context. A key/value pair used to populate the {{handlebars}} placeholders of the text prop */
+			            'context': {
+			                label: 'Context',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                hint: 'A key/value pair used to populate the {{handlebars}} placeholders of the text prop',
+			                
+			                
+			                
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
 			                
 			                
 			                
@@ -4511,287 +4801,26 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Text.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Text.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** Call out information so it&#x27;s impossible to miss! */
-		export interface IToast {
-			
-				/** Id. Unique id for UI caching */
-				'id': string
-				/** Headline. Headline text */
-				'headline': string
-				/** Text. Optional; Text after the headline */
-				'text'?: string| undefined
-				/** Can remove. Optional; controls whether the toast can be removed. Defaults to true */
-				'canRemove'?: boolean| undefined
-				/** Remove action. Action to be invoked when hitting the dismiss button */
-				'removeAction'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
-				/** Kind. Sets the variation of toast */
-				'kind'?: string| undefined
-				/** Followup text. Text for the followup action */
-				'followupText'?: string| undefined
-				/** Followup action. Action to be invoked when hitting the followup CTA */
-				'followupAction'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
-		}
-	}	 
-
-	export namespace SpruceSchemas.local.Toast {
-		export const id = 'Toast'
-
-		/** The interface for the schema definition for a Toast */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'Toast',
-			name: 'Toast',
-			description: 'Call out information so it\'s impossible to miss!',
-			
-			
-			    fields: {
-			            /** Id. Unique id for UI caching */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Headline. Headline text */
-			            'headline': {
-			                label: 'Headline',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Headline text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Text. Optional; Text after the headline */
-			            'text': {
-			                label: 'Text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional; Text after the headline',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Can remove. Optional; controls whether the toast can be removed. Defaults to true */
-			            'canRemove': {
-			                label: 'Can remove',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Optional; controls whether the toast can be removed. Defaults to true',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Remove action. Action to be invoked when hitting the dismiss button */
-			            'removeAction': {
-			                label: 'Remove action',
-			                type: SpruceSchema.FieldType.OnClick,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the dismiss button',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Kind. Sets the variation of toast */
-			            'kind': {
-			                label: 'Kind',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Sets the variation of toast',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Followup text. Text for the followup action */
-			            'followupText': {
-			                label: 'Followup text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Text for the followup action',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Followup action. Action to be invoked when hitting the followup CTA */
-			            'followupAction': {
-			                label: 'Followup action',
-			                type: SpruceSchema.FieldType.OnClick,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the followup CTA',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a Toast */
-		export const definition: SpruceSchemas.local.Toast.IDefinition = {
-			id: 'Toast',
-			name: 'Toast',
-			description: 'Call out information so it\'s impossible to miss!',
-			
-			
-			    fields: {
-			            /** Id. Unique id for UI caching */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Headline. Headline text */
-			            'headline': {
-			                label: 'Headline',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Headline text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Text. Optional; Text after the headline */
-			            'text': {
-			                label: 'Text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional; Text after the headline',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Can remove. Optional; controls whether the toast can be removed. Defaults to true */
-			            'canRemove': {
-			                label: 'Can remove',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Optional; controls whether the toast can be removed. Defaults to true',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Remove action. Action to be invoked when hitting the dismiss button */
-			            'removeAction': {
-			                label: 'Remove action',
-			                type: SpruceSchema.FieldType.OnClick,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the dismiss button',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Kind. Sets the variation of toast */
-			            'kind': {
-			                label: 'Kind',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Sets the variation of toast',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Followup text. Text for the followup action */
-			            'followupText': {
-			                label: 'Followup text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Text for the followup action',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Followup action. Action to be invoked when hitting the followup CTA */
-			            'followupAction': {
-			                label: 'Followup action',
-			                type: SpruceSchema.FieldType.OnClick,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the followup CTA',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Toast.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** The header of a list */
 		export interface IListHeader {
 			
 				/** Title. Title to render in the header */
 				'title': string
 				/** Subtitle. Optional subtitle text */
-				'subtitle'?: string| undefined
+				'subtitle'?: string| undefined | null
 				/** Is small. Set true for small lists */
-				'isSmall'?: boolean| undefined
+				'isSmall'?: boolean| undefined | null
 				/** Buttons. Buttons to associate with the list header */
-				'buttons': SpruceSchemas.local.IButton[]
+				'buttons'?: SpruceSchemas.Local.IButton[]| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ListHeader {
+	export namespace SpruceSchemas.Local.ListHeader {
 		export const id = 'listHeader'
 
 		/** The interface for the schema definition for a List header */
@@ -4836,7 +4865,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Set true for small lists',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -4846,19 +4875,19 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Buttons',
 			                type: SpruceSchema.FieldType.Schema,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Buttons to associate with the list header',
 			                
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a List header */
-		export const definition: SpruceSchemas.local.ListHeader.IDefinition = {
+		export const definition: SpruceSchemas.Local.ListHeader.IDefinition = {
 			id: 'listHeader',
 			name: 'List header',
 			description: 'The header of a list',
@@ -4899,7 +4928,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Set true for small lists',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -4909,61 +4938,240 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Buttons',
 			                type: SpruceSchema.FieldType.Schema,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Buttons to associate with the list header',
 			                
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ListHeader.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.ListHeader.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** A radio control. Give a bunch the same name to keep them as part of the same group */
-		export interface IRadio {
+	export namespace SpruceSchemas.Local {
+		/** A great way to render a on/off style question or control */
+		export interface IToggle {
 			
-				/** Id. Unique identifier */
-				'id': string
-				/** Name. A name attached to this radio button */
-				'name'?: string| undefined
-				/** Label. Label and text for the radio */
-				'label'?: string| undefined
-				/** Post text. Optional text to show after the label */
-				'postText'?: string| undefined
-				/** Is disabled. is this control disabled? */
-				'isDisabled'?: boolean| undefined
-				/** Is checked. Is this control checked? */
-				'isChecked'?: boolean| undefined
-				/** Action. Optional action to invoke when tapped */
-				'onClick'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Name. */
+				'name'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+				/** On click. Optional on click to invoke when tapped */
+				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Radio {
-		export const id = 'Radio'
+	export namespace SpruceSchemas.Local.Toggle {
+		export const id = 'Toggle'
+
+		/** The interface for the schema definition for a Toggle */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'Toggle',
+			name: 'Toggle',
+			description: 'A great way to render a on/off style question or control',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			            /** On click. Optional on click to invoke when tapped */
+			            'onClick': {
+			                label: 'On click',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Optional on click to invoke when tapped',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Toggle */
+		export const definition: SpruceSchemas.Local.Toggle.IDefinition = {
+			id: 'Toggle',
+			name: 'Toggle',
+			description: 'A great way to render a on/off style question or control',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			            /** On click. Optional on click to invoke when tapped */
+			            'onClick': {
+			                label: 'On click',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Optional on click to invoke when tapped',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Toggle.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A radio control. Give a bunch the same name to keep them as part of the same group */
+		export interface IRadio {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Name. A name attached to this radio button */
+				'name'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Is disabled. is this control disabled? */
+				'isDisabled'?: boolean| undefined | null
+				/** Is checked. Is this control checked? */
+				'isChecked'?: boolean| undefined | null
+				/** Change handler. Optional action to invoke when tapped */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Radio {
+		export const id = 'radio'
 
 		/** The interface for the schema definition for a Radio */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'Radio',
+			id: 'radio',
 			name: 'Radio',
 			description: 'A radio control. Give a bunch the same name to keep them as part of the same group',
 			
 			
 			    fields: {
-			            /** Id. Unique identifier */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique identifier',
+			                
+			                
 			                
 			                
 			                
@@ -4983,31 +5191,18 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Label. Label and text for the radio */
+			            /** Label. */
 			            'label': {
 			                label: 'Label',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Label and text for the radio',
+			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
 			                
 			                
-			                options: undefined
-			            },
-			            /** Post text. Optional text to show after the label */
-			            'postText': {
-			                label: 'Post text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional text to show after the label',
 			                
 			                
 			                
-			                
-			                options: undefined
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
 			            },
 			            /** Is disabled. is this control disabled? */
 			            'isDisabled': {
@@ -5035,10 +5230,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Action. Optional action to invoke when tapped */
-			            'onClick': {
-			                label: 'Action',
-			                type: SpruceSchema.FieldType.OnClick,
+			            /** Change handler. Optional action to invoke when tapped */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                hint: 'Optional action to invoke when tapped',
@@ -5046,26 +5241,52 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
 			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a Radio */
-		export const definition: SpruceSchemas.local.Radio.IDefinition = {
-			id: 'Radio',
+		export const definition: SpruceSchemas.Local.Radio.IDefinition = {
+			id: 'radio',
 			name: 'Radio',
 			description: 'A radio control. Give a bunch the same name to keep them as part of the same group',
 			
 			
 			    fields: {
-			            /** Id. Unique identifier */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique identifier',
+			                
+			                
 			                
 			                
 			                
@@ -5085,31 +5306,18 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Label. Label and text for the radio */
+			            /** Label. */
 			            'label': {
 			                label: 'Label',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Label and text for the radio',
+			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
 			                
 			                
-			                options: undefined
-			            },
-			            /** Post text. Optional text to show after the label */
-			            'postText': {
-			                label: 'Post text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional text to show after the label',
 			                
 			                
 			                
-			                
-			                options: undefined
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
 			            },
 			            /** Is disabled. is this control disabled? */
 			            'isDisabled': {
@@ -5137,13 +5345,449 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Action. Optional action to invoke when tapped */
-			            'onClick': {
-			                label: 'Action',
-			                type: SpruceSchema.FieldType.OnClick,
+			            /** Change handler. Optional action to invoke when tapped */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                hint: 'Optional action to invoke when tapped',
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Radio.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A checkbox! */
+		export interface ICheckbox {
+			
+				
+				'id'?: string| undefined | null
+				/** Name. */
+				'name'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Disabled. */
+				'isDisabled'?: boolean| undefined | null
+				/** Indeterminate. Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it. */
+				'isIndeterminate'?: boolean| undefined | null
+				/** Checked. */
+				'isChecked'?: boolean| undefined | null
+				/** On change handler. Invoked when the checkbox is tapped or clicked */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Checkbox {
+		export const id = 'checkbox'
+
+		/** The interface for the schema definition for a Checkbox */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'checkbox',
+			name: 'Checkbox',
+			description: 'A checkbox!',
+			
+			
+			    fields: {
+			            /** . */
+			            'id': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Indeterminate. Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it. */
+			            'isIndeterminate': {
+			                label: 'Indeterminate',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is showing that half checked state you\'ve seen on checkboxes. It generally has a horizontal line through it.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Checked. */
+			            'isChecked': {
+			                label: 'Checked',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** On change handler. Invoked when the checkbox is tapped or clicked */
+			            'onChange': {
+			                label: 'On change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Invoked when the checkbox is tapped or clicked',
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Checkbox */
+		export const definition: SpruceSchemas.Local.Checkbox.IDefinition = {
+			id: 'checkbox',
+			name: 'Checkbox',
+			description: 'A checkbox!',
+			
+			
+			    fields: {
+			            /** . */
+			            'id': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Indeterminate. Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it. */
+			            'isIndeterminate': {
+			                label: 'Indeterminate',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is showing that half checked state you\'ve seen on checkboxes. It generally has a horizontal line through it.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Checked. */
+			            'isChecked': {
+			                label: 'Checked',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** On change handler. Invoked when the checkbox is tapped or clicked */
+			            'onChange': {
+			                label: 'On change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Invoked when the checkbox is tapped or clicked',
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Checkbox.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A warning message that can go on a list item */
+		export interface IListItemWarning {
+			
+				/** Title. */
+				'title'?: boolean| undefined | null
+				/** Subtitle. */
+				'subtitle'?: boolean| undefined | null
+				/** Note. */
+				'note'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.ListItemWarning {
+		export const id = 'listItemWarning'
+
+		/** The interface for the schema definition for a List item warning */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'listItemWarning',
+			name: 'List item warning',
+			description: 'A warning message that can go on a list item',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Subtitle. */
+			            'subtitle': {
+			                label: 'Subtitle',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Note. */
+			            'note': {
+			                label: 'Note',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a List item warning */
+		export const definition: SpruceSchemas.Local.ListItemWarning.IDefinition = {
+			id: 'listItemWarning',
+			name: 'List item warning',
+			description: 'A warning message that can go on a list item',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Subtitle. */
+			            'subtitle': {
+			                label: 'Subtitle',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Note. */
+			            'note': {
+			                label: 'Note',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
 			                
 			                
 			                
@@ -5154,36 +5798,38 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Radio.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.ListItemWarning.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** A list of information or inputs */
 		export interface IList {
 			
-				/** Id. Unique id for UI caching */
-				'id': string
+				/** Id. */
+				'id'?: string| undefined | null
 				/** Header. List Header */
-				'header'?: SpruceSchemas.local.IListHeader| undefined
+				'header'?: SpruceSchemas.Local.IListHeader| undefined | null
 				/** Items. List items */
-				'items': []
+				'items': SpruceSchemas.Local.IExpandableListItem[]
 				/** Is small. Set true to make the list smaller */
-				'isSmall'?: boolean| undefined
+				'isSmall'?: boolean| undefined | null
 				/** Are separators visible. Set to true to show separators between list items */
-				'areSeparatorsVisible'?: boolean| undefined
+				'areSeparatorsVisible'?: boolean| undefined | null
 				/** Class name. */
-				'className'?: string| undefined
-				/** . */
-				'children'?: generated_import_1.INodeFieldDefinitionValue| undefined
+				'className'?: string| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				/** Is loading. Show loading */
-				'isLoading'?: boolean| undefined
+				'isLoading'?: boolean| undefined | null
 				/** Selectable. Optional: set whether to use checkbox or radio for selectable list items */
-				'selectable'?: SpruceSchemas.local.ICheckbox | SpruceSchemas.local.IRadio| undefined
+				'selectable'?: { schemaId: 'checkbox', values: SpruceSchemas.Local.ICheckbox } | { schemaId: 'radio', values: SpruceSchemas.Local.IRadio }| undefined | null
+				/** Click handler. */
+				'onClick'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.List {
+	export namespace SpruceSchemas.Local.List {
 		export const id = 'list'
 
 		/** The interface for the schema definition for a List */
@@ -5194,13 +5840,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			
 			
 			    fields: {
-			            /** Id. Unique id for UI caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
+			                
+			                
 			                
 			                
 			                
@@ -5218,7 +5864,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.ListHeader.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.ListHeader.IDefinition[],}
 			            },
 			            /** Items. List items */
 			            'items': {
@@ -5231,7 +5877,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemasIds: ["listItem","expandableListItem"],schemas: [],}
+			                options: {schemas: SpruceSchemas.Local.ExpandableListItem.IDefinition[],}
 			            },
 			            /** Is small. Set true to make the list smaller */
 			            'isSmall': {
@@ -5309,26 +5955,39 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: (SpruceSchemas.local.Checkbox.IDefinition | SpruceSchemas.local.Radio.IDefinition)[],}
+			                options: {schemas: (SpruceSchemas.Local.Checkbox.IDefinition | SpruceSchemas.Local.Radio.IDefinition)[],}
+			            },
+			            /** Click handler. */
+			            'onClick': {
+			                label: 'Click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
 			            },
 			    }
 		}
 
 		/** The schema definition for a List */
-		export const definition: SpruceSchemas.local.List.IDefinition = {
+		export const definition: SpruceSchemas.Local.List.IDefinition = {
 			id: 'list',
 			name: 'List',
 			description: 'A list of information or inputs',
 			
 			
 			    fields: {
-			            /** Id. Unique id for UI caching */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
+			                
+			                
 			                
 			                
 			                
@@ -5346,7 +6005,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.ListHeader.definition],}
+			                options: {schemas: [SpruceSchemas.Local.ListHeader.definition],}
 			            },
 			            /** Items. List items */
 			            'items': {
@@ -5359,7 +6018,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemasIds: ["listItem","expandableListItem"],schemas: [],}
+			                options: {schemas: [SpruceSchemas.Local.ExpandableListItem.definition],}
 			            },
 			            /** Is small. Set true to make the list smaller */
 			            'isSmall': {
@@ -5437,36 +6096,846 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Checkbox.definition, SpruceSchemas.local.Radio.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Checkbox.definition, SpruceSchemas.Local.Radio.definition],}
+			            },
+			            /** Click handler. */
+			            'onClick': {
+			                label: 'Click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.List.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.List.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface IExpandableListItem {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Title. Title text */
+				'title': string
+				/** Subtitle. Optional subtitle text */
+				'subtitle'?: string| undefined | null
+				/** Note. Optional note text */
+				'note'?: string| undefined | null
+				/** Expandable. Enables a little disclosure triangle to hide/show the item */
+				'isExpandable'?: boolean| undefined | null
+				/** Avatar. */
+				'avatar'?: SpruceSchemas.Local.IAvatar| undefined | null
+				/** Image. */
+				'image'?: SpruceSchemas.Local.IImage| undefined | null
+				/** Icon. Inline svg icon */
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Is icon hidden. Optional; visually hides the icon without removing it */
+				'isIconHidden'?: boolean| undefined | null
+				/** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
+				'isLeftIndented'?: boolean| undefined | null
+				/** Is draggable. Set true when the list can be reordered */
+				'isDraggable'?: boolean| undefined | null
+				/** Is disabled. Set true when the list can be reordered */
+				'isDisabled'?: boolean| undefined | null
+				/** Toggle props. Props passed to the toggle if toggleId is set */
+				'toggle'?: SpruceSchemas.Local.IToggle| undefined | null
+				/** Primary button. A primary button that turns the entire list item into a clickable button */
+				'primaryButton'?: SpruceSchemas.Local.IButton| undefined | null
+				/** Buttons. Additional buttons that get dropped into this item */
+				'buttons'?: SpruceSchemas.Local.IButton[]| undefined | null
+				/** Context menu. Context Menu associated with the list it */
+				'contextMenu'?: SpruceSchemas.Local.IContextMenu| undefined | null
+				/** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
+				'isSeparatorVisible'?: boolean| undefined | null
+				/** Class name. Optional class name for list item */
+				'className'?: string| undefined | null
+				/** Loading. Makes the item look like a loading placeholder */
+				'isLoading'?: boolean| undefined | null
+				/** Selectable element. Any props you want sent down to the selectable component being rendered */
+				'selectable'?: { schemaId: 'radio', values: SpruceSchemas.Local.IRadio } | { schemaId: 'checkbox', values: SpruceSchemas.Local.ICheckbox }| undefined | null
+				/** Warnings. Highlight title, subtitle, note with warning colors */
+				'warnings'?: SpruceSchemas.Local.IListItemWarning| undefined | null
+				/** List. Optional; adds a nested list */
+				'list'?: SpruceSchemas.Local.IList| undefined | null
+				/** Lists. Optional; adds multiple lists nested at the same level */
+				'lists'?: SpruceSchemas.Local.IList[]| undefined | null
+				
+				'onClick'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
+				/** Expanded. If Expandable is true, will open or close the item */
+				'isExpanded'?: boolean| undefined | null
+				/** Collapsed icon. */
+				'collapsedIcon'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Expanded icon. */
+				'expandedIcon'?: SpruceSchemas.Local.IIcon| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.ExpandableListItem {
+		export const id = 'expandableListItem'
+
+		/** The interface for the schema definition for a Expandable list item */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'expandableListItem',
+			name: 'Expandable list item',
+			description: '',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Title. Title text */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Title text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Subtitle. Optional subtitle text */
+			            'subtitle': {
+			                label: 'Subtitle',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional subtitle text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Note. Optional note text */
+			            'note': {
+			                label: 'Note',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional note text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expandable. Enables a little disclosure triangle to hide/show the item */
+			            'isExpandable': {
+			                label: 'Expandable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Enables a little disclosure triangle to hide/show the item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Avatar. */
+			            'avatar': {
+			                label: 'Avatar',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Avatar.IDefinition[],}
+			            },
+			            /** Image. */
+			            'image': {
+			                label: 'Image',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Image.IDefinition[],}
+			            },
+			            /** Icon. Inline svg icon */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Inline svg icon',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Is icon hidden. Optional; visually hides the icon without removing it */
+			            'isIconHidden': {
+			                label: 'Is icon hidden',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Optional; visually hides the icon without removing it',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
+			            'isLeftIndented': {
+			                label: 'Is left indented',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to add left spacing. useful in aligning with other list items that have icons or images',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is draggable. Set true when the list can be reordered */
+			            'isDraggable': {
+			                label: 'Is draggable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is disabled. Set true when the list can be reordered */
+			            'isDisabled': {
+			                label: 'Is disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Toggle props. Props passed to the toggle if toggleId is set */
+			            'toggle': {
+			                label: 'Toggle props',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Props passed to the toggle if toggleId is set',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Toggle.IDefinition[],}
+			            },
+			            /** Primary button. A primary button that turns the entire list item into a clickable button */
+			            'primaryButton': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'A primary button that turns the entire list item into a clickable button',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Buttons. Additional buttons that get dropped into this item */
+			            'buttons': {
+			                label: 'Buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Additional buttons that get dropped into this item',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Context menu. Context Menu associated with the list it */
+			            'contextMenu': {
+			                label: 'Context menu',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Context Menu associated with the list it',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.ContextMenu.IDefinition[],}
+			            },
+			            /** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
+			            'isSeparatorVisible': {
+			                label: 'Is separator visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to show separator for this list item if followed by another list item.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Class name. Optional class name for list item */
+			            'className': {
+			                label: 'Class name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional class name for list item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Loading. Makes the item look like a loading placeholder */
+			            'isLoading': {
+			                label: 'Loading',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes the item look like a loading placeholder',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Selectable element. Any props you want sent down to the selectable component being rendered */
+			            'selectable': {
+			                label: 'Selectable element',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Any props you want sent down to the selectable component being rendered',
+			                
+			                
+			                
+			                
+			                options: {schemas: (SpruceSchemas.Local.Radio.IDefinition | SpruceSchemas.Local.Checkbox.IDefinition)[],}
+			            },
+			            /** Warnings. Highlight title, subtitle, note with warning colors */
+			            'warnings': {
+			                label: 'Warnings',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Highlight title, subtitle, note with warning colors',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.ListItemWarning.IDefinition[],}
+			            },
+			            /** List. Optional; adds a nested list */
+			            'list': {
+			                label: 'List',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds a nested list',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.List.IDefinition[],}
+			            },
+			            /** Lists. Optional; adds multiple lists nested at the same level */
+			            'lists': {
+			                label: 'Lists',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds multiple lists nested at the same level',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.List.IDefinition[],}
+			            },
+			            /** . */
+			            'onClick': {
+			                label: '',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			            /** Expanded. If Expandable is true, will open or close the item */
+			            'isExpanded': {
+			                label: 'Expanded',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If Expandable is true, will open or close the item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed icon. */
+			            'collapsedIcon': {
+			                label: 'Collapsed icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Expanded icon. */
+			            'expandedIcon': {
+			                label: 'Expanded icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Expandable list item */
+		export const definition: SpruceSchemas.Local.ExpandableListItem.IDefinition = {
+			id: 'expandableListItem',
+			name: 'Expandable list item',
+			description: '',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Title. Title text */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Title text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Subtitle. Optional subtitle text */
+			            'subtitle': {
+			                label: 'Subtitle',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional subtitle text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Note. Optional note text */
+			            'note': {
+			                label: 'Note',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional note text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expandable. Enables a little disclosure triangle to hide/show the item */
+			            'isExpandable': {
+			                label: 'Expandable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Enables a little disclosure triangle to hide/show the item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Avatar. */
+			            'avatar': {
+			                label: 'Avatar',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Avatar.definition],}
+			            },
+			            /** Image. */
+			            'image': {
+			                label: 'Image',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Image.definition],}
+			            },
+			            /** Icon. Inline svg icon */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Inline svg icon',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Is icon hidden. Optional; visually hides the icon without removing it */
+			            'isIconHidden': {
+			                label: 'Is icon hidden',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Optional; visually hides the icon without removing it',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
+			            'isLeftIndented': {
+			                label: 'Is left indented',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to add left spacing. useful in aligning with other list items that have icons or images',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is draggable. Set true when the list can be reordered */
+			            'isDraggable': {
+			                label: 'Is draggable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is disabled. Set true when the list can be reordered */
+			            'isDisabled': {
+			                label: 'Is disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Toggle props. Props passed to the toggle if toggleId is set */
+			            'toggle': {
+			                label: 'Toggle props',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Props passed to the toggle if toggleId is set',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Toggle.definition],}
+			            },
+			            /** Primary button. A primary button that turns the entire list item into a clickable button */
+			            'primaryButton': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'A primary button that turns the entire list item into a clickable button',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Buttons. Additional buttons that get dropped into this item */
+			            'buttons': {
+			                label: 'Buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Additional buttons that get dropped into this item',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Context menu. Context Menu associated with the list it */
+			            'contextMenu': {
+			                label: 'Context menu',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Context Menu associated with the list it',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.ContextMenu.definition],}
+			            },
+			            /** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
+			            'isSeparatorVisible': {
+			                label: 'Is separator visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to show separator for this list item if followed by another list item.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Class name. Optional class name for list item */
+			            'className': {
+			                label: 'Class name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional class name for list item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Loading. Makes the item look like a loading placeholder */
+			            'isLoading': {
+			                label: 'Loading',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes the item look like a loading placeholder',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Selectable element. Any props you want sent down to the selectable component being rendered */
+			            'selectable': {
+			                label: 'Selectable element',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Any props you want sent down to the selectable component being rendered',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Radio.definition, SpruceSchemas.Local.Checkbox.definition],}
+			            },
+			            /** Warnings. Highlight title, subtitle, note with warning colors */
+			            'warnings': {
+			                label: 'Warnings',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Highlight title, subtitle, note with warning colors',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.ListItemWarning.definition],}
+			            },
+			            /** List. Optional; adds a nested list */
+			            'list': {
+			                label: 'List',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds a nested list',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.List.definition],}
+			            },
+			            /** Lists. Optional; adds multiple lists nested at the same level */
+			            'lists': {
+			                label: 'Lists',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds multiple lists nested at the same level',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.List.definition],}
+			            },
+			            /** . */
+			            'onClick': {
+			                label: '',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			            /** Expanded. If Expandable is true, will open or close the item */
+			            'isExpanded': {
+			                label: 'Expanded',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If Expandable is true, will open or close the item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed icon. */
+			            'collapsedIcon': {
+			                label: 'Collapsed icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Expanded icon. */
+			            'expandedIcon': {
+			                label: 'Expanded icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.ExpandableListItem.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** A button with a dropdown of actions on the right */
 		export interface ISplitButton {
 			
 				/** Id. */
-				'id': string
+				'id'?: string| undefined | null
 				/** Default action. The main action readily surfaced to the user */
-				'defaultButton': SpruceSchemas.local.IButton
+				'defaultButton': SpruceSchemas.Local.IButton
 				/** Actions. All the secondary nested buttons */
-				'buttons'?: SpruceSchemas.local.IButton[]| undefined
+				'buttons'?: SpruceSchemas.Local.IButton[]| undefined | null
 				/** Kind. Sets the visual hierarchy of the button */
-				'kind'?: ("primary" | "secondary" | "simple" | "caution")| undefined
+				'kind'?: ("primary" | "secondary" | "simple" | "caution")| undefined | null
 				/** Is full width. Set true to fill the parent's width */
-				'isFullWidth'?: boolean| undefined
+				'isFullWidth'?: boolean| undefined | null
 				/** Is small. Sets the visual hierarchy of the button */
-				'isSmall'?: boolean| undefined
+				'isSmall'?: boolean| undefined | null
+				/** Click handler. */
+				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
+				/** Portal. Render in a react-portal, not sure why this is needed or not just always true */
+				'usePortal'?: boolean| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.SplitButton {
+	export namespace SpruceSchemas.Local.SplitButton {
 		export const id = 'splitButton'
 
 		/** The interface for the schema definition for a Split button */
@@ -5482,7 +6951,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                
 			                
 			                
@@ -5501,7 +6970,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Actions. All the secondary nested buttons */
 			            'buttons': {
@@ -5511,10 +6980,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'All the secondary nested buttons',
 			                
-			                
+			                defaultValue: [],
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Kind. Sets the visual hierarchy of the button */
 			            'kind': {
@@ -5555,11 +7024,37 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
+			            /** Click handler. */
+			            'onClick': {
+			                label: 'Click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Portal. Render in a react-portal, not sure why this is needed or not just always true */
+			            'usePortal': {
+			                label: 'Portal',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render in a react-portal, not sure why this is needed or not just always true',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			    }
 		}
 
 		/** The schema definition for a Split button */
-		export const definition: SpruceSchemas.local.SplitButton.IDefinition = {
+		export const definition: SpruceSchemas.Local.SplitButton.IDefinition = {
 			id: 'splitButton',
 			name: 'Split button',
 			description: 'A button with a dropdown of actions on the right',
@@ -5571,7 +7066,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                
 			                
 			                
@@ -5590,7 +7085,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Actions. All the secondary nested buttons */
 			            'buttons': {
@@ -5600,10 +7095,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'All the secondary nested buttons',
 			                
-			                
+			                defaultValue: [],
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Kind. Sets the visual hierarchy of the button */
 			            'kind': {
@@ -5644,38 +7139,64 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
+			            /** Click handler. */
+			            'onClick': {
+			                label: 'Click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Portal. Render in a react-portal, not sure why this is needed or not just always true */
+			            'usePortal': {
+			                label: 'Portal',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render in a react-portal, not sure why this is needed or not just always true',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.SplitButton.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.SplitButton.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Header of a card */
 		export interface ICardHeader {
 			
 				/** Title. Title for the card */
-				'title'?: string| undefined
+				'title'?: string| undefined | null
 				/** Label text. Optional label to show above title */
-				'labelText'?: string| undefined
+				'labelText'?: string| undefined | null
 				/** Label icon. Optional icon to show above the title and before the label */
-				'labelIcon'?: SpruceSchemas.local.IIcon| undefined
+				'labelIcon'?: SpruceSchemas.Local.IIcon| undefined | null
 				/** Buttons. Render buttons in the Card Header */
-				'buttons': SpruceSchemas.local.IButton[]
+				'buttons'?: SpruceSchemas.Local.IButton[]| undefined | null
 				/** Context menu. Renders a Context Menu in the Card Header */
-				'contextMenu'?: SpruceSchemas.local.IContextMenu| undefined
+				'contextMenu'?: SpruceSchemas.Local.IContextMenu| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.CardHeader {
+	export namespace SpruceSchemas.Local.CardHeader {
 		export const id = 'CardHeader'
 
-		/** The interface for the schema definition for a CardHeader */
+		/** The interface for the schema definition for a cardHeader */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 			id: 'CardHeader',
-			name: 'CardHeader',
+			name: 'cardHeader',
 			description: 'Header of a card',
 			
 			
@@ -5717,20 +7238,20 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			            /** Buttons. Render buttons in the Card Header */
 			            'buttons': {
 			                label: 'Buttons',
 			                type: SpruceSchema.FieldType.Schema,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Render buttons in the Card Header',
 			                
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Context menu. Renders a Context Menu in the Card Header */
 			            'contextMenu': {
@@ -5743,15 +7264,15 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.ContextMenu.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.ContextMenu.IDefinition[],}
 			            },
 			    }
 		}
 
-		/** The schema definition for a CardHeader */
-		export const definition: SpruceSchemas.local.CardHeader.IDefinition = {
+		/** The schema definition for a cardHeader */
+		export const definition: SpruceSchemas.Local.CardHeader.IDefinition = {
 			id: 'CardHeader',
-			name: 'CardHeader',
+			name: 'cardHeader',
 			description: 'Header of a card',
 			
 			
@@ -5793,20 +7314,20 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			            /** Buttons. Render buttons in the Card Header */
 			            'buttons': {
 			                label: 'Buttons',
 			                type: SpruceSchema.FieldType.Schema,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Render buttons in the Card Header',
 			                
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Context menu. Renders a Context Menu in the Card Header */
 			            'contextMenu': {
@@ -5819,55 +7340,57 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.ContextMenu.definition],}
+			                options: {schemas: [SpruceSchemas.Local.ContextMenu.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.CardHeader.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.CardHeader.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Header of a card */
 		export interface IOnboardingCardStep {
 			
-				/** Id. Unique identifier */
-				'id': string
+				/** Id. */
+				'id'?: string| undefined | null
 				/** Tab title. Title that shows in the tab */
 				'tabTitle': string
 				/** Tab icon. Icon for the tab */
-				'tabIcon'?: SpruceSchemas.local.IIcon| undefined
+				'tabIcon'?: SpruceSchemas.Local.IIcon| undefined | null
 				/** Panel title. Title that shows in the panel */
 				'panelTitle': string
-				/** Panel copy. Copy describing the step in the card's body */
+				/** Panel text. Copy describing the step in the card's body */
 				'panelCopy': string
-				/** Panel c t a. Primary CTA of this step */
-				'panelCTA'?: SpruceSchemas.local.IButton| undefined
+				/** Panel CTA. Primary CTA of this step */
+				'panelCTA'?: SpruceSchemas.Local.IButton| undefined | null
 				/** Is complete. Is this step complete? */
-				'isComplete'?: boolean| undefined
+				'isComplete'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.OnboardingCardStep {
-		export const id = 'OnboardingCardStep'
+	export namespace SpruceSchemas.Local.OnboardingCardStep {
+		export const id = 'onboardingCardStep'
 
 		/** The interface for the schema definition for a OnboardingCardStep */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'OnboardingCardStep',
+			id: 'onboardingCardStep',
 			name: 'OnboardingCardStep',
 			description: 'Header of a card',
 			
 			
 			    fields: {
-			            /** Id. Unique identifier */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique identifier',
+			                
+			                
 			                
 			                
 			                
@@ -5898,7 +7421,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			            /** Panel title. Title that shows in the panel */
 			            'panelTitle': {
@@ -5913,9 +7436,9 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Panel copy. Copy describing the step in the card's body */
+			            /** Panel text. Copy describing the step in the card's body */
 			            'panelCopy': {
-			                label: 'Panel copy',
+			                label: 'Panel text',
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                isRequired: true,
@@ -5926,9 +7449,9 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Panel c t a. Primary CTA of this step */
+			            /** Panel CTA. Primary CTA of this step */
 			            'panelCTA': {
-			                label: 'Panel c t a',
+			                label: 'Panel CTA',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
@@ -5937,7 +7460,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Is complete. Is this step complete? */
 			            'isComplete': {
@@ -5946,6 +7469,19 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                hint: 'Is this step complete?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
 			                
 			                
 			                
@@ -5956,20 +7492,20 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a OnboardingCardStep */
-		export const definition: SpruceSchemas.local.OnboardingCardStep.IDefinition = {
-			id: 'OnboardingCardStep',
+		export const definition: SpruceSchemas.Local.OnboardingCardStep.IDefinition = {
+			id: 'onboardingCardStep',
 			name: 'OnboardingCardStep',
 			description: 'Header of a card',
 			
 			
 			    fields: {
-			            /** Id. Unique identifier */
+			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
-			                hint: 'Unique identifier',
+			                
+			                
 			                
 			                
 			                
@@ -6000,7 +7536,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			            /** Panel title. Title that shows in the panel */
 			            'panelTitle': {
@@ -6015,9 +7551,9 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Panel copy. Copy describing the step in the card's body */
+			            /** Panel text. Copy describing the step in the card's body */
 			            'panelCopy': {
-			                label: 'Panel copy',
+			                label: 'Panel text',
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                isRequired: true,
@@ -6028,9 +7564,9 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Panel c t a. Primary CTA of this step */
+			            /** Panel CTA. Primary CTA of this step */
 			            'panelCTA': {
-			                label: 'Panel c t a',
+			                label: 'Panel CTA',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
@@ -6039,7 +7575,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Is complete. Is this step complete? */
 			            'isComplete': {
@@ -6054,26 +7590,39 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.OnboardingCardStep.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.OnboardingCardStep.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Header of a card */
 		export interface IOnboardingCard {
 			
 				/** Title. Title of the entire card */
-				'title'?: string| undefined
+				'title'?: string| undefined | null
 				/** Steps. Steps for onboarding */
-				'steps': SpruceSchemas.local.IOnboardingCardStep[]
+				'steps': SpruceSchemas.Local.IOnboardingCardStep[]
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.OnboardingCard {
+	export namespace SpruceSchemas.Local.OnboardingCard {
 		export const id = 'OnboardingCard'
 
 		/** The interface for the schema definition for a OnboardingCard */
@@ -6108,13 +7657,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.OnboardingCardStep.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.OnboardingCardStep.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a OnboardingCard */
-		export const definition: SpruceSchemas.local.OnboardingCard.IDefinition = {
+		export const definition: SpruceSchemas.Local.OnboardingCard.IDefinition = {
 			id: 'OnboardingCard',
 			name: 'OnboardingCard',
 			description: 'Header of a card',
@@ -6145,147 +7694,26 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.OnboardingCardStep.definition],}
+			                options: {schemas: [SpruceSchemas.Local.OnboardingCardStep.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.OnboardingCard.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.OnboardingCard.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** Header of a card */
-		export interface IScoreCardPanel {
-			
-				/** Id. Unique id for React loops */
-				'id': string
-				/** Label. The label for this score, e.g. Today's Sales */
-				'label'?: string| undefined
-				/** Value. The score, e.g. $234.30 */
-				'value'?: string| undefined
-		}
-	}	 
-
-	export namespace SpruceSchemas.local.ScoreCardPanel {
-		export const id = 'ScoreCardPanel'
-
-		/** The interface for the schema definition for a ScoreCardPanel */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'ScoreCardPanel',
-			name: 'ScoreCardPanel',
-			description: 'Header of a card',
-			
-			
-			    fields: {
-			            /** Id. Unique id for React loops */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                hint: 'Unique id for React loops',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Label. The label for this score, e.g. Today's Sales */
-			            'label': {
-			                label: 'Label',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'The label for this score, e.g. Today\'s Sales',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Value. The score, e.g. $234.30 */
-			            'value': {
-			                label: 'Value',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'The score, e.g. $234.30',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a ScoreCardPanel */
-		export const definition: SpruceSchemas.local.ScoreCardPanel.IDefinition = {
-			id: 'ScoreCardPanel',
-			name: 'ScoreCardPanel',
-			description: 'Header of a card',
-			
-			
-			    fields: {
-			            /** Id. Unique id for React loops */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
-			                
-			                isRequired: true,
-			                hint: 'Unique id for React loops',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Label. The label for this score, e.g. Today's Sales */
-			            'label': {
-			                label: 'Label',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'The label for this score, e.g. Today\'s Sales',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Value. The score, e.g. $234.30 */
-			            'value': {
-			                label: 'Value',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'The score, e.g. $234.30',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ScoreCardPanel.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Header of a card */
 		export interface IScoreCard {
 			
 				/** Scores. */
-				'scores': SpruceSchemas.local.IScoreCardPanel[]
+				'scores': SpruceSchemas.Local.IScoreCardPanel[]
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ScoreCard {
+	export namespace SpruceSchemas.Local.ScoreCard {
 		export const id = 'ScoreCard'
 
 		/** The interface for the schema definition for a ScoreCard */
@@ -6307,13 +7735,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.ScoreCardPanel.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.ScoreCardPanel.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a ScoreCard */
-		export const definition: SpruceSchemas.local.ScoreCard.IDefinition = {
+		export const definition: SpruceSchemas.Local.ScoreCard.IDefinition = {
 			id: 'ScoreCard',
 			name: 'ScoreCard',
 			description: 'Header of a card',
@@ -6331,239 +7759,528 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.ScoreCardPanel.definition],}
+			                options: {schemas: [SpruceSchemas.Local.ScoreCardPanel.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ScoreCard.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.ScoreCard.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** The builder of Cards, a fundamental visualization concept pervasive in the Heartwood design system. */
-		export interface ICardBody {
+	export namespace SpruceSchemas.Local {
+		/** Call out information so it&#x27;s impossible to miss! */
+		export interface IToast {
 			
-				/** Items. Children to show in the Card */
-				'items': (SpruceSchemas.local.IButton | SpruceSchemas.local.IImage | SpruceSchemas.local.IHeading | SpruceSchemas.local.IText | SpruceSchemas.local.IScoreCard | SpruceSchemas.local.IToast | SpruceSchemas.local.IList)[]
-				/** Is sectioned. Whether to wrap children in CardSection */
-				'isSectioned'?: boolean| undefined
-				/** Are section separators visible. Set true to display line separators between CardSection components */
-				'areSectionSeparatorsVisible'?: boolean| undefined
-				/** Has top padding. Does card include top padding */
-				'hasTopPadding'?: boolean| undefined
-				/** Has bottom padding. Does card include bottom padding */
-				'hasBottomPadding'?: boolean| undefined
-				/** Is full bleed. Set to true to remove horizontal padding */
-				'isFullBleed'?: boolean| undefined
+				/** Headline. Headline text */
+				'headline': string
+				/** Remove action. Action to be invoked when hitting the dismiss button */
+				'onClickDismiss'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
+				/** Id. Unique id for UI caching */
+				'id': string
+				/** Text. Optional; Text after the headline */
+				'text'?: string| undefined | null
+				/** Kind. Sets the variation of toast */
+				'kind'?: string| undefined | null
+				/** Followup text. Text for the followup action */
+				'followupText'?: string| undefined | null
+				/** Followup handler. Callback to be invoked when hitting the followup CTA */
+				'onClickFollowup'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.CardBody {
-		export const id = 'cardBody'
+	export namespace SpruceSchemas.Local.Toast {
+		export const id = 'toast'
 
-		/** The interface for the schema definition for a Card body */
+		/** The interface for the schema definition for a Toast */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'cardBody',
-			name: 'Card body',
-			description: 'The builder of Cards, a fundamental visualization concept pervasive in the Heartwood design system.',
+			id: 'toast',
+			name: 'Toast',
+			description: 'Call out information so it\'s impossible to miss!',
 			
 			
 			    fields: {
-			            /** Items. Children to show in the Card */
-			            'items': {
-			                label: 'Items',
-			                type: SpruceSchema.FieldType.Schema,
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                isRequired: true,
-			                hint: 'Children to show in the Card',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: (SpruceSchemas.local.Button.IDefinition | SpruceSchemas.local.Image.IDefinition | SpruceSchemas.local.Heading.IDefinition | SpruceSchemas.local.Text.IDefinition | SpruceSchemas.local.ScoreCard.IDefinition | SpruceSchemas.local.Toast.IDefinition | SpruceSchemas.local.List.IDefinition)[],}
-			            },
-			            /** Is sectioned. Whether to wrap children in CardSection */
-			            'isSectioned': {
-			                label: 'Is sectioned',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Whether to wrap children in CardSection',
+			                hint: 'Headline text',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Are section separators visible. Set true to display line separators between CardSection components */
-			            'areSectionSeparatorsVisible': {
-			                label: 'Are section separators visible',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
-			                hint: 'Set true to display line separators between CardSection components',
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			            /** Id. Unique id for UI caching */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                isRequired: true,
+			                hint: 'Unique id for UI caching',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Has top padding. Does card include top padding */
-			            'hasTopPadding': {
-			                label: 'Has top padding',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** Text. Optional; Text after the headline */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
-			                hint: 'Does card include top padding',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Has bottom padding. Does card include bottom padding */
-			            'hasBottomPadding': {
-			                label: 'Has bottom padding',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Does card include bottom padding',
+			                hint: 'Optional; Text after the headline',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Is full bleed. Set to true to remove horizontal padding */
-			            'isFullBleed': {
-			                label: 'Is full bleed',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** Kind. Sets the variation of toast */
+			            'kind': {
+			                label: 'Kind',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
-			                hint: 'Set to true to remove horizontal padding',
+			                hint: 'Sets the variation of toast',
 			                
 			                
 			                
 			                
 			                options: undefined
+			            },
+			            /** Followup text. Text for the followup action */
+			            'followupText': {
+			                label: 'Followup text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Text for the followup action',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Followup handler. Callback to be invoked when hitting the followup CTA */
+			            'onClickFollowup': {
+			                label: 'Followup handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Callback to be invoked when hitting the followup CTA',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
 			            },
 			    }
 		}
 
-		/** The schema definition for a Card body */
-		export const definition: SpruceSchemas.local.CardBody.IDefinition = {
-			id: 'cardBody',
-			name: 'Card body',
-			description: 'The builder of Cards, a fundamental visualization concept pervasive in the Heartwood design system.',
+		/** The schema definition for a Toast */
+		export const definition: SpruceSchemas.Local.Toast.IDefinition = {
+			id: 'toast',
+			name: 'Toast',
+			description: 'Call out information so it\'s impossible to miss!',
 			
 			
 			    fields: {
-			            /** Items. Children to show in the Card */
-			            'items': {
-			                label: 'Items',
-			                type: SpruceSchema.FieldType.Schema,
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                isRequired: true,
-			                hint: 'Children to show in the Card',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition, SpruceSchemas.local.Image.definition, SpruceSchemas.local.Heading.definition, SpruceSchemas.local.Text.definition, SpruceSchemas.local.ScoreCard.definition, SpruceSchemas.local.Toast.definition, SpruceSchemas.local.List.definition],}
-			            },
-			            /** Is sectioned. Whether to wrap children in CardSection */
-			            'isSectioned': {
-			                label: 'Is sectioned',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Whether to wrap children in CardSection',
+			                hint: 'Headline text',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Are section separators visible. Set true to display line separators between CardSection components */
-			            'areSectionSeparatorsVisible': {
-			                label: 'Are section separators visible',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
-			                hint: 'Set true to display line separators between CardSection components',
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			            /** Id. Unique id for UI caching */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                isRequired: true,
+			                hint: 'Unique id for UI caching',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Has top padding. Does card include top padding */
-			            'hasTopPadding': {
-			                label: 'Has top padding',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** Text. Optional; Text after the headline */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
-			                hint: 'Does card include top padding',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Has bottom padding. Does card include bottom padding */
-			            'hasBottomPadding': {
-			                label: 'Has bottom padding',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Does card include bottom padding',
+			                hint: 'Optional; Text after the headline',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Is full bleed. Set to true to remove horizontal padding */
-			            'isFullBleed': {
-			                label: 'Is full bleed',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** Kind. Sets the variation of toast */
+			            'kind': {
+			                label: 'Kind',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
-			                hint: 'Set to true to remove horizontal padding',
+			                hint: 'Sets the variation of toast',
 			                
 			                
 			                
 			                
 			                options: undefined
+			            },
+			            /** Followup text. Text for the followup action */
+			            'followupText': {
+			                label: 'Followup text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Text for the followup action',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Followup handler. Callback to be invoked when hitting the followup CTA */
+			            'onClickFollowup': {
+			                label: 'Followup handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Callback to be invoked when hitting the followup CTA',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.CardBody.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.Toast.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
+		/** Hold all the information for creating body components */
+		export interface ICardBuilderBody {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** children. Children to show in the Card */
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Is sectioned. Whether to wrap children in CardSection */
+				'isSectioned'?: boolean| undefined | null
+				/** Are section separators visible. Set true to display line separators between CardSection components */
+				'areSectionSeparatorsVisible'?: boolean| undefined | null
+				/** Has top padding. Does card include top padding */
+				'hasTopPadding'?: boolean| undefined | null
+				/** Has bottom padding. Does card include bottom padding */
+				'hasBottomPadding'?: boolean| undefined | null
+				/** Is full bleed. Set to true to remove horizontal padding */
+				'isFullBleed'?: boolean| undefined | null
+				/** Items. Children to show in the Card */
+				'items': ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'image', values: SpruceSchemas.Local.IImage } | { schemaId: 'heading', values: SpruceSchemas.Local.IHeading } | { schemaId: 'text', values: SpruceSchemas.Local.IText } | { schemaId: 'scoreCard', values: SpruceSchemas.Local.IScoreCard } | { schemaId: 'toast', values: SpruceSchemas.Local.IToast } | { schemaId: 'list', values: SpruceSchemas.Local.IList })[]
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.CardBuilderBody {
+		export const id = 'cardBuilderBody'
+
+		/** The interface for the schema definition for a Card builder body */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'cardBuilderBody',
+			name: 'Card builder body',
+			description: 'Hold all the information for creating body components',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** children. Children to show in the Card */
+			            'children': {
+			                label: 'children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                hint: 'Children to show in the Card',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is sectioned. Whether to wrap children in CardSection */
+			            'isSectioned': {
+			                label: 'Is sectioned',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Whether to wrap children in CardSection',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Are section separators visible. Set true to display line separators between CardSection components */
+			            'areSectionSeparatorsVisible': {
+			                label: 'Are section separators visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to display line separators between CardSection components',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has top padding. Does card include top padding */
+			            'hasTopPadding': {
+			                label: 'Has top padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include top padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has bottom padding. Does card include bottom padding */
+			            'hasBottomPadding': {
+			                label: 'Has bottom padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include bottom padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. Set to true to remove horizontal padding */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to remove horizontal padding',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Items. Children to show in the Card */
+			            'items': {
+			                label: 'Items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                hint: 'Children to show in the Card',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.Image.IDefinition | SpruceSchemas.Local.Heading.IDefinition | SpruceSchemas.Local.Text.IDefinition | SpruceSchemas.Local.ScoreCard.IDefinition | SpruceSchemas.Local.Toast.IDefinition | SpruceSchemas.Local.List.IDefinition)[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Card builder body */
+		export const definition: SpruceSchemas.Local.CardBuilderBody.IDefinition = {
+			id: 'cardBuilderBody',
+			name: 'Card builder body',
+			description: 'Hold all the information for creating body components',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** children. Children to show in the Card */
+			            'children': {
+			                label: 'children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                hint: 'Children to show in the Card',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is sectioned. Whether to wrap children in CardSection */
+			            'isSectioned': {
+			                label: 'Is sectioned',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Whether to wrap children in CardSection',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Are section separators visible. Set true to display line separators between CardSection components */
+			            'areSectionSeparatorsVisible': {
+			                label: 'Are section separators visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to display line separators between CardSection components',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has top padding. Does card include top padding */
+			            'hasTopPadding': {
+			                label: 'Has top padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include top padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has bottom padding. Does card include bottom padding */
+			            'hasBottomPadding': {
+			                label: 'Has bottom padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include bottom padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. Set to true to remove horizontal padding */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to remove horizontal padding',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Items. Children to show in the Card */
+			            'items': {
+			                label: 'Items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                hint: 'Children to show in the Card',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.Image.definition, SpruceSchemas.Local.Heading.definition, SpruceSchemas.Local.Text.definition, SpruceSchemas.Local.ScoreCard.definition, SpruceSchemas.Local.Toast.definition, SpruceSchemas.Local.List.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.CardBuilderBody.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** A group of buttons presented in a few cool ways (see kind) */
 		export interface IButtonGroup {
 			
 				/** Buttons. */
-				'buttons': SpruceSchemas.local.IButton[]
+				'buttons': SpruceSchemas.Local.IButton[]
 				/** Kind. Visual appearance of the group. */
-				'kind'?: ("default" | "segmented" | "floating")| undefined
+				'kind'?: ("default" | "segmented" | "floating")| undefined | null
 				/** Is full width. Set true to fill parent width */
-				'isFullWidth'?: boolean| undefined
+				'isFullWidth'?: boolean| undefined | null
 				/** Highlighted index. Index of the button that is currently highlighted, e.g. by arrow keys */
-				'highlightedIndex'?: number| undefined
-				/** . */
-				'onClick'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
+				'highlightedIndex'?: number| undefined | null
+				
+				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ButtonGroup {
+	export namespace SpruceSchemas.Local.ButtonGroup {
 		export const id = 'buttonGroup'
 
 		/** The interface for the schema definition for a Button group */
@@ -6585,7 +8302,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Kind. Visual appearance of the group. */
 			            'kind': {
@@ -6629,7 +8346,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			            /** . */
 			            'onClick': {
 			                label: '',
-			                type: SpruceSchema.FieldType.OnClick,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                
@@ -6637,13 +8354,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: undefined
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
 			            },
 			    }
 		}
 
 		/** The schema definition for a Button group */
-		export const definition: SpruceSchemas.local.ButtonGroup.IDefinition = {
+		export const definition: SpruceSchemas.Local.ButtonGroup.IDefinition = {
 			id: 'buttonGroup',
 			name: 'Button group',
 			description: 'A group of buttons presented in a few cool ways (see kind)',
@@ -6661,7 +8378,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Kind. Visual appearance of the group. */
 			            'kind': {
@@ -6705,7 +8422,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			            /** . */
 			            'onClick': {
 			                label: '',
-			                type: SpruceSchema.FieldType.OnClick,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
 			                
@@ -6713,35 +8430,35 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: undefined
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ButtonGroup.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.ButtonGroup.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** Header of a card */
-		export interface ICardFooter {
+	export namespace SpruceSchemas.Local {
+		/** Footer used for the card builder */
+		export interface ICardBuilderFooter {
 			
 				/** Button group. Render buttons in the Card Footer */
-				'buttonGroup'?: SpruceSchemas.local.IButtonGroup| undefined
+				'buttonGroup'?: SpruceSchemas.Local.IButtonGroup| undefined | null
 				/** Helper. Helper for the footer */
-				'helper'?: string| undefined
+				'helper'?: string| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.CardFooter {
-		export const id = 'cardFooter'
+	export namespace SpruceSchemas.Local.CardBuilderFooter {
+		export const id = 'cardBuilderFooter'
 
-		/** The interface for the schema definition for a cardFooter */
+		/** The interface for the schema definition for a CardBuilder footer */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'cardFooter',
-			name: 'cardFooter',
-			description: 'Header of a card',
+			id: 'cardBuilderFooter',
+			name: 'CardBuilder footer',
+			description: 'Footer used for the card builder',
 			
 			
 			    fields: {
@@ -6756,7 +8473,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.ButtonGroup.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.ButtonGroup.IDefinition[],}
 			            },
 			            /** Helper. Helper for the footer */
 			            'helper': {
@@ -6774,11 +8491,11 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			    }
 		}
 
-		/** The schema definition for a cardFooter */
-		export const definition: SpruceSchemas.local.CardFooter.IDefinition = {
-			id: 'cardFooter',
-			name: 'cardFooter',
-			description: 'Header of a card',
+		/** The schema definition for a CardBuilder footer */
+		export const definition: SpruceSchemas.Local.CardBuilderFooter.IDefinition = {
+			id: 'cardBuilderFooter',
+			name: 'CardBuilder footer',
+			description: 'Footer used for the card builder',
 			
 			
 			    fields: {
@@ -6793,7 +8510,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.ButtonGroup.definition],}
+			                options: {schemas: [SpruceSchemas.Local.ButtonGroup.definition],}
 			            },
 			            /** Helper. Helper for the footer */
 			            'helper': {
@@ -6812,30 +8529,30 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.CardFooter.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.CardBuilderFooter.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Build a card to show something to the user */
 		export interface ICardBuilder {
 			
 				/** Id. */
-				'id': string
+				'id'?: string| undefined | null
 				/** Header. Card Header props */
-				'header'?: SpruceSchemas.local.ICardHeader| undefined
+				'header'?: SpruceSchemas.Local.ICardHeader| undefined | null
 				/** Header image. optionally pass props to an image tag to be rendered in the header */
-				'headerImage'?: SpruceSchemas.local.IImage| undefined
+				'headerImage'?: SpruceSchemas.Local.IImage| undefined | null
 				/** Onboarding. all onboarding props */
-				'onboarding'?: SpruceSchemas.local.IOnboardingCard| undefined
+				'onboarding'?: SpruceSchemas.Local.IOnboardingCard| undefined | null
 				/** Body. Card Body props */
-				'body'?: SpruceSchemas.local.ICardBody| undefined
+				'body'?: SpruceSchemas.Local.ICardBuilderBody| undefined | null
 				/** Footer. The footer of the card */
-				'footer'?: SpruceSchemas.local.ICardFooter| undefined
+				'footer'?: SpruceSchemas.Local.ICardBuilderFooter| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.CardBuilder {
+	export namespace SpruceSchemas.Local.CardBuilder {
 		export const id = 'cardBuilder'
 
 		/** The interface for the schema definition for a CardBuilder */
@@ -6851,7 +8568,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                
 			                
 			                
@@ -6870,7 +8587,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.CardHeader.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.CardHeader.IDefinition[],}
 			            },
 			            /** Header image. optionally pass props to an image tag to be rendered in the header */
 			            'headerImage': {
@@ -6883,7 +8600,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.Image.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Image.IDefinition[],}
 			            },
 			            /** Onboarding. all onboarding props */
 			            'onboarding': {
@@ -6896,7 +8613,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.OnboardingCard.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.OnboardingCard.IDefinition[],}
 			            },
 			            /** Body. Card Body props */
 			            'body': {
@@ -6909,7 +8626,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.CardBody.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.CardBuilderBody.IDefinition[],}
 			            },
 			            /** Footer. The footer of the card */
 			            'footer': {
@@ -6922,13 +8639,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.CardFooter.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.CardBuilderFooter.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a CardBuilder */
-		export const definition: SpruceSchemas.local.CardBuilder.IDefinition = {
+		export const definition: SpruceSchemas.Local.CardBuilder.IDefinition = {
 			id: 'cardBuilder',
 			name: 'CardBuilder',
 			description: 'Build a card to show something to the user',
@@ -6940,7 +8657,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                
 			                
 			                
@@ -6959,7 +8676,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.CardHeader.definition],}
+			                options: {schemas: [SpruceSchemas.Local.CardHeader.definition],}
 			            },
 			            /** Header image. optionally pass props to an image tag to be rendered in the header */
 			            'headerImage': {
@@ -6972,7 +8689,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.Image.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Image.definition],}
 			            },
 			            /** Onboarding. all onboarding props */
 			            'onboarding': {
@@ -6985,7 +8702,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.OnboardingCard.definition],}
+			                options: {schemas: [SpruceSchemas.Local.OnboardingCard.definition],}
 			            },
 			            /** Body. Card Body props */
 			            'body': {
@@ -6998,7 +8715,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.CardBody.definition],}
+			                options: {schemas: [SpruceSchemas.Local.CardBuilderBody.definition],}
 			            },
 			            /** Footer. The footer of the card */
 			            'footer': {
@@ -7011,32 +8728,32 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.CardFooter.definition],}
+			                options: {schemas: [SpruceSchemas.Local.CardBuilderFooter.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.CardBuilder.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.CardBuilder.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Some front end components emit uiEnhancement events to allow skills to enhance them during presentation. */
 		export interface IUIEnhancementSection {
 			
 				/** Id. The ID of the section that is acting as a placeholder for ui enhancements */
-				'id': string
+				'id'?: string| undefined | null
 				/** Calendar event details items. Calendar items to add as enhancements */
-				'calendarEventDetailItems': (SpruceSchemas.local.IList | SpruceSchemas.local.IButton | SpruceSchemas.local.ISplitButton | SpruceSchemas.local.ICardBuilder | SpruceSchemas.local.IToast | SpruceSchemas.local.IText | SpruceSchemas.local.IMarkdown)[]
+				'calendarEventDetailItems': ({ schemaId: 'list', values: SpruceSchemas.Local.IList } | { schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'splitButton', values: SpruceSchemas.Local.ISplitButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'toast', values: SpruceSchemas.Local.IToast } | { schemaId: 'text', values: SpruceSchemas.Local.IText } | { schemaId: 'markdown', values: SpruceSchemas.Local.IMarkdown })[]
 				/** Card builder body items. Card builder items to add as enhancements */
-				'cardBuilderBodyItems': []
+				'cardBuilderBodyItems': ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'image', values: SpruceSchemas.Local.IImage } | { schemaId: 'heading', values: SpruceSchemas.Local.IHeading } | { schemaId: 'text', values: SpruceSchemas.Local.IText } | { schemaId: 'scoreCard', values: SpruceSchemas.Local.IScoreCard } | { schemaId: 'toast', values: SpruceSchemas.Local.IToast } | { schemaId: 'list', values: SpruceSchemas.Local.IList })[]
 				/** Context menu items. Context menu items to add as enhancements */
-				'contextMenuItems': SpruceSchemas.local.IButton[]
+				'contextMenuItems': SpruceSchemas.Local.IButton[]
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.UIEnhancementSection {
+	export namespace SpruceSchemas.Local.UIEnhancementSection {
 		export const id = 'uIEnhancementSection'
 
 		/** The interface for the schema definition for a User interface enhancement section */
@@ -7052,7 +8769,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                hint: 'The ID of the section that is acting as a placeholder for ui enhancements',
 			                
 			                
@@ -7071,7 +8788,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: (SpruceSchemas.local.List.IDefinition | SpruceSchemas.local.Button.IDefinition | SpruceSchemas.local.SplitButton.IDefinition | SpruceSchemas.local.CardBuilder.IDefinition | SpruceSchemas.local.Toast.IDefinition | SpruceSchemas.local.Text.IDefinition | SpruceSchemas.local.Markdown.IDefinition)[],}
+			                options: {schemas: (SpruceSchemas.Local.List.IDefinition | SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.SplitButton.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Toast.IDefinition | SpruceSchemas.Local.Text.IDefinition | SpruceSchemas.Local.Markdown.IDefinition)[],}
 			            },
 			            /** Card builder body items. Card builder items to add as enhancements */
 			            'cardBuilderBodyItems': {
@@ -7084,7 +8801,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [],}
+			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.Image.IDefinition | SpruceSchemas.Local.Heading.IDefinition | SpruceSchemas.Local.Text.IDefinition | SpruceSchemas.Local.ScoreCard.IDefinition | SpruceSchemas.Local.Toast.IDefinition | SpruceSchemas.Local.List.IDefinition)[],}
 			            },
 			            /** Context menu items. Context menu items to add as enhancements */
 			            'contextMenuItems': {
@@ -7097,13 +8814,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a User interface enhancement section */
-		export const definition: SpruceSchemas.local.UIEnhancementSection.IDefinition = {
+		export const definition: SpruceSchemas.Local.UIEnhancementSection.IDefinition = {
 			id: 'uIEnhancementSection',
 			name: 'User interface enhancement section',
 			description: 'Some front end components emit uiEnhancement events to allow skills to enhance them during presentation.',
@@ -7115,7 +8832,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                hint: 'The ID of the section that is acting as a placeholder for ui enhancements',
 			                
 			                
@@ -7134,7 +8851,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.List.definition, SpruceSchemas.local.Button.definition, SpruceSchemas.local.SplitButton.definition, SpruceSchemas.local.CardBuilder.definition, SpruceSchemas.local.Toast.definition, SpruceSchemas.local.Text.definition, SpruceSchemas.local.Markdown.definition],}
+			                options: {schemas: [SpruceSchemas.Local.List.definition, SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.SplitButton.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Toast.definition, SpruceSchemas.Local.Text.definition, SpruceSchemas.Local.Markdown.definition],}
 			            },
 			            /** Card builder body items. Card builder items to add as enhancements */
 			            'cardBuilderBodyItems': {
@@ -7147,7 +8864,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.Image.definition, SpruceSchemas.Local.Heading.definition, SpruceSchemas.Local.Text.definition, SpruceSchemas.Local.ScoreCard.definition, SpruceSchemas.Local.Toast.definition, SpruceSchemas.Local.List.definition],}
 			            },
 			            /** Context menu items. Context menu items to add as enhancements */
 			            'contextMenuItems': {
@@ -7160,48 +8877,48 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.UIEnhancementSection.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.UIEnhancementSection.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** Avatar tied to a core user */
 		export interface IUserAvatar {
 			
 				/** User. */
-				'user': SpruceSchemas.core.IUser
+				'user': SpruceSchemas.Core.IUser
 				/** Source. */
 				'src': string
 				/** Alternate text. Provides alternative information for an image if a user for some reason cannot view it */
 				'alt': string
 				/** Is large. True will show large variation of the avatar */
-				'isLarge'?: boolean| undefined
+				'isLarge'?: boolean| undefined | null
 				/** Is large. Align text and name center */
-				'isVertical'?: boolean| undefined
+				'isVertical'?: boolean| undefined | null
 				/** Show online indicator. Should I should the status indicator */
-				'showIndicator'?: boolean| undefined
+				'showIndicator'?: boolean| undefined | null
 				/** Status. */
-				'status'?: ("online" | "offline")| undefined
+				'status'?: ("online" | "offline")| undefined | null
 				/** Name. */
-				'name'?: string| undefined
+				'name'?: string| undefined | null
 				/** Text. Additional text to show below the name */
-				'text'?: string| undefined
+				'text'?: string| undefined | null
 				/** Class name. Set the "class" attribute */
-				'className'?: string| undefined
+				'className'?: string| undefined | null
 				/** Width. */
-				'width'?: number| undefined
+				'width'?: number| undefined | null
 				/** Height. */
-				'height'?: number| undefined
+				'height'?: number| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.UserAvatar {
+	export namespace SpruceSchemas.Local.UserAvatar {
 		export const id = 'userAvatar'
 
 		/** The interface for the schema definition for a User avatar */
@@ -7223,7 +8940,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.core.User.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Core.User.IDefinition[],}
 			            },
 			            /** Source. */
 			            'src': {
@@ -7372,7 +9089,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a User avatar */
-		export const definition: SpruceSchemas.local.UserAvatar.IDefinition = {
+		export const definition: SpruceSchemas.Local.UserAvatar.IDefinition = {
 			id: 'userAvatar',
 			name: 'User avatar',
 			description: 'Avatar tied to a core user',
@@ -7390,7 +9107,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.core.User.definition],}
+			                options: {schemas: [SpruceSchemas.Core.User.definition],}
 			            },
 			            /** Source. */
 			            'src': {
@@ -7539,32 +9256,32 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.UserAvatar.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.UserAvatar.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** A block of time that comprises a calendar event. A calendar event can have an arbitrary number of blocks. */
 		export interface ICalendarEventBlock {
 			
 				/** Id. An optional identifier for this block */
-				'id'?: string| undefined
+				'id'?: string| undefined | null
 				/** Title. Any title rendered on the event */
-				'title'?: string| undefined
+				'title'?: string| undefined | null
 				/** Subtitle. Displayed right under the title */
-				'subtitle'?: string| undefined
+				'subtitle'?: string| undefined | null
 				/** Duration sec. How long this block is for, in seconds */
 				'durationSec': SpruceSchema.IDurationFieldValue
 				/** Left icons. All the icons show on the left of the calendar event */
-				'leftIcons': SpruceSchemas.local.IIcon[]
+				'leftIcons': SpruceSchemas.Local.IIcon[]
 				/** Right icons. All the icons shown on the right of the calendar event */
-				'rightIcons': SpruceSchemas.local.IIcon[]
+				'rightIcons': SpruceSchemas.Local.IIcon[]
 				/** Is busy. Is the person associated to this event busy during this time (to keep from double booking)? */
-				'isBusy'?: boolean| undefined
+				'isBusy'?: boolean| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.CalendarEventBlock {
+	export namespace SpruceSchemas.Local.CalendarEventBlock {
 		export const id = 'calendarEventBlock'
 
 		/** The interface for the schema definition for a Calendar event block */
@@ -7638,7 +9355,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			            /** Right icons. All the icons shown on the right of the calendar event */
 			            'rightIcons': {
@@ -7651,7 +9368,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			            /** Is busy. Is the person associated to this event busy during this time (to keep from double booking)? */
 			            'isBusy': {
@@ -7670,7 +9387,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a Calendar event block */
-		export const definition: SpruceSchemas.local.CalendarEventBlock.IDefinition = {
+		export const definition: SpruceSchemas.Local.CalendarEventBlock.IDefinition = {
 			id: 'calendarEventBlock',
 			name: 'Calendar event block',
 			description: 'A block of time that comprises a calendar event. A calendar event can have an arbitrary number of blocks.',
@@ -7740,7 +9457,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			            /** Right icons. All the icons shown on the right of the calendar event */
 			            'rightIcons': {
@@ -7753,7 +9470,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			            /** Is busy. Is the person associated to this event busy during this time (to keep from double booking)? */
 			            'isBusy': {
@@ -7772,22 +9489,24 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.CalendarEventBlock.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.CalendarEventBlock.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** All the details attached to an event. Shown on click of the event. */
 		export interface ICalendarEventDetails {
 			
 				/** Id. An optional ID for this item; used to allow association with UI Enhancements */
-				'id'?: string| undefined
+				'id'?: string| undefined | null
+				/** Loading. Hides everything while loading */
+				'isLoading'?: boolean| undefined | null
 				/** Items. The items that make up the event details */
-				'items': (SpruceSchemas.local.IList | SpruceSchemas.local.IButton | SpruceSchemas.local.ISplitButton | SpruceSchemas.local.ICardBuilder | SpruceSchemas.local.IToast | SpruceSchemas.local.IText | SpruceSchemas.local.IMarkdown)[]
+				'items': ({ schemaId: 'list', values: SpruceSchemas.Local.IList } | { schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'splitButton', values: SpruceSchemas.Local.ISplitButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'toast', values: SpruceSchemas.Local.IToast } | { schemaId: 'text', values: SpruceSchemas.Local.IText } | { schemaId: 'markdown', values: SpruceSchemas.Local.IMarkdown })[]
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.CalendarEventDetails {
+	export namespace SpruceSchemas.Local.CalendarEventDetails {
 		export const id = 'calendarEventDetails'
 
 		/** The interface for the schema definition for a Calendar event details */
@@ -7811,6 +9530,19 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
+			            /** Loading. Hides everything while loading */
+			            'isLoading': {
+			                label: 'Loading',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Hides everything while loading',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			            /** Items. The items that make up the event details */
 			            'items': {
 			                label: 'Items',
@@ -7822,13 +9554,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: (SpruceSchemas.local.List.IDefinition | SpruceSchemas.local.Button.IDefinition | SpruceSchemas.local.SplitButton.IDefinition | SpruceSchemas.local.CardBuilder.IDefinition | SpruceSchemas.local.Toast.IDefinition | SpruceSchemas.local.Text.IDefinition | SpruceSchemas.local.Markdown.IDefinition)[],}
+			                options: {schemas: (SpruceSchemas.Local.List.IDefinition | SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.SplitButton.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Toast.IDefinition | SpruceSchemas.Local.Text.IDefinition | SpruceSchemas.Local.Markdown.IDefinition)[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a Calendar event details */
-		export const definition: SpruceSchemas.local.CalendarEventDetails.IDefinition = {
+		export const definition: SpruceSchemas.Local.CalendarEventDetails.IDefinition = {
 			id: 'calendarEventDetails',
 			name: 'Calendar event details',
 			description: 'All the details attached to an event. Shown on click of the event.',
@@ -7848,6 +9580,19 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
+			            /** Loading. Hides everything while loading */
+			            'isLoading': {
+			                label: 'Loading',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Hides everything while loading',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			            /** Items. The items that make up the event details */
 			            'items': {
 			                label: 'Items',
@@ -7859,44 +9604,44 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.List.definition, SpruceSchemas.local.Button.definition, SpruceSchemas.local.SplitButton.definition, SpruceSchemas.local.CardBuilder.definition, SpruceSchemas.local.Toast.definition, SpruceSchemas.local.Text.definition, SpruceSchemas.local.Markdown.definition],}
+			                options: {schemas: [SpruceSchemas.Local.List.definition, SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.SplitButton.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Toast.definition, SpruceSchemas.Local.Text.definition, SpruceSchemas.Local.Markdown.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.CalendarEventDetails.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.CalendarEventDetails.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** How an event will be rendered in the calendar. Each time represents a standard state of an event. */
 		export interface ICalendarEvent {
 			
 				/** Id. Id of the calendar event */
-				'id': string
+				'id'?: string| undefined | null
 				/** Starts at. */
 				'startAt': SpruceSchema.IDateTimeFieldValue
 				/** Collection. A way to arbitrarily bundle events. Events with the same collection are all highlighted at the same time in the calendar */
-				'collection'?: string| undefined
+				'collection'?: string| undefined | null
 				/** Is resizable. Can this event be resized on the calendar? */
-				'isResizable'?: boolean| undefined
+				'isResizable'?: boolean| undefined | null
 				/** Kind. The kind on an event impacts it's visual representation */
-				'kind'?: ("default" | "tentative" | "active" | "unavailable" | "blocked" | "upcoming" | "past" | "warn" | "critical")| undefined
+				'kind'?: ("default" | "tentative" | "active" | "unavailable" | "blocked" | "upcoming" | "past" | "warn" | "critical")| undefined | null
 				/** Blocks. A calendar is comprised of blocks of time. You need at least 1 block to have a valid event. */
-				'blocks': SpruceSchemas.local.ICalendarEventBlock[]
+				'blocks': SpruceSchemas.Local.ICalendarEventBlock[]
 				/** Details. Additional details shown after someone taps on an event */
-				'details'?: SpruceSchemas.local.ICalendarEventDetails| undefined
+				'details'?: SpruceSchemas.Local.ICalendarEventDetails| undefined | null
 				/** User id. The ID of the user this event will render under */
 				'userId': string
 				/** Is draft. If this is a draft event (meaning it's not booked, but being setup) */
-				'isDraft'?: boolean| undefined
+				'isDraft'?: boolean| undefined | null
 				/** Has border. Should I render a border for this event? */
-				'hasBorder'?: boolean| undefined
+				'hasBorder'?: boolean| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.CalendarEvent {
+	export namespace SpruceSchemas.Local.CalendarEvent {
 		export const id = 'CalendarEvent'
 
 		/** The interface for the schema definition for a CalendarEvent */
@@ -7912,7 +9657,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Id of the calendar event',
 			                
 			                
@@ -7983,7 +9728,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: SpruceSchemas.local.CalendarEventBlock.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.CalendarEventBlock.IDefinition[],}
 			            },
 			            /** Details. Additional details shown after someone taps on an event */
 			            'details': {
@@ -7996,7 +9741,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.CalendarEventDetails.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.CalendarEventDetails.IDefinition[],}
 			            },
 			            /** User id. The ID of the user this event will render under */
 			            'userId': {
@@ -8041,7 +9786,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The schema definition for a CalendarEvent */
-		export const definition: SpruceSchemas.local.CalendarEvent.IDefinition = {
+		export const definition: SpruceSchemas.Local.CalendarEvent.IDefinition = {
 			id: 'CalendarEvent',
 			name: 'CalendarEvent',
 			description: 'How an event will be rendered in the calendar. Each time represents a standard state of an event.',
@@ -8053,7 +9798,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                isRequired: true,
+			                
 			                hint: 'Id of the calendar event',
 			                
 			                
@@ -8124,7 +9869,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                isArray: true,
 			                
-			                options: {schemas: [SpruceSchemas.local.CalendarEventBlock.definition],}
+			                options: {schemas: [SpruceSchemas.Local.CalendarEventBlock.definition],}
 			            },
 			            /** Details. Additional details shown after someone taps on an event */
 			            'details': {
@@ -8137,7 +9882,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.CalendarEventDetails.definition],}
+			                options: {schemas: [SpruceSchemas.Local.CalendarEventDetails.definition],}
 			            },
 			            /** User id. The ID of the user this event will render under */
 			            'userId': {
@@ -8182,34 +9927,34 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.CalendarEvent.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.CalendarEvent.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/** I universal way to hold visual information, use card builder to create cards */
 		export interface ICard {
 			
-				/** . */
-				'children'?: generated_import_1.INodeFieldDefinitionValue| undefined
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				/** Centered. Is all content centered? */
-				'isCentered'?: boolean| undefined
+				'isCentered'?: boolean| undefined | null
 				/** Critical. Call attention to this card by making it standout! */
-				'isCritical'?: boolean| undefined
+				'isCritical'?: boolean| undefined | null
 				/** Small. A small variation of a card */
-				'isSmall'?: boolean| undefined
+				'isSmall'?: boolean| undefined | null
 				/** Class name. */
-				'className'?: string| undefined
+				'className'?: string| undefined | null
 				/** Expandable. Allows this card to collapse at the header */
-				'isExpandable'?: boolean| undefined
+				'isExpandable'?: boolean| undefined | null
 				/** Expanded by default. Should this thing start expanded */
-				'defaultExpanded'?: boolean| undefined
+				'defaultExpanded'?: boolean| undefined | null
 				/** Header. */
-				'header'?: SpruceSchemas.local.ICardHeader| undefined
+				'header'?: SpruceSchemas.Local.ICardHeader| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.Card {
+	export namespace SpruceSchemas.Local.Card {
 		export const id = 'card'
 
 		/** The interface for the schema definition for a Card */
@@ -8241,7 +9986,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Is all content centered?',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -8293,7 +10038,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Allows this card to collapse at the header',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -8306,7 +10051,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Should this thing start expanded',
 			                
-			                
+			                defaultValue: true,
 			                
 			                
 			                options: undefined
@@ -8322,13 +10067,13 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.local.CardHeader.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.CardHeader.IDefinition[],}
 			            },
 			    }
 		}
 
 		/** The schema definition for a Card */
-		export const definition: SpruceSchemas.local.Card.IDefinition = {
+		export const definition: SpruceSchemas.Local.Card.IDefinition = {
 			id: 'card',
 			name: 'Card',
 			description: 'I universal way to hold visual information, use card builder to create cards',
@@ -8356,7 +10101,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Is all content centered?',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -8408,7 +10153,7 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                hint: 'Allows this card to collapse at the header',
 			                
-			                
+			                defaultValue: false,
 			                
 			                
 			                options: undefined
@@ -8420,6 +10165,7091 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                hint: 'Should this thing start expanded',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Header. */
+			            'header': {
+			                label: 'Header',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.CardHeader.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Card.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** The body of a card. */
+		export interface ICardBody {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** children. Children to show in the Card */
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Is sectioned. Whether to wrap children in CardSection */
+				'isSectioned'?: boolean| undefined | null
+				/** Are section separators visible. Set true to display line separators between CardSection components */
+				'areSectionSeparatorsVisible'?: boolean| undefined | null
+				/** Has top padding. Does card include top padding */
+				'hasTopPadding'?: boolean| undefined | null
+				/** Has bottom padding. Does card include bottom padding */
+				'hasBottomPadding'?: boolean| undefined | null
+				/** Is full bleed. Set to true to remove horizontal padding */
+				'isFullBleed'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.CardBody {
+		export const id = 'cardBody'
+
+		/** The interface for the schema definition for a Card body */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'cardBody',
+			name: 'Card body',
+			description: 'The body of a card.',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** children. Children to show in the Card */
+			            'children': {
+			                label: 'children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                hint: 'Children to show in the Card',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is sectioned. Whether to wrap children in CardSection */
+			            'isSectioned': {
+			                label: 'Is sectioned',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Whether to wrap children in CardSection',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Are section separators visible. Set true to display line separators between CardSection components */
+			            'areSectionSeparatorsVisible': {
+			                label: 'Are section separators visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to display line separators between CardSection components',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has top padding. Does card include top padding */
+			            'hasTopPadding': {
+			                label: 'Has top padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include top padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has bottom padding. Does card include bottom padding */
+			            'hasBottomPadding': {
+			                label: 'Has bottom padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include bottom padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. Set to true to remove horizontal padding */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to remove horizontal padding',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Card body */
+		export const definition: SpruceSchemas.Local.CardBody.IDefinition = {
+			id: 'cardBody',
+			name: 'Card body',
+			description: 'The body of a card.',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** children. Children to show in the Card */
+			            'children': {
+			                label: 'children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                hint: 'Children to show in the Card',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is sectioned. Whether to wrap children in CardSection */
+			            'isSectioned': {
+			                label: 'Is sectioned',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Whether to wrap children in CardSection',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Are section separators visible. Set true to display line separators between CardSection components */
+			            'areSectionSeparatorsVisible': {
+			                label: 'Are section separators visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to display line separators between CardSection components',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has top padding. Does card include top padding */
+			            'hasTopPadding': {
+			                label: 'Has top padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include top padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Has bottom padding. Does card include bottom padding */
+			            'hasBottomPadding': {
+			                label: 'Has bottom padding',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Does card include bottom padding',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. Set to true to remove horizontal padding */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to remove horizontal padding',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.CardBody.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Header of a card */
+		export interface ICardFooter {
+			
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.CardFooter {
+		export const id = 'cardFooter'
+
+		/** The interface for the schema definition for a cardFooter */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'cardFooter',
+			name: 'cardFooter',
+			description: 'Header of a card',
+			
+			
+			    fields: {
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a cardFooter */
+		export const definition: SpruceSchemas.Local.CardFooter.IDefinition = {
+			id: 'cardFooter',
+			name: 'cardFooter',
+			description: 'Header of a card',
+			
+			
+			    fields: {
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.CardFooter.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A card body is made up of several sections */
+		export interface ICardSection {
+			
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** . Set to true to remove horizontal padding */
+				'isFullBleed'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.CardSection {
+		export const id = 'cardSection'
+
+		/** The interface for the schema definition for a card section */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'cardSection',
+			name: 'card section',
+			description: 'A card body is made up of several sections',
+			
+			
+			    fields: {
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . Set to true to remove horizontal padding */
+			            'isFullBleed': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to remove horizontal padding',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a card section */
+		export const definition: SpruceSchemas.Local.CardSection.IDefinition = {
+			id: 'cardSection',
+			name: 'card section',
+			description: 'A card body is made up of several sections',
+			
+			
+			    fields: {
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . Set to true to remove horizontal padding */
+			            'isFullBleed': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to remove horizontal padding',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.CardSection.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Header of a card */
+		export interface IScoreCardPanel {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Label. The label for this score, e.g. Today's Sales */
+				'label'?: string| undefined | null
+				/** Value. The score, e.g. $234.30 */
+				'value'?: string| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.ScoreCardPanel {
+		export const id = 'ScoreCardPanel'
+
+		/** The interface for the schema definition for a ScoreCardPanel */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'ScoreCardPanel',
+			name: 'ScoreCardPanel',
+			description: 'Header of a card',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. The label for this score, e.g. Today's Sales */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'The label for this score, e.g. Today\'s Sales',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. The score, e.g. $234.30 */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'The score, e.g. $234.30',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a ScoreCardPanel */
+		export const definition: SpruceSchemas.Local.ScoreCardPanel.IDefinition = {
+			id: 'ScoreCardPanel',
+			name: 'ScoreCardPanel',
+			description: 'Header of a card',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. The label for this score, e.g. Today's Sales */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'The label for this score, e.g. Today\'s Sales',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. The score, e.g. $234.30 */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'The score, e.g. $234.30',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.ScoreCardPanel.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** For hints and error messages after inputs (if both set, only error shows) */
+		export interface IInputHelper {
+			
+				/** Hint. */
+				'hint'?: string| undefined | null
+				/** Error message. */
+				'error'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				
+				'htmlFor'?: string| undefined | null
+				
+				'ElementTag'?: ("p" | "label")| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.InputHelper {
+		export const id = 'inputHelper'
+
+		/** The interface for the schema definition for a Input helper */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'inputHelper',
+			name: 'Input helper',
+			description: 'For hints and error messages after inputs (if both set, only error shows)',
+			
+			
+			    fields: {
+			            /** Hint. */
+			            'hint': {
+			                label: 'Hint',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Error message. */
+			            'error': {
+			                label: 'Error message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'htmlFor': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'ElementTag': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "p",
+			                
+			                
+			                options: {choices: [{"value":"p","label":"<p/>"},{"value":"label","label":"<label/>"}],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Input helper */
+		export const definition: SpruceSchemas.Local.InputHelper.IDefinition = {
+			id: 'inputHelper',
+			name: 'Input helper',
+			description: 'For hints and error messages after inputs (if both set, only error shows)',
+			
+			
+			    fields: {
+			            /** Hint. */
+			            'hint': {
+			                label: 'Hint',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Error message. */
+			            'error': {
+			                label: 'Error message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'htmlFor': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'ElementTag': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "p",
+			                
+			                
+			                options: {choices: [{"value":"p","label":"<p/>"},{"value":"label","label":"<label/>"}],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.InputHelper.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** An input with autosuggest capabilities! */
+		export interface IAutosuggest {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Suggestion getter. Invoked while person is typing. Is expected to return search results */
+				'getSuggestions': ((query: string) => Promise<Record<string, any>>[])
+				/** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
+				'getSuggestionValue': ((suggestion: Record<string, any>) => string)
+				/** Suggestion renderer. Renders a single suggestion, return a React.ReactNode */
+				'renderSuggestion': ((suggestion: Record<string, any>, params: { query:string, isHighlighted: boolean }) => React.ReactNode)
+				/** Selection handler. Invoked when a person select a suggestion */
+				'onSuggestionSelected'?: ((
+								event: React.FormEvent<any>,
+								data: {
+									suggestion: Record<string, any>;
+									suggestionValue: string;
+									suggestionIndex: number;
+									sectionIndex: number | null;
+									method: 'click' | 'enter';
+								}
+							) => void)| undefined | null
+				/** Render suggestions. Should I even show the suggestions when typing */
+				'shouldRenderSuggestions'?: boolean| undefined | null
+				/** Default suggestions. Suggestions to show before anyone types */
+				'defaultSuggestions'?: (Record<string, any>)[]| undefined | null
+				/** Placeholder. */
+				'placeholder'?: string| undefined | null
+				/** Default value. */
+				'defaultValue'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+				/** Small. Render small variation */
+				'isSmall'?: boolean| undefined | null
+				/** Wrapper class name. */
+				'wrapperClassName'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Disable. Disable this field by setting to true */
+				'isDisabled'?: boolean| undefined | null
+				/** Icon. */
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Autosuggest {
+		export const id = 'autosuggest'
+
+		/** The interface for the schema definition for a Autosuggest */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'autosuggest',
+			name: 'Autosuggest',
+			description: 'An input with autosuggest capabilities!',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Suggestion getter. Invoked while person is typing. Is expected to return search results */
+			            'getSuggestions': {
+			                label: 'Suggestion getter',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                hint: 'Invoked while person is typing. Is expected to return search results',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(query: string) => Promise<Record<string, any>>[]`,}
+			            },
+			            /** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
+			            'getSuggestionValue': {
+			                label: 'Suggestion value reducer',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                hint: 'Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(suggestion: Record<string, any>) => string`,}
+			            },
+			            /** Suggestion renderer. Renders a single suggestion, return a React.ReactNode */
+			            'renderSuggestion': {
+			                label: 'Suggestion renderer',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                hint: 'Renders a single suggestion, return a React.ReactNode',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(suggestion: Record<string, any>, params: { query:string, isHighlighted: boolean }) => React.ReactNode`,}
+			            },
+			            /** Selection handler. Invoked when a person select a suggestion */
+			            'onSuggestionSelected': {
+			                label: 'Selection handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                hint: 'Invoked when a person select a suggestion',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(
+			                					event: React.FormEvent<any>,
+			                					data: {
+			                						suggestion: Record<string, any>;
+			                						suggestionValue: string;
+			                						suggestionIndex: number;
+			                						sectionIndex: number | null;
+			                						method: 'click' | 'enter';
+			                					}
+			                				) => void`,}
+			            },
+			            /** Render suggestions. Should I even show the suggestions when typing */
+			            'shouldRenderSuggestions': {
+			                label: 'Render suggestions',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Should I even show the suggestions when typing',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Default suggestions. Suggestions to show before anyone types */
+			            'defaultSuggestions': {
+			                label: 'Default suggestions',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                hint: 'Suggestions to show before anyone types',
+			                
+			                defaultValue: [],
+			                isArray: true,
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Default value. */
+			            'defaultValue': {
+			                label: 'Default value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			            /** Small. Render small variation */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render small variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Wrapper class name. */
+			            'wrapperClassName': {
+			                label: 'Wrapper class name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Disable. Disable this field by setting to true */
+			            'isDisabled': {
+			                label: 'Disable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Disable this field by setting to true',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Icon. */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Autosuggest */
+		export const definition: SpruceSchemas.Local.Autosuggest.IDefinition = {
+			id: 'autosuggest',
+			name: 'Autosuggest',
+			description: 'An input with autosuggest capabilities!',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Suggestion getter. Invoked while person is typing. Is expected to return search results */
+			            'getSuggestions': {
+			                label: 'Suggestion getter',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                hint: 'Invoked while person is typing. Is expected to return search results',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(query: string) => Promise<Record<string, any>>[]`,}
+			            },
+			            /** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
+			            'getSuggestionValue': {
+			                label: 'Suggestion value reducer',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                hint: 'Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(suggestion: Record<string, any>) => string`,}
+			            },
+			            /** Suggestion renderer. Renders a single suggestion, return a React.ReactNode */
+			            'renderSuggestion': {
+			                label: 'Suggestion renderer',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                hint: 'Renders a single suggestion, return a React.ReactNode',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(suggestion: Record<string, any>, params: { query:string, isHighlighted: boolean }) => React.ReactNode`,}
+			            },
+			            /** Selection handler. Invoked when a person select a suggestion */
+			            'onSuggestionSelected': {
+			                label: 'Selection handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                hint: 'Invoked when a person select a suggestion',
+			                
+			                
+			                
+			                
+			                options: {valueType: `(
+			                					event: React.FormEvent<any>,
+			                					data: {
+			                						suggestion: Record<string, any>;
+			                						suggestionValue: string;
+			                						suggestionIndex: number;
+			                						sectionIndex: number | null;
+			                						method: 'click' | 'enter';
+			                					}
+			                				) => void`,}
+			            },
+			            /** Render suggestions. Should I even show the suggestions when typing */
+			            'shouldRenderSuggestions': {
+			                label: 'Render suggestions',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Should I even show the suggestions when typing',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Default suggestions. Suggestions to show before anyone types */
+			            'defaultSuggestions': {
+			                label: 'Default suggestions',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                hint: 'Suggestions to show before anyone types',
+			                
+			                defaultValue: [],
+			                isArray: true,
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Default value. */
+			            'defaultValue': {
+			                label: 'Default value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			            /** Small. Render small variation */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render small variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Wrapper class name. */
+			            'wrapperClassName': {
+			                label: 'Wrapper class name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Disable. Disable this field by setting to true */
+			            'isDisabled': {
+			                label: 'Disable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Disable this field by setting to true',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Icon. */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Autosuggest.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Pick a date, any date! wrapper for react-dates */
+		export interface IDatePicker {
+			
+				
+				'kind'?: ("singleDate" | "dateRange")| undefined | null
+				/** Date selection callback. */
+				'onSelectDate'?: ((date: Date) => Promise<void>)| undefined | null
+				/** Date range selection callback. */
+				'onSelectDateRange'?: ((range: { startDate: Date, endDate: Date }) => Promise<void>)| undefined | null
+				/** Selected date. Use this when kind is "Single date" */
+				'date'?: SpruceSchema.IDateFieldValue| undefined | null
+				/** Start date. Used this when kind is "Date range" */
+				'startDate'?: SpruceSchema.IDateFieldValue| undefined | null
+				/** End date. Used when kind is "Date range" */
+				'endDate'?: SpruceSchema.IDateFieldValue| undefined | null
+				/** Day size. The size of the cell for each day */
+				'daySize'?: number| undefined | null
+				/** Number of months. Number of months to show */
+				'numberOfMonths'?: number| undefined | null
+				/** Day blocker. */
+				'isDayBlocked'?: ((day: Date) => boolean)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.DatePicker {
+		export const id = 'datePicker'
+
+		/** The interface for the schema definition for a Date picker */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'datePicker',
+			name: 'Date picker',
+			description: 'Pick a date, any date! wrapper for react-dates',
+			
+			
+			    fields: {
+			            /** . */
+			            'kind': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {label: `Singe or range`,defaultValue: `singleDate`,choices: [{"value":"singleDate","label":"Single date"},{"value":"dateRange","label":"Date range"}],}
+			            },
+			            /** Date selection callback. */
+			            'onSelectDate': {
+			                label: 'Date selection callback',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(date: Date) => Promise<void>`,}
+			            },
+			            /** Date range selection callback. */
+			            'onSelectDateRange': {
+			                label: 'Date range selection callback',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(range: { startDate: Date, endDate: Date }) => Promise<void>`,}
+			            },
+			            /** Selected date. Use this when kind is "Single date" */
+			            'date': {
+			                label: 'Selected date',
+			                type: SpruceSchema.FieldType.Date,
+			                
+			                
+			                hint: 'Use this when kind is "Single date"',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Start date. Used this when kind is "Date range" */
+			            'startDate': {
+			                label: 'Start date',
+			                type: SpruceSchema.FieldType.Date,
+			                
+			                
+			                hint: 'Used this when kind is "Date range"',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** End date. Used when kind is "Date range" */
+			            'endDate': {
+			                label: 'End date',
+			                type: SpruceSchema.FieldType.Date,
+			                
+			                
+			                hint: 'Used when kind is "Date range"',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Day size. The size of the cell for each day */
+			            'daySize': {
+			                label: 'Day size',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                hint: 'The size of the cell for each day',
+			                
+			                defaultValue: 40,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Number of months. Number of months to show */
+			            'numberOfMonths': {
+			                label: 'Number of months',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                hint: 'Number of months to show',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Day blocker. */
+			            'isDayBlocked': {
+			                label: 'Day blocker',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(day: Date) => boolean`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Date picker */
+		export const definition: SpruceSchemas.Local.DatePicker.IDefinition = {
+			id: 'datePicker',
+			name: 'Date picker',
+			description: 'Pick a date, any date! wrapper for react-dates',
+			
+			
+			    fields: {
+			            /** . */
+			            'kind': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {label: `Singe or range`,defaultValue: `singleDate`,choices: [{"value":"singleDate","label":"Single date"},{"value":"dateRange","label":"Date range"}],}
+			            },
+			            /** Date selection callback. */
+			            'onSelectDate': {
+			                label: 'Date selection callback',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(date: Date) => Promise<void>`,}
+			            },
+			            /** Date range selection callback. */
+			            'onSelectDateRange': {
+			                label: 'Date range selection callback',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(range: { startDate: Date, endDate: Date }) => Promise<void>`,}
+			            },
+			            /** Selected date. Use this when kind is "Single date" */
+			            'date': {
+			                label: 'Selected date',
+			                type: SpruceSchema.FieldType.Date,
+			                
+			                
+			                hint: 'Use this when kind is "Single date"',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Start date. Used this when kind is "Date range" */
+			            'startDate': {
+			                label: 'Start date',
+			                type: SpruceSchema.FieldType.Date,
+			                
+			                
+			                hint: 'Used this when kind is "Date range"',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** End date. Used when kind is "Date range" */
+			            'endDate': {
+			                label: 'End date',
+			                type: SpruceSchema.FieldType.Date,
+			                
+			                
+			                hint: 'Used when kind is "Date range"',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Day size. The size of the cell for each day */
+			            'daySize': {
+			                label: 'Day size',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                hint: 'The size of the cell for each day',
+			                
+			                defaultValue: 40,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Number of months. Number of months to show */
+			            'numberOfMonths': {
+			                label: 'Number of months',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                hint: 'Number of months to show',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Day blocker. */
+			            'isDayBlocked': {
+			                label: 'Day blocker',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `(day: Date) => boolean`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.DatePicker.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface IFormDialogButtons {
+			
+				/** Primary button. */
+				'primary'?: SpruceSchemas.Local.IButton| undefined | null
+				/** Secondary button. */
+				'secondary'?: SpruceSchemas.Local.IButton| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.FormDialogButtons {
+		export const id = 'formDialogButtons'
+
+		/** The interface for the schema definition for a Form dialog buttons */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'formDialogButtons',
+			name: 'Form dialog buttons',
+			description: '',
+			
+			
+			    fields: {
+			            /** Primary button. */
+			            'primary': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Secondary button. */
+			            'secondary': {
+			                label: 'Secondary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Form dialog buttons */
+		export const definition: SpruceSchemas.Local.FormDialogButtons.IDefinition = {
+			id: 'formDialogButtons',
+			name: 'Form dialog buttons',
+			description: '',
+			
+			
+			    fields: {
+			            /** Primary button. */
+			            'primary': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Secondary button. */
+			            'secondary': {
+			                label: 'Secondary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.FormDialogButtons.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A form with fields */
+		export interface IForm {
+			
+				/** Submit handler. */
+				'onSubmit': (() => void)
+				
+				'className'?: string| undefined | null
+				/** Reset handler. */
+				'onReset'?: (() => void)| undefined | null
+				/** Validate. */
+				'validate'?: (() => void)| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Initial values. */
+				'initialValues'?: (Record<string, any>)| undefined | null
+				/** Render type. Set this to tell the Form where it'll be rendered */
+				'renderAs'?: ("page" | "default" | "dialog")| undefined | null
+				/** Dialog buttons. */
+				'dialogButtons'?: SpruceSchemas.Local.IFormDialogButtons| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Form {
+		export const id = 'form'
+
+		/** The interface for the schema definition for a Form */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'form',
+			name: 'Form',
+			description: 'A form with fields',
+			
+			
+			    fields: {
+			            /** Submit handler. */
+			            'onSubmit': {
+			                label: 'Submit handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Reset handler. */
+			            'onReset': {
+			                label: 'Reset handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Validate. */
+			            'validate': {
+			                label: 'Validate',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Initial values. */
+			            'initialValues': {
+			                label: 'Initial values',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** Render type. Set this to tell the Form where it'll be rendered */
+			            'renderAs': {
+			                label: 'Render type',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set this to tell the Form where it\'ll be rendered',
+			                
+			                defaultValue: "default",
+			                
+			                
+			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dialog buttons. */
+			            'dialogButtons': {
+			                label: 'Dialog buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.FormDialogButtons.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Form */
+		export const definition: SpruceSchemas.Local.Form.IDefinition = {
+			id: 'form',
+			name: 'Form',
+			description: 'A form with fields',
+			
+			
+			    fields: {
+			            /** Submit handler. */
+			            'onSubmit': {
+			                label: 'Submit handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Reset handler. */
+			            'onReset': {
+			                label: 'Reset handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Validate. */
+			            'validate': {
+			                label: 'Validate',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Initial values. */
+			            'initialValues': {
+			                label: 'Initial values',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** Render type. Set this to tell the Form where it'll be rendered */
+			            'renderAs': {
+			                label: 'Render type',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set this to tell the Form where it\'ll be rendered',
+			                
+			                defaultValue: "default",
+			                
+			                
+			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dialog buttons. */
+			            'dialogButtons': {
+			                label: 'Dialog buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.FormDialogButtons.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Form.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface IFormBuilderSection {
+			
+				/** Title. */
+				'title'?: string| undefined | null
+				/** Spacing. */
+				'spacing'?: ("tight" | "base")| undefined | null
+				
+				'fields'?: boolean[]| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.FormBuilderSection {
+		export const id = 'formBuilderSection'
+
+		/** The interface for the schema definition for a Form builder section */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'formBuilderSection',
+			name: 'Form builder section',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Spacing. */
+			            'spacing': {
+			                label: 'Spacing',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"tight","label":"Tight"},{"value":"base","label":"Base"}],}
+			            },
+			            /** . */
+			            'fields': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Form builder section */
+		export const definition: SpruceSchemas.Local.FormBuilderSection.IDefinition = {
+			id: 'formBuilderSection',
+			name: 'Form builder section',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Spacing. */
+			            'spacing': {
+			                label: 'Spacing',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"tight","label":"Tight"},{"value":"base","label":"Base"}],}
+			            },
+			            /** . */
+			            'fields': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.FormBuilderSection.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Build a form to collect some deets */
+		export interface IFormBuilder {
+			
+				/** Submit handler. */
+				'onSubmit': (() => void)
+				
+				'className'?: string| undefined | null
+				/** Reset handler. */
+				'onReset'?: (() => void)| undefined | null
+				/** Validate. */
+				'validate'?: (() => void)| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Initial values. */
+				'initialValues'?: (Record<string, any>)| undefined | null
+				/** Render type. Set this to tell the Form where it'll be rendered */
+				'renderAs'?: ("page" | "default" | "dialog")| undefined | null
+				/** Dialog buttons. */
+				'dialogButtons'?: SpruceSchemas.Local.IFormDialogButtons| undefined | null
+				/** Schema definition. */
+				'schema': (SpruceSchema.ISchemaDefinition)
+				/** Sections. */
+				'sections': SpruceSchemas.Local.IFormBuilderSection[]
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.FormBuilder {
+		export const id = 'formBuilder'
+
+		/** The interface for the schema definition for a Form builder */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'formBuilder',
+			name: 'Form builder',
+			description: 'Build a form to collect some deets',
+			
+			
+			    fields: {
+			            /** Submit handler. */
+			            'onSubmit': {
+			                label: 'Submit handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Reset handler. */
+			            'onReset': {
+			                label: 'Reset handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Validate. */
+			            'validate': {
+			                label: 'Validate',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Initial values. */
+			            'initialValues': {
+			                label: 'Initial values',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** Render type. Set this to tell the Form where it'll be rendered */
+			            'renderAs': {
+			                label: 'Render type',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set this to tell the Form where it\'ll be rendered',
+			                
+			                defaultValue: "default",
+			                
+			                
+			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dialog buttons. */
+			            'dialogButtons': {
+			                label: 'Dialog buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.FormDialogButtons.IDefinition[],}
+			            },
+			            /** Schema definition. */
+			            'schema': {
+			                label: 'Schema definition',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `SpruceSchema.ISchemaDefinition`,}
+			            },
+			            /** Sections. */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.FormBuilderSection.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Form builder */
+		export const definition: SpruceSchemas.Local.FormBuilder.IDefinition = {
+			id: 'formBuilder',
+			name: 'Form builder',
+			description: 'Build a form to collect some deets',
+			
+			
+			    fields: {
+			            /** Submit handler. */
+			            'onSubmit': {
+			                label: 'Submit handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Reset handler. */
+			            'onReset': {
+			                label: 'Reset handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Validate. */
+			            'validate': {
+			                label: 'Validate',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Initial values. */
+			            'initialValues': {
+			                label: 'Initial values',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `Record<string, any>`,}
+			            },
+			            /** Render type. Set this to tell the Form where it'll be rendered */
+			            'renderAs': {
+			                label: 'Render type',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set this to tell the Form where it\'ll be rendered',
+			                
+			                defaultValue: "default",
+			                
+			                
+			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dialog buttons. */
+			            'dialogButtons': {
+			                label: 'Dialog buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.FormDialogButtons.definition],}
+			            },
+			            /** Schema definition. */
+			            'schema': {
+			                label: 'Schema definition',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `SpruceSchema.ISchemaDefinition`,}
+			            },
+			            /** Sections. */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.FormBuilderSection.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.FormBuilder.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Collect a phone number with area and country codes */
+		export interface IPhoneInput {
+			
+				/** Label. */
+				'label': SpruceSchemas.Local.ILabel
+				/** Small. Render a small variation of the phone input */
+				'isSmall'?: boolean| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+				/** Value. */
+				'value'?: string| undefined | null
+				/** Autofocus. Focus when paid loads */
+				'autoFocus'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.PhoneInput {
+		export const id = 'phoneInput'
+
+		/** The interface for the schema definition for a Phone input */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'phoneInput',
+			name: 'Phone input',
+			description: 'Collect a phone number with area and country codes',
+			
+			
+			    fields: {
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Small. Render a small variation of the phone input */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a small variation of the phone input',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Autofocus. Focus when paid loads */
+			            'autoFocus': {
+			                label: 'Autofocus',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Focus when paid loads',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Phone input */
+		export const definition: SpruceSchemas.Local.PhoneInput.IDefinition = {
+			id: 'phoneInput',
+			name: 'Phone input',
+			description: 'Collect a phone number with area and country codes',
+			
+			
+			    fields: {
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Small. Render a small variation of the phone input */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a small variation of the phone input',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Autofocus. Focus when paid loads */
+			            'autoFocus': {
+			                label: 'Autofocus',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Focus when paid loads',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.PhoneInput.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Show a text input as a search field */
+		export interface ISearch {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Name. */
+				'name'?: string| undefined | null
+				/** Autocomplete. */
+				'enableAutoComplete'?: boolean| undefined | null
+				/** Placeholder. */
+				'placeholder'?: string| undefined | null
+				/** Type. */
+				'type': `search`
+				/** Before icon. The icon shown before the input */
+				'iconBefore'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
+				'clearButtonIcon'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
+				'onClear'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
+				/** Appendix. Shown under the input. */
+				'appendix'?: string| undefined | null
+				/** Helper. Shows hints or error messages. If both set, error wins. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Small. Render a small variation */
+				'isSmall'?: boolean| undefined | null
+				/** Value. */
+				'value'?: string| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Search {
+		export const id = 'search'
+
+		/** The interface for the schema definition for a Search input */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'search',
+			name: 'Search input',
+			description: 'Show a text input as a search field',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Autocomplete. */
+			            'enableAutoComplete': {
+			                label: 'Autocomplete',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Type. */
+			            'type': {
+			                label: 'Type',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                value: "search",
+			                defaultValue: "search",
+			                
+			                
+			                options: undefined
+			            },
+			            /** Before icon. The icon shown before the input */
+			            'iconBefore': {
+			                label: 'Before icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown before the input',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
+			            'clearButtonIcon': {
+			                label: 'Clear input icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
+			            'onClear': {
+			                label: 'Clear handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Appendix. Shown under the input. */
+			            'appendix': {
+			                label: 'Appendix',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Shown under the input.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. Shows hints or error messages. If both set, error wins. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Shows hints or error messages. If both set, error wins.',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Small. Render a small variation */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a small variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Search input */
+		export const definition: SpruceSchemas.Local.Search.IDefinition = {
+			id: 'search',
+			name: 'Search input',
+			description: 'Show a text input as a search field',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Autocomplete. */
+			            'enableAutoComplete': {
+			                label: 'Autocomplete',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Type. */
+			            'type': {
+			                label: 'Type',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                value: "search",
+			                defaultValue: "search",
+			                
+			                
+			                options: undefined
+			            },
+			            /** Before icon. The icon shown before the input */
+			            'iconBefore': {
+			                label: 'Before icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown before the input',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
+			            'clearButtonIcon': {
+			                label: 'Clear input icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
+			            'onClear': {
+			                label: 'Clear handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Appendix. Shown under the input. */
+			            'appendix': {
+			                label: 'Appendix',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Shown under the input.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. Shows hints or error messages. If both set, error wins. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Shows hints or error messages. If both set, error wins.',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Small. Render a small variation */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a small variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Search.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface ISelectOption {
+			
+				/** Value. */
+				'value': string
+				/** Label. */
+				'label': string
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SelectOption {
+		export const id = 'selectOption'
+
+		/** The interface for the schema definition for a Select option */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'selectOption',
+			name: 'Select option',
+			description: '',
+			
+			
+			    fields: {
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Select option */
+		export const definition: SpruceSchemas.Local.SelectOption.IDefinition = {
+			id: 'selectOption',
+			name: 'Select option',
+			description: '',
+			
+			
+			    fields: {
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SelectOption.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A form select */
+		export interface ISelect {
+			
+				
+				'id'?: string| undefined | null
+				/** Simple. Render a simpler variation */
+				'isSimple'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Value. */
+				'value'?: string| undefined | null
+				/** Placeholder. */
+				'placeholder'?: string| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+				/** Options. */
+				'options': SpruceSchemas.Local.ISelectOption
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Select {
+		export const id = 'select'
+
+		/** The interface for the schema definition for a Select */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'select',
+			name: 'Select',
+			description: 'A form select',
+			
+			
+			    fields: {
+			            /** . */
+			            'id': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Simple. Render a simpler variation */
+			            'isSimple': {
+			                label: 'Simple',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a simpler variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			            /** Options. */
+			            'options': {
+			                label: 'Options',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.SelectOption.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Select */
+		export const definition: SpruceSchemas.Local.Select.IDefinition = {
+			id: 'select',
+			name: 'Select',
+			description: 'A form select',
+			
+			
+			    fields: {
+			            /** . */
+			            'id': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Simple. Render a simpler variation */
+			            'isSimple': {
+			                label: 'Simple',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a simpler variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			            /** Options. */
+			            'options': {
+			                label: 'Options',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SelectOption.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Select.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A simple sliding control */
+		export interface ISlider {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Minimum. The left most value of the slider */
+				'min': number
+				/** Maximum. The right most value of the slider */
+				'max': number
+				/** Value. The value of the slider */
+				'value': number
+				/** On change. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Disabled. */
+				'isDisabled'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Slider {
+		export const id = 'slider'
+
+		/** The interface for the schema definition for a Slider */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'slider',
+			name: 'Slider',
+			description: 'A simple sliding control',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Minimum. The left most value of the slider */
+			            'min': {
+			                label: 'Minimum',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The left most value of the slider',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Maximum. The right most value of the slider */
+			            'max': {
+			                label: 'Maximum',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The right most value of the slider',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. The value of the slider */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The value of the slider',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** On change. */
+			            'onChange': {
+			                label: 'On change',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Slider */
+		export const definition: SpruceSchemas.Local.Slider.IDefinition = {
+			id: 'slider',
+			name: 'Slider',
+			description: 'A simple sliding control',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Minimum. The left most value of the slider */
+			            'min': {
+			                label: 'Minimum',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The left most value of the slider',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Maximum. The right most value of the slider */
+			            'max': {
+			                label: 'Maximum',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The right most value of the slider',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. The value of the slider */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The value of the slider',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** On change. */
+			            'onChange': {
+			                label: 'On change',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Slider.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Small pill like control with text and onClick functionality */
+		export interface ITag {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Text. */
+				'text'?: string| undefined | null
+				/** Kind. */
+				'kind'?: ("primary" | "secondary")| undefined | null
+				/** Small. Render small variation of the tag */
+				'isSmall'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Tag {
+		export const id = 'tag'
+
+		/** The interface for the schema definition for a Tag */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'tag',
+			name: 'Tag',
+			description: 'Small pill like control with text and onClick functionality',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Text. */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Kind. */
+			            'kind': {
+			                label: 'Kind',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "primary",
+			                
+			                
+			                options: {choices: [{"value":"primary","label":"Primary"},{"value":"secondary","label":"Secondary"}],}
+			            },
+			            /** Small. Render small variation of the tag */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render small variation of the tag',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Tag */
+		export const definition: SpruceSchemas.Local.Tag.IDefinition = {
+			id: 'tag',
+			name: 'Tag',
+			description: 'Small pill like control with text and onClick functionality',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Text. */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Kind. */
+			            'kind': {
+			                label: 'Kind',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "primary",
+			                
+			                
+			                options: {choices: [{"value":"primary","label":"Primary"},{"value":"secondary","label":"Secondary"}],}
+			            },
+			            /** Small. Render small variation of the tag */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render small variation of the tag',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Tag.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A reusable component that holds an html &lt;input /&gt; element and decorates it. */
+		export interface ITextInput {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Name. */
+				'name'?: string| undefined | null
+				/** Autocomplete. */
+				'enableAutoComplete'?: boolean| undefined | null
+				/** Placeholder. */
+				'placeholder'?: string| undefined | null
+				/** Type. */
+				'type'?: ("button" | "search" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week")| undefined | null
+				/** Before icon. The icon shown before the input */
+				'iconBefore'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
+				'clearButtonIcon'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
+				'onClear'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
+				/** Appendix. Shown under the input. */
+				'appendix'?: string| undefined | null
+				/** Helper. Shows hints or error messages. If both set, error wins. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Small. Render a small variation */
+				'isSmall'?: boolean| undefined | null
+				/** Value. */
+				'value'?: string| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.TextInput {
+		export const id = 'textInput'
+
+		/** The interface for the schema definition for a Input inner */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'textInput',
+			name: 'Input inner',
+			description: 'A reusable component that holds an html <input /> element and decorates it.',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Autocomplete. */
+			            'enableAutoComplete': {
+			                label: 'Autocomplete',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Type. */
+			            'type': {
+			                label: 'Type',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "text",
+			                
+			                
+			                options: {choices: [{"value":"button","label":"button"},{"value":"search","label":"search"},{"value":"checkbox","label":"checkbox"},{"value":"color","label":"color"},{"value":"date","label":"date"},{"value":"datetime-local","label":"datetime-local"},{"value":"email","label":"email"},{"value":"file","label":"file"},{"value":"hidden","label":"hidden"},{"value":"image","label":"image"},{"value":"month","label":"month"},{"value":"number","label":"number"},{"value":"password","label":"password"},{"value":"radio","label":"radio"},{"value":"range","label":"range"},{"value":"reset","label":"reset"},{"value":"search","label":"search"},{"value":"submit","label":"submit"},{"value":"tel","label":"tel"},{"value":"text","label":"text"},{"value":"time","label":"time"},{"value":"url","label":"url"},{"value":"week","label":"week"}],}
+			            },
+			            /** Before icon. The icon shown before the input */
+			            'iconBefore': {
+			                label: 'Before icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown before the input',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
+			            'clearButtonIcon': {
+			                label: 'Clear input icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
+			            'onClear': {
+			                label: 'Clear handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Appendix. Shown under the input. */
+			            'appendix': {
+			                label: 'Appendix',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Shown under the input.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. Shows hints or error messages. If both set, error wins. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Shows hints or error messages. If both set, error wins.',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Small. Render a small variation */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a small variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Input inner */
+		export const definition: SpruceSchemas.Local.TextInput.IDefinition = {
+			id: 'textInput',
+			name: 'Input inner',
+			description: 'A reusable component that holds an html <input /> element and decorates it.',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Autocomplete. */
+			            'enableAutoComplete': {
+			                label: 'Autocomplete',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Type. */
+			            'type': {
+			                label: 'Type',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "text",
+			                
+			                
+			                options: {choices: [{"value":"button","label":"button"},{"value":"search","label":"search"},{"value":"checkbox","label":"checkbox"},{"value":"color","label":"color"},{"value":"date","label":"date"},{"value":"datetime-local","label":"datetime-local"},{"value":"email","label":"email"},{"value":"file","label":"file"},{"value":"hidden","label":"hidden"},{"value":"image","label":"image"},{"value":"month","label":"month"},{"value":"number","label":"number"},{"value":"password","label":"password"},{"value":"radio","label":"radio"},{"value":"range","label":"range"},{"value":"reset","label":"reset"},{"value":"search","label":"search"},{"value":"submit","label":"submit"},{"value":"tel","label":"tel"},{"value":"text","label":"text"},{"value":"time","label":"time"},{"value":"url","label":"url"},{"value":"week","label":"week"}],}
+			            },
+			            /** Before icon. The icon shown before the input */
+			            'iconBefore': {
+			                label: 'Before icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown before the input',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
+			            'clearButtonIcon': {
+			                label: 'Clear input icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
+			            'onClear': {
+			                label: 'Clear handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Appendix. Shown under the input. */
+			            'appendix': {
+			                label: 'Appendix',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Shown under the input.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. Shows hints or error messages. If both set, error wins. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Shows hints or error messages. If both set, error wins.',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Small. Render a small variation */
+			            'isSmall': {
+			                label: 'Small',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Render a small variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.TextInput.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Big box to type lots of text (with voice support) */
+		export interface ITextarea {
+			
+				/** id. */
+				'id'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+				/** Resize'able. */
+				'isResizeable'?: boolean| undefined | null
+				/** Placeholder. */
+				'placeholder'?: string| undefined | null
+				/** Rows (height). Number of rows of text that will show before scrolling */
+				'rows'?: number| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Textarea {
+		export const id = 'textarea'
+
+		/** The interface for the schema definition for a Textarea */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'textarea',
+			name: 'Textarea',
+			description: 'Big box to type lots of text (with voice support)',
+			
+			
+			    fields: {
+			            /** id. */
+			            'id': {
+			                label: 'id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			            /** Resize'able. */
+			            'isResizeable': {
+			                label: 'Resize\'able',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Rows (height). Number of rows of text that will show before scrolling */
+			            'rows': {
+			                label: 'Rows (height)',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                hint: 'Number of rows of text that will show before scrolling',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Textarea */
+		export const definition: SpruceSchemas.Local.Textarea.IDefinition = {
+			id: 'textarea',
+			name: 'Textarea',
+			description: 'Big box to type lots of text (with voice support)',
+			
+			
+			    fields: {
+			            /** id. */
+			            'id': {
+			                label: 'id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			            /** Resize'able. */
+			            'isResizeable': {
+			                label: 'Resize\'able',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Rows (height). Number of rows of text that will show before scrolling */
+			            'rows': {
+			                label: 'Rows (height)',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                hint: 'Number of rows of text that will show before scrolling',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Textarea.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A section that makes up a layout */
+		export interface ILayoutSection {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Children. */
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Classname. */
+				'className'?: string| undefined | null
+				/** Is secondary. Makes this section thinner */
+				'isSecondary'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.LayoutSection {
+		export const id = 'layoutSection'
+
+		/** The interface for the schema definition for a Layout section */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layoutSection',
+			name: 'Layout section',
+			description: 'A section that makes up a layout',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Classname. */
+			            'className': {
+			                label: 'Classname',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is secondary. Makes this section thinner */
+			            'isSecondary': {
+			                label: 'Is secondary',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes this section thinner',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout section */
+		export const definition: SpruceSchemas.Local.LayoutSection.IDefinition = {
+			id: 'layoutSection',
+			name: 'Layout section',
+			description: 'A section that makes up a layout',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Classname. */
+			            'className': {
+			                label: 'Classname',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is secondary. Makes this section thinner */
+			            'isSecondary': {
+			                label: 'Is secondary',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes this section thinner',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.LayoutSection.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A layout is the start of it all */
+		export interface ILayout {
+			
+				/** Children. */
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Is centered. A hint */
+				'isCentered'?: boolean| undefined | null
+				/** Is full bleed. */
+				'isFullBleed'?: boolean| undefined | null
+				/** Sections. Layout sections that makeup this layout */
+				'sections'?: SpruceSchemas.Local.ILayoutSection[]| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Width. */
+				'width'?: ("base" | "wide" | "tight" | "fullWidth")| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Layout {
+		export const id = 'layout'
+
+		/** The interface for the schema definition for a Layout */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layout',
+			name: 'Layout',
+			description: 'A layout is the start of it all',
+			
+			
+			    fields: {
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is centered. A hint */
+			            'isCentered': {
+			                label: 'Is centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'A hint',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sections. Layout sections that makeup this layout */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Layout sections that makeup this layout',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutSection.IDefinition[],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Width. */
+			            'width': {
+			                label: 'Width',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout */
+		export const definition: SpruceSchemas.Local.Layout.IDefinition = {
+			id: 'layout',
+			name: 'Layout',
+			description: 'A layout is the start of it all',
+			
+			
+			    fields: {
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is centered. A hint */
+			            'isCentered': {
+			                label: 'Is centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'A hint',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sections. Layout sections that makeup this layout */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Layout sections that makeup this layout',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutSection.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Width. */
+			            'width': {
+			                label: 'Width',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Layout.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A way to add spacing to your layouts */
+		export interface ILayoutSpacing {
+			
+				/** Direction. */
+				'direction'?: ("all" | "horizontal" | "vertical" | "top" | "right" | "bottom" | "left")| undefined | null
+				/** Spacing amount. The amount of spacing to apply (0-12) */
+				'amount': number
+				/** Layout builder. */
+				'layoutBuilder'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.LayoutSpacing {
+		export const id = 'layoutSpacing'
+
+		/** The interface for the schema definition for a Layout spacing */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layoutSpacing',
+			name: 'Layout spacing',
+			description: 'A way to add spacing to your layouts',
+			
+			
+			    fields: {
+			            /** Direction. */
+			            'direction': {
+			                label: 'Direction',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "all",
+			                
+			                
+			                options: {choices: [{"value":"all","label":"All"},{"value":"horizontal","label":"Horizontal"},{"value":"vertical","label":"Vertical"},{"value":"top","label":"Top"},{"value":"right","label":"Right"},{"value":"bottom","label":"Bottom"},{"value":"left","label":"Left"}],}
+			            },
+			            /** Spacing amount. The amount of spacing to apply (0-12) */
+			            'amount': {
+			                label: 'Spacing amount',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The amount of spacing to apply (0-12)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout spacing */
+		export const definition: SpruceSchemas.Local.LayoutSpacing.IDefinition = {
+			id: 'layoutSpacing',
+			name: 'Layout spacing',
+			description: 'A way to add spacing to your layouts',
+			
+			
+			    fields: {
+			            /** Direction. */
+			            'direction': {
+			                label: 'Direction',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "all",
+			                
+			                
+			                options: {choices: [{"value":"all","label":"All"},{"value":"horizontal","label":"Horizontal"},{"value":"vertical","label":"Vertical"},{"value":"top","label":"Top"},{"value":"right","label":"Right"},{"value":"bottom","label":"Bottom"},{"value":"left","label":"Left"}],}
+			            },
+			            /** Spacing amount. The amount of spacing to apply (0-12) */
+			            'amount': {
+			                label: 'Spacing amount',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The amount of spacing to apply (0-12)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.LayoutSpacing.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface ISidebarHeader {
+			
+				/** Title. */
+				'title': string
+				/** Button. */
+				'button'?: SpruceSchemas.Local.IButton| undefined | null
+				/** Close handler. */
+				'onClose'?: (() => void)| undefined | null
+				/** Go back handler. */
+				'onGoBack'?: (() => void)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SidebarHeader {
+		export const id = 'sidebarHeader'
+
+		/** The interface for the schema definition for a Sidebar header */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebarHeader',
+			name: 'Sidebar header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Close handler. */
+			            'onClose': {
+			                label: 'Close handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Go back handler. */
+			            'onGoBack': {
+			                label: 'Go back handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar header */
+		export const definition: SpruceSchemas.Local.SidebarHeader.IDefinition = {
+			id: 'sidebarHeader',
+			name: 'Sidebar header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Close handler. */
+			            'onClose': {
+			                label: 'Close handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Go back handler. */
+			            'onGoBack': {
+			                label: 'Go back handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SidebarHeader.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** An element that makes up the sidebar */
+		export interface ISidebarSection {
+			
+				/** items. */
+				'items'?: ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'layout', values: SpruceSchemas.Local.ILayout } | { schemaId: 'layoutSpacing', values: SpruceSchemas.Local.ILayoutSpacing } | { schemaId: 'sidebarHeader', values: SpruceSchemas.Local.ISidebarHeader } | { schemaId: 'sidebarSection', values: SpruceSchemas.Local.ISidebarSection })[]| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Centered. Center everything horizontally */
+				'isCentered'?: boolean| undefined | null
+				/** Mobile only. Will hide on desktop if true */
+				'isOnlyForMobile'?: boolean| undefined | null
+				
+				'horizontalSpacing'?: ("base" | "loose")| undefined | null
+				
+				'verticalSpacing'?: ("base" | "loose")| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SidebarSection {
+		export const id = 'sidebarSection'
+
+		/** The interface for the schema definition for a Sidebar item */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebarSection',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Layout.IDefinition | SpruceSchemas.Local.LayoutSpacing.IDefinition | SpruceSchemas.Local.SidebarHeader.IDefinition | SpruceSchemas.Local.SidebarSection.IDefinition)[],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Centered. Center everything horizontally */
+			            'isCentered': {
+			                label: 'Centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Center everything horizontally',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Mobile only. Will hide on desktop if true */
+			            'isOnlyForMobile': {
+			                label: 'Mobile only',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide on desktop if true',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'horizontalSpacing': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'verticalSpacing': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar item */
+		export const definition: SpruceSchemas.Local.SidebarSection.IDefinition = {
+			id: 'sidebarSection',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Layout.definition, SpruceSchemas.Local.LayoutSpacing.definition, SpruceSchemas.Local.SidebarHeader.definition, SpruceSchemas.Local.SidebarSection.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Centered. Center everything horizontally */
+			            'isCentered': {
+			                label: 'Centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Center everything horizontally',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Mobile only. Will hide on desktop if true */
+			            'isOnlyForMobile': {
+			                label: 'Mobile only',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide on desktop if true',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'horizontalSpacing': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'verticalSpacing': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SidebarSection.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A way to build layouts */
+		export interface ILayoutBuilder {
+			
+				/** items. */
+				'items'?: ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'layout', values: SpruceSchemas.Local.ILayout } | { schemaId: 'layoutSpacing', values: SpruceSchemas.Local.ILayoutSpacing } | { schemaId: 'sidebarHeader', values: SpruceSchemas.Local.ISidebarHeader } | { schemaId: 'sidebarSection', values: SpruceSchemas.Local.ISidebarSection })[]| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.LayoutBuilder {
+		export const id = 'layoutBuilder'
+
+		/** The interface for the schema definition for a Layout builder */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layoutBuilder',
+			name: 'Layout builder',
+			description: 'A way to build layouts',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Layout.IDefinition | SpruceSchemas.Local.LayoutSpacing.IDefinition | SpruceSchemas.Local.SidebarHeader.IDefinition | SpruceSchemas.Local.SidebarSection.IDefinition)[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout builder */
+		export const definition: SpruceSchemas.Local.LayoutBuilder.IDefinition = {
+			id: 'layoutBuilder',
+			name: 'Layout builder',
+			description: 'A way to build layouts',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Layout.definition, SpruceSchemas.Local.LayoutSpacing.definition, SpruceSchemas.Local.SidebarHeader.definition, SpruceSchemas.Local.SidebarSection.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.LayoutBuilder.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A list is comprised of list items (or expandable list items). This is that list item. */
+		export interface IListItem {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Title. Title text */
+				'title': string
+				/** Subtitle. Optional subtitle text */
+				'subtitle'?: string| undefined | null
+				/** Note. Optional note text */
+				'note'?: string| undefined | null
+				/** Is expandable. Can render this item as expandable */
+				'isExpandable'?: boolean| undefined | null
+				/** Avatar. */
+				'avatar'?: SpruceSchemas.Local.IAvatar| undefined | null
+				/** Image. */
+				'image'?: SpruceSchemas.Local.IImage| undefined | null
+				/** Icon. Inline svg icon */
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Is icon hidden. Optional; visually hides the icon without removing it */
+				'isIconHidden'?: boolean| undefined | null
+				/** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
+				'isLeftIndented'?: boolean| undefined | null
+				/** Is draggable. Set true when the list can be reordered */
+				'isDraggable'?: boolean| undefined | null
+				/** Is disabled. Set true when the list can be reordered */
+				'isDisabled'?: boolean| undefined | null
+				/** Toggle props. Props passed to the toggle if toggleId is set */
+				'toggle'?: SpruceSchemas.Local.IToggle| undefined | null
+				/** Primary button. A primary button that turns the entire list item into a clickable button */
+				'primaryButton'?: SpruceSchemas.Local.IButton| undefined | null
+				/** Buttons. Additional buttons that get dropped into this item */
+				'buttons'?: SpruceSchemas.Local.IButton[]| undefined | null
+				/** Context menu. Context Menu associated with the list it */
+				'contextMenu'?: SpruceSchemas.Local.IContextMenu| undefined | null
+				/** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
+				'isSeparatorVisible'?: boolean| undefined | null
+				/** Class name. Optional class name for list item */
+				'className'?: string| undefined | null
+				/** Loading. Makes the item look like a loading placeholder */
+				'isLoading'?: boolean| undefined | null
+				/** Selectable element. Any props you want sent down to the selectable component being rendered */
+				'selectable'?: { schemaId: 'radio', values: SpruceSchemas.Local.IRadio } | { schemaId: 'checkbox', values: SpruceSchemas.Local.ICheckbox }| undefined | null
+				/** Warnings. Highlight title, subtitle, note with warning colors */
+				'warnings'?: SpruceSchemas.Local.IListItemWarning| undefined | null
+				/** List. Optional; adds a nested list */
+				'list'?: SpruceSchemas.Local.IList| undefined | null
+				/** Lists. Optional; adds multiple lists nested at the same level */
+				'lists'?: SpruceSchemas.Local.IList[]| undefined | null
+				/** Click handler. */
+				'onClick'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.ListItem {
+		export const id = 'listItem'
+
+		/** The interface for the schema definition for a List item */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'listItem',
+			name: 'List item',
+			description: 'A list is comprised of list items (or expandable list items). This is that list item.',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Title. Title text */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Title text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Subtitle. Optional subtitle text */
+			            'subtitle': {
+			                label: 'Subtitle',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional subtitle text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Note. Optional note text */
+			            'note': {
+			                label: 'Note',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional note text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is expandable. Can render this item as expandable */
+			            'isExpandable': {
+			                label: 'Is expandable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Can render this item as expandable',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Avatar. */
+			            'avatar': {
+			                label: 'Avatar',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Avatar.IDefinition[],}
+			            },
+			            /** Image. */
+			            'image': {
+			                label: 'Image',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Image.IDefinition[],}
+			            },
+			            /** Icon. Inline svg icon */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Inline svg icon',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Is icon hidden. Optional; visually hides the icon without removing it */
+			            'isIconHidden': {
+			                label: 'Is icon hidden',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Optional; visually hides the icon without removing it',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
+			            'isLeftIndented': {
+			                label: 'Is left indented',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to add left spacing. useful in aligning with other list items that have icons or images',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is draggable. Set true when the list can be reordered */
+			            'isDraggable': {
+			                label: 'Is draggable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is disabled. Set true when the list can be reordered */
+			            'isDisabled': {
+			                label: 'Is disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Toggle props. Props passed to the toggle if toggleId is set */
+			            'toggle': {
+			                label: 'Toggle props',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Props passed to the toggle if toggleId is set',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Toggle.IDefinition[],}
+			            },
+			            /** Primary button. A primary button that turns the entire list item into a clickable button */
+			            'primaryButton': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'A primary button that turns the entire list item into a clickable button',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Buttons. Additional buttons that get dropped into this item */
+			            'buttons': {
+			                label: 'Buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Additional buttons that get dropped into this item',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Context menu. Context Menu associated with the list it */
+			            'contextMenu': {
+			                label: 'Context menu',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Context Menu associated with the list it',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.ContextMenu.IDefinition[],}
+			            },
+			            /** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
+			            'isSeparatorVisible': {
+			                label: 'Is separator visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to show separator for this list item if followed by another list item.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Class name. Optional class name for list item */
+			            'className': {
+			                label: 'Class name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional class name for list item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Loading. Makes the item look like a loading placeholder */
+			            'isLoading': {
+			                label: 'Loading',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes the item look like a loading placeholder',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Selectable element. Any props you want sent down to the selectable component being rendered */
+			            'selectable': {
+			                label: 'Selectable element',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Any props you want sent down to the selectable component being rendered',
+			                
+			                
+			                
+			                
+			                options: {schemas: (SpruceSchemas.Local.Radio.IDefinition | SpruceSchemas.Local.Checkbox.IDefinition)[],}
+			            },
+			            /** Warnings. Highlight title, subtitle, note with warning colors */
+			            'warnings': {
+			                label: 'Warnings',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Highlight title, subtitle, note with warning colors',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.ListItemWarning.IDefinition[],}
+			            },
+			            /** List. Optional; adds a nested list */
+			            'list': {
+			                label: 'List',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds a nested list',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.List.IDefinition[],}
+			            },
+			            /** Lists. Optional; adds multiple lists nested at the same level */
+			            'lists': {
+			                label: 'Lists',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds multiple lists nested at the same level',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.List.IDefinition[],}
+			            },
+			            /** Click handler. */
+			            'onClick': {
+			                label: 'Click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a List item */
+		export const definition: SpruceSchemas.Local.ListItem.IDefinition = {
+			id: 'listItem',
+			name: 'List item',
+			description: 'A list is comprised of list items (or expandable list items). This is that list item.',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Title. Title text */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Title text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Subtitle. Optional subtitle text */
+			            'subtitle': {
+			                label: 'Subtitle',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional subtitle text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Note. Optional note text */
+			            'note': {
+			                label: 'Note',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional note text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is expandable. Can render this item as expandable */
+			            'isExpandable': {
+			                label: 'Is expandable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Can render this item as expandable',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Avatar. */
+			            'avatar': {
+			                label: 'Avatar',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Avatar.definition],}
+			            },
+			            /** Image. */
+			            'image': {
+			                label: 'Image',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Image.definition],}
+			            },
+			            /** Icon. Inline svg icon */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Inline svg icon',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Is icon hidden. Optional; visually hides the icon without removing it */
+			            'isIconHidden': {
+			                label: 'Is icon hidden',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Optional; visually hides the icon without removing it',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
+			            'isLeftIndented': {
+			                label: 'Is left indented',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to add left spacing. useful in aligning with other list items that have icons or images',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is draggable. Set true when the list can be reordered */
+			            'isDraggable': {
+			                label: 'Is draggable',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is disabled. Set true when the list can be reordered */
+			            'isDisabled': {
+			                label: 'Is disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true when the list can be reordered',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Toggle props. Props passed to the toggle if toggleId is set */
+			            'toggle': {
+			                label: 'Toggle props',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Props passed to the toggle if toggleId is set',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Toggle.definition],}
+			            },
+			            /** Primary button. A primary button that turns the entire list item into a clickable button */
+			            'primaryButton': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'A primary button that turns the entire list item into a clickable button',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Buttons. Additional buttons that get dropped into this item */
+			            'buttons': {
+			                label: 'Buttons',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Additional buttons that get dropped into this item',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Context menu. Context Menu associated with the list it */
+			            'contextMenu': {
+			                label: 'Context menu',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Context Menu associated with the list it',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.ContextMenu.definition],}
+			            },
+			            /** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
+			            'isSeparatorVisible': {
+			                label: 'Is separator visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set to true to show separator for this list item if followed by another list item.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Class name. Optional class name for list item */
+			            'className': {
+			                label: 'Class name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Optional class name for list item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Loading. Makes the item look like a loading placeholder */
+			            'isLoading': {
+			                label: 'Loading',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes the item look like a loading placeholder',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Selectable element. Any props you want sent down to the selectable component being rendered */
+			            'selectable': {
+			                label: 'Selectable element',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Any props you want sent down to the selectable component being rendered',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Radio.definition, SpruceSchemas.Local.Checkbox.definition],}
+			            },
+			            /** Warnings. Highlight title, subtitle, note with warning colors */
+			            'warnings': {
+			                label: 'Warnings',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Highlight title, subtitle, note with warning colors',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.ListItemWarning.definition],}
+			            },
+			            /** List. Optional; adds a nested list */
+			            'list': {
+			                label: 'List',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds a nested list',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.List.definition],}
+			            },
+			            /** Lists. Optional; adds multiple lists nested at the same level */
+			            'lists': {
+			                label: 'Lists',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional; adds multiple lists nested at the same level',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.List.definition],}
+			            },
+			            /** Click handler. */
+			            'onClick': {
+			                label: 'Click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.ListItem.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** An element that makes up the sidebar */
+		export interface ISidebarItem {
+			
+				/** Subitems. Rendered under the text as subitems */
+				'items'?: SpruceSchemas.Local.ISidebarItem[]| undefined | null
+				/** Icon. */
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Button. */
+				'button'?: SpruceSchemas.Local.IButton| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Text. Rendered in the body of this item */
+				'text'?: string| undefined | null
+				/** href. */
+				'href'?: string| undefined | null
+				/** Current. If this item is the current one, it is rendered differently to call it out */
+				'isCurrent'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SidebarItem {
+		export const id = 'sidebarItem'
+
+		/** The interface for the schema definition for a Sidebar item */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebarItem',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** Subitems. Rendered under the text as subitems */
+			            'items': {
+			                label: 'Subitems',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Rendered under the text as subitems',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
+			            },
+			            /** Icon. */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Text. Rendered in the body of this item */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Rendered in the body of this item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** href. */
+			            'href': {
+			                label: 'href',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Current. If this item is the current one, it is rendered differently to call it out */
+			            'isCurrent': {
+			                label: 'Current',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If this item is the current one, it is rendered differently to call it out',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar item */
+		export const definition: SpruceSchemas.Local.SidebarItem.IDefinition = {
+			id: 'sidebarItem',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** Subitems. Rendered under the text as subitems */
+			            'items': {
+			                label: 'Subitems',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Rendered under the text as subitems',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
+			            },
+			            /** Icon. */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Text. Rendered in the body of this item */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Rendered in the body of this item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** href. */
+			            'href': {
+			                label: 'href',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Current. If this item is the current one, it is rendered differently to call it out */
+			            'isCurrent': {
+			                label: 'Current',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If this item is the current one, it is rendered differently to call it out',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SidebarItem.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** On the left or right side of a layout */
+		export interface ISidebar {
+			
+				/** . Optional header that will only appear on mobile */
+				'mobileHeader'?: SpruceSchemas.Local.ISidebarHeader| undefined | null
+				/** Label. Items to display in the sidebar */
+				'items'?: SpruceSchemas.Local.ISidebarItem[]| undefined | null
+				/** Sections. Sections to display in the sidebar */
+				'sections'?: SpruceSchemas.Local.ISidebarSection[]| undefined | null
+				/** Back link. Back link item to handle navigation back to previous location */
+				'backLink'?: SpruceSchemas.Local.ISidebarItem| undefined | null
+				/** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+				'side'?: ("left" | "right")| undefined | null
+				/** Large. Set true to make the sidebar larger. Defaults to false. */
+				'isLarge'?: boolean| undefined | null
+				/** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+				'isCollapsible'?: boolean| undefined | null
+				/** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+				'isExpanded'?: boolean| undefined | null
+				/** Expanded on mobile. Set true to expand the sidebar on small screens */
+				'isMobileExpanded'?: boolean| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				
+				'footerChildren'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Sidebar {
+		export const id = 'sidebar'
+
+		/** The interface for the schema definition for a Sidebar */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebar',
+			name: 'Sidebar',
+			description: 'On the left or right side of a layout',
+			
+			
+			    fields: {
+			            /** . Optional header that will only appear on mobile */
+			            'mobileHeader': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional header that will only appear on mobile',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarHeader.IDefinition[],}
+			            },
+			            /** Label. Items to display in the sidebar */
+			            'items': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Items to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
+			            },
+			            /** Sections. Sections to display in the sidebar */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Sections to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarSection.IDefinition[],}
+			            },
+			            /** Back link. Back link item to handle navigation back to previous location */
+			            'backLink': {
+			                label: 'Back link',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Back link item to handle navigation back to previous location',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
+			            },
+			            /** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+			            'side': {
+			                label: 'Side',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set which side the sidebar is on. Must be either \'left\' or \'right\'',
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"left","label":"Left"},{"value":"right","label":"Right"}],}
+			            },
+			            /** Large. Set true to make the sidebar larger. Defaults to false. */
+			            'isLarge': {
+			                label: 'Large',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to make the sidebar larger. Defaults to false.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+			            'isCollapsible': {
+			                label: 'Collapsed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+			            'isExpanded': {
+			                label: 'Expanded on desktop',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar (large screens only)',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on mobile. Set true to expand the sidebar on small screens */
+			            'isMobileExpanded': {
+			                label: 'Expanded on mobile',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar on small screens',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'footerChildren': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar */
+		export const definition: SpruceSchemas.Local.Sidebar.IDefinition = {
+			id: 'sidebar',
+			name: 'Sidebar',
+			description: 'On the left or right side of a layout',
+			
+			
+			    fields: {
+			            /** . Optional header that will only appear on mobile */
+			            'mobileHeader': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional header that will only appear on mobile',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarHeader.definition],}
+			            },
+			            /** Label. Items to display in the sidebar */
+			            'items': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Items to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
+			            },
+			            /** Sections. Sections to display in the sidebar */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Sections to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarSection.definition],}
+			            },
+			            /** Back link. Back link item to handle navigation back to previous location */
+			            'backLink': {
+			                label: 'Back link',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Back link item to handle navigation back to previous location',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
+			            },
+			            /** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+			            'side': {
+			                label: 'Side',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set which side the sidebar is on. Must be either \'left\' or \'right\'',
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"left","label":"Left"},{"value":"right","label":"Right"}],}
+			            },
+			            /** Large. Set true to make the sidebar larger. Defaults to false. */
+			            'isLarge': {
+			                label: 'Large',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to make the sidebar larger. Defaults to false.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+			            'isCollapsible': {
+			                label: 'Collapsed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+			            'isExpanded': {
+			                label: 'Expanded on desktop',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar (large screens only)',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on mobile. Set true to expand the sidebar on small screens */
+			            'isMobileExpanded': {
+			                label: 'Expanded on mobile',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar on small screens',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'footerChildren': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Sidebar.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface ISkillViewHeader {
+			
+				/** Title. */
+				'title'?: string| undefined | null
+				/** Back link href. */
+				'backLinkHref'?: string| undefined | null
+				/** Back link text. */
+				'backLinkText'?: string| undefined | null
+				/** Collapsed. */
+				'isCollapsed'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Primary button. */
+				'primaryButton'?: SpruceSchemas.Local.IButton| undefined | null
+				/** Bottom border. */
+				'hasBottomBorder'?: boolean| undefined | null
+				/** Sidebar expander button. The button I'll use to let the person toggle the sidebar's visibility. */
+				'sidebarExpanderButton'?: SpruceSchemas.Local.IButton| undefined | null
+				/** Back click handler. */
+				'onClickBack'?: ((e: React.MouseEvent<HTMLButtonElement>) => void)| undefined | null
+				/** Tabs. */
+				'tabs'?: SpruceSchemas.Local.ITab[]| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SkillViewHeader {
+		export const id = 'skillViewHeader'
+
+		/** The interface for the schema definition for a Skill view header */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'skillViewHeader',
+			name: 'Skill view header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Back link href. */
+			            'backLinkHref': {
+			                label: 'Back link href',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Back link text. */
+			            'backLinkText': {
+			                label: 'Back link text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed. */
+			            'isCollapsed': {
+			                label: 'Collapsed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Primary button. */
+			            'primaryButton': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Bottom border. */
+			            'hasBottomBorder': {
+			                label: 'Bottom border',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sidebar expander button. The button I'll use to let the person toggle the sidebar's visibility. */
+			            'sidebarExpanderButton': {
+			                label: 'Sidebar expander button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The button I\'ll use to let the person toggle the sidebar\'s visibility.',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Back click handler. */
+			            'onClickBack': {
+			                label: 'Back click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLButtonElement`,}
+			            },
+			            /** Tabs. */
+			            'tabs': {
+			                label: 'Tabs',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.Tab.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Skill view header */
+		export const definition: SpruceSchemas.Local.SkillViewHeader.IDefinition = {
+			id: 'skillViewHeader',
+			name: 'Skill view header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Back link href. */
+			            'backLinkHref': {
+			                label: 'Back link href',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Back link text. */
+			            'backLinkText': {
+			                label: 'Back link text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed. */
+			            'isCollapsed': {
+			                label: 'Collapsed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Primary button. */
+			            'primaryButton': {
+			                label: 'Primary button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Bottom border. */
+			            'hasBottomBorder': {
+			                label: 'Bottom border',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sidebar expander button. The button I'll use to let the person toggle the sidebar's visibility. */
+			            'sidebarExpanderButton': {
+			                label: 'Sidebar expander button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The button I\'ll use to let the person toggle the sidebar\'s visibility.',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Back click handler. */
+			            'onClickBack': {
+			                label: 'Back click handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLButtonElement`,}
+			            },
+			            /** Tabs. */
+			            'tabs': {
+			                label: 'Tabs',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Tab.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SkillViewHeader.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A view you&#x27;re presenting to a person on an unknown set of devices */
+		export interface ISkillView {
+			
+				/** Centered. Is all content centered? */
+				'isCentered'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				
+				'sidebarChildren'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Header. */
+				'header'?: SpruceSchemas.Local.ISkillViewHeader| undefined | null
+				/** Collapse sidebar. Will hide the sidebar */
+				'isSidebarCollapsed'?: boolean| undefined | null
+				/** Collapse header. Will hide the header */
+				'isHeaderCollapsed'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SkillView {
+		export const id = 'skillView'
+
+		/** The interface for the schema definition for a Skill view */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'skillView',
+			name: 'Skill view',
+			description: 'A view you\'re presenting to a person on an unknown set of devices',
+			
+			
+			    fields: {
+			            /** Centered. Is all content centered? */
+			            'isCentered': {
+			                label: 'Centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is all content centered?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'sidebarChildren': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
 			                
 			                
 			                
@@ -8437,123 +17267,130 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.local.CardHeader.definition],}
+			                options: {schemas: SpruceSchemas.Local.SkillViewHeader.IDefinition[],}
 			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Card.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.local {
-		/** A great way to render a on/off style question or control */
-		export interface IToggle {
-			
-				/** Id. Unique id for UI caching */
-				'id': string
-				/** Post text. Text after the toggle */
-				'postText'?: string| undefined
-				/** On click. Optional on click to invoke when tapped */
-				'onClick'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
-		}
-	}	 
-
-	export namespace SpruceSchemas.local.Toggle {
-		export const id = 'Toggle'
-
-		/** The interface for the schema definition for a Toggle */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'Toggle',
-			name: 'Toggle',
-			description: 'A great way to render a on/off style question or control',
-			
-			
-			    fields: {
-			            /** Id. Unique id for UI caching */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
+			            /** Collapse sidebar. Will hide the sidebar */
+			            'isSidebarCollapsed': {
+			                label: 'Collapse sidebar',
+			                type: SpruceSchema.FieldType.Boolean,
 			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
+			                
+			                hint: 'Will hide the sidebar',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Post text. Text after the toggle */
-			            'postText': {
-			                label: 'Post text',
+			            /** Collapse header. Will hide the header */
+			            'isHeaderCollapsed': {
+			                label: 'Collapse header',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide the header',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Skill view */
+		export const definition: SpruceSchemas.Local.SkillView.IDefinition = {
+			id: 'skillView',
+			name: 'Skill view',
+			description: 'A view you\'re presenting to a person on an unknown set of devices',
+			
+			
+			    fields: {
+			            /** Centered. Is all content centered? */
+			            'isCentered': {
+			                label: 'Centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is all content centered?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
-			                hint: 'Text after the toggle',
 			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** On click. Optional on click to invoke when tapped */
-			            'onClick': {
-			                label: 'On click',
-			                type: SpruceSchema.FieldType.OnClick,
-			                
-			                
-			                hint: 'Optional on click to invoke when tapped',
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			    }
-		}
-
-		/** The schema definition for a Toggle */
-		export const definition: SpruceSchemas.local.Toggle.IDefinition = {
-			id: 'Toggle',
-			name: 'Toggle',
-			description: 'A great way to render a on/off style question or control',
-			
-			
-			    fields: {
-			            /** Id. Unique id for UI caching */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Id,
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
 			                
-			                isRequired: true,
-			                hint: 'Unique id for UI caching',
+			                
+			                
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** Post text. Text after the toggle */
-			            'postText': {
-			                label: 'Post text',
-			                type: SpruceSchema.FieldType.Text,
+			            /** . */
+			            'sidebarChildren': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
 			                
 			                
-			                hint: 'Text after the toggle',
+			                
 			                
 			                
 			                
 			                
 			                options: undefined
 			            },
-			            /** On click. Optional on click to invoke when tapped */
-			            'onClick': {
-			                label: 'On click',
-			                type: SpruceSchema.FieldType.OnClick,
+			            /** Header. */
+			            'header': {
+			                label: 'Header',
+			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
-			                hint: 'Optional on click to invoke when tapped',
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SkillViewHeader.definition],}
+			            },
+			            /** Collapse sidebar. Will hide the sidebar */
+			            'isSidebarCollapsed': {
+			                label: 'Collapse sidebar',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide the sidebar',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapse header. Will hide the header */
+			            'isHeaderCollapsed': {
+			                label: 'Collapse header',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide the header',
 			                
 			                
 			                
@@ -8564,38 +17401,63 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.Toggle.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.SkillView.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** A warning message that can go on a list item */
-		export interface IListItemWarning {
+	export namespace SpruceSchemas.Local {
+		/** A view you&#x27;re presenting to a person on an unknown set of devices */
+		export interface ISkillViewBuilder {
 			
-				/** Title. */
-				'title'?: boolean| undefined
-				/** Subtitle. */
-				'subtitle'?: boolean| undefined
-				/** Note. */
-				'note'?: boolean| undefined
+				/** Centered. Is all content centered? */
+				'isCentered'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				
+				'sidebarChildren'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Header. */
+				'header'?: SpruceSchemas.Local.ISkillViewHeader| undefined | null
+				/** Collapse sidebar. Will hide the sidebar */
+				'isSidebarCollapsed'?: boolean| undefined | null
+				/** Collapse header. Will hide the header */
+				'isHeaderCollapsed'?: boolean| undefined | null
+				/** Content layout. */
+				'contentLayout'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
+				/** Content layout. */
+				'sidebarLayout'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ListItemWarning {
-		export const id = 'listItemWarning'
+	export namespace SpruceSchemas.Local.SkillViewBuilder {
+		export const id = 'skillViewBuilder'
 
-		/** The interface for the schema definition for a List item warning */
+		/** The interface for the schema definition for a Skill view builder */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'listItemWarning',
-			name: 'List item warning',
-			description: 'A warning message that can go on a list item',
+			id: 'skillViewBuilder',
+			name: 'Skill view builder',
+			description: 'A view you\'re presenting to a person on an unknown set of devices',
 			
 			
 			    fields: {
-			            /** Title. */
-			            'title': {
-			                label: 'Title',
+			            /** Centered. Is all content centered? */
+			            'isCentered': {
+			                label: 'Centered',
 			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is all content centered?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
 			                
@@ -8605,10 +17467,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Subtitle. */
-			            'subtitle': {
-			                label: 'Subtitle',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
 			                
 			                
 			                
@@ -8618,10 +17480,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Note. */
-			            'note': {
-			                label: 'Note',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** . */
+			            'sidebarChildren': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
 			                
 			                
 			                
@@ -8630,22 +17492,100 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                options: undefined
+			            },
+			            /** Header. */
+			            'header': {
+			                label: 'Header',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.SkillViewHeader.IDefinition[],}
+			            },
+			            /** Collapse sidebar. Will hide the sidebar */
+			            'isSidebarCollapsed': {
+			                label: 'Collapse sidebar',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide the sidebar',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapse header. Will hide the header */
+			            'isHeaderCollapsed': {
+			                label: 'Collapse header',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide the header',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Content layout. */
+			            'contentLayout': {
+			                label: 'Content layout',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
+			            },
+			            /** Content layout. */
+			            'sidebarLayout': {
+			                label: 'Content layout',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
 			            },
 			    }
 		}
 
-		/** The schema definition for a List item warning */
-		export const definition: SpruceSchemas.local.ListItemWarning.IDefinition = {
-			id: 'listItemWarning',
-			name: 'List item warning',
-			description: 'A warning message that can go on a list item',
+		/** The schema definition for a Skill view builder */
+		export const definition: SpruceSchemas.Local.SkillViewBuilder.IDefinition = {
+			id: 'skillViewBuilder',
+			name: 'Skill view builder',
+			description: 'A view you\'re presenting to a person on an unknown set of devices',
 			
 			
 			    fields: {
-			            /** Title. */
-			            'title': {
-			                label: 'Title',
+			            /** Centered. Is all content centered? */
+			            'isCentered': {
+			                label: 'Centered',
 			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is all content centered?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
 			                
@@ -8655,10 +17595,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Subtitle. */
-			            'subtitle': {
-			                label: 'Subtitle',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
 			                
 			                
 			                
@@ -8668,10 +17608,10 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                options: undefined
 			            },
-			            /** Note. */
-			            'note': {
-			                label: 'Note',
-			                type: SpruceSchema.FieldType.Boolean,
+			            /** . */
+			            'sidebarChildren': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
 			                
 			                
 			                
@@ -8680,74 +17620,101 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                
 			                
 			                options: undefined
+			            },
+			            /** Header. */
+			            'header': {
+			                label: 'Header',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SkillViewHeader.definition],}
+			            },
+			            /** Collapse sidebar. Will hide the sidebar */
+			            'isSidebarCollapsed': {
+			                label: 'Collapse sidebar',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide the sidebar',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapse header. Will hide the header */
+			            'isHeaderCollapsed': {
+			                label: 'Collapse header',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide the header',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Content layout. */
+			            'contentLayout': {
+			                label: 'Content layout',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
+			            },
+			            /** Content layout. */
+			            'sidebarLayout': {
+			                label: 'Content layout',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ListItemWarning.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.SkillViewBuilder.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
-		/** A list is comprised of list items (or expandable list items). This is that list item. */
-		export interface IListItem {
+	export namespace SpruceSchemas.Local {
+		/** Make it great! */
+		export interface ISprucebotAvatar {
 			
 				/** Id. */
-				'id': string
-				/** Title. Title text */
-				'title': string
-				/** Subtitle. Optional subtitle text */
-				'subtitle'?: string| undefined
-				/** Note. Optional note text */
-				'note'?: string| undefined
-				/** Is expandable. Can render this item as expandable */
-				'isExpandable'?: boolean| undefined
-				/** Avatar. */
-				'avatar'?: SpruceSchemas.local.IAvatar| undefined
-				/** Image. URL to show an image */
-				'image'?: string| undefined
-				/** Icon. Inline svg icon */
-				'icon'?: SpruceSchemas.local.IIcon| undefined
-				/** Is icon hidden. Optional; visually hides the icon without removing it */
-				'isIconHidden'?: boolean| undefined
-				/** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
-				'isLeftIndented'?: boolean| undefined
-				/** Is draggable. Set true when the list can be reordered */
-				'isDraggable'?: boolean| undefined
-				/** Is disabled. Set true when the list can be reordered */
-				'isDisabled'?: boolean| undefined
-				/** Toggle props. Props passed to the toggle if toggleId is set */
-				'toggle'?: SpruceSchemas.local.IToggle| undefined
-				/** Primary button. A primary button that turns the entire list item into a clickable button */
-				'primaryButton'?: SpruceSchemas.local.IButton| undefined
-				/** Buttons. Actions associated with the list item */
-				'buttons'?: SpruceSchemas.local.IButton[]| undefined
-				/** Context menu. Context Menu associated with the list it */
-				'contextMenu'?: SpruceSchemas.local.IContextMenu| undefined
-				/** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
-				'isSeparatorVisible'?: boolean| undefined
-				/** Class name. Optional class name for list item */
-				'className'?: string| undefined
-				/** Selectable element. Any props you want sent down to the selectable component being rendered */
-				'selectable'?: SpruceSchemas.local.IRadio | SpruceSchemas.local.ICheckbox| undefined
-				/** Warnings. Highlight title, subtitle, note with warning colors */
-				'warnings'?: SpruceSchemas.local.IListItemWarning| undefined
-				/** List. Optional; adds a nested list */
-				'list'?: SpruceSchemas.local.IList| undefined
-				/** Lists. Optional; adds multiple lists nested at the same level */
-				'lists': SpruceSchemas.local.IList[]
+				'id'?: string| undefined | null
+				/** Second Field. A hint */
+				'stateOfMind': ("chill" | "contemplative" | "curious" | "accomplished")
+				/** Size. */
+				'size': ("small" | "medium" | "large")
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ListItem {
-		export const id = 'listItem'
+	export namespace SpruceSchemas.Local.SprucebotAvatar {
+		export const id = 'sprucebotAvatar'
 
-		/** The interface for the schema definition for a List item */
+		/** The interface for the schema definition for a SprucebotAvatar */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'listItem',
-			name: 'List item',
-			description: 'A list is comprised of list items (or expandable list items). This is that list item.',
+			id: 'sprucebotAvatar',
+			name: 'SprucebotAvatar',
+			description: 'Make it great!',
 			
 			
 			    fields: {
@@ -8756,295 +17723,48 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Second Field. A hint */
+			            'stateOfMind': {
+			                label: 'Second Field',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                isRequired: true,
+			                hint: 'A hint',
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
+			            },
+			            /** Size. */
+			            'size': {
+			                label: 'Size',
+			                type: SpruceSchema.FieldType.Select,
+			                
 			                isRequired: true,
 			                
 			                
 			                
 			                
 			                
-			                options: undefined
-			            },
-			            /** Title. Title text */
-			            'title': {
-			                label: 'Title',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Title text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Subtitle. Optional subtitle text */
-			            'subtitle': {
-			                label: 'Subtitle',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional subtitle text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Note. Optional note text */
-			            'note': {
-			                label: 'Note',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional note text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is expandable. Can render this item as expandable */
-			            'isExpandable': {
-			                label: 'Is expandable',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Can render this item as expandable',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Avatar. */
-			            'avatar': {
-			                label: 'Avatar',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.Avatar.IDefinition[],}
-			            },
-			            /** Image. URL to show an image */
-			            'image': {
-			                label: 'Image',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'URL to show an image',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Icon. Inline svg icon */
-			            'icon': {
-			                label: 'Icon',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Inline svg icon',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
-			            },
-			            /** Is icon hidden. Optional; visually hides the icon without removing it */
-			            'isIconHidden': {
-			                label: 'Is icon hidden',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Optional; visually hides the icon without removing it',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
-			            'isLeftIndented': {
-			                label: 'Is left indented',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to add left spacing. useful in aligning with other list items that have icons or images',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is draggable. Set true when the list can be reordered */
-			            'isDraggable': {
-			                label: 'Is draggable',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true when the list can be reordered',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is disabled. Set true when the list can be reordered */
-			            'isDisabled': {
-			                label: 'Is disabled',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true when the list can be reordered',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Toggle props. Props passed to the toggle if toggleId is set */
-			            'toggle': {
-			                label: 'Toggle props',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Props passed to the toggle if toggleId is set',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.Toggle.IDefinition[],}
-			            },
-			            /** Primary button. A primary button that turns the entire list item into a clickable button */
-			            'primaryButton': {
-			                label: 'Primary button',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'A primary button that turns the entire list item into a clickable button',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
-			            },
-			            /** Buttons. Actions associated with the list item */
-			            'buttons': {
-			                label: 'Buttons',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Actions associated with the list item',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: SpruceSchemas.local.Button.IDefinition[],}
-			            },
-			            /** Context menu. Context Menu associated with the list it */
-			            'contextMenu': {
-			                label: 'Context menu',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Context Menu associated with the list it',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.ContextMenu.IDefinition[],}
-			            },
-			            /** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
-			            'isSeparatorVisible': {
-			                label: 'Is separator visible',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set to true to show separator for this list item if followed by another list item.',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Class name. Optional class name for list item */
-			            'className': {
-			                label: 'Class name',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional class name for list item',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Selectable element. Any props you want sent down to the selectable component being rendered */
-			            'selectable': {
-			                label: 'Selectable element',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Any props you want sent down to the selectable component being rendered',
-			                
-			                
-			                
-			                
-			                options: {schemas: (SpruceSchemas.local.Radio.IDefinition | SpruceSchemas.local.Checkbox.IDefinition)[],}
-			            },
-			            /** Warnings. Highlight title, subtitle, note with warning colors */
-			            'warnings': {
-			                label: 'Warnings',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Highlight title, subtitle, note with warning colors',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.ListItemWarning.IDefinition[],}
-			            },
-			            /** List. Optional; adds a nested list */
-			            'list': {
-			                label: 'List',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Optional; adds a nested list',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.List.IDefinition[],}
-			            },
-			            /** Lists. Optional; adds multiple lists nested at the same level */
-			            'lists': {
-			                label: 'Lists',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                isRequired: true,
-			                hint: 'Optional; adds multiple lists nested at the same level',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: SpruceSchemas.local.List.IDefinition[],}
+			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
 			            },
 			    }
 		}
 
-		/** The schema definition for a List item */
-		export const definition: SpruceSchemas.local.ListItem.IDefinition = {
-			id: 'listItem',
-			name: 'List item',
-			description: 'A list is comprised of list items (or expandable list items). This is that list item.',
+		/** The schema definition for a SprucebotAvatar */
+		export const definition: SpruceSchemas.Local.SprucebotAvatar.IDefinition = {
+			id: 'sprucebotAvatar',
+			name: 'SprucebotAvatar',
+			description: 'Make it great!',
 			
 			
 			    fields: {
@@ -9053,364 +17773,283 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Second Field. A hint */
+			            'stateOfMind': {
+			                label: 'Second Field',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                isRequired: true,
+			                hint: 'A hint',
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
+			            },
+			            /** Size. */
+			            'size': {
+			                label: 'Size',
+			                type: SpruceSchema.FieldType.Select,
+			                
 			                isRequired: true,
 			                
 			                
 			                
 			                
 			                
-			                options: undefined
-			            },
-			            /** Title. Title text */
-			            'title': {
-			                label: 'Title',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Title text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Subtitle. Optional subtitle text */
-			            'subtitle': {
-			                label: 'Subtitle',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional subtitle text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Note. Optional note text */
-			            'note': {
-			                label: 'Note',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional note text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is expandable. Can render this item as expandable */
-			            'isExpandable': {
-			                label: 'Is expandable',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Can render this item as expandable',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Avatar. */
-			            'avatar': {
-			                label: 'Avatar',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Avatar.definition],}
-			            },
-			            /** Image. URL to show an image */
-			            'image': {
-			                label: 'Image',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'URL to show an image',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Icon. Inline svg icon */
-			            'icon': {
-			                label: 'Icon',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Inline svg icon',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
-			            },
-			            /** Is icon hidden. Optional; visually hides the icon without removing it */
-			            'isIconHidden': {
-			                label: 'Is icon hidden',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Optional; visually hides the icon without removing it',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is left indented. Set true to add left spacing. useful in aligning with other list items that have icons or images */
-			            'isLeftIndented': {
-			                label: 'Is left indented',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to add left spacing. useful in aligning with other list items that have icons or images',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is draggable. Set true when the list can be reordered */
-			            'isDraggable': {
-			                label: 'Is draggable',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true when the list can be reordered',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is disabled. Set true when the list can be reordered */
-			            'isDisabled': {
-			                label: 'Is disabled',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true when the list can be reordered',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Toggle props. Props passed to the toggle if toggleId is set */
-			            'toggle': {
-			                label: 'Toggle props',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Props passed to the toggle if toggleId is set',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Toggle.definition],}
-			            },
-			            /** Primary button. A primary button that turns the entire list item into a clickable button */
-			            'primaryButton': {
-			                label: 'Primary button',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'A primary button that turns the entire list item into a clickable button',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
-			            },
-			            /** Buttons. Actions associated with the list item */
-			            'buttons': {
-			                label: 'Buttons',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Actions associated with the list item',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.local.Button.definition],}
-			            },
-			            /** Context menu. Context Menu associated with the list it */
-			            'contextMenu': {
-			                label: 'Context menu',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Context Menu associated with the list it',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.ContextMenu.definition],}
-			            },
-			            /** Is separator visible. Set to true to show separator for this list item if followed by another list item. */
-			            'isSeparatorVisible': {
-			                label: 'Is separator visible',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set to true to show separator for this list item if followed by another list item.',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Class name. Optional class name for list item */
-			            'className': {
-			                label: 'Class name',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Optional class name for list item',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Selectable element. Any props you want sent down to the selectable component being rendered */
-			            'selectable': {
-			                label: 'Selectable element',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Any props you want sent down to the selectable component being rendered',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Radio.definition, SpruceSchemas.local.Checkbox.definition],}
-			            },
-			            /** Warnings. Highlight title, subtitle, note with warning colors */
-			            'warnings': {
-			                label: 'Warnings',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Highlight title, subtitle, note with warning colors',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.ListItemWarning.definition],}
-			            },
-			            /** List. Optional; adds a nested list */
-			            'list': {
-			                label: 'List',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Optional; adds a nested list',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.List.definition],}
-			            },
-			            /** Lists. Optional; adds multiple lists nested at the same level */
-			            'lists': {
-			                label: 'Lists',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                isRequired: true,
-			                hint: 'Optional; adds multiple lists nested at the same level',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.local.List.definition],}
+			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
 			            },
 			    }
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ListItem.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.SprucebotAvatar.IDefinition>
 	}
 	
 
-	export namespace SpruceSchemas.local {
+	export namespace SpruceSchemas.Local {
 		/**  */
-		export interface IExpandableListItem {
+		export interface ISprucebotTypedMessageSentence {
 			
-				/** List item. */
-				'item': SpruceSchemas.local.IListItem
-				/** Collapsed icon. */
-				'collapsedIcon'?: SpruceSchemas.local.IIcon| undefined
-				/** Expanded icon. */
-				'expandedIcon'?: SpruceSchemas.local.IIcon| undefined
-				/** . */
-				'onClick'?: ((e?: React.MouseEvent<Element, MouseEvent> | React.FormEvent<HTMLFormElement>) => void)| undefined
+				/** . A way to override the Sprucebot avatar for this sentence */
+				'avatar'?: SpruceSchemas.Local.ISprucebotAvatar| undefined | null
+				/** Words. The words being typed out */
+				'words': string
+				/** End delay. How long should I hold on this sentence after it's typed? */
+				'endDelay'?: SpruceSchema.IDurationFieldValue| undefined | null
 		}
 	}	 
 
-	export namespace SpruceSchemas.local.ExpandableListItem {
-		export const id = 'expandableListItem'
+	export namespace SpruceSchemas.Local.SprucebotTypedMessageSentence {
+		export const id = 'sprucebotTypedMessageSentence'
 
-		/** The interface for the schema definition for a Expandable list item */
+		/** The interface for the schema definition for a Sprucebot Typed sentence */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'expandableListItem',
-			name: 'Expandable list item',
+			id: 'sprucebotTypedMessageSentence',
+			name: 'Sprucebot Typed sentence',
 			description: '',
 			
 			
 			    fields: {
-			            /** List item. */
-			            'item': {
-			                label: 'List item',
+			            /** . A way to override the Sprucebot avatar for this sentence */
+			            'avatar': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'A way to override the Sprucebot avatar for this sentence',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.SprucebotAvatar.IDefinition[],}
+			            },
+			            /** Words. The words being typed out */
+			            'words': {
+			                label: 'Words',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'The words being typed out',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** End delay. How long should I hold on this sentence after it's typed? */
+			            'endDelay': {
+			                label: 'End delay',
+			                type: SpruceSchema.FieldType.Duration,
+			                
+			                
+			                hint: 'How long should I hold on this sentence after it\'s typed?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sprucebot Typed sentence */
+		export const definition: SpruceSchemas.Local.SprucebotTypedMessageSentence.IDefinition = {
+			id: 'sprucebotTypedMessageSentence',
+			name: 'Sprucebot Typed sentence',
+			description: '',
+			
+			
+			    fields: {
+			            /** . A way to override the Sprucebot avatar for this sentence */
+			            'avatar': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'A way to override the Sprucebot avatar for this sentence',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SprucebotAvatar.definition],}
+			            },
+			            /** Words. The words being typed out */
+			            'words': {
+			                label: 'Words',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'The words being typed out',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** End delay. How long should I hold on this sentence after it's typed? */
+			            'endDelay': {
+			                label: 'End delay',
+			                type: SpruceSchema.FieldType.Duration,
+			                
+			                
+			                hint: 'How long should I hold on this sentence after it\'s typed?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SprucebotTypedMessageSentence.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface ISprucebotTypedMessage {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Sentences. Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold) */
+				'sentences': SpruceSchemas.Local.ISprucebotTypedMessageSentence[]
+				/** Default avatar. How should Sprucebot be rendered by default */
+				'defaultAvatar'?: SpruceSchemas.Local.ISprucebotAvatar| undefined | null
+				/** Start delay. How long should I wait before starting to type? */
+				'startDelay'?: SpruceSchema.IDurationFieldValue| undefined | null
+				/** Loop. */
+				'loop'?: boolean| undefined | null
+				/** Size. */
+				'size'?: ("small" | "medium" | "large")| undefined | null
+				/** Paused. */
+				'paused'?: boolean| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SprucebotTypedMessage {
+		export const id = 'sprucebotTypedMessage'
+
+		/** The interface for the schema definition for a Sprucebot typed message */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sprucebotTypedMessage',
+			name: 'Sprucebot typed message',
+			description: '',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sentences. Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold) */
+			            'sentences': {
+			                label: 'Sentences',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                isRequired: true,
+			                hint: 'Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold)',
 			                
 			                
+			                isArray: true,
 			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.ListItem.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.SprucebotTypedMessageSentence.IDefinition[],}
 			            },
-			            /** Collapsed icon. */
-			            'collapsedIcon': {
-			                label: 'Collapsed icon',
+			            /** Default avatar. How should Sprucebot be rendered by default */
+			            'defaultAvatar': {
+			                label: 'Default avatar',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
+			                hint: 'How should Sprucebot be rendered by default',
 			                
 			                
 			                
 			                
-			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.SprucebotAvatar.IDefinition[],}
 			            },
-			            /** Expanded icon. */
-			            'expandedIcon': {
-			                label: 'Expanded icon',
-			                type: SpruceSchema.FieldType.Schema,
+			            /** Start delay. How long should I wait before starting to type? */
+			            'startDelay': {
+			                label: 'Start delay',
+			                type: SpruceSchema.FieldType.Duration,
 			                
 			                
+			                hint: 'How long should I wait before starting to type?',
+			                
+			                defaultValue: {"ms":1000},
 			                
 			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.local.Icon.IDefinition[],}
+			                options: undefined
 			            },
-			            /** . */
-			            'onClick': {
-			                label: '',
-			                type: SpruceSchema.FieldType.OnClick,
+			            /** Loop. */
+			            'loop': {
+			                label: 'Loop',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Size. */
+			            'size': {
+			                label: 'Size',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "small",
+			                
+			                
+			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
+			            },
+			            /** Paused. */
+			            'paused': {
+			                label: 'Paused',
+			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
 			                
@@ -9423,57 +18062,96 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 			    }
 		}
 
-		/** The schema definition for a Expandable list item */
-		export const definition: SpruceSchemas.local.ExpandableListItem.IDefinition = {
-			id: 'expandableListItem',
-			name: 'Expandable list item',
+		/** The schema definition for a Sprucebot typed message */
+		export const definition: SpruceSchemas.Local.SprucebotTypedMessage.IDefinition = {
+			id: 'sprucebotTypedMessage',
+			name: 'Sprucebot typed message',
 			description: '',
 			
 			
 			    fields: {
-			            /** List item. */
-			            'item': {
-			                label: 'List item',
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sentences. Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold) */
+			            'sentences': {
+			                label: 'Sentences',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                isRequired: true,
+			                hint: 'Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold)',
 			                
 			                
+			                isArray: true,
 			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.ListItem.definition],}
+			                options: {schemas: [SpruceSchemas.Local.SprucebotTypedMessageSentence.definition],}
 			            },
-			            /** Collapsed icon. */
-			            'collapsedIcon': {
-			                label: 'Collapsed icon',
+			            /** Default avatar. How should Sprucebot be rendered by default */
+			            'defaultAvatar': {
+			                label: 'Default avatar',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
+			                hint: 'How should Sprucebot be rendered by default',
 			                
 			                
 			                
 			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: {schemas: [SpruceSchemas.Local.SprucebotAvatar.definition],}
 			            },
-			            /** Expanded icon. */
-			            'expandedIcon': {
-			                label: 'Expanded icon',
-			                type: SpruceSchema.FieldType.Schema,
+			            /** Start delay. How long should I wait before starting to type? */
+			            'startDelay': {
+			                label: 'Start delay',
+			                type: SpruceSchema.FieldType.Duration,
 			                
 			                
+			                hint: 'How long should I wait before starting to type?',
+			                
+			                defaultValue: {"ms":1000},
 			                
 			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.local.Icon.definition],}
+			                options: undefined
 			            },
-			            /** . */
-			            'onClick': {
-			                label: '',
-			                type: SpruceSchema.FieldType.OnClick,
+			            /** Loop. */
+			            'loop': {
+			                label: 'Loop',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Size. */
+			            'size': {
+			                label: 'Size',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "small",
+			                
+			                
+			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
+			            },
+			            /** Paused. */
+			            'paused': {
+			                label: 'Paused',
+			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
 			                
@@ -9487,7 +18165,100 @@ import * as generated_import_2 from '#spruce/../src/fields/OnClickField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.local.ExpandableListItem.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.SprucebotTypedMessage.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface IToastHeader {
+			
+				/** Headline. Headline text */
+				'headline': string
+				/** Remove action. Action to be invoked when hitting the dismiss button */
+				'onClickDismiss'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.ToastHeader {
+		export const id = 'toastHeader'
+
+		/** The interface for the schema definition for a Toast header */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'toastHeader',
+			name: 'Toast header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Headline text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Toast header */
+		export const definition: SpruceSchemas.Local.ToastHeader.IDefinition = {
+			id: 'toastHeader',
+			name: 'Toast header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Headline text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.ToastHeader.IDefinition>
 	}
 	
 

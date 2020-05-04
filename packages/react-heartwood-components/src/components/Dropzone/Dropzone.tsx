@@ -1,90 +1,29 @@
 import React, { Component, Fragment } from 'react'
 import ReactDropzone, { DropEvent } from 'react-dropzone'
 import cx from 'classnames'
-import { InputPre } from '../Forms/FormPartials'
 import Button from '../Button/Button'
+import {
+	SpruceSchemas,
+	defaultProps,
+	IFileFieldValue
+} from '@sprucelabs/heartwood-skill'
 import DefaultIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-upload.svg'
 import UploadedIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-check.svg'
 import DropIcon from '../../../static/assets/icons/Interface-Essential/Select/cursor-select-4.svg'
 import WarnIcon from '../../../static/assets/icons/Interface-Essential/Alerts/alert-triangle--56w.svg'
-import { IHWButtonKinds } from '@sprucelabs/spruce-types'
-
-export interface IDropzoneProps {
-	/** Unique identifier for the dropzone */
-	id: string
-
-	/** Text for the button */
-	buttonText: string
-
-	/** Text shown when file(s) are dropped that aren't accepted */
-	error: string
-
-	/** Displays progress while uploading */
-	uploadProgress?: number
-
-	/** OnDragEnter callback */
-	onDragEnter?: (event?: React.DragEvent<HTMLElement>) => void
-
-	/** OnDragLeave callback */
-	onDragLeave?: (event?: React.DragEvent<HTMLElement>) => void
-
-	/** OnDragOver callback */
-	onDragOver?: (event?: React.DragEvent<HTMLElement>) => void
-
-	/** Callback when file(s) are dropped */
-	onDrop?: (
-		acceptedFiles: File[],
-		rejecFileedFiles: File[],
-		event: DropEvent
-	) => void
-
-	/** OnDropAccepted callback */
-	onDropAccepted: (files?: File[], event?: DropEvent) => void
-
-	/** OnDropRejected callback */
-	onDropRejected?: (files?: File[], event?: DropEvent) => void
-
-	/** OnFileDialogCancel callback */
-	onFileDialogCancel?: () => void
-
-	/** OnDragStart callback */
-	onDragStart?: (...args: any) => void
-
-	/** Optional label for the Dropzone */
-	label?: string
-
-	/** Optional text to show after the label */
-	postLabel?: string
-
-	/** Set true to use a smaller Dropzone */
-	isSmall?: boolean
-
-	/** Set true to make the Dropzone circular. Should only be used when isSmall is set to true */
-	isCircular?: boolean
-
-	/** Set true when a file has been successfully uploaded */
-	fileWasUploaded?: boolean
-
-	/** The icon to display before an upload has happened */
-	defaultIcon?: React.ReactNode
-
-	/** Type of files to accept */
-	accept?: string
-}
+import Label from '../Forms/components/Label/Label'
 
 interface IDropZoneState {
 	userCanDrop: boolean
 }
 
 export default class Dropzone extends Component<
-	IDropzoneProps,
+	SpruceSchemas.Local.IDropzone,
 	IDropZoneState
 > {
-	public static defaultProps = {
-		fileWasUploaded: false,
-		isSmall: false,
-		isCircular: false
-	}
+	public static defaultProps = defaultProps(
+		SpruceSchemas.Local.Dropzone.definition
+	)
 	public dropzone: any
 
 	public onDragEnter = (event: React.DragEvent<HTMLElement>) => {
@@ -119,24 +58,24 @@ export default class Dropzone extends Component<
 	}
 	public onDrop = (
 		acceptedFiles: File[],
-		rejecFileedFiles: File[],
+		rejectedFiles: File[],
 		event: DropEvent
 	) => {
 		const { onDrop } = this.props
 		if (onDrop) {
-			onDrop(acceptedFiles, rejecFileedFiles, event)
+			onDrop(acceptedFiles, rejectedFiles, event)
 		}
 	}
-	public onDropAccepted = (files: File[], event: DropEvent) => {
-		const { onDropAccepted } = this.props
-		if (onDropAccepted) {
-			onDropAccepted(files, event)
+	public onDropped = (files: IFileFieldValue[], event: DropEvent) => {
+		const { onDropped } = this.props
+		if (onDropped) {
+			onDropped(files, event)
 		}
 		this.setState({
 			userCanDrop: false
 		})
 	}
-	public onDropRejected = (files?: File[], event?: DropEvent) => {
+	public onDropRejected = (files?: IFileFieldValue[], event?: DropEvent) => {
 		const { onDropRejected } = this.props
 		if (onDropRejected) {
 			onDropRejected(files, event)
@@ -155,9 +94,8 @@ export default class Dropzone extends Component<
 		const {
 			id,
 			label,
-			postLabel,
 			buttonText,
-			error,
+			errorMessage,
 			isSmall,
 			isCircular,
 			fileWasUploaded,
@@ -172,7 +110,7 @@ export default class Dropzone extends Component<
 		})
 		return (
 			<Fragment>
-				{label && <InputPre id={id} label={label} postLabel={postLabel} />}
+				{label && <Label {...label} />}
 				<ReactDropzone
 					ref={ref => (this.dropzone = ref)}
 					onDragEnter={this.onDragEnter}
@@ -180,13 +118,13 @@ export default class Dropzone extends Component<
 					onDragOver={this.onDragOver}
 					onDragStart={this.onDragStart}
 					onDrop={this.onDrop}
-					onDropAccepted={this.onDropAccepted}
+					onDropped={this.onDropped}
 					onDropRejected={this.onDropRejected}
 					onFileDialogCancel={this.onFileDialogCancel}
 					disabled={!!uploadProgress}
 					{...rest}
 				>
-					{({ getRootProps, getInputProps, isDragAccept, isDragReject }) => (
+					{({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
 						<div
 							{...getRootProps({
 								className: defaultClass
@@ -206,7 +144,7 @@ export default class Dropzone extends Component<
 								</Fragment>
 							)}
 							<div className="dropzone__icons">
-								{!uploadProgress && !isDragAccept && !isDragReject && (
+								{!uploadProgress && !isDragActive && !isDragReject && (
 									<Fragment>
 										{fileWasUploaded ? (
 											<UploadedIcon className="dropzone__icon dropzone__did-upload-icon" />
@@ -215,7 +153,7 @@ export default class Dropzone extends Component<
 										)}
 									</Fragment>
 								)}
-								{isDragAccept && (
+								{isDragActive && (
 									<DropIcon className="dropzone__icon dropzone__allow-drop-icon" />
 								)}
 								{isDragReject && (
@@ -223,9 +161,7 @@ export default class Dropzone extends Component<
 								)}
 							</div>
 							<Button
-								kind={
-									isSmall ? IHWButtonKinds.Simple : IHWButtonKinds.Secondary
-								}
+								kind={isSmall ? 'simple' : 'secondary'}
 								isSmall={isSmall}
 								text={buttonText}
 								className="dropzone__btn"
@@ -234,14 +170,14 @@ export default class Dropzone extends Component<
 							{!isCircular && (
 								<Fragment>
 									<p className="dropzone__text">or drop files to upload</p>
-									{isDragAccept && (
-										<p className="dropzone__helper-text-bottom dropzone__helper-text-accepted">
+									{isDragActive && (
+										<p className="dropzone__helper-text-bottom dropzone__helper-text-	ed">
 											Drop files to upload them
 										</p>
 									)}
 									{isDragReject && (
 										<p className="dropzone__helper-text-bottom dropzone__helper-text-rejected">
-											{error}
+											{errorMessage}
 										</p>
 									)}
 								</Fragment>

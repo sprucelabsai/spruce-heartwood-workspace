@@ -1,24 +1,13 @@
-import {
-	IHWAction,
-	IHWButtonGroupKind,
-	IHWSplitButton
-} from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React, { Component, Fragment } from 'react'
 import { createPortal } from 'react-dom'
-import Button, { IButtonProps } from '../Button/Button'
+import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-export interface ISplitButtonProps
-	extends Omit<IHWSplitButton, 'actions' | 'defaultAction'> {
-	defaultAction: IButtonProps
-
-	/** All the secondary nested actions */
-	actions: IButtonProps[]
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-}
+const splitButtonDefaultProps = defaultProps(
+	SpruceSchemas.Local.SplitButton.definition
+)
 
 interface ISplitButtonState {
 	/** Controls whether the actions are visible */
@@ -36,10 +25,10 @@ interface ISplitButtonState {
 }
 
 export default class SplitButton extends Component<
-	ISplitButtonProps,
+	SpruceSchemas.Local.ISplitButton & typeof splitButtonDefaultProps,
 	ISplitButtonState
 > {
-	private static defaultProps = {
+	public static defaultProps = {
 		isFullWidth: false,
 		isSmall: false
 	}
@@ -81,14 +70,14 @@ export default class SplitButton extends Component<
 	}
 
 	public onKeyUp = (e: any) => {
-		const { actions } = this.props
+		const { buttons = [] } = this.props
 		const { highlightedActionIndex } = this.state
 		// Down arrow
 		if (e.keyCode === 40) {
 			// Update the highlighted suggestion
 			this.setState(prevState => ({
 				highlightedActionIndex:
-					prevState.highlightedActionIndex === actions.length - 1
+					prevState.highlightedActionIndex === buttons.length - 1
 						? 0
 						: prevState.highlightedActionIndex + 1
 			}))
@@ -100,7 +89,7 @@ export default class SplitButton extends Component<
 			this.setState(prevState => ({
 				highlightedActionIndex:
 					prevState.highlightedActionIndex <= 0
-						? actions.length - 1
+						? buttons.length - 1
 						: prevState.highlightedActionIndex - 1
 			}))
 		}
@@ -120,7 +109,7 @@ export default class SplitButton extends Component<
 		if (e.keyCode === 13) {
 			// Check if an action is highlighted
 			if (highlightedActionIndex > -1) {
-				const handler = actions[highlightedActionIndex].onClick
+				const handler = buttons[highlightedActionIndex].onClick
 				// Trigger it if so
 				if (handler) {
 					handler()
@@ -189,22 +178,22 @@ export default class SplitButton extends Component<
 		)
 	}
 
-	public handleAction(action: IHWAction) {
-		const { onAction } = this.props
+	public handleClick(e) {
+		const { onClick } = this.props
 
 		this.setState(
 			{
 				isVisible: false,
 				highlightedActionIndex: -1
 			},
-			() => onAction && onAction(action)
+			() => onClick && onClick(e)
 		)
 	}
 
 	public render(): React.ReactElement {
 		const {
-			defaultAction,
-			actions,
+			defaultButton,
+			buttons,
 			kind,
 			isFullWidth,
 			isSmall,
@@ -212,15 +201,15 @@ export default class SplitButton extends Component<
 		} = this.props
 		const { isVisible, menuPosition, highlightedActionIndex } = this.state
 
-		if (!actions || (actions && actions.length === 0)) {
+		if (!buttons || (buttons && buttons.length === 0)) {
 			// TODO: Warn dev if not in production environment; they might wanna use a different component
 			return (
 				<Button
 					isFullWidth={isFullWidth}
 					isSmall={isSmall}
-					{...defaultAction}
-					kind={defaultAction.kind || kind}
-					onAction={action => this.handleAction(action)}
+					{...defaultButton}
+					kind={defaultButton.kind || kind}
+					onClick={this.handleClick}
 				/>
 			)
 		}
@@ -236,10 +225,10 @@ export default class SplitButton extends Component<
 					<Button
 						isSmall={isSmall}
 						className="split-button__default"
-						{...defaultAction}
-						kind={defaultAction.kind || kind}
+						{...defaultButton}
+						kind={defaultButton.kind || kind}
 						isFullWidth={false}
-						onAction={action => this.handleAction(action)}
+						onClick={this.handleClick}
 					/>
 					<Button
 						isSmall={isSmall}
@@ -247,7 +236,6 @@ export default class SplitButton extends Component<
 						icon={{ name: 'keyboard_arrow_down' }}
 						kind={kind}
 						onClick={this.toggleActionsVisibility}
-						onAction={action => this.handleAction(action)}
 					/>
 				</div>
 				{isVisible && (
@@ -264,11 +252,11 @@ export default class SplitButton extends Component<
 									}}
 								>
 									<ButtonGroup
-										kind={IHWButtonGroupKind.Floating}
+										kind={'floating'}
 										isFullWidth
-										actions={actions}
+										buttons={buttons}
 										highlightedIndex={highlightedActionIndex}
-										onAction={action => this.handleAction(action)}
+										onClick={this.handleClick}
 									/>
 								</div>,
 								document.body
@@ -284,11 +272,11 @@ export default class SplitButton extends Component<
 								}}
 							>
 								<ButtonGroup
-									kind={IHWButtonGroupKind.Floating}
+									kind={'floating'}
 									isFullWidth
-									actions={actions}
+									buttons={buttons}
 									highlightedIndex={highlightedActionIndex}
-									onAction={action => this.handleAction(action)}
+									onClick={this.handleClick}
 								/>
 							</div>
 						)}

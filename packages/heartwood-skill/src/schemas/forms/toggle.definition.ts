@@ -1,4 +1,5 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import inputHelperDefinition from './inputHelper.definition'
 
 const toggleDefinition = buildSchemaDefinition({
 	id: 'Toggle',
@@ -7,19 +8,31 @@ const toggleDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'Unique id for UI caching'
+			label: 'Id'
 		},
-		postText: {
+		name: {
 			type: FieldType.Text,
-			label: 'Post text',
-			hint: 'Text after the toggle'
+			label: 'Name'
+		},
+		className: {
+			type: FieldType.Text,
+			isPrivate: true
+		},
+		helper: {
+			type: FieldType.Schema,
+			label: 'Helper',
+			options: {
+				schema: inputHelperDefinition
+			}
 		},
 		onClick: {
-			type: FieldType.OnClick,
+			type: FieldType.EventCallback,
 			label: 'On click',
-			hint: 'Optional on click to invoke when tapped'
+			hint: 'Optional on click to invoke when tapped',
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLInputElement'
+			}
 		}
 	}
 })

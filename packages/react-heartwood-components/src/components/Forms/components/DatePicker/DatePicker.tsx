@@ -4,21 +4,10 @@ import {
 	DayPickerSingleDateController,
 	DayPickerRangeController
 } from 'react-dates'
-import moment, { Moment } from 'moment'
+import moment from 'moment'
 import ArrowNext from '../../../../../static/assets/icons/ic_arrow_forward.svg'
 import ArrowBack from '../../../../../static/assets/icons/ic_arrow_back.svg'
-
-export interface IDatePickerProps {
-	kind: 'singleDate' | 'dateRange'
-	onSelectDate?: Function
-	onSelectDateRange?: Function
-	date?: Record<string, any>
-	initialStartDate?: Record<string, any>
-	initialEndDate?: Record<string, any>
-	daySize?: number
-	numberOfMonths?: number
-	isDayBlocked?: (day: Moment) => boolean
-}
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 interface IDatePickerState {
 	date: Record<string, any>
@@ -29,15 +18,12 @@ interface IDatePickerState {
 }
 
 export default class DatePicker extends Component<
-	IDatePickerProps,
+	SpruceSchemas.Local.IDatePicker,
 	IDatePickerState
 > {
-	public static defaultProps = {
-		kind: 'singleDate',
-		initialStartDate: null,
-		initialEndDate: null,
-		daySize: 40
-	}
+	public static defaultProps = defaultProps(
+		SpruceSchemas.Local.DatePicker.definition
+	)
 
 	public datePickerRef: any
 
@@ -46,8 +32,8 @@ export default class DatePicker extends Component<
 		this.state = {
 			isFocused: true,
 			date: this.props.date || moment(),
-			startDate: this.props.initialStartDate,
-			endDate: this.props.initialEndDate,
+			startDate: this.props.startDate ?? undefined,
+			endDate: this.props.endDate ?? undefined,
 			focusedInput: 'startDate'
 		}
 

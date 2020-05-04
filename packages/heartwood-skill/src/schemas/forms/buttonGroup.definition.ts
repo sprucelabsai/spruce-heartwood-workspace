@@ -48,8 +48,12 @@ const buttonGroupDefinition = buildSchemaDefinition({
 				'Index of the button that is currently highlighted, e.g. by arrow keys'
 		},
 		onClick: {
-			type: FieldType.OnClick,
-			isPrivate: true
+			type: FieldType.EventCallback,
+			isPrivate: true,
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLInputElement'
+			}
 		}
 	}
 })

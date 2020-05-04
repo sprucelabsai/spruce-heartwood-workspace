@@ -1,19 +1,11 @@
 import React from 'react'
 import SidebarSection from '../SidebarSection/SidebarSection'
-import Button, { ButtonOnClick } from '../../../../../Button/Button'
+import Button from '../../../../../Button/Button'
 import Text from '../../../../../Text/Text'
-import { IHWSidebarHeader } from '@sprucelabs/spruce-types'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-interface ISidebarHeaderProps extends IHWSidebarHeader {
-	/** Optional; callback on close */
-	onClose?: () => void
-
-	/** Optional; adds a back arrow and destination */
-	onGoBack?: ButtonOnClick
-}
-
-const SidebarHeader = (props: ISidebarHeaderProps): React.ReactElement => {
-	const { action, title, onClose, onGoBack } = props
+const SidebarHeader = (props: SpruceSchemas.Local.ISidebarHeader): React.ReactElement => {
+	const { button, title, onClose, onGoBack } = props
 
 	return (
 		<SidebarSection className="sidebar-header">
@@ -28,9 +20,9 @@ const SidebarHeader = (props: ISidebarHeaderProps): React.ReactElement => {
 					<Button icon={{ name: 'close' }} onClick={onClose} isSmall />
 				)}
 			</div>
-			{action && (
+			{button && (
 				<div className="sidebar-header__action-wrapper">
-					<Button {...action} />
+					<Button {...button} />
 				</div>
 			)}
 		</SidebarSection>

@@ -1,44 +1,16 @@
 import cx from 'classnames'
 import React, { Fragment } from 'react'
-import ExpandableListItem, {
-	IExpandableListItemProps
-} from './components/ExpandableListItem/ExpandableListItem'
-import ListHeader, {
-	IListHeaderProps
-} from './components/ListHeader/ListHeader'
-import ListItem, { IListItemProps } from './components/ListItem/ListItem'
-import {IList} from '@sprucelabs/heartwood-skill'
+import ExpandableListItem from './components/ExpandableListItem/ExpandableListItem'
+import ListHeader from './components/ListHeader/ListHeader'
+import ListItem from './components/ListItem/ListItem'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export type IWrappedItemProps = IListItemProps | IExpandableListItemProps
-
-// export interface IListProps extends Omit<IHWList, 'id' | 'header' | 'items'> {
-// 	/** Optional id for view caching */
-// 	id?: string
-
-// 	/** List Header */
-// 	header?: IListHeaderProps | IHWListHeader | null
-
-// 	/** List items */
-// 	items?: Array<IWrappedItemProps | IHWListItemTypes> | null
-
-// 	/** Class for the list */
-// 	className?: string
-
-// 	/** Any passthrough to render in the body of the list */
-// 	children?: React.ReactNode
-
-// 	/** Is this whole list in a loading state? Sets all list items to loading only if true. */
-// 	isLoading?: boolean
-
-// 	/** Optional, provide a handler for Actions */
-// 	onAction?: (action: IHWAction) => any
-// }
-
+// TODO can we delete this?
 export const ListWrapper = (props): React.ReactElement => (
 	<div className="list-wrapper">{props.children}</div>
 )
 
-const List = (props: IList): React.ReactElement => {
+const List = (props: SpruceSchemas.Local.IList): React.ReactElement => {
 	const {
 		header,
 		items,
@@ -46,9 +18,8 @@ const List = (props: IList): React.ReactElement => {
 		isSmall,
 		areSeparatorsVisible: areSeparatorsVisibleProp,
 		children,
-		selectableType,
-		isLoading,
-		onAction
+		selectable,
+		isLoading
 	} = props
 
 	// Separators are true by default
@@ -69,34 +40,24 @@ const List = (props: IList): React.ReactElement => {
 			<ul className={parentClass}>
 				{items &&
 					items.map((item, idx) => {
-						const listItem = item
-						
-						if (listItem.title) {
+						if (selectable) {
+							item.selectable = selectable
+						}
+						if (!item.isExpandable) {
+							const listItem = item as SpruceSchemas.Local.IListItem
 							return (
 								<ListItem
-									key={listItem.id}
-									selectableType={
-										typeof listItem.selectableType === 'string'
-											? listItem.selectableType
-											: selectableType
-									}
+									key={`${listItem.id}`}
 									{...listItem}
 									isSeparatorVisible={
 										typeof listItem.isSeparatorVisible === 'boolean'
 											? listItem.isSeparatorVisible
 											: areSeparatorsVisible
 									}
-									onAction={onAction}
 								/>
 							)
 						}
-						return (
-							<ExpandableListItem
-								key={idx}
-								{...expandableListItem}
-								onAction={onAction}
-							/>
-						)
+						return <ExpandableListItem key={idx} {...item} />
 					})}
 				{children && children}
 			</ul>

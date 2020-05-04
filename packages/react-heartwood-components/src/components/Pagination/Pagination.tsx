@@ -1,11 +1,11 @@
 import React from 'react'
 import cx from 'classnames'
-import Button, { ButtonOnClick } from '../Button/Button'
+import Button from '../Button/Button'
 import Text, { Span } from '../Text/Text'
-import { InputInner } from '../Forms/FormPartials'
 import ArrowNext from '../../../static/assets/icons/ic_arrow_forward.svg'
 import ArrowBack from '../../../static/assets/icons/ic_arrow_back.svg'
-import { IHWButtonKinds } from '@sprucelabs/spruce-types'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { TextInput } from '../Forms'
 
 export interface IPaginationProps {
 	/** The current page */
@@ -15,15 +15,15 @@ export interface IPaginationProps {
 	totalPages: number
 
 	/** Go forward one page */
-	onClickNext: ButtonOnClick
+	onClickNext: () => void
 
 	/** Go back one page */
-	onClickBack: ButtonOnClick
+	onClickBack: () => void
 
 	/** Navigate to the clicked/tapped page */
 	onPageButtonClick?: (page: number) => void
 
-	/** Navigate throught the jump input */
+	/** Navigate through the jump input */
 	onJump?: (page: number) => void
 
 	/** Set true to display pages between arrows */
@@ -83,9 +83,9 @@ const Pagination = (props: IPaginationProps) => {
 		displayPages.splice(displayPages.length - 1, 0, { text: '…' })
 	}
 
-	const kind: IHWButtonKinds = isSimple
-		? IHWButtonKinds.Simple
-		: IHWButtonKinds.Secondary
+	const kind: SpruceSchemas.Local.IButton['kind'] = isSimple
+		? 'simple'
+		: 'secondary'
 
 	return (
 		<div
@@ -115,7 +115,7 @@ const Pagination = (props: IPaginationProps) => {
 						<Button
 							key={idx}
 							onClick={() => onPageButtonClick(page as number)}
-							kind={currentPage === page ? IHWButtonKinds.Simple : undefined}
+							kind={currentPage === page ? 'simple' : undefined}
 							text={((page as number) + 1).toString()}
 							isSmall
 							className="pagination__page-btn"
@@ -150,9 +150,9 @@ const Pagination = (props: IPaginationProps) => {
 					}}
 				>
 					<Span className="pagination__jump-text">Jump:&nbsp;</Span>
-					<InputInner
+					<TextInput
 						name="jump"
-						autoComplete="off"
+						enableAutoComplete={false}
 						placeholder={currentPage.toString()}
 						onBlur={e => {
 							onJump(+(e.currentTarget.value || e.currentTarget.placeholder))

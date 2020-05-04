@@ -20,12 +20,12 @@ const listHeaderDefinition = buildSchemaDefinition({
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Is small',
-			hint: 'Set true for small lists'
+			hint: 'Set true for small lists',
+			defaultValue: false
 		},
 		buttons: {
 			type: FieldType.Schema,
 			label: 'Buttons',
-			isRequired: true,
 			isArray: true,
 			hint: 'Buttons to associate with the list header',
 			options: {

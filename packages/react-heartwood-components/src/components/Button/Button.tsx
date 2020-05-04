@@ -3,9 +3,11 @@ import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const Button = (props: SpruceSchemas.local.IButton): React.ReactElement => {
+const defaults = defaultProps(SpruceSchemas.Local.Button.definition)
+
+const Button = (props: SpruceSchemas.Local.IButton): React.ReactElement => {
 	const {
 		AnchorComponent = BasicAnchor,
 		children,
@@ -73,17 +75,13 @@ const Button = (props: SpruceSchemas.local.IButton): React.ReactElement => {
 					)}
 					{text && <span className={textClass}>{text}</span>}
 					{isLoading && (
-						<CircleLoader
-							light={
-								kind === 'primary' || kind === 'caution'
-							}
-						/>
+						<CircleLoader light={kind === 'primary' || kind === 'caution'} />
 					)}
 				</Fragment>
 			)}
 		</span>
 	)
-	
+
 	const { isDisabled } = rest
 
 	const button = (
@@ -101,7 +99,9 @@ const Button = (props: SpruceSchemas.local.IButton): React.ReactElement => {
 		throw new Error('what the?')
 	}
 
+	// TODO why does this have to be ignored?
 	const anchor = (
+		//@ts-ignore
 		<AnchorComponent
 			href={href}
 			className={btnClass}
@@ -123,18 +123,6 @@ const Button = (props: SpruceSchemas.local.IButton): React.ReactElement => {
 	return href ? anchor : button
 }
 
-Button.defaultProps = {
-	className: '',
-	kind: '',
-	isSmall: false,
-	isFullWidth: false,
-	isLoading: false,
-	isIconOnly: false,
-	text: '',
-	href: '',
-	icon: null,
-	type: 'button',
-	onClick: () => null
-}
+Button.defaultProps = defaults
 
 export default Button

@@ -8,7 +8,6 @@ const markdownDefinition = buildSchemaDefinition({
 		id: {
 			type: FieldType.Id,
 			label: 'Id',
-			isRequired: true,
 			hint: 'Unique ID for view caching.'
 		},
 		source: {

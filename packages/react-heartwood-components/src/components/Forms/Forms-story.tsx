@@ -173,7 +173,7 @@ stories
 				error={text('error', '')}
 				helper={text('helper', '')}
 				readOnly={boolean('readOnly', false)}
-				{...object('...rest', {})}
+				{...object('rest', {})}
 			/>
 		</Fragment>
 	))

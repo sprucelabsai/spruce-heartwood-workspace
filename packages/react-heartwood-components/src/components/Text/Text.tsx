@@ -3,10 +3,9 @@ import cx from 'classnames'
 
 import Button from '../Button/Button'
 import TextStyle from '../TextStyle/TextStyle'
-import { IHWText } from '@sprucelabs/spruce-types'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 // Components available for templating
-
 const TextComponentKey = {
 	style: TextStyle,
 	button: Button
@@ -64,25 +63,8 @@ const TemplateEngine = (text = '', context = {}): ReactNode[] => {
 	return children.map(renderText)
 }
 
-export interface ITextProps extends Omit<IHWText, 'id'> {
-	/** Id for visual caching */
-	id?: string
-
-	/** Contents of the component. */
-	children?: ReactNode
-
-	/** Class name for the component */
-	className?: string
-
-	/** Context allows basic templatizing of text strings for formatting/rich interaction purposes */
-	context?: Record<string, any>
-
-	/** Is this an inline text element? */
-	isInline?: boolean
-}
-
-const Text: React.StatelessComponent<ITextProps> = (
-	props: ITextProps
+const Text: React.StatelessComponent<SpruceSchemas.Local.IText> = (
+	props
 ): React.ReactElement => {
 	const {
 		children: originalChildren,
@@ -108,8 +90,8 @@ const Text: React.StatelessComponent<ITextProps> = (
 	)
 }
 
-export const Span: React.StatelessComponent<ITextProps> = (
-	props: ITextProps
+export const Span: React.StatelessComponent<SpruceSchemas.Local.IText> = (
+	props: SpruceSchemas.Local.IText
 ): React.ReactElement => {
 	const { children, className, ...rest } = props
 

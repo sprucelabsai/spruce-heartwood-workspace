@@ -15,7 +15,7 @@ const cardDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Centered',
 			hint: 'Is all content centered?',
-			default: false
+			defaultValue: false
 		},
 		isCritical: {
 			type: FieldType.Boolean,
@@ -36,13 +36,13 @@ const cardDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Expandable',
 			hint: 'Allows this card to collapse at the header',
-			default: false
+			defaultValue: false
 		},
 		defaultExpanded: {
 			type: FieldType.Boolean,
 			label: 'Expanded by default',
 			hint: 'Should this thing start expanded',
-			default: true
+			defaultValue: true
 		},
 		header: {
 			type: FieldType.Schema,

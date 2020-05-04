@@ -1,7 +1,7 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import listHeaderDefinition from './listHeader.definition'
 import radioDefinition from '../forms/radio.definition'
-import checkboxDefinition from '../checkbox.definition'
+import checkboxDefinition from '../forms/checkbox.definition'
 
 const listDefinition = buildSchemaDefinition({
 	id: 'list',
@@ -10,9 +10,7 @@ const listDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'Unique id for UI caching'
+			label: 'Id'
 		},
 		header: {
 			type: FieldType.Schema,
@@ -29,7 +27,7 @@ const listDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'List items',
 			options: {
-				schemasIds: ['listItem', 'expandableListItem']
+				schemaId: 'expandableListItem'
 			}
 		},
 		isSmall: {
@@ -63,6 +61,14 @@ const listDefinition = buildSchemaDefinition({
 				'Optional: set whether to use checkbox or radio for selectable list items',
 			options: {
 				schemas: [checkboxDefinition, radioDefinition]
+			}
+		},
+		onClick: {
+			type: FieldType.EventCallback,
+			label: 'Click handler',
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLDivElement'
 			}
 		}
 	}

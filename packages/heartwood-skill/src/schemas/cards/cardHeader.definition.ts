@@ -3,7 +3,7 @@ import buttonDefinition from '../forms/button.definition'
 
 const cardHeaderDefinition = buildSchemaDefinition({
 	id: 'CardHeader',
-	name: 'CardHeader',
+	name: 'cardHeader',
 	description: 'Header of a card',
 	fields: {
 		title: {
@@ -27,7 +27,6 @@ const cardHeaderDefinition = buildSchemaDefinition({
 		buttons: {
 			type: FieldType.Schema,
 			label: 'Buttons',
-			isRequired: true,
 			isArray: true,
 			hint: 'Render buttons in the Card Header',
 			options: {
@@ -39,7 +38,7 @@ const cardHeaderDefinition = buildSchemaDefinition({
 			label: 'Context menu',
 			hint: 'Renders a Context Menu in the Card Header',
 			options: {
-				schemaId: 'ContextMenu'
+				schemaId: 'contextMenu'
 			}
 		}
 	}

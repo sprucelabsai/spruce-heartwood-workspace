@@ -1,38 +1,15 @@
 import React, { Component } from 'react'
-import { InputPre } from '../../FormPartials'
-
-interface ISliderProps extends React.HTMLProps<HTMLInputElement> {
-	/** Label text */
-	label: string
-
-	/** Unique identifier */
-	id: string
-
-	/** Minimum value */
-	min: number
-
-	/** Maximum value */
-	max: number
-
-	/** Current value */
-	value: number
-
-	/** Text to show after the label */
-	postLabel?: string
-
-	/** Callback after the slider updates its own value.
-	 * Using this property will place the slider in controlled mode. */
-	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
-
-	/** Disable the slider input */
-	disabled?: boolean
-}
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import Label from '../Label/Label'
 
 interface ISliderState {
 	uncontrolledValue: number
 }
 
-export default class Slider extends Component<ISliderProps, ISliderState> {
+export default class Slider extends Component<
+	SpruceSchemas.Local.ISlider,
+	ISliderState
+> {
 	public state = {
 		uncontrolledValue: this.props.value
 	}
@@ -48,11 +25,11 @@ export default class Slider extends Component<ISliderProps, ISliderState> {
 		const {
 			label,
 			id,
-			postLabel,
 			min,
 			max,
 			value,
 			onChange,
+			isDisabled,
 			...rest
 		} = this.props
 
@@ -64,10 +41,11 @@ export default class Slider extends Component<ISliderProps, ISliderState> {
 
 		return (
 			<div className="slider-wrapper slider--split-color">
-				{label && <InputPre id={id} label={label} postLabel={postLabel} />}
+				{label && <Label {...label} />}
 				<input
 					{...rest}
 					type="range"
+					disabled={isDisabled}
 					min={min}
 					max={max}
 					value={onChange ? value : uncontrolledValue}

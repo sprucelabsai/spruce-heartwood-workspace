@@ -10,7 +10,8 @@ const emptyStateDefinition = buildSchemaDefinition({
 		heading: {
 			type: FieldType.Text,
 			label: 'Heading',
-			isRequired: true
+			isRequired: true,
+			defaultValue: 'Nothing to see here'
 		},
 		subheading: {
 			type: FieldType.Text,
@@ -21,6 +22,10 @@ const emptyStateDefinition = buildSchemaDefinition({
 			label: 'Icon',
 			options: {
 				schema: iconDefinition
+			},
+			defaultValue: {
+				name: 'empty_box',
+				isLineIcon: true
 			}
 		},
 		primaryButton: {
@@ -28,6 +33,9 @@ const emptyStateDefinition = buildSchemaDefinition({
 			label: 'Primary button',
 			options: {
 				schema: buttonDefinition
+			},
+			defaultValue: {
+				kind: 'simple'
 			}
 		}
 	}

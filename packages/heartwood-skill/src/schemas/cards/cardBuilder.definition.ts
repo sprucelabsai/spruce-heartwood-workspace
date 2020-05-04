@@ -1,4 +1,15 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import cardBodyDefinition from './cardBody.definition'
+import buttonGroupDefinition from '../forms/buttonGroup.definition'
+export const cardBuilderBodyItems: string[] = [
+	'button',
+	'image',
+	'heading',
+	'text',
+	'scoreCard',
+	'toast',
+	'list'
+]
 
 const cardBuilderDefinition = buildSchemaDefinition({
 	id: 'cardBuilder',
@@ -7,8 +18,7 @@ const cardBuilderDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true
+			label: 'Id'
 		},
 		header: {
 			type: FieldType.Schema,
@@ -32,7 +42,7 @@ const cardBuilderDefinition = buildSchemaDefinition({
 			label: 'Onboarding',
 			hint: 'all onboarding props',
 			options: {
-				schemaId: 'OnboardingCard'
+				schemaId: 'onboardingCard'
 			}
 		},
 		body: {
@@ -40,7 +50,24 @@ const cardBuilderDefinition = buildSchemaDefinition({
 			label: 'Body',
 			hint: 'Card Body props',
 			options: {
-				schemaId: 'cardBody'
+				schema: buildSchemaDefinition({
+					id: 'cardBuilderBody',
+					name: 'Card builder body',
+					description: 'Hold all the information for creating body components',
+					fields: {
+						...cardBodyDefinition.fields,
+						items: {
+							type: FieldType.Schema,
+							label: 'Items',
+							isRequired: true,
+							isArray: true,
+							hint: 'Children to show in the Card',
+							options: {
+								schemaIds: cardBuilderBodyItems
+							}
+						}
+					}
+				})
 			}
 		},
 		footer: {
@@ -48,7 +75,26 @@ const cardBuilderDefinition = buildSchemaDefinition({
 			label: 'Footer',
 			hint: 'The footer of the card',
 			options: {
-				schemaId: 'cardFooter'
+				schema: buildSchemaDefinition({
+					id: 'cardBuilderFooter',
+					name: 'CardBuilder footer',
+					description: 'Footer used for the card builder',
+					fields: {
+						buttonGroup: {
+							type: FieldType.Schema,
+							label: 'Button group',
+							hint: 'Render buttons in the Card Footer',
+							options: {
+								schema: buttonGroupDefinition
+							}
+						},
+						helper: {
+							type: FieldType.Text,
+							label: 'Helper',
+							hint: 'Helper for the footer'
+						}
+					}
+				})
 			}
 		}
 	}

@@ -7,7 +7,6 @@ import { IDropzoneProps } from '../Dropzone/Dropzone'
 import { Slider } from '../Forms'
 import RotateLeftIcon from '../../../static/assets/icons/Design/Rotate/rotate-back.svg'
 import RotateRightIcon from '../../../static/assets/icons/Design/Rotate/rotate-forward.svg'
-import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 interface IImageCropperProps {
 	/** The image. If null, this will render a Dropzone. */

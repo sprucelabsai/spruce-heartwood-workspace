@@ -39,7 +39,7 @@ stories
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
-				id:'example',
+				id: 'example',
 				name: text('icon', null),
 				className: text('iconClassName', 'btn__line-icon')
 			}}
@@ -57,7 +57,7 @@ stories
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
-				id:'example',
+				id: 'example',
 				name: text('icon', null),
 				className: text('iconClassName', 'btn__line-icon')
 			}}
@@ -75,7 +75,7 @@ stories
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
-				id:'example',
+				id: 'example',
 				name: text('icon', null),
 				className: text('iconClassName', 'btn__line-icon')
 			}}
@@ -93,7 +93,7 @@ stories
 			isLoading={boolean('isLoading', false)}
 			isSmall={boolean('isSmall', false)}
 			icon={{
-				id:'example',
+				id: 'example',
 				name: text('icon', null),
 				className: text('iconClassName', 'btn__line-icon')
 			}}

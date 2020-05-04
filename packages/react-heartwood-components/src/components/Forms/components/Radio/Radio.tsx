@@ -1,35 +1,19 @@
-import { IHWAction, IHWRadio } from '@sprucelabs/spruce-types'
 import cx from 'classnames'
 import React from 'react'
 import RadioIconYes from '../../../../../static/assets/icons/ic_radio_button_checked.svg'
 import RadioIconNo from '../../../../../static/assets/icons/ic_radio_button_unchecked.svg'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export interface IRadioProps extends Omit<IHWRadio, 'id'> {
-	/** Optional id for the radio */
-	id?: string
-
-	/** Parent class */
-	className?: string
-
-	/** Change handler */
-	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-
-	/** Optional, provide a handler for Actions */
-	onAction?: (action: IHWAction) => any
-}
-
-const Radio = (props: IRadioProps): React.ReactElement => {
+const Radio = (props: SpruceSchemas.Local.IRadio): React.ReactElement => {
 	const {
-		action,
 		className,
 		id,
 		isChecked,
 		isDisabled,
 		label,
 		name,
-		onAction,
 		onChange,
-		postText
+		helper
 	} = props
 	const parentClass = cx('checkbox-item', className)
 	return (
@@ -39,28 +23,24 @@ const Radio = (props: IRadioProps): React.ReactElement => {
 					checked={isChecked || false}
 					className="checkbox-item__input"
 					disabled={isDisabled || false}
-					id={id}
+					id={id ?? undefined}
 					name={name || undefined}
 					onChange={(...args) => {
 						if (onChange) {
 							onChange(...args)
 						}
-
-						if (onAction && action) {
-							onAction(action)
-						}
 					}}
 					type="radio"
 				/>
-				<label className="checkbox-item__label" htmlFor={id}>
-					{label}
-				</label>
+				{label && <label className="checkbox-item__label" htmlFor={id ?? undefined}>
+					{label.text}
+				</label>}
 				<div className="checkbox-item__icons">
 					<RadioIconYes className="checkbox-item__icon checkbox-item__icon-yes" />
 					<RadioIconNo className="checkbox-item__icon checkbox-item__icon-no" />
 				</div>
 			</div>
-			{postText && <p className="checkbox-item__post-text">{postText}</p>}
+			{helper && <p className="checkbox-item__post-text">{helper.error || helper.hint}</p>}
 		</div>
 	)
 }

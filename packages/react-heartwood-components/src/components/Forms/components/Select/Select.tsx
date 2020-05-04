@@ -1,38 +1,9 @@
 import React from 'react'
 import cx from 'classnames'
 import ArrowIcon from '../../../../../static/assets/icons/ic_arrow_drop_down.svg'
-import { InputPre, InputHelper } from '../../FormPartials'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-interface ISelectProps extends React.HTMLProps<HTMLSelectElement> {
-	/** Unique identifier */
-	id: string
-
-	/** Options for the select */
-	options: Record<string, any>
-
-	/** Set true to use the simple variation */
-	isSimple?: boolean
-
-	/** Parent class */
-	className?: string
-
-	/** Label text */
-	label?: string
-
-	/** Optional text to be displayed as disabled placeholder option */
-	placeholder?: string
-
-	/** Text after label */
-	postLabel?: string
-
-	/** Error text */
-	error?: string
-
-	/** Helper text */
-	helper?: string
-}
-
-const Select = (props: ISelectProps) => {
+const Select = (props: SpruceSchemas.Local.ISelect) => {
 	const {
 		id,
 		options = {},
@@ -40,14 +11,12 @@ const Select = (props: ISelectProps) => {
 		className,
 		label,
 		placeholder,
-		postLabel,
-		error,
 		helper,
 		...rest
 	} = props
 	const parentClass = cx('select text-input__inner', className, {
 		'select-simple': isSimple,
-		'select--has-error': error
+		'select--has-error': helper?.error
 	})
 
 	let defaultSelectProps = {}

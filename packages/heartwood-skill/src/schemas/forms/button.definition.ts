@@ -9,9 +9,7 @@ const buttonDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'Unique ID for rendering in lists'
+			label: 'Id'
 		},
 		kind: {
 			type: FieldType.Select,
@@ -83,6 +81,7 @@ const buttonDefinition = buildSchemaDefinition({
 			type: FieldType.Select,
 			label: 'Type',
 			hint: "Type attribute for HTML button element. Defaults to 'button'.",
+			defaultValue: 'button',
 			options: {
 				choices: [
 					{
@@ -111,8 +110,12 @@ const buttonDefinition = buildSchemaDefinition({
 			isPrivate: true
 		},
 		onClick: {
-			type: FieldType.OnClick,
-			label: 'On click handler'
+			type: FieldType.EventCallback,
+			label: 'On click handler',
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLInputElement'
+			}
 		},
 		children: {
 			type: FieldType.Node,

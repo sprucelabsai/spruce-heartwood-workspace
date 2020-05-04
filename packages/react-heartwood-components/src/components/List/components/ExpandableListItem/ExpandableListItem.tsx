@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ListItem from '../ListItem/ListItem'
-import {IExpandableListItem} from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IExpandableListItemState {
 	/** Is the list item expanded */
@@ -8,7 +8,7 @@ interface IExpandableListItemState {
 }
 
 export default class ExpandableListItem extends Component<
-	IExpandableListItem,
+	SpruceSchemas.Local.IExpandableListItem,
 	IExpandableListItemState
 > {
 	public state = {
@@ -23,32 +23,32 @@ export default class ExpandableListItem extends Component<
 
 	public render(): React.ReactElement {
 		const {
-			item,
-			// list,
+			// List,
 			// lists,
-			collapsedIcon:collapsedIconProps,
-			expandedIcon:expandedIconProps,
-			onAction
+			collapsedIcon: collapsedIconProps,
+			expandedIcon: expandedIconProps,
+			onClick,
+			...item
 		} = this.props
 		const { isExpanded } = this.state
 
-		const collapsedIcon = collapsedIconProps ?? { name: 'keyboard'}
-const expandedIcon = collapsedIconProps ?? { name: 'keyboard'}
-const icon = isExpanded ? expandedIcon : collapsedIcon
+		const collapsedIcon = collapsedIconProps ?? { name: 'keyboard' }
+		const expandedIcon = collapsedIconProps ?? { name: 'keyboard' }
+		const icon = isExpanded ? expandedIcon : collapsedIcon
 
 		return (
 			<ListItem
 				{...item}
-				// list={isExpanded ? list : undefined}
+				// List={isExpanded ? list : undefined}
 				// lists={isExpanded ? lists : undefined}
-				actions={[
+				buttons={[
 					{
 						icon,
 						kind: isExpanded ? undefined : 'simple',
 						onClick: this.toggleExpanded
 					}
 				]}
-				onAction={onAction}
+				onClick={onClick}
 			/>
 		)
 	}

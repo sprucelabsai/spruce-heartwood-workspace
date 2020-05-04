@@ -7,9 +7,7 @@ const iconDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'Id for ui caching'
+			label: 'Id'
 		},
 		name: {
 			type: FieldType.Text,

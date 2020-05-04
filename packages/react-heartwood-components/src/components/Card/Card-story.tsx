@@ -1,8 +1,3 @@
-import {
-	IHWButtonTypes,
-	IHWCardBuilderBodyItemType,
-	IHWHeadingWeight
-} from '@sprucelabs/spruce-types'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React, { Fragment } from 'react'
@@ -12,27 +7,26 @@ import AlertIcon3 from '../../../static/assets/icons/Interface-Essential/Alerts/
 import LockIcon2 from '../../../static/assets/icons/Interface-Essential/Lock/Unlock/lock-6--16w.svg'
 import userImageLg from '../../../static/assets/users/user-01--96w.png'
 import Avatar from '../Avatar/Avatar'
-import Button, { ButtonKinds } from '../Button/Button'
+import Button from '../Button/Button'
 import Image from '../Image/Image'
 import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
 import List from '../List/List'
-import Page, { PageContent } from '../Page'
+import SkillView, { SkillViewContent } from '../SkillView'
 import Subheading from '../Subheading/Subheading'
 import Text from '../Text/Text'
 import TextContainer from '../TextContainer/TextContainer'
-import { ICardBuilderProps } from './components/CardBuilder'
 import { Card, CardBuilder, OnboardingCard, Scores } from './index'
+import { buildCard } from '@sprucelabs/heartwood-skill'
 
-const cardJSON: ICardBuilderProps = {
-	id: 'foo',
+const cards1 = buildCard({
 	header: {
 		title: 'Introducing the Card Builder! (Note: WIP)',
 		labelText: '',
-		actions: [
+		buttons: [
 			{
 				id: 'foo',
-				type: IHWButtonTypes.Button,
+				type: 'button',
 				text: 'More Info',
 				href: '#',
 				htmlAttributes: {
@@ -45,9 +39,8 @@ const cardJSON: ICardBuilderProps = {
 	body: {
 		items: [
 			{
-				type: IHWCardBuilderBodyItemType.Text,
-				viewModel: {
-					id: 'first',
+				schemaId: 'text',
+				values: {
 					text: `The Card Builder enables Skill devs to build cards using JSON. It should not be used for core cards.`
 				}
 			}
@@ -55,47 +48,47 @@ const cardJSON: ICardBuilderProps = {
 	},
 	footer: {
 		buttonGroup: {
-			actions: [
+			buttons: [
 				{
 					id: 'foo',
-					type: IHWButtonTypes.Button,
+					type: 'button',
 					text: 'Fire a JS Callback!',
 					htmlAttributes: {
 						onClick: () => window.alert('clicked!')
 					},
-					kind: ButtonKinds.Secondary,
+					kind: 'secondary',
 					isSmall: true
 				}
 			]
 		}
 	}
-}
+})
 
-const cardJSON2: ICardBuilderProps = {
-	id: 'foo',
+const cards2 = buildCard({
 	header: {
 		title: 'Your sales for today!'
 	},
 	body: {
 		items: [
 			{
-				type: IHWCardBuilderBodyItemType.Text,
-				viewModel: { id: 'first', text: 'This is your typical score card' }
+				schemaId: 'text',
+				values: { text: 'This is your typical score card' }
 			},
 			{
-				type: IHWCardBuilderBodyItemType.ScoreCard,
-				viewModel: {
+				schemaId: 'scoreCard',
+				values: {
 					scores: [
-						{ id: '1', label: 'Today', value: '$1,848' },
-						{ id: '2', label: 'This Week', value: '$5,778' },
-						{ id: '3', label: 'This Month', value: '$25,068' }
+						{ label: 'Today', value: '$1,848' },
+						{ label: 'This Week', value: '$5,778' },
+						{ label: 'This Month', value: '$25,068' }
 					]
 				}
 			}
 		]
 	}
-}
-const cardJSON3: ICardBuilderProps = {
+})
+
+const cards3 = buildCard({
 	id: 'foo',
 	onboarding: {
 		title: 'Setup your first skill!',
@@ -123,8 +116,9 @@ const cardJSON3: ICardBuilderProps = {
 			}
 		]
 	}
-}
-const cardJSON4: ICardBuilderProps = {
+})
+
+const cards4 = buildCard({
 	id: 'foo',
 	header: {
 		labelText: 'The last example!'
@@ -132,8 +126,8 @@ const cardJSON4: ICardBuilderProps = {
 	body: {
 		items: [
 			{
-				type: IHWCardBuilderBodyItemType.List,
-				viewModel: {
+				schemaId: 'list',
+				values: {
 					id: '',
 					header: {
 						title: 'This is a list!'
@@ -154,9 +148,8 @@ const cardJSON4: ICardBuilderProps = {
 				}
 			},
 			{
-				type: IHWCardBuilderBodyItemType.Text,
-				viewModel: {
-					id: 'lol',
+				schemaId: 'text',
+				values: {
 					text: 'Following up with text component!'
 				}
 			}
@@ -164,36 +157,36 @@ const cardJSON4: ICardBuilderProps = {
 	},
 	footer: {
 		buttonGroup: {
-			actions: [
+			buttons: [
 				{
 					id: 'foo',
-					type: IHWButtonTypes.Button,
+					type: 'button',
 					text: 'Do things',
-					kind: ButtonKinds.Secondary,
+					kind: 'secondary',
 					isSmall: true
 				}
 			]
 		}
 	}
-}
+})
 
-const cardJSON5: ICardBuilderProps = {
+const cards5 = buildCard({
 	id: 'foo',
 	header: {
 		title: 'Danger Zone'
 	},
 	footer: {
 		buttonGroup: {
-			actions: [
+			buttons: [
 				{
 					id: 'foo',
-					type: IHWButtonTypes.Button,
+					type: 'button',
 					text: 'Delete this thing forever',
 					icon: {
 						id: 'foo',
 						name: 'remove'
 					},
-					kind: ButtonKinds.Caution,
+					kind: 'caution',
 					isSmall: true
 				}
 			]
@@ -201,7 +194,8 @@ const cardJSON5: ICardBuilderProps = {
 		helper:
 			'This is a permanant thing you are doing, be sure you want to do the thing'
 	}
-}
+})
+
 
 const stories = storiesOf('Card', module)
 
@@ -212,13 +206,13 @@ const stories = storiesOf('Card', module)
 // )
 
 stories.addDecorator(story => (
-	<Page>
-		<PageContent>
+	<SkillView>
+		<SkillViewContent>
 			<Layout>
 				<LayoutSection>{story()}</LayoutSection>
 			</Layout>
-		</PageContent>
-	</Page>
+		</SkillViewContent>
+	</SkillView>
 ))
 
 stories.addDecorator(withKnobs)

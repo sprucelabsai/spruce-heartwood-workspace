@@ -1,10 +1,10 @@
 import React from 'react'
 import { Tag } from '../../../Forms'
-import { ITagProps } from '../../../Forms/components/Tag/Tag'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ITableFiltersProps {
 	/** Filters applied to the table */
-	filters: ITagProps[]
+	filters: SpruceSchemas.Local.ITag[]
 }
 
 const TableFilters = (props: ITableFiltersProps) => {

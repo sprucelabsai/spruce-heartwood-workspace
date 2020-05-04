@@ -11,7 +11,6 @@ const uIEnhancementSectionDefinition = buildSchemaDefinition({
 		id: {
 			type: FieldType.Id,
 			label: 'Id',
-			isRequired: true,
 			hint:
 				'The ID of the section that is acting as a placeholder for ui enhancements'
 		},

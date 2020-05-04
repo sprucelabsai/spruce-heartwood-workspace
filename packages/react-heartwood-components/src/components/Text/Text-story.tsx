@@ -9,8 +9,8 @@ stories.addDecorator(withKnobs)
 stories
 	.add('Text', () => (
 		<Text
-			isInline={boolean('Is Inline', false)}
-			context={object('Context', {
+			isInline={boolean('isInline', false)}
+			context={object('context', {
 				planet: {
 					text: 'World!',
 					type: 'style',
@@ -28,8 +28,8 @@ stories
 	))
 	.add('Span', () => (
 		<Span
-			isInline={boolean('is inline', true)}
-			context={object('Context', {
+			isInline={boolean('isInline', true)}
+			context={object('context', {
 				planet: {
 					text: 'World!',
 					type: 'style',

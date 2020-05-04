@@ -16,7 +16,6 @@ import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
 import Tabs from '../Tabs/Tabs'
 import Table, { TableFilters, TableSearch } from './index'
-import { IHWButtonKinds, IHWLayoutWidth } from '@sprucelabs/spruce-types'
 
 const stories = storiesOf('Table', module)
 
@@ -179,7 +178,9 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 														<FormLayoutItem>
 															<TextInput
 																id="store-hours"
-																label={`${row.original.day} Store Hours`}
+																label={{
+																	text: `${row.original.day} Store Hours`
+																}}
 																onChange={handleChange}
 																name="hours"
 																value={values.hours || ''}
@@ -187,7 +188,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 														</FormLayoutItem>
 														<FormLayoutItem spacerTop={true}>
 															<Button
-																kind={IHWButtonKinds.Primary}
+																kind={'primary'}
 																onClick={() =>
 																	this.handleSaveHours(
 																		location,
@@ -253,7 +254,7 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 stories
 	.add('Table', () => {
 		return (
-			<Layout width={IHWLayoutWidth.FullWidth}>
+			<Layout width={'fullWidth'}>
 				<LayoutSection>
 					<Card>
 						{boolean('Show Title', false) && (
@@ -325,7 +326,7 @@ stories
 	})
 	.add('Expandable Table', () => {
 		return (
-			<Layout width={IHWLayoutWidth.FullWidth}>
+			<Layout width={'fullWidth'}>
 				<LayoutSection>
 					<Card>
 						<ExpandableEditableTable />
@@ -335,7 +336,7 @@ stories
 		)
 	})
 	.add('Selectable Table', () => (
-		<Layout width={IHWLayoutWidth.FullWidth}>
+		<Layout width={'fullWidth'}>
 			<LayoutSection>
 				<Card>
 					{boolean('Show Title', false) && (
@@ -354,9 +355,9 @@ stories
 					<TableSearch
 						id="location-search"
 						placeholder="Search locations…"
-						getSuggestions={val => {
+						getSuggestions={async val => {
 							console.log(val)
-							return null
+							return []
 						}}
 						getSuggestionValue={suggestion => {
 							console.log(suggestion)

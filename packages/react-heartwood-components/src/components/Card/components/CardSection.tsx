@@ -1,17 +1,11 @@
 import React from 'react'
-
 import cx from 'classnames'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 // Card Section
-export interface ICardSectionProps {
-	/** Children to show in the Card */
-	children?: React.ReactNode
-
-	/** Set to true to remove horizontal padding */
-	isFullBleed?: boolean
-}
-
-const CardSection = (props: ICardSectionProps): React.ReactElement => {
+const CardSection = (
+	props: SpruceSchemas.Local.ICardSection
+): React.ReactElement => {
 	const { children, isFullBleed } = props
 	const className = cx('card__section', {
 		'card__section--full-bleed': isFullBleed

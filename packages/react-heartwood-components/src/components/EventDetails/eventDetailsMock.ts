@@ -1,207 +1,165 @@
-import { IEventDetailsItemProps } from './components/EventDetailsItem/EventDetailsItem'
-import { IEventDetailsProps } from './EventDetails'
-import { IListProps, IWrappedItemProps } from '../List'
 import {
-	IHWCalendarEventDetailsItemType,
-	IHWListItemSelectableType,
-	IHWContextMenuSize,
-	IHWCardBuilderBodyItemType,
-	IHWActionTypes
-} from '@sprucelabs/spruce-types'
-import { ButtonKinds } from '../Button/Button'
+	SpruceSchemas,
+	buildEventDetailsItem,
+	ComponentUnion,
+	buildEventDetails
+} from '@sprucelabs/heartwood-skill'
 
-const avatar =
-	'https://images.unsplash.com/photo-1542080681-b52d382432af?ixlib=rb-1.2.1&auto=format&fit=crop&w=96&h=96&q=80'
-
-const services: IEventDetailsItemProps = {
-	type: IHWCalendarEventDetailsItemType.List,
-	viewModel: {
-		id: 'services',
-		items: [
-			{
-				id: 'first',
-				icon: { name: 'unordered_list', isLineIcon: true, id: 'unordered' },
-				title: 'Accent Highlight',
-				subtitle: '$65 | 1hr',
-				note: 'Vicenta Maggio',
-				contextMenu: {
-					icon: { id: 'edit', name: 'edit', isLineIcon: true },
-					isSimple: true,
-					isSmall: true,
-					size: IHWContextMenuSize.Large,
-					actions: [
-						{
-							id: 'save-teammate',
-							text: 'Change teammate',
-							action: {
-								type: IHWActionTypes.EmitEvent,
-								payload: {
-									eventName: 'change-teammate'
-								}
-							}
-						},
-						{
-							id: 'remove-appointment',
-							text: 'Remove from appointment',
-							action: {
-								type: IHWActionTypes.EmitEvent,
-								payload: {
-									eventName: 'remove-from-appointment'
-								}
-							}
-						}
-					]
-				}
-			},
-			{
-				id: 'second',
-				icon: { id: 'second-icon', name: 'unordered_list', isLineIcon: true },
-				isIconHidden: true,
-				title: 'Haircut',
-				subtitle: '$40 | 1hr',
-				note: 'Vicenta Maggio',
-				contextMenu: {
-					icon: { id: 'edit', name: 'edit', isLineIcon: true },
-					isSimple: true,
-					isSmall: true,
-					size: IHWContextMenuSize.Large,
-					actions: [
-						{
-							id: 'change-teammate',
-							text: 'Change teammate',
-							action: {
-								type: IHWActionTypes.EmitEvent,
-								payload: {
-									eventName: 'change-teammate'
-								}
-							}
-						},
-						{
-							id: 'remove',
-							text: 'Remove from appointment',
-							action: {
-								type: IHWActionTypes.EmitEvent,
-								payload: {
-									eventName: 'remove-from-appointment'
-								}
-							}
-						}
-					]
-				}
-			},
-			{
-				id: 'last',
-				title: 'Add service',
-				icon: { id: 'add', name: 'add' },
-				primaryAction: {
-					id: 'add',
-					icon: { id: 'add', name: 'add' },
-					kind: ButtonKinds.Simple,
-					action: {
-						type: IHWActionTypes.EmitEvent,
-						payload: {
-							eventName: 'add-service'
-						}
-					}
-				}
-			}
-		]
-	}
+const avatar: SpruceSchemas.Local.IAvatar = {
+	src:
+		'https://images.unsplash.com/photo-1542080681-b52d382432af?ixlib=rb-1.2.1&auto=format&fit=crop&w=96&h=96&q=80',
+	alt: 'dummy avatar'
 }
 
-const inclusiveStatuses: IWrappedItemProps[] = [
-	{
-		id: 'status',
-		title: 'Confirmed',
-		selectableId: 'confirmed',
-		selectableProps: {
-			name: 'checkbox',
-			action: {
-				type: IHWActionTypes.EmitEvent,
-				payload: {
-					eventName: 'checkbox-checked'
-				}
+const services = buildEventDetailsItem('list', {
+	items: [
+		{
+			id: 'first',
+			icon: {
+				name: 'unordered_list',
+				isLineIcon: true,
+				id: 'unordered'
+			},
+			title: 'Accent Highlight',
+			subtitle: '$65 | 1hr',
+			note: 'Vicenta Maggio',
+			contextMenu: {
+				icon: { id: 'edit', name: 'edit', isLineIcon: true },
+				isSimple: true,
+				isSmall: true,
+				size: 'large',
+				buttons: [
+					{
+						id: 'save-teammate',
+						text: 'Change teammate'
+					},
+					{
+						id: 'remove-appointment',
+						text: 'Remove from appointment'
+					}
+				]
+			}
+		},
+		{
+			id: 'second',
+			icon: {
+				id: 'second-icon',
+				name: 'unordered_list',
+				isLineIcon: true
+			},
+			isIconHidden: true,
+			title: 'Haircut',
+			subtitle: '$40 | 1hr',
+			note: 'Vicenta Maggio',
+			contextMenu: {
+				icon: { id: 'edit', name: 'edit', isLineIcon: true },
+				isSimple: true,
+				isSmall: true,
+				size: 'large',
+				buttons: [
+					{
+						id: 'change-teammate',
+						text: 'Change teammate'
+					},
+					{
+						id: 'remove',
+						text: 'Remove from appointment'
+					}
+				]
+			}
+		},
+		{
+			id: 'last',
+			title: 'Add service',
+			icon: { id: 'add', name: 'add' },
+			primaryAction: {
+				id: 'add',
+				icon: { id: 'add', name: 'add' },
+				kind: 'simple'
 			}
 		}
-	},
-	{
-		id: 'checked-in',
-		title: 'Checked in',
-		selectableId: 'checkedIn',
-		selectableProps: {
-			name: 'checkbox',
-			action: {
-				type: IHWActionTypes.EmitEvent,
-				payload: {
-					eventName: 'checkbox-checked'
-				}
-			}
-		}
-	}
-]
-const exclusiveStatuses: IWrappedItemProps[] = [
-	{
-		id: 'on-time',
-		title: 'On time',
-		selectableId: 'onTime',
-		selectableProps: {
-			name: 'radio',
-			action: {
-				type: IHWActionTypes.EmitEvent,
-				payload: {
-					eventName: 'radio-checked'
-				}
-			}
-		}
-	},
-	{
-		id: 'late',
-		title: 'Late',
-		selectableId: 'late',
-		selectableProps: {
-			name: 'radio',
-			action: {
-				type: IHWActionTypes.EmitEvent,
-				payload: {
-					eventName: 'radio-checked'
-				}
-			}
-		}
-	},
-	{
-		id: 'ghosted',
-		title: 'Ghosted 👻',
-		selectableId: 'noShow',
-		selectableProps: {
-			name: 'radio',
-			action: {
-				type: IHWActionTypes.EmitEvent,
-				payload: {
-					eventName: 'radio-checked'
-				}
-			}
-		}
-	}
-]
+	]
+})
 
-const paidStatuses = [
+const inclusiveStatuses = buildEventDetailsItem('list', {
+	items: [
+		{
+			id: 'status',
+			title: 'Confirmed',
+			selectable: {
+				schemaId: 'checkbox',
+				values: {
+					isChecked: true
+				}
+			}
+		},
+		{
+			id: 'checked-in',
+			title: 'Checked in',
+			selectable: {
+				schemaId: 'checkbox',
+				values: {
+					isChecked: false
+				}
+			}
+		}
+	]
+})
+
+const exclusiveStatuses = buildEventDetailsItem('list', {
+	items: [
+		{
+			id: 'on-time',
+			title: 'On time',
+			selectableId: 'onTime',
+			selectable: {
+				schemaId: 'radio',
+				values: {}
+			}
+		},
+		{
+			id: 'late',
+			title: 'Late',
+			selectable: {
+				schemaId: 'radio',
+				values: {}
+			}
+		},
+		{
+			id: 'ghosted',
+			title: 'Ghosted 👻',
+			selectable: {
+				schemaId: 'radio',
+				values: {}
+			}
+		}
+	]
+})
+
+const paidStatuses: SpruceSchemas.Local.IListItem[] = [
 	{
 		id: 'unpaid',
 		title: 'Unpaid',
 		icon: { name: 'edit' },
-		iconIsHidden: true
+		isIconHidden: true
 	}
 ]
 
-const statusLists: IListProps[] = [
+const statusLists: SpruceSchemas.Local.IList[] = [
 	{
-		selectableType: IHWListItemSelectableType.Checkbox,
-		items: inclusiveStatuses,
+		selectable: {
+			schemaId: 'checkbox',
+			values: {}
+		},
+		items: inclusiveStatuses.items,
 		areSeparatorsVisible: false
 	},
 	{
-		selectableType: IHWListItemSelectableType.Radio,
-		items: exclusiveStatuses,
+		selectable: {
+			schemaId: 'radio',
+			values: {}
+		},
+		items: exclusiveStatuses.items,
 		areSeparatorsVisible: false
 	},
 	{
@@ -210,11 +168,11 @@ const statusLists: IListProps[] = [
 	}
 ]
 
-export const appointment: { items: IEventDetailsItemProps[] } = {
+export const appointmentDetails = buildEventDetails({
 	items: [
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'guestInfo',
 				items: [
 					{
@@ -226,25 +184,13 @@ export const appointment: { items: IEventDetailsItemProps[] } = {
 							icon: { name: 'edit', isLineIcon: true },
 							isSimple: true,
 							isSmall: true,
-							size: IHWContextMenuSize.Large,
-							actions: [
+							size: 'large',
+							buttons: [
 								{
-									text: 'Edit guest',
-									action: {
-										type: IHWActionTypes.EmitEvent,
-										payload: {
-											eventName: 'edit-guest'
-										}
-									}
+									text: 'Edit guest'
 								},
 								{
-									text: 'Book for someone else',
-									action: {
-										type: IHWActionTypes.EmitEvent,
-										payload: {
-											eventName: 'book-for-someone-else'
-										}
-									}
+									text: 'Book for someone else'
 								}
 							]
 						}
@@ -254,16 +200,10 @@ export const appointment: { items: IEventDetailsItemProps[] } = {
 						icon: { name: 'note', isLineIcon: true },
 						title: 'Prefers products that aren’t tested on animals.',
 						subtitle: 'Caleigh Jerde, 4 months ago',
-						actions: [
+						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: ButtonKinds.Simple,
-								action: {
-									type: IHWActionTypes.EmitEvent,
-									payload: {
-										eventName: 'edit-note'
-									}
-								}
+								kind: 'simple'
 							}
 						]
 					}
@@ -271,130 +211,8 @@ export const appointment: { items: IEventDetailsItemProps[] } = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
-				id: 'dateAndTime',
-				items: [
-					{
-						id: 'first',
-						icon: { name: 'calendar', isLineIcon: true },
-						title: 'Web, Nov 28, 2018',
-						subtitle: '11am–12:15pm',
-						actions: [
-							{
-								id: 'first',
-								icon: { name: 'edit' },
-								kind: ButtonKinds.Simple,
-								action: {
-									type: IHWActionTypes.EmitEvent,
-									payload: {
-										eventName: 'edit-date'
-									}
-								}
-							}
-						]
-					}
-				]
-			}
-		},
-		{ ...services },
-		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
-				id: 'status',
-				items: [
-					{
-						id: 'first',
-						icon: { name: 'status' },
-						title: 'Status',
-						subtitle: 'Confirmed',
-						isExpandable: true,
-						collapsedIconName: 'edit',
-						expandedIconName: 'close',
-						lists: statusLists
-					}
-				]
-			}
-		},
-		{
-			type: IHWCalendarEventDetailsItemType.Markdown,
-			viewModel: {
-				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr'
-			}
-		},
-		{
-			type: IHWCalendarEventDetailsItemType.SplitButton,
-			viewModel: {
-				kind: ButtonKinds.Primary,
-				isFullWidth: true,
-				defaultAction: {
-					text: 'Check guest in',
-					isFullWidth: true,
-					action: {
-						type: IHWActionTypes.EmitEvent,
-						payload: {
-							eventName: 'guest-check-in'
-						}
-					}
-				},
-				actions: [
-					{
-						text: 'Unconfirm appointment',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'unconfirm'
-							}
-						}
-					},
-					{
-						text: 'Mark guest as late',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'mark-late'
-							}
-						}
-					},
-					{
-						text: 'Mark as no show',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'mark-no-show'
-							}
-						}
-					},
-					{
-						text: 'Book again',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'book-again'
-							}
-						}
-					},
-					{
-						text: 'Cancel appointment',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'cancel-appointment'
-							}
-						}
-					}
-				]
-			}
-		}
-	]
-}
-
-export const warningAppointment: IEventDetailsProps = {
-	items: [
-		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
-				id: 'guestInfo',
+			schemaId: 'list',
+			values: {
 				items: [
 					{
 						id: 'first',
@@ -405,25 +223,134 @@ export const warningAppointment: IEventDetailsProps = {
 							icon: { name: 'edit', isLineIcon: true },
 							isSimple: true,
 							isSmall: true,
-							size: IHWContextMenuSize.Large,
-							actions: [
+							size: 'large',
+							buttons: [
 								{
-									text: 'Edit guest',
-									action: {
-										type: IHWActionTypes.EmitEvent,
-										payload: {
-											eventName: 'edit-guest'
-										}
-									}
+									text: 'Edit guest'
 								},
 								{
-									text: 'Book for someone else',
-									action: {
-										type: IHWActionTypes.EmitEvent,
-										payload: {
-											eventName: 'book-for-someone-else'
-										}
-									}
+									text: 'Book for someone else'
+								}
+							]
+						}
+					},
+					{
+						id: 'pinned-note',
+						icon: { name: 'note', isLineIcon: true },
+						title: 'Prefers products that aren’t tested on animals.',
+						subtitle: 'Caleigh Jerde, 4 months ago',
+						buttons: [
+							{
+								icon: { name: 'edit' },
+								kind: 'simple'
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			schemaId: 'list',
+			values: {
+				items: [
+					{
+						id: 'first',
+						icon: { name: 'calendar', isLineIcon: true },
+						title: 'Web, Nov 28, 2018',
+						subtitle: '11am–12:15pm',
+						buttons: [
+							{
+								id: 'first',
+								icon: { name: 'edit' },
+								kind: 'simple'
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			schemaId: 'list',
+			values: {
+				items: services.items
+			}
+		},
+		{
+			schemaId: 'list',
+			values: {
+				items: [
+					{
+						id: 'first',
+						icon: { name: 'status' },
+						title: 'Status',
+						subtitle: 'Confirmed',
+						collapsedIcon: { name: 'edit' },
+						expandedIcon: { name: 'close' },
+						lists: statusLists,
+						isExpandable: true
+					}
+				]
+			}
+		},
+		{
+			schemaId: 'markdown',
+			values: {
+				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr'
+			}
+		},
+		{
+			schemaId: 'splitButton',
+			values: {
+				kind: 'primary',
+				isFullWidth: true,
+				defaultButton: {
+					text: 'Check guest in',
+					isFullWidth: true
+				},
+				buttons: [
+					{
+						text: 'Unconfirm appointment'
+					},
+					{
+						text: 'Mark guest as late'
+					},
+					{
+						text: 'Mark as no show'
+					},
+					{
+						text: 'Book again'
+					},
+					{
+						text: 'Cancel appointment'
+					}
+				]
+			}
+		}
+	]
+})
+
+const warningAppointmentDetails = buildEventDetails({
+	items: [
+		{
+			schemaId: 'list',
+			values: {
+				items: [
+					{
+						id: 'first',
+						avatar,
+						title: 'Alejandra Pollich',
+						subtitle: '(605) 230-5253',
+						contextMenu: {
+							icon: { name: 'edit', isLineIcon: true },
+							isSimple: true,
+							isSmall: true,
+							size: 'large',
+							buttons: [
+								{
+									text: 'Edit guest'
+								},
+								{
+									text: 'Book for someone else'
 								}
 							]
 						}
@@ -433,16 +360,10 @@ export const warningAppointment: IEventDetailsProps = {
 						icon: { name: 'note', isLineIcon: true },
 						title: 'Prefers products that aren’t tested on animals.',
 						subtitle: 'Caleigh Jerde, 4 months ago',
-						actions: [
+						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: ButtonKinds.Simple,
-								action: {
-									type: IHWActionTypes.EmitEvent,
-									payload: {
-										eventName: 'edit-note'
-									}
-								}
+								kind: 'simple'
 							}
 						]
 					}
@@ -450,44 +371,44 @@ export const warningAppointment: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.CardBuilder,
-			viewModel: {
-				id: 'dateAndTime',
+			schemaId: 'cardBuilder',
+			values: {
 				body: {
 					items: [
 						{
-							type: IHWCardBuilderBodyItemType.List,
-							viewModel: {
+							schemaId: 'list',
+							values: {
 								id: 'list',
 								items: [
 									{
 										id: '1',
-										icon: { id: 'foo', name: 'calendar', isLineIcon: true },
+										icon: {
+											id: 'foo',
+											name: 'calendar',
+											isLineIcon: true
+										},
 										title: 'Web, Nov 28, 2018',
 										subtitle: '11am–12:15pm',
-										actions: [
+										buttons: [
 											{
 												id: 'foo',
-												icon: { id: 'foo', name: 'edit' },
-												kind: ButtonKinds.Simple,
-												action: {
-													type: IHWActionTypes.EmitEvent,
-													payload: {
-														eventName: 'edit-date'
-													}
-												}
+												icon: {
+													id: 'foo',
+													name: 'edit'
+												},
+												kind: 'simple'
 											}
 										],
 										warnings: {
-											subtitle: true
+											title: true
 										}
 									}
 								]
 							}
 						},
 						{
-							type: IHWCardBuilderBodyItemType.Toast,
-							viewModel: {
+							schemaId: 'toast',
+							values: {
 								id: 'toastWarning',
 								headline: 'Uh-oh',
 								text: 'Vicenta Maggio will be double-booked at this time',
@@ -499,139 +420,83 @@ export const warningAppointment: IEventDetailsProps = {
 				},
 				footer: {
 					buttonGroup: {
-						actions: [
+						buttons: [
 							{
 								text: 'Dismiss',
-								kind: ButtonKinds.Simple,
+								kind: 'simple',
 								isSmall: true,
-								id: 'foo',
-								action: {
-									type: IHWActionTypes.EmitEvent,
-									payload: {
-										eventName: 'dismiss'
-									}
-								}
+								id: 'foo'
 							},
 							{
 								text: 'Find a different time',
-								kind: ButtonKinds.Secondary,
+								kind: 'secondary',
 								isSmall: true,
-								id: 'bar',
-								action: {
-									type: IHWActionTypes.EmitEvent,
-									payload: {
-										eventName: 'find-different-time'
-									}
-								}
+								id: 'bar'
 							}
 						]
 					}
 				}
 			}
 		},
-		services,
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'status',
 				items: [
 					{
 						id: 'first',
-						item: {
-							id: 'first',
-							icon: { name: 'status' },
-							title: 'Status',
-							subtitle: 'Confirmed'
-						},
-						collapsedIconName: 'edit',
-						expandedIconName: 'close',
+						icon: { name: 'status' },
+						title: 'Status',
+						subtitle: 'Confirmed',
+						collapsedIcon: { name: 'edit' },
+						expandedIcon: { name: 'close' },
 						lists: statusLists
 					}
 				]
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.Markdown,
-			viewModel: {
-				id: 'subtotalAndDuration',
-				// NOTE: This would work with a markdown rendering component
-				// Question: Can we deliver MD from the API?
+			schemaId: 'markdown',
+			values: {
 				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr'
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.SplitButton,
-			viewModel: {
-				id: 'primaryCTA',
-				kind: ButtonKinds.Primary,
+			schemaId: 'splitButton',
+			values: {
+				kind: 'primary',
 				isFullWidth: true,
-				defaultAction: {
+				defaultButton: {
 					text: 'Check guest in',
-					isFullWidth: true,
-					action: {
-						type: IHWActionTypes.EmitEvent,
-						payload: {
-							eventName: 'check-in'
-						}
-					}
+					isFullWidth: true
 				},
-				actions: [
+				buttons: [
 					{
-						text: 'Unconfirm appointment',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'unconfirm'
-							}
-						}
+						text: 'Unconfirm appointment'
 					},
 					{
-						text: 'Mark guest as late',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'mark-late'
-							}
-						}
+						text: 'Mark guest as late'
 					},
 					{
-						text: 'Mark as no show',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'mark-no-show'
-							}
-						}
+						text: 'Mark as no show'
 					},
 					{
-						text: 'Book again',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'book-again'
-							}
-						}
+						text: 'Book again'
 					},
 					{
-						text: 'Cancel appointment',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'cancel-appointment'
-							}
-						}
+						text: 'Cancel appointment'
 					}
 				]
 			}
 		}
 	]
-}
+})
 
-export const pastAppointment: IEventDetailsProps = {
+export const pastAppointment = buildEventDetails({
 	items: [
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'guestInfo',
 				items: [
 					{
@@ -639,16 +504,10 @@ export const pastAppointment: IEventDetailsProps = {
 						avatar,
 						title: 'Alejandra Pollich',
 						subtitle: '(605) 230-5253',
-						actions: [
+						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: ButtonKinds.Simple,
-								action: {
-									type: IHWActionTypes.EmitEvent,
-									payload: {
-										eventName: 'edit-guest'
-									}
-								}
+								kind: 'simple'
 							}
 						]
 					},
@@ -657,16 +516,10 @@ export const pastAppointment: IEventDetailsProps = {
 						icon: { name: 'note', isLineIcon: true },
 						title: 'Prefers products that aren’t tested on animals.',
 						subtitle: 'Caleigh Jerde, 4 months ago',
-						actions: [
+						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: ButtonKinds.Simple,
-								action: {
-									type: IHWActionTypes.EmitEvent,
-									payload: {
-										eventName: 'edit-note'
-									}
-								}
+								kind: 'simple'
 							}
 						]
 					}
@@ -674,8 +527,8 @@ export const pastAppointment: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'dateAndTime',
 				items: [
 					{
@@ -688,8 +541,8 @@ export const pastAppointment: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'services',
 				items: [
 					{
@@ -711,8 +564,8 @@ export const pastAppointment: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'status',
 				items: [
 					{
@@ -725,49 +578,37 @@ export const pastAppointment: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.Markdown,
-			viewModel: {
+			schemaId: 'markdown',
+			values: {
 				id: 'subtotalAndDuration',
 				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr'
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.SplitButton,
-			viewModel: {
+			schemaId: 'splitButton',
+			values: {
 				id: 'primaryCTA',
-				kind: ButtonKinds.Primary,
+				kind: 'primary',
 				isFullWidth: true,
-				defaultAction: {
+				defaultButton: {
 					text: 'Book again',
-					isFullWidth: true,
-					action: {
-						type: IHWActionTypes.EmitEvent,
-						payload: {
-							eventName: 'book-again'
-						}
-					}
+					isFullWidth: true
 				},
 				actions: [
 					{
-						text: 'Edit past appointment',
-						action: {
-							type: IHWActionTypes.EmitEvent,
-							payload: {
-								eventName: 'edit-past-appointment'
-							}
-						}
+						text: 'Edit past appointment'
 					}
 				]
 			}
 		}
 	]
-}
+})
 
-export const lunchBreak: IEventDetailsProps = {
+export const lunchBreak = buildEventDetails({
 	items: [
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'dateAndTime',
 				items: [
 					{
@@ -781,8 +622,8 @@ export const lunchBreak: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'person',
 				items: [
 					{
@@ -795,8 +636,8 @@ export const lunchBreak: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'breakType',
 				items: [
 					{
@@ -809,28 +650,22 @@ export const lunchBreak: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.Button,
-			viewModel: {
+			schemaId: 'button',
+			values: {
 				id: 'actions',
 				text: 'Reschedule',
-				kind: ButtonKinds.Secondary,
-				isFullWidth: true,
-				action: {
-					type: IHWActionTypes.EmitEvent,
-					payload: {
-						eventName: 'reschedule'
-					}
-				}
+				kind: 'secondary',
+				isFullWidth: true
 			}
 		}
 	]
-}
+})
 
-export const ptoBlock: IEventDetailsProps = {
+export const ptoBlock = buildEventDetails({
 	items: [
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'dateAndTime',
 				items: [
 					{
@@ -844,8 +679,8 @@ export const ptoBlock: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'person',
 				items: [
 					{
@@ -858,8 +693,8 @@ export const ptoBlock: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.List,
-			viewModel: {
+			schemaId: 'list',
+			values: {
 				id: 'breakType',
 				items: [
 					{
@@ -872,19 +707,13 @@ export const ptoBlock: IEventDetailsProps = {
 			}
 		},
 		{
-			type: IHWCalendarEventDetailsItemType.Button,
-			viewModel: {
+			schemaId: 'button',
+			values: {
 				id: 'actions',
 				text: 'Edit PTO Block',
-				kind: ButtonKinds.Secondary,
-				isFullWidth: true,
-				action: {
-					type: IHWActionTypes.EmitEvent,
-					payload: {
-						eventName: 'edit-pto-block'
-					}
-				}
+				kind: 'secondary',
+				isFullWidth: true
 			}
 		}
 	]
-}
+})

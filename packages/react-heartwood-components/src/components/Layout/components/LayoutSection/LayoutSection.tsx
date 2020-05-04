@@ -1,8 +1,8 @@
 import React from 'react'
 import cx from 'classnames'
-import { ILayoutSection} from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-const LayoutSection = (props: ILayoutSection) => {
+const LayoutSection = (props: SpruceSchemas.Local.ILayoutSection) => {
 	const { className, isSecondary, children, ...rest } = props
 
 	return (

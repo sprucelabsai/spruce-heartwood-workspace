@@ -7,9 +7,7 @@ const scoreCardPanelDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true,
-			hint: 'Unique id for React loops'
+			label: 'Id'
 		},
 		label: {
 			type: FieldType.Text,

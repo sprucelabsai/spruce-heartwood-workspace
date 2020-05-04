@@ -1,29 +1,20 @@
-import {
-	IHWLayoutSpacing,
-	IHWLayoutSpacingDirection
-} from '@sprucelabs/spruce-types'
 import React from 'react'
 import {
-	ILayoutBuilderProps,
 	LayoutBuilder
 } from '../../../LayoutBuilder/LayoutBuilder'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export interface ILayoutSpacingProps extends IHWLayoutSpacing {
-	/** Contents of the Layout Section */
-	children?: React.ReactNode
-}
+const LayoutSpacing = (props: SpruceSchemas.Local.ILayoutSpacing) => {
+	const { direction , amount, children, layoutBuilder } = props
 
-const LayoutSpacing = (props: ILayoutSpacingProps) => {
-	const { direction, amount, children, layoutBuilder } = props
-
-	const prefixes = {
-		[IHWLayoutSpacingDirection.All]: '',
-		[IHWLayoutSpacingDirection.Horizontal]: 'x',
-		[IHWLayoutSpacingDirection.Vertical]: 'y',
-		[IHWLayoutSpacingDirection.Top]: 't',
-		[IHWLayoutSpacingDirection.Right]: 'r',
-		[IHWLayoutSpacingDirection.Bottom]: 'b',
-		[IHWLayoutSpacingDirection.Left]: 'l'
+	const prefixes: Record<Extract<SpruceSchemas.Local.ILayoutSpacing['direction'] ,string>, string> = {
+		all: '',
+		horizontal: 'x',
+		vertical: 'y',
+		top: 't',
+		right: 'r',
+		bottom: 'b',
+		left: 'l'
 	}
 
 	if (amount < 0 || amount > 12) {
@@ -31,13 +22,10 @@ const LayoutSpacing = (props: ILayoutSpacingProps) => {
 	}
 
 	return (
-		<div className={`p${prefixes[direction]}-${amount}`}>
+		<div className={`p${prefixes[direction ?? 'all']}-${amount}`}>
 			{children}
 			{layoutBuilder && (
-				// Note: We have to cast this since ILayoutBuilderProps
-				// enforces typematching. All that interface is, is a stricter
-				// version of IHWLayoutBuilder.
-				<LayoutBuilder {...(layoutBuilder as ILayoutBuilderProps)} />
+				<LayoutBuilder {...layoutBuilder} />
 			)}
 		</div>
 	)

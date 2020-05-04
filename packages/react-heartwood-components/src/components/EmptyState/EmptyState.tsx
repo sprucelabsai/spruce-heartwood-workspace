@@ -1,15 +1,12 @@
 import React from 'react'
 import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
-import { IEmptyState } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const EmptyState = (props: IEmptyState): React.ReactElement => {
-	const {
-		heading,
-		subheading,
-		icon,
-		primaryButton,
-	} = props
+const EmptyState = (
+	props: SpruceSchemas.Local.IEmptyState
+): React.ReactElement => {
+	const { heading, subheading, icon, primaryButton } = props
 
 	return (
 		<div className="empty-state">
@@ -22,25 +19,13 @@ const EmptyState = (props: IEmptyState): React.ReactElement => {
 			{subheading && (
 				<div className="empty-state__subheading">{subheading}</div>
 			)}
-			{primaryButton && (
-				<Button
-					{...primaryButton}
-				/>
-			)}
+			{primaryButton && <Button {...primaryButton} />}
 		</div>
 	)
 }
 
-EmptyState.defaultProps = {
-	icon: {
-		id: 'empty',
-		name: 'empty_box',
-		isLineIcon: true
-	},
-	heading: 'Nothing to see here',
-	primaryButton: {
-		kind: 'simple'
-	}
-} as Partial<IEmptyState>
+EmptyState.defaultProps = defaultProps(
+	SpruceSchemas.Local.EmptyState.definition
+)
 
 export default EmptyState

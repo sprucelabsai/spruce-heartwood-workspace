@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import cx from 'classnames'
-import Button, { ButtonOnClick } from '../../../Button/Button'
+import Button from '../../../Button/Button'
 import { CSSTransition } from 'react-transition-group'
-import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 export interface ISaveBarProps {
 	/** The current location */
@@ -28,10 +27,10 @@ export interface ISaveBarProps {
 	isSaving: boolean
 
 	/** The function to execute when user selects discard */
-	onDiscard?: ButtonOnClick
+	onDiscard?: () => void
 
 	/** The function to execute when user selects save */
-	onSave?: ButtonOnClick
+	onSave?: () => void
 }
 
 interface ISaveBarState {}
@@ -93,7 +92,7 @@ export default class SaveBar extends React.PureComponent<
 						<p className="save-bar__title">{message}</p>
 						{onDiscard && (
 							<Button
-								kind={IHWButtonKinds.Simple}
+								kind={'simple'}
 								text="Discard"
 								onClick={onDiscard}
 								isDisabled={isDiscardDisabled || isDiscarding || isSaving}
@@ -102,7 +101,7 @@ export default class SaveBar extends React.PureComponent<
 							/>
 						)}
 						<Button
-							kind={IHWButtonKinds.Primary}
+							kind={'primary'}
 							text="Save"
 							onClick={onSave}
 							isDisabled={isSaveDisabled || isDiscarding || isSaving}

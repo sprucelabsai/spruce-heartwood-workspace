@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
-import Page, { PageContent } from '../src/components/Page'
+import Page, { SkillViewContent } from '../src/components/Page'
 import FontLoader from '../src/components/FontLoader/FontLoader'
 
 import '@sprucelabs/heartwood-components/stylesheets/heartwood-components.scss'
@@ -71,7 +71,7 @@ const Wrapper = props => {
 			</Helmet>
 			<FontLoader fonts={fonts} />
 			<Page>
-				<PageContent>{props.children}</PageContent>
+				<SkillViewContent>{props.children}</SkillViewContent>
 			</Page>
 		</div>
 	)

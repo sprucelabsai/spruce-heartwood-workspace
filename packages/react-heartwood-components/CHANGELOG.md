@@ -241,8 +241,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **Babel:** Generate sourcemaps ([3307d04](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/3307d04))
 * **Babel:** Generate sourcemaps ([bef44f6](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/bef44f6))
 * **build:** Run clean before build ([2d96176](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/2d96176))
-* **PageHeader:** Fix collapsible header when page is in flexible layout ([f46aca8](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/f46aca8))
-* **PageHeader:** Fix element alignment of primaryAction CTA ([9c489eb](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/9c489eb))
+* **SkillViewHeader:** Fix collapsible header when page is in flexible layout ([f46aca8](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/f46aca8))
+* **SkillViewHeader:** Fix element alignment of primaryAction CTA ([9c489eb](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/9c489eb))
 * **PhoneInput:** Add simple phone validator ([9d57b53](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/9d57b53))
 * **PhoneInput:** Allow defaultValue w/ internal state ([71f3110](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/71f3110))
 * **RecordTable:** Correct usage of getNoDataProps [SDEV3-2018] ([87f0bf1](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/87f0bf1))
@@ -263,7 +263,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **Footer:** Add optional footer to view ([7a491a3](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/7a491a3))
 * **ModalBody:** Allow full bleed modal contents [SDEV3-1814] ([07ab884](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/07ab884))
 * add empty tab example ([edb0668](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/edb0668))
-* **PageHeader:** Add collapsibility for PageHeader ([4c571e4](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/4c571e4))
+* **SkillViewHeader:** Add collapsibility for SkillViewHeader ([4c571e4](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/4c571e4))
 * clean up story ([c3a4444](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/c3a4444))
 * **RecordSelectionList:** Add controlled search props ([6492edd](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/6492edd))
 * **RecordSelectionList:** Add controlled search props ([998702e](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/998702e))
@@ -356,7 +356,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **PageHeader:** Allow setting of additional classnames ([5e06422](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/5e06422))
+* **SkillViewHeader:** Allow setting of additional classnames ([5e06422](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/5e06422))
 * use scrollingElement to fix autosuggest positioning in safari ([d07ab72](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/d07ab72))
 
 
@@ -451,7 +451,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **layout:** Stretch heights to match on secondary layouts ([23761f6](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/23761f6))
 * **lint:** Get linter standardized w/ ai-spruce-web rules ([7e1b58a](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/7e1b58a))
 * **nestedTables:** initial implementation of nested tables ([02144a1](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/02144a1))
-* **PageHeader:** Allow passing of backlink component ([caaf1ef](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/caaf1ef))
+* **SkillViewHeader:** Allow passing of backlink component ([caaf1ef](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/caaf1ef))
 * add "secondaryCTA" option to BigCalendar EventDetails footer ([d397f25](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/d397f25))
 * add ability to render as radio or checkbox ([fd17b2f](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/fd17b2f))
 * add cursor pointer to table expander ([05dcc8e](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/05dcc8e))
@@ -607,7 +607,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * annotate props ([e1ed31c](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/e1ed31c))
 * better rendering of toasts when one is removed ([cc07b81](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/cc07b81))
 * better timeout cleanup ([b863938](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/b863938))
-* chaange pageHeader to header in PageHeader ([0cee055](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/0cee055))
+* chaange SkillViewHeader to header in SkillViewHeader ([0cee055](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/0cee055))
 * change onUndo to followupAction ([84bb28b](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/84bb28b))
 * **EmptyState:** Empty State React component [[SBL-1982](https://sprucelabsai.atlassian.net/browse/SBL-1982)] ([ff05492](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/ff05492))
 * **flow:** Fix react-heartwood-components ([a58b36b](https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/commit/a58b36b))

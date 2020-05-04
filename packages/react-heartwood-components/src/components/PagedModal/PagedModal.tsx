@@ -1,9 +1,8 @@
 import * as React from 'react'
 import cx from 'classnames'
-import Modal from '../Modal/Modal'
+import Modal, { IModalProps } from '../Modal/Modal'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-import { IModalProps } from '../Modal/Modal'
-import { IButtonProps } from '../Button/Button'
 
 interface IModalPageProps {
 	/** The title for this page */
@@ -13,10 +12,10 @@ interface IModalPageProps {
 	body: React.ReactNode
 
 	/** The modal footer primary action for this page */
-	footerPrimaryAction?: IButtonProps
+	footerPrimaryAction?: SpruceSchemas.Local.IButton
 
 	/** The modal footer secondary action for this page */
-	footerSecondaryAction?: IButtonProps
+	footerSecondaryAction?: SpruceSchemas.Local.IButton
 
 	/** Whether this page is currently visible */
 	isCurrent: boolean

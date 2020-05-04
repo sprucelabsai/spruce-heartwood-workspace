@@ -1,15 +1,7 @@
-import {
-	IHWButton,
-	IHWCalendarEventDetailsItem,
-	IHWUiEnhancementSection
-} from '@sprucelabs/spruce-types'
 import { cloneDeep, compact, concat, each, find } from 'lodash'
-import { IEventDetailsItemProps } from './components/EventDetailsItem/EventDetailsItem'
-import { IButtonProps } from '../Button/Button'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-type TValidEventDetails =
-	| IHWCalendarEventDetailsItem[]
-	| IEventDetailsItemProps[]
+type DetailItem = SpruceSchemas.Local.ICalendarEventDetails['items'][number]
 
 /** This utility is used in conjunction with the `getUIEnhancements` endpoint.
  *  With it, you can meld the results of that API with an existing eventDetailsItems
@@ -17,33 +9,25 @@ type TValidEventDetails =
  *  may be assembling manually.
  */
 export function applyUIEnhancementsToEventDetails(
-	eventDetailItems: TValidEventDetails,
-	UIEnhancementSections: IHWUiEnhancementSection[]
+	eventDetailItems: DetailItem[],
+	UIEnhancementSections: SpruceSchemas.Local.IUIEnhancementSection[]
 ) {
 	// First, we clone the input to keep the method pure and avoid side-effects.
-	const mutatedEventDetailItems = cloneDeep(eventDetailItems)
+	const mutatedEventDetailItems: DetailItem[] = cloneDeep(eventDetailItems)
 
 	// This loop applies the `contextMenuItems` enhancements to the appropriate
 	// context menus in the event details.
-	each(mutatedEventDetailItems, eventDetailItem => {
-		if (
-			eventDetailItem &&
-			typeof eventDetailItem === 'object' &&
-			eventDetailItem.viewModel.__typename === 'List'
-		) {
-			eventDetailItem.viewModel.items &&
-				eventDetailItem.viewModel.items.forEach(item => {
+	mutatedEventDetailItems.forEach(eventDetailItem => {
+		if (eventDetailItem.schemaId === 'list') {
+			eventDetailItem.values.items &&
+				eventDetailItem.values.items.forEach(item => {
 					const matchingUIEnhancement = find(UIEnhancementSections, {
-						id: eventDetailItem.id || undefined
+						id: eventDetailItem.values.id || undefined
 					})
 
-					if (
-						matchingUIEnhancement &&
-						item.__typename === 'ListItem' &&
-						item.contextMenu
-					) {
-						item.contextMenu.actions = concat<IHWButton | IButtonProps>(
-							item.contextMenu.actions,
+					if (matchingUIEnhancement && item.contextMenu) {
+						item.contextMenu.buttons = concat(
+							item.contextMenu.buttons,
 							compact(matchingUIEnhancement.contextMenuItems)
 						)
 					}

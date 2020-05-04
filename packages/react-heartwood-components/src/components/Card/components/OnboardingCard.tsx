@@ -4,35 +4,17 @@ import CardHeader from './CardHeader'
 import CardBody from './CardBody'
 import CardFooter from './CardFooter'
 import Tabs from '../../Tabs/Tabs'
-import Button, { IButtonProps, ButtonKinds } from '../../Button/Button'
-import {
-	IHWOnboardingCard,
-	IHWOnboardingCardStep
-} from '@sprucelabs/spruce-types'
-import { IIconProps } from '../../Icon/Icon'
+import Button from '../../Button/Button'
 import { unionArray } from '../../..'
-
-export interface IStep
-	extends Omit<IHWOnboardingCardStep, 'panelCTA' | 'tabIcon'> {
-	/** Primary CTA of this step */
-	panelCTA?: IButtonProps | null
-
-	tabIcon?: IIconProps | null
-}
-
-export interface IOnboardingCardProps extends Omit<IHWOnboardingCard, 'steps'> {
-	/** Steps for onboarding */
-	steps: IStep[]
-
-	/** Optional class to add */
-	className?: string
-}
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IOnboardingCardState {
 	currentStep: number
 }
 
-const getCurrentStep = (steps: IStep[] | IHWOnboardingCardStep[]): number => {
+const getCurrentStep = (
+	steps: SpruceSchemas.Local.IOnboardingCardStep[]
+): number => {
 	// Find the first step that is not complete
 	if (steps && steps.length > 0) {
 		for (let i = 0; i < steps.length; i++) {
@@ -45,7 +27,7 @@ const getCurrentStep = (steps: IStep[] | IHWOnboardingCardStep[]): number => {
 }
 
 export default class OnboardingCard extends Component<
-	IOnboardingCardProps | IHWOnboardingCard,
+	SpruceSchemas.Local.IOnboardingCard,
 	IOnboardingCardState
 > {
 	public state = {
@@ -81,10 +63,7 @@ export default class OnboardingCard extends Component<
 				</CardBody>
 				{steps[currentStep].panelCTA && (
 					<CardFooter>
-						<Button
-							kind={ButtonKinds.Primary}
-							{...steps[currentStep].panelCTA}
-						/>
+						<Button kind={'primary'} {...steps[currentStep].panelCTA} />
 					</CardFooter>
 				)}
 			</Card>

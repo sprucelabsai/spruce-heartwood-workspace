@@ -68,9 +68,13 @@ const contextMenuDefinition = buildSchemaDefinition({
 			isPrivate: true
 		},
 		onClick: {
-			type: FieldType.OnClick,
+			type: FieldType.EventCallback,
 			hint: 'Invoked when the button is clicked',
-			isPrivate: true
+			isPrivate: true,
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLDivElement'
+			}
 		}
 	}
 })

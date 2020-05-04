@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import cx from 'classnames'
 
 import * as icons from '../../icons.js'
-import { IIcon } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-const Icon = (props: IIcon): React.ReactElement => {
+const Icon = (props: SpruceSchemas.Local.IIcon): React.ReactElement => {
 	const { name, customIcon, isLineIcon, className, ...rest } = props
 
 	const iconKey = name && name.toLowerCase()

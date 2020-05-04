@@ -1,0 +1,43 @@
+import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import toastHeaderDefinition from './toastHeader.definition'
+
+const toastDefinition = buildSchemaDefinition({
+	id: 'toast',
+	name: 'Toast',
+	description: "Call out information so it's impossible to miss!",
+	fields: {
+		...toastHeaderDefinition.fields,
+		id: {
+			type: FieldType.Id,
+			label: 'Id',
+			hint: 'Unique id for UI caching',
+			isRequired: true
+		},
+		text: {
+			type: FieldType.Text,
+			label: 'Text',
+			hint: 'Optional; Text after the headline'
+		},
+		kind: {
+			type: FieldType.Text,
+			label: 'Kind',
+			hint: 'Sets the variation of toast'
+		},
+		followupText: {
+			type: FieldType.Text,
+			label: 'Followup text',
+			hint: 'Text for the followup action'
+		},
+		onClickFollowup: {
+			type: FieldType.EventCallback,
+			label: 'Followup handler',
+			hint: 'Callback to be invoked when hitting the followup CTA',
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLDivElement'
+			}
+		}
+	}
+})
+
+export default toastDefinition

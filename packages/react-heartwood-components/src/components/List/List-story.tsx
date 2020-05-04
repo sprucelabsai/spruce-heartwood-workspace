@@ -27,8 +27,7 @@ import ListHeader from './components/ListHeader/ListHeader'
 import ListItem from './components/ListItem/ListItem'
 import SortableList from './components/SortableList/SortableList'
 import List, { ListWrapper } from './List'
-import { IHWListItemSelectableType } from '@sprucelabs/spruce-types'
-import { ButtonKinds } from '../Button/Button'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const stories = storiesOf('List', module)
 
@@ -99,13 +98,16 @@ stories
 			id="unique"
 			title={text('title', 'Wed, Oct 28')}
 			subtitle={text('subtitle', '9am–4pm')}
-			avatar={text('avatar', '')}
-			image={text('image', '')}
+			avatar={object<SpruceSchemas.Local.IAvatar | undefined>(
+				'avatar',
+				undefined
+			)}
+			image={object('image', undefined)}
 			icon={{ isLineIcon: boolean('isLineIcon', true), name: text('name', '') }}
 			isDraggable={boolean('isDraggable', false)}
-			actions={object('actions', [])}
-			toggleId={text('toggleId', '')}
-			contextMenu={object('contextMenu', null)}
+			buttons={object('buttons', [])}
+			toggle={object<SpruceSchemas.Local.IListItem['toggle']>('toggle', {})}
+			contextMenu={object('contextMenu', undefined)}
 			isLoading={boolean('isLoading', false)}
 		/>
 	))
@@ -155,29 +157,29 @@ stories
 			header={{
 				title: 'Team Schedule',
 				subtitle: 'Mon, Sep 27',
-				actions: [
+				buttons: [
 					{
 						text: 'Today',
-						kind: ButtonKinds.Simple
+						kind: 'simple'
 					},
 					{
 						icon: {
 							name: 'calendar',
 							isLineIcon: true
 						},
-						kind: ButtonKinds.Simple
+						kind: 'simple'
 					},
 					{
 						icon: {
 							name: 'arrow_back'
 						},
-						kind: ButtonKinds.Simple
+						kind: 'simple'
 					},
 					{
 						icon: {
 							customIcon: 'arrow_forward'
 						},
-						kind: ButtonKinds.Simple
+						kind: 'simple'
 					}
 				]
 			}}
@@ -188,13 +190,7 @@ stories
 	.add('People Tabbed', () => <TabbedList />)
 	.add('Selectable Items', () => (
 		<List
-			selectableType={select<
-				IHWListItemSelectableType.Checkbox | IHWListItemSelectableType.Radio
-			>(
-				'selectableType',
-				[IHWListItemSelectableType.Checkbox, IHWListItemSelectableType.Radio],
-				IHWListItemSelectableType.Checkbox
-			)}
+			selectable={object('selectable',{ schemaId: 'checkbox', values: {}})}
 			items={object('selectable items', selectableList)}
 			isSmall={boolean('isSmall', false)}
 		/>

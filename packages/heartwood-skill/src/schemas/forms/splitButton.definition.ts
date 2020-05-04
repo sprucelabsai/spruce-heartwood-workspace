@@ -8,8 +8,7 @@ const splitButtonDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id',
-			isRequired: true
+			label: 'Id'
 		},
 		defaultButton: {
 			type: FieldType.Schema,
@@ -25,6 +24,7 @@ const splitButtonDefinition = buildSchemaDefinition({
 			label: 'Actions',
 			isArray: true,
 			hint: 'All the secondary nested buttons',
+			defaultValue: [],
 			options: {
 				schema: buttonDefinition
 			}
@@ -46,6 +46,21 @@ const splitButtonDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Is small',
 			hint: 'Sets the visual hierarchy of the button'
+		},
+		onClick: {
+			type: FieldType.EventCallback,
+			label: 'Click handler',
+			options: {
+				event: 'React.MouseEvent<...>',
+				element: 'HTMLInputElement'
+			}
+		},
+		usePortal: {
+			type: FieldType.Boolean,
+			label: 'Portal',
+			hint:
+				'Render in a react-portal, not sure why this is needed or not just always true',
+			isPrivate: true
 		}
 	}
 })

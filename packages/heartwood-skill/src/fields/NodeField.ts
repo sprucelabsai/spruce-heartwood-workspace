@@ -1,9 +1,10 @@
 import React from 'react'
 import { FieldType } from '#spruce:schema/fields/fieldType'
-import AbstractField, {
+import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
+import {
+	IFieldTemplateDetailOptions,
 	IFieldDefinition
-} from '@sprucelabs/schema/build/fields/AbstractField'
-import { IFieldTemplateDetailOptions } from '@sprucelabs/schema'
+} from '@sprucelabs/schema'
 
 export type INodeFieldDefinitionValue =
 	| React.ReactChild
