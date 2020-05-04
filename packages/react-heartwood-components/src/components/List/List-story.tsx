@@ -1,10 +1,4 @@
-import {
-	boolean,
-	object,
-	select,
-	text,
-	withKnobs
-} from '@storybook/addon-knobs'
+import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React, { Component, Fragment } from 'react'
 import {
@@ -190,7 +184,7 @@ stories
 	.add('People Tabbed', () => <TabbedList />)
 	.add('Selectable Items', () => (
 		<List
-			selectable={object('selectable',{ schemaId: 'checkbox', values: {}})}
+			selectable={object('selectable', { schemaId: 'checkbox', values: {} })}
 			items={object('selectable items', selectableList)}
 			isSmall={boolean('isSmall', false)}
 		/>

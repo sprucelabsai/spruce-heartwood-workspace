@@ -1,6 +1,10 @@
 import React from 'react'
 import cx from 'classnames'
-import { SpruceSchemas, defaultProps, stripNulls } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	stripNulls
+} from '@sprucelabs/heartwood-skill'
 import Label from '../Label/Label'
 import InputHelper from '../InputHelper/InputHelper'
 
@@ -21,7 +25,11 @@ const TextArea = (props: SpruceSchemas.Local.ITextarea & typeof defaults) => {
 	return (
 		<div className={parentClass}>
 			{label && <Label {...label} />}
-			<textarea id={id ?? undefined} className={inputClass} {...stripNulls(textareaProps)} />
+			<textarea
+				id={id ?? undefined}
+				className={inputClass}
+				{...stripNulls(textareaProps)}
+			/>
 			{helper && <InputHelper {...helper} />}
 		</div>
 	)

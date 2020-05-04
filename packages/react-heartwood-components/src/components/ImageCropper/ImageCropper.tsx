@@ -1,12 +1,12 @@
 // NOTE: Relies on https://github.com/mosch/react-avatar-editor
 import React, { Component } from 'react'
 import AvatarEditor from 'react-avatar-editor'
-import Button, { ButtonOnClick } from '../Button/Button'
+import Button from '../Button/Button'
 import Dropzone from '../Dropzone/Dropzone'
-import { IDropzoneProps } from '../Dropzone/Dropzone'
 import { Slider } from '../Forms'
 import RotateLeftIcon from '../../../static/assets/icons/Design/Rotate/rotate-back.svg'
 import RotateRightIcon from '../../../static/assets/icons/Design/Rotate/rotate-forward.svg'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IImageCropperProps {
 	/** The image. If null, this will render a Dropzone. */
@@ -19,16 +19,16 @@ interface IImageCropperProps {
 	height: number
 
 	/** Properties for the Dropzone */
-	dropzoneProps: IDropzoneProps
+	dropzone: SpruceSchemas.Local.IDropzone
 
-	/** Set true for ciruclar image */
+	/** Set true for circular image */
 	isCircular?: boolean
 
 	/** Callback when save button is clicked */
 	onSubmit?: Function
 
 	/** Callback when upload new button is clicked */
-	onUploadNewImage?: ButtonOnClick
+	onUploadNewImage?: SpruceSchemas.Local.IButton['onClick']
 
 	/** Optional color */
 	color?: [number, number, number, number]
@@ -89,7 +89,7 @@ export default class ImageCropper extends Component<
 			width,
 			height,
 			isCircular,
-			dropzoneProps,
+			dropzone: dropzoneProps,
 			onUploadNewImage,
 			...rest
 		} = this.props
@@ -118,7 +118,7 @@ export default class ImageCropper extends Component<
 				</div>
 				<div className="image-cropper__controls-row">
 					<Button
-						kind={IHWButtonKinds.Secondary}
+						kind={'secondary'}
 						className="image-cropper__rotate-btn"
 						text="Rotate Left"
 						icon={{
@@ -129,7 +129,7 @@ export default class ImageCropper extends Component<
 						onClick={() => this.handleRotate('left')}
 					/>
 					<Button
-						kind={IHWButtonKinds.Secondary}
+						kind={'secondary'}
 						className="image-cropper__rotate-btn"
 						text="Rotate Right"
 						icon={{
@@ -142,27 +142,26 @@ export default class ImageCropper extends Component<
 				</div>
 				<div className="image-cropper__controls-row">
 					<Slider
-						label="Scale"
+						label={{ text: 'Scale', postLabel: `${Math.round(scale * 100)}%` }}
 						id="scale"
 						min={0}
 						max={100}
 						value={sliderValue}
-						postLabel={`${Math.round(scale * 100)}%`}
-						disabled={!image || isSubmitting}
+						isDisabled={!image || isSubmitting}
 						onChange={this.handleScale}
 					/>
 				</div>
 				<div className="image-cropper__controls-row">
 					{image && (
 						<Button
-							kind={IHWButtonKinds.Simple}
+							kind={'simple'}
 							text="Upload another image"
 							isDisabled={isSubmitting}
 							onClick={onUploadNewImage}
 						/>
 					)}
 					<Button
-						kind={IHWButtonKinds.Primary}
+						kind={'primary'}
 						isFullWidth={image ? false : true}
 						text="Save Image"
 						isDisabled={!image || isSubmitting}

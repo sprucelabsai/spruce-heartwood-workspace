@@ -2856,7 +2856,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 							) => void)| undefined | null
 				/** On drop. */
 				'onDropped'?: ((
-								files: File[]
+								files: File[],
+								event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
 							) => void)| undefined | null
 				
 				'onDropAccepted'?: ((files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void)| undefined | null
@@ -3010,7 +3011,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {valueType: `(
-			                					files: File[]
+			                					files: File[],
+			                					event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
 			                				) => void`,}
 			            },
 			            /** . */
@@ -3261,7 +3263,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {valueType: `(
-			                					files: File[]
+			                					files: File[],
+			                					event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
 			                				) => void`,}
 			            },
 			            /** . */
@@ -10888,7 +10891,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Id. */
 				'id'?: string| undefined | null
 				/** Suggestion getter. Invoked while person is typing. Is expected to return search results */
-				'getSuggestions': ((query: string) => Promise<Record<string, any>>[])
+				'getSuggestions': ((query: string) => Promise<Record<string, any>[]>)
 				/** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
 				'getSuggestionValue': ((suggestion: Record<string, any>) => string)
 				/** Suggestion renderer. Renders a single suggestion, return a React.ReactNode */
@@ -10964,7 +10967,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(query: string) => Promise<Record<string, any>>[]`,}
+			                options: {valueType: `(query: string) => Promise<Record<string, any>[]>`,}
 			            },
 			            /** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
 			            'getSuggestionValue': {
@@ -11192,7 +11195,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(query: string) => Promise<Record<string, any>>[]`,}
+			                options: {valueType: `(query: string) => Promise<Record<string, any>[]>`,}
 			            },
 			            /** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
 			            'getSuggestionValue': {

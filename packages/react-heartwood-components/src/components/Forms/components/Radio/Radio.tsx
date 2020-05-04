@@ -32,15 +32,21 @@ const Radio = (props: SpruceSchemas.Local.IRadio): React.ReactElement => {
 					}}
 					type="radio"
 				/>
-				{label && <label className="checkbox-item__label" htmlFor={id ?? undefined}>
-					{label.text}
-				</label>}
+				{label && (
+					<label className="checkbox-item__label" htmlFor={id ?? undefined}>
+						{label.text}
+					</label>
+				)}
 				<div className="checkbox-item__icons">
 					<RadioIconYes className="checkbox-item__icon checkbox-item__icon-yes" />
 					<RadioIconNo className="checkbox-item__icon checkbox-item__icon-no" />
 				</div>
 			</div>
-			{helper && <p className="checkbox-item__post-text">{helper.error || helper.hint}</p>}
+			{helper && (
+				<p className="checkbox-item__post-text">
+					{helper.error || helper.hint}
+				</p>
+			)}
 		</div>
 	)
 }

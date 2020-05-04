@@ -51,7 +51,10 @@ const SidebarItem = (props: SpruceSchemas.Local.ISidebarItem) => {
 						return (
 							<li key={idx} className={subClass}>
 								<div className="sidebar-item__inner">
-									<a href={item.href ?? undefined} className="sidebar-item__link">
+									<a
+										href={item.href ?? undefined}
+										className="sidebar-item__link"
+									>
 										{item.text}
 									</a>
 								</div>
@@ -68,7 +71,10 @@ const SidebarItem = (props: SpruceSchemas.Local.ISidebarItem) => {
 											return (
 												<li key={idx} className={subSubClass}>
 													<div className="sidebar-item__inner">
-														<a className="sidebar-item__link" href={item.href ?? undefined}>
+														<a
+															className="sidebar-item__link"
+															href={item.href ?? undefined}
+														>
 															{item.text}
 														</a>
 													</div>

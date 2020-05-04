@@ -66,7 +66,8 @@ const dropzoneDefinition = buildSchemaDefinition({
 			label: 'On drop',
 			options: {
 				valueType: `(
-					files: File[]
+					files: File[],
+					event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
 				) => void`
 			}
 		},

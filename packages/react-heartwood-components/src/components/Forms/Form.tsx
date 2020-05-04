@@ -3,7 +3,11 @@ import { Formik } from 'formik'
 import Layout from '../Layout/Layout'
 import { SaveBar } from '../Core'
 import Modal from '../Modal/Modal'
-import { SpruceSchemas, defaultProps, stripNulls } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	stripNulls
+} from '@sprucelabs/heartwood-skill'
 
 const defaults = defaultProps(SpruceSchemas.Local.Form.definition)
 
@@ -40,8 +44,6 @@ const Form = (props: SpruceSchemas.Local.IForm) => {
 								{{ children }}
 								<SaveBar
 									isVisible={dirty}
-									// TODO: Figure out the proper signature to convert formik submit handler
-									// @ts-ignore
 									onSave={handleSubmit}
 									onDiscard={handleReset}
 									isSaveDisabled={!isValid}

@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
-import {
-	SpruceSchemas,
-	defaultProps,
-	DefaultProps
-} from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 import TextInput from '../TextInput/TextInput'
 
 interface ISearchState {

@@ -24,7 +24,6 @@ export interface ISortableListProps extends SpruceSchemas.Local.IList {
 
 	/** Callback when sorting ends */
 	onSortEnd: (props: any) => void
-
 }
 
 interface ISortableListState {

@@ -24,16 +24,8 @@ stories
 	.add('Spacing Utilities', () => {
 		const prefixSelect = select(
 			'side',
-			[
-				IHWLayoutSpacingDirection.All,
-				IHWLayoutSpacingDirection.Horizontal,
-				IHWLayoutSpacingDirection.Vertical,
-				IHWLayoutSpacingDirection.Top,
-				IHWLayoutSpacingDirection.Right,
-				IHWLayoutSpacingDirection.Bottom,
-				IHWLayoutSpacingDirection.Left
-			],
-			IHWLayoutSpacingDirection.All
+			['all', 'horizontal', 'vertical', 'top', 'right', 'bottom', 'left'],
+			'all'
 		)
 		return (
 			<div style={{ backgroundColor: 'rgba(49,95,204,0.5)' }}>
@@ -55,8 +47,8 @@ stories
 			<div
 				className={`container--${select(
 					'container class',
-					[IHWLayoutWidth.Base, IHWLayoutWidth.Tight, IHWLayoutWidth.Wide],
-					IHWLayoutWidth.Base
+					['base', 'tight', 'wide'],
+					'base'
 				)}`}
 				style={{ backgroundColor: '#fff' }}
 			>
@@ -82,27 +74,27 @@ stories
 		</Layout>
 	))
 	.add('Tight Layout', () => (
-		<Layout width={IHWLayoutWidth.Tight}>
+		<Layout width={'tight'}>
 			<LayoutSection>{generateCard()}</LayoutSection>
 		</Layout>
 	))
 	.add('Wide Layout', () => (
-		<Layout width={IHWLayoutWidth.Wide}>
+		<Layout width={'wide'}>
 			<LayoutSection>{generateCard()}</LayoutSection>
 		</Layout>
 	))
 	.add('Full-Width Layout', () => (
-		<Layout width={IHWLayoutWidth.FullWidth}>
+		<Layout width={'fullWidth'}>
 			<LayoutSection>{generateCard()}</LayoutSection>
 		</Layout>
 	))
 	.add('Full-Bleed Layout', () => (
-		<Layout width={IHWLayoutWidth.FullWidth} isFullBleed>
+		<Layout width={'fullWidth'} isFullBleed>
 			<LayoutSection>{generateCard()}</LayoutSection>
 		</Layout>
 	))
 	.add('Very dense full-width layout', () => (
-		<Layout width={IHWLayoutWidth.FullWidth}>
+		<Layout width={'fullWidth'}>
 			<LayoutSection isSecondary>{generateCard()}</LayoutSection>
 			<LayoutSection isSecondary>{generateCard()}</LayoutSection>
 			<LayoutSection isSecondary>{generateCard()}</LayoutSection>

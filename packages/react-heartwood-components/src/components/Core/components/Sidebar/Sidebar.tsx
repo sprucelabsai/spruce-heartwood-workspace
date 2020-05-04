@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import Button from '../../../Button/Button'
 import Text from '../../../Text/Text'
 import SidebarExpander from './components/SidebarExpander/SidebarExpander'
@@ -16,7 +16,6 @@ const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 		backLink,
 		children,
 		footerChildren,
-
 		isExpanded,
 		isLarge,
 		isCollapsible,
@@ -25,8 +24,12 @@ const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 		mobileHeader
 	} = props
 
-	const forceCloseSidebar = () => {window.alert('coming soon')}
-	const toggleExpanded = () => {window.alert('coming soon')}
+	const forceCloseSidebar = () => {
+		window.alert('coming soon')
+	}
+	const toggleExpanded = () => {
+		window.alert('coming soon')
+	}
 
 	return (
 		<aside

@@ -1,5 +1,4 @@
 import cx from 'classnames'
-import is from 'is_js'
 import React from 'react'
 import BackIcon from '../../../../../static/assets/icons/ic_keyboard_arrow_left.svg'
 import Button from '../../../Button/Button'
@@ -18,7 +17,7 @@ const SkillViewHeader = (props: SpruceSchemas.Local.ISkillViewHeader) => {
 		primaryButton,
 		sidebarExpanderButton,
 		tabs,
-		title,
+		title
 	} = props
 
 	const backLinkClass = 'page__header-back-link'
@@ -44,10 +43,10 @@ const SkillViewHeader = (props: SpruceSchemas.Local.ISkillViewHeader) => {
 			)
 		} else if (backLinkHref) {
 			// Check if the link is relative (client-side) or absolute
-			let linkIsRelative = true
-			if (backLinkHref && is.url(backLinkHref)) {
-				linkIsRelative = false
-			}
+			// let linkIsRelative = true
+			// if (backLinkHref && is.url(backLinkHref)) {
+			// 	linkIsRelative = false
+			// }
 			// Only return a Next link if the href is relative
 			anchor = (
 				<a href={backLinkHref} className={backLinkClass}>

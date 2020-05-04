@@ -36,11 +36,7 @@ const components: Record<
 
 type DetailsItem = SpruceSchemas.Local.ICalendarEventDetails['items'][number]
 
-const EventDetailsItem = (
-	props:{
-		item: DetailsItem
-	}
-): React.ReactElement => {
+const EventDetailsItem = (props: { item: DetailsItem }): React.ReactElement => {
 	const { schemaId, values } = props.item
 
 	if (!schemaId || !components[schemaId]) {

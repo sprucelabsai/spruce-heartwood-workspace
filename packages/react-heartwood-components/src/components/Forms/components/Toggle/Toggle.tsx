@@ -8,7 +8,12 @@ const Toggle = (props: SpruceSchemas.Local.IToggle): React.ReactElement => {
 	return (
 		<div className={parentClass}>
 			<div className="toggle">
-				<input className="toggle__input" type="checkbox" id={id ?? undefined} {...rest} />
+				<input
+					className="toggle__input"
+					type="checkbox"
+					id={id ?? undefined}
+					{...rest}
+				/>
 				<label className="toggle__label" htmlFor={id ?? undefined} />
 			</div>
 			{helper && (

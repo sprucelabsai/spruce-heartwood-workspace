@@ -1,13 +1,14 @@
 import React from 'react'
-import {
-	LayoutBuilder
-} from '../../../LayoutBuilder/LayoutBuilder'
+import { LayoutBuilder } from '../../../LayoutBuilder/LayoutBuilder'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const LayoutSpacing = (props: SpruceSchemas.Local.ILayoutSpacing) => {
-	const { direction , amount, children, layoutBuilder } = props
+	const { direction, amount, children, layoutBuilder } = props
 
-	const prefixes: Record<Extract<SpruceSchemas.Local.ILayoutSpacing['direction'] ,string>, string> = {
+	const prefixes: Record<
+		Extract<SpruceSchemas.Local.ILayoutSpacing['direction'], string>,
+		string
+	> = {
 		all: '',
 		horizontal: 'x',
 		vertical: 'y',
@@ -24,9 +25,7 @@ const LayoutSpacing = (props: SpruceSchemas.Local.ILayoutSpacing) => {
 	return (
 		<div className={`p${prefixes[direction ?? 'all']}-${amount}`}>
 			{children}
-			{layoutBuilder && (
-				<LayoutBuilder {...layoutBuilder} />
-			)}
+			{layoutBuilder && <LayoutBuilder {...layoutBuilder} />}
 		</div>
 	)
 }

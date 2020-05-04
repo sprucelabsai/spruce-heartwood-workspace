@@ -4,7 +4,9 @@ import Button from '../../../../../Button/Button'
 import Text from '../../../../../Text/Text'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-const SidebarHeader = (props: SpruceSchemas.Local.ISidebarHeader): React.ReactElement => {
+const SidebarHeader = (
+	props: SpruceSchemas.Local.ISidebarHeader
+): React.ReactElement => {
 	const { button, title, onClose, onGoBack } = props
 
 	return (

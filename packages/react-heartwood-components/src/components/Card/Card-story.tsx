@@ -192,10 +192,9 @@ const cards5 = buildCard({
 			]
 		},
 		helper:
-			'This is a permanant thing you are doing, be sure you want to do the thing'
+			'This is a permanent thing you are doing, be sure you want to do the thing'
 	}
 })
-
 
 const stories = storiesOf('Card', module)
 
@@ -232,7 +231,7 @@ stories
 				</Text>
 			</Card.Body>
 			<Card.Footer>
-				<Button kind={ButtonKinds.Secondary} text="Update credit card" />
+				<Button kind={'secondary'} text="Update credit card" />
 			</Card.Footer>
 		</Card>
 	))
@@ -240,7 +239,7 @@ stories
 		<Card>
 			<Card.Header
 				title={text('title', 'Value of future appointments')}
-				actions={object('actions', [
+				buttons={object('buttons', [
 					{
 						text: 'Go to reports'
 					}
@@ -277,7 +276,7 @@ stories
 		<Card>
 			<Card.Header
 				title={text('title', 'Your upcoming appointments')}
-				actions={object('actions', [
+				buttons={object('buttons', [
 					{
 						text: 'View in calendar'
 					}
@@ -295,16 +294,9 @@ stories
 		<Card isCentered>
 			<Card.Header />
 			<Card.Body>
-				<Avatar
-					isLarge
-					image={text('Avatar Image', userImageLg)}
-					alt="Rosamund Mueleer"
-				/>
+				<Avatar isLarge src={text('src', userImageLg)} alt="Rosamund Mueleer" />
 				<TextContainer spacing="tight">
-					<Subheading
-						className="card-header__title"
-						element={IHWHeadingWeight.H3}
-					>
+					<Subheading className="card-header__title" weight={'h3'}>
 						{`Say "Happy Birthday"`}
 					</Subheading>
 					<Text>
@@ -314,11 +306,7 @@ stories
 				</TextContainer>
 			</Card.Body>
 			<Card.Footer>
-				<Button
-					kind={ButtonKinds.Secondary}
-					text="Send a birthday message"
-					isSmall
-				/>
+				<Button kind={'secondary'} text="Send a birthday message" isSmall />
 			</Card.Footer>
 		</Card>
 	))
@@ -335,7 +323,7 @@ stories
 				<Text>101 Purdy Lakes, West Jordanmouth, NH 38827-6100</Text>
 			</Card.Body>
 			<Card.Footer>
-				<Button kind={ButtonKinds.Secondary} text="Book an appointment" />
+				<Button kind={'secondary'} text="Book an appointment" />
 			</Card.Footer>
 		</Card>
 	))
@@ -368,12 +356,12 @@ stories
 						  }
 						: undefined
 				}
-				title={text('Title', 'Get the most out of Spruce')}
-				actions={
-					boolean('Header Action', false)
+				title={text('title', 'Get the most out of Spruce')}
+				buttons={
+					boolean('buttons', false)
 						? [
 								{
-									kind: ButtonKinds.Simple,
+									kind: 'simple',
 									text: 'Go to team',
 									isSmall: true
 								}
@@ -381,7 +369,7 @@ stories
 						: undefined
 				}
 				contextMenu={object('contextMenu', {
-					actions: [{ text: 'One' }, { text: 'Two' }, { text: 'Three' }]
+					buttons: [{ text: 'One' }, { text: 'Two' }, { text: 'Three' }]
 				})}
 			/>
 			<Card.Body>
@@ -393,23 +381,23 @@ stories
 				</Text>
 			</Card.Body>
 			<Card.Footer>
-				<Button kind={ButtonKinds.Secondary} text="Get some skills" isSmall />
+				<Button kind={'secondary'} text="Get some skills" isSmall />
 			</Card.Footer>
 		</Card>
 	))
 	.add('Onboarding Card', () => <OnboardingCard {...onboarding} />)
 	.add('CardBuilder', () => (
 		<Fragment>
-			<CardBuilder key="foo-0" {...object('json', cardJSON)} />
-			<CardBuilder key="foo-1" {...object('json2', cardJSON2)} />
-			<CardBuilder key="foo-2" {...object('json3', cardJSON3)} />
-			<CardBuilder key="foo-3" {...object('json4', cardJSON4)} />
-			<CardBuilder key="foo-4" {...object('json5', cardJSON5)} />
+			<CardBuilder key="foo-0" {...object('json', cards1)} />
+			<CardBuilder key="foo-1" {...object('json2', cards2)} />
+			<CardBuilder key="foo-2" {...object('json3', cards3)} />
+			<CardBuilder key="foo-3" {...object('json4', cards4)} />
+			<CardBuilder key="foo-4" {...object('json5', cards5)} />
 		</Fragment>
 	))
 	.add('Expandable Card', () => {
 		return (
-			<Card expandable headerProps={{ title: 'Hello' }} defaultExpanded={false}>
+			<Card isExpandable header={{ title: 'Hello' }} defaultExpanded={false}>
 				<Card.Body>
 					<p>Hello I am card content</p>
 				</Card.Body>

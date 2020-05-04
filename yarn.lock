@@ -2980,10 +2980,10 @@
     "@sprucelabs/error" "^1.0.11"
     "@sprucelabs/log" "^10.2.1"
 
-"@sprucelabs/schema@^1.23.0":
-  version "1.23.0"
-  resolved "https://registry.yarnpkg.com/@sprucelabs/schema/-/schema-1.23.0.tgz#653eb23dccb216212b6c7bf41cbcda4920912d62"
-  integrity sha512-2MpWwYedZj7/KlFFraDq9NP3m1vq4PzRCReoVJUWENRAI358uvALCjCnMDA04S/xuTty0bv8HKuZL79RcS/fkg==
+"@sprucelabs/schema@^1.24.0":
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/@sprucelabs/schema/-/schema-1.24.0.tgz#6af86c155707230cfdb373cb0060022ec43568a7"
+  integrity sha512-pgA8GzvFCzjbywr5ez0W4TA7Di/7A8tcN5I2TnwAYiu53n/5gQqxVAMPv6Wndc3yTKfuRkCeJK5CAHhpVyH96g==
   dependencies:
     "@sprucelabs/error" "^1.2.0"
     "@sprucelabs/log" "^10.2.1"
@@ -12224,11 +12224,6 @@ is-wsl@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.1.1.tgz#4a1c152d429df3d441669498e2486d3596ebaf1d"
   integrity sha512-umZHcSrwlDHo2TGMXv0DZ8dIUGunZ2Iv68YZnrmCiBPkZ4aaOhtv7pXJKeki9k3qJ3RJr0cDyitcl5wEH3AYog==
-
-is_js@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/is_js/-/is_js-0.9.0.tgz#0ab94540502ba7afa24c856aa985561669e9c52d"
-  integrity sha1-CrlFQFArp6+iTIVqqYVWFmnpxS0=
 
 isarray@0.0.1:
   version "0.0.1"

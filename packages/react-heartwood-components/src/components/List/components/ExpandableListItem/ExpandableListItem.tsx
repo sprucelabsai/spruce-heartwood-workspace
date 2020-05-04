@@ -28,19 +28,20 @@ export default class ExpandableListItem extends Component<
 			collapsedIcon: collapsedIconProps,
 			expandedIcon: expandedIconProps,
 			onClick,
+			list,
 			...item
 		} = this.props
 		const { isExpanded } = this.state
 
 		const collapsedIcon = collapsedIconProps ?? { name: 'keyboard' }
-		const expandedIcon = collapsedIconProps ?? { name: 'keyboard' }
+		const expandedIcon = expandedIconProps ?? { name: 'keyboard' }
 		const icon = isExpanded ? expandedIcon : collapsedIcon
 
 		return (
 			<ListItem
 				{...item}
-				// List={isExpanded ? list : undefined}
-				// lists={isExpanded ? lists : undefined}
+				list={isExpanded ? list : undefined}
+				// Lists={isExpanded ? lists : undefined}
 				buttons={[
 					{
 						icon,

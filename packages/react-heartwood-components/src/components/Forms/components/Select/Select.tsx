@@ -1,11 +1,12 @@
 import React from 'react'
 import cx from 'classnames'
 import ArrowIcon from '../../../../../static/assets/icons/ic_arrow_drop_down.svg'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas, stripNulls } from '@sprucelabs/heartwood-skill'
+import Label from '../Label/Label'
+import InputHelper from '../InputHelper/InputHelper'
 
 const Select = (props: SpruceSchemas.Local.ISelect) => {
 	const {
-		id,
 		options = {},
 		isSimple,
 		className,
@@ -13,7 +14,7 @@ const Select = (props: SpruceSchemas.Local.ISelect) => {
 		placeholder,
 		helper,
 		...rest
-	} = props
+	} = stripNulls(props)
 	const parentClass = cx('select text-input__inner', className, {
 		'select-simple': isSimple,
 		'select--has-error': helper?.error
@@ -34,7 +35,7 @@ const Select = (props: SpruceSchemas.Local.ISelect) => {
 
 	return (
 		<div className="select-wrapper">
-			{label && <InputPre id={id} label={label} postLabel={postLabel} />}
+			{label && <Label {...label} />}
 			<div className={parentClass}>
 				<select {...defaultSelectProps} {...rest}>
 					{placeholder && (
@@ -50,7 +51,7 @@ const Select = (props: SpruceSchemas.Local.ISelect) => {
 				</select>
 				{!isSimple && <ArrowIcon className="select__icon" />}
 			</div>
-			{(error || helper) && <InputHelper helper={helper} error={error} />}
+			{helper && <InputHelper {...helper} />}
 		</div>
 	)
 }

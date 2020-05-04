@@ -30,9 +30,7 @@ export default class EventDetails extends Component<
 							'event-details__card-wrapper': item.schemaId === 'cardBuilder'
 						})}
 					>
-						<EventDetailsItem
-							item={item}
-						/>
+						<EventDetailsItem item={item} />
 					</div>
 				))}
 			</div>

@@ -50,7 +50,7 @@ class ImageCropperExample extends Component<
 				width={width}
 				height={height}
 				isCircular={isCircular}
-				dropzoneProps={{
+				dropzone={{
 					id: 'dropzone',
 					onDrop: () => console.log('onDrop'),
 					onDragEnter: () => console.log('onDragEnter'),
@@ -86,7 +86,7 @@ stories
 			width={number('width', 160)}
 			height={number('height', 160)}
 			isCircular={boolean('isCircular', true)}
-			dropzoneProps={{
+			dropzone={{
 				id: 'dropzone',
 				onDrop: () => console.log('onDrop'),
 				onDragEnter: () => console.log('onDragEnter'),

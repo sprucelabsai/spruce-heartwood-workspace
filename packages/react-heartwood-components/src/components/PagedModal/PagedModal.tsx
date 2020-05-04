@@ -3,7 +3,6 @@ import cx from 'classnames'
 import Modal, { IModalProps } from '../Modal/Modal'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-
 interface IModalPageProps {
 	/** The title for this page */
 	title: string

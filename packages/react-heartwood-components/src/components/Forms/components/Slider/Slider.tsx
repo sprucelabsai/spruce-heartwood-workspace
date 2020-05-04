@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas, stripNulls } from '@sprucelabs/heartwood-skill'
 import Label from '../Label/Label'
 
 interface ISliderState {
@@ -24,14 +24,13 @@ export default class Slider extends Component<
 		const { uncontrolledValue } = this.state
 		const {
 			label,
-			id,
 			min,
 			max,
 			value,
 			onChange,
 			isDisabled,
 			...rest
-		} = this.props
+		} = stripNulls(this.props)
 
 		const styles: Record<string, string | number> = {
 			'--min': min,

@@ -12,7 +12,7 @@ import Icon from '../../../Icon/Icon'
 
 interface IAutosuggestInterfaceState {
 	value: string
-	suggestions?: any[]
+	suggestions?: Record<string, any>[] | null | undefined
 	showClearButton: boolean
 	containerPlacement: {
 		top: number
@@ -25,7 +25,6 @@ interface IThemeProps {
 	isSmall?: boolean
 	hasIcon?: boolean
 }
-
 
 const theme = (props: IThemeProps): any => ({
 	container: cx('text-input', {
@@ -54,7 +53,7 @@ interface IAutoSuggestRef extends React.RefObject<ReactAutosuggest> {
 const defaults = defaultProps(SpruceSchemas.Local.Autosuggest.definition)
 
 export default class Autosuggest extends Component<
-	SpruceSchemas.Local.IAutosuggest & typeof defaults,
+	SpruceSchemas.Local.IAutosuggest,
 	IAutosuggestInterfaceState
 > {
 	private static defaultProps = defaults
@@ -64,7 +63,9 @@ export default class Autosuggest extends Component<
 
 	private debouncedResize = debounce(() => this.handleWindowResize(), 500)
 
-	public constructor(props: SpruceSchemas.Local.IAutosuggest & typeof defaults) {
+	public constructor(
+		props: SpruceSchemas.Local.IAutosuggest & typeof defaults
+	) {
 		super(props)
 
 		this.domNodeRef = React.createRef()
@@ -104,11 +105,8 @@ export default class Autosuggest extends Component<
 		} = this.state
 
 		const {
-			getSuggestionValue = (suggestion: Record<string, any>) =>
-				`missing getter`,
-			renderSuggestion = (suggestion: Record<string, any>) => (
-				<div>Not finished</div>
-			),
+			getSuggestionValue,
+			renderSuggestion,
 			onSuggestionSelected,
 			placeholder,
 			label,
@@ -244,7 +242,7 @@ export default class Autosuggest extends Component<
 		// Do some stuff to get suggestions
 		// May be async/passed by parent
 		const { getSuggestions } = this.props
-		const suggestions = getSuggestions && await getSuggestions(value)
+		const suggestions = getSuggestions && (await getSuggestions(value))
 		await this.setState({
 			suggestions: suggestions || []
 		})

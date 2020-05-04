@@ -1,7 +1,6 @@
 import {
 	SpruceSchemas,
 	buildEventDetailsItem,
-	ComponentUnion,
 	buildEventDetails
 } from '@sprucelabs/heartwood-skill'
 
@@ -329,7 +328,7 @@ export const appointmentDetails = buildEventDetails({
 	]
 })
 
-const warningAppointmentDetails = buildEventDetails({
+export const warningAppointmentDetails = buildEventDetails({
 	items: [
 		{
 			schemaId: 'list',

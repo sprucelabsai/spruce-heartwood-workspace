@@ -8,8 +8,7 @@ import SprucebotAvatar from '../SprucebotAvatar/SprucebotAvatar'
 import {
 	SpruceSchemas,
 	defaultProps,
-	definitionChoicesToHash,
-	selectChoicesToHash
+	definitionChoicesToHash
 } from '@sprucelabs/heartwood-skill'
 
 type Message = SpruceSchemas.Local.ISprucebotTypedMessage
@@ -21,10 +20,11 @@ export interface ISprucebotTypedMessageState {
 	sentenceQueue: Sentence[]
 }
 
-const SIZE_MAP = selectChoicesToHash(
-	SpruceSchemas.Local.SprucebotTypedMessage.definition.fields.size.options
-		.choices
+const SIZE_MAP = definitionChoicesToHash(
+	SpruceSchemas.Local.SprucebotTypedMessage.definition,
+	'size'
 )
+
 const defaults = defaultProps(
 	SpruceSchemas.Local.SprucebotTypedMessage.definition
 )

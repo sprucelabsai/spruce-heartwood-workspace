@@ -6,9 +6,7 @@ import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 const defaults = defaultProps(SpruceSchemas.Local.SkillView.definition)
 
-export const SkillViewBuilder = (
-	props: SpruceSchemas.Local.ISkillView
-) => {
+export const SkillView = (props: SpruceSchemas.Local.ISkillView) => {
 	const {
 		children,
 		isCentered,
@@ -30,14 +28,15 @@ export const SkillViewBuilder = (
 				{header && <SkillViewHeader {...header} />}
 				{children && <SkillViewContent>{children}</SkillViewContent>}
 			</div>
-			{sidebarChildren && <div className={'page__sidebar'}>{sidebarChildren}</div>}
+			{sidebarChildren && (
+				<div className={'page__sidebar'}>{sidebarChildren}</div>
+			)}
 		</div>
 	)
 }
 
-SkillViewBuilder.Header = SkillViewHeader
-SkillViewBuilder.Content = SkillViewContent
+SkillView.Header = SkillViewHeader
+SkillView.Content = SkillViewContent
+SkillView.defaultProps = defaults
 
-SkillViewBuilder.defaultProps = defaults
-
-export default SkillViewBuilder
+export default SkillView

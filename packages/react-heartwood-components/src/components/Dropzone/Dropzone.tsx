@@ -2,11 +2,7 @@ import React, { Component, Fragment } from 'react'
 import ReactDropzone, { DropEvent } from 'react-dropzone'
 import cx from 'classnames'
 import Button from '../Button/Button'
-import {
-	SpruceSchemas,
-	defaultProps,
-	IFileFieldValue
-} from '@sprucelabs/heartwood-skill'
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 import DefaultIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-upload.svg'
 import UploadedIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-check.svg'
 import DropIcon from '../../../static/assets/icons/Interface-Essential/Select/cursor-select-4.svg'
@@ -66,7 +62,7 @@ export default class Dropzone extends Component<
 			onDrop(acceptedFiles, rejectedFiles, event)
 		}
 	}
-	public onDropped = (files: IFileFieldValue[], event: DropEvent) => {
+	public onDropped = (files: File[], event: DropEvent) => {
 		const { onDropped } = this.props
 		if (onDropped) {
 			onDropped(files, event)
@@ -75,7 +71,7 @@ export default class Dropzone extends Component<
 			userCanDrop: false
 		})
 	}
-	public onDropRejected = (files?: IFileFieldValue[], event?: DropEvent) => {
+	public onDropRejected = (files?: File[], event?: DropEvent) => {
 		const { onDropRejected } = this.props
 		if (onDropRejected) {
 			onDropRejected(files, event)
@@ -92,15 +88,13 @@ export default class Dropzone extends Component<
 	}
 	public render() {
 		const {
-			id,
 			label,
-			buttonText,
+			uploadButtonText,
 			errorMessage,
 			isSmall,
 			isCircular,
 			fileWasUploaded,
 			uploadProgress,
-			defaultIcon,
 			...rest
 		} = this.props
 
@@ -149,7 +143,7 @@ export default class Dropzone extends Component<
 										{fileWasUploaded ? (
 											<UploadedIcon className="dropzone__icon dropzone__did-upload-icon" />
 										) : (
-											defaultIcon || <DefaultIcon className="dropzone__icon" />
+											<DefaultIcon className="dropzone__icon" />
 										)}
 									</Fragment>
 								)}
@@ -163,7 +157,7 @@ export default class Dropzone extends Component<
 							<Button
 								kind={isSmall ? 'simple' : 'secondary'}
 								isSmall={isSmall}
-								text={buttonText}
+								text={uploadButtonText}
 								className="dropzone__btn"
 								isDisabled={!!uploadProgress}
 							/>
