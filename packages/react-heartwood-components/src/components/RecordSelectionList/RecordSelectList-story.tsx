@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import { map, sampleSize } from 'lodash'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, boolean, select, text } from '@storybook/addon-knobs/react'
+import {
+	withKnobs,
+	boolean,
+	select,
+	text,
+	object
+} from '@storybook/addon-knobs/react'
 
 import { generateLocations } from '../../../.storybook/data/tableData'
 import RecordSelectionList, {
@@ -151,9 +157,9 @@ class RecordListItemsExample extends Component<
 						: undefined
 				}
 				noSearchResultsEmptyState={{
-					headline: "Nothin' here...",
-					icon: 'no_matches',
-					primaryAction: {
+					heading: "Nothin' here...",
+					icon: { name: 'no_matches' },
+					primaryButton: {
 						text: "Show all, y'all!"
 					}
 				}}
@@ -259,14 +265,13 @@ stories.add('Empty State', () => (
 					unselectableIds={[]}
 					loadRecordListItems={async () => []}
 					noDataEmptyState={{
-						headline: text('emptyState:headline', 'Nothing to see here'),
-						subheadline: text(
+						heading: text('emptyState:headline', 'Nothing to see here'),
+						subheading: text(
 							'emptyState:subheadline',
 							'There is none of that here'
 						),
-						icon: text('emptyState:icon', 'team'),
-						isLineIcon: true,
-						primaryAction: {
+						icon: object('icon', { name: 'text', isLineIcon: true }),
+						primaryButton: {
 							text: text(
 								'emptyState:primaryAction text',
 								'Do something about it'
@@ -331,9 +336,9 @@ class RecordSelectionListSearchExample extends Component<
 				canSearch
 				maxRowsVisible={5}
 				noSearchResultsEmptyState={{
-					headline: "Nothin' here...",
-					icon: 'no_matches',
-					primaryAction: {
+					heading: "Nothin' here...",
+					icon: { name: 'no_matches' },
+					primaryButton: {
 						text: "Show all, y'all!"
 					}
 				}}

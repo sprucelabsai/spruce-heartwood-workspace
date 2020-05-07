@@ -49,7 +49,7 @@ export default class ExpandableListItem extends Component<
 						onClick: this.toggleExpanded
 					}
 				]}
-				onClick={onClick}
+				onClick={e => onClick?.(e as any)}
 			/>
 		)
 	}

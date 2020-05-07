@@ -14,19 +14,19 @@ import { ISchemaFieldDefinition, SchemaField } from '@sprucelabs/schema'
 import { ISelectFieldDefinition, SelectField } from '@sprucelabs/schema'
 import { ITextFieldDefinition, TextField } from '@sprucelabs/schema'
 import CallbackField, { ICallbackFieldDefinition } from '#spruce/../src/fields/CallbackField'
-import ElementField, { IElementFieldDefinition } from '#spruce/../src/fields/ElementField'
+import ElementTypeField, { IElementTypeFieldDefinition } from '#spruce/../src/fields/ElementTypeField'
 import EventCallbackField, { IEventCallbackFieldDefinition } from '#spruce/../src/fields/EventCallbackField'
 import NodeField, { INodeFieldDefinition } from '#spruce/../src/fields/NodeField'
 
 
 /** Field definition union */
-export type FieldDefinition = | IAddressFieldDefinition| IBooleanFieldDefinition| IDateFieldDefinition| IDateTimeFieldDefinition| IDurationFieldDefinition| IFileFieldDefinition| IIdFieldDefinition| INumberFieldDefinition| IPhoneFieldDefinition| IRawFieldDefinition| ISchemaFieldDefinition| ISelectFieldDefinition| ITextFieldDefinition| ICallbackFieldDefinition| IElementFieldDefinition| IEventCallbackFieldDefinition| INodeFieldDefinition
+export type FieldDefinition = | IAddressFieldDefinition| IBooleanFieldDefinition| IDateFieldDefinition| IDateTimeFieldDefinition| IDurationFieldDefinition| IFileFieldDefinition| IIdFieldDefinition| INumberFieldDefinition| IPhoneFieldDefinition| IRawFieldDefinition| ISchemaFieldDefinition| ISelectFieldDefinition| ITextFieldDefinition| ICallbackFieldDefinition| IElementTypeFieldDefinition| IEventCallbackFieldDefinition| INodeFieldDefinition
 
 /** Field class union */
-export type FieldClass = | typeof AddressField| typeof BooleanField| typeof DateField| typeof DateTimeField| typeof DurationField| typeof FileField| typeof IdField| typeof NumberField| typeof PhoneField| typeof RawField| typeof SchemaField| typeof SelectField| typeof TextField| typeof CallbackField| typeof ElementField| typeof EventCallbackField| typeof NodeField
+export type FieldClass = | typeof AddressField| typeof BooleanField| typeof DateField| typeof DateTimeField| typeof DurationField| typeof FileField| typeof IdField| typeof NumberField| typeof PhoneField| typeof RawField| typeof SchemaField| typeof SelectField| typeof TextField| typeof CallbackField| typeof ElementTypeField| typeof EventCallbackField| typeof NodeField
 
 /** Field instance union **/
-export type Field = | AddressField| BooleanField| DateField| DateTimeField| DurationField| FileField| IdField| NumberField| PhoneField| RawField| SchemaField| SelectField| TextField| CallbackField| ElementField| EventCallbackField| NodeField
+export type Field = | AddressField| BooleanField| DateField| DateTimeField| DurationField| FileField| IdField| NumberField| PhoneField| RawField| SchemaField| SelectField| TextField| CallbackField| ElementTypeField| EventCallbackField| NodeField
 
 
 /** Type for looking up field definitions by field type */
@@ -45,7 +45,7 @@ export type FieldDefinitionMap = {
 	[FieldType.Select]: ISelectFieldDefinition
 	[FieldType.Text]: ITextFieldDefinition
 	[FieldType.Callback]: ICallbackFieldDefinition
-	[FieldType.Element]: IElementFieldDefinition
+	[FieldType.ElementType]: IElementTypeFieldDefinition
 	[FieldType.EventCallback]: IEventCallbackFieldDefinition
 	[FieldType.Node]: INodeFieldDefinition
 }

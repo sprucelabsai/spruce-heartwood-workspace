@@ -2,13 +2,14 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, number, select, boolean } from '@storybook/addon-knobs'
 import BigForm, { BigFormTransitionStyle } from './BigForm'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const stories = storiesOf('BigForm', module)
 
 stories.addDecorator(withKnobs)
 
 interface IControllerProps {
-	transitionStyle: BigFormTransitionStyle
+	transitionStyle: SpruceSchemas.Local.IBigForm['transitionStyle']
 	useOneSprucebot: boolean
 }
 interface IControllerState {
@@ -41,11 +42,13 @@ class Controller extends React.Component<IControllerProps, IControllerState> {
 			<BigForm
 				useOneSprucebot={useOneSprucebot}
 				currentSlide={currentSlide}
-				canGoBack={currentSlide > 0}
-				canGoNext={currentSlide < totalSlides - 1}
-				onBack={this.handleBack}
-				onNext={this.handleNext}
-				transitionStyle={transitionStyle}
+				controls={{
+					canGoBack: currentSlide > 0,
+					canGoNext: currentSlide < totalSlides - 1,
+					onBack: this.handleBack,
+					onNext: this.handleNext
+				}}
+				transitionStyle={transitionStyle ?? undefined}
 			>
 				<BigForm.Slide>
 					<BigForm.SlideHeader question="What is your first name?" />
@@ -73,8 +76,10 @@ class Controller extends React.Component<IControllerProps, IControllerState> {
 stories.add('BigForm', () => (
 	<BigForm
 		currentSlide={number('currentSlide', 0)}
-		canGoNext={false}
-		canGoBack={false}
+		controls={{
+			canGoBack: false,
+			canGoNext: false
+		}}
 		useOneSprucebot={boolean('useOneSprucebot', false)}
 		transitionStyle={select(
 			'transitionStyle',

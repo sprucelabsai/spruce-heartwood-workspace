@@ -28,8 +28,8 @@ export enum FieldType {
 	Text = 'text',
 	/** Set my signature to \'(someArg: SomeType, maybeOption?: boolean) => Promise<AnotherType>\' and I\'ll do the rest! */
 	Callback = 'callback',
-	/** A React.Element */
-	Element = 'element',
+	/** A React.ElementType (you can use it as a jsx element) */
+	ElementType = 'elementType',
 	/** A universal event handler */
 	EventCallback = 'eventCallback',
 	/** A React.Node */

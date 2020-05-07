@@ -114,7 +114,7 @@ const buttonDefinition = buildSchemaDefinition({
 			label: 'On click handler',
 			options: {
 				event: 'React.MouseEvent<...>',
-				element: 'HTMLInputElement'
+				element: 'Element'
 			}
 		},
 		children: {
@@ -122,9 +122,14 @@ const buttonDefinition = buildSchemaDefinition({
 			isPrivate: true
 		},
 		AnchorComponent: {
-			type: FieldType.Element,
+			type: FieldType.ElementType,
 			hint: 'Lets you override the element used when rendering a link',
 			isPrivate: true
+		},
+		target: {
+			type: FieldType.Text,
+			label: 'Target',
+			hint: '_blank|_self|_parent|_top|framename'
 		}
 	}
 })

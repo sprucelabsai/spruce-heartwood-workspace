@@ -99,9 +99,7 @@ const Button = (props: SpruceSchemas.Local.IButton): React.ReactElement => {
 		throw new Error('what the?')
 	}
 
-	// TODO why does this have to be ignored?
 	const anchor = (
-		//@ts-ignore
 		<AnchorComponent
 			href={href}
 			className={btnClass}

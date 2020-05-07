@@ -60,7 +60,8 @@ const contextMenuDefinition = buildSchemaDefinition({
 		closeOnSelect: {
 			type: FieldType.Boolean,
 			label: 'Close on select',
-			hint: 'Set to true makes the menu close when any option is selected'
+			hint: 'Set to true makes the menu close when any option is selected',
+			defaultValue: true
 		},
 		className: {
 			type: FieldType.Text,

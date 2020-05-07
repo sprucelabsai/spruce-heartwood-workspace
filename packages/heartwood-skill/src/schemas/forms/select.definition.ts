@@ -15,6 +15,10 @@ const selectDefinition = buildSchemaDefinition({
 			label: 'Simple',
 			hint: 'Render a simpler variation'
 		},
+		isDisabled: {
+			type: FieldType.Boolean,
+			label: 'Disabled'
+		},
 		className: {
 			type: FieldType.Text,
 			isPrivate: true

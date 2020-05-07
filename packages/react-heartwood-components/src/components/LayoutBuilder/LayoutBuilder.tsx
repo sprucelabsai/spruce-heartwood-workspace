@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Button from '../Button/Button'
 import { CardBuilder } from '../Card'
 import LayoutSpacing from '../Layout/components/LayoutSpacing/LayoutSpacing'
@@ -7,10 +7,8 @@ import SidebarHeader from '../Core/components/Sidebar/components/SidebarHeader/S
 import SidebarSection from '../Core/components/Sidebar/components/SidebarSection/SidebarSection'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export const LayoutBuilder = ({
-	items
-}: SpruceSchemas.Local.ILayoutBuilder) => (
-	<div>
+const LayoutBuilder = ({ items }: SpruceSchemas.Local.ILayoutBuilder) => (
+	<Fragment>
 		{items &&
 			items.map(item => {
 				if (item) {
@@ -29,5 +27,7 @@ export const LayoutBuilder = ({
 					}
 				}
 			})}
-	</div>
+	</Fragment>
 )
+
+export default LayoutBuilder

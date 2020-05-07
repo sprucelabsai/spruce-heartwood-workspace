@@ -1,11 +1,12 @@
 import React, { Component, Fragment, ReactElement } from 'react'
 import cx from 'classnames'
 
-import Button, { ButtonKinds, ButtonOnClick } from '../Button/Button'
+import Button from '../Button/Button'
 import EmptyState from '../EmptyState/EmptyState'
 import RecordSelectionList from '../RecordSelectionList/RecordSelectionList'
 
 import { IRecordSelectionListItemProps } from '../RecordSelectionList/RecordSelectionList'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ITruncatedListProps {
 	/** Optional class name for the component */
@@ -21,7 +22,7 @@ interface ITruncatedListProps {
 	truncatedActionText?: string
 
 	/** Method called when truncated action is clicked */
-	onClickTruncatedAction?: ButtonOnClick
+	onClickTruncatedAction?: SpruceSchemas.Local.IButton['onClick']
 
 	/** RecordSelectionListItems to be displayed in the list */
 	recordSelectionListItems: IRecordSelectionListItemProps[]
@@ -101,7 +102,7 @@ export default class TruncatedList extends Component<
 		return (
 			<div className={parentClass}>
 				{!recordSelectionListItems || recordSelectionListItems.length === 0 ? (
-					<EmptyState headline="" subheadline={noItemsText} />
+					<EmptyState heading="" subheading={noItemsText} />
 				) : (
 					<Fragment>
 						{header && <h3 className="truncated-list__header">{header}</h3>}
@@ -128,7 +129,7 @@ export default class TruncatedList extends Component<
 						{isTruncated ? (
 							<div className="truncated-list__action-btn-wrapper">
 								<Button
-									kind={ButtonKinds.Simple}
+									kind={'simple'}
 									className="truncated-list__action-btn"
 									isSmall={true}
 									text={truncatedActionText || 'See all'}

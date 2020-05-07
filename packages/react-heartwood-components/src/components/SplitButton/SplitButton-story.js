@@ -4,7 +4,7 @@ import { withKnobs, text } from '@storybook/addon-knobs/react'
 
 import SplitButton from './SplitButton'
 
-const actions = [
+const buttons = [
 	{
 		text: 'Another action',
 		onClick: () => console.log('CLICK')
@@ -27,7 +27,7 @@ stories
 			defaultAction={{
 				text: text('defaultActionText', 'Do the default action')
 			}}
-			actions={actions}
+			buttons={buttons}
 			kind="primary"
 		/>
 	))
@@ -36,7 +36,7 @@ stories
 			defaultAction={{
 				text: text('defaultActionText', 'Do the default action')
 			}}
-			actions={actions}
+			buttons={buttons}
 			kind="primary"
 			isSmall
 		/>
@@ -46,7 +46,7 @@ stories
 			defaultAction={{
 				text: text('defaultActionText', 'Do the default action')
 			}}
-			actions={actions}
+			buttons={buttons}
 			kind="secondary"
 		/>
 	))
@@ -55,7 +55,7 @@ stories
 			defaultAction={{
 				text: text('defaultActionText', 'Do the default action')
 			}}
-			actions={actions}
+			buttons={buttons}
 			kind="secondary"
 			isSmall
 		/>

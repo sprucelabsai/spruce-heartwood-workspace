@@ -1,18 +1,19 @@
 import React from 'react'
 import cx from 'classnames'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import LayoutBuilder from '../../../LayoutBuilder/LayoutBuilder'
 
 const LayoutSection = (props: SpruceSchemas.Local.ILayoutSection) => {
-	const { className, isSecondary, children, ...rest } = props
+	const { className, isSecondary, children, layoutBuilder } = props
 
 	return (
 		<div
 			className={cx('layout__section', className, {
 				'layout__section--secondary': isSecondary
 			})}
-			{...rest}
 		>
 			{children}
+			{layoutBuilder && <LayoutBuilder {...layoutBuilder} />}
 		</div>
 	)
 }

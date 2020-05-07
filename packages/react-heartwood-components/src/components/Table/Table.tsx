@@ -9,7 +9,7 @@ import Card from '../Card/Card'
 import Pagination from '../Pagination/Pagination'
 import EmptyState from '../EmptyState/EmptyState'
 import ContextMenu from '../ContextMenu/ContextMenu'
-import { IButtonProps } from '../Button/Button'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface ITableProps extends Partial<TableProps> {
 	/** Table data */
@@ -38,7 +38,7 @@ export interface ITableProps extends Partial<TableProps> {
 	paginationProps?: any
 
 	/** Enable bulk actions for selectable tables */
-	bulkActions?: IButtonProps[]
+	bulkActions?: SpruceSchemas.Local.IButton[]
 
 	/** Handle clicking on a row */
 	onClickRow?: (
@@ -184,12 +184,11 @@ export default class Table extends Component<ITableProps, ITableState> {
 								<p className="table-selected-text">{selectedText}</p>
 								{bulkActions && bulkActions.length > 0 && (
 									<ContextMenu
-										actions={bulkActions}
+										buttons={bulkActions}
 										text="Actions"
 										isSimple
 										isTextOnly
-										isLeftAligned
-										closeOnSelectAction
+										closeOnSelect
 									/>
 								)}
 							</Fragment>

@@ -86,8 +86,9 @@ const inclusiveStatuses = buildEventDetailsItem('list', {
 			id: 'status',
 			title: 'Confirmed',
 			selectable: {
-				schemaId: 'checkbox',
+				schemaId: 'listItemCheckbox',
 				values: {
+					id: 'confirmed',
 					isChecked: true
 				}
 			}
@@ -96,8 +97,9 @@ const inclusiveStatuses = buildEventDetailsItem('list', {
 			id: 'checked-in',
 			title: 'Checked in',
 			selectable: {
-				schemaId: 'checkbox',
+				schemaId: 'listItemCheckbox',
 				values: {
+					id: 'checked-in',
 					isChecked: false
 				}
 			}
@@ -112,24 +114,30 @@ const exclusiveStatuses = buildEventDetailsItem('list', {
 			title: 'On time',
 			selectableId: 'onTime',
 			selectable: {
-				schemaId: 'radio',
-				values: {}
+				schemaId: 'listItemRadio',
+				values: {
+					id: 'onTime'
+				}
 			}
 		},
 		{
 			id: 'late',
 			title: 'Late',
 			selectable: {
-				schemaId: 'radio',
-				values: {}
+				schemaId: 'listItemRadio',
+				values: {
+					id: 'late'
+				}
 			}
 		},
 		{
 			id: 'ghosted',
 			title: 'Ghosted 👻',
 			selectable: {
-				schemaId: 'radio',
-				values: {}
+				schemaId: 'listItemRadio',
+				values: {
+					id: 'ghosted'
+				}
 			}
 		}
 	]
@@ -148,7 +156,9 @@ const statusLists: SpruceSchemas.Local.IList[] = [
 	{
 		selectable: {
 			schemaId: 'checkbox',
-			values: {}
+			values: {
+				id: 'first'
+			}
 		},
 		items: inclusiveStatuses.items,
 		areSeparatorsVisible: false
@@ -491,7 +501,7 @@ export const warningAppointmentDetails = buildEventDetails({
 	]
 })
 
-export const pastAppointment = buildEventDetails({
+export const pastAppointmentDetails = buildEventDetails({
 	items: [
 		{
 			schemaId: 'list',
@@ -603,7 +613,7 @@ export const pastAppointment = buildEventDetails({
 	]
 })
 
-export const lunchBreak = buildEventDetails({
+export const lunchBreakDetails = buildEventDetails({
 	items: [
 		{
 			schemaId: 'list',
@@ -660,7 +670,7 @@ export const lunchBreak = buildEventDetails({
 	]
 })
 
-export const ptoBlock = buildEventDetails({
+export const ptoBlockDetails = buildEventDetails({
 	items: [
 		{
 			schemaId: 'list',

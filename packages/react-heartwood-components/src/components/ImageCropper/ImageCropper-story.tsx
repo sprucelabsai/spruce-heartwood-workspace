@@ -54,19 +54,20 @@ class ImageCropperExample extends Component<
 					id: 'dropzone',
 					onDrop: () => console.log('onDrop'),
 					onDragEnter: () => console.log('onDragEnter'),
-					onDragStart: () => console.log('onDragStart'),
 					onDragOver: () => console.log('onDragOver'),
 					onDragLeave: () => console.log('onDragLeave'),
 					onDropAccepted: this.handleDrop,
-					buttonText: 'Add Image',
+					uploadButtonText: 'Add Image',
 					isSmall: true,
 					isCircular,
-					error: 'Upload an image',
-					defaultIcon: isCircular ? (
-						<AvatarIcon className="dropzone__icon" />
-					) : (
-						<ShopIcon className="dropzone__icon" />
-					)
+					errorMessage: 'Upload an image',
+					defaultIcon: {
+						customIcon: isCircular ? (
+							<AvatarIcon className="dropzone__icon" />
+						) : (
+							<ShopIcon className="dropzone__icon" />
+						)
+					}
 				}}
 				color={[249, 250, 252, 1]}
 			/>
@@ -90,19 +91,20 @@ stories
 				id: 'dropzone',
 				onDrop: () => console.log('onDrop'),
 				onDragEnter: () => console.log('onDragEnter'),
-				onDragStart: () => console.log('onDragStart'),
 				onDragOver: () => console.log('onDragOver'),
 				onDragLeave: () => console.log('onDragLeave'),
 				onDropAccepted: () => console.log('onDropAccepted'),
-				buttonText: 'Add Image',
+				uploadButtonText: 'Add Image',
 				isSmall: true,
 				isCircular: boolean('isCircular', true),
-				error: 'Upload an image',
-				defaultIcon: boolean('isCircular', true) ? (
-					<AvatarIcon className="dropzone__icon" />
-				) : (
-					<ShopIcon className="dropzone__icon" />
-				)
+				errorMessage: 'Upload an image',
+				defaultIcon: {
+					customIcon: boolean('isCircular', true) ? (
+						<AvatarIcon className="dropzone__icon" />
+					) : (
+						<ShopIcon className="dropzone__icon" />
+					)
+				}
 			}}
 			color={[249, 250, 252, 1]}
 		/>

@@ -8,13 +8,11 @@ import {
 	number,
 	select
 } from '@storybook/addon-knobs/react'
-import moment from 'moment'
 import Button from '../Button/Button'
 import {
 	Autosuggest,
 	Checkbox,
 	DatePicker,
-	DomainInput,
 	DurationInput,
 	PhoneInput,
 	Radio,
@@ -67,14 +65,13 @@ stories
 	.add('Autosuggest', () => (
 		<Autosuggest
 			id="suggest"
-			alwaysRenderSuggestions={false}
-			label={text('label', 'Country')}
+			label={object('label', { text: 'Country' })}
 			helper={object('inputHelper', {
 				helper: 'We use this information to improve your shopping experience.'
 			})}
 			placeholder={text('placeholder', 'Select your country')}
 			defaultSuggestions={object('defaultSuggestions', countries)}
-			shouldRenderSuggestions={() => true}
+			shouldRenderSuggestions={true}
 			renderSuggestion={renderSuggestion}
 			getSuggestionValue={value => value.text}
 			getSuggestions={value => {
@@ -100,10 +97,9 @@ stories
 	.add('Autosuggest Search', () => (
 		<Autosuggest
 			id="suggest-search"
-			alwaysRenderSuggestions={false}
 			placeholder={text('placeholder', 'Search countries…')}
 			defaultSuggestions={object('defaultSuggestions', countries)}
-			shouldRenderSuggestions={() => true}
+			shouldRenderSuggestions={true}
 			renderSuggestion={renderSuggestion}
 			getSuggestionValue={value => value.text}
 			getSuggestions={value => {
@@ -132,7 +128,7 @@ stories
 	.add('Duration Input', () => (
 		<DurationInput
 			id="duration"
-			label={'Duration'}
+			label={{ text: 'Duration' }}
 			placeholder={text('placeholder', 'How long is this going to take?')}
 			minMinutes={number('minMinutes', 5)}
 			maxMinutes={number('maxMinutes', 60 * 4)}
@@ -147,16 +143,17 @@ stories
 				type="text"
 				id={text('id', 'input')}
 				name={text('name', 'inputName')}
-				label={text('label', 'First Name')}
-				postLabel={text('postLabel', '')}
+				label={object('label', {
+					text: 'First Name',
+					postLabel: ''
+				})}
 				placeholder={text('placeholder', 'i.e. Annie')}
-				defaultValue={text('defaultValue', '')}
-				error={text('error', '')}
-				helper={text(
-					'helper',
-					'Let me help you understand why we are asking for this.'
-				)}
-				readOnly={boolean('readOnly', false)}
+				value={text('value', '')}
+				helper={object('helper', {
+					hint: 'Let me help you understand why we are asking for this.',
+					error: ''
+				})}
+				isReadOnly={boolean('isReadOnly', false)}
 				isSmall={boolean('isSmall', false)}
 			/>
 		</Fragment>
@@ -166,13 +163,12 @@ stories
 			<TextArea
 				id={text('id', 'input')}
 				name={text('name', 'inputName')}
-				label={text('label', 'Category')}
-				postLabel={text('postLabel', '')}
+				label={object('label', { text: 'Category', postLabel: '' })}
 				placeholder={text('placeholder', 'Optional category description…')}
 				defaultValue={text('defaultValue', '')}
 				error={text('error', '')}
 				helper={text('helper', '')}
-				readOnly={boolean('readOnly', false)}
+				isReadOnly={boolean('isReadOnly', false)}
 				{...object('rest', {})}
 			/>
 		</Fragment>
@@ -180,9 +176,8 @@ stories
 	.add('Search', () => (
 		<Fragment>
 			<Search
-				type="text"
 				placeholder={text('placeholder', 'Search for anything…')}
-				readOnly={boolean('readOnly', false)}
+				isReadOnly={boolean('isReadOnly', false)}
 				isSmall={boolean('isSmall', false)}
 			/>
 		</Fragment>
@@ -190,7 +185,7 @@ stories
 	.add('Phone Number', () => (
 		<Fragment>
 			<PhoneInput
-				label={text('label', 'Phone Number')}
+				label={object('label', { text: 'Phone Number' })}
 				placeholder={text('placeholder', '(555) 555-5555')}
 				isSmall={boolean('isSmall', false)}
 			/>
@@ -198,9 +193,8 @@ stories
 	))
 	.add('Subdomain', () => (
 		<Fragment>
-			<DomainInput
-				id="shopify"
-				label={text('label', 'Shopify Store URL')}
+			<TextInput
+				label={object('label', { text: 'Shopify Store URL' })}
 				placeholder={text('placeholder', 'my-spruce-org')}
 				appendix={text('appendix', '.spruce.ai')}
 			/>
@@ -211,20 +205,23 @@ stories
 			<Radio
 				id="option-one"
 				name="radio"
-				label={text('label: option one', 'Option One')}
-				postText={text('postText: option one', '')}
+				label={object('label', { text: 'Option One', postText: 'option one' })}
 			/>
 			<Radio
 				id="option-two"
 				name="radio"
-				label={text('label: option two', 'Option Two')}
-				postText={text('postText: option two', '')}
+				label={object('label', {
+					text: 'label: option two',
+					postText: 'Option Two'
+				})}
 			/>
 			<Radio
 				id="option-three"
 				name="radio"
-				label={text('label: option three', 'Option Three')}
-				postText={text('postText: option three', '')}
+				label={object('label', {
+					text: 'label: option three',
+					postText: 'Option Three'
+				})}
 			/>
 		</Fragment>
 	))
@@ -233,23 +230,29 @@ stories
 			<Checkbox
 				id="option-one"
 				name="optionOne"
-				label={text('label: option one', 'Option One')}
-				postText={text('postText: option one', 'Post text one')}
-				disabled={boolean('disabled: option one', false)}
+				label={object('label', {
+					text: 'Option One',
+					postLabel: 'Post text one'
+				})}
+				isDisabled={boolean('isDisabled: option one', false)}
 			/>
 			<Checkbox
 				id="option-two"
 				name="optionTwo"
-				label={text('label: option two', 'Option Two')}
-				postText={text('postText: option two', 'Post text two')}
-				disabled={boolean('disabled: option two', false)}
+				label={object('label', {
+					text: 'label: option two',
+					postText: 'Option Two'
+				})}
+				isDisabled={boolean('isDisabled: option two', false)}
 			/>
 			<Checkbox
 				id="option-three"
 				name="optionThree"
-				label={text('label: option three', 'Option Three')}
-				postText={text('postText: option three', 'Post text three')}
-				disabled={boolean('disabled: option three', false)}
+				label={object('label', {
+					text: 'label: option three',
+					postText: 'Option Three'
+				})}
+				isDisabled={boolean('isDisabled: option three', false)}
 				isIndeterminate
 			/>
 		</Fragment>
@@ -259,7 +262,7 @@ stories
 			<Toggle
 				id={text('id', 'toggle')}
 				name={text('name', 'toggle')}
-				postText={text('postText', '')}
+				label={{ text: '', postLabel: '' }}
 				className={text('className', '')}
 			/>
 		</Fragment>
@@ -285,8 +288,7 @@ stories
 				min={number('min', 0)}
 				max={number('max', 200)}
 				value={number('value', 100)}
-				label={text('label', 'Scale')}
-				postLabel={text('postLabel', '100%')}
+				label={object('label', { text: 'Scale', postLabel: '100%' })}
 			/>
 		</Fragment>
 	))
@@ -298,7 +300,7 @@ stories
 			</p>
 
 			<Select
-				label={text('label', 'Country')}
+				label={object('label', { text: 'Country' })}
 				placeholder={text('placeholder', 'Select something...')}
 				id={text('id', 'country')}
 				options={object('options', {
@@ -307,9 +309,10 @@ stories
 					nj: 'New Jersey'
 				})}
 				isSimple={boolean('isSimple', false)}
-				helper={text('helper', '')}
-				error={text('error', '')}
-				disabled={boolean('disabled', false)}
+				helper={object('helper', {
+					error: ''
+				})}
+				isDisabled={boolean('isDisabled', false)}
 			/>
 		</Fragment>
 	))
@@ -324,7 +327,7 @@ stories
 			onSelectDateRange={({ startDate, endDate }) =>
 				console.log(startDate, endDate)
 			}
-			isDayBlocked={day => day.isBefore(moment().startOf('day'))}
+			// IsDayBlocked={day => day.isBefore(moment().startOf('day'))}
 		/>
 	))
 	.add('Stars', () => <Stars />)
@@ -336,7 +339,7 @@ stories
 				<TextInput
 					id="biz-name"
 					type="text"
-					label="Name of Business"
+					label={{ text: 'Name of Business' }}
 					placeholder="e.g. Annie's Bagels"
 				/>
 			</FormLayoutItem>
@@ -345,7 +348,7 @@ stories
 					<TextInput
 						id="first"
 						type="text"
-						label="First Name"
+						label={{ text: 'First Name' }}
 						placeholder="e.g. Annie"
 					/>
 				</FormLayoutItem>
@@ -353,20 +356,24 @@ stories
 					<TextInput
 						id="last"
 						type="text"
-						label="Last Name"
+						label={{ text: 'Last Name' }}
 						placeholder="e.g. Smith"
 					/>
 				</FormLayoutItem>
 			</FormLayoutGroup>
 			<FormLayoutGroup isCondensed>
 				<FormLayoutItem>
-					<TextInput id="price" type="text" label="Price" />
+					<TextInput id="price" type="text" label={{ text: 'Price' }} />
 				</FormLayoutItem>
 				<FormLayoutItem>
-					<TextInput id="duration" type="text" label="Duration" />
+					<TextInput id="duration" type="text" label={{ text: 'Duration' }} />
 				</FormLayoutItem>
 				<FormLayoutItem>
-					<TextInput id="commission" type="text" label="Commission" />
+					<TextInput
+						id="commission"
+						type="text"
+						label={{ text: 'Commission' }}
+					/>
 				</FormLayoutItem>
 			</FormLayoutGroup>
 		</FormLayout>

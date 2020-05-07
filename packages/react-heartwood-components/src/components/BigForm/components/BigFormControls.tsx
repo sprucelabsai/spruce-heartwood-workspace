@@ -1,23 +1,10 @@
 import React from 'react'
 import cx from 'classnames'
 import Button from '../../Button/Button'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-export interface IBigFormControlsProps {
-	/** Is back button enabled? */
-	canGoBack?: boolean
-
-	/** Is next button enabled */
-	canGoNext?: boolean
-
-	/** When back is clicked */
-	onBack?: () => void
-
-	/** When next is clicked */
-	onNext?: () => void
-}
-
-const BigFormControls: React.StatelessComponent<IBigFormControlsProps> = (
-	props: IBigFormControlsProps
+const BigFormControls: React.StatelessComponent<SpruceSchemas.Local.IBigFormControls> = (
+	props
 ): React.ReactElement => {
 	return (
 		<div className={cx('controls-wrapper', {})}>
@@ -25,12 +12,12 @@ const BigFormControls: React.StatelessComponent<IBigFormControlsProps> = (
 				<Button
 					icon={{ name: 'arrow_back' }}
 					isDisabled={!props.canGoBack}
-					htmlAttributes={{ onClick: props.onBack }}
+					onClick={props.onBack}
 				/>
 				<Button
 					icon={{ name: 'arrow_forward' }}
 					isDisabled={!props.canGoNext}
-					htmlAttributes={{ onClick: props.onNext }}
+					onClick={props.onNext}
 				/>
 			</div>
 		</div>

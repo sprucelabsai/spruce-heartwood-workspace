@@ -4,7 +4,6 @@ import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
 import Toast from './Toast'
 import ToastWrapper from './components/ToastWrapper/ToastWrapper'
-import { ButtonKinds } from '../Button/Button'
 
 const stories = storiesOf('Toast', module)
 
@@ -86,7 +85,7 @@ class Toaster extends Component<IToasterProps, IToasterState> {
 		return (
 			<div>
 				<ButtonGroup
-					actions={[
+					buttons={[
 						{
 							text: 'Add Toast',
 							onClick: () => this.addToast('neutral')
@@ -100,12 +99,12 @@ class Toaster extends Component<IToasterProps, IToasterState> {
 							onClick: () => this.addToast('negative')
 						},
 						{
-							kind: ButtonKinds.Secondary,
+							kind: 'secondary',
 							text: 'Add Warning Toast',
 							onClick: () => this.addToast('warn')
 						},
 						{
-							kind: ButtonKinds.Secondary,
+							kind: 'secondary',
 							text: 'Add Info Toast',
 							onClick: () => this.addToast('info')
 						}
@@ -133,7 +132,7 @@ stories
 			headline={text('headline', 'Neat')}
 			text={text('text', 'Something just happened and it was fine.')}
 			onRemove={() => null}
-			onAction={() => null}
+			onClickFollowup={() => null}
 			followupText={boolean('followupAction', false) ? 'Undo' : undefined}
 		/>
 	))
@@ -147,7 +146,7 @@ stories
 						headline={text('headline', 'Neat') + ' ' + kind + ' toast'}
 						text={text('text', 'Something just happened and it was fine.')}
 						onRemove={() => null}
-						onAction={() => null}
+						onClickFollowup={() => null}
 						followupText={boolean('followupAction', false) ? 'Undo' : undefined}
 					/>
 				</div>

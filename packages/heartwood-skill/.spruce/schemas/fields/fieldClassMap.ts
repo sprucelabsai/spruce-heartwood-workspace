@@ -15,7 +15,7 @@ import { SchemaField } from '@sprucelabs/schema'
 import { SelectField } from '@sprucelabs/schema'
 import { TextField } from '@sprucelabs/schema'
 import CallbackField from '#spruce/../src/fields/CallbackField'
-import ElementField from '#spruce/../src/fields/ElementField'
+import ElementTypeField from '#spruce/../src/fields/ElementTypeField'
 import EventCallbackField from '#spruce/../src/fields/EventCallbackField'
 import NodeField from '#spruce/../src/fields/NodeField'
 
@@ -36,7 +36,7 @@ export const FieldClassMap: Record<FieldType, FieldClass> = {
 		[FieldType.Select]: SelectField,
 		[FieldType.Text]: TextField,
 		[FieldType.Callback]: CallbackField,
-		[FieldType.Element]: ElementField,
+		[FieldType.ElementType]: ElementTypeField,
 		[FieldType.EventCallback]: EventCallbackField,
 		[FieldType.Node]: NodeField,
 }
@@ -57,7 +57,7 @@ export interface IFieldClassMap {
 		[FieldType.Select]: SelectField,
 		[FieldType.Text]: TextField,
 		[FieldType.Callback]: CallbackField,
-		[FieldType.Element]: ElementField,
+		[FieldType.ElementType]: ElementTypeField,
 		[FieldType.EventCallback]: EventCallbackField,
 		[FieldType.Node]: NodeField,
 }

@@ -1,4 +1,5 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import iconDefinition from './icon.definition'
 
 const dragCallback = `(event?: React.DragEvent<HTMLElement>) => void`
 
@@ -61,16 +62,6 @@ const dropzoneDefinition = buildSchemaDefinition({
 				) => void`
 			}
 		},
-		onDropped: {
-			type: FieldType.Raw,
-			label: 'On drop',
-			options: {
-				valueType: `(
-					files: File[],
-					event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
-				) => void`
-			}
-		},
 		onDropAccepted: {
 			type: FieldType.Raw,
 			options: {
@@ -89,12 +80,6 @@ const dropzoneDefinition = buildSchemaDefinition({
 			type: FieldType.Raw,
 			options: {
 				valueType: '() => void'
-			}
-		},
-		onDragStart: {
-			type: FieldType.Raw,
-			options: {
-				valueType: '(...args: any) => void'
 			}
 		},
 		label: {
@@ -126,6 +111,14 @@ const dropzoneDefinition = buildSchemaDefinition({
 			label: 'Accept types',
 			isArray: true,
 			defaultValue: ['image/*']
+		},
+		defaultIcon: {
+			type: FieldType.Schema,
+			label: 'Default icon',
+			hint: 'The icon shown before anything is dropped.',
+			options: {
+				schema: iconDefinition
+			}
 		}
 	}
 })

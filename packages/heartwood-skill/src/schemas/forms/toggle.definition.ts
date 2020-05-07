@@ -1,5 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import inputHelperDefinition from './inputHelper.definition'
+import labelDefinition from './label.definition'
 
 const toggleDefinition = buildSchemaDefinition({
 	id: 'Toggle',
@@ -17,6 +18,13 @@ const toggleDefinition = buildSchemaDefinition({
 		className: {
 			type: FieldType.Text,
 			isPrivate: true
+		},
+		label: {
+			type: FieldType.Schema,
+			label: 'Label',
+			options: {
+				schema: labelDefinition
+			}
 		},
 		helper: {
 			type: FieldType.Schema,

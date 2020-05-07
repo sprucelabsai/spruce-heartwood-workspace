@@ -275,7 +275,7 @@ stories
 							placeholder="Search locations…"
 							getSuggestions={val => {
 								console.log(val)
-								return null
+								return []
 							}}
 							getSuggestionValue={suggestion => {
 								console.log(suggestion)

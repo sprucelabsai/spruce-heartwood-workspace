@@ -2,10 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, select } from '@storybook/addon-knobs'
 import SprucebotAvatar from './SprucebotAvatar'
-import {
-	IHWSprucebotAvatarStateOfMind,
-	IHWSprucebotAvatarSize
-} from '@sprucelabs/spruce-types'
 
 const stories = storiesOf('SprucebotAvatar', module)
 
@@ -17,28 +13,21 @@ stories.add('SprucebotAvatar', () => (
 		size={select(
 			'size',
 			{
-				['IHWSprucebotAvatarSize.Small']: IHWSprucebotAvatarSize.Small,
-				['IHWSprucebotAvatarSize.Medium']: IHWSprucebotAvatarSize.Medium,
-				['IHWSprucebotAvatarSize.Large']: IHWSprucebotAvatarSize.Large
+				small: 'small',
+				medium: 'medium',
+				large: 'large'
 			},
-			IHWSprucebotAvatarSize.Medium
+			'medium'
 		)}
 		stateOfMind={select(
 			'stateOfMind',
 			{
-				['IHWSprucebotAvatarStateOfMind.Chill']:
-					IHWSprucebotAvatarStateOfMind.Chill,
-
-				['IHWSprucebotAvatarStateOfMind.Contemplative']:
-					IHWSprucebotAvatarStateOfMind.Contemplative,
-
-				['IHWSprucebotAvatarStateOfMind.Curious']:
-					IHWSprucebotAvatarStateOfMind.Curious,
-
-				['IHWSprucebotAvatarStateOfMind.Accomplished']:
-					IHWSprucebotAvatarStateOfMind.Accomplished
+				chill: 'chill',
+				contemplative: 'contemplative',
+				curious: 'curious',
+				accomplished: 'accomplished'
 			},
-			IHWSprucebotAvatarStateOfMind.Chill
+			'chill'
 		)}
 	/>
 ))

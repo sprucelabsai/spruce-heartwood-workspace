@@ -4,12 +4,15 @@ import memoize from 'memoize-one'
 
 import Autosuggest from '../Autosuggest/Autosuggest'
 import Button from '../../../Button/Button'
-
-import { IAutosuggestInterfaceProps } from '../Autosuggest/Autosuggest'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IDurationInputProps
-	extends Partial<Omit<IAutosuggestInterfaceProps, 'defaultValue'>> {
-	id: string
+	extends Partial<
+		Omit<
+			SpruceSchemas.Local.IAutosuggest,
+			'defaultValue' | 'value' | 'onChange'
+		>
+	> {
 	/** Minimum time someone can select */
 	minMinutes?: number
 
@@ -42,12 +45,6 @@ interface IDurationInputProps
 
 	/** A slighly different onChange */
 	onChange?: (durationInMinutes: number | null, e: FormEvent) => void
-
-	onBlur?: (e: KeyboardEvent) => {}
-
-	getSuggestions?: (value: string) => Promise<Record<string, any>[]> | null
-	getSuggestionValue?: (suggestion: any) => string
-	onSuggestionSelected?: (event: React.FormEvent<any>, data: any) => void
 }
 
 interface IDurationInputState {
@@ -81,8 +78,8 @@ export default class DurationInput extends Component<
 		})
 	})
 
-	public searchSuggestions = memoize(
-		(value): Array<string> => {
+	public searchSuggestions: (query: string) => Record<string, any>[] = memoize(
+		value => {
 			const { minMinutes, maxMinutes, skipMinutes } = this.props
 
 			const search = value.replace(/[^0-9hm]/g, '')
@@ -222,8 +219,8 @@ export default class DurationInput extends Component<
 		}
 	}
 
-	public handleGetSuggestions = value => {
-		const matches = this.searchSuggestions(value)
+	public handleGetSuggestions = (query: string) => {
+		const matches = this.searchSuggestions(query)
 		// Here you could add click events to buttons or whatever else they need
 		// No Results Message
 		if (matches.length === 0) {
@@ -256,16 +253,15 @@ export default class DurationInput extends Component<
 			skipMinutes
 		)
 
+		delete props.value
+
 		return (
 			<Autosuggest
-				inputProps={{
-					value: value ?? '',
-					onChange: this.handleChange,
-					onBlur: this.handleBlur
-				}}
-				error={validationError || error}
+				value={value}
+				onChange={this.handleChange}
+				onBlur={this.handleBlur}
+				helper={{ error: validationError || error }}
 				defaultSuggestions={suggestions}
-				shouldRenderSuggestions={() => true}
 				renderSuggestion={this.renderSuggestion}
 				getSuggestionValue={value => value.text}
 				getSuggestions={this.handleGetSuggestions}
@@ -276,7 +272,6 @@ export default class DurationInput extends Component<
 						: placeholder
 				}
 				defaultValue={defaultValue ? defaultValue.toString() : undefined}
-				{...props}
 			/>
 		)
 	}

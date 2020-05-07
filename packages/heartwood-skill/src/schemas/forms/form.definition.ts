@@ -6,11 +6,12 @@ const formDefinition = buildSchemaDefinition({
 	description: 'A form with fields',
 	fields: {
 		onSubmit: {
-			type: FieldType.Raw,
+			type: FieldType.EventCallback,
 			label: 'Submit handler',
 			isRequired: true,
 			options: {
-				valueType: '() => void'
+				event: 'React.FormEvent<...>',
+				element: 'HTMLFormElement'
 			}
 		},
 		className: {
@@ -24,11 +25,11 @@ const formDefinition = buildSchemaDefinition({
 				valueType: '() => void'
 			}
 		},
-		validate: {
+		onValidate: {
 			type: FieldType.Raw,
 			label: 'Validate',
 			options: {
-				valueType: '() => void'
+				valueType: '(values: Record<string, any>) => Promise<void> | void'
 			}
 		},
 		children: {
@@ -54,6 +55,21 @@ const formDefinition = buildSchemaDefinition({
 					{ value: 'dialog', label: 'Dialog body' }
 				]
 			}
+		},
+		isDirty: {
+			type: FieldType.Boolean,
+			label: 'Dirty',
+			hint: 'Has this field been edited/updated?'
+		},
+		isValid: {
+			type: FieldType.Boolean,
+			label: 'Valid',
+			hint: 'Is the form valid (will disable submit buttons)'
+		},
+		isBusy: {
+			type: FieldType.Boolean,
+			label: 'Busy',
+			hint: 'Is the form busy (will show progress over buttons)'
 		},
 		dialogButtons: {
 			type: FieldType.Schema,

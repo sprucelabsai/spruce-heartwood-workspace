@@ -135,7 +135,7 @@ stories
 				<Card isSmall>
 					<CardHeader
 						title="Locations"
-						actions={object('actions', [
+						buttons={object('buttons', [
 							{
 								text: 'Add a location',
 								kind: 'simple'
@@ -168,7 +168,7 @@ stories
 				<Card isSmall>
 					<CardHeader
 						title="Manager Access"
-						actions={object('actions', [
+						buttons={object('buttons', [
 							{
 								text: 'Add managers',
 								kind: 'simple'

@@ -48,12 +48,8 @@ const splitButtonDefinition = buildSchemaDefinition({
 			hint: 'Sets the visual hierarchy of the button'
 		},
 		onClick: {
-			type: FieldType.EventCallback,
-			label: 'Click handler',
-			options: {
-				event: 'React.MouseEvent<...>',
-				element: 'HTMLInputElement'
-			}
+			...buttonDefinition.fields.onClick,
+			label: 'Click handler'
 		},
 		usePortal: {
 			type: FieldType.Boolean,

@@ -1,5 +1,4 @@
-// @flow
-import { object, withKnobs } from '@storybook/addon-knobs/react'
+import { withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { Card, CardBody } from '../../../Card'
@@ -7,7 +6,7 @@ import LayoutSection from '../../../Layout/components/LayoutSection/LayoutSectio
 import Layout from '../../../Layout/Layout'
 import Modal from '../../../Modal/Modal'
 import Page, { SkillViewContent } from '../../../SkillView'
-import FormBuilder from './FormBuilder'
+// Import FormBuilder from './FormBuilder'
 
 const stories = storiesOf('FormBuilder', module)
 
@@ -22,8 +21,8 @@ stories
 					<LayoutSection>
 						<Card>
 							<CardBody>
-								<FormBuilder
-									kind="page"
+								{/* <FormBuilder
+									renderAs="page"
 									// Validate={console.log}
 									sections={object('sections', [
 										{
@@ -50,9 +49,9 @@ stories
 										}
 									])}
 									initialValues={{}}
-									formLayout={{ spacing: 'base' }}
+									// FormLayout={{ spacing: 'base' }}
 									onSubmit={values => console.log('Submit', { values })}
-								/>
+								/> */}
 							</CardBody>
 						</Card>
 					</LayoutSection>
@@ -67,7 +66,7 @@ stories
 					<LayoutSection>
 						<Card>
 							<CardBody>
-								<FormBuilder
+								{/* <FormBuilder
 									validate={(values: Record<string, any>) => {
 										const errors: Record<string, string> = {}
 										if (!values.publicName) {
@@ -175,7 +174,7 @@ stories
 									primaryCTA={{
 										text: 'Add location'
 									}}
-								/>
+								/> */}
 							</CardBody>
 						</Card>
 					</LayoutSection>
@@ -186,8 +185,8 @@ stories
 	.add('Settings page', () => (
 		<Page>
 			<SkillViewContent>
-				<FormBuilder
-					kind="page"
+				{/* <FormBuilder
+					renderAs="page"
 					initialValues={{
 						pastApptEditingCutoff: '45min',
 						pastApptBookingCutoff: '10min',
@@ -335,7 +334,7 @@ stories
 							]
 						}
 					])}
-				/>
+				/> */}
 			</SkillViewContent>
 		</Page>
 	))
@@ -344,7 +343,7 @@ stories
 			<SkillViewContent>
 				<Modal isOpen size={'small'}>
 					<Modal.Header title="New location group" />
-					<FormBuilder
+					{/* <FormBuilder
 						initialValues={{
 							groupName: ''
 						}}
@@ -362,7 +361,7 @@ stories
 						formLayout={{
 							spacing: 'tight'
 						}}
-						kind="modal"
+						renderAs="modal"
 						sections={[
 							{
 								id: 'group',
@@ -384,7 +383,7 @@ stories
 						secondaryCTA={{
 							text: 'Cancel'
 						}}
-					/>
+					/> */}
 				</Modal>
 			</SkillViewContent>
 		</Page>

@@ -393,20 +393,20 @@ export default class RecordSelectionList extends Component<
 								? !hideSearchResultsEmptyState && (
 										<EmptyState
 											icon={{ name: 'no_matches' }}
-											headline="No search results"
+											heading="No search results"
 											{...noSearchResultsEmptyState}
-											primaryAction={{
+											primaryButton={{
 												text: 'Show all',
 												type: 'submit',
 												onClick: () => {
 													this.updateSearchValue('')
 												},
-												...get(noSearchResultsEmptyState, 'primaryAction', {})
+												...get(noSearchResultsEmptyState, 'primaryButton', {})
 											}}
 										/>
 								  )
 								: !hideDataEmptyState && (
-										<EmptyState headline="No records" {...noDataEmptyState} />
+										<EmptyState heading="No records" {...noDataEmptyState} />
 								  )}
 						</Fragment>
 					)
@@ -550,7 +550,7 @@ export default class RecordSelectionList extends Component<
 						isDisabled={
 							unselectableIds && unselectableIds.indexOf(recordId) >= 0
 						}
-						actions={
+						buttons={
 							onRemove && canRemove
 								? [
 										{

@@ -20,7 +20,7 @@ const datePickerDefinition = buildSchemaDefinition({
 			type: FieldType.Raw,
 			label: 'Date selection callback',
 			options: {
-				valueType: '(date: Date) => Promise<void>'
+				valueType: '(date: Date) => Promise<void> | void'
 			}
 		},
 		onSelectDateRange: {
@@ -28,7 +28,7 @@ const datePickerDefinition = buildSchemaDefinition({
 			label: 'Date range selection callback',
 			options: {
 				valueType:
-					'(range: { startDate: Date, endDate: Date }) => Promise<void>'
+					'(range: { startDate: Date, endDate: Date }) => Promise<void> | void'
 			}
 		},
 		date: {

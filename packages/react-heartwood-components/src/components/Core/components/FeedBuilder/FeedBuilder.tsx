@@ -11,7 +11,7 @@ import MessageBuilder, {
 	IFromProps
 } from '../../../Message/Message'
 import Text from '../../../Text/Text'
-import { IButtonProps } from '../../../Button/Button'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IFeedBuilderMessageProps extends IMessageProps {
 	/** Unique id for the message */
@@ -53,7 +53,7 @@ export interface IFormattedMessage {
 	replies?: any
 	attachments?: any
 	detail?: string | undefined
-	primaryAction?: IButtonProps | undefined
+	primaryAction?: SpruceSchemas.Local.IButton | undefined
 	className?: string | undefined
 	isFromSprucebot?: boolean | undefined
 }

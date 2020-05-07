@@ -15,9 +15,7 @@ import Button from '../../../../../Button/Button'
 
 import { FormikProps } from 'formik'
 import { IFormLayoutProps } from '../../../FormLayout/FormLayout'
-import { IButtonProps } from '../../../../../Button/Button'
-import { IToggleProps } from '../../../Toggle/Toggle'
-import { IHWButtonTypes, IHWButtonKinds } from '@sprucelabs/spruce-types'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IFormValues {
 	[key: string]: string
@@ -45,16 +43,16 @@ export interface IFormInnerProps {
 	formikProps: FormikProps<IFormValues>
 
 	/** Optional when using a primary cta in the form */
-	primaryCTA?: IButtonProps
+	primaryCTA?: SpruceSchemas.Local.IButton
 
 	/** Optional when including a secondary cta in the form */
-	secondaryCTA?: IButtonProps
+	secondaryCTA?: SpruceSchemas.Local.IButton
 
 	/** Handle some on change */
 	onChange?: Function
 }
 
-type BooleanProps = IToggleProps & {
+type BooleanProps = SpruceSchemas.Local.IToggle & {
 	name: string
 	label?: string
 	value?: boolean
@@ -66,7 +64,7 @@ type BooleanProps = IToggleProps & {
 }
 
 class BooleanField extends React.PureComponent<BooleanProps> {
-	public handleChange = e => {
+	public handleChange = (e: any) => {
 		const { onBlur, name } = this.props
 		const {
 			formikProps: { setFieldValue }
@@ -76,7 +74,6 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 	}
 	public render() {
 		const { label, helper, value, ...rest } = this.props
-		const toggleId = this.props.name || ''
 		const toggleProps = { ...rest, onChange: this.handleChange }
 		if (value) {
 			toggleProps.defaultChecked = true
@@ -88,8 +85,7 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 					{
 						title: label || '',
 						subtitle: helper,
-						toggleId,
-						toggleProps
+						toggle: toggleProps
 					}
 				]}
 			/>
@@ -195,8 +191,8 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 						)}
 						<FormLayoutItem>
 							<Button
-								kind={IHWButtonKinds.Primary}
-								type={IHWButtonTypes.Submit}
+								kind={'primary'}
+								type={'submit'}
 								isDisabled={!isValid || isSubmitting}
 								isLoading={isSubmitting}
 								{...primaryCTA}

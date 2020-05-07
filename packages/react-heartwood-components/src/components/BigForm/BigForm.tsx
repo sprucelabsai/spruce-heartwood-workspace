@@ -8,42 +8,16 @@ import BigFormSlideHeader, {
 import BigFormControls from './components/BigFormControls'
 import SprucebotTypedMessage from '../SprucebotTypedMessage/SprucebotTypedMessage'
 import {
-	IHWSprucebotTypedMessageSize,
-	IHWSprucebotAvatarStateOfMind
-} from '@sprucelabs/spruce-types'
+	definitionChoicesToHash,
+	SpruceSchemas,
+	buildDuration,
+	defaultProps
+} from '@sprucelabs/heartwood-skill'
 
-export enum BigFormTransitionStyle {
-	Stack = 'stack',
-	SlideLeft = 'slide-left',
-	SlideUp = 'slide-up',
-	Swap = 'swap'
-}
-
-interface IBigFormProps {
-	/** Should the same sprucebot just delete and retype messages */
-	useOneSprucebot?: boolean
-
-	/** Transition style */
-	transitionStyle?: BigFormTransitionStyle
-
-	/** Which slide is selected? */
-	currentSlide?: number
-
-	/** Children should be big form slides */
-	children?: React.ReactNode
-
-	/** Can go back a step (unless) */
-	canGoBack?: boolean
-
-	/** Can go to the next step? */
-	canGoNext?: boolean
-
-	/** Called when hitting back butto */
-	onBack?: () => void
-
-	/** Called when hitting next button or hitting enter in a text field */
-	onNext?: () => void
-}
+export const BigFormTransitionStyle = definitionChoicesToHash(
+	SpruceSchemas.Local.BigForm.definition,
+	'transitionStyle'
+)
 
 interface IBigFormState {
 	/** This is what actually drives the
@@ -53,7 +27,12 @@ interface IBigFormState {
 	currentSlide: number
 }
 
-class BigForm extends React.Component<IBigFormProps, IBigFormState> {
+const defaults = defaultProps(SpruceSchemas.Local.BigForm.definition)
+
+class BigForm extends React.Component<
+	SpruceSchemas.Local.IBigForm & typeof defaults,
+	IBigFormState
+> {
 	/** A slide for the form */
 	public static Slide = BigFormSlide
 	/** The body of a slide */
@@ -61,12 +40,7 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 	/** The header for a slide (uses sprucebot typed question) */
 	public static SlideHeader = BigFormSlideHeader
 
-	public static defaultProps = {
-		currentSlide: 0,
-		canGoBack: false,
-		canGoNext: false,
-		transitionStyle: BigFormTransitionStyle.Stack
-	}
+	public static defaultProps = defaults
 
 	public bigFormRef = React.createRef<HTMLDivElement>()
 	public slideRefs: BigFormSlide[] = []
@@ -75,7 +49,7 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 	/** All the header props when usingOneSprucebot */
 	public headerProps: IBigFormSlideHeaderProps[] = []
 
-	public constructor(props: IBigFormProps) {
+	public constructor(props: SpruceSchemas.Local.IBigForm & typeof defaults) {
 		super(props)
 		this.state = {
 			currentSlide: this.props.currentSlide || 0
@@ -89,11 +63,11 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 		this.jumpToSlide(this.props.currentSlide || 0)
 	}
 
-	public componentDidUpdate = (prevProps: IBigFormProps) => {
+	public componentDidUpdate = (prevProps: SpruceSchemas.Local.IBigForm) => {
 		// Update header props
 		this.headerProps = this.getHeaderProps()
 
-		// Jump to a slide if current slide has changed OR if we enabledOneSprucebot
+		// Jump to a slide if current slide has changed OR if we toggle enableOneSprucebot
 		if (
 			prevProps.currentSlide !== this.props.currentSlide ||
 			prevProps.useOneSprucebot !== this.props.useOneSprucebot
@@ -158,16 +132,13 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 	}
 
 	public handleSubmitSlide = () => {
-		this.props.onNext && this.props.onNext()
+		this.props.controls?.onNext?.()
 	}
 
 	public render(): React.ReactElement {
 		const {
 			children: childrenProps,
-			canGoBack,
-			canGoNext,
-			onBack,
-			onNext,
+			controls,
 			transitionStyle,
 			useOneSprucebot
 		} = this.props
@@ -217,25 +188,20 @@ class BigForm extends React.Component<IBigFormProps, IBigFormState> {
 				{useOneSprucebot && (
 					<div className="the-one-sprucebot">
 						<SprucebotTypedMessage
-							startDelayMs={0}
+							startDelay={buildDuration({ ms: 0 })}
 							ref={this.theOneSprucebotRef}
 							id="the-one-sprucebot"
 							paused={true}
-							size={IHWSprucebotTypedMessageSize.Medium}
+							size={'medium'}
 							defaultAvatar={{
 								id: 'the-one-default',
-								stateOfMind: IHWSprucebotAvatarStateOfMind.Chill
+								stateOfMind: 'chill'
 							}}
 							sentences={[]}
 						/>
 					</div>
 				)}
-				<BigFormControls
-					canGoBack={canGoBack}
-					canGoNext={canGoNext}
-					onNext={onNext}
-					onBack={onBack}
-				/>
+				<BigFormControls {...controls} />
 			</div>
 		)
 	}

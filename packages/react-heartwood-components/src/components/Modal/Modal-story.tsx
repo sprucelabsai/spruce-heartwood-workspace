@@ -13,7 +13,6 @@ import {
 } from '../Forms'
 
 import countries from '../../../.storybook/data/countries'
-import { IHWButtonTypes, IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 const renderSuggestion = (suggestion: any) => {
 	if (suggestion.isEmptyMessage) {
@@ -71,7 +70,7 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 		return (
 			<Fragment>
 				<Button
-					kind={IHWButtonKinds.Secondary}
+					kind={'secondary'}
 					text="Give me modal"
 					onClick={this.toggleVisibility}
 				/>
@@ -94,33 +93,44 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 								<FormLayoutItem>
 									<TextInput
 										id="category"
-										label="Category Name"
+										label={{ text: 'Category Name' }}
 										placeholder="e.g. Barber"
 									/>
 								</FormLayoutItem>
 								<FormLayoutItem>
 									<TextInput
 										id="teaser"
-										label="Teaser"
-										postLabel="0/64"
+										label={{
+											text: 'Teaser',
+											postLabel: '0/64'
+										}}
 										placeholder="Haircuts, shaves, and touch-ups."
-										helper="Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters."
+										helper={{
+											hint:
+												'Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters.'
+										}}
 									/>
 								</FormLayoutItem>
 								<FormLayoutItem>
 									<TextArea
 										id="description"
-										label="Description"
+										label={{ text: 'Description' }}
 										placeholder="Optional category description…"
-										helper="Add a short teaser for your guests to see when they browse your services."
+										helper={{
+											hint:
+												'Add a short teaser for your guests to see when they browse your services.'
+										}}
 										rows={3}
 									/>
 								</FormLayoutItem>
 								<FormLayoutItem>
 									<Checkbox
 										id="hide-category"
-										label="Hide this category"
-										postText="It will still be visible to your teammates, but will be hidden from guests."
+										label={{
+											text: 'Hide this category',
+											postLabel:
+												'It will still be visible to your teammates, but will be hidden from guests.'
+										}}
 									/>
 								</FormLayoutItem>
 							</FormLayout>
@@ -130,7 +140,7 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 								primaryAction={{
 									text: 'Create Category',
 									onClick: () => console.log('Next'),
-									type: IHWButtonTypes.Submit
+									type: 'submit'
 								}}
 								secondaryAction={
 									hasSecondaryButton
@@ -184,35 +194,43 @@ stories
 						<FormLayoutItem>
 							<TextInput
 								id="category"
-								label="Category Name"
+								label={{ text: 'Category Name' }}
 								placeholder="e.g. Barber"
 							/>
 						</FormLayoutItem>
 						<FormLayoutItem>
 							<TextInput
 								id="teaser"
-								label="Teaser"
-								postLabel="0/64"
+								label={{
+									text: 'Teaser',
+									postLabel: '0/64'
+								}}
 								placeholder="Haircuts, shaves, and touch-ups."
-								helper="Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters."
+								helper={{
+									hint:
+										'Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters.'
+								}}
 							/>
 						</FormLayoutItem>
 						<FormLayoutItem>
 							<TextArea
 								id="description"
-								label="Description"
+								label={{ text: 'Description' }}
 								placeholder="Optional category description…"
-								helper="Add a short teaser for your guests to see when they browse your services."
+								helper={{
+									hint:
+										'Add a short teaser for your guests to see when they browse your services.'
+								}}
 								rows={3}
 							/>
 						</FormLayoutItem>
 						<FormLayoutItem>
 							<Autosuggest
 								id="country-select"
-								label={'Country'}
+								label={{ text: 'Country' }}
 								placeholder={'Select a country...'}
 								defaultSuggestions={object('defaultSuggestions', countries)}
-								shouldRenderSuggestions={() => true}
+								shouldRenderSuggestions={true}
 								renderSuggestion={renderSuggestion}
 								getSuggestionValue={value => value.text}
 								getSuggestions={value => {
@@ -238,8 +256,11 @@ stories
 						<FormLayoutItem>
 							<Checkbox
 								id="hide-category"
-								label="Hide this category"
-								postText="It will still be visible to your teammates, but will be hidden from guests."
+								label={{
+									text: 'Hide this category',
+									postLabel:
+										'It will still be visible to your teammates, but will be hidden from guests.'
+								}}
 							/>
 						</FormLayoutItem>
 					</FormLayout>

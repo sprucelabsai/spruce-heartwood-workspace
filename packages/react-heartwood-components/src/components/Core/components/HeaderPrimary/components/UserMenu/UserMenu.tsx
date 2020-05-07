@@ -41,7 +41,7 @@ const UserMenu = (props: IUserMenuProps) => {
 			>
 				<span className="btn__inner">
 					{image && name && (
-						<Avatar image={image} alt={name} width={32} height={32} />
+						<Avatar src={image} alt={name} width={32} height={32} />
 					)}
 				</span>
 			</button>

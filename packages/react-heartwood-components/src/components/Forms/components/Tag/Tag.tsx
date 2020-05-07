@@ -6,7 +6,7 @@ import { defaultProps, SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const defaults = defaultProps(SpruceSchemas.Local.Tag.definition)
 
-const Tag = (props: SpruceSchemas.Local.ITag & typeof defaults) => {
+const Tag = (props: SpruceSchemas.Local.ITag = { ...defaults }) => {
 	const { text, kind, className, isSmall } = props
 	const parentClass = cx('tag', className, {
 		'tag-primary': kind === 'primary',

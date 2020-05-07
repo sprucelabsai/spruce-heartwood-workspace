@@ -43,7 +43,7 @@ class PageModalExample extends Component<
 								<FormLayoutItem>
 									<TextInput
 										id="phone"
-										label="Phone Number"
+										label={{ text: 'Phone Number' }}
 										placeholder="(555)-555-5555"
 									/>
 								</FormLayoutItem>
@@ -60,7 +60,7 @@ class PageModalExample extends Component<
 						body: (
 							<FormLayout>
 								<FormLayoutItem>
-									<TextInput id="firstName" label="First Name" />
+									<TextInput id="firstName" label={{ text: 'First Name' }} />
 								</FormLayoutItem>
 							</FormLayout>
 						),

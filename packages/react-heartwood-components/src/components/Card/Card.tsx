@@ -72,7 +72,7 @@ export default class Card extends Component<
 				{isExpandable && (
 					<CardHeader
 						{...header}
-						actions={[
+						buttons={[
 							{
 								icon: {
 									name: isExpanded

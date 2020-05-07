@@ -11,8 +11,13 @@ const TableFilters = (props: ITableFiltersProps) => {
 	const { filters } = props
 	return (
 		<div className="table-filters__wrapper">
-			{filters.map(filter => (
-				<Tag key={filter.text} kind="secondary" isSmall {...filter} />
+			{filters.map((filter, idx) => (
+				<Tag
+					key={filter.text ?? `tag-${idx}`}
+					kind="secondary"
+					isSmall
+					{...filter}
+				/>
 			))}
 		</div>
 	)

@@ -33,6 +33,7 @@ const sprucebotAvatarDefinition = buildSchemaDefinition({
 			label: 'Second Field',
 			isRequired: true,
 			hint: 'A hint',
+			defaultValue: 'medium',
 			options: {
 				choices: [
 					{
@@ -61,6 +62,7 @@ const sprucebotAvatarDefinition = buildSchemaDefinition({
 			type: FieldType.Select,
 			label: 'Size',
 			isRequired: true,
+			defaultValue: 'medium',
 			options: {
 				choices: sizeChoices
 			}

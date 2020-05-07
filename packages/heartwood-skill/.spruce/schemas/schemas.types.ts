@@ -1,7 +1,7 @@
 import { default as Schema } from '@sprucelabs/schema'
 import * as SpruceSchema from '@sprucelabs/schema'
 import * as generated_import_0 from '#spruce/../src/fields/CallbackField'
-import * as generated_import_1 from '#spruce/../src/fields/ElementField'
+import * as generated_import_1 from '#spruce/../src/fields/ElementTypeField'
 import * as generated_import_2 from '#spruce/../src/fields/EventCallbackField'
 import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 
@@ -1694,6 +1694,332 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface IBigFormControls {
+			
+				/** Enable go back. Will enable/disable the back button to go to a previous question */
+				'canGoBack'?: boolean| undefined | null
+				/** Enable go next. Will enable/disable the button to go to the next question */
+				'canGoNext'?: boolean| undefined | null
+				/** Back handler. */
+				'onBack'?: (() => void)| undefined | null
+				/** Next handler. */
+				'onNext'?: (() => void)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.BigFormControls {
+		export const id = 'bigFormControls'
+
+		/** The interface for the schema definition for a Big form controls */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'bigFormControls',
+			name: 'Big form controls',
+			description: '',
+			
+			
+			    fields: {
+			            /** Enable go back. Will enable/disable the back button to go to a previous question */
+			            'canGoBack': {
+			                label: 'Enable go back',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will enable/disable the back button to go to a previous question',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Enable go next. Will enable/disable the button to go to the next question */
+			            'canGoNext': {
+			                label: 'Enable go next',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will enable/disable the button to go to the next question',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Back handler. */
+			            'onBack': {
+			                label: 'Back handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			            /** Next handler. */
+			            'onNext': {
+			                label: 'Next handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Big form controls */
+		export const definition: SpruceSchemas.Local.BigFormControls.IDefinition = {
+			id: 'bigFormControls',
+			name: 'Big form controls',
+			description: '',
+			
+			
+			    fields: {
+			            /** Enable go back. Will enable/disable the back button to go to a previous question */
+			            'canGoBack': {
+			                label: 'Enable go back',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will enable/disable the back button to go to a previous question',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Enable go next. Will enable/disable the button to go to the next question */
+			            'canGoNext': {
+			                label: 'Enable go next',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will enable/disable the button to go to the next question',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Back handler. */
+			            'onBack': {
+			                label: 'Back handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			            /** Next handler. */
+			            'onNext': {
+			                label: 'Next handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.BigFormControls.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** Ask questions one at a time */
+		export interface IBigForm {
+			
+				/** Header controls. */
+				'controls'?: SpruceSchemas.Local.IBigFormControls| undefined | null
+				/** Use one Sprucebot. Sprucebot will stay in place and delete, then type each question */
+				'useOneSprucebot'?: boolean| undefined | null
+				/** Transition style. */
+				'transitionStyle'?: ("stack" | "slide-left" | "slide-up" | "swap")| undefined | null
+				/** Current slide. */
+				'currentSlide'?: number| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.BigForm {
+		export const id = 'bigForm'
+
+		/** The interface for the schema definition for a Big form */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'bigForm',
+			name: 'Big form',
+			description: 'Ask questions one at a time',
+			
+			
+			    fields: {
+			            /** Header controls. */
+			            'controls': {
+			                label: 'Header controls',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.BigFormControls.IDefinition[],}
+			            },
+			            /** Use one Sprucebot. Sprucebot will stay in place and delete, then type each question */
+			            'useOneSprucebot': {
+			                label: 'Use one Sprucebot',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Sprucebot will stay in place and delete, then type each question',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Transition style. */
+			            'transitionStyle': {
+			                label: 'Transition style',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "stack",
+			                
+			                
+			                options: {choices: [{"label":"Stack","value":"stack"},{"label":"SlideLeft","value":"slide-left"},{"label":"SlideUp","value":"slide-up"},{"label":"Swap","value":"swap"}],}
+			            },
+			            /** Current slide. */
+			            'currentSlide': {
+			                label: 'Current slide',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                
+			                
+			                defaultValue: 0,
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Big form */
+		export const definition: SpruceSchemas.Local.BigForm.IDefinition = {
+			id: 'bigForm',
+			name: 'Big form',
+			description: 'Ask questions one at a time',
+			
+			
+			    fields: {
+			            /** Header controls. */
+			            'controls': {
+			                label: 'Header controls',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.BigFormControls.definition],}
+			            },
+			            /** Use one Sprucebot. Sprucebot will stay in place and delete, then type each question */
+			            'useOneSprucebot': {
+			                label: 'Use one Sprucebot',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Sprucebot will stay in place and delete, then type each question',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Transition style. */
+			            'transitionStyle': {
+			                label: 'Transition style',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "stack",
+			                
+			                
+			                options: {choices: [{"label":"Stack","value":"stack"},{"label":"SlideLeft","value":"slide-left"},{"label":"SlideUp","value":"slide-up"},{"label":"Swap","value":"swap"}],}
+			            },
+			            /** Current slide. */
+			            'currentSlide': {
+			                label: 'Current slide',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                
+			                
+			                
+			                defaultValue: 0,
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.BigForm.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** a confirmation dialog */
 		export interface IConfirmModal {
 			
@@ -1992,11 +2318,13 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** classname. */
 				'className'?: string| undefined | null
 				/** On click handler. */
-				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
+				'onClick'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 				
 				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				/** . Lets you override the element used when rendering a link */
-				'AnchorComponent'?: JSX.Element| undefined | null
+				'AnchorComponent'?: React.ElementType| undefined | null
+				/** Target. _blank|_self|_parent|_top|framename */
+				'target'?: string| undefined | null
 		}
 	}	 
 
@@ -2178,7 +2506,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			            /** . */
 			            'children': {
@@ -2196,10 +2524,23 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** . Lets you override the element used when rendering a link */
 			            'AnchorComponent': {
 			                label: '',
-			                type: SpruceSchema.FieldType.Element,
+			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
 			                hint: 'Lets you override the element used when rendering a link',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Target. _blank|_self|_parent|_top|framename */
+			            'target': {
+			                label: 'Target',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: '_blank|_self|_parent|_top|framename',
 			                
 			                
 			                
@@ -2384,7 +2725,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			            /** . */
 			            'children': {
@@ -2402,10 +2743,23 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** . Lets you override the element used when rendering a link */
 			            'AnchorComponent': {
 			                label: '',
-			                type: SpruceSchema.FieldType.Element,
+			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
 			                hint: 'Lets you override the element used when rendering a link',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Target. _blank|_self|_parent|_top|framename */
+			            'target': {
+			                label: 'Target',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: '_blank|_self|_parent|_top|framename',
 			                
 			                
 			                
@@ -2542,7 +2896,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                hint: 'Set to true makes the menu close when any option is selected',
 			                
-			                
+			                defaultValue: true,
 			                
 			                
 			                options: undefined
@@ -2670,7 +3024,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                hint: 'Set to true makes the menu close when any option is selected',
 			                
-			                
+			                defaultValue: true,
 			                
 			                
 			                options: undefined
@@ -2854,19 +3208,12 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 								rejectedFiles: File[],
 								event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
 							) => void)| undefined | null
-				/** On drop. */
-				'onDropped'?: ((
-								files: File[],
-								event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
-							) => void)| undefined | null
 				
 				'onDropAccepted'?: ((files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void)| undefined | null
 				
 				'onDropRejected'?: ((files?: File[], event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void)| undefined | null
 				
 				'onFileDialogCancel'?: (() => void)| undefined | null
-				
-				'onDragStart'?: ((...args: any) => void)| undefined | null
 				/** Label. */
 				'label'?: SpruceSchemas.Local.ILabel| undefined | null
 				/** Small. */
@@ -2877,6 +3224,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'fileWasUploaded'?: boolean| undefined | null
 				/** Accept types. */
 				'acceptedMimeTypes'?: string[]| undefined | null
+				/** Default icon. The icon shown before anything is dropped. */
+				'defaultIcon'?: SpruceSchemas.Local.IIcon| undefined | null
 		}
 	}	 
 
@@ -2999,22 +3348,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                					event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
 			                				) => void`,}
 			            },
-			            /** On drop. */
-			            'onDropped': {
-			                label: 'On drop',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `(
-			                					files: File[],
-			                					event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
-			                				) => void`,}
-			            },
 			            /** . */
 			            'onDropAccepted': {
 			                label: '',
@@ -3053,19 +3386,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {valueType: `() => void`,}
-			            },
-			            /** . */
-			            'onDragStart': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `(...args: any) => void`,}
 			            },
 			            /** Label. */
 			            'label': {
@@ -3131,6 +3451,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                isArray: true,
 			                
 			                options: undefined
+			            },
+			            /** Default icon. The icon shown before anything is dropped. */
+			            'defaultIcon': {
+			                label: 'Default icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown before anything is dropped.',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
 			    }
 		}
@@ -3251,22 +3584,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                					event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
 			                				) => void`,}
 			            },
-			            /** On drop. */
-			            'onDropped': {
-			                label: 'On drop',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `(
-			                					files: File[],
-			                					event?: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
-			                				) => void`,}
-			            },
 			            /** . */
 			            'onDropAccepted': {
 			                label: '',
@@ -3305,19 +3622,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {valueType: `() => void`,}
-			            },
-			            /** . */
-			            'onDragStart': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `(...args: any) => void`,}
 			            },
 			            /** Label. */
 			            'label': {
@@ -3383,6 +3687,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                isArray: true,
 			                
 			                options: undefined
+			            },
+			            /** Default icon. The icon shown before anything is dropped. */
+			            'defaultIcon': {
+			                label: 'Default icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'The icon shown before anything is dropped.',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
 			    }
 		}
@@ -4045,6 +4362,267 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
+		/** Holds buttons and spans the top or bottom of the screen. */
+		export interface ISaveBar {
+			
+				/** Message. Show a custom message across the bar */
+				'message'?: string| undefined | null
+				/** Visible. */
+				'isVisible'?: boolean| undefined | null
+				/** Disable discard. */
+				'isDiscardDisabled'?: boolean| undefined | null
+				/** Disable save. */
+				'isSaveDisabled'?: boolean| undefined | null
+				/** Discard in progress. */
+				'isDiscarding'?: boolean| undefined | null
+				/** Save in progress. */
+				'isSaving'?: boolean| undefined | null
+				/** Discard handler. */
+				'onDiscard'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
+				/** Save handler. */
+				'onSave'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SaveBar {
+		export const id = 'saveBar'
+
+		/** The interface for the schema definition for a Save bar */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'saveBar',
+			name: 'Save bar',
+			description: 'Holds buttons and spans the top or bottom of the screen.',
+			
+			
+			    fields: {
+			            /** Message. Show a custom message across the bar */
+			            'message': {
+			                label: 'Message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Show a custom message across the bar',
+			                
+			                defaultValue: "Unsaved changes",
+			                
+			                
+			                options: undefined
+			            },
+			            /** Visible. */
+			            'isVisible': {
+			                label: 'Visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Disable discard. */
+			            'isDiscardDisabled': {
+			                label: 'Disable discard',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Disable save. */
+			            'isSaveDisabled': {
+			                label: 'Disable save',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Discard in progress. */
+			            'isDiscarding': {
+			                label: 'Discard in progress',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Save in progress. */
+			            'isSaving': {
+			                label: 'Save in progress',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Discard handler. */
+			            'onDiscard': {
+			                label: 'Discard handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			            /** Save handler. */
+			            'onSave': {
+			                label: 'Save handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Save bar */
+		export const definition: SpruceSchemas.Local.SaveBar.IDefinition = {
+			id: 'saveBar',
+			name: 'Save bar',
+			description: 'Holds buttons and spans the top or bottom of the screen.',
+			
+			
+			    fields: {
+			            /** Message. Show a custom message across the bar */
+			            'message': {
+			                label: 'Message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Show a custom message across the bar',
+			                
+			                defaultValue: "Unsaved changes",
+			                
+			                
+			                options: undefined
+			            },
+			            /** Visible. */
+			            'isVisible': {
+			                label: 'Visible',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Disable discard. */
+			            'isDiscardDisabled': {
+			                label: 'Disable discard',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Disable save. */
+			            'isSaveDisabled': {
+			                label: 'Disable save',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Discard in progress. */
+			            'isDiscarding': {
+			                label: 'Discard in progress',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Save in progress. */
+			            'isSaving': {
+			                label: 'Save in progress',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Discard handler. */
+			            'onDiscard': {
+			                label: 'Discard handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			            /** Save handler. */
+			            'onSave': {
+			                label: 'Save handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SaveBar.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** Defaults to h2 */
 		export interface ISubheading {
 			
@@ -4258,13 +4836,13 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Icon. An icon shown on the tab next to the text */
 				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
 				
-				'AnchorComponent'?: JSX.Element| undefined | null
+				'AnchorComponent'?: React.ElementType| undefined | null
 				/** Is current. Is the currently selected tab */
 				'isCurrent'?: boolean| undefined | null
 				
 				'className'?: string| undefined | null
 				/** Panel. Rendered as the body of the selected tab */
-				'panel'?: JSX.Element| undefined | null
+				'panel'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
 	}	 
 
@@ -4308,7 +4886,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** . */
 			            'AnchorComponent': {
 			                label: '',
-			                type: SpruceSchema.FieldType.Element,
+			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
 			                
@@ -4347,7 +4925,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** Panel. Rendered as the body of the selected tab */
 			            'panel': {
 			                label: 'Panel',
-			                type: SpruceSchema.FieldType.Element,
+			                type: SpruceSchema.FieldType.Node,
 			                
 			                
 			                hint: 'Rendered as the body of the selected tab',
@@ -4397,7 +4975,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** . */
 			            'AnchorComponent': {
 			                label: '',
-			                type: SpruceSchema.FieldType.Element,
+			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
 			                
@@ -4436,7 +5014,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** Panel. Rendered as the body of the selected tab */
 			            'panel': {
 			                label: 'Panel',
-			                type: SpruceSchema.FieldType.Element,
+			                type: SpruceSchema.FieldType.Node,
 			                
 			                
 			                hint: 'Rendered as the body of the selected tab',
@@ -4967,6 +5545,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'name'?: string| undefined | null
 				
 				'className'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
 				/** Helper. */
 				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
 				/** On click. Optional on click to invoke when tapped */
@@ -5023,6 +5603,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
 			            },
 			            /** Helper. */
 			            'helper': {
@@ -5100,6 +5693,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
 			            /** Helper. */
 			            'helper': {
 			                label: 'Helper',
@@ -5136,10 +5742,14 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 
 	export namespace SpruceSchemas.Local {
 		/** A radio control. Give a bunch the same name to keep them as part of the same group */
-		export interface IRadio {
+		export interface IListItemRadio {
 			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
 				/** Id. */
-				'id'?: string| undefined | null
+				'id': string
 				/** Name. A name attached to this radio button */
 				'name'?: string| undefined | null
 				/** Label. */
@@ -5148,8 +5758,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'isDisabled'?: boolean| undefined | null
 				/** Is checked. Is this control checked? */
 				'isChecked'?: boolean| undefined | null
-				/** Change handler. Optional action to invoke when tapped */
-				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
 				
 				'className'?: string| undefined | null
 				/** Helper. */
@@ -5157,23 +5765,49 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		}
 	}	 
 
-	export namespace SpruceSchemas.Local.Radio {
-		export const id = 'radio'
+	export namespace SpruceSchemas.Local.ListItemRadio {
+		export const id = 'listItemRadio'
 
 		/** The interface for the schema definition for a Radio */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'radio',
+			id: 'listItemRadio',
 			name: 'Radio',
 			description: 'A radio control. Give a bunch the same name to keep them as part of the same group',
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                
+			                isRequired: true,
 			                
 			                
 			                
@@ -5232,19 +5866,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: undefined
-			            },
-			            /** Change handler. Optional action to invoke when tapped */
-			            'onChange': {
-			                label: 'Change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Optional action to invoke when tapped',
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
 			            },
 			            /** . */
 			            'className': {
@@ -5276,19 +5897,45 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		}
 
 		/** The schema definition for a Radio */
-		export const definition: SpruceSchemas.Local.Radio.IDefinition = {
-			id: 'radio',
+		export const definition: SpruceSchemas.Local.ListItemRadio.IDefinition = {
+			id: 'listItemRadio',
 			name: 'Radio',
 			description: 'A radio control. Give a bunch the same name to keep them as part of the same group',
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                
+			                isRequired: true,
 			                
 			                
 			                
@@ -5348,19 +5995,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
-			            /** Change handler. Optional action to invoke when tapped */
-			            'onChange': {
-			                label: 'Change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Optional action to invoke when tapped',
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
 			            /** . */
 			            'className': {
 			                label: '',
@@ -5391,16 +6025,20 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.Radio.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.ListItemRadio.IDefinition>
 	}
 	
 
 	export namespace SpruceSchemas.Local {
 		/** A checkbox! */
-		export interface ICheckbox {
+		export interface IListItemCheckbox {
 			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
 				
-				'id'?: string| undefined | null
+				'id': string
 				/** Name. */
 				'name'?: string| undefined | null
 				/** Label. */
@@ -5411,8 +6049,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'isIndeterminate'?: boolean| undefined | null
 				/** Checked. */
 				'isChecked'?: boolean| undefined | null
-				/** On change handler. Invoked when the checkbox is tapped or clicked */
-				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
 				
 				'className'?: string| undefined | null
 				/** Helper. */
@@ -5420,23 +6056,49 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		}
 	}	 
 
-	export namespace SpruceSchemas.Local.Checkbox {
-		export const id = 'checkbox'
+	export namespace SpruceSchemas.Local.ListItemCheckbox {
+		export const id = 'listItemCheckbox'
 
 		/** The interface for the schema definition for a Checkbox */
 		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'checkbox',
+			id: 'listItemCheckbox',
 			name: 'Checkbox',
 			description: 'A checkbox!',
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** . */
 			            'id': {
 			                label: '',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                
+			                isRequired: true,
 			                
 			                
 			                
@@ -5509,19 +6171,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
-			            /** On change handler. Invoked when the checkbox is tapped or clicked */
-			            'onChange': {
-			                label: 'On change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Invoked when the checkbox is tapped or clicked',
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
 			            /** . */
 			            'className': {
 			                label: '',
@@ -5552,19 +6201,45 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		}
 
 		/** The schema definition for a Checkbox */
-		export const definition: SpruceSchemas.Local.Checkbox.IDefinition = {
-			id: 'checkbox',
+		export const definition: SpruceSchemas.Local.ListItemCheckbox.IDefinition = {
+			id: 'listItemCheckbox',
 			name: 'Checkbox',
 			description: 'A checkbox!',
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** . */
 			            'id': {
 			                label: '',
 			                type: SpruceSchema.FieldType.Id,
 			                
-			                
+			                isRequired: true,
 			                
 			                
 			                
@@ -5637,19 +6312,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
-			            /** On change handler. Invoked when the checkbox is tapped or clicked */
-			            'onChange': {
-			                label: 'On change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Invoked when the checkbox is tapped or clicked',
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
 			            /** . */
 			            'className': {
 			                label: '',
@@ -5680,7 +6342,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		}
 
 		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.Checkbox.IDefinition>
+		export type Instance = Schema<SpruceSchemas.Local.ListItemCheckbox.IDefinition>
 	}
 	
 
@@ -6165,7 +6827,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Loading. Makes the item look like a loading placeholder */
 				'isLoading'?: boolean| undefined | null
 				/** Selectable element. Any props you want sent down to the selectable component being rendered */
-				'selectable'?: { schemaId: 'radio', values: SpruceSchemas.Local.IRadio } | { schemaId: 'checkbox', values: SpruceSchemas.Local.ICheckbox }| undefined | null
+				'selectable'?: { schemaId: 'listItemRadio', values: SpruceSchemas.Local.IListItemRadio } | { schemaId: 'listItemCheckbox', values: SpruceSchemas.Local.IListItemCheckbox }| undefined | null
 				/** Warnings. Highlight title, subtitle, note with warning colors */
 				'warnings'?: SpruceSchemas.Local.IListItemWarning| undefined | null
 				/** List. Optional; adds a nested list */
@@ -6452,7 +7114,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {schemas: (SpruceSchemas.Local.Radio.IDefinition | SpruceSchemas.Local.Checkbox.IDefinition)[],}
+			                options: {schemas: (SpruceSchemas.Local.ListItemRadio.IDefinition | SpruceSchemas.Local.ListItemCheckbox.IDefinition)[],}
 			            },
 			            /** Warnings. Highlight title, subtitle, note with warning colors */
 			            'warnings': {
@@ -6814,7 +7476,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.Local.Radio.definition, SpruceSchemas.Local.Checkbox.definition],}
+			                options: {schemas: [SpruceSchemas.Local.ListItemRadio.definition, SpruceSchemas.Local.ListItemCheckbox.definition],}
 			            },
 			            /** Warnings. Highlight title, subtitle, note with warning colors */
 			            'warnings': {
@@ -6916,6 +7578,789 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
+		/** For hints and error messages after inputs (if both set, only error shows) */
+		export interface IInputHelper {
+			
+				/** Hint. */
+				'hint'?: string| undefined | null
+				/** Error message. */
+				'error'?: string| undefined | null
+				
+				'className'?: string| undefined | null
+				
+				'htmlFor'?: string| undefined | null
+				
+				'ElementTag'?: ("p" | "label")| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.InputHelper {
+		export const id = 'inputHelper'
+
+		/** The interface for the schema definition for a Input helper */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'inputHelper',
+			name: 'Input helper',
+			description: 'For hints and error messages after inputs (if both set, only error shows)',
+			
+			
+			    fields: {
+			            /** Hint. */
+			            'hint': {
+			                label: 'Hint',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Error message. */
+			            'error': {
+			                label: 'Error message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'htmlFor': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'ElementTag': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "p",
+			                
+			                
+			                options: {choices: [{"value":"p","label":"<p/>"},{"value":"label","label":"<label/>"}],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Input helper */
+		export const definition: SpruceSchemas.Local.InputHelper.IDefinition = {
+			id: 'inputHelper',
+			name: 'Input helper',
+			description: 'For hints and error messages after inputs (if both set, only error shows)',
+			
+			
+			    fields: {
+			            /** Hint. */
+			            'hint': {
+			                label: 'Hint',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Error message. */
+			            'error': {
+			                label: 'Error message',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'htmlFor': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'ElementTag': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "p",
+			                
+			                
+			                options: {choices: [{"value":"p","label":"<p/>"},{"value":"label","label":"<label/>"}],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.InputHelper.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A checkbox! */
+		export interface ICheckbox {
+			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
+				
+				'id'?: string| undefined | null
+				/** Name. */
+				'name'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Disabled. */
+				'isDisabled'?: boolean| undefined | null
+				/** Indeterminate. Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it. */
+				'isIndeterminate'?: boolean| undefined | null
+				/** Checked. */
+				'isChecked'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Checkbox {
+		export const id = 'checkbox'
+
+		/** The interface for the schema definition for a Checkbox */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'checkbox',
+			name: 'Checkbox',
+			description: 'A checkbox!',
+			
+			
+			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** . */
+			            'id': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Indeterminate. Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it. */
+			            'isIndeterminate': {
+			                label: 'Indeterminate',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is showing that half checked state you\'ve seen on checkboxes. It generally has a horizontal line through it.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Checked. */
+			            'isChecked': {
+			                label: 'Checked',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Checkbox */
+		export const definition: SpruceSchemas.Local.Checkbox.IDefinition = {
+			id: 'checkbox',
+			name: 'Checkbox',
+			description: 'A checkbox!',
+			
+			
+			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** . */
+			            'id': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Indeterminate. Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it. */
+			            'isIndeterminate': {
+			                label: 'Indeterminate',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is showing that half checked state you\'ve seen on checkboxes. It generally has a horizontal line through it.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Checked. */
+			            'isChecked': {
+			                label: 'Checked',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Checkbox.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
+		/** A radio control. Give a bunch the same name to keep them as part of the same group */
+		export interface IRadio {
+			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Name. A name attached to this radio button */
+				'name'?: string| undefined | null
+				/** Label. */
+				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Is disabled. is this control disabled? */
+				'isDisabled'?: boolean| undefined | null
+				/** Is checked. Is this control checked? */
+				'isChecked'?: boolean| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Helper. */
+				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.Radio {
+		export const id = 'radio'
+
+		/** The interface for the schema definition for a Radio */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'radio',
+			name: 'Radio',
+			description: 'A radio control. Give a bunch the same name to keep them as part of the same group',
+			
+			
+			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. A name attached to this radio button */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'A name attached to this radio button',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
+			            },
+			            /** Is disabled. is this control disabled? */
+			            'isDisabled': {
+			                label: 'Is disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'is this control disabled?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is checked. Is this control checked? */
+			            'isChecked': {
+			                label: 'Is checked',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is this control checked?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.InputHelper.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Radio */
+		export const definition: SpruceSchemas.Local.Radio.IDefinition = {
+			id: 'radio',
+			name: 'Radio',
+			description: 'A radio control. Give a bunch the same name to keep them as part of the same group',
+			
+			
+			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Name. A name attached to this radio button */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'A name attached to this radio button',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Label. */
+			            'label': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
+			            },
+			            /** Is disabled. is this control disabled? */
+			            'isDisabled': {
+			                label: 'Is disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'is this control disabled?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is checked. Is this control checked? */
+			            'isChecked': {
+			                label: 'Is checked',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is this control checked?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'className': {
+			                label: '',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Helper. */
+			            'helper': {
+			                label: 'Helper',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.InputHelper.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Radio.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** A button with a dropdown of actions on the right */
 		export interface ISplitButton {
 			
@@ -6932,7 +8377,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Is small. Sets the visual hierarchy of the button */
 				'isSmall'?: boolean| undefined | null
 				/** Click handler. */
-				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
+				'onClick'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 				/** Portal. Render in a react-portal, not sure why this is needed or not just always true */
 				'usePortal'?: boolean| undefined | null
 		}
@@ -7038,7 +8483,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			            /** Portal. Render in a react-portal, not sure why this is needed or not just always true */
 			            'usePortal': {
@@ -7153,7 +8598,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			            /** Portal. Render in a react-portal, not sure why this is needed or not just always true */
 			            'usePortal': {
@@ -7779,7 +9224,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Headline. Headline text */
 				'headline': string
 				/** Remove action. Action to be invoked when hitting the dismiss button */
-				'onClickDismiss'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
+				'onClickDismiss'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 				/** Id. Unique id for UI caching */
 				'id': string
 				/** Text. Optional; Text after the headline */
@@ -7789,7 +9234,9 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Followup text. Text for the followup action */
 				'followupText'?: string| undefined | null
 				/** Followup handler. Callback to be invoked when hitting the followup CTA */
-				'onClickFollowup'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
+				'onClickFollowup'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
+				/** Remove handler. Callback invoked when remove is clicked (cannot block the removal) */
+				'onRemove'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 		}
 	}	 
 
@@ -7828,7 +9275,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			            /** Id. Unique id for UI caching */
 			            'id': {
@@ -7893,7 +9340,20 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			            /** Remove handler. Callback invoked when remove is clicked (cannot block the removal) */
+			            'onRemove': {
+			                label: 'Remove handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Callback invoked when remove is clicked (cannot block the removal)',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			    }
 		}
@@ -7930,7 +9390,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			            /** Id. Unique id for UI caching */
 			            'id': {
@@ -7995,7 +9455,20 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			            /** Remove handler. Callback invoked when remove is clicked (cannot block the removal) */
+			            'onRemove': {
+			                label: 'Remove handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Callback invoked when remove is clicked (cannot block the removal)',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			    }
 		}
@@ -10708,190 +12181,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
-		/** For hints and error messages after inputs (if both set, only error shows) */
-		export interface IInputHelper {
-			
-				/** Hint. */
-				'hint'?: string| undefined | null
-				/** Error message. */
-				'error'?: string| undefined | null
-				
-				'className'?: string| undefined | null
-				
-				'htmlFor'?: string| undefined | null
-				
-				'ElementTag'?: ("p" | "label")| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.InputHelper {
-		export const id = 'inputHelper'
-
-		/** The interface for the schema definition for a Input helper */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'inputHelper',
-			name: 'Input helper',
-			description: 'For hints and error messages after inputs (if both set, only error shows)',
-			
-			
-			    fields: {
-			            /** Hint. */
-			            'hint': {
-			                label: 'Hint',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Error message. */
-			            'error': {
-			                label: 'Error message',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'htmlFor': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'ElementTag': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "p",
-			                
-			                
-			                options: {choices: [{"value":"p","label":"<p/>"},{"value":"label","label":"<label/>"}],}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Input helper */
-		export const definition: SpruceSchemas.Local.InputHelper.IDefinition = {
-			id: 'inputHelper',
-			name: 'Input helper',
-			description: 'For hints and error messages after inputs (if both set, only error shows)',
-			
-			
-			    fields: {
-			            /** Hint. */
-			            'hint': {
-			                label: 'Hint',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Error message. */
-			            'error': {
-			                label: 'Error message',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'htmlFor': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'ElementTag': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "p",
-			                
-			                
-			                options: {choices: [{"value":"p","label":"<p/>"},{"value":"label","label":"<label/>"}],}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.InputHelper.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
 		/** An input with autosuggest capabilities! */
 		export interface IAutosuggest {
 			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
 				/** Id. */
 				'id'?: string| undefined | null
+				/** Value. */
+				'value'?: string| undefined | null
 				/** Suggestion getter. Invoked while person is typing. Is expected to return search results */
-				'getSuggestions': ((query: string) => Promise<Record<string, any>[]>)
+				'getSuggestions': ((query: string) => Promise<Record<string, any>[]> | Record<string, any>[])
 				/** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
 				'getSuggestionValue': ((suggestion: Record<string, any>) => string)
 				/** Suggestion renderer. Renders a single suggestion, return a React.ReactNode */
@@ -10943,10 +12245,49 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
 			                
@@ -10967,7 +12308,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(query: string) => Promise<Record<string, any>[]>`,}
+			                options: {valueType: `(query: string) => Promise<Record<string, any>[]> | Record<string, any>[]`,}
 			            },
 			            /** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
 			            'getSuggestionValue': {
@@ -11171,10 +12512,49 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
 			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Value. */
+			            'value': {
+			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
 			                
 			                
 			                
@@ -11195,7 +12575,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(query: string) => Promise<Record<string, any>[]>`,}
+			                options: {valueType: `(query: string) => Promise<Record<string, any>[]> | Record<string, any>[]`,}
 			            },
 			            /** Suggestion value reducer. Takes a suggestion (returned from the suggestion getter) and turns it into a single string value to show in the search input after selection */
 			            'getSuggestionValue': {
@@ -11403,9 +12783,9 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'kind'?: ("singleDate" | "dateRange")| undefined | null
 				/** Date selection callback. */
-				'onSelectDate'?: ((date: Date) => Promise<void>)| undefined | null
+				'onSelectDate'?: ((date: Date) => Promise<void> | void)| undefined | null
 				/** Date range selection callback. */
-				'onSelectDateRange'?: ((range: { startDate: Date, endDate: Date }) => Promise<void>)| undefined | null
+				'onSelectDateRange'?: ((range: { startDate: Date, endDate: Date }) => Promise<void> | void)| undefined | null
 				/** Selected date. Use this when kind is "Single date" */
 				'date'?: SpruceSchema.IDateFieldValue| undefined | null
 				/** Start date. Used this when kind is "Date range" */
@@ -11456,7 +12836,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(date: Date) => Promise<void>`,}
+			                options: {valueType: `(date: Date) => Promise<void> | void`,}
 			            },
 			            /** Date range selection callback. */
 			            'onSelectDateRange': {
@@ -11469,7 +12849,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(range: { startDate: Date, endDate: Date }) => Promise<void>`,}
+			                options: {valueType: `(range: { startDate: Date, endDate: Date }) => Promise<void> | void`,}
 			            },
 			            /** Selected date. Use this when kind is "Single date" */
 			            'date': {
@@ -11584,7 +12964,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(date: Date) => Promise<void>`,}
+			                options: {valueType: `(date: Date) => Promise<void> | void`,}
 			            },
 			            /** Date range selection callback. */
 			            'onSelectDateRange': {
@@ -11597,7 +12977,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `(range: { startDate: Date, endDate: Date }) => Promise<void>`,}
+			                options: {valueType: `(range: { startDate: Date, endDate: Date }) => Promise<void> | void`,}
 			            },
 			            /** Selected date. Use this when kind is "Single date" */
 			            'date': {
@@ -11783,19 +13163,25 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		export interface IForm {
 			
 				/** Submit handler. */
-				'onSubmit': (() => void)
+				'onSubmit': ((e: React.FormEvent<HTMLFormElement>) => void)
 				
 				'className'?: string| undefined | null
 				/** Reset handler. */
 				'onReset'?: (() => void)| undefined | null
 				/** Validate. */
-				'validate'?: (() => void)| undefined | null
+				'onValidate'?: ((values: Record<string, any>) => Promise<void> | void)| undefined | null
 				
 				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				/** Initial values. */
 				'initialValues'?: (Record<string, any>)| undefined | null
 				/** Render type. Set this to tell the Form where it'll be rendered */
 				'renderAs'?: ("page" | "default" | "dialog")| undefined | null
+				/** Dirty. Has this field been edited/updated? */
+				'isDirty'?: boolean| undefined | null
+				/** Valid. Is the form valid (will disable submit buttons) */
+				'isValid'?: boolean| undefined | null
+				/** Busy. Is the form busy (will show progress over buttons) */
+				'isBusy'?: boolean| undefined | null
 				/** Dialog buttons. */
 				'dialogButtons'?: SpruceSchemas.Local.IFormDialogButtons| undefined | null
 		}
@@ -11815,7 +13201,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** Submit handler. */
 			            'onSubmit': {
 			                label: 'Submit handler',
-			                type: SpruceSchema.FieldType.Raw,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                isRequired: true,
 			                
@@ -11823,7 +13209,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {event: `React.FormEvent<...>`,element: `HTMLFormElement`,}
 			            },
 			            /** . */
 			            'className': {
@@ -11852,7 +13238,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                options: {valueType: `() => void`,}
 			            },
 			            /** Validate. */
-			            'validate': {
+			            'onValidate': {
 			                label: 'Validate',
 			                type: SpruceSchema.FieldType.Raw,
 			                
@@ -11862,7 +13248,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {valueType: `(values: Record<string, any>) => Promise<void> | void`,}
 			            },
 			            /** . */
 			            'children': {
@@ -11902,6 +13288,45 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dirty. Has this field been edited/updated? */
+			            'isDirty': {
+			                label: 'Dirty',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Has this field been edited/updated?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Valid. Is the form valid (will disable submit buttons) */
+			            'isValid': {
+			                label: 'Valid',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form valid (will disable submit buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Busy. Is the form busy (will show progress over buttons) */
+			            'isBusy': {
+			                label: 'Busy',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form busy (will show progress over buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
 			            },
 			            /** Dialog buttons. */
 			            'dialogButtons': {
@@ -11930,7 +13355,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** Submit handler. */
 			            'onSubmit': {
 			                label: 'Submit handler',
-			                type: SpruceSchema.FieldType.Raw,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                isRequired: true,
 			                
@@ -11938,7 +13363,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {event: `React.FormEvent<...>`,element: `HTMLFormElement`,}
 			            },
 			            /** . */
 			            'className': {
@@ -11967,7 +13392,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                options: {valueType: `() => void`,}
 			            },
 			            /** Validate. */
-			            'validate': {
+			            'onValidate': {
 			                label: 'Validate',
 			                type: SpruceSchema.FieldType.Raw,
 			                
@@ -11977,7 +13402,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {valueType: `(values: Record<string, any>) => Promise<void> | void`,}
 			            },
 			            /** . */
 			            'children': {
@@ -12017,6 +13442,45 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dirty. Has this field been edited/updated? */
+			            'isDirty': {
+			                label: 'Dirty',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Has this field been edited/updated?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Valid. Is the form valid (will disable submit buttons) */
+			            'isValid': {
+			                label: 'Valid',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form valid (will disable submit buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Busy. Is the form busy (will show progress over buttons) */
+			            'isBusy': {
+			                label: 'Busy',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form busy (will show progress over buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
 			            },
 			            /** Dialog buttons. */
 			            'dialogButtons': {
@@ -12165,19 +13629,25 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		export interface IFormBuilder {
 			
 				/** Submit handler. */
-				'onSubmit': (() => void)
+				'onSubmit': ((e: React.FormEvent<HTMLFormElement>) => void)
 				
 				'className'?: string| undefined | null
 				/** Reset handler. */
 				'onReset'?: (() => void)| undefined | null
 				/** Validate. */
-				'validate'?: (() => void)| undefined | null
+				'onValidate'?: ((values: Record<string, any>) => Promise<void> | void)| undefined | null
 				
 				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				/** Initial values. */
 				'initialValues'?: (Record<string, any>)| undefined | null
 				/** Render type. Set this to tell the Form where it'll be rendered */
 				'renderAs'?: ("page" | "default" | "dialog")| undefined | null
+				/** Dirty. Has this field been edited/updated? */
+				'isDirty'?: boolean| undefined | null
+				/** Valid. Is the form valid (will disable submit buttons) */
+				'isValid'?: boolean| undefined | null
+				/** Busy. Is the form busy (will show progress over buttons) */
+				'isBusy'?: boolean| undefined | null
 				/** Dialog buttons. */
 				'dialogButtons'?: SpruceSchemas.Local.IFormDialogButtons| undefined | null
 				/** Schema definition. */
@@ -12201,7 +13671,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** Submit handler. */
 			            'onSubmit': {
 			                label: 'Submit handler',
-			                type: SpruceSchema.FieldType.Raw,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                isRequired: true,
 			                
@@ -12209,7 +13679,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {event: `React.FormEvent<...>`,element: `HTMLFormElement`,}
 			            },
 			            /** . */
 			            'className': {
@@ -12238,7 +13708,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                options: {valueType: `() => void`,}
 			            },
 			            /** Validate. */
-			            'validate': {
+			            'onValidate': {
 			                label: 'Validate',
 			                type: SpruceSchema.FieldType.Raw,
 			                
@@ -12248,7 +13718,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {valueType: `(values: Record<string, any>) => Promise<void> | void`,}
 			            },
 			            /** . */
 			            'children': {
@@ -12288,6 +13758,45 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dirty. Has this field been edited/updated? */
+			            'isDirty': {
+			                label: 'Dirty',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Has this field been edited/updated?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Valid. Is the form valid (will disable submit buttons) */
+			            'isValid': {
+			                label: 'Valid',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form valid (will disable submit buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Busy. Is the form busy (will show progress over buttons) */
+			            'isBusy': {
+			                label: 'Busy',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form busy (will show progress over buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
 			            },
 			            /** Dialog buttons. */
 			            'dialogButtons': {
@@ -12342,7 +13851,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** Submit handler. */
 			            'onSubmit': {
 			                label: 'Submit handler',
-			                type: SpruceSchema.FieldType.Raw,
+			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                isRequired: true,
 			                
@@ -12350,7 +13859,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {event: `React.FormEvent<...>`,element: `HTMLFormElement`,}
 			            },
 			            /** . */
 			            'className': {
@@ -12379,7 +13888,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                options: {valueType: `() => void`,}
 			            },
 			            /** Validate. */
-			            'validate': {
+			            'onValidate': {
 			                label: 'Validate',
 			                type: SpruceSchema.FieldType.Raw,
 			                
@@ -12389,7 +13898,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {valueType: `() => void`,}
+			                options: {valueType: `(values: Record<string, any>) => Promise<void> | void`,}
 			            },
 			            /** . */
 			            'children': {
@@ -12429,6 +13938,45 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: {choices: [{"value":"page","label":"Full page"},{"value":"default","label":"Default"},{"value":"dialog","label":"Dialog body"}],}
+			            },
+			            /** Dirty. Has this field been edited/updated? */
+			            'isDirty': {
+			                label: 'Dirty',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Has this field been edited/updated?',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Valid. Is the form valid (will disable submit buttons) */
+			            'isValid': {
+			                label: 'Valid',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form valid (will disable submit buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Busy. Is the form busy (will show progress over buttons) */
+			            'isBusy': {
+			                label: 'Busy',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Is the form busy (will show progress over buttons)',
+			                
+			                
+			                
+			                
+			                options: undefined
 			            },
 			            /** Dialog buttons. */
 			            'dialogButtons': {
@@ -12478,6 +14026,99 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
+		/** Mixin for inputs that support events */
+		export interface IInputEvents {
+			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.InputEvents {
+		export const id = 'inputEvents'
+
+		/** The interface for the schema definition for a Input events */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'inputEvents',
+			name: 'Input events',
+			description: 'Mixin for inputs that support events',
+			
+			
+			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Input events */
+		export const definition: SpruceSchemas.Local.InputEvents.IDefinition = {
+			id: 'inputEvents',
+			name: 'Input events',
+			description: 'Mixin for inputs that support events',
+			
+			
+			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.InputEvents.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** Collect a phone number with area and country codes */
 		export interface IPhoneInput {
 			
@@ -12489,6 +14130,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
 				/** Value. */
 				'value'?: string| undefined | null
+				/** Placeholder. */
+				'placeholder'?: string| undefined | null
 				/** Autofocus. Focus when paid loads */
 				'autoFocus'?: boolean| undefined | null
 		}
@@ -12547,6 +14190,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            /** Value. */
 			            'value': {
 			                label: 'Value',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -12633,6 +14289,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
+			            /** Placeholder. */
+			            'placeholder': {
+			                label: 'Placeholder',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			            /** Autofocus. Focus when paid loads */
 			            'autoFocus': {
 			                label: 'Autofocus',
@@ -12658,6 +14327,10 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** Show a text input as a search field */
 		export interface ISearch {
 			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
 				/** Id. */
 				'id'?: string| undefined | null
 				/** Name. */
@@ -12670,14 +14343,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'type': `search`
 				/** Before icon. The icon shown before the input */
 				'iconBefore'?: SpruceSchemas.Local.IIcon| undefined | null
-				/** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
-				'clearButtonIcon'?: SpruceSchemas.Local.IIcon| undefined | null
-				/** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
-				'onClear'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
-				/** Change handler. */
-				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
-				/** Blur handler. */
-				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
+				/** Clear button. Drops in a clear button after the field, but requires you to handle the clear. */
+				'clearButton'?: SpruceSchemas.Local.IButton| undefined | null
 				/** Appendix. Shown under the input. */
 				'appendix'?: string| undefined | null
 				/** Helper. Shows hints or error messages. If both set, error wins. */
@@ -12690,6 +14357,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'isSmall'?: boolean| undefined | null
 				/** Value. */
 				'value'?: string| undefined | null
+				/** Read only. */
+				'isReadOnly'?: boolean| undefined | null
 		}
 	}	 
 
@@ -12704,6 +14373,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
@@ -12782,57 +14477,18 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
-			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
-			            'clearButtonIcon': {
-			                label: 'Clear input icon',
+			            /** Clear button. Drops in a clear button after the field, but requires you to handle the clear. */
+			            'clearButton': {
+			                label: 'Clear button',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
-			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                hint: 'Drops in a clear button after the field, but requires you to handle the clear.',
 			                
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
-			            },
-			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
-			            'onClear': {
-			                label: 'Clear handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Change handler. */
-			            'onChange': {
-			                label: 'Change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Blur handler. */
-			            'onBlur': {
-			                label: 'Blur handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Appendix. Shown under the input. */
 			            'appendix': {
@@ -12912,6 +14568,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
+			            /** Read only. */
+			            'isReadOnly': {
+			                label: 'Read only',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			    }
 		}
 
@@ -12923,6 +14592,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
@@ -13001,57 +14696,18 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
-			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
-			            'clearButtonIcon': {
-			                label: 'Clear input icon',
+			            /** Clear button. Drops in a clear button after the field, but requires you to handle the clear. */
+			            'clearButton': {
+			                label: 'Clear button',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
-			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                hint: 'Drops in a clear button after the field, but requires you to handle the clear.',
 			                
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
-			            },
-			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
-			            'onClear': {
-			                label: 'Clear handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Change handler. */
-			            'onChange': {
-			                label: 'Change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Blur handler. */
-			            'onBlur': {
-			                label: 'Blur handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Appendix. Shown under the input. */
 			            'appendix': {
@@ -13122,6 +14778,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            'value': {
 			                label: 'Value',
 			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Read only. */
+			            'isReadOnly': {
+			                label: 'Read only',
+			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
 			                
@@ -13240,6 +14909,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'id'?: string| undefined | null
 				/** Simple. Render a simpler variation */
 				'isSimple'?: boolean| undefined | null
+				/** Disabled. */
+				'isDisabled'?: boolean| undefined | null
 				
 				'className'?: string| undefined | null
 				/** Label. */
@@ -13286,6 +14957,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                hint: 'Render a simpler variation',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
 			                
 			                
 			                
@@ -13407,6 +15091,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
+			            /** Disabled. */
+			            'isDisabled': {
+			                label: 'Disabled',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			            /** . */
 			            'className': {
 			                label: '',
@@ -13497,18 +15194,22 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** A simple sliding control */
 		export interface ISlider {
 			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
 				/** Id. */
 				'id'?: string| undefined | null
 				/** Label. */
 				'label'?: SpruceSchemas.Local.ILabel| undefined | null
+				/** Name. */
+				'name'?: string| undefined | null
 				/** Minimum. The left most value of the slider */
 				'min': number
 				/** Maximum. The right most value of the slider */
 				'max': number
 				/** Value. The value of the slider */
 				'value': number
-				/** On change. */
-				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
 				/** Disabled. */
 				'isDisabled'?: boolean| undefined | null
 		}
@@ -13525,6 +15226,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
@@ -13551,6 +15278,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: {schemas: SpruceSchemas.Local.Label.IDefinition[],}
 			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			            /** Minimum. The left most value of the slider */
 			            'min': {
 			                label: 'Minimum',
@@ -13590,19 +15330,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
-			            /** On change. */
-			            'onChange': {
-			                label: 'On change',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
 			            /** Disabled. */
 			            'isDisabled': {
 			                label: 'Disabled',
@@ -13627,6 +15354,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
@@ -13653,6 +15406,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: {schemas: [SpruceSchemas.Local.Label.definition],}
 			            },
+			            /** Name. */
+			            'name': {
+			                label: 'Name',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			            /** Minimum. The left most value of the slider */
 			            'min': {
 			                label: 'Minimum',
@@ -13691,19 +15457,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: undefined
-			            },
-			            /** On change. */
-			            'onChange': {
-			                label: 'On change',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
 			            },
 			            /** Disabled. */
 			            'isDisabled': {
@@ -13907,6 +15660,10 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** A reusable component that holds an html &lt;input /&gt; element and decorates it. */
 		export interface ITextInput {
 			
+				/** Change handler. */
+				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
+				/** Blur handler. */
+				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
 				/** Id. */
 				'id'?: string| undefined | null
 				/** Name. */
@@ -13919,14 +15676,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'type'?: ("button" | "search" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week")| undefined | null
 				/** Before icon. The icon shown before the input */
 				'iconBefore'?: SpruceSchemas.Local.IIcon| undefined | null
-				/** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
-				'clearButtonIcon'?: SpruceSchemas.Local.IIcon| undefined | null
-				/** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
-				'onClear'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
-				/** Change handler. */
-				'onChange'?: ((e: React.ChangeEvent<HTMLInputElement>) => void)| undefined | null
-				/** Blur handler. */
-				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
+				/** Clear button. Drops in a clear button after the field, but requires you to handle the clear. */
+				'clearButton'?: SpruceSchemas.Local.IButton| undefined | null
 				/** Appendix. Shown under the input. */
 				'appendix'?: string| undefined | null
 				/** Helper. Shows hints or error messages. If both set, error wins. */
@@ -13939,6 +15690,8 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'isSmall'?: boolean| undefined | null
 				/** Value. */
 				'value'?: string| undefined | null
+				/** Read only. */
+				'isReadOnly'?: boolean| undefined | null
 		}
 	}	 
 
@@ -13953,6 +15706,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
@@ -14031,57 +15810,18 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
 			            },
-			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
-			            'clearButtonIcon': {
-			                label: 'Clear input icon',
+			            /** Clear button. Drops in a clear button after the field, but requires you to handle the clear. */
+			            'clearButton': {
+			                label: 'Clear button',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
-			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                hint: 'Drops in a clear button after the field, but requires you to handle the clear.',
 			                
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
-			            },
-			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
-			            'onClear': {
-			                label: 'Clear handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Change handler. */
-			            'onChange': {
-			                label: 'Change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Blur handler. */
-			            'onBlur': {
-			                label: 'Blur handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
 			            },
 			            /** Appendix. Shown under the input. */
 			            'appendix': {
@@ -14161,6 +15901,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
+			            /** Read only. */
+			            'isReadOnly': {
+			                label: 'Read only',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
 			    }
 		}
 
@@ -14172,6 +15925,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			
 			
 			    fields: {
+			            /** Change handler. */
+			            'onChange': {
+			                label: 'Change handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
+			            },
+			            /** Blur handler. */
+			            'onBlur': {
+			                label: 'Blur handler',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			            },
 			            /** Id. */
 			            'id': {
 			                label: 'Id',
@@ -14250,57 +16029,18 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
 			            },
-			            /** Clear input icon. The icon shown on the "clear" or "reset" button that is after an input. */
-			            'clearButtonIcon': {
-			                label: 'Clear input icon',
+			            /** Clear button. Drops in a clear button after the field, but requires you to handle the clear. */
+			            'clearButton': {
+			                label: 'Clear button',
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
-			                hint: 'The icon shown on the "clear" or "reset" button that is after an input.',
+			                hint: 'Drops in a clear button after the field, but requires you to handle the clear.',
 			                
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
-			            },
-			            /** Clear handler. Invoked when a person taps the clear button (requires clear button icon to be set) */
-			            'onClear': {
-			                label: 'Clear handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Invoked when a person taps the clear button (requires clear button icon to be set)',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Change handler. */
-			            'onChange': {
-			                label: 'Change handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
-			            },
-			            /** Blur handler. */
-			            'onBlur': {
-			                label: 'Blur handler',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
 			            },
 			            /** Appendix. Shown under the input. */
 			            'appendix': {
@@ -14371,6 +16111,19 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            'value': {
 			                label: 'Value',
 			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Read only. */
+			            'isReadOnly': {
+			                label: 'Read only',
+			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
 			                
@@ -14618,155 +16371,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Textarea.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/** A section that makes up a layout */
-		export interface ILayoutSection {
-			
-				/** Id. */
-				'id'?: string| undefined | null
-				/** Children. */
-				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
-				/** Classname. */
-				'className'?: string| undefined | null
-				/** Is secondary. Makes this section thinner */
-				'isSecondary'?: boolean| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.LayoutSection {
-		export const id = 'layoutSection'
-
-		/** The interface for the schema definition for a Layout section */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'layoutSection',
-			name: 'Layout section',
-			description: 'A section that makes up a layout',
-			
-			
-			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Classname. */
-			            'className': {
-			                label: 'Classname',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is secondary. Makes this section thinner */
-			            'isSecondary': {
-			                label: 'Is secondary',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Makes this section thinner',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a Layout section */
-		export const definition: SpruceSchemas.Local.LayoutSection.IDefinition = {
-			id: 'layoutSection',
-			name: 'Layout section',
-			description: 'A section that makes up a layout',
-			
-			
-			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Classname. */
-			            'className': {
-			                label: 'Classname',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is secondary. Makes this section thinner */
-			            'isSecondary': {
-			                label: 'Is secondary',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Makes this section thinner',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.LayoutSection.IDefinition>
 	}
 	
 
@@ -15572,6 +17176,183 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
+		/** A section that makes up a layout */
+		export interface ILayoutSection {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Children. */
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Classname. */
+				'className'?: string| undefined | null
+				/** Is secondary. Makes this section thinner */
+				'isSecondary'?: boolean| undefined | null
+				/** Layout builder. */
+				'layoutBuilder'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.LayoutSection {
+		export const id = 'layoutSection'
+
+		/** The interface for the schema definition for a Layout section */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layoutSection',
+			name: 'Layout section',
+			description: 'A section that makes up a layout',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Classname. */
+			            'className': {
+			                label: 'Classname',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is secondary. Makes this section thinner */
+			            'isSecondary': {
+			                label: 'Is secondary',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes this section thinner',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout section */
+		export const definition: SpruceSchemas.Local.LayoutSection.IDefinition = {
+			id: 'layoutSection',
+			name: 'Layout section',
+			description: 'A section that makes up a layout',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Classname. */
+			            'className': {
+			                label: 'Classname',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is secondary. Makes this section thinner */
+			            'isSecondary': {
+			                label: 'Is secondary',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes this section thinner',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.LayoutSection.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** A list is comprised of list items (or expandable list items). This is that list item. */
 		export interface IListItem {
 			
@@ -15614,7 +17395,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Loading. Makes the item look like a loading placeholder */
 				'isLoading'?: boolean| undefined | null
 				/** Selectable element. Any props you want sent down to the selectable component being rendered */
-				'selectable'?: { schemaId: 'radio', values: SpruceSchemas.Local.IRadio } | { schemaId: 'checkbox', values: SpruceSchemas.Local.ICheckbox }| undefined | null
+				'selectable'?: { schemaId: 'listItemRadio', values: SpruceSchemas.Local.IListItemRadio } | { schemaId: 'listItemCheckbox', values: SpruceSchemas.Local.IListItemCheckbox }| undefined | null
 				/** Warnings. Highlight title, subtitle, note with warning colors */
 				'warnings'?: SpruceSchemas.Local.IListItemWarning| undefined | null
 				/** List. Optional; adds a nested list */
@@ -15622,7 +17403,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Lists. Optional; adds multiple lists nested at the same level */
 				'lists'?: SpruceSchemas.Local.IList[]| undefined | null
 				/** Click handler. */
-				'onClick'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
+				'onClick'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 		}
 	}	 
 
@@ -15895,7 +17676,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {schemas: (SpruceSchemas.Local.Radio.IDefinition | SpruceSchemas.Local.Checkbox.IDefinition)[],}
+			                options: {schemas: (SpruceSchemas.Local.ListItemRadio.IDefinition | SpruceSchemas.Local.ListItemCheckbox.IDefinition)[],}
 			            },
 			            /** Warnings. Highlight title, subtitle, note with warning colors */
 			            'warnings': {
@@ -15947,7 +17728,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			    }
 		}
@@ -16218,7 +17999,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.Local.Radio.definition, SpruceSchemas.Local.Checkbox.definition],}
+			                options: {schemas: [SpruceSchemas.Local.ListItemRadio.definition, SpruceSchemas.Local.ListItemCheckbox.definition],}
 			            },
 			            /** Warnings. Highlight title, subtitle, note with warning colors */
 			            'warnings': {
@@ -16270,7 +18051,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 			            },
 			    }
 		}
@@ -16539,6 +18320,10 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 				
 				'footerChildren'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+				'onToggleExpanded'?: (() => void)| undefined | null
+				/** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+				'onForceCollapse'?: (() => void)| undefined | null
 		}
 	}	 
 
@@ -16696,6 +18481,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                options: undefined
 			            },
+			            /** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+			            'onToggleExpanded': {
+			                label: 'Expander handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			            /** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+			            'onForceCollapse': {
+			                label: 'Force close handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expect you to collapse the bar no matter what (isExpanded to false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
 			    }
 		}
 
@@ -16849,6 +18660,32 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                options: undefined
+			            },
+			            /** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+			            'onToggleExpanded': {
+			                label: 'Expander handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			            /** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+			            'onForceCollapse': {
+			                label: 'Force close handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expect you to collapse the bar no matter what (isExpanded to false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
 			            },
 			    }
 		}
@@ -17698,6 +19535,99 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface IToastHeader {
+			
+				/** Headline. Headline text */
+				'headline': string
+				/** Remove action. Action to be invoked when hitting the dismiss button */
+				'onClickDismiss'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.ToastHeader {
+		export const id = 'toastHeader'
+
+		/** The interface for the schema definition for a Toast header */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'toastHeader',
+			name: 'Toast header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Headline text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Toast header */
+		export const definition: SpruceSchemas.Local.ToastHeader.IDefinition = {
+			id: 'toastHeader',
+			name: 'Toast header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Headline text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.ToastHeader.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/** Make it great! */
 		export interface ISprucebotAvatar {
 			
@@ -17742,7 +19672,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                isRequired: true,
 			                hint: 'A hint',
 			                
-			                
+			                defaultValue: "medium",
 			                
 			                
 			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
@@ -17755,7 +19685,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                isRequired: true,
 			                
 			                
-			                
+			                defaultValue: "medium",
 			                
 			                
 			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
@@ -17792,7 +19722,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                isRequired: true,
 			                hint: 'A hint',
 			                
-			                
+			                defaultValue: "medium",
 			                
 			                
 			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
@@ -17805,7 +19735,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                isRequired: true,
 			                
 			                
-			                
+			                defaultValue: "medium",
 			                
 			                
 			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
@@ -17940,6 +19870,127 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 	
 
 	export namespace SpruceSchemas.Local {
+		/** Avatar that makes size optional for use with the Sprucebot Typed Message component */
+		export interface ISprucebotTypedMessageAvatar {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Second Field. A hint */
+				'stateOfMind': ("chill" | "contemplative" | "curious" | "accomplished")
+				/** Size. */
+				'size'?: ("small" | "medium" | "large")| undefined | null
+		}
+	}	 
+
+	export namespace SpruceSchemas.Local.SprucebotTypedMessageAvatar {
+		export const id = 'sprucebotTypedMessageAvatar'
+
+		/** The interface for the schema definition for a Typed message avatar */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sprucebotTypedMessageAvatar',
+			name: 'Typed message avatar',
+			description: 'Avatar that makes size optional for use with the Sprucebot Typed Message component',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Second Field. A hint */
+			            'stateOfMind': {
+			                label: 'Second Field',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                isRequired: true,
+			                hint: 'A hint',
+			                
+			                defaultValue: "medium",
+			                
+			                
+			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
+			            },
+			            /** Size. */
+			            'size': {
+			                label: 'Size',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "medium",
+			                
+			                
+			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Typed message avatar */
+		export const definition: SpruceSchemas.Local.SprucebotTypedMessageAvatar.IDefinition = {
+			id: 'sprucebotTypedMessageAvatar',
+			name: 'Typed message avatar',
+			description: 'Avatar that makes size optional for use with the Sprucebot Typed Message component',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Id,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Second Field. A hint */
+			            'stateOfMind': {
+			                label: 'Second Field',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                isRequired: true,
+			                hint: 'A hint',
+			                
+			                defaultValue: "medium",
+			                
+			                
+			                options: {choices: [{"value":"chill","label":"Chill - Sprucebot is saying something informative or a salutation"},{"value":"contemplative","label":"Contemplative - Sprucebot is loading or sending data"},{"value":"curious","label":"Curious - Sprucebot is asking a question or waiting for input"},{"value":"accomplished","label":"Accomplished - Sprucebot is celebrating because a process has finished"}],}
+			            },
+			            /** Size. */
+			            'size': {
+			                label: 'Size',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "medium",
+			                
+			                
+			                options: {choices: [{"value":"small","label":"Small"},{"value":"medium","label":"Medium"},{"value":"large","label":"Large"}],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SprucebotTypedMessageAvatar.IDefinition>
+	}
+	
+
+	export namespace SpruceSchemas.Local {
 		/**  */
 		export interface ISprucebotTypedMessage {
 			
@@ -17948,7 +19999,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Sentences. Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold) */
 				'sentences': SpruceSchemas.Local.ISprucebotTypedMessageSentence[]
 				/** Default avatar. How should Sprucebot be rendered by default */
-				'defaultAvatar'?: SpruceSchemas.Local.ISprucebotAvatar| undefined | null
+				'defaultAvatar'?: SpruceSchemas.Local.ISprucebotTypedMessageAvatar| undefined | null
 				/** Start delay. How long should I wait before starting to type? */
 				'startDelay'?: SpruceSchema.IDurationFieldValue| undefined | null
 				/** Loop. */
@@ -18008,7 +20059,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {schemas: SpruceSchemas.Local.SprucebotAvatar.IDefinition[],}
+			                options: {schemas: SpruceSchemas.Local.SprucebotTypedMessageAvatar.IDefinition[],}
 			            },
 			            /** Start delay. How long should I wait before starting to type? */
 			            'startDelay': {
@@ -18110,7 +20161,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			                
 			                
 			                
-			                options: {schemas: [SpruceSchemas.Local.SprucebotAvatar.definition],}
+			                options: {schemas: [SpruceSchemas.Local.SprucebotTypedMessageAvatar.definition],}
 			            },
 			            /** Start delay. How long should I wait before starting to type? */
 			            'startDelay': {
@@ -18169,99 +20220,6 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SprucebotTypedMessage.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/**  */
-		export interface IToastHeader {
-			
-				/** Headline. Headline text */
-				'headline': string
-				/** Remove action. Action to be invoked when hitting the dismiss button */
-				'onClickDismiss'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.ToastHeader {
-		export const id = 'toastHeader'
-
-		/** The interface for the schema definition for a Toast header */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'toastHeader',
-			name: 'Toast header',
-			description: '',
-			
-			
-			    fields: {
-			            /** Headline. Headline text */
-			            'headline': {
-			                label: 'Headline',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Headline text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Remove action. Action to be invoked when hitting the dismiss button */
-			            'onClickDismiss': {
-			                label: 'Remove action',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the dismiss button',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Toast header */
-		export const definition: SpruceSchemas.Local.ToastHeader.IDefinition = {
-			id: 'toastHeader',
-			name: 'Toast header',
-			description: '',
-			
-			
-			    fields: {
-			            /** Headline. Headline text */
-			            'headline': {
-			                label: 'Headline',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Headline text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Remove action. Action to be invoked when hitting the dismiss button */
-			            'onClickDismiss': {
-			                label: 'Remove action',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the dismiss button',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `HTMLDivElement`,}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.ToastHeader.IDefinition>
 	}
 	
 

@@ -1,11 +1,13 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import labelDefinition from './label.definition'
+import inputEventsDefinition from './inputEvents.definition'
 
 const sliderDefinition = buildSchemaDefinition({
 	id: 'slider',
 	name: 'Slider',
 	description: 'A simple sliding control',
 	fields: {
+		...inputEventsDefinition.fields,
 		id: {
 			type: FieldType.Id,
 			label: 'Id'
@@ -16,6 +18,10 @@ const sliderDefinition = buildSchemaDefinition({
 			options: {
 				schema: labelDefinition
 			}
+		},
+		name: {
+			type: FieldType.Text,
+			label: 'Name'
 		},
 		min: {
 			type: FieldType.Number,
@@ -34,14 +40,6 @@ const sliderDefinition = buildSchemaDefinition({
 			label: 'Value',
 			hint: 'The value of the slider',
 			isRequired: true
-		},
-		onChange: {
-			type: FieldType.EventCallback,
-			label: 'On change',
-			options: {
-				event: 'React.ChangeEvent<...>',
-				element: 'HTMLInputElement'
-			}
 		},
 		isDisabled: {
 			type: FieldType.Boolean,

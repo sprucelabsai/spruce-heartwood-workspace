@@ -1,23 +1,13 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import {
-	withKnobs,
-	object,
-	boolean,
-	number,
-	select
-} from '@storybook/addon-knobs'
+import { withKnobs, object, boolean, select } from '@storybook/addon-knobs'
 import SprucebotTypedMessage from './SprucebotTypedMessage'
-import {
-	IHWSprucebotAvatarStateOfMind,
-	IHWSprucebotTypedMessageSize,
-	IHWButtonKinds,
-	IHWSprucebotTypedMessageSentence
-} from '@sprucelabs/spruce-types'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
 import { TextInput } from '../Forms'
 import Card, { CardBody, CardFooter } from '../Card'
-import { Page, Layout } from '../..'
+import { SpruceSchemas, buildDuration } from '@sprucelabs/heartwood-skill'
+import SkillView from '../SkillView'
+import Layout from '../Layout/Layout'
 
 const stories = storiesOf('SprucebotTypedMessage', module)
 
@@ -30,20 +20,15 @@ stories.add('SprucebotTypedMessage', () => (
 		paused={boolean('paused', false)}
 		size={select(
 			'size',
-			{
-				['IHWSprucebotTypedMessageSize.Small']:
-					IHWSprucebotTypedMessageSize.Small,
-				['IHWSprucebotTypedMessageSize.Medium']:
-					IHWSprucebotTypedMessageSize.Medium,
-				['IHWSprucebotTypedMessageSize.Large']:
-					IHWSprucebotTypedMessageSize.Large
-			},
-			IHWSprucebotTypedMessageSize.Medium
+			SpruceSchemas.Local.SprucebotTypedMessage.definition.fields.size.options.choices.map(
+				c => c.value
+			),
+			'medium'
 		)}
-		startDelayMs={number('startDelayMs', 1000)}
+		startDelay={object('startDelay', buildDuration({ ms: 1000 }))}
 		defaultAvatar={object('defaultAvatar', {
 			id: 'default-avatar',
-			stateOfMind: IHWSprucebotAvatarStateOfMind.Chill
+			stateOfMind: 'chill'
 		})}
 		sentences={[
 			object('sentences[0]', {
@@ -103,53 +88,43 @@ class MessageController extends React.Component<
 					ref={this.messageRef}
 					id={'controlled'}
 					loop={true}
-					size={IHWSprucebotTypedMessageSize.Large}
+					size={'large'}
 					defaultAvatar={{
 						id: 'avatar',
-						stateOfMind: IHWSprucebotAvatarStateOfMind.Chill
+						stateOfMind: 'chill'
 					}}
 					sentences={[
 						{
 							words: 'this is the first sentence',
-							endDelayMs: 2000
+							endDelay: buildDuration({ ms: 2000 })
 						},
 						{
 							words: 'this is the second sentence',
-							endDelayMs: 2000
+							endDelay: buildDuration({ ms: 2000 })
 						},
 						{
 							words: 'this is the third sentence',
-							endDelayMs: 2000
+							endDelay: buildDuration({ ms: 2000 })
 						}
 					]}
 				/>
 				<div className="controls">
 					<ButtonGroup
-						actions={[
+						buttons={[
 							{
 								text: 'Play',
-								kind: playing
-									? IHWButtonKinds.Primary
-									: IHWButtonKinds.Secondary,
-								htmlAttributes: {
-									onClick: this.play
-								}
+								kind: playing ? 'primary' : 'secondary',
+								onClick: this.play
 							},
 							{
 								text: 'Pause',
-								kind: !playing
-									? IHWButtonKinds.Primary
-									: IHWButtonKinds.Secondary,
-								htmlAttributes: {
-									onClick: this.pause
-								}
+								kind: !playing ? 'primary' : 'secondary',
+								onClick: this.pause
 							},
 							{
 								text: 'Reset',
-								kind: IHWButtonKinds.Secondary,
-								htmlAttributes: {
-									onClick: this.reset
-								}
+								kind: 'secondary',
+								onClick: this.reset
 							}
 						]}
 					/>
@@ -164,7 +139,7 @@ stories.add('Controlling Typed Message', () => <MessageController />)
 interface IAddSentenceControllerProps {}
 interface IAddSentenceControllerState {
 	nextSentence: string
-	sentences: IHWSprucebotTypedMessageSentence[]
+	sentences: SpruceSchemas.Local.ISprucebotTypedMessageSentence[]
 }
 
 class AddSentenceController extends React.Component<
@@ -205,10 +180,10 @@ class AddSentenceController extends React.Component<
 					ref={this.messageRef}
 					id={'controlled'}
 					loop={false}
-					size={IHWSprucebotTypedMessageSize.Large}
+					size={'large'}
 					defaultAvatar={{
 						id: 'avatar',
-						stateOfMind: IHWSprucebotAvatarStateOfMind.Chill
+						stateOfMind: 'chill'
 					}}
 					sentences={sentences}
 				/>
@@ -216,7 +191,7 @@ class AddSentenceController extends React.Component<
 					<CardBody>
 						<TextInput
 							id="next-sentence"
-							label={'next sentence'}
+							label={{ text: 'next sentence' }}
 							onChange={e =>
 								this.setState({
 									nextSentence: (e.target as HTMLInputElement).value
@@ -227,13 +202,11 @@ class AddSentenceController extends React.Component<
 					</CardBody>
 					<CardFooter>
 						<ButtonGroup
-							actions={[
+							buttons={[
 								{
 									text: 'Add sentence',
-									kind: IHWButtonKinds.Primary,
-									htmlAttributes: {
-										onClick: this.addSentence
-									}
+									kind: 'primary',
+									onClick: this.addSentence
 								}
 							]}
 						/>
@@ -245,13 +218,13 @@ class AddSentenceController extends React.Component<
 }
 
 stories.add('Add Sentence', () => (
-	<Page>
-		<Page.Content>
+	<SkillView>
+		<SkillView.Content>
 			<Layout>
 				<Layout.Section>
 					<AddSentenceController />
 				</Layout.Section>
 			</Layout>
-		</Page.Content>
-	</Page>
+		</SkillView.Content>
+	</SkillView>
 ))

@@ -1,13 +1,7 @@
 import React from 'react'
 import { each, keys } from 'lodash'
 import { storiesOf } from '@storybook/react'
-import {
-	withKnobs,
-	// WithKnobsOptions,
-	text,
-	select,
-	object
-} from '@storybook/addon-knobs'
+import { withKnobs, text, object } from '@storybook/addon-knobs'
 import EmptyState from './EmptyState'
 import * as icons from '../../icons.js'
 
@@ -30,37 +24,26 @@ stories.add('Default', () => <EmptyState />)
 
 stories.add('No matches', () => (
 	<EmptyState
-		icon={select('icon', options, 'no_matches')}
-		headline={text('headline', 'No matches found')}
-		primaryAction={object('primary button action', {
+		icon={object('icon', { name: 'no_matches' })}
+		heading={text('headline', 'No matches found')}
+		primaryButton={object('primary button action', {
 			text: 'Show all',
 			onClick: () => {},
 			type: 'submit'
 		})}
-		primaryActionButtonKind={select(
-			'primary button kind',
-			['primary', 'secondary', 'simple', 'caution'],
-			'simple'
-		)}
-		primaryActionButtonIcon={select('primary button icon', options, undefined)}
 	/>
 ))
 
 stories.add('API Failure', () => (
 	<EmptyState
-		icon={select('icon', options, 'caution')}
-		headline={text('headline', 'Data not available')}
-		subheadline={text('subheadline', 'It looks like something went wrong.')}
-		primaryAction={object('primary button action', {
+		icon={object('icon', options, 'caution')}
+		heading={text('headline', 'Data not available')}
+		subheading={text('subheading', 'It looks like something went wrong.')}
+		primaryButton={object('primary button action', {
 			text: 'Try Again',
 			onClick: () => {},
-			type: 'submit'
+			type: 'submit',
+			kind: 'primary'
 		})}
-		primaryActionButtonKind={select(
-			'primary button kind',
-			['primary', 'secondary', 'simple', 'caution'],
-			'simple'
-		)}
-		primaryActionButtonIcon={select('primary button icon', options, undefined)}
 	/>
 ))

@@ -20,14 +20,14 @@ export interface ISortableListProps extends SpruceSchemas.Local.IList {
 	disabled?: boolean
 
 	/** Callback when sorting starts */
-	onSortStart: (item: SpruceSchemas.Local.IListItem) => void
+	onSortStart: (item: SpruceSchemas.Local.IExpandableListItem) => void
 
 	/** Callback when sorting ends */
 	onSortEnd: (props: any) => void
 }
 
 interface ISortableListState {
-	items?: SpruceSchemas.Local.IListItem[]
+	items?: SpruceSchemas.Local.IExpandableListItem[]
 	isSorting: boolean
 }
 const SortableItem = SortableElement(

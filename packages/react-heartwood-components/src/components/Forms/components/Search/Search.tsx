@@ -41,12 +41,13 @@ export default class Search extends Component<
 			>
 				<TextInput
 					iconBefore={{ name: 'search' }}
-					clearButtonIcon={
-						(value && value.length > 0 && { name: 'cancel' }) || undefined
-					}
+					clearButton={{
+						icon:
+							(value && value.length > 0 && { name: 'cancel' }) || undefined,
+						onClick: this.handleClear
+					}}
 					onChange={this.handleChange}
 					value={value}
-					onClear={this.handleClear}
 					type={type}
 					{...rest}
 				/>

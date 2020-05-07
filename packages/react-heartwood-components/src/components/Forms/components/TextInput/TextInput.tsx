@@ -32,11 +32,10 @@ class TextInput extends React.Component<
 			className,
 			label,
 			iconBefore,
-			clearButtonIcon,
+			clearButton,
 			appendix,
 			helper,
 			isSmall,
-			onClear,
 			children,
 			enableAutoComplete,
 			...rest
@@ -59,12 +58,8 @@ class TextInput extends React.Component<
 						autoComplete={enableAutoComplete ? 'on' : 'off'}
 					/>
 					{appendix && <p className="text-input__appendix">{appendix}</p>}
-					{clearButtonIcon && onClear && (
-						<Button
-							onClick={onClear}
-							className="text-input__clear-btn"
-							icon={clearButtonIcon}
-						/>
+					{clearButton && (
+						<Button className="text-input__clear-btn" {...clearButton} />
 					)}
 				</div>
 				{children}

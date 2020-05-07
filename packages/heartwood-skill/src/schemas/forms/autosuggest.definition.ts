@@ -1,13 +1,19 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import inputEventsDefinition from './inputEvents.definition'
 
 const autosuggestDefinition = buildSchemaDefinition({
 	id: 'autosuggest',
 	name: 'Autosuggest',
 	description: 'An input with autosuggest capabilities!',
 	fields: {
+		...inputEventsDefinition.fields,
 		id: {
 			type: FieldType.Id,
 			label: 'Id'
+		},
+		value: {
+			type: FieldType.Text,
+			label: 'Value'
 		},
 		getSuggestions: {
 			type: FieldType.Raw,
@@ -16,7 +22,8 @@ const autosuggestDefinition = buildSchemaDefinition({
 				'Invoked while person is typing. Is expected to return search results',
 			isRequired: true,
 			options: {
-				valueType: '(query: string) => Promise<Record<string, any>[]>'
+				valueType:
+					'(query: string) => Promise<Record<string, any>[]> | Record<string, any>[]'
 			}
 		},
 		getSuggestionValue: {

@@ -9,7 +9,7 @@ stories.addDecorator(withKnobs)
 
 stories.add('Example', () => (
 	<ContextMenu
-		actions={object('actions', [
+		buttons={object('buttons', [
 			{ text: 'Rebook' },
 			{ text: 'Cancel appointment' },
 			{ text: 'Ask for feedback' }

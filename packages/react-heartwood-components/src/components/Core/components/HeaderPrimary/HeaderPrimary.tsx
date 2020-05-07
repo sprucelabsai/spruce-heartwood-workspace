@@ -5,7 +5,6 @@ import UserMenu from './components/UserMenu/UserMenu'
 import LocationMenu from './components/LocationMenu/LocationMenu'
 import Button from '../../../Button/Button'
 import cx from 'classnames'
-import { IHWButtonKinds } from '@sprucelabs/spruce-types'
 
 interface IHeaderPrimaryState {
 	isMenuExpanded: boolean
@@ -264,7 +263,7 @@ export default class HeaderPrimary extends Component<
 					) : (
 						<Fragment>
 							<Button
-								kind={IHWButtonKinds.Primary}
+								kind={'primary'}
 								isSmall
 								text={loginCTA}
 								href={loginHref}

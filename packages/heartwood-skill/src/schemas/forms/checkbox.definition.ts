@@ -1,11 +1,13 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import inputHelperDefinition from './inputHelper.definition'
+import inputEventsDefinition from './inputEvents.definition'
 
 const checkboxDefinition = buildSchemaDefinition({
 	id: 'checkbox',
 	name: 'Checkbox',
 	description: 'A checkbox!',
 	fields: {
+		...inputEventsDefinition.fields,
 		id: {
 			type: FieldType.Id
 		},
@@ -33,15 +35,6 @@ const checkboxDefinition = buildSchemaDefinition({
 		isChecked: {
 			type: FieldType.Boolean,
 			label: 'Checked'
-		},
-		onChange: {
-			type: FieldType.EventCallback,
-			label: 'On change handler',
-			hint: 'Invoked when the checkbox is tapped or clicked',
-			options: {
-				event: 'React.ChangeEvent<...>',
-				element: 'HTMLInputElement'
-			}
 		},
 		className: {
 			type: FieldType.Text,

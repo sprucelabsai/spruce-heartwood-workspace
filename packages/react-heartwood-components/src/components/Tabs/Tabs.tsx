@@ -176,7 +176,7 @@ export default class Tabs extends Component<
 								'context-tab--is-visible': isContextTabVisible
 							})}
 						>
-							<ContextMenu actions={hiddenTabs} closeOnSelectAction />
+							<ContextMenu buttons={hiddenTabs} />
 						</li>
 					)}
 				</ul>

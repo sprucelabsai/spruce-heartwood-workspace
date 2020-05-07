@@ -48,7 +48,7 @@ stories
 				backLinkHref: '#',
 				backLinkText: text('backLinkText', 'Back'),
 				hasBottomBorder: boolean('hasBottomBorder', false),
-				collapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false)
 			}}
 		>
 			<SkillViewBuilder.Content>
@@ -89,7 +89,7 @@ stories
 				title: text('title', 'Page Title'),
 				backLinkHref: '#',
 				backLinkText: text('backLinkText', 'Back'),
-				primaryAction: {
+				primaryButton: {
 					id: 'do-something',
 					text: boolean('text', 'Do something'),
 					kind: select('kind', buttonKinds, 'primary'),
@@ -97,7 +97,7 @@ stories
 					isSmall: boolean('isSmall', true)
 				},
 				hasBottomBorder: boolean('hasBottomBorder', false),
-				collapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false)
 			}}
 		>
 			<SkillViewBuilder.Content>
@@ -124,7 +124,7 @@ stories
 					title: text('title', 'Page Title'),
 					backLinkHref: '#',
 					backLinkText: text('backLinkText', 'Back'),
-					primaryAction: {
+					primaryButton: {
 						id: 'do-something',
 						text: boolean('text', 'Do something'),
 						kind: select('kind', buttonKinds, 'primary'),
@@ -132,7 +132,7 @@ stories
 						isSmall: boolean('isSmall', true)
 					},
 					hasBottomBorder: boolean('hasBottomBorder', false),
-					collapsed: boolean('isCollapsed', false)
+					isCollapsed: boolean('isCollapsed', false)
 				}}
 			>
 				<SkillViewBuilder.Content>
@@ -193,7 +193,7 @@ stories
 				backLinkHref: '#',
 				backLinkText: text('backLinkText', 'Back'),
 				tabs: manyTabs,
-				collapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false)
 			}}
 		>
 			<SkillViewBuilder.Content>

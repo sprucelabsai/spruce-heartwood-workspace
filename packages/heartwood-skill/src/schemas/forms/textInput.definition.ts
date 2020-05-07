@@ -1,4 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import buttonDefinition from './button.definition'
+import inputEventsDefinition from './inputEvents.definition'
 
 const textInputDefinition = buildSchemaDefinition({
 	id: 'textInput',
@@ -6,6 +8,7 @@ const textInputDefinition = buildSchemaDefinition({
 	description:
 		'A reusable component that holds an html <input /> element and decorates it.',
 	fields: {
+		...inputEventsDefinition.fields,
 		id: {
 			type: FieldType.Id,
 			label: 'Id'
@@ -64,41 +67,16 @@ const textInputDefinition = buildSchemaDefinition({
 				schemaId: 'icon'
 			}
 		},
-		clearButtonIcon: {
+		clearButton: {
 			type: FieldType.Schema,
-			label: 'Clear input icon',
+			label: 'Clear button',
 			hint:
-				'The icon shown on the "clear" or "reset" button that is after an input.',
+				'Drops in a clear button after the field, but requires you to handle the clear.',
 			options: {
-				schemaId: 'icon'
+				schema: buttonDefinition
 			}
 		},
-		onClear: {
-			type: FieldType.EventCallback,
-			label: 'Clear handler',
-			hint:
-				'Invoked when a person taps the clear button (requires clear button icon to be set)',
-			options: {
-				event: 'React.MouseEvent<...>',
-				element: 'HTMLInputElement'
-			}
-		},
-		onChange: {
-			type: FieldType.EventCallback,
-			label: 'Change handler',
-			options: {
-				event: 'React.ChangeEvent<...>',
-				element: 'HTMLInputElement'
-			}
-		},
-		onBlur: {
-			type: FieldType.EventCallback,
-			label: 'Blur handler',
-			options: {
-				event: 'React.FocusEvent<...>',
-				element: 'HTMLInputElement'
-			}
-		},
+
 		appendix: {
 			type: FieldType.Text,
 			label: 'Appendix',
@@ -131,6 +109,10 @@ const textInputDefinition = buildSchemaDefinition({
 		value: {
 			type: FieldType.Text,
 			label: 'Value'
+		},
+		isReadOnly: {
+			type: FieldType.Boolean,
+			label: 'Read only'
 		}
 	}
 })

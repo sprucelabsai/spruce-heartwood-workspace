@@ -8,10 +8,10 @@ type Props = {
 	isExpanded?: boolean | null
 
 	/** Handler to toggle sidebar visibility (large screens only) */
-	toggleExpanded?: () => void
+	toggleExpanded?: (() => void) | null
 
 	/** Handler to force the sidebar closed */
-	forceCloseSidebar?: () => void
+	forceCloseSidebar?: (() => void) | null
 }
 
 const SidebarExpander = (props: Props) => {

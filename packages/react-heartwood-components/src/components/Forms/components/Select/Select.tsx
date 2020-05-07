@@ -13,6 +13,7 @@ const Select = (props: SpruceSchemas.Local.ISelect) => {
 		label,
 		placeholder,
 		helper,
+		isDisabled,
 		...rest
 	} = stripNulls(props)
 	const parentClass = cx('select text-input__inner', className, {
@@ -37,7 +38,7 @@ const Select = (props: SpruceSchemas.Local.ISelect) => {
 		<div className="select-wrapper">
 			{label && <Label {...label} />}
 			<div className={parentClass}>
-				<select {...defaultSelectProps} {...rest}>
+				<select {...defaultSelectProps} {...rest} disabled={isDisabled}>
 					{placeholder && (
 						<option {...defaultOptionProps} key="placeholder" disabled>
 							{placeholder}

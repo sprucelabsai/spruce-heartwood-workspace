@@ -1,10 +1,6 @@
-export {
-	default as Autosuggest,
-	IAutosuggestInterfaceProps
-} from './components/Autosuggest/Autosuggest'
+export { default as Autosuggest } from './components/Autosuggest/Autosuggest'
 export { default as Checkbox } from './components/Checkbox/Checkbox'
 export { default as DatePicker } from './components/DatePicker/DatePicker'
-export { default as DomainInput } from './components/DomainInput/DomainInput'
 export { default as FormBuilder } from './components/FormBuilder/FormBuilder'
 export { default as DurationInput } from './components/DurationInput/DurationInput'
 export {

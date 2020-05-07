@@ -27,8 +27,8 @@ const stories = storiesOf('List', module)
 
 interface ITabbedProps {}
 interface ITabbedState {
-	users: any[]
-	tabs: any[]
+	users: SpruceSchemas.Core.IUser[]
+	tabs: SpruceSchemas.Local.ITab[]
 	activeTabIndex: number
 }
 
@@ -184,7 +184,10 @@ stories
 	.add('People Tabbed', () => <TabbedList />)
 	.add('Selectable Items', () => (
 		<List
-			selectable={object('selectable', { schemaId: 'checkbox', values: {} })}
+			selectable={object('selectable', {
+				schemaId: 'checkbox',
+				values: {}
+			})}
 			items={object('selectable items', selectableList)}
 			isSmall={boolean('isSmall', false)}
 		/>

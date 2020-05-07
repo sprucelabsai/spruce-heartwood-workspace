@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
 import { VelocityTransitionGroup } from 'velocity-react'
-import Button, { ButtonOnClick } from '../../../../../Button/Button'
 import Card from '../../../../../Card/Card'
 import List from '../../../../../List/List'
-import { IHWButtonKinds } from '@sprucelabs/spruce-types'
+import Button from '../../../../../Button/Button'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ILocationMenuProps {
 	isMenuVisible: boolean
-	onClick: ButtonOnClick
+	onClick: SpruceSchemas.Local.IButton['onClick']
 	locationManagementHref?: string
 	locationName: string
 	locationAddress: string
@@ -125,7 +125,7 @@ export default class LocationMenu extends Component<
 										]}
 									/>
 									<Button
-										kind={IHWButtonKinds.Simple}
+										kind={'simple'}
 										className="header-primary__location-management-btn"
 										text="Manage locations"
 										href={locationManagementHref}

@@ -29,7 +29,19 @@ const sprucebotTypeMessageDefinition = buildSchemaDefinition({
 			label: 'Default avatar',
 			hint: 'How should Sprucebot be rendered by default',
 			options: {
-				schema: sprucebotAvatarDefinition
+				schema: {
+					id: 'sprucebotTypedMessageAvatar',
+					name: 'Typed message avatar',
+					description:
+						'Avatar that makes size optional for use with the Sprucebot Typed Message component',
+					fields: {
+						...sprucebotAvatarDefinition.fields,
+						size: {
+							...sprucebotAvatarDefinition.fields.size,
+							isRequired: false
+						}
+					}
+				}
 			}
 		},
 		startDelay: {

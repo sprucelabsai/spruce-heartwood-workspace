@@ -41,7 +41,22 @@ const List = (props: SpruceSchemas.Local.IList): React.ReactElement => {
 				{items &&
 					items.map((item, idx) => {
 						if (selectable) {
-							item.selectable = selectable
+							item.selectable =
+								selectable.schemaId === 'checkbox'
+									? {
+											schemaId: 'listItemCheckbox',
+											values: {
+												...selectable.values,
+												id: item.id ?? `selectable-${idx}`
+											}
+									  }
+									: {
+											schemaId: 'listItemRadio',
+											values: {
+												...selectable.values,
+												id: item.id ?? `selectable-${idx}`
+											}
+									  }
 						}
 						if (!item.isExpandable) {
 							const listItem = item as SpruceSchemas.Local.IListItem

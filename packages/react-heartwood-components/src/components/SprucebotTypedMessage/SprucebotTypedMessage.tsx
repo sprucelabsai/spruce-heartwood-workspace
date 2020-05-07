@@ -33,7 +33,7 @@ export default class SprucebotTypedMessage extends Component<
 	Message,
 	ISprucebotTypedMessageState
 > {
-	public static defaultProps = defaults
+	public static defaultProps: typeof defaults = defaults
 
 	public typingRef = React.createRef<Typing>()
 
@@ -129,7 +129,7 @@ export default class SprucebotTypedMessage extends Component<
 		const { sentenceQueue } = this.state
 		const elements: React.ReactNode[] = []
 
-		if (startDelay && startDelay?.ms > 0) {
+		if (startDelay?.ms && startDelay?.ms > 0) {
 			elements.push(<Typing.Delay ms={startDelay.ms} key={'start-delay'} />)
 		}
 

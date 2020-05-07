@@ -23,6 +23,13 @@ const layoutSectionDefinition = buildSchemaDefinition({
 			type: FieldType.Boolean,
 			label: 'Is secondary',
 			hint: 'Makes this section thinner'
+		},
+		layoutBuilder: {
+			type: FieldType.Schema,
+			label: 'Layout builder',
+			options: {
+				schemaId: 'layoutBuilder'
+			}
 		}
 	}
 })

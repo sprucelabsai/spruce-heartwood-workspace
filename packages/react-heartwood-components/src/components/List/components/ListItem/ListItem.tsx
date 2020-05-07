@@ -37,9 +37,9 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 	let checkboxProps: SpruceSchemas.Local.ICheckbox | undefined
 	let radioProps: SpruceSchemas.Local.IRadio | undefined
 
-	if (selectable?.schemaId === 'checkbox') {
+	if (selectable?.schemaId === 'listItemCheckbox') {
 		checkboxProps = selectable.values
-	} else if (selectable?.schemaId === 'radio') {
+	} else if (selectable?.schemaId === 'listItemRadio') {
 		radioProps = selectable.values
 	}
 
@@ -79,14 +79,14 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 						<Checkbox
 							{...(isDisabled ? { isDisabled: true } : {})}
 							{...checkboxProps}
-							onChange={onClick}
+							onChange={e => onClick?.(e as any)}
 						/>
 					)}
 					{radioProps && (
 						<Radio
 							{...(isDisabled ? { disabled: true } : {})}
 							{...radioProps}
-							onChange={onClick}
+							onChange={e => onClick?.(e as any)}
 						/>
 					)}
 					{avatar && <Avatar width={32} height={32} {...avatar} />}

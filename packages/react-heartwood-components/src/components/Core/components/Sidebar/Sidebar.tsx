@@ -21,15 +21,10 @@ const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 		isCollapsible,
 		isMobileExpanded,
 		side,
-		mobileHeader
+		mobileHeader,
+		onToggleExpanded,
+		onForceCollapse
 	} = props
-
-	const forceCloseSidebar = () => {
-		window.alert('coming soon')
-	}
-	const toggleExpanded = () => {
-		window.alert('coming soon')
-	}
 
 	return (
 		<aside
@@ -80,9 +75,9 @@ const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 			{footerChildren && footerChildren}
 			{isCollapsible && (
 				<SidebarExpander
-					toggleExpanded={toggleExpanded}
+					toggleExpanded={onToggleExpanded}
 					isExpanded={isExpanded}
-					forceCloseSidebar={forceCloseSidebar}
+					forceCloseSidebar={onForceCollapse}
 				/>
 			)}
 		</aside>

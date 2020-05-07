@@ -1,17 +1,17 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import { IHWMarkdown } from '@sprucelabs/spruce-types'
-
-export interface IMarkdownProps extends Omit<IHWMarkdown, 'id'> {
-	id?: string
-}
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const MarkdownText = (
-	props: IMarkdownProps | IHWMarkdown
+	props: SpruceSchemas.Local.IMarkdown
 ): React.ReactElement => {
 	const { source, id } = props
 	return (
-		<ReactMarkdown className={'markdown-wrapper'} key={id} source={source} />
+		<ReactMarkdown
+			className={'markdown-wrapper'}
+			key={id ?? undefined}
+			source={source}
+		/>
 	)
 }
 

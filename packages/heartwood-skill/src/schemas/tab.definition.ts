@@ -20,7 +20,7 @@ const tabDefinition = buildSchemaDefinition({
 			}
 		},
 		AnchorComponent: {
-			type: FieldType.Element,
+			type: FieldType.ElementType,
 			isPrivate: true
 		},
 		isCurrent: {
@@ -33,7 +33,7 @@ const tabDefinition = buildSchemaDefinition({
 			isPrivate: true
 		},
 		panel: {
-			type: FieldType.Element,
+			type: FieldType.Node,
 			label: 'Panel',
 			hint: 'Rendered as the body of the selected tab'
 		}

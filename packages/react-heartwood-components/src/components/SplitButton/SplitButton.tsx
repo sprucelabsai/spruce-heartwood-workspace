@@ -112,7 +112,7 @@ export default class SplitButton extends Component<
 				const handler = buttons[highlightedActionIndex].onClick
 				// Trigger it if so
 				if (handler) {
-					handler()
+					handler(e)
 				}
 				this.toggleActionsVisibility()
 			}
@@ -178,7 +178,7 @@ export default class SplitButton extends Component<
 		)
 	}
 
-	public handleClick(e) {
+	public handleClick(e: React.MouseEvent<Element>) {
 		const { onClick } = this.props
 
 		this.setState(

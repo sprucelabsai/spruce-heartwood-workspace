@@ -1,27 +1,28 @@
 import React from 'react'
 import cx from 'classnames'
 import SprucebotTypedMessage from '../../SprucebotTypedMessage/SprucebotTypedMessage'
-import {
-	IHWSprucebotAvatarStateOfMind,
-	IHWSprucebotTypedMessageSize
-} from '@sprucelabs/spruce-types'
+import { buildDuration, SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface IBigFormSlideHeaderProps {
 	/** What question are we asking (fed to typed message) */
 	question: string
 	/** The state of mind of sprucebot for this header */
-	sprucebotStateOfMind?: IHWSprucebotAvatarStateOfMind
-	/** How big should sprubot be? */
-	sprucebotSize?: IHWSprucebotTypedMessageSize
+	sprucebotStateOfMind?: SpruceSchemas.Local.ISprucebotAvatar['stateOfMind']
+	/** How big should sprucebot be? */
+	sprucebotSize?: SpruceSchemas.Local.ISprucebotTypedMessage['size']
 	/** All children */
 	children?: React.ReactElement
 }
 
-class BigFormSlideHeader extends React.Component<IBigFormSlideHeaderProps> {
-	public static defaultProps = {
-		sprucebotSize: IHWSprucebotTypedMessageSize.Medium,
-		sprucebotStateOfMind: IHWSprucebotAvatarStateOfMind.Chill
-	}
+const defaults = {
+	sprucebotSize: 'medium',
+	sprucebotStateOfMind: 'chill'
+}
+
+class BigFormSlideHeader extends React.Component<
+	IBigFormSlideHeaderProps & typeof defaults
+> {
+	public static defaultProps = defaults
 
 	public messageRef = React.createRef<SprucebotTypedMessage>()
 
@@ -48,7 +49,7 @@ class BigFormSlideHeader extends React.Component<IBigFormSlideHeaderProps> {
 				<SprucebotTypedMessage
 					ref={this.messageRef}
 					paused={true}
-					startDelayMs={300}
+					startDelay={buildDuration({ ms: 300 })}
 					id="top-question"
 					size={sprucebotSize}
 					defaultAvatar={{

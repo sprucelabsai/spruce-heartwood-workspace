@@ -140,7 +140,24 @@ const listItemDefinition = buildSchemaDefinition({
 			hint:
 				'Any props you want sent down to the selectable component being rendered',
 			options: {
-				schemas: [radioDefinition, checkboxDefinition]
+				schemas: [
+					{
+						...radioDefinition,
+						id: 'listItemRadio',
+						fields: {
+							...radioDefinition.fields,
+							id: { ...radioDefinition.fields.id, isRequired: true }
+						}
+					},
+					{
+						...checkboxDefinition,
+						id: 'listItemCheckbox',
+						fields: {
+							...checkboxDefinition.fields,
+							id: { ...checkboxDefinition.fields.id, isRequired: true }
+						}
+					}
+				]
 			}
 		},
 		warnings: {
@@ -169,12 +186,8 @@ const listItemDefinition = buildSchemaDefinition({
 			}
 		},
 		onClick: {
-			type: FieldType.EventCallback,
-			label: 'Click handler',
-			options: {
-				event: 'React.MouseEvent<...>',
-				element: 'HTMLDivElement'
-			}
+			...buttonDefinition.fields.onClick,
+			label: 'Click handler'
 		}
 	}
 })

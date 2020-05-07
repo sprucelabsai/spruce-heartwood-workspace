@@ -1,4 +1,5 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import buttonDefinition from '../forms/button.definition'
 
 const toastHeaderDefinition = buildSchemaDefinition({
 	id: 'toastHeader',
@@ -11,13 +12,9 @@ const toastHeaderDefinition = buildSchemaDefinition({
 			hint: 'Headline text'
 		},
 		onClickDismiss: {
-			type: FieldType.EventCallback,
+			...buttonDefinition.fields.onClick,
 			label: 'Remove action',
-			hint: 'Action to be invoked when hitting the dismiss button',
-			options: {
-				event: 'React.MouseEvent<...>',
-				element: 'HTMLDivElement'
-			}
+			hint: 'Action to be invoked when hitting the dismiss button'
 		}
 	}
 })

@@ -2,5 +2,6 @@ export {
 	SchemaDefinitionDefaultValues as DefaultProps,
 	ISchemaFieldDefinitionValueUnion as ComponentUnion,
 	selectChoicesToHash,
-	definitionChoicesToHash
+	definitionChoicesToHash,
+	buildDuration
 } from '@sprucelabs/schema'

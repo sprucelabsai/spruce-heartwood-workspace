@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { SpruceSchemas, stripNulls } from '@sprucelabs/heartwood-skill'
 
 const Toggle = (props: SpruceSchemas.Local.IToggle): React.ReactElement => {
-	const { id, className, helper, ...rest } = stripNulls(props)
+	const { id, className, helper, label, ...rest } = stripNulls(props)
 	const parentClass = cx('toggle__wrapper', className)
 	return (
 		<div className={parentClass}>
@@ -14,7 +14,11 @@ const Toggle = (props: SpruceSchemas.Local.IToggle): React.ReactElement => {
 					id={id ?? undefined}
 					{...rest}
 				/>
-				<label className="toggle__label" htmlFor={id ?? undefined} />
+				{label && (
+					<label className="toggle__label" htmlFor={label.id ?? undefined}>
+						{label.text}
+					</label>
+				)}
 			</div>
 			{helper && (
 				<label className="toggle__text" htmlFor={id ?? undefined}>

@@ -80,7 +80,7 @@ const Text: React.StatelessComponent<SpruceSchemas.Local.IText> = (
 	const text = children || textProps || context
 
 	if (typeof text === 'string') {
-		children = TemplateEngine(text, context)
+		children = TemplateEngine(text, context ?? {})
 	}
 
 	return (

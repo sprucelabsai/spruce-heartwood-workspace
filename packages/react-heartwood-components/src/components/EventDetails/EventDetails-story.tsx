@@ -4,14 +4,13 @@ import EventDetails from './EventDetails'
 import { Sidebar, SidebarHeader } from '../Core'
 
 import {
-	appointment,
-	warningAppointment,
-	pastAppointment,
-	lunchBreak,
-	ptoBlock
+	appointmentDetails,
+	warningAppointmentDetails,
+	pastAppointmentDetails,
+	lunchBreakDetails,
+	ptoBlockDetails
 } from './eventDetailsMock'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
-import { IHWSidebarSide } from '@sprucelabs/spruce-types'
 
 const stories = storiesOf('EventDetails', module)
 
@@ -24,63 +23,48 @@ stories.addDecorator(withKnobs)
 
 stories
 	.add('Booking: Appointment', () => (
-		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
+		<Sidebar side={'right'} isCollapsible={false} isLarge>
 			<SidebarHeader title="Appointment details" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
-				{...appointment}
-				onAction={action => {
-					console.log(JSON.stringify(action.payload))
-				}}
+				{...appointmentDetails}
 			/>
 		</Sidebar>
 	))
 	.add('Booking: Appointment has warning', () => (
-		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
+		<Sidebar side={'right'} isCollapsible={false} isLarge>
 			<SidebarHeader title="Appointment details" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
-				{...warningAppointment}
-				onAction={action => {
-					console.log(JSON.stringify(action.payload))
-				}}
+				{...warningAppointmentDetails}
 			/>
 		</Sidebar>
 	))
 	.add('Booking: Past Appointment', () => (
-		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
+		<Sidebar side={'right'} isCollapsible={false} isLarge>
 			<SidebarHeader title="Appointment details" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
-				{...pastAppointment}
-				onAction={action => {
-					console.log(JSON.stringify(action.payload))
-				}}
+				{...pastAppointmentDetails}
 			/>
 		</Sidebar>
 	))
 	.add('Scheduling: Lunch Break', () => (
-		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
+		<Sidebar side={'right'} isCollapsible={false} isLarge>
 			<SidebarHeader title="Lunch break" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
-				{...lunchBreak}
-				onAction={action => {
-					console.log(JSON.stringify(action.payload))
-				}}
+				{...lunchBreakDetails}
 			/>
 		</Sidebar>
 	))
 
 	.add('Scheduling: PTO', () => (
-		<Sidebar side={IHWSidebarSide.Right} isCollapsible={false} isLarge>
+		<Sidebar side={'right'} isCollapsible={false} isLarge>
 			<SidebarHeader title="PTO" onClose={() => null} />
 			<EventDetails
 				isLoading={boolean('isLoading', false)}
-				{...ptoBlock}
-				onAction={action => {
-					console.log(JSON.stringify(action.payload))
-				}}
+				{...ptoBlockDetails}
 			/>
 		</Sidebar>
 	))

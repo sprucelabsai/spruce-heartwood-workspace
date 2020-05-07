@@ -46,12 +46,7 @@ export default class Dropzone extends Component<
 			onDragOver(event)
 		}
 	}
-	public onDragStart = (...args: any) => {
-		const { onDragStart } = this.props
-		if (onDragStart) {
-			onDragStart(...args)
-		}
-	}
+
 	public onDrop = (
 		acceptedFiles: File[],
 		rejectedFiles: File[],
@@ -61,15 +56,6 @@ export default class Dropzone extends Component<
 		if (onDrop) {
 			onDrop(acceptedFiles, rejectedFiles, event)
 		}
-	}
-	public onDropped = (files: File[], event: DropEvent) => {
-		const { onDropped } = this.props
-		if (onDropped) {
-			onDropped(files, event)
-		}
-		this.setState({
-			userCanDrop: false
-		})
 	}
 	public onDropRejected = (files?: File[], event?: DropEvent) => {
 		const { onDropRejected } = this.props
@@ -95,7 +81,8 @@ export default class Dropzone extends Component<
 			isCircular,
 			fileWasUploaded,
 			uploadProgress,
-			...rest
+			defaultIcon,
+			children
 		} = this.props
 
 		const defaultClass: string = cx('dropzone', {
@@ -105,18 +92,16 @@ export default class Dropzone extends Component<
 		return (
 			<Fragment>
 				{label && <Label {...label} />}
+				{children}
 				<ReactDropzone
 					ref={ref => (this.dropzone = ref)}
 					onDragEnter={this.onDragEnter}
 					onDragLeave={this.onDragLeave}
 					onDragOver={this.onDragOver}
-					onDragStart={this.onDragStart}
 					onDrop={this.onDrop}
-					onDropped={this.onDropped}
 					onDropRejected={this.onDropRejected}
 					onFileDialogCancel={this.onFileDialogCancel}
 					disabled={!!uploadProgress}
-					{...rest}
 				>
 					{({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
 						<div
@@ -143,7 +128,7 @@ export default class Dropzone extends Component<
 										{fileWasUploaded ? (
 											<UploadedIcon className="dropzone__icon dropzone__did-upload-icon" />
 										) : (
-											<DefaultIcon className="dropzone__icon" />
+											defaultIcon ?? <DefaultIcon className="dropzone__icon" />
 										)}
 									</Fragment>
 								)}

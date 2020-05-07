@@ -6,24 +6,26 @@ import {
 	IFieldDefinition
 } from '@sprucelabs/schema'
 
-export type IElementFieldDefinition = IFieldDefinition<React.ReactElement> & {
+export type IElementTypeFieldDefinition = IFieldDefinition<
+	React.ElementType
+> & {
 	/** * .Element - An action to be invoked when a person interacts with a component */
-	type: FieldType.Element
+	type: FieldType.ElementType
 	options?: {}
 }
 
-export default class ElementField extends AbstractField<
-	IElementFieldDefinition
+export default class ElementTypeField extends AbstractField<
+	IElementTypeFieldDefinition
 > {
 	public static get description() {
-		return 'A React.Element'
+		return 'A React.ElementType (you can use it as a jsx element)'
 	}
 
 	public static templateDetails(
-		options: IFieldTemplateDetailOptions<IElementFieldDefinition>
+		options: IFieldTemplateDetailOptions<IElementTypeFieldDefinition>
 	) {
 		return {
-			valueType: `JSX.Element${options.definition.isArray ? '[]' : ''}`
+			valueType: `React.ElementType${options.definition.isArray ? '[]' : ''}`
 		}
 	}
 }

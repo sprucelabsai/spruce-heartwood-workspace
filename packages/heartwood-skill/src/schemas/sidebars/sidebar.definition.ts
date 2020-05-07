@@ -88,6 +88,24 @@ const sidebarDefinition = buildSchemaDefinition({
 		footerChildren: {
 			type: FieldType.Node,
 			isPrivate: true
+		},
+		onToggleExpanded: {
+			type: FieldType.Callback,
+			label: 'Expander handler',
+			hint:
+				'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
+			options: {
+				signature: '() => void'
+			}
+		},
+		onForceCollapse: {
+			type: FieldType.Callback,
+			label: 'Force close handler',
+			hint:
+				'Expect you to collapse the bar no matter what (isExpanded to false)',
+			options: {
+				signature: '() => void'
+			}
 		}
 	}
 })

@@ -2,7 +2,9 @@ import React, { ReactElement } from 'react'
 import { default as Autosuggest } from '../../../Forms/components/Autosuggest/Autosuggest'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-const TableSearch = (props: SpruceSchemas.Local.IAutosuggest): ReactElement => {
+export interface ITableSearchProps extends SpruceSchemas.Local.IAutosuggest {}
+
+const TableSearch = (props: ITableSearchProps): ReactElement => {
 	const { ...rest } = props
 
 	return (

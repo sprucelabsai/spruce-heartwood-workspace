@@ -31,6 +31,10 @@ const phoneInputDefinition = buildSchemaDefinition({
 			type: FieldType.Text,
 			label: 'Value'
 		},
+		placeholder: {
+			type: FieldType.Text,
+			label: 'Placeholder'
+		},
 		autoFocus: {
 			type: FieldType.Boolean,
 			label: 'Autofocus',

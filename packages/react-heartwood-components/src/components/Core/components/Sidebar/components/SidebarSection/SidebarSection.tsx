@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import React from 'react'
-import { LayoutBuilder } from '../../../../../LayoutBuilder/LayoutBuilder'
+import LayoutBuilder from '../../../../../LayoutBuilder/LayoutBuilder'
 import { defaultProps, SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const defaults = defaultProps(SpruceSchemas.Local.SidebarSection.definition)

@@ -1,5 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import toastHeaderDefinition from './toastHeader.definition'
+import buttonDefinition from '../forms/button.definition'
 
 const toastDefinition = buildSchemaDefinition({
 	id: 'toast',
@@ -29,13 +30,14 @@ const toastDefinition = buildSchemaDefinition({
 			hint: 'Text for the followup action'
 		},
 		onClickFollowup: {
-			type: FieldType.EventCallback,
+			...buttonDefinition.fields.onClick,
 			label: 'Followup handler',
-			hint: 'Callback to be invoked when hitting the followup CTA',
-			options: {
-				event: 'React.MouseEvent<...>',
-				element: 'HTMLDivElement'
-			}
+			hint: 'Callback to be invoked when hitting the followup CTA'
+		},
+		onRemove: {
+			...buttonDefinition.fields.onClick,
+			label: 'Remove handler',
+			hint: 'Callback invoked when remove is clicked (cannot block the removal)'
 		}
 	}
 })
