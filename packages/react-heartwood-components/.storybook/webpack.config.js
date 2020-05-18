@@ -5,7 +5,7 @@
 // IMPORTANT
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
-
+const path = require('path')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -20,7 +20,11 @@ const override = {
 		})
 	],
 	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx']
+		extensions: ['.js', '.jsx', '.ts', '.tsx'],
+		alias: {
+			'#spruce': path.resolve(__dirname, '../../heartwood-skill/.spruce'),
+			'#spruce:schema': path.resolve(__dirname, '../../heartwood-skill/.spruce/schemas')
+		},
 	},
 	module: {
 		rules: [
@@ -76,7 +80,8 @@ const override = {
 				]
 			}
 		]
-	}
+	},
+
 }
 
 module.exports = async ({ config, mode }) => {
@@ -86,5 +91,18 @@ module.exports = async ({ config, mode }) => {
 		...override.resolve.extensions
 	]
 	config.module.rules = [...config.module.rules, ...override.module.rules]
-	return config
+	return {
+		...config,
+		resolve: {
+			extensions: ['.js', '.jsx', '.ts', '.tsx'],
+			alias: {
+				'#spruce': path.resolve(__dirname, '../../heartwood-skill/.spruce'),
+				'#spruce:schema': path.resolve(__dirname, '../../heartwood-skill/.spruce/schemas')
+			},
+		},
+		node: {
+			fs: 'empty',
+			module: 'empty'
+		}
+	}
 }

@@ -3,7 +3,12 @@
         "@babel/preset-env",
         "@babel/preset-react",
         "@babel/preset-flow",
-        "@babel/preset-typescript"
+        [
+            "@babel/preset-typescript",
+            {
+                "allowNamespaces": true
+            }
+        ]
     ],
     "plugins": [
         "@babel/plugin-transform-runtime",
@@ -41,12 +46,19 @@
                 "svgo": {
                     "plugins": [
                         {
-                            "removeAttrs": { "attrs": ["stroke", "fill"] }
+                            "removeAttrs": {
+                                "attrs": [
+                                    "stroke",
+                                    "fill"
+                                ]
+                            }
                         }
                     ]
                 }
             }
         ]
     ],
-    "ignore": ["node_modules"]
+    "ignore": [
+        "node_modules"
+    ]
 }
