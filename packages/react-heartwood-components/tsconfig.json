@@ -14,9 +14,18 @@
       "#spruce:schema/*": [
         "../heartwood-skill/build/.spruce/schemas/*"
       ],
-      "#spruce/*": ["../heartwood-skill/build/.spruce/*"]
+      "#spruce/*": [
+        "../heartwood-skill/build/.spruce/*"
+      ]
     }
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "lib", ".storybook"]
+  "include": [
+    "src",
+    "../heartwood-skill/build/.spruce"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    ".storybook"
+  ]
 }

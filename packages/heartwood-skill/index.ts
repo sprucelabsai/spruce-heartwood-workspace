@@ -1,6 +1,7 @@
-export * from '#spruce/schemas/fields/fields.types'
-export * from '#spruce/schemas/fields/fieldClassMap'
-export * from '#spruce/schemas/schemas.types'
+export * from './.spruce/schemas/fields/fields.types'
+export * from './.spruce/schemas/fields/fields.types'
+export * from './.spruce/schemas/fields/fieldClassMap'
+export * from './.spruce/schemas/schemas.types'
 
 export { default as defaultProps } from './src/utilities/defaultProps'
 export { default as buildEventDetailsItem } from './src/utilities/buildEventDetailsItem'
