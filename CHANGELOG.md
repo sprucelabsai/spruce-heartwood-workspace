@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.2.0](https://github.com/sprucelabsai/spruce-heartwood-workspace/compare/v10.1.0...v10.2.0) (2020-05-18)
+
+
+### Features
+
+* schema update ([1eabb3f](https://github.com/sprucelabsai/spruce-heartwood-workspace/commit/1eabb3f))
+* typing updates ([5e01caf](https://github.com/sprucelabsai/spruce-heartwood-workspace/commit/5e01caf))
+
+
+
+
+
 # [10.1.0](https://github.com/sprucelabsai/spruce-heartwood-workspace/compare/v10.0.3...v10.1.0) (2020-05-07)
 
 
