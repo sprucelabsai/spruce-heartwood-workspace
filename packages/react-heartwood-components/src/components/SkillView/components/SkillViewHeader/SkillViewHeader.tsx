@@ -100,7 +100,7 @@ const SkillViewHeader = (props: SpruceSchemas.Local.ISkillViewHeader) => {
 	)
 }
 
-SkillViewHeader.displayName = 'Page.Header'
+SkillViewHeader.displayName = 'SkillView.Header'
 SkillViewHeader.defaultProps = {
 	title: '',
 	backLinkText: 'Back',

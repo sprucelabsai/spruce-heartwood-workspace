@@ -11,6 +11,6 @@ const SkillViewContent = (props: Props) => {
 	return <div className="page__content">{children}</div>
 }
 
-SkillViewContent.displayName = 'Page.Content'
+SkillViewContent.displayName = 'SkillView.Content'
 
 export default SkillViewContent
