@@ -5,6 +5,7 @@ import { AddressField } from '@sprucelabs/schema'
 import { BooleanField } from '@sprucelabs/schema'
 import { DateField } from '@sprucelabs/schema'
 import { DateTimeField } from '@sprucelabs/schema'
+import { DirectoryField } from '@sprucelabs/schema'
 import { DurationField } from '@sprucelabs/schema'
 import { FileField } from '@sprucelabs/schema'
 import { IdField } from '@sprucelabs/schema'
@@ -26,6 +27,7 @@ export const FieldClassMap: Record<FieldType, FieldClass> = {
 		[FieldType.Boolean]: BooleanField,
 		[FieldType.Date]: DateField,
 		[FieldType.DateTime]: DateTimeField,
+		[FieldType.Directory]: DirectoryField,
 		[FieldType.Duration]: DurationField,
 		[FieldType.File]: FileField,
 		[FieldType.Id]: IdField,
@@ -47,6 +49,7 @@ export interface IFieldClassMap {
 		[FieldType.Boolean]: BooleanField,
 		[FieldType.Date]: DateField,
 		[FieldType.DateTime]: DateTimeField,
+		[FieldType.Directory]: DirectoryField,
 		[FieldType.Duration]: DurationField,
 		[FieldType.File]: FileField,
 		[FieldType.Id]: IdField,

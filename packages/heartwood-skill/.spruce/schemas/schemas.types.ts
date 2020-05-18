@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable no-redeclare */
+
 import { default as Schema } from '@sprucelabs/schema'
 import * as SpruceSchema from '@sprucelabs/schema'
-import * as generated_import_0 from '#spruce/../src/fields/CallbackField'
-import * as generated_import_1 from '#spruce/../src/fields/ElementTypeField'
-import * as generated_import_2 from '#spruce/../src/fields/EventCallbackField'
 import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 
 
@@ -19,7 +19,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** 150x150. */
 				'profile150@2x': string
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Core.ProfileImage {
 		export const id = 'profileImage'
@@ -153,7 +153,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Core.ProfileImage.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Core {
 		/** A human being. */
@@ -174,7 +174,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Default profile photos. */
 				'defaultProfileImages': SpruceSchemas.Core.IProfileImage
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Core.User {
 		export const id = 'user'
@@ -386,7 +386,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Core.User.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Core {
 		/** An ability Sprucebot has learned. */
@@ -405,7 +405,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Icon. */
 				'icon'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Core.Skill {
 		export const id = 'skill'
@@ -591,7 +591,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Core.Skill.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Core {
 		/** A physical location where people meet. An organization has at least one of them. */
@@ -612,7 +612,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Address. */
 				'address': SpruceSchema.IAddressFieldValue
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Core.Location {
 		export const id = 'location'
@@ -824,7 +824,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Core.Location.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Core {
 		/**  */
@@ -832,7 +832,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Permissions grouped by slug. */
 				[slug:string]: string[]
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Core.Acl {
 		export const id = 'acl'
@@ -880,7 +880,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Core.Acl.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Core {
 		/** A position at a company. The answer to the question; What is your job? */
@@ -899,7 +899,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Off work permissions. */
 				'acls'?: SpruceSchemas.Core.IAcl| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Core.Job {
 		export const id = 'job'
@@ -1085,7 +1085,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Core.Job.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Core {
 		/** A location a person has given access to themselves. */
@@ -1108,7 +1108,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** User. */
 				'user': SpruceSchemas.Core.IUser
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Core.UserLocation {
 		export const id = 'userLocation'
@@ -1346,7 +1346,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Core.UserLocation.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A photo of a person that is generally round */
@@ -1375,7 +1375,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Height. */
 				'height'?: number| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Avatar {
 		export const id = 'avatar'
@@ -1691,7 +1691,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Avatar.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -1706,7 +1706,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Next handler. */
 				'onNext'?: (() => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.BigFormControls {
 		export const id = 'bigFormControls'
@@ -1840,7 +1840,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.BigFormControls.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Ask questions one at a time */
@@ -1857,7 +1857,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.BigForm {
 		export const id = 'bigForm'
@@ -1924,7 +1924,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -2000,7 +2000,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -2017,7 +2017,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.BigForm.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** a confirmation dialog */
@@ -2028,7 +2028,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Text. Text shown in the dialog */
 				'text'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ConfirmModal {
 		export const id = 'confirm Modal'
@@ -2110,7 +2110,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ConfirmModal.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** **missing description** */
@@ -2127,7 +2127,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** . Lets you pass an icon node */
 				'customIcon'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Icon {
 		export const id = 'Icon'
@@ -2181,7 +2181,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -2194,7 +2194,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Lets you pass an icon node */
 			            'customIcon': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -2257,7 +2257,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -2270,7 +2270,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Lets you pass an icon node */
 			            'customIcon': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -2287,7 +2287,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Icon.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A interactive element you can touch or click to invoke an Action */
@@ -2326,7 +2326,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Target. _blank|_self|_parent|_top|framename */
 				'target'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Button {
 		export const id = 'button'
@@ -2510,7 +2510,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -2523,7 +2523,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Lets you override the element used when rendering a link */
 			            'AnchorComponent': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
@@ -2729,7 +2729,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -2742,7 +2742,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Lets you override the element used when rendering a link */
 			            'AnchorComponent': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
@@ -2772,7 +2772,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Button.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A contextual menu comprised of buttons (tip: set the action on each button). */
@@ -2797,7 +2797,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** . Invoked when the button is clicked */
 				'onClick'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ContextMenu {
 		export const id = 'ContextMenu'
@@ -2916,7 +2916,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Invoked when the button is clicked */
 			            'onClick': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
@@ -3044,7 +3044,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Invoked when the button is clicked */
 			            'onClick': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
@@ -3061,7 +3061,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ContextMenu.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** The label for any input */
@@ -3074,7 +3074,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Post label text. */
 				'postLabel'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Label {
 		export const id = 'label'
@@ -3182,7 +3182,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Label.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Drop a file to upload */
@@ -3227,7 +3227,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Default icon. The icon shown before anything is dropped. */
 				'defaultIcon'?: SpruceSchemas.Local.IIcon| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Dropzone {
 		export const id = 'dropzone'
@@ -3350,7 +3350,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onDropAccepted': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Raw,
 			                
 			                
@@ -3363,7 +3363,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onDropRejected': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Raw,
 			                
 			                
@@ -3376,7 +3376,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onFileDialogCancel': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Raw,
 			                
 			                
@@ -3586,7 +3586,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onDropAccepted': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Raw,
 			                
 			                
@@ -3599,7 +3599,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onDropRejected': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Raw,
 			                
 			                
@@ -3612,7 +3612,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onFileDialogCancel': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Raw,
 			                
 			                
@@ -3707,7 +3707,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Dropzone.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Used for the empty state of lists */
@@ -3722,7 +3722,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Primary button. */
 				'primaryButton'?: SpruceSchemas.Local.IButton| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.EmptyState {
 		export const id = 'emptyState'
@@ -3856,7 +3856,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.EmptyState.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** **missing description** */
@@ -3875,7 +3875,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Weight. The weight of the heading, H1 and beyond */
 				'weight'?: ("h1" | "h2" | "h3" | "h4" | "h5" | "h6")| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Heading {
 		export const id = 'Heading'
@@ -3929,7 +3929,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -3942,7 +3942,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -4018,7 +4018,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -4031,7 +4031,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -4061,7 +4061,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Heading.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A basic image tag */
@@ -4080,7 +4080,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'className'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Image {
 		export const id = 'Image'
@@ -4134,7 +4134,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'width': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Number,
 			                
 			                
@@ -4147,7 +4147,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'height': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Number,
 			                
 			                
@@ -4160,7 +4160,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -4223,7 +4223,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'width': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Number,
 			                
 			                
@@ -4236,7 +4236,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'height': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Number,
 			                
 			                
@@ -4249,7 +4249,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -4266,7 +4266,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Image.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Render markdown beautifully */
@@ -4277,7 +4277,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Source. Markdown text to be rendered */
 				'source': string
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Markdown {
 		export const id = 'markdown'
@@ -4359,7 +4359,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Markdown.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Holds buttons and spans the top or bottom of the screen. */
@@ -4382,7 +4382,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Save handler. */
 				'onSave'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SaveBar {
 		export const id = 'saveBar'
@@ -4620,7 +4620,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SaveBar.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Defaults to h2 */
@@ -4639,7 +4639,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Weight. The weight of the sub heading, H2 and beyond */
 				'weight'?: ("h1" | "h2" | "h3" | "h4" | "h5" | "h6")| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Subheading {
 		export const id = 'subheading'
@@ -4693,7 +4693,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -4706,7 +4706,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -4782,7 +4782,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -4795,7 +4795,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -4825,7 +4825,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Subheading.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A tabs control */
@@ -4844,7 +4844,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Panel. Rendered as the body of the selected tab */
 				'panel'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Tab {
 		export const id = 'tab'
@@ -4885,7 +4885,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'AnchorComponent': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
@@ -4911,7 +4911,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -4974,7 +4974,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'AnchorComponent': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.ElementType,
 			                
 			                
@@ -5000,7 +5000,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5030,7 +5030,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Tab.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A tabs control */
@@ -5045,7 +5045,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'className'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Tabs {
 		export const id = 'tabs'
@@ -5099,7 +5099,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5162,7 +5162,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5179,7 +5179,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Tabs.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Basic text to be rendered */
@@ -5198,7 +5198,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Text {
 		export const id = 'Text'
@@ -5239,7 +5239,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5278,7 +5278,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -5328,7 +5328,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5367,7 +5367,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -5384,7 +5384,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Text.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** The header of a list */
@@ -5399,7 +5399,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Buttons. Buttons to associate with the list header */
 				'buttons'?: SpruceSchemas.Local.IButton[]| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ListHeader {
 		export const id = 'listHeader'
@@ -5533,7 +5533,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ListHeader.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A great way to render a on/off style question or control */
@@ -5552,7 +5552,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** On click. Optional on click to invoke when tapped */
 				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Toggle {
 		export const id = 'Toggle'
@@ -5593,7 +5593,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5682,7 +5682,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5738,7 +5738,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Toggle.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A radio control. Give a bunch the same name to keep them as part of the same group */
@@ -5763,7 +5763,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Helper. */
 				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ListItemRadio {
 		export const id = 'listItemRadio'
@@ -5869,7 +5869,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -5997,7 +5997,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -6027,7 +6027,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ListItemRadio.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A checkbox! */
@@ -6054,7 +6054,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Helper. */
 				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ListItemCheckbox {
 		export const id = 'listItemCheckbox'
@@ -6095,7 +6095,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'id': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Id,
 			                
 			                isRequired: true,
@@ -6173,7 +6173,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -6236,7 +6236,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'id': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Id,
 			                
 			                isRequired: true,
@@ -6314,7 +6314,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -6344,7 +6344,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ListItemCheckbox.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A warning message that can go on a list item */
@@ -6357,7 +6357,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Note. */
 				'note'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ListItemWarning {
 		export const id = 'listItemWarning'
@@ -6465,7 +6465,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ListItemWarning.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A list of information or inputs */
@@ -6492,7 +6492,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Click handler. */
 				'onClick'?: ((e: React.MouseEvent<HTMLDivElement>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.List {
 		export const id = 'list'
@@ -6585,7 +6585,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -6726,7 +6726,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -6782,7 +6782,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.List.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -6843,7 +6843,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Expanded icon. */
 				'expandedIcon'?: SpruceSchemas.Local.IIcon| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ExpandableListItem {
 		export const id = 'expandableListItem'
@@ -7157,7 +7157,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onClick': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
@@ -7519,7 +7519,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onClick': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
@@ -7575,7 +7575,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ExpandableListItem.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** For hints and error messages after inputs (if both set, only error shows) */
@@ -7592,7 +7592,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'ElementTag'?: ("p" | "label")| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.InputHelper {
 		export const id = 'inputHelper'
@@ -7633,7 +7633,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -7646,7 +7646,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'htmlFor': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -7659,7 +7659,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'ElementTag': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Select,
 			                
 			                
@@ -7709,7 +7709,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -7722,7 +7722,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'htmlFor': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -7735,7 +7735,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'ElementTag': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Select,
 			                
 			                
@@ -7752,7 +7752,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.InputHelper.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A checkbox! */
@@ -7779,7 +7779,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Helper. */
 				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Checkbox {
 		export const id = 'checkbox'
@@ -7820,7 +7820,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'id': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Id,
 			                
 			                
@@ -7898,7 +7898,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -7961,7 +7961,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'id': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Id,
 			                
 			                
@@ -8039,7 +8039,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -8069,7 +8069,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Checkbox.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A radio control. Give a bunch the same name to keep them as part of the same group */
@@ -8094,7 +8094,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Helper. */
 				'helper'?: SpruceSchemas.Local.IInputHelper| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Radio {
 		export const id = 'radio'
@@ -8200,7 +8200,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -8328,7 +8328,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -8358,7 +8358,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Radio.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A button with a dropdown of actions on the right */
@@ -8381,7 +8381,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Portal. Render in a react-portal, not sure why this is needed or not just always true */
 				'usePortal'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SplitButton {
 		export const id = 'splitButton'
@@ -8619,7 +8619,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SplitButton.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Header of a card */
@@ -8636,7 +8636,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Context menu. Renders a Context Menu in the Card Header */
 				'contextMenu'?: SpruceSchemas.Local.IContextMenu| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CardHeader {
 		export const id = 'CardHeader'
@@ -8796,7 +8796,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CardHeader.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Header of a card */
@@ -8819,7 +8819,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'className'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.OnboardingCardStep {
 		export const id = 'onboardingCardStep'
@@ -8925,7 +8925,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -9040,7 +9040,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -9057,7 +9057,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.OnboardingCardStep.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Header of a card */
@@ -9068,7 +9068,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Steps. Steps for onboarding */
 				'steps': SpruceSchemas.Local.IOnboardingCardStep[]
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.OnboardingCard {
 		export const id = 'OnboardingCard'
@@ -9150,7 +9150,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.OnboardingCard.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Header of a card */
@@ -9159,7 +9159,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Scores. */
 				'scores': SpruceSchemas.Local.IScoreCardPanel[]
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ScoreCard {
 		export const id = 'ScoreCard'
@@ -9215,7 +9215,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ScoreCard.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Call out information so it&#x27;s impossible to miss! */
@@ -9238,7 +9238,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Remove handler. Callback invoked when remove is clicked (cannot block the removal) */
 				'onRemove'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Toast {
 		export const id = 'toast'
@@ -9476,7 +9476,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Toast.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Hold all the information for creating body components */
@@ -9499,7 +9499,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Items. Children to show in the Card */
 				'items': ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'image', values: SpruceSchemas.Local.IImage } | { schemaId: 'heading', values: SpruceSchemas.Local.IHeading } | { schemaId: 'text', values: SpruceSchemas.Local.IText } | { schemaId: 'scoreCard', values: SpruceSchemas.Local.IScoreCard } | { schemaId: 'toast', values: SpruceSchemas.Local.IToast } | { schemaId: 'list', values: SpruceSchemas.Local.IList })[]
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CardBuilderBody {
 		export const id = 'cardBuilderBody'
@@ -9737,7 +9737,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CardBuilderBody.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A group of buttons presented in a few cool ways (see kind) */
@@ -9754,7 +9754,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'onClick'?: ((e: React.MouseEvent<HTMLInputElement>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ButtonGroup {
 		export const id = 'buttonGroup'
@@ -9821,7 +9821,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onClick': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
@@ -9897,7 +9897,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'onClick': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.EventCallback,
 			                
 			                
@@ -9914,7 +9914,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ButtonGroup.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Footer used for the card builder */
@@ -9925,7 +9925,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Helper. Helper for the footer */
 				'helper'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CardBuilderFooter {
 		export const id = 'cardBuilderFooter'
@@ -10007,7 +10007,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CardBuilderFooter.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Build a card to show something to the user */
@@ -10026,7 +10026,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Footer. The footer of the card */
 				'footer'?: SpruceSchemas.Local.ICardBuilderFooter| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CardBuilder {
 		export const id = 'cardBuilder'
@@ -10212,7 +10212,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CardBuilder.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Some front end components emit uiEnhancement events to allow skills to enhance them during presentation. */
@@ -10227,7 +10227,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Context menu items. Context menu items to add as enhancements */
 				'contextMenuItems': SpruceSchemas.Local.IButton[]
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.UIEnhancementSection {
 		export const id = 'uIEnhancementSection'
@@ -10361,7 +10361,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.UIEnhancementSection.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Avatar tied to a core user */
@@ -10392,7 +10392,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Height. */
 				'height'?: number| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.UserAvatar {
 		export const id = 'userAvatar'
@@ -10734,7 +10734,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.UserAvatar.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A block of time that comprises a calendar event. A calendar event can have an arbitrary number of blocks. */
@@ -10755,7 +10755,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Is busy. Is the person associated to this event busy during this time (to keep from double booking)? */
 				'isBusy'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CalendarEventBlock {
 		export const id = 'calendarEventBlock'
@@ -10967,7 +10967,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CalendarEventBlock.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** All the details attached to an event. Shown on click of the event. */
@@ -10980,7 +10980,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Items. The items that make up the event details */
 				'items': ({ schemaId: 'list', values: SpruceSchemas.Local.IList } | { schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'splitButton', values: SpruceSchemas.Local.ISplitButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'toast', values: SpruceSchemas.Local.IToast } | { schemaId: 'text', values: SpruceSchemas.Local.IText } | { schemaId: 'markdown', values: SpruceSchemas.Local.IMarkdown })[]
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CalendarEventDetails {
 		export const id = 'calendarEventDetails'
@@ -11088,7 +11088,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CalendarEventDetails.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** How an event will be rendered in the calendar. Each time represents a standard state of an event. */
@@ -11115,7 +11115,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Has border. Should I render a border for this event? */
 				'hasBorder'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CalendarEvent {
 		export const id = 'CalendarEvent'
@@ -11405,7 +11405,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CalendarEvent.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** I universal way to hold visual information, use card builder to create cards */
@@ -11428,7 +11428,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Header. */
 				'header'?: SpruceSchemas.Local.ICardHeader| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Card {
 		export const id = 'card'
@@ -11443,7 +11443,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -11558,7 +11558,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -11666,7 +11666,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Card.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** The body of a card. */
@@ -11687,7 +11687,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Is full bleed. Set to true to remove horizontal padding */
 				'isFullBleed'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CardBody {
 		export const id = 'cardBody'
@@ -11899,7 +11899,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CardBody.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Header of a card */
@@ -11908,7 +11908,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CardFooter {
 		export const id = 'cardFooter'
@@ -11923,7 +11923,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -11947,7 +11947,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -11964,7 +11964,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CardFooter.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A card body is made up of several sections */
@@ -11975,7 +11975,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** . Set to true to remove horizontal padding */
 				'isFullBleed'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.CardSection {
 		export const id = 'cardSection'
@@ -11990,7 +11990,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -12003,7 +12003,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Set to true to remove horizontal padding */
 			            'isFullBleed': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
@@ -12027,7 +12027,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -12040,7 +12040,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . Set to true to remove horizontal padding */
 			            'isFullBleed': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
@@ -12057,7 +12057,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.CardSection.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Header of a card */
@@ -12070,7 +12070,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Value. The score, e.g. $234.30 */
 				'value'?: string| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ScoreCardPanel {
 		export const id = 'ScoreCardPanel'
@@ -12178,7 +12178,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ScoreCardPanel.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** An input with autosuggest capabilities! */
@@ -12232,7 +12232,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Icon. */
 				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Autosuggest {
 		export const id = 'autosuggest'
@@ -12464,7 +12464,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -12731,7 +12731,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -12774,7 +12774,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Autosuggest.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Pick a date, any date! wrapper for react-dates */
@@ -12799,7 +12799,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Day blocker. */
 				'isDayBlocked'?: ((day: Date) => boolean)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.DatePicker {
 		export const id = 'datePicker'
@@ -12814,7 +12814,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'kind': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Select,
 			                
 			                
@@ -12942,7 +12942,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'kind': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Select,
 			                
 			                
@@ -13063,7 +13063,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.DatePicker.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -13074,7 +13074,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Secondary button. */
 				'secondary'?: SpruceSchemas.Local.IButton| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.FormDialogButtons {
 		export const id = 'formDialogButtons'
@@ -13156,7 +13156,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.FormDialogButtons.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A form with fields */
@@ -13185,7 +13185,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Dialog buttons. */
 				'dialogButtons'?: SpruceSchemas.Local.IFormDialogButtons| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Form {
 		export const id = 'form'
@@ -13213,7 +13213,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -13252,7 +13252,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -13367,7 +13367,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -13406,7 +13406,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -13501,7 +13501,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Form.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -13514,7 +13514,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				
 				'fields'?: boolean[]| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.FormBuilderSection {
 		export const id = 'formBuilderSection'
@@ -13555,7 +13555,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'fields': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
@@ -13605,7 +13605,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'fields': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Boolean,
 			                
 			                
@@ -13622,7 +13622,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.FormBuilderSection.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Build a form to collect some deets */
@@ -13655,7 +13655,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Sections. */
 				'sections': SpruceSchemas.Local.IFormBuilderSection[]
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.FormBuilder {
 		export const id = 'formBuilder'
@@ -13683,7 +13683,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -13722,7 +13722,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -13863,7 +13863,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -13902,7 +13902,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -14023,7 +14023,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.FormBuilder.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Mixin for inputs that support events */
@@ -14034,7 +14034,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Blur handler. */
 				'onBlur'?: ((e: React.FocusEvent<HTMLInputElement>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.InputEvents {
 		export const id = 'inputEvents'
@@ -14116,7 +14116,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.InputEvents.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Collect a phone number with area and country codes */
@@ -14135,7 +14135,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Autofocus. Focus when paid loads */
 				'autoFocus'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.PhoneInput {
 		export const id = 'phoneInput'
@@ -14321,7 +14321,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.PhoneInput.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Show a text input as a search field */
@@ -14360,7 +14360,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Read only. */
 				'isReadOnly'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Search {
 		export const id = 'search'
@@ -14518,7 +14518,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -14737,7 +14737,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -14806,7 +14806,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Search.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -14817,7 +14817,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Label. */
 				'label': string
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SelectOption {
 		export const id = 'selectOption'
@@ -14899,7 +14899,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SelectOption.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A form select */
@@ -14924,7 +14924,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Options. */
 				'options': SpruceSchemas.Local.ISelectOption
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Select {
 		export const id = 'select'
@@ -14939,7 +14939,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'id': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Id,
 			                
 			                
@@ -14978,7 +14978,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -15067,7 +15067,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . */
 			            'id': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Id,
 			                
 			                
@@ -15106,7 +15106,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -15188,7 +15188,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Select.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A simple sliding control */
@@ -15213,7 +15213,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Disabled. */
 				'isDisabled'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Slider {
 		export const id = 'slider'
@@ -15477,7 +15477,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Slider.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Small pill like control with text and onClick functionality */
@@ -15494,7 +15494,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Small. Render small variation of the tag */
 				'isSmall'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Tag {
 		export const id = 'tag'
@@ -15522,7 +15522,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -15598,7 +15598,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -15654,7 +15654,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Tag.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A reusable component that holds an html &lt;input /&gt; element and decorates it. */
@@ -15693,7 +15693,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Read only. */
 				'isReadOnly'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.TextInput {
 		export const id = 'textInput'
@@ -15851,7 +15851,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -16070,7 +16070,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -16139,7 +16139,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.TextInput.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Big box to type lots of text (with voice support) */
@@ -16160,7 +16160,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Rows (height). Number of rows of text that will show before scrolling */
 				'rows'?: number| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.Textarea {
 		export const id = 'textarea'
@@ -16188,7 +16188,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -16290,7 +16290,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -16372,985 +16372,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.Textarea.IDefinition>
 	}
-	
 
-	export namespace SpruceSchemas.Local {
-		/** A layout is the start of it all */
-		export interface ILayout {
-			
-				/** Children. */
-				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
-				/** Is centered. A hint */
-				'isCentered'?: boolean| undefined | null
-				/** Is full bleed. */
-				'isFullBleed'?: boolean| undefined | null
-				/** Sections. Layout sections that makeup this layout */
-				'sections'?: SpruceSchemas.Local.ILayoutSection[]| undefined | null
-				
-				'className'?: string| undefined | null
-				/** Width. */
-				'width'?: ("base" | "wide" | "tight" | "fullWidth")| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.Layout {
-		export const id = 'layout'
-
-		/** The interface for the schema definition for a Layout */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'layout',
-			name: 'Layout',
-			description: 'A layout is the start of it all',
-			
-			
-			    fields: {
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is centered. A hint */
-			            'isCentered': {
-			                label: 'Is centered',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'A hint',
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is full bleed. */
-			            'isFullBleed': {
-			                label: 'Is full bleed',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Sections. Layout sections that makeup this layout */
-			            'sections': {
-			                label: 'Sections',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Layout sections that makeup this layout',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: SpruceSchemas.Local.LayoutSection.IDefinition[],}
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Width. */
-			            'width': {
-			                label: 'Width',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "base",
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Layout */
-		export const definition: SpruceSchemas.Local.Layout.IDefinition = {
-			id: 'layout',
-			name: 'Layout',
-			description: 'A layout is the start of it all',
-			
-			
-			    fields: {
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is centered. A hint */
-			            'isCentered': {
-			                label: 'Is centered',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'A hint',
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is full bleed. */
-			            'isFullBleed': {
-			                label: 'Is full bleed',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Sections. Layout sections that makeup this layout */
-			            'sections': {
-			                label: 'Sections',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Layout sections that makeup this layout',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.Local.LayoutSection.definition],}
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Width. */
-			            'width': {
-			                label: 'Width',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "base",
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.Layout.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/** A way to add spacing to your layouts */
-		export interface ILayoutSpacing {
-			
-				/** Direction. */
-				'direction'?: ("all" | "horizontal" | "vertical" | "top" | "right" | "bottom" | "left")| undefined | null
-				/** Spacing amount. The amount of spacing to apply (0-12) */
-				'amount': number
-				/** Layout builder. */
-				'layoutBuilder'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
-				
-				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.LayoutSpacing {
-		export const id = 'layoutSpacing'
-
-		/** The interface for the schema definition for a Layout spacing */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'layoutSpacing',
-			name: 'Layout spacing',
-			description: 'A way to add spacing to your layouts',
-			
-			
-			    fields: {
-			            /** Direction. */
-			            'direction': {
-			                label: 'Direction',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "all",
-			                
-			                
-			                options: {choices: [{"value":"all","label":"All"},{"value":"horizontal","label":"Horizontal"},{"value":"vertical","label":"Vertical"},{"value":"top","label":"Top"},{"value":"right","label":"Right"},{"value":"bottom","label":"Bottom"},{"value":"left","label":"Left"}],}
-			            },
-			            /** Spacing amount. The amount of spacing to apply (0-12) */
-			            'amount': {
-			                label: 'Spacing amount',
-			                type: SpruceSchema.FieldType.Number,
-			                
-			                isRequired: true,
-			                hint: 'The amount of spacing to apply (0-12)',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Layout builder. */
-			            'layoutBuilder': {
-			                label: 'Layout builder',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
-			            },
-			            /** . */
-			            'children': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a Layout spacing */
-		export const definition: SpruceSchemas.Local.LayoutSpacing.IDefinition = {
-			id: 'layoutSpacing',
-			name: 'Layout spacing',
-			description: 'A way to add spacing to your layouts',
-			
-			
-			    fields: {
-			            /** Direction. */
-			            'direction': {
-			                label: 'Direction',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "all",
-			                
-			                
-			                options: {choices: [{"value":"all","label":"All"},{"value":"horizontal","label":"Horizontal"},{"value":"vertical","label":"Vertical"},{"value":"top","label":"Top"},{"value":"right","label":"Right"},{"value":"bottom","label":"Bottom"},{"value":"left","label":"Left"}],}
-			            },
-			            /** Spacing amount. The amount of spacing to apply (0-12) */
-			            'amount': {
-			                label: 'Spacing amount',
-			                type: SpruceSchema.FieldType.Number,
-			                
-			                isRequired: true,
-			                hint: 'The amount of spacing to apply (0-12)',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Layout builder. */
-			            'layoutBuilder': {
-			                label: 'Layout builder',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
-			            },
-			            /** . */
-			            'children': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.LayoutSpacing.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/**  */
-		export interface ISidebarHeader {
-			
-				/** Title. */
-				'title': string
-				/** Button. */
-				'button'?: SpruceSchemas.Local.IButton| undefined | null
-				/** Close handler. */
-				'onClose'?: (() => void)| undefined | null
-				/** Go back handler. */
-				'onGoBack'?: (() => void)| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.SidebarHeader {
-		export const id = 'sidebarHeader'
-
-		/** The interface for the schema definition for a Sidebar header */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'sidebarHeader',
-			name: 'Sidebar header',
-			description: '',
-			
-			
-			    fields: {
-			            /** Title. */
-			            'title': {
-			                label: 'Title',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Button. */
-			            'button': {
-			                label: 'Button',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
-			            },
-			            /** Close handler. */
-			            'onClose': {
-			                label: 'Close handler',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `() => void`,}
-			            },
-			            /** Go back handler. */
-			            'onGoBack': {
-			                label: 'Go back handler',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `() => void`,}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Sidebar header */
-		export const definition: SpruceSchemas.Local.SidebarHeader.IDefinition = {
-			id: 'sidebarHeader',
-			name: 'Sidebar header',
-			description: '',
-			
-			
-			    fields: {
-			            /** Title. */
-			            'title': {
-			                label: 'Title',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Button. */
-			            'button': {
-			                label: 'Button',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
-			            },
-			            /** Close handler. */
-			            'onClose': {
-			                label: 'Close handler',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `() => void`,}
-			            },
-			            /** Go back handler. */
-			            'onGoBack': {
-			                label: 'Go back handler',
-			                type: SpruceSchema.FieldType.Raw,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {valueType: `() => void`,}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.SidebarHeader.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/** An element that makes up the sidebar */
-		export interface ISidebarSection {
-			
-				/** items. */
-				'items'?: ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'layout', values: SpruceSchemas.Local.ILayout } | { schemaId: 'layoutSpacing', values: SpruceSchemas.Local.ILayoutSpacing } | { schemaId: 'sidebarHeader', values: SpruceSchemas.Local.ISidebarHeader } | { schemaId: 'sidebarSection', values: SpruceSchemas.Local.ISidebarSection })[]| undefined | null
-				
-				'className'?: string| undefined | null
-				/** Centered. Center everything horizontally */
-				'isCentered'?: boolean| undefined | null
-				/** Mobile only. Will hide on desktop if true */
-				'isOnlyForMobile'?: boolean| undefined | null
-				
-				'horizontalSpacing'?: ("base" | "loose")| undefined | null
-				
-				'verticalSpacing'?: ("base" | "loose")| undefined | null
-				
-				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.SidebarSection {
-		export const id = 'sidebarSection'
-
-		/** The interface for the schema definition for a Sidebar item */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'sidebarSection',
-			name: 'Sidebar item',
-			description: 'An element that makes up the sidebar',
-			
-			
-			    fields: {
-			            /** items. */
-			            'items': {
-			                label: 'items',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Layout.IDefinition | SpruceSchemas.Local.LayoutSpacing.IDefinition | SpruceSchemas.Local.SidebarHeader.IDefinition | SpruceSchemas.Local.SidebarSection.IDefinition)[],}
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Centered. Center everything horizontally */
-			            'isCentered': {
-			                label: 'Centered',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Center everything horizontally',
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Mobile only. Will hide on desktop if true */
-			            'isOnlyForMobile': {
-			                label: 'Mobile only',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Will hide on desktop if true',
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'horizontalSpacing': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "base",
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
-			            },
-			            /** . */
-			            'verticalSpacing': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "base",
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
-			            },
-			            /** . */
-			            'children': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a Sidebar item */
-		export const definition: SpruceSchemas.Local.SidebarSection.IDefinition = {
-			id: 'sidebarSection',
-			name: 'Sidebar item',
-			description: 'An element that makes up the sidebar',
-			
-			
-			    fields: {
-			            /** items. */
-			            'items': {
-			                label: 'items',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Layout.definition, SpruceSchemas.Local.LayoutSpacing.definition, SpruceSchemas.Local.SidebarHeader.definition, SpruceSchemas.Local.SidebarSection.definition],}
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Centered. Center everything horizontally */
-			            'isCentered': {
-			                label: 'Centered',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Center everything horizontally',
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Mobile only. Will hide on desktop if true */
-			            'isOnlyForMobile': {
-			                label: 'Mobile only',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Will hide on desktop if true',
-			                
-			                defaultValue: false,
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'horizontalSpacing': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "base",
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
-			            },
-			            /** . */
-			            'verticalSpacing': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                
-			                
-			                defaultValue: "base",
-			                
-			                
-			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
-			            },
-			            /** . */
-			            'children': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.SidebarSection.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/** A way to build layouts */
-		export interface ILayoutBuilder {
-			
-				/** items. */
-				'items'?: ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'layout', values: SpruceSchemas.Local.ILayout } | { schemaId: 'layoutSpacing', values: SpruceSchemas.Local.ILayoutSpacing } | { schemaId: 'sidebarHeader', values: SpruceSchemas.Local.ISidebarHeader } | { schemaId: 'sidebarSection', values: SpruceSchemas.Local.ISidebarSection })[]| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.LayoutBuilder {
-		export const id = 'layoutBuilder'
-
-		/** The interface for the schema definition for a Layout builder */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'layoutBuilder',
-			name: 'Layout builder',
-			description: 'A way to build layouts',
-			
-			
-			    fields: {
-			            /** items. */
-			            'items': {
-			                label: 'items',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Layout.IDefinition | SpruceSchemas.Local.LayoutSpacing.IDefinition | SpruceSchemas.Local.SidebarHeader.IDefinition | SpruceSchemas.Local.SidebarSection.IDefinition)[],}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Layout builder */
-		export const definition: SpruceSchemas.Local.LayoutBuilder.IDefinition = {
-			id: 'layoutBuilder',
-			name: 'Layout builder',
-			description: 'A way to build layouts',
-			
-			
-			    fields: {
-			            /** items. */
-			            'items': {
-			                label: 'items',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Layout.definition, SpruceSchemas.Local.LayoutSpacing.definition, SpruceSchemas.Local.SidebarHeader.definition, SpruceSchemas.Local.SidebarSection.definition],}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.LayoutBuilder.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/** A section that makes up a layout */
-		export interface ILayoutSection {
-			
-				/** Id. */
-				'id'?: string| undefined | null
-				/** Children. */
-				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
-				/** Classname. */
-				'className'?: string| undefined | null
-				/** Is secondary. Makes this section thinner */
-				'isSecondary'?: boolean| undefined | null
-				/** Layout builder. */
-				'layoutBuilder'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.LayoutSection {
-		export const id = 'layoutSection'
-
-		/** The interface for the schema definition for a Layout section */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'layoutSection',
-			name: 'Layout section',
-			description: 'A section that makes up a layout',
-			
-			
-			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Classname. */
-			            'className': {
-			                label: 'Classname',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is secondary. Makes this section thinner */
-			            'isSecondary': {
-			                label: 'Is secondary',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Makes this section thinner',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Layout builder. */
-			            'layoutBuilder': {
-			                label: 'Layout builder',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Layout section */
-		export const definition: SpruceSchemas.Local.LayoutSection.IDefinition = {
-			id: 'layoutSection',
-			name: 'Layout section',
-			description: 'A section that makes up a layout',
-			
-			
-			    fields: {
-			            /** Id. */
-			            'id': {
-			                label: 'Id',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Children. */
-			            'children': {
-			                label: 'Children',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Classname. */
-			            'className': {
-			                label: 'Classname',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Is secondary. Makes this section thinner */
-			            'isSecondary': {
-			                label: 'Is secondary',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Makes this section thinner',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Layout builder. */
-			            'layoutBuilder': {
-			                label: 'Layout builder',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.LayoutSection.IDefinition>
-	}
-	
 
 	export namespace SpruceSchemas.Local {
 		/** A list is comprised of list items (or expandable list items). This is that list item. */
@@ -17405,7 +16427,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Click handler. */
 				'onClick'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.ListItem {
 		export const id = 'listItem'
@@ -18059,641 +17081,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.ListItem.IDefinition>
 	}
-	
 
-	export namespace SpruceSchemas.Local {
-		/** An element that makes up the sidebar */
-		export interface ISidebarItem {
-			
-				/** Subitems. Rendered under the text as subitems */
-				'items'?: SpruceSchemas.Local.ISidebarItem[]| undefined | null
-				/** Icon. */
-				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
-				/** Button. */
-				'button'?: SpruceSchemas.Local.IButton| undefined | null
-				
-				'className'?: string| undefined | null
-				/** Text. Rendered in the body of this item */
-				'text'?: string| undefined | null
-				/** href. */
-				'href'?: string| undefined | null
-				/** Current. If this item is the current one, it is rendered differently to call it out */
-				'isCurrent'?: boolean| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.SidebarItem {
-		export const id = 'sidebarItem'
-
-		/** The interface for the schema definition for a Sidebar item */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'sidebarItem',
-			name: 'Sidebar item',
-			description: 'An element that makes up the sidebar',
-			
-			
-			    fields: {
-			            /** Subitems. Rendered under the text as subitems */
-			            'items': {
-			                label: 'Subitems',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Rendered under the text as subitems',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
-			            },
-			            /** Icon. */
-			            'icon': {
-			                label: 'Icon',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
-			            },
-			            /** Button. */
-			            'button': {
-			                label: 'Button',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Text. Rendered in the body of this item */
-			            'text': {
-			                label: 'Text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Rendered in the body of this item',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** href. */
-			            'href': {
-			                label: 'href',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Current. If this item is the current one, it is rendered differently to call it out */
-			            'isCurrent': {
-			                label: 'Current',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'If this item is the current one, it is rendered differently to call it out',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The schema definition for a Sidebar item */
-		export const definition: SpruceSchemas.Local.SidebarItem.IDefinition = {
-			id: 'sidebarItem',
-			name: 'Sidebar item',
-			description: 'An element that makes up the sidebar',
-			
-			
-			    fields: {
-			            /** Subitems. Rendered under the text as subitems */
-			            'items': {
-			                label: 'Subitems',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Rendered under the text as subitems',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
-			            },
-			            /** Icon. */
-			            'icon': {
-			                label: 'Icon',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
-			            },
-			            /** Button. */
-			            'button': {
-			                label: 'Button',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
-			            },
-			            /** . */
-			            'className': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Text. Rendered in the body of this item */
-			            'text': {
-			                label: 'Text',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                hint: 'Rendered in the body of this item',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** href. */
-			            'href': {
-			                label: 'href',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Current. If this item is the current one, it is rendered differently to call it out */
-			            'isCurrent': {
-			                label: 'Current',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'If this item is the current one, it is rendered differently to call it out',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.SidebarItem.IDefinition>
-	}
-	
-
-	export namespace SpruceSchemas.Local {
-		/** On the left or right side of a layout */
-		export interface ISidebar {
-			
-				/** . Optional header that will only appear on mobile */
-				'mobileHeader'?: SpruceSchemas.Local.ISidebarHeader| undefined | null
-				/** Label. Items to display in the sidebar */
-				'items'?: SpruceSchemas.Local.ISidebarItem[]| undefined | null
-				/** Sections. Sections to display in the sidebar */
-				'sections'?: SpruceSchemas.Local.ISidebarSection[]| undefined | null
-				/** Back link. Back link item to handle navigation back to previous location */
-				'backLink'?: SpruceSchemas.Local.ISidebarItem| undefined | null
-				/** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
-				'side'?: ("left" | "right")| undefined | null
-				/** Large. Set true to make the sidebar larger. Defaults to false. */
-				'isLarge'?: boolean| undefined | null
-				/** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
-				'isCollapsible'?: boolean| undefined | null
-				/** Expanded on desktop. Set true to expand the sidebar (large screens only) */
-				'isExpanded'?: boolean| undefined | null
-				/** Expanded on mobile. Set true to expand the sidebar on small screens */
-				'isMobileExpanded'?: boolean| undefined | null
-				
-				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
-				
-				'footerChildren'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
-				/** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
-				'onToggleExpanded'?: (() => void)| undefined | null
-				/** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
-				'onForceCollapse'?: (() => void)| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.Sidebar {
-		export const id = 'sidebar'
-
-		/** The interface for the schema definition for a Sidebar */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'sidebar',
-			name: 'Sidebar',
-			description: 'On the left or right side of a layout',
-			
-			
-			    fields: {
-			            /** . Optional header that will only appear on mobile */
-			            'mobileHeader': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Optional header that will only appear on mobile',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.Local.SidebarHeader.IDefinition[],}
-			            },
-			            /** Label. Items to display in the sidebar */
-			            'items': {
-			                label: 'Label',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Items to display in the sidebar',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
-			            },
-			            /** Sections. Sections to display in the sidebar */
-			            'sections': {
-			                label: 'Sections',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Sections to display in the sidebar',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: SpruceSchemas.Local.SidebarSection.IDefinition[],}
-			            },
-			            /** Back link. Back link item to handle navigation back to previous location */
-			            'backLink': {
-			                label: 'Back link',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Back link item to handle navigation back to previous location',
-			                
-			                
-			                
-			                
-			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
-			            },
-			            /** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
-			            'side': {
-			                label: 'Side',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                hint: 'Set which side the sidebar is on. Must be either \'left\' or \'right\'',
-			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"left","label":"Left"},{"value":"right","label":"Right"}],}
-			            },
-			            /** Large. Set true to make the sidebar larger. Defaults to false. */
-			            'isLarge': {
-			                label: 'Large',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to make the sidebar larger. Defaults to false.',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
-			            'isCollapsible': {
-			                label: 'Collapsed',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Expanded on desktop. Set true to expand the sidebar (large screens only) */
-			            'isExpanded': {
-			                label: 'Expanded on desktop',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to expand the sidebar (large screens only)',
-			                
-			                defaultValue: true,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Expanded on mobile. Set true to expand the sidebar on small screens */
-			            'isMobileExpanded': {
-			                label: 'Expanded on mobile',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to expand the sidebar on small screens',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'children': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'footerChildren': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
-			            'onToggleExpanded': {
-			                label: 'Expander handler',
-			                type: SpruceSchema.FieldType.Callback,
-			                
-			                
-			                hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
-			                
-			                
-			                
-			                
-			                options: {signature: `() => void`,}
-			            },
-			            /** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
-			            'onForceCollapse': {
-			                label: 'Force close handler',
-			                type: SpruceSchema.FieldType.Callback,
-			                
-			                
-			                hint: 'Expect you to collapse the bar no matter what (isExpanded to false)',
-			                
-			                
-			                
-			                
-			                options: {signature: `() => void`,}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Sidebar */
-		export const definition: SpruceSchemas.Local.Sidebar.IDefinition = {
-			id: 'sidebar',
-			name: 'Sidebar',
-			description: 'On the left or right side of a layout',
-			
-			
-			    fields: {
-			            /** . Optional header that will only appear on mobile */
-			            'mobileHeader': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Optional header that will only appear on mobile',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.Local.SidebarHeader.definition],}
-			            },
-			            /** Label. Items to display in the sidebar */
-			            'items': {
-			                label: 'Label',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Items to display in the sidebar',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
-			            },
-			            /** Sections. Sections to display in the sidebar */
-			            'sections': {
-			                label: 'Sections',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Sections to display in the sidebar',
-			                
-			                
-			                isArray: true,
-			                
-			                options: {schemas: [SpruceSchemas.Local.SidebarSection.definition],}
-			            },
-			            /** Back link. Back link item to handle navigation back to previous location */
-			            'backLink': {
-			                label: 'Back link',
-			                type: SpruceSchema.FieldType.Schema,
-			                
-			                
-			                hint: 'Back link item to handle navigation back to previous location',
-			                
-			                
-			                
-			                
-			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
-			            },
-			            /** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
-			            'side': {
-			                label: 'Side',
-			                type: SpruceSchema.FieldType.Select,
-			                
-			                
-			                hint: 'Set which side the sidebar is on. Must be either \'left\' or \'right\'',
-			                
-			                
-			                
-			                
-			                options: {choices: [{"value":"left","label":"Left"},{"value":"right","label":"Right"}],}
-			            },
-			            /** Large. Set true to make the sidebar larger. Defaults to false. */
-			            'isLarge': {
-			                label: 'Large',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to make the sidebar larger. Defaults to false.',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
-			            'isCollapsible': {
-			                label: 'Collapsed',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Expanded on desktop. Set true to expand the sidebar (large screens only) */
-			            'isExpanded': {
-			                label: 'Expanded on desktop',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to expand the sidebar (large screens only)',
-			                
-			                defaultValue: true,
-			                
-			                
-			                options: undefined
-			            },
-			            /** Expanded on mobile. Set true to expand the sidebar on small screens */
-			            'isMobileExpanded': {
-			                label: 'Expanded on mobile',
-			                type: SpruceSchema.FieldType.Boolean,
-			                
-			                
-			                hint: 'Set true to expand the sidebar on small screens',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'children': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** . */
-			            'footerChildren': {
-			                label: '',
-			                type: SpruceSchema.FieldType.Node,
-			                
-			                
-			                
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
-			            'onToggleExpanded': {
-			                label: 'Expander handler',
-			                type: SpruceSchema.FieldType.Callback,
-			                
-			                
-			                hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
-			                
-			                
-			                
-			                
-			                options: {signature: `() => void`,}
-			            },
-			            /** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
-			            'onForceCollapse': {
-			                label: 'Force close handler',
-			                type: SpruceSchema.FieldType.Callback,
-			                
-			                
-			                hint: 'Expect you to collapse the bar no matter what (isExpanded to false)',
-			                
-			                
-			                
-			                
-			                options: {signature: `() => void`,}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.Sidebar.IDefinition>
-	}
-	
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -18720,7 +17108,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Tabs. */
 				'tabs'?: SpruceSchemas.Local.ITab[]| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SkillViewHeader {
 		export const id = 'skillViewHeader'
@@ -18787,7 +17175,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -18928,7 +17316,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -19010,7 +17398,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SkillViewHeader.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** A view you&#x27;re presenting to a person on an unknown set of devices */
@@ -19031,7 +17419,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Collapse header. Will hide the header */
 				'isHeaderCollapsed'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SkillView {
 		export const id = 'skillView'
@@ -19059,7 +17447,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -19072,7 +17460,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19085,7 +17473,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'sidebarChildren': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19161,7 +17549,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -19174,7 +17562,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19187,7 +17575,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'sidebarChildren': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19243,7 +17631,985 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SkillView.IDefinition>
 	}
-	
+
+
+	export namespace SpruceSchemas.Local {
+		/** A section that makes up a layout */
+		export interface ILayoutSection {
+			
+				/** Id. */
+				'id'?: string| undefined | null
+				/** Children. */
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Classname. */
+				'className'?: string| undefined | null
+				/** Is secondary. Makes this section thinner */
+				'isSecondary'?: boolean| undefined | null
+				/** Layout builder. */
+				'layoutBuilder'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.LayoutSection {
+		export const id = 'layoutSection'
+
+		/** The interface for the schema definition for a Layout section */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layoutSection',
+			name: 'Layout section',
+			description: 'A section that makes up a layout',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Classname. */
+			            'className': {
+			                label: 'Classname',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is secondary. Makes this section thinner */
+			            'isSecondary': {
+			                label: 'Is secondary',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes this section thinner',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout section */
+		export const definition: SpruceSchemas.Local.LayoutSection.IDefinition = {
+			id: 'layoutSection',
+			name: 'Layout section',
+			description: 'A section that makes up a layout',
+			
+			
+			    fields: {
+			            /** Id. */
+			            'id': {
+			                label: 'Id',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Classname. */
+			            'className': {
+			                label: 'Classname',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is secondary. Makes this section thinner */
+			            'isSecondary': {
+			                label: 'Is secondary',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Makes this section thinner',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.LayoutSection.IDefinition>
+	}
+
+
+	export namespace SpruceSchemas.Local {
+		/** A layout is the start of it all */
+		export interface ILayout {
+			
+				/** Children. */
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Is centered. A hint */
+				'isCentered'?: boolean| undefined | null
+				/** Is full bleed. */
+				'isFullBleed'?: boolean| undefined | null
+				/** Sections. Layout sections that makeup this layout */
+				'sections'?: SpruceSchemas.Local.ILayoutSection[]| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Width. */
+				'width'?: ("base" | "wide" | "tight" | "fullWidth")| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.Layout {
+		export const id = 'layout'
+
+		/** The interface for the schema definition for a Layout */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layout',
+			name: 'Layout',
+			description: 'A layout is the start of it all',
+			
+			
+			    fields: {
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is centered. A hint */
+			            'isCentered': {
+			                label: 'Is centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'A hint',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sections. Layout sections that makeup this layout */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Layout sections that makeup this layout',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutSection.IDefinition[],}
+			            },
+			            /** . */
+			            'className': {
+			                
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Width. */
+			            'width': {
+			                label: 'Width',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout */
+		export const definition: SpruceSchemas.Local.Layout.IDefinition = {
+			id: 'layout',
+			name: 'Layout',
+			description: 'A layout is the start of it all',
+			
+			
+			    fields: {
+			            /** Children. */
+			            'children': {
+			                label: 'Children',
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is centered. A hint */
+			            'isCentered': {
+			                label: 'Is centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'A hint',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Is full bleed. */
+			            'isFullBleed': {
+			                label: 'Is full bleed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Sections. Layout sections that makeup this layout */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Layout sections that makeup this layout',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutSection.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Width. */
+			            'width': {
+			                label: 'Width',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"wide","label":"Wide"},{"value":"tight","label":"Tight"},{"value":"fullWidth","label":"Full width"}],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Layout.IDefinition>
+	}
+
+
+	export namespace SpruceSchemas.Local {
+		/** A way to build layouts */
+		export interface ILayoutBuilder {
+			
+				/** items. */
+				'items'?: ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'layout', values: SpruceSchemas.Local.ILayout } | { schemaId: 'layoutSpacing', values: SpruceSchemas.Local.ILayoutSpacing } | { schemaId: 'sidebarHeader', values: SpruceSchemas.Local.ISidebarHeader } | { schemaId: 'sidebarSection', values: SpruceSchemas.Local.ISidebarSection })[]| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.LayoutBuilder {
+		export const id = 'layoutBuilder'
+
+		/** The interface for the schema definition for a Layout builder */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layoutBuilder',
+			name: 'Layout builder',
+			description: 'A way to build layouts',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Layout.IDefinition | SpruceSchemas.Local.LayoutSpacing.IDefinition | SpruceSchemas.Local.SidebarHeader.IDefinition | SpruceSchemas.Local.SidebarSection.IDefinition)[],}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout builder */
+		export const definition: SpruceSchemas.Local.LayoutBuilder.IDefinition = {
+			id: 'layoutBuilder',
+			name: 'Layout builder',
+			description: 'A way to build layouts',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Layout.definition, SpruceSchemas.Local.LayoutSpacing.definition, SpruceSchemas.Local.SidebarHeader.definition, SpruceSchemas.Local.SidebarSection.definition],}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.LayoutBuilder.IDefinition>
+	}
+
+
+	export namespace SpruceSchemas.Local {
+		/** A way to add spacing to your layouts */
+		export interface ILayoutSpacing {
+			
+				/** Direction. */
+				'direction'?: ("all" | "horizontal" | "vertical" | "top" | "right" | "bottom" | "left")| undefined | null
+				/** Spacing amount. The amount of spacing to apply (0-12) */
+				'amount': number
+				/** Layout builder. */
+				'layoutBuilder'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.LayoutSpacing {
+		export const id = 'layoutSpacing'
+
+		/** The interface for the schema definition for a Layout spacing */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'layoutSpacing',
+			name: 'Layout spacing',
+			description: 'A way to add spacing to your layouts',
+			
+			
+			    fields: {
+			            /** Direction. */
+			            'direction': {
+			                label: 'Direction',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "all",
+			                
+			                
+			                options: {choices: [{"value":"all","label":"All"},{"value":"horizontal","label":"Horizontal"},{"value":"vertical","label":"Vertical"},{"value":"top","label":"Top"},{"value":"right","label":"Right"},{"value":"bottom","label":"Bottom"},{"value":"left","label":"Left"}],}
+			            },
+			            /** Spacing amount. The amount of spacing to apply (0-12) */
+			            'amount': {
+			                label: 'Spacing amount',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The amount of spacing to apply (0-12)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[],}
+			            },
+			            /** . */
+			            'children': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Layout spacing */
+		export const definition: SpruceSchemas.Local.LayoutSpacing.IDefinition = {
+			id: 'layoutSpacing',
+			name: 'Layout spacing',
+			description: 'A way to add spacing to your layouts',
+			
+			
+			    fields: {
+			            /** Direction. */
+			            'direction': {
+			                label: 'Direction',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "all",
+			                
+			                
+			                options: {choices: [{"value":"all","label":"All"},{"value":"horizontal","label":"Horizontal"},{"value":"vertical","label":"Vertical"},{"value":"top","label":"Top"},{"value":"right","label":"Right"},{"value":"bottom","label":"Bottom"},{"value":"left","label":"Left"}],}
+			            },
+			            /** Spacing amount. The amount of spacing to apply (0-12) */
+			            'amount': {
+			                label: 'Spacing amount',
+			                type: SpruceSchema.FieldType.Number,
+			                
+			                isRequired: true,
+			                hint: 'The amount of spacing to apply (0-12)',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Layout builder. */
+			            'layoutBuilder': {
+			                label: 'Layout builder',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.LayoutBuilder.definition],}
+			            },
+			            /** . */
+			            'children': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.LayoutSpacing.IDefinition>
+	}
+
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface ISidebarHeader {
+			
+				/** Title. */
+				'title': string
+				/** Button. */
+				'button'?: SpruceSchemas.Local.IButton| undefined | null
+				/** Close handler. */
+				'onClose'?: (() => void)| undefined | null
+				/** Go back handler. */
+				'onGoBack'?: (() => void)| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.SidebarHeader {
+		export const id = 'sidebarHeader'
+
+		/** The interface for the schema definition for a Sidebar header */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebarHeader',
+			name: 'Sidebar header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** Close handler. */
+			            'onClose': {
+			                label: 'Close handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Go back handler. */
+			            'onGoBack': {
+			                label: 'Go back handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar header */
+		export const definition: SpruceSchemas.Local.SidebarHeader.IDefinition = {
+			id: 'sidebarHeader',
+			name: 'Sidebar header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Title. */
+			            'title': {
+			                label: 'Title',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** Close handler. */
+			            'onClose': {
+			                label: 'Close handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			            /** Go back handler. */
+			            'onGoBack': {
+			                label: 'Go back handler',
+			                type: SpruceSchema.FieldType.Raw,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {valueType: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SidebarHeader.IDefinition>
+	}
+
+
+	export namespace SpruceSchemas.Local {
+		/** An element that makes up the sidebar */
+		export interface ISidebarSection {
+			
+				/** items. */
+				'items'?: ({ schemaId: 'button', values: SpruceSchemas.Local.IButton } | { schemaId: 'cardBuilder', values: SpruceSchemas.Local.ICardBuilder } | { schemaId: 'layout', values: SpruceSchemas.Local.ILayout } | { schemaId: 'layoutSpacing', values: SpruceSchemas.Local.ILayoutSpacing } | { schemaId: 'sidebarHeader', values: SpruceSchemas.Local.ISidebarHeader } | { schemaId: 'sidebarSection', values: SpruceSchemas.Local.ISidebarSection })[]| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Centered. Center everything horizontally */
+				'isCentered'?: boolean| undefined | null
+				/** Mobile only. Will hide on desktop if true */
+				'isOnlyForMobile'?: boolean| undefined | null
+				
+				'horizontalSpacing'?: ("base" | "loose")| undefined | null
+				
+				'verticalSpacing'?: ("base" | "loose")| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.SidebarSection {
+		export const id = 'sidebarSection'
+
+		/** The interface for the schema definition for a Sidebar item */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebarSection',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: (SpruceSchemas.Local.Button.IDefinition | SpruceSchemas.Local.CardBuilder.IDefinition | SpruceSchemas.Local.Layout.IDefinition | SpruceSchemas.Local.LayoutSpacing.IDefinition | SpruceSchemas.Local.SidebarHeader.IDefinition | SpruceSchemas.Local.SidebarSection.IDefinition)[],}
+			            },
+			            /** . */
+			            'className': {
+			                
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Centered. Center everything horizontally */
+			            'isCentered': {
+			                label: 'Centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Center everything horizontally',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Mobile only. Will hide on desktop if true */
+			            'isOnlyForMobile': {
+			                label: 'Mobile only',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide on desktop if true',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'horizontalSpacing': {
+			                
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'verticalSpacing': {
+			                
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'children': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar item */
+		export const definition: SpruceSchemas.Local.SidebarSection.IDefinition = {
+			id: 'sidebarSection',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** items. */
+			            'items': {
+			                label: 'items',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition, SpruceSchemas.Local.CardBuilder.definition, SpruceSchemas.Local.Layout.definition, SpruceSchemas.Local.LayoutSpacing.definition, SpruceSchemas.Local.SidebarHeader.definition, SpruceSchemas.Local.SidebarSection.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Centered. Center everything horizontally */
+			            'isCentered': {
+			                label: 'Centered',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Center everything horizontally',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Mobile only. Will hide on desktop if true */
+			            'isOnlyForMobile': {
+			                label: 'Mobile only',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Will hide on desktop if true',
+			                
+			                defaultValue: false,
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'horizontalSpacing': {
+			                
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'verticalSpacing': {
+			                
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                
+			                
+			                defaultValue: "base",
+			                
+			                
+			                options: {choices: [{"value":"base","label":"Base"},{"value":"loose","label":"Loose"}],}
+			            },
+			            /** . */
+			            'children': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SidebarSection.IDefinition>
+	}
+
 
 	export namespace SpruceSchemas.Local {
 		/** A view you&#x27;re presenting to a person on an unknown set of devices */
@@ -19268,7 +18634,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Content layout. */
 				'sidebarLayout'?: SpruceSchemas.Local.ILayoutBuilder| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SkillViewBuilder {
 		export const id = 'skillViewBuilder'
@@ -19296,7 +18662,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -19309,7 +18675,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19322,7 +18688,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'sidebarChildren': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19424,7 +18790,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'className': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Text,
 			                
 			                
@@ -19437,7 +18803,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'children': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19450,7 +18816,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			            },
 			            /** . */
 			            'sidebarChildren': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Node,
 			                
 			                
@@ -19532,100 +18898,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SkillViewBuilder.IDefinition>
 	}
-	
 
-	export namespace SpruceSchemas.Local {
-		/**  */
-		export interface IToastHeader {
-			
-				/** Headline. Headline text */
-				'headline': string
-				/** Remove action. Action to be invoked when hitting the dismiss button */
-				'onClickDismiss'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
-		}
-	}	 
-
-	export namespace SpruceSchemas.Local.ToastHeader {
-		export const id = 'toastHeader'
-
-		/** The interface for the schema definition for a Toast header */
-		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-			id: 'toastHeader',
-			name: 'Toast header',
-			description: '',
-			
-			
-			    fields: {
-			            /** Headline. Headline text */
-			            'headline': {
-			                label: 'Headline',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Headline text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Remove action. Action to be invoked when hitting the dismiss button */
-			            'onClickDismiss': {
-			                label: 'Remove action',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the dismiss button',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
-			            },
-			    }
-		}
-
-		/** The schema definition for a Toast header */
-		export const definition: SpruceSchemas.Local.ToastHeader.IDefinition = {
-			id: 'toastHeader',
-			name: 'Toast header',
-			description: '',
-			
-			
-			    fields: {
-			            /** Headline. Headline text */
-			            'headline': {
-			                label: 'Headline',
-			                type: SpruceSchema.FieldType.Text,
-			                
-			                isRequired: true,
-			                hint: 'Headline text',
-			                
-			                
-			                
-			                
-			                options: undefined
-			            },
-			            /** Remove action. Action to be invoked when hitting the dismiss button */
-			            'onClickDismiss': {
-			                label: 'Remove action',
-			                type: SpruceSchema.FieldType.EventCallback,
-			                
-			                
-			                hint: 'Action to be invoked when hitting the dismiss button',
-			                
-			                
-			                
-			                
-			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
-			            },
-			    }
-		}
-
-		/** The type of a schema instance built off this definition */
-		export type Instance = Schema<SpruceSchemas.Local.ToastHeader.IDefinition>
-	}
-	
 
 	export namespace SpruceSchemas.Local {
 		/** Make it great! */
@@ -19638,7 +18911,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Size. */
 				'size': ("small" | "medium" | "large")
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SprucebotAvatar {
 		export const id = 'sprucebotAvatar'
@@ -19746,7 +19019,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SprucebotAvatar.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -19759,7 +19032,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** End delay. How long should I hold on this sentence after it's typed? */
 				'endDelay'?: SpruceSchema.IDurationFieldValue| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SprucebotTypedMessageSentence {
 		export const id = 'sprucebotTypedMessageSentence'
@@ -19774,7 +19047,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . A way to override the Sprucebot avatar for this sentence */
 			            'avatar': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
@@ -19824,7 +19097,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 			    fields: {
 			            /** . A way to override the Sprucebot avatar for this sentence */
 			            'avatar': {
-			                label: '',
+			                
 			                type: SpruceSchema.FieldType.Schema,
 			                
 			                
@@ -19867,7 +19140,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SprucebotTypedMessageSentence.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/** Avatar that makes size optional for use with the Sprucebot Typed Message component */
@@ -19880,7 +19153,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Size. */
 				'size'?: ("small" | "medium" | "large")| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SprucebotTypedMessageAvatar {
 		export const id = 'sprucebotTypedMessageAvatar'
@@ -19988,7 +19261,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SprucebotTypedMessageAvatar.IDefinition>
 	}
-	
+
 
 	export namespace SpruceSchemas.Local {
 		/**  */
@@ -20009,7 +19282,7 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 				/** Paused. */
 				'paused'?: boolean| undefined | null
 		}
-	}	 
+	}
 
 	export namespace SpruceSchemas.Local.SprucebotTypedMessage {
 		export const id = 'sprucebotTypedMessage'
@@ -20221,7 +19494,734 @@ import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 		/** The type of a schema instance built off this definition */
 		export type Instance = Schema<SpruceSchemas.Local.SprucebotTypedMessage.IDefinition>
 	}
-	
+
+
+	export namespace SpruceSchemas.Local {
+		/**  */
+		export interface IToastHeader {
+			
+				/** Headline. Headline text */
+				'headline': string
+				/** Remove action. Action to be invoked when hitting the dismiss button */
+				'onClickDismiss'?: ((e: React.MouseEvent<Element>) => void)| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.ToastHeader {
+		export const id = 'toastHeader'
+
+		/** The interface for the schema definition for a Toast header */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'toastHeader',
+			name: 'Toast header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Headline text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Toast header */
+		export const definition: SpruceSchemas.Local.ToastHeader.IDefinition = {
+			id: 'toastHeader',
+			name: 'Toast header',
+			description: '',
+			
+			
+			    fields: {
+			            /** Headline. Headline text */
+			            'headline': {
+			                label: 'Headline',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                isRequired: true,
+			                hint: 'Headline text',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Remove action. Action to be invoked when hitting the dismiss button */
+			            'onClickDismiss': {
+			                label: 'Remove action',
+			                type: SpruceSchema.FieldType.EventCallback,
+			                
+			                
+			                hint: 'Action to be invoked when hitting the dismiss button',
+			                
+			                
+			                
+			                
+			                options: {event: `React.MouseEvent<...>`,element: `Element`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.ToastHeader.IDefinition>
+	}
+
+
+	export namespace SpruceSchemas.Local {
+		/** An element that makes up the sidebar */
+		export interface ISidebarItem {
+			
+				/** Subitems. Rendered under the text as subitems */
+				'items'?: SpruceSchemas.Local.ISidebarItem[]| undefined | null
+				/** Icon. */
+				'icon'?: SpruceSchemas.Local.IIcon| undefined | null
+				/** Button. */
+				'button'?: SpruceSchemas.Local.IButton| undefined | null
+				
+				'className'?: string| undefined | null
+				/** Text. Rendered in the body of this item */
+				'text'?: string| undefined | null
+				/** href. */
+				'href'?: string| undefined | null
+				/** Current. If this item is the current one, it is rendered differently to call it out */
+				'isCurrent'?: boolean| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.SidebarItem {
+		export const id = 'sidebarItem'
+
+		/** The interface for the schema definition for a Sidebar item */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebarItem',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** Subitems. Rendered under the text as subitems */
+			            'items': {
+			                label: 'Subitems',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Rendered under the text as subitems',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
+			            },
+			            /** Icon. */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Icon.IDefinition[],}
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.Button.IDefinition[],}
+			            },
+			            /** . */
+			            'className': {
+			                
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Text. Rendered in the body of this item */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Rendered in the body of this item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** href. */
+			            'href': {
+			                label: 'href',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Current. If this item is the current one, it is rendered differently to call it out */
+			            'isCurrent': {
+			                label: 'Current',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If this item is the current one, it is rendered differently to call it out',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar item */
+		export const definition: SpruceSchemas.Local.SidebarItem.IDefinition = {
+			id: 'sidebarItem',
+			name: 'Sidebar item',
+			description: 'An element that makes up the sidebar',
+			
+			
+			    fields: {
+			            /** Subitems. Rendered under the text as subitems */
+			            'items': {
+			                label: 'Subitems',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Rendered under the text as subitems',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
+			            },
+			            /** Icon. */
+			            'icon': {
+			                label: 'Icon',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Icon.definition],}
+			            },
+			            /** Button. */
+			            'button': {
+			                label: 'Button',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.Button.definition],}
+			            },
+			            /** . */
+			            'className': {
+			                
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Text. Rendered in the body of this item */
+			            'text': {
+			                label: 'Text',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                hint: 'Rendered in the body of this item',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** href. */
+			            'href': {
+			                label: 'href',
+			                type: SpruceSchema.FieldType.Text,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Current. If this item is the current one, it is rendered differently to call it out */
+			            'isCurrent': {
+			                label: 'Current',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'If this item is the current one, it is rendered differently to call it out',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.SidebarItem.IDefinition>
+	}
+
+
+	export namespace SpruceSchemas.Local {
+		/** On the left or right side of a layout */
+		export interface ISidebar {
+			
+				/** . Optional header that will only appear on mobile */
+				'mobileHeader'?: SpruceSchemas.Local.ISidebarHeader| undefined | null
+				/** Label. Items to display in the sidebar */
+				'items'?: SpruceSchemas.Local.ISidebarItem[]| undefined | null
+				/** Sections. Sections to display in the sidebar */
+				'sections'?: SpruceSchemas.Local.ISidebarSection[]| undefined | null
+				/** Back link. Back link item to handle navigation back to previous location */
+				'backLink'?: SpruceSchemas.Local.ISidebarItem| undefined | null
+				/** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+				'side'?: ("left" | "right")| undefined | null
+				/** Large. Set true to make the sidebar larger. Defaults to false. */
+				'isLarge'?: boolean| undefined | null
+				/** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+				'isCollapsible'?: boolean| undefined | null
+				/** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+				'isExpanded'?: boolean| undefined | null
+				/** Expanded on mobile. Set true to expand the sidebar on small screens */
+				'isMobileExpanded'?: boolean| undefined | null
+				
+				'children'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				
+				'footerChildren'?: generated_import_3.INodeFieldDefinitionValue| undefined | null
+				/** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+				'onToggleExpanded'?: (() => void)| undefined | null
+				/** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+				'onForceCollapse'?: (() => void)| undefined | null
+		}
+	}
+
+	export namespace SpruceSchemas.Local.Sidebar {
+		export const id = 'sidebar'
+
+		/** The interface for the schema definition for a Sidebar */
+		export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+			id: 'sidebar',
+			name: 'Sidebar',
+			description: 'On the left or right side of a layout',
+			
+			
+			    fields: {
+			            /** . Optional header that will only appear on mobile */
+			            'mobileHeader': {
+			                
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional header that will only appear on mobile',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarHeader.IDefinition[],}
+			            },
+			            /** Label. Items to display in the sidebar */
+			            'items': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Items to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
+			            },
+			            /** Sections. Sections to display in the sidebar */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Sections to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarSection.IDefinition[],}
+			            },
+			            /** Back link. Back link item to handle navigation back to previous location */
+			            'backLink': {
+			                label: 'Back link',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Back link item to handle navigation back to previous location',
+			                
+			                
+			                
+			                
+			                options: {schemas: SpruceSchemas.Local.SidebarItem.IDefinition[],}
+			            },
+			            /** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+			            'side': {
+			                label: 'Side',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set which side the sidebar is on. Must be either \'left\' or \'right\'',
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"left","label":"Left"},{"value":"right","label":"Right"}],}
+			            },
+			            /** Large. Set true to make the sidebar larger. Defaults to false. */
+			            'isLarge': {
+			                label: 'Large',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to make the sidebar larger. Defaults to false.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+			            'isCollapsible': {
+			                label: 'Collapsed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+			            'isExpanded': {
+			                label: 'Expanded on desktop',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar (large screens only)',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on mobile. Set true to expand the sidebar on small screens */
+			            'isMobileExpanded': {
+			                label: 'Expanded on mobile',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar on small screens',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'footerChildren': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+			            'onToggleExpanded': {
+			                label: 'Expander handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			            /** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+			            'onForceCollapse': {
+			                label: 'Force close handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expect you to collapse the bar no matter what (isExpanded to false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The schema definition for a Sidebar */
+		export const definition: SpruceSchemas.Local.Sidebar.IDefinition = {
+			id: 'sidebar',
+			name: 'Sidebar',
+			description: 'On the left or right side of a layout',
+			
+			
+			    fields: {
+			            /** . Optional header that will only appear on mobile */
+			            'mobileHeader': {
+			                
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Optional header that will only appear on mobile',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarHeader.definition],}
+			            },
+			            /** Label. Items to display in the sidebar */
+			            'items': {
+			                label: 'Label',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Items to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
+			            },
+			            /** Sections. Sections to display in the sidebar */
+			            'sections': {
+			                label: 'Sections',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Sections to display in the sidebar',
+			                
+			                
+			                isArray: true,
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarSection.definition],}
+			            },
+			            /** Back link. Back link item to handle navigation back to previous location */
+			            'backLink': {
+			                label: 'Back link',
+			                type: SpruceSchema.FieldType.Schema,
+			                
+			                
+			                hint: 'Back link item to handle navigation back to previous location',
+			                
+			                
+			                
+			                
+			                options: {schemas: [SpruceSchemas.Local.SidebarItem.definition],}
+			            },
+			            /** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+			            'side': {
+			                label: 'Side',
+			                type: SpruceSchema.FieldType.Select,
+			                
+			                
+			                hint: 'Set which side the sidebar is on. Must be either \'left\' or \'right\'',
+			                
+			                
+			                
+			                
+			                options: {choices: [{"value":"left","label":"Left"},{"value":"right","label":"Right"}],}
+			            },
+			            /** Large. Set true to make the sidebar larger. Defaults to false. */
+			            'isLarge': {
+			                label: 'Large',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to make the sidebar larger. Defaults to false.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+			            'isCollapsible': {
+			                label: 'Collapsed',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+			            'isExpanded': {
+			                label: 'Expanded on desktop',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar (large screens only)',
+			                
+			                defaultValue: true,
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expanded on mobile. Set true to expand the sidebar on small screens */
+			            'isMobileExpanded': {
+			                label: 'Expanded on mobile',
+			                type: SpruceSchema.FieldType.Boolean,
+			                
+			                
+			                hint: 'Set true to expand the sidebar on small screens',
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'children': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** . */
+			            'footerChildren': {
+			                
+			                type: SpruceSchema.FieldType.Node,
+			                
+			                
+			                
+			                
+			                
+			                
+			                
+			                options: undefined
+			            },
+			            /** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+			            'onToggleExpanded': {
+			                label: 'Expander handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			            /** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+			            'onForceCollapse': {
+			                label: 'Force close handler',
+			                type: SpruceSchema.FieldType.Callback,
+			                
+			                
+			                hint: 'Expect you to collapse the bar no matter what (isExpanded to false)',
+			                
+			                
+			                
+			                
+			                options: {signature: `() => void`,}
+			            },
+			    }
+		}
+
+		/** The type of a schema instance built off this definition */
+		export type Instance = Schema<SpruceSchemas.Local.Sidebar.IDefinition>
+	}
+
 
 
 
