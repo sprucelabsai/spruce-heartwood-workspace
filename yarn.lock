@@ -2988,10 +2988,10 @@
     "@sprucelabs/error" "^1.0.11"
     "@sprucelabs/log" "^10.2.1"
 
-"@sprucelabs/schema@^1.27.0":
-  version "1.27.0"
-  resolved "https://registry.yarnpkg.com/@sprucelabs/schema/-/schema-1.27.0.tgz#804f44cd2634a0bc8f0e157a4b2986b5d13560fd"
-  integrity sha512-XH3tzj8nU9CUtHM6KlZs7/qJnl94ydHqOeevno4/0MYHqXsEEdIMxo0xpd3/VIR9hTDGLJmnNMXOTnJ1vZZRQg==
+"@sprucelabs/schema@^1.33.0":
+  version "1.33.0"
+  resolved "https://registry.yarnpkg.com/@sprucelabs/schema/-/schema-1.33.0.tgz#371821a7cf85714dfc387356f8e05cfe21b31e9b"
+  integrity sha512-VSBHPrrRJR7twcsAAJ//R0+z7WDcJSr1owwztxHEHwXksgVzBO/LQBoeoGGM62uJ+2bruhTiEQJUvKoBBasnEQ==
   dependencies:
     "@sprucelabs/error" "^1.2.0"
     "@sprucelabs/log" "^10.2.1"
