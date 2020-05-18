@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.1.0](https://github.com/sprucelabsai/sprucebot-heartwood/compare/v10.0.3...v10.1.0) (2020-05-07)
+
+
+### Features
+
+* lint passing ([03a41f3](https://github.com/sprucelabsai/sprucebot-heartwood/commit/03a41f3))
+
+
+
+
+
 # [9.1.0](https://github.com/sprucelabsai/sprucebot-heartwood/compare/v9.0.0...v9.1.0) (2020-02-11)
 
 

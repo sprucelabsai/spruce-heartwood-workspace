@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.1.0](https://github.com/sprucelabsai/spruce-heartwood-workspace/compare/v10.0.3...v10.1.0) (2020-05-07)
+
+
+### Features
+
+* lint passing ([03a41f3](https://github.com/sprucelabsai/spruce-heartwood-workspace/commit/03a41f3))
+
+
+### Refactoring
+
+* changing imports and more definitions ([5282026](https://github.com/sprucelabsai/spruce-heartwood-workspace/commit/5282026))
+
+
+
+
+
 ## [10.0.2](https://github.com/sprucelabsai/spruce-heartwood-workspace/compare/v10.0.1...v10.0.2) (2020-04-10)
 
 **Note:** Version bump only for package @sprucelabs/react-heartwood-components
