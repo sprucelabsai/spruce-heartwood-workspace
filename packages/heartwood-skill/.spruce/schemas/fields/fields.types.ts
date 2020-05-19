@@ -4,7 +4,6 @@ import { IAddressFieldDefinition, AddressField } from '@sprucelabs/schema'
 import { IBooleanFieldDefinition, BooleanField } from '@sprucelabs/schema'
 import { IDateFieldDefinition, DateField } from '@sprucelabs/schema'
 import { IDateTimeFieldDefinition, DateTimeField } from '@sprucelabs/schema'
-import { IDirectoryFieldDefinition, DirectoryField } from '@sprucelabs/schema'
 import { IDurationFieldDefinition, DurationField } from '@sprucelabs/schema'
 import { IFileFieldDefinition, FileField } from '@sprucelabs/schema'
 import { IIdFieldDefinition, IdField } from '@sprucelabs/schema'
@@ -21,13 +20,13 @@ import NodeField, { INodeFieldDefinition } from '#spruce/../src/fields/NodeField
 
 
 /** Field definition union */
-export type FieldDefinition = | IAddressFieldDefinition| IBooleanFieldDefinition| IDateFieldDefinition| IDateTimeFieldDefinition| IDirectoryFieldDefinition| IDurationFieldDefinition| IFileFieldDefinition| IIdFieldDefinition| INumberFieldDefinition| IPhoneFieldDefinition| IRawFieldDefinition| ISchemaFieldDefinition| ISelectFieldDefinition| ITextFieldDefinition| ICallbackFieldDefinition| IElementTypeFieldDefinition| IEventCallbackFieldDefinition| INodeFieldDefinition
+export type FieldDefinition = | IAddressFieldDefinition| IBooleanFieldDefinition| IDateFieldDefinition| IDateTimeFieldDefinition| IDurationFieldDefinition| IFileFieldDefinition| IIdFieldDefinition| INumberFieldDefinition| IPhoneFieldDefinition| IRawFieldDefinition| ISchemaFieldDefinition| ISelectFieldDefinition| ITextFieldDefinition| ICallbackFieldDefinition| IElementTypeFieldDefinition| IEventCallbackFieldDefinition| INodeFieldDefinition
 
 /** Field class union */
-export type FieldClass = | typeof AddressField| typeof BooleanField| typeof DateField| typeof DateTimeField| typeof DirectoryField| typeof DurationField| typeof FileField| typeof IdField| typeof NumberField| typeof PhoneField| typeof RawField| typeof SchemaField| typeof SelectField| typeof TextField| typeof CallbackField| typeof ElementTypeField| typeof EventCallbackField| typeof NodeField
+export type FieldClass = | typeof AddressField| typeof BooleanField| typeof DateField| typeof DateTimeField| typeof DurationField| typeof FileField| typeof IdField| typeof NumberField| typeof PhoneField| typeof RawField| typeof SchemaField| typeof SelectField| typeof TextField| typeof CallbackField| typeof ElementTypeField| typeof EventCallbackField| typeof NodeField
 
 /** Field instance union **/
-export type Field = | AddressField| BooleanField| DateField| DateTimeField| DirectoryField| DurationField| FileField| IdField| NumberField| PhoneField| RawField| SchemaField| SelectField| TextField| CallbackField| ElementTypeField| EventCallbackField| NodeField
+export type Field = | AddressField| BooleanField| DateField| DateTimeField| DurationField| FileField| IdField| NumberField| PhoneField| RawField| SchemaField| SelectField| TextField| CallbackField| ElementTypeField| EventCallbackField| NodeField
 
 
 /** Type for looking up field definitions by field type */
@@ -36,7 +35,6 @@ export type FieldDefinitionMap = {
 	[FieldType.Boolean]: IBooleanFieldDefinition
 	[FieldType.Date]: IDateFieldDefinition
 	[FieldType.DateTime]: IDateTimeFieldDefinition
-	[FieldType.Directory]: IDirectoryFieldDefinition
 	[FieldType.Duration]: IDurationFieldDefinition
 	[FieldType.File]: IFileFieldDefinition
 	[FieldType.Id]: IIdFieldDefinition
@@ -59,7 +57,6 @@ export interface IFieldDefinitionMap {
 	[FieldType.Boolean]: IBooleanFieldDefinition
 	[FieldType.Date]: IDateFieldDefinition
 	[FieldType.DateTime]: IDateTimeFieldDefinition
-	[FieldType.Directory]: IDirectoryFieldDefinition
 	[FieldType.Duration]: IDurationFieldDefinition
 	[FieldType.File]: IFileFieldDefinition
 	[FieldType.Id]: IIdFieldDefinition
@@ -81,7 +78,6 @@ export interface IFieldMap {
 	[FieldType.Boolean]: BooleanField
 	[FieldType.Date]: DateField
 	[FieldType.DateTime]: DateTimeField
-	[FieldType.Directory]: DirectoryField
 	[FieldType.Duration]: DurationField
 	[FieldType.File]: FileField
 	[FieldType.Id]: IdField

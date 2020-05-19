@@ -17,9 +17,7 @@ export default class Dropzone extends Component<
 	SpruceSchemas.Local.IDropzone,
 	IDropZoneState
 > {
-	public static defaultProps = defaultProps(
-		SpruceSchemas.Local.Dropzone.definition
-	)
+	public static defaultProps = {} // DefaultProps(SpruceSchemas.Local.Dropzone.definition)
 	public dropzone: any
 
 	public onDragEnter = (event: React.DragEvent<HTMLElement>) => {

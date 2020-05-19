@@ -57,8 +57,6 @@ const CardHeader = (
 }
 
 CardHeader.displayName = 'Card.Header'
-CardHeader.defaultProps = defaultProps(
-	SpruceSchemas.Local.CardHeader.definition
-)
+CardHeader.defaultProps = {} // DefaultProps(SpruceSchemas.Local.CardHeader.definition)
 
 export default CardHeader

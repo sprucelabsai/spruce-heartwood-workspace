@@ -13,6 +13,7 @@
   },
   "search.exclude": {
     "**/build/**": true,
+    "**/lib/**": true,
     "**/node_modules/**": true,
     "**/.next/**": true
   },
@@ -39,7 +40,12 @@
     "editor.formatOnSave": false
   },
   "eslint.options": {
-    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+    "extensions": [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ]
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "relative",

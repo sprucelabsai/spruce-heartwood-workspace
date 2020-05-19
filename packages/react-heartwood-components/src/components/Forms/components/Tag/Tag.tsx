@@ -4,7 +4,7 @@ import Button from '../../../Button/Button'
 import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
 import { defaultProps, SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Tag.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.Tag.definition)
 
 const Tag = (props: SpruceSchemas.Local.ITag = { ...defaults }) => {
 	const { text, kind, className, isSmall } = props

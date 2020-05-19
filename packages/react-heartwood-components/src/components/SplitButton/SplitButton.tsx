@@ -5,9 +5,7 @@ import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const splitButtonDefaultProps = defaultProps(
-	SpruceSchemas.Local.SplitButton.definition
-)
+const splitButtonDefaultProps = {} // DefaultProps(SpruceSchemas.Local.SplitButton.definition)
 
 interface ISplitButtonState {
 	/** Controls whether the actions are visible */

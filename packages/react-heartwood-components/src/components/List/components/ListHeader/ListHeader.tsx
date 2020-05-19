@@ -3,7 +3,7 @@ import cx from 'classnames'
 import Button from '../../../Button/Button'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.ListHeader.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.ListHeader.definition)
 
 const ListHeader = (
 	props: SpruceSchemas.Local.IListHeader

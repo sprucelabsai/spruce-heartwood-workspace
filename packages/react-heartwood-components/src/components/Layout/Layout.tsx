@@ -33,6 +33,6 @@ const Layout = (props: SpruceSchemas.Local.ILayout) => {
 }
 
 Layout.Section = LayoutSection
-Layout.defaultProps = defaultProps(SpruceSchemas.Local.Layout.definition)
+Layout.defaultProps = {} // DefaultProps(SpruceSchemas.Local.Layout.definition)
 
 export default Layout

@@ -191,6 +191,6 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 	)
 }
 
-ListItem.defaultProps = defaultProps(SpruceSchemas.Local.List.definition)
+ListItem.defaultProps = {} // DefaultProps(SpruceSchemas.Local.List.definition)
 
 export default ListItem

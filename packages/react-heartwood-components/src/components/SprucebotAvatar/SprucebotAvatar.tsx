@@ -12,7 +12,7 @@ const ANIMATION_MAP = {
 	contemplative: contemplativeAnimation
 }
 
-const defaults = defaultProps(SpruceSchemas.Local.SprucebotAvatar.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.SprucebotAvatar.definition)
 
 export default class SprucebotAvatar extends Component<
 	SpruceSchemas.Local.ISprucebotAvatar

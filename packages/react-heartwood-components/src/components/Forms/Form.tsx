@@ -4,7 +4,7 @@ import { SaveBar } from '../Core'
 import Modal from '../Modal/Modal'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Form.definition)
+const defaults = {} // DefaultProps(SpruceSchemas.Local.Form.definition)
 
 export default class Form extends React.Component<SpruceSchemas.Local.IForm> {
 	public static defaultProps = defaults

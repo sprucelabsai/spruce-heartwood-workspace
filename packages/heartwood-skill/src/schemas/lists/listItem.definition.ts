@@ -168,23 +168,23 @@ const listItemDefinition = buildSchemaDefinition({
 				schema: listItemWarningDefinition
 			}
 		},
-		list: {
-			type: FieldType.Schema,
-			label: 'List',
-			hint: 'Optional; adds a nested list',
-			options: {
-				schemaId: 'list'
-			}
-		},
-		lists: {
-			type: FieldType.Schema,
-			label: 'Lists',
-			isArray: true,
-			hint: 'Optional; adds multiple lists nested at the same level',
-			options: {
-				schemaId: 'list'
-			}
-		},
+		// List: {
+		// 	type: FieldType.Schema,
+		// 	label: 'List',
+		// 	hint: 'Optional; adds a nested list',
+		// 	options: {
+		// 		schemaId: 'list'
+		// 	}
+		// },
+		// lists: {
+		// 	type: FieldType.Schema,
+		// 	label: 'Lists',
+		// 	isArray: true,
+		// 	hint: 'Optional; adds multiple lists nested at the same level',
+		// 	options: {
+		// 		schemaId: 'list'
+		// 	}
+		// },
 		onClick: {
 			...buttonDefinition.fields.onClick,
 			label: 'Click handler'

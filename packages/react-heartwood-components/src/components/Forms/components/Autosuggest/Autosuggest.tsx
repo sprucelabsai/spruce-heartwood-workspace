@@ -50,7 +50,7 @@ interface IAutoSuggestRef extends React.RefObject<ReactAutosuggest> {
 	current: IAutoSuggestRefCurrent | null
 }
 
-const defaults = defaultProps(SpruceSchemas.Local.Autosuggest.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.Autosuggest.definition)
 
 export default class Autosuggest extends Component<
 	SpruceSchemas.Local.IAutosuggest,

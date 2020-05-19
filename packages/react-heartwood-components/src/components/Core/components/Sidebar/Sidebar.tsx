@@ -7,7 +7,7 @@ import SidebarItem from './components/SidebarItem/SidebarItem'
 import SidebarSection from './components/SidebarSection/SidebarSection'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Sidebar.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.Sidebar.definition)
 
 const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 	const {

@@ -19,13 +19,6 @@ const override = {
 			}
 		})
 	],
-	resolve: {
-		extensions: ['.js', '.jsx', '.ts', '.tsx'],
-		alias: {
-			'#spruce': path.resolve(__dirname, '../../heartwood-skill/build/.spruce'),
-			'#spruce:schema': path.resolve(__dirname, '../../heartwood-skill/build/.spruce/schemas')
-		},
-	},
 	module: {
 		rules: [
 			{
@@ -148,8 +141,7 @@ const override = {
 module.exports = async ({ config, mode }) => {
 	config.plugins = [...config.plugins, ...override.plugins]
 	config.resolve.extensions = [
-		...config.resolve.extensions,
-		...override.resolve.extensions
+		...config.resolve.extensions
 	]
 	config.module.rules = [...config.module.rules, ...override.module.rules]
 	return {
@@ -159,7 +151,7 @@ module.exports = async ({ config, mode }) => {
 			alias: {
 				'#spruce': path.resolve(__dirname, '../../heartwood-skill/.spruce'),
 				'#spruce:schema': path.resolve(__dirname, '../../heartwood-skill/.spruce/schemas')
-			},
+			}
 		},
 		node: {
 			fs: 'empty',

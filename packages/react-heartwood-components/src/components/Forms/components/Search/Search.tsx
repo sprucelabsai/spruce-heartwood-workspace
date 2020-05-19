@@ -7,7 +7,7 @@ interface ISearchState {
 	value: string
 }
 
-const defaults = defaultProps(SpruceSchemas.Local.Search.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.Search.definition)
 
 export default class Search extends Component<
 	SpruceSchemas.Local.ISearch & typeof defaults,

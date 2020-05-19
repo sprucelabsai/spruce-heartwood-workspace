@@ -1,7 +1,7 @@
 import React from 'react'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.InputHelper.definition)
+const defaults = {} // DefaultProps(SpruceSchemas.Local.InputHelper.definition)
 
 const InputHelper = (props: SpruceSchemas.Local.IInputHelper) => {
 	const { error, hint, ElementTag } = props

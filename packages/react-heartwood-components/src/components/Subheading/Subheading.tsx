@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { defaultProps, SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import Heading from '../Heading/Heading'
 
-const defaults = defaultProps(SpruceSchemas.Local.Subheading.definition)
+const defaults = {} // DefaultProps(SpruceSchemas.Local.Subheading.definition)
 
 const Subheading = (props: SpruceSchemas.Local.ISubheading) => {
 	const { className } = props

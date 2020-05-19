@@ -20,14 +20,9 @@ export interface ISprucebotTypedMessageState {
 	sentenceQueue: Sentence[]
 }
 
-const SIZE_MAP = definitionChoicesToHash(
-	SpruceSchemas.Local.SprucebotTypedMessage.definition,
-	'size'
-)
+const SIZE_MAP = {} // DefinitionChoicesToHash(SpruceSchemas.Local.SprucebotTypedMessage.definition,'size')
 
-const defaults = defaultProps(
-	SpruceSchemas.Local.SprucebotTypedMessage.definition
-)
+const defaults = {} // DefaultProps(SpruceSchemas.Local.SprucebotTypedMessage.definition)
 
 export default class SprucebotTypedMessage extends Component<
 	Message,

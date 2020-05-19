@@ -24,8 +24,6 @@ const EmptyState = (
 	)
 }
 
-EmptyState.defaultProps = defaultProps(
-	SpruceSchemas.Local.EmptyState.definition
-)
+EmptyState.defaultProps = {} // DefaultProps(SpruceSchemas.Local.EmptyState.definition)
 
 export default EmptyState

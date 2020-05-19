@@ -14,10 +14,7 @@ import {
 	defaultProps
 } from '@sprucelabs/heartwood-skill'
 
-export const BigFormTransitionStyle = definitionChoicesToHash(
-	SpruceSchemas.Local.BigForm.definition,
-	'transitionStyle'
-)
+export const BigFormTransitionStyle = {} // DefinitionChoicesToHash(SpruceSchemas.Local.BigForm.definition,'transitionStyle')
 
 interface IBigFormState {
 	/** This is what actually drives the
@@ -27,7 +24,7 @@ interface IBigFormState {
 	currentSlide: number
 }
 
-const defaults = defaultProps(SpruceSchemas.Local.BigForm.definition)
+const defaults = {} // DefaultProps(SpruceSchemas.Local.BigForm.definition)
 
 class BigForm extends React.Component<
 	SpruceSchemas.Local.IBigForm & typeof defaults,

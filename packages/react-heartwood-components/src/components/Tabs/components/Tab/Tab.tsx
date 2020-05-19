@@ -25,6 +25,6 @@ const Tab = ({
 	)
 }
 
-Tab.defaultProps = defaultProps(SpruceSchemas.Local.Tab.definition)
+Tab.defaultProps = {} // DefaultProps(SpruceSchemas.Local.Tab.definition)
 
 export default Tab

@@ -5,7 +5,7 @@ import Icon from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Button.definition)
+const defaults = {} // DefaultProps(SpruceSchemas.Local.Button.definition)
 
 const Button = (props: SpruceSchemas.Local.IButton): React.ReactElement => {
 	const {

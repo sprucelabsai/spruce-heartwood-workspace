@@ -7,7 +7,7 @@ import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 interface ISaveBarState {}
 
-const defaults = defaultProps(SpruceSchemas.Local.SaveBar.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.SaveBar.definition)
 export default class SaveBar extends React.PureComponent<
 	SpruceSchemas.Local.ISaveBar & typeof defaults,
 	ISaveBarState

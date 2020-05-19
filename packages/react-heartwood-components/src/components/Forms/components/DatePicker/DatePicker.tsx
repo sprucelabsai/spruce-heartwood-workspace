@@ -21,9 +21,7 @@ export default class DatePicker extends Component<
 	SpruceSchemas.Local.IDatePicker,
 	IDatePickerState
 > {
-	public static defaultProps = defaultProps(
-		SpruceSchemas.Local.DatePicker.definition
-	)
+	public static defaultProps = {} // DefaultProps(SpruceSchemas.Local.DatePicker.definition)
 
 	public datePickerRef: any
 

@@ -10,7 +10,7 @@ import {
 	stripNulls
 } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.TextInput.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.TextInput.definition)
 
 class TextInput extends React.Component<
 	SpruceSchemas.Local.ITextInput & typeof defaults

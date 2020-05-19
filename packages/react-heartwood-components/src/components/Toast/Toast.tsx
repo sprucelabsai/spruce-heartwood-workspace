@@ -48,6 +48,6 @@ const Toast = (props: SpruceSchemas.Local.IToast): React.ReactElement => {
 	)
 }
 
-Toast.defaultProps = defaultProps(SpruceSchemas.Local.Toast.definition)
+Toast.defaultProps = {} // DefaultProps(SpruceSchemas.Local.Toast.definition)
 
 export default Toast

@@ -4,7 +4,7 @@ import SkillViewContent from './components/SkillViewContent/SkillViewContent'
 import SkillViewHeader from './components/SkillViewHeader/SkillViewHeader'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.SkillView.definition)
+const defaults = {} // DefaultProps(SpruceSchemas.Local.SkillView.definition)
 
 export const SkillView = (props: SpruceSchemas.Local.ISkillView) => {
 	const {

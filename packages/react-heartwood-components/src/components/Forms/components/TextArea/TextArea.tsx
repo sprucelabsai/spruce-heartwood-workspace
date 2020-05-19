@@ -8,7 +8,7 @@ import {
 import Label from '../Label/Label'
 import InputHelper from '../InputHelper/InputHelper'
 
-const defaults = defaultProps(SpruceSchemas.Local.Textarea.definition)
+const defaults = {} // defaultProps(SpruceSchemas.Local.Textarea.definition)
 
 const TextArea = (props: SpruceSchemas.Local.ITextarea & typeof defaults) => {
 	const { id, className, label, helper, isResizeable, ...textareaProps } = props

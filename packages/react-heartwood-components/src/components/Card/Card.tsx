@@ -30,7 +30,7 @@ export default class Card extends Component<
 	public static Section = CardSection
 	public static Footer = CardFooter
 
-	public static defaultProps = defaultProps(SpruceSchemas.Local.Card.definition)
+	public static defaultProps = {} // DefaultProps(SpruceSchemas.Local.Card.definition)
 
 	public constructor(
 		props: SpruceSchemas.Local.ICard &
