@@ -20,8 +20,7 @@
     }
   },
   "include": [
-    "src",
-    "../heartwood-skill/build/.spruce"
+    "src"
   ],
   "exclude": [
     "node_modules",
