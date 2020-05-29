@@ -3,17 +3,20 @@ import ReactDOM from 'react-dom'
 import cx from 'classnames'
 import Button from '../../../Button/Button'
 import { CSSTransition } from 'react-transition-group'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	saveBarDefinition
+} from '@sprucelabs/heartwood-skill'
 
 interface ISaveBarState {}
 
-const defaults = defaultProps(SpruceSchemas.Local.SaveBar.definition)
+const defaults = defaultProps(saveBarDefinition)
 export default class SaveBar extends React.PureComponent<
 	SpruceSchemas.Local.ISaveBar & typeof defaults,
 	ISaveBarState
 > {
 	public static defaultProps = defaults
-
 	private _element: HTMLElement | null = null
 
 	public componentDidMount() {

@@ -5,9 +5,13 @@ import Text from '../../../Text/Text'
 import SidebarExpander from './components/SidebarExpander/SidebarExpander'
 import SidebarItem from './components/SidebarItem/SidebarItem'
 import SidebarSection from './components/SidebarSection/SidebarSection'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	sidebarDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Sidebar.definition)
+const defaults = defaultProps(sidebarDefinition)
 
 const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 	const {

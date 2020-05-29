@@ -3,11 +3,13 @@ import React, { Component, Fragment } from 'react'
 import { createPortal } from 'react-dom'
 import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	splitButtonDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const splitButtonDefaultProps = defaultProps(
-	SpruceSchemas.Local.SplitButton.definition
-)
+const splitButtonDefaultProps = defaultProps(splitButtonDefinition)
 
 interface ISplitButtonState {
 	/** Controls whether the actions are visible */
@@ -70,8 +72,9 @@ export default class SplitButton extends Component<
 	}
 
 	public onKeyUp = (e: any) => {
-		const { buttons = [] } = this.props
+		const { buttons: buttonProps } = this.props
 		const { highlightedActionIndex } = this.state
+		const buttons = buttonProps ?? []
 		// Down arrow
 		if (e.keyCode === 40) {
 			// Update the highlighted suggestion

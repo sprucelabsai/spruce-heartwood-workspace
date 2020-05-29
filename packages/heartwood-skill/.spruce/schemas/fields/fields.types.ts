@@ -14,21 +14,81 @@ import { IRawFieldDefinition, RawField } from '@sprucelabs/schema'
 import { ISchemaFieldDefinition, SchemaField } from '@sprucelabs/schema'
 import { ISelectFieldDefinition, SelectField } from '@sprucelabs/schema'
 import { ITextFieldDefinition, TextField } from '@sprucelabs/schema'
-import CallbackField, { ICallbackFieldDefinition } from '#spruce/../src/fields/CallbackField'
-import ElementTypeField, { IElementTypeFieldDefinition } from '#spruce/../src/fields/ElementTypeField'
-import EventCallbackField, { IEventCallbackFieldDefinition } from '#spruce/../src/fields/EventCallbackField'
-import NodeField, { INodeFieldDefinition } from '#spruce/../src/fields/NodeField'
-
+import CallbackField, {
+	ICallbackFieldDefinition
+} from '#spruce/../src/fields/CallbackField'
+import ElementTypeField, {
+	IElementTypeFieldDefinition
+} from '#spruce/../src/fields/ElementTypeField'
+import EventCallbackField, {
+	IEventCallbackFieldDefinition
+} from '#spruce/../src/fields/EventCallbackField'
+import NodeField, {
+	INodeFieldDefinition
+} from '#spruce/../src/fields/NodeField'
 
 /** Field definition union */
-export type FieldDefinition = | IAddressFieldDefinition| IBooleanFieldDefinition| IDateFieldDefinition| IDateTimeFieldDefinition| IDirectoryFieldDefinition| IDurationFieldDefinition| IFileFieldDefinition| IIdFieldDefinition| INumberFieldDefinition| IPhoneFieldDefinition| IRawFieldDefinition| ISchemaFieldDefinition| ISelectFieldDefinition| ITextFieldDefinition| ICallbackFieldDefinition| IElementTypeFieldDefinition| IEventCallbackFieldDefinition| INodeFieldDefinition
+export type FieldDefinition =
+	| IAddressFieldDefinition
+	| IBooleanFieldDefinition
+	| IDateFieldDefinition
+	| IDateTimeFieldDefinition
+	| IDirectoryFieldDefinition
+	| IDurationFieldDefinition
+	| IFileFieldDefinition
+	| IIdFieldDefinition
+	| INumberFieldDefinition
+	| IPhoneFieldDefinition
+	| IRawFieldDefinition
+	| ISchemaFieldDefinition
+	| ISelectFieldDefinition
+	| ITextFieldDefinition
+	| ICallbackFieldDefinition
+	| IElementTypeFieldDefinition
+	| IEventCallbackFieldDefinition
+	| INodeFieldDefinition
 
 /** Field class union */
-export type FieldClass = | typeof AddressField| typeof BooleanField| typeof DateField| typeof DateTimeField| typeof DirectoryField| typeof DurationField| typeof FileField| typeof IdField| typeof NumberField| typeof PhoneField| typeof RawField| typeof SchemaField| typeof SelectField| typeof TextField| typeof CallbackField| typeof ElementTypeField| typeof EventCallbackField| typeof NodeField
+export type FieldClass =
+	| typeof AddressField
+	| typeof BooleanField
+	| typeof DateField
+	| typeof DateTimeField
+	| typeof DirectoryField
+	| typeof DurationField
+	| typeof FileField
+	| typeof IdField
+	| typeof NumberField
+	| typeof PhoneField
+	| typeof RawField
+	| typeof SchemaField
+	| typeof SelectField
+	| typeof TextField
+	| typeof CallbackField
+	| typeof ElementTypeField
+	| typeof EventCallbackField
+	| typeof NodeField
 
 /** Field instance union **/
-export type Field = | AddressField| BooleanField| DateField| DateTimeField| DirectoryField| DurationField| FileField| IdField| NumberField| PhoneField| RawField| SchemaField| SelectField| TextField| CallbackField| ElementTypeField| EventCallbackField| NodeField
-
+export type Field =
+	| AddressField
+	| BooleanField
+	| DateField
+	| DateTimeField
+	| DirectoryField
+	| DurationField
+	| FileField
+	| IdField
+	| NumberField
+	| PhoneField
+	| RawField
+	| SchemaField
+	| SelectField
+	| TextField
+	| CallbackField
+	| ElementTypeField
+	| EventCallbackField
+	| NodeField
 
 /** Type for looking up field definitions by field type */
 export type FieldDefinitionMap = {
@@ -51,7 +111,6 @@ export type FieldDefinitionMap = {
 	[FieldType.EventCallback]: IEventCallbackFieldDefinition
 	[FieldType.Node]: INodeFieldDefinition
 }
-
 
 /** Type for looking up field definitions by field type */
 export interface IFieldDefinitionMap {
@@ -96,4 +155,3 @@ export interface IFieldMap {
 	[FieldType.EventCallback]: EventCallbackField
 	[FieldType.Node]: NodeField
 }
-

@@ -30,8 +30,15 @@ const override = {
 					{
 						loader: require.resolve('babel-loader'),
 						options: {
-							presets: [require.resolve('babel-preset-react-app')]
-						}
+							presets: [require.resolve('babel-preset-react-app')],
+							include: ['../../node_modules/@sprucelabs'],
+							plugins: [
+								[require.resolve('babel-plugin-module-resolver'), {
+									"#spruce/schemas/fields/fieldClassMap": "/bravo",
+									"#spruce:schema/fields/fieldType": "/taco",
+								}]
+							]
+						},
 					},
 					require.resolve('react-docgen-typescript-loader')
 				]

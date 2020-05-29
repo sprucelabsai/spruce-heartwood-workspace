@@ -1,7 +1,11 @@
 import React from 'react'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	formBuilderDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.FormBuilder.definition)
+const defaults = defaultProps(formBuilderDefinition)
 
 class FormBuilder extends React.Component<
 	SpruceSchemas.Local.IFormBuilder & typeof defaults

@@ -1,7 +1,11 @@
 import React from 'react'
 import cx from 'classnames'
 import Button from '../Button/Button'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	toastDefinition
+} from '@sprucelabs/heartwood-skill'
 
 const ToastHeader = (
 	props: SpruceSchemas.Local.IToastHeader
@@ -48,6 +52,6 @@ const Toast = (props: SpruceSchemas.Local.IToast): React.ReactElement => {
 	)
 }
 
-Toast.defaultProps = defaultProps(SpruceSchemas.Local.Toast.definition)
+Toast.defaultProps = defaultProps(toastDefinition)
 
 export default Toast

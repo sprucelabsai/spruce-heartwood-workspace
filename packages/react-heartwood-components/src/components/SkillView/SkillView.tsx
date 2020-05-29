@@ -2,9 +2,13 @@ import cx from 'classnames'
 import React from 'react'
 import SkillViewContent from './components/SkillViewContent/SkillViewContent'
 import SkillViewHeader from './components/SkillViewHeader/SkillViewHeader'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	skillViewDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.SkillView.definition)
+const defaults = defaultProps(skillViewDefinition)
 
 export const SkillView = (props: SpruceSchemas.Local.ISkillView) => {
 	const {

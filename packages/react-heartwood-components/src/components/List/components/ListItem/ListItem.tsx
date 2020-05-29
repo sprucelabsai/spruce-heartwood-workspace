@@ -6,7 +6,11 @@ import ContextMenu from '../../../ContextMenu/ContextMenu'
 import { Checkbox, Radio, Toggle } from '../../../Forms'
 import Icon from '../../../Icon/Icon'
 import List from '../../List'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	listDefinition
+} from '@sprucelabs/heartwood-skill'
 import Image from '../../../Image/Image'
 
 const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
@@ -191,6 +195,6 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 	)
 }
 
-ListItem.defaultProps = defaultProps(SpruceSchemas.Local.List.definition)
+ListItem.defaultProps = defaultProps(listDefinition)
 
 export default ListItem

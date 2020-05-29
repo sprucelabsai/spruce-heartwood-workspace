@@ -5,7 +5,11 @@ import SprucebotTypedMessage from './SprucebotTypedMessage'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
 import { TextInput } from '../Forms'
 import Card, { CardBody, CardFooter } from '../Card'
-import { SpruceSchemas, buildDuration } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	buildDuration,
+	sprucebotTypeMessageDefinition
+} from '@sprucelabs/heartwood-skill'
 import SkillView from '../SkillView'
 import Layout from '../Layout/Layout'
 
@@ -20,7 +24,7 @@ stories.add('SprucebotTypedMessage', () => (
 		paused={boolean('paused', false)}
 		size={select(
 			'size',
-			SpruceSchemas.Local.SprucebotTypedMessage.definition.fields.size.options.choices.map(
+			sprucebotTypeMessageDefinition.fields.size.options.choices.map(
 				c => c.value
 			),
 			'medium'

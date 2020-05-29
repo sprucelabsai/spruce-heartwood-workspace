@@ -35,5 +35,5 @@ export enum FieldType {
 	/** A universal event handler */
 	EventCallback = 'eventCallback',
 	/** A React.Node */
-	Node = 'node',
+	Node = 'node'
 }

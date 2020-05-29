@@ -4,7 +4,11 @@ import cx from 'classnames'
 import chillAnimation from './animations/chill.json'
 import accomplishedAnimation from './animations/accomplished.json'
 import contemplativeAnimation from './animations/contemplative.json'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	sprucebotAvatarDefinition
+} from '@sprucelabs/heartwood-skill'
 
 const ANIMATION_MAP = {
 	chill: chillAnimation,
@@ -12,7 +16,7 @@ const ANIMATION_MAP = {
 	contemplative: contemplativeAnimation
 }
 
-const defaults = defaultProps(SpruceSchemas.Local.SprucebotAvatar.definition)
+const defaults = defaultProps(sprucebotAvatarDefinition)
 
 export default class SprucebotAvatar extends Component<
 	SpruceSchemas.Local.ISprucebotAvatar

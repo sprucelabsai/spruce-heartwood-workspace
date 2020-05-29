@@ -3,12 +3,13 @@ import cx from 'classnames'
 import {
 	SpruceSchemas,
 	defaultProps,
-	stripNulls
+	stripNulls,
+	textAreaDefinition
 } from '@sprucelabs/heartwood-skill'
 import Label from '../Label/Label'
 import InputHelper from '../InputHelper/InputHelper'
 
-const defaults = defaultProps(SpruceSchemas.Local.Textarea.definition)
+const defaults = defaultProps(textAreaDefinition)
 
 const TextArea = (props: SpruceSchemas.Local.ITextarea & typeof defaults) => {
 	const { id, className, label, helper, isResizeable, ...textareaProps } = props

@@ -20,7 +20,7 @@
     },
     "scripts": {
         "build": "npm run clean && npm run icons && npm run compile_javascript",
-        "compile_javascript": "babel --source-maps --extensions \".js\",\".tsx\",\".ts\" ./src --copy-files --out-dir ./lib && tsc --declaration --emitDeclarationOnly --declarationMap",
+        "build:babel": "babel --root-mode upward --source-maps --extensions \".js\",\".tsx\",\".ts\" ./src --copy-files --out-dir ./lib && tsc --declaration --emitDeclarationOnly --declarationMap",
         "icons": "node ./generators/icons.js",
         "clean": "rm -rf lib/*",
         "lint": "eslint --max-warnings=0 --ext=.js,.jsx,.ts,.tsx src && tsc -p . --noEmit",
@@ -127,6 +127,7 @@
         "babel-eslint": "8",
         "babel-loader": "^8.0.6",
         "babel-plugin-inline-react-svg": "^0.5.4",
+        "babel-plugin-module-resolver": "^4.0.0",
         "babel-preset-react-app": "^9.0.0",
         "babel-runtime": "^6.26.0",
         "chokidar-cli": "^1.2.0",

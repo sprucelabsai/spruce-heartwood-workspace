@@ -2,11 +2,17 @@ import React, { Fragment } from 'react'
 import Layout from '../Layout/Layout'
 import { SaveBar } from '../Core'
 import Modal from '../Modal/Modal'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	formDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Form.definition)
+const defaults = defaultProps(formDefinition)
 
-export default class Form extends React.Component<SpruceSchemas.Local.IForm> {
+export default class Form extends React.Component<
+	SpruceSchemas.Local.IForm & typeof defaults
+> {
 	public static defaultProps = defaults
 	public handleSubmit = (e: React.SyntheticEvent<Element>) => {
 		console.log('handleSubmit', e)

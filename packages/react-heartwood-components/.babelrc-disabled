@@ -6,6 +6,15 @@
         "@babel/preset-typescript"
     ],
     "plugins": [
+        [
+            "module-resolver",
+            {
+                "alias": {
+                    "#spruce:schema": "../heartwood-skill/.spruce/schemas",
+                    "#spruce": "../heartwood-skill/.spruce"
+                }
+            }
+        ],
         "@babel/plugin-transform-runtime",
         "@babel/plugin-proposal-object-rest-spread",
         "@babel/plugin-transform-flow-strip-types",
@@ -47,6 +56,6 @@
                 }
             }
         ]
-    ],
-    "ignore": ["node_modules"]
+    ]
+    // "ignore": ["/node_modules/(?!@sprucelabs)/"]
 }

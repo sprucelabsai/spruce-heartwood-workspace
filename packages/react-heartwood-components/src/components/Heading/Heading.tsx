@@ -1,12 +1,15 @@
 import React from 'react'
 import cx from 'classnames'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	headingDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Heading.definition)
+const defaults = defaultProps(headingDefinition)
 
 const Heading = (props: SpruceSchemas.Local.IHeading): React.ReactElement => {
 	const { text, className, weight, children } = props
-
 	const Element = weight || 'h1'
 
 	return (

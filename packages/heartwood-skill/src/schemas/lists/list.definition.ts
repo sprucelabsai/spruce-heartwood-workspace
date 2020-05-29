@@ -38,7 +38,8 @@ const listDefinition = buildSchemaDefinition({
 		areSeparatorsVisible: {
 			type: FieldType.Boolean,
 			label: 'Are separators visible',
-			hint: 'Set to true to show separators between list items'
+			hint: 'Set to true to show separators between list items',
+			defaultValue: true
 		},
 		className: {
 			type: FieldType.Text,

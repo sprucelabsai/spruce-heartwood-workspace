@@ -7,7 +7,11 @@ import {
 import moment from 'moment'
 import ArrowNext from '../../../../../static/assets/icons/ic_arrow_forward.svg'
 import ArrowBack from '../../../../../static/assets/icons/ic_arrow_back.svg'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	datePickerDefinition
+} from '@sprucelabs/heartwood-skill'
 
 interface IDatePickerState {
 	date: Record<string, any>
@@ -17,14 +21,13 @@ interface IDatePickerState {
 	focusedInput: string
 }
 
+const defaults = defaultProps(datePickerDefinition)
+
 export default class DatePicker extends Component<
-	SpruceSchemas.Local.IDatePicker,
+	SpruceSchemas.Local.IDatePicker & typeof defaults,
 	IDatePickerState
 > {
-	public static defaultProps = defaultProps(
-		SpruceSchemas.Local.DatePicker.definition
-	)
-
+	public static defaultProps = defaults
 	public datePickerRef: any
 
 	public constructor(props) {

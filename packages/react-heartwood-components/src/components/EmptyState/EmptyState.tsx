@@ -1,7 +1,11 @@
 import React from 'react'
 import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	emptyStateDefinition
+} from '@sprucelabs/heartwood-skill'
 
 const EmptyState = (
 	props: SpruceSchemas.Local.IEmptyState
@@ -24,8 +28,6 @@ const EmptyState = (
 	)
 }
 
-EmptyState.defaultProps = defaultProps(
-	SpruceSchemas.Local.EmptyState.definition
-)
+EmptyState.defaultProps = defaultProps(emptyStateDefinition)
 
 export default EmptyState

@@ -7,10 +7,11 @@ import InputHelper from '../InputHelper/InputHelper'
 import {
 	SpruceSchemas,
 	defaultProps,
-	stripNulls
+	stripNulls,
+	textInputDefinition
 } from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.TextInput.definition)
+const defaults = defaultProps(textInputDefinition)
 
 class TextInput extends React.Component<
 	SpruceSchemas.Local.ITextInput & typeof defaults

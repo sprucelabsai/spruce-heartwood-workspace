@@ -3,9 +3,13 @@ import React, { Fragment } from 'react'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon from '../Icon/Icon'
 import BasicAnchor from '../_utilities/Anchor'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	buttonDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.Button.definition)
+const defaults = defaultProps(buttonDefinition)
 
 const Button = (props: SpruceSchemas.Local.IButton): React.ReactElement => {
 	const {

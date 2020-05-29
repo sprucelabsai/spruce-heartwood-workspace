@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import cx from 'classnames'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	searchDefinition
+} from '@sprucelabs/heartwood-skill'
 import TextInput from '../TextInput/TextInput'
+import FieldClassMap from '#spruce:schema/fields/fieldClassMap'
 
 interface ISearchState {
 	value: string
 }
 
-const defaults = defaultProps(SpruceSchemas.Local.Search.definition)
+console.log(FieldClassMap)
+const defaults = defaultProps(searchDefinition)
 
 export default class Search extends Component<
 	SpruceSchemas.Local.ISearch & typeof defaults,

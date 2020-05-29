@@ -3,12 +3,18 @@ import React, { Fragment } from 'react'
 import ExpandableListItem from './components/ExpandableListItem/ExpandableListItem'
 import ListHeader from './components/ListHeader/ListHeader'
 import ListItem from './components/ListItem/ListItem'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	listDefinition
+} from '@sprucelabs/heartwood-skill'
 
 // TODO can we delete this?
 export const ListWrapper = (props): React.ReactElement => (
 	<div className="list-wrapper">{props.children}</div>
 )
+
+const defaults = defaultProps(listDefinition)
 
 const List = (props: SpruceSchemas.Local.IList): React.ReactElement => {
 	const {
@@ -80,11 +86,6 @@ const List = (props: SpruceSchemas.Local.IList): React.ReactElement => {
 	)
 }
 
-List.defaultProps = {
-	header: null,
-	className: '',
-	isSmall: false,
-	areSeparatorsVisible: true
-}
+List.defaultProps = defaults
 
 export default List

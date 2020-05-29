@@ -3,7 +3,11 @@ import cx from 'classnames'
 import Button from '../../Button/Button'
 import Icon from '../../Icon/Icon'
 import ContextMenu from '../../ContextMenu/ContextMenu'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	cardHeaderDefinition
+} from '@sprucelabs/heartwood-skill'
 
 // Card Header
 const CardHeader = (
@@ -57,8 +61,6 @@ const CardHeader = (
 }
 
 CardHeader.displayName = 'Card.Header'
-CardHeader.defaultProps = defaultProps(
-	SpruceSchemas.Local.CardHeader.definition
-)
+CardHeader.defaultProps = defaultProps(cardHeaderDefinition)
 
 export default CardHeader

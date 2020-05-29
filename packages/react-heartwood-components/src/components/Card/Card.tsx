@@ -7,7 +7,7 @@ import CardFooter from './components/CardFooter'
 import {
 	SpruceSchemas,
 	defaultProps,
-	DefaultProps
+	cardDefinition
 } from '@sprucelabs/heartwood-skill'
 
 interface ICardDefaultProps {
@@ -21,8 +21,10 @@ interface ICardState {
 	isExpanded: boolean
 }
 
+const defaults = defaultProps(cardDefinition)
+
 export default class Card extends Component<
-	SpruceSchemas.Local.ICard,
+	SpruceSchemas.Local.ICard & typeof defaults,
 	ICardState
 > {
 	public static Header = CardHeader
@@ -30,12 +32,9 @@ export default class Card extends Component<
 	public static Section = CardSection
 	public static Footer = CardFooter
 
-	public static defaultProps = defaultProps(SpruceSchemas.Local.Card.definition)
+	public static defaultProps = defaultProps(cardDefinition)
 
-	public constructor(
-		props: SpruceSchemas.Local.ICard &
-			DefaultProps<SpruceSchemas.Local.Card.IDefinition>
-	) {
+	public constructor(props: SpruceSchemas.Local.ICard & typeof defaults) {
 		super(props)
 		this.state = {
 			isExpanded: props.defaultExpanded ?? true

@@ -1,9 +1,13 @@
 import cx from 'classnames'
 import React from 'react'
 import LayoutBuilder from '../../../../../LayoutBuilder/LayoutBuilder'
-import { defaultProps, SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import {
+	defaultProps,
+	SpruceSchemas,
+	sidebarSectionDefinition
+} from '@sprucelabs/heartwood-skill'
 
-const defaults = defaultProps(SpruceSchemas.Local.SidebarSection.definition)
+const defaults = defaultProps(sidebarSectionDefinition)
 
 const SidebarSection = (props: SpruceSchemas.Local.ISidebarSection) => {
 	const {

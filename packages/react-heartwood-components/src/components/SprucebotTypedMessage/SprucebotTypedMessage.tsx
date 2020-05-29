@@ -8,7 +8,8 @@ import SprucebotAvatar from '../SprucebotAvatar/SprucebotAvatar'
 import {
 	SpruceSchemas,
 	defaultProps,
-	definitionChoicesToHash
+	definitionChoicesToHash,
+	sprucebotTypeMessageDefinition
 } from '@sprucelabs/heartwood-skill'
 
 type Message = SpruceSchemas.Local.ISprucebotTypedMessage
@@ -20,14 +21,8 @@ export interface ISprucebotTypedMessageState {
 	sentenceQueue: Sentence[]
 }
 
-const SIZE_MAP = definitionChoicesToHash(
-	SpruceSchemas.Local.SprucebotTypedMessage.definition,
-	'size'
-)
-
-const defaults = defaultProps(
-	SpruceSchemas.Local.SprucebotTypedMessage.definition
-)
+const SIZE_MAP = definitionChoicesToHash(sprucebotTypeMessageDefinition, 'size')
+const defaults = defaultProps(sprucebotTypeMessageDefinition)
 
 export default class SprucebotTypedMessage extends Component<
 	Message,
@@ -222,7 +217,7 @@ export default class SprucebotTypedMessage extends Component<
 		if (!Array.isArray(text)) {
 			return
 		}
-		// To track when the animation has started the next sentence, we need to check when text has a different amonut of elements
+		// To track when the animation has started the next sentence, we need to check when text has a different amount of elements
 		const { sentenceIdxBeingTyped, lastLineNum } = this.state
 		const { sentences } = this.props
 		const line = compact(text).length - 1

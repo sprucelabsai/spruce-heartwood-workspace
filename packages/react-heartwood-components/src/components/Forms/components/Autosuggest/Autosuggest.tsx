@@ -5,7 +5,11 @@ import { default as ReactAutosuggest } from 'react-autosuggest'
 import cx from 'classnames'
 import Button from '../../../Button/Button'
 import ClearIcon from '../../../../../static/assets/icons/ic_cancel.svg'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	autosuggestDefinition
+} from '@sprucelabs/heartwood-skill'
 import Label from '../Label/Label'
 import InputHelper from '../InputHelper/InputHelper'
 import Icon from '../../../Icon/Icon'
@@ -50,7 +54,7 @@ interface IAutoSuggestRef extends React.RefObject<ReactAutosuggest> {
 	current: IAutoSuggestRefCurrent | null
 }
 
-const defaults = defaultProps(SpruceSchemas.Local.Autosuggest.definition)
+const defaults = defaultProps(autosuggestDefinition)
 
 export default class Autosuggest extends Component<
 	SpruceSchemas.Local.IAutosuggest,

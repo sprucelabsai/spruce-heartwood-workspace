@@ -1,7 +1,11 @@
 import React from 'react'
 import cx from 'classnames'
 import Button from '../../../Button/Button'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import {
+	SpruceSchemas,
+	defaultProps,
+	tabDefinition
+} from '@sprucelabs/heartwood-skill'
 
 const Tab = ({
 	AnchorComponent,
@@ -25,6 +29,6 @@ const Tab = ({
 	)
 }
 
-Tab.defaultProps = defaultProps(SpruceSchemas.Local.Tab.definition)
+Tab.defaultProps = defaultProps(tabDefinition)
 
 export default Tab

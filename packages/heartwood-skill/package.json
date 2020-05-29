@@ -22,6 +22,7 @@
         "build.disabled": "npm run clean && npm run build:node",
         "build": "npm run build:node",
         "build:node": "tsc | true",
+        "build:babel": "babel --root-mode upward --source-maps --extensions \".js\",\".ts\" . --copy-files --out-dir ./build && tsc --declaration --emitDeclarationOnly --declarationMap",
         "watch": "chokidar 'src/**/*' 'index.ts' '.spruce' -c 'npm run build'",
         "clean": "rm -rf build/",
         "lint": "eslint '**/*.ts' && tsc -p . --noEmit",
@@ -35,7 +36,12 @@
         "react": "^16.13.1"
     },
     "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.6",
+        "@babel/preset-env": "^7.9.6",
+        "@babel/preset-typescript": "^7.9.0",
         "@sprucelabs/test": "^2.1.0-prerelease-assert-type.1",
+        "babel-plugin-module-resolver": "^4.0.0",
         "chokidar-cli": "^2.1.0",
         "concurrently": "^5.0.2",
         "conventional-changelog-sprucelabs": "^1.1.0",
@@ -45,19 +51,6 @@
         "ts-node": "^8.8.2",
         "tsconfig-paths": "^3.9.0",
         "typescript": "^3.8.3"
-    },
-    "babel": {
-        "presets": [
-            [
-                "@babel/preset-env",
-                {
-                    "targets": {
-                        "node": "current"
-                    }
-                }
-            ],
-            "@babel/preset-typescript"
-        ]
     },
     "jest": {
         "preset": "ts-jest",

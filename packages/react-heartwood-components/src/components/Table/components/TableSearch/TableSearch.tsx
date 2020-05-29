@@ -9,7 +9,12 @@ const TableSearch = (props: ITableSearchProps): ReactElement => {
 
 	return (
 		<div className="table-search__wrapper">
-			<Autosuggest isSmall icon={{ name: 'search' }} {...rest} />
+			<Autosuggest
+				defaultSuggestions={[]}
+				isSmall
+				icon={{ name: 'search' }}
+				{...rest}
+			/>
 		</div>
 	)
 }

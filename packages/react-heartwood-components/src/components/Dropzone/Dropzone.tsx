@@ -13,13 +13,13 @@ interface IDropZoneState {
 	userCanDrop: boolean
 }
 
+const defaults = defaultProps
+
 export default class Dropzone extends Component<
-	SpruceSchemas.Local.IDropzone,
+	SpruceSchemas.Local.IDropzone & typeof defaults,
 	IDropZoneState
 > {
-	public static defaultProps = defaultProps(
-		SpruceSchemas.Local.Dropzone.definition
-	)
+	public static defaultProps = defaults
 	public dropzone: any
 
 	public onDragEnter = (event: React.DragEvent<HTMLElement>) => {
