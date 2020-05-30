@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const selectOptionDefinition: SpruceSchemas.Local.SelectOption.IDefinition  = {
@@ -9,14 +9,14 @@ const selectOptionDefinition: SpruceSchemas.Local.SelectOption.IDefinition  = {
 	            /** Value. */
 	            'value': {
 	                label: 'Value',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                isRequired: true,
 	                options: undefined
 	            },
 	            /** Label. */
 	            'label': {
 	                label: 'Label',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                isRequired: true,
 	                options: undefined
 	            },

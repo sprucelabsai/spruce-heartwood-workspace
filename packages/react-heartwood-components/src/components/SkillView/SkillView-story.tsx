@@ -1,7 +1,7 @@
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import { manyTabs } from '../../../.storybook/data/tabs'
+import { manyTabs } from '../../../../../.storybook/data/tabs'
 import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
 import SkillViewBuilder from './index'

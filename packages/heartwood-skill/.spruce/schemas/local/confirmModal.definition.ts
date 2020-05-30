@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const confirmModalDefinition: SpruceSchemas.Local.ConfirmModal.IDefinition  = {
@@ -10,14 +10,14 @@ const confirmModalDefinition: SpruceSchemas.Local.ConfirmModal.IDefinition  = {
 	            /** Title. Title of the confirmation dialog */
 	            'title': {
 	                label: 'Title',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                hint: 'Title of the confirmation dialog',
 	                options: undefined
 	            },
 	            /** Text. Text shown in the dialog */
 	            'text': {
 	                label: 'Text',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                hint: 'Text shown in the dialog',
 	                options: undefined
 	            },

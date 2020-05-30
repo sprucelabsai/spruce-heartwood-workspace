@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import FeedBuilder from './FeedBuilder'
-import StylesProvider from '../../../../../.storybook/StylesProvider'
-import { generateMessages } from '../../../../../.storybook/data/feed'
+import StylesProvider from '../../../../../../../.storybook/StylesProvider'
+import { generateMessages } from '../../../../../../../.storybook/data/feed'
 
 const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>
 

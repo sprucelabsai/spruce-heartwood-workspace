@@ -9,7 +9,7 @@ import {
 	object
 } from '@storybook/addon-knobs/react'
 
-import { generateLocations } from '../../../.storybook/data/tableData'
+import { generateLocations } from '../../../../../.storybook/data/tableData'
 import RecordSelectionList, {
 	IRecordSelectionListItemProps
 } from './RecordSelectionList'

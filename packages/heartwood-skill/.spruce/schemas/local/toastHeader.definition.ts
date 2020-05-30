@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const toastHeaderDefinition: SpruceSchemas.Local.ToastHeader.IDefinition  = {
@@ -9,7 +9,7 @@ const toastHeaderDefinition: SpruceSchemas.Local.ToastHeader.IDefinition  = {
 	            /** Headline. Headline text */
 	            'headline': {
 	                label: 'Headline',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                isRequired: true,
 	                hint: 'Headline text',
 	                options: undefined
@@ -17,7 +17,7 @@ const toastHeaderDefinition: SpruceSchemas.Local.ToastHeader.IDefinition  = {
 	            /** Remove action. Action to be invoked when hitting the dismiss button */
 	            'onClickDismiss': {
 	                label: 'Remove action',
-	                type: SpruceSchema.FieldType.EventCallback,
+	                type: FieldType.EventCallback,
 	                hint: 'Action to be invoked when hitting the dismiss button',
 	                options: {event: `React.MouseEvent<...>`,element: `Element`,}
 	            },

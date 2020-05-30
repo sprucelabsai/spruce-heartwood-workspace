@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const cardSectionDefinition: SpruceSchemas.Local.CardSection.IDefinition  = {
@@ -9,12 +9,12 @@ const cardSectionDefinition: SpruceSchemas.Local.CardSection.IDefinition  = {
 	    fields: {
 	            /** . */
 	            'children': {
-	                type: SpruceSchema.FieldType.Node,
+	                type: FieldType.Node,
 	                options: undefined
 	            },
 	            /** . Set to true to remove horizontal padding */
 	            'isFullBleed': {
-	                type: SpruceSchema.FieldType.Boolean,
+	                type: FieldType.Boolean,
 	                hint: 'Set to true to remove horizontal padding',
 	                options: undefined
 	            },

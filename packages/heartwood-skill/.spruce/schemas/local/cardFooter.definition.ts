@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const cardFooterDefinition: SpruceSchemas.Local.CardFooter.IDefinition  = {
@@ -9,7 +9,7 @@ const cardFooterDefinition: SpruceSchemas.Local.CardFooter.IDefinition  = {
 	    fields: {
 	            /** . */
 	            'children': {
-	                type: SpruceSchema.FieldType.Node,
+	                type: FieldType.Node,
 	                options: undefined
 	            },
 	    }

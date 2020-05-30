@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 import labelDefinitionLocal from '#spruce/schemas/local/label.definition'
 
 const sliderDefinition: SpruceSchemas.Local.Slider.IDefinition  = {
@@ -10,37 +10,37 @@ const sliderDefinition: SpruceSchemas.Local.Slider.IDefinition  = {
 	            /** Change handler. */
 	            'onChange': {
 	                label: 'Change handler',
-	                type: SpruceSchema.FieldType.EventCallback,
+	                type: FieldType.EventCallback,
 	                options: {event: `React.ChangeEvent<...>`,element: `HTMLInputElement`,}
 	            },
 	            /** Blur handler. */
 	            'onBlur': {
 	                label: 'Blur handler',
-	                type: SpruceSchema.FieldType.EventCallback,
+	                type: FieldType.EventCallback,
 	                options: {event: `React.FocusEvent<...>`,element: `HTMLInputElement`,}
 	            },
 	            /** Id. */
 	            'id': {
 	                label: 'Id',
-	                type: SpruceSchema.FieldType.Id,
+	                type: FieldType.Id,
 	                options: undefined
 	            },
 	            /** Label. */
 	            'label': {
 	                label: 'Label',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                options: {schemas: [labelDefinitionLocal],}
 	            },
 	            /** Name. */
 	            'name': {
 	                label: 'Name',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                options: undefined
 	            },
 	            /** Minimum. The left most value of the slider */
 	            'min': {
 	                label: 'Minimum',
-	                type: SpruceSchema.FieldType.Number,
+	                type: FieldType.Number,
 	                isRequired: true,
 	                hint: 'The left most value of the slider',
 	                options: undefined
@@ -48,7 +48,7 @@ const sliderDefinition: SpruceSchemas.Local.Slider.IDefinition  = {
 	            /** Maximum. The right most value of the slider */
 	            'max': {
 	                label: 'Maximum',
-	                type: SpruceSchema.FieldType.Number,
+	                type: FieldType.Number,
 	                isRequired: true,
 	                hint: 'The right most value of the slider',
 	                options: undefined
@@ -56,7 +56,7 @@ const sliderDefinition: SpruceSchemas.Local.Slider.IDefinition  = {
 	            /** Value. The value of the slider */
 	            'value': {
 	                label: 'Value',
-	                type: SpruceSchema.FieldType.Number,
+	                type: FieldType.Number,
 	                isRequired: true,
 	                hint: 'The value of the slider',
 	                options: undefined
@@ -64,7 +64,7 @@ const sliderDefinition: SpruceSchemas.Local.Slider.IDefinition  = {
 	            /** Disabled. */
 	            'isDisabled': {
 	                label: 'Disabled',
-	                type: SpruceSchema.FieldType.Boolean,
+	                type: FieldType.Boolean,
 	                options: undefined
 	            },
 	    }

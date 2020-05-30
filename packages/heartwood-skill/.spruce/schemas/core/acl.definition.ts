@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const aclDefinition: SpruceSchemas.Core.Acl.IDefinition  = {
@@ -7,7 +7,7 @@ const aclDefinition: SpruceSchemas.Core.Acl.IDefinition  = {
 	name: 'Access control list lookup table',
 	dynamicKeySignature: { 
 	    label: 'Permissions grouped by slug',
-	    type: SpruceSchema.FieldType.Text,
+	    type: FieldType.Text,
 	    key: 'slug',
 	    isArray: true,
 	    options: undefined

@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const markdownDefinition: SpruceSchemas.Local.Markdown.IDefinition  = {
@@ -10,14 +10,14 @@ const markdownDefinition: SpruceSchemas.Local.Markdown.IDefinition  = {
 	            /** Id. Unique ID for view caching. */
 	            'id': {
 	                label: 'Id',
-	                type: SpruceSchema.FieldType.Id,
+	                type: FieldType.Id,
 	                hint: 'Unique ID for view caching.',
 	                options: undefined
 	            },
 	            /** Source. Markdown text to be rendered */
 	            'source': {
 	                label: 'Source',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                isRequired: true,
 	                hint: 'Markdown text to be rendered',
 	                options: undefined

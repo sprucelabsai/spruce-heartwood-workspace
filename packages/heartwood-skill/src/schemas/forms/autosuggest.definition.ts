@@ -51,16 +51,7 @@ const autosuggestDefinition = buildSchemaDefinition({
 			label: 'Selection handler',
 			hint: 'Invoked when a person select a suggestion',
 			options: {
-				valueType: `(
-					event: React.FormEvent<any>,
-					data: {
-						suggestion: Record<string, any>;
-						suggestionValue: string;
-						suggestionIndex: number;
-						sectionIndex: number | null;
-						method: 'click' | 'enter';
-					}
-				) => void`
+				valueType: `(event: React.FormEvent<any>, data: { suggestion: Record<string, any>, suggestionValue: string, suggestionIndex: number, sectionIndex: number | null, method: 'click' | 'enter' }) => void`
 			}
 		},
 		shouldRenderSuggestions: {

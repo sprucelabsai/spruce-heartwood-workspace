@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 import aclDefinitionCore from '#spruce/schemas/core/acl.definition'
 
 const jobDefinition: SpruceSchemas.Core.Job.IDefinition  = {
@@ -10,13 +10,13 @@ const jobDefinition: SpruceSchemas.Core.Job.IDefinition  = {
 	            /** Id. */
 	            'id': {
 	                label: 'Id',
-	                type: SpruceSchema.FieldType.Id,
+	                type: FieldType.Id,
 	                options: undefined
 	            },
 	            /** Is default. Is this job one that comes with every org? Mapped to roles (owner, groupManager, managar, guest). */
 	            'isDefault': {
 	                label: 'Is default',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                isRequired: true,
 	                hint: 'Is this job one that comes with every org? Mapped to roles (owner, groupManager, managar, guest).',
 	                options: undefined
@@ -24,27 +24,27 @@ const jobDefinition: SpruceSchemas.Core.Job.IDefinition  = {
 	            /** Name. */
 	            'name': {
 	                label: 'Name',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                isRequired: true,
 	                options: undefined
 	            },
 	            /** Role. */
 	            'role': {
 	                label: 'Role',
-	                type: SpruceSchema.FieldType.Select,
+	                type: FieldType.Select,
 	                isRequired: true,
 	                options: {choices: [{"value":"owner","label":"Owner"},{"value":"groupManager","label":"District/region manager"},{"value":"manager","label":"Store manager"},{"value":"teammate","label":"Teammate"},{"value":"guest","label":"Guest"}],}
 	            },
 	            /** On work permissions. */
 	            'inStoreAcls': {
 	                label: 'On work permissions',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                options: {schemas: [aclDefinitionCore],}
 	            },
 	            /** Off work permissions. */
 	            'acls': {
 	                label: 'Off work permissions',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                options: {schemas: [aclDefinitionCore],}
 	            },
 	    }

@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 import tabDefinitionLocal from '#spruce/schemas/local/tab.definition'
 
 const tabsDefinition: SpruceSchemas.Local.Tabs.IDefinition  = {
@@ -10,7 +10,7 @@ const tabsDefinition: SpruceSchemas.Local.Tabs.IDefinition  = {
 	            /** Tabs. */
 	            'tabs': {
 	                label: 'Tabs',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                isArray: true,
 	                options: {schemas: [tabDefinitionLocal],}
@@ -18,20 +18,20 @@ const tabsDefinition: SpruceSchemas.Local.Tabs.IDefinition  = {
 	            /** Horizontal padding. Adds horizontal padding */
 	            'isPadded': {
 	                label: 'Horizontal padding',
-	                type: SpruceSchema.FieldType.Boolean,
+	                type: FieldType.Boolean,
 	                hint: 'Adds horizontal padding',
 	                options: undefined
 	            },
 	            /** Truncate tabs. Should tabs render 3 dots if they all don't fit */
 	            'isTruncatable': {
 	                label: 'Truncate tabs',
-	                type: SpruceSchema.FieldType.Boolean,
+	                type: FieldType.Boolean,
 	                hint: 'Should tabs render 3 dots if they all don\'t fit',
 	                options: undefined
 	            },
 	            /** . */
 	            'className': {
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                options: undefined
 	            },
 	    }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { generateLocations } from '../../../.storybook/data/tableData'
+import { generateLocations } from '../../../../../.storybook/data/tableData'
 import { map, sampleSize, cloneDeep } from 'lodash'
 import {
 	withKnobs,
@@ -9,7 +9,7 @@ import {
 	object,
 	select
 } from '@storybook/addon-knobs/react'
-import { userList, userList02 } from '../../../.storybook/data/people'
+import { userList, userList02 } from '../../../../../.storybook/data/people'
 
 import Card, { CardHeader, CardBody, CardSection } from '../Card'
 import TruncatedList from './TruncatedList'
@@ -30,7 +30,7 @@ type TruncatedListExampleProps = {
 
 type TruncatedListExampleState = {
 	selectedIds: Array<string>
-	unselectableIds: Array<string>
+	unSelectableIds: Array<string>
 	loadedRecordSelectionListItems: IRecordSelectionListItemProps[]
 }
 

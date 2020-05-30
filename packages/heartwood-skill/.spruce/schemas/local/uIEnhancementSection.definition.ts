@@ -1,10 +1,11 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 import listDefinitionLocal from '#spruce/schemas/local/list.definition'
 import buttonDefinitionLocal from '#spruce/schemas/local/button.definition'
 import splitButtonDefinitionLocal from '#spruce/schemas/local/splitButton.definition'
 import cardBuilderDefinitionLocal from '#spruce/schemas/local/cardBuilder.definition'
 import toastDefinitionLocal from '#spruce/schemas/local/toast.definition'
+import textDefinitionLocal from '#spruce/schemas/local/text.definition'
 import markdownDefinitionLocal from '#spruce/schemas/local/markdown.definition'
 
 const uIEnhancementSectionDefinition: SpruceSchemas.Local.UIEnhancementSection.IDefinition  = {
@@ -15,14 +16,14 @@ const uIEnhancementSectionDefinition: SpruceSchemas.Local.UIEnhancementSection.I
 	            /** Id. The ID of the section that is acting as a placeholder for ui enhancements */
 	            'id': {
 	                label: 'Id',
-	                type: SpruceSchema.FieldType.Id,
+	                type: FieldType.Id,
 	                hint: 'The ID of the section that is acting as a placeholder for ui enhancements',
 	                options: undefined
 	            },
 	            /** Calendar event details items. Calendar items to add as enhancements */
 	            'calendarEventDetailItems': {
 	                label: 'Calendar event details items',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                hint: 'Calendar items to add as enhancements',
 	                isArray: true,
@@ -31,7 +32,7 @@ const uIEnhancementSectionDefinition: SpruceSchemas.Local.UIEnhancementSection.I
 	            /** Card builder body items. Card builder items to add as enhancements */
 	            'cardBuilderBodyItems': {
 	                label: 'Card builder body items',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                hint: 'Card builder items to add as enhancements',
 	                isArray: true,
@@ -40,7 +41,7 @@ const uIEnhancementSectionDefinition: SpruceSchemas.Local.UIEnhancementSection.I
 	            /** Context menu items. Context menu items to add as enhancements */
 	            'contextMenuItems': {
 	                label: 'Context menu items',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                hint: 'Context menu items to add as enhancements',
 	                isArray: true,

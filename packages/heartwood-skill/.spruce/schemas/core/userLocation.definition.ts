@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 import jobDefinitionCore from '#spruce/schemas/core/job.definition'
 import locationDefinitionCore from '#spruce/schemas/core/location.definition'
 import userDefinitionCore from '#spruce/schemas/core/user.definition'
@@ -12,53 +12,53 @@ const userLocationDefinition: SpruceSchemas.Core.UserLocation.IDefinition  = {
 	            /** Id. */
 	            'id': {
 	                label: 'Id',
-	                type: SpruceSchema.FieldType.Id,
+	                type: FieldType.Id,
 	                options: undefined
 	            },
 	            /** Name. */
 	            'role': {
 	                label: 'Name',
-	                type: SpruceSchema.FieldType.Select,
+	                type: FieldType.Select,
 	                isRequired: true,
 	                options: {choices: [{"value":"owner","label":"Owner"},{"value":"groupManager","label":"District/region manager"},{"value":"manager","label":"Store manager"},{"value":"teammate","label":"Teammate"},{"value":"guest","label":"Guest"}],}
 	            },
 	            /** Status. */
 	            'status': {
 	                label: 'Status',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                options: undefined
 	            },
 	            /** Total visits. */
 	            'visits': {
 	                label: 'Total visits',
-	                type: SpruceSchema.FieldType.Number,
+	                type: FieldType.Number,
 	                isRequired: true,
 	                options: {choices: [{"value":"owner","label":"Owner"},{"value":"groupManager","label":"District/region manager"},{"value":"manager","label":"Store manager"},{"value":"teammate","label":"Teammate"},{"value":"guest","label":"Guest"}],}
 	            },
 	            /** Last visit. */
 	            'lastRecordedVisit': {
 	                label: 'Last visit',
-	                type: SpruceSchema.FieldType.DateTime,
+	                type: FieldType.DateTime,
 	                options: undefined
 	            },
 	            /** Job. */
 	            'job': {
 	                label: 'Job',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                options: {schemas: [jobDefinitionCore],}
 	            },
 	            /** Location. */
 	            'location': {
 	                label: 'Location',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                options: {schemas: [locationDefinitionCore],}
 	            },
 	            /** User. */
 	            'user': {
 	                label: 'User',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                options: {schemas: [userDefinitionCore],}
 	            },

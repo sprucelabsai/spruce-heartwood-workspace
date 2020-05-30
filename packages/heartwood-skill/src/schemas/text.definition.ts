@@ -1,7 +1,7 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 
 const textDefinition = buildSchemaDefinition({
-	id: 'Text',
+	id: 'text',
 	name: 'Text',
 	description: 'Basic text to be rendered',
 	fields: {

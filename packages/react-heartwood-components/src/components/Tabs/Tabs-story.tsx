@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, object } from '@storybook/addon-knobs/react'
-import { manyTabs } from '../../../.storybook/data/tabs'
+import { manyTabs } from '../../../../../.storybook/data/tabs'
 import Tabs from './Tabs'
 
 const stories = storiesOf('Tabs', module)

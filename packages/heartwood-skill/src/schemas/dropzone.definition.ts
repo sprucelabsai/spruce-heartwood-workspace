@@ -55,11 +55,7 @@ const dropzoneDefinition = buildSchemaDefinition({
 			type: FieldType.Raw,
 			label: 'On drop',
 			options: {
-				valueType: `(
-					acceptedFiles: File[],
-					rejectedFiles: File[],
-					event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event
-				) => void`
+				valueType: `(acceptedFiles: File[], rejectedFiles: File[], event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement> | DragEvent | Event) => void`
 			}
 		},
 		onDropAccepted: {

@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs/react'
-import StylesProvider from '../../../../../.storybook/StylesProvider'
+import StylesProvider from '../../../../../../../.storybook/StylesProvider'
 import Sidebar from './Sidebar'
 import HomeIcon from '../../../../../static/assets/icons/Interface-Essential/Home/house-1--16w.svg'
 import TeamsIcon from '../../../../../static/assets/icons/Work-Office-Companies/Human-Resources/human-resources-search-team--16w.svg'

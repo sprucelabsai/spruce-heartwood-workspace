@@ -8,7 +8,7 @@ export { default as buildEventDetails } from './src/utilities/buildEventDetails'
 export { default as buildCard } from './src/utilities/buildCard'
 export { default as stripNulls } from './src/utilities/stripNulls'
 export * from './src/utilities/utilities.types'
-export { IFileFieldValue } from '@sprucelabs/schema'
+export { IFileFieldValue } from '@sprucelabs/schema/build/fields/FileField'
 export { calendarEventDetailItems } from './src/schemas/calendars/calendarEventDetails.definition'
 
 /** Definitions needed on front end */

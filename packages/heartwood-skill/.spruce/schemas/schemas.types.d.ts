@@ -8,7 +8,7 @@ import * as generated_import_1 from '#spruce/../src/fields/ElementTypeField'
 import * as generated_import_2 from '#spruce/../src/fields/EventCallbackField'
 import * as generated_import_3 from '#spruce/../src/fields/NodeField'
 
-export namespace SpruceSchemas.Core {
+declare namespace SpruceSchemas.Core {
 	/** Profile images at various helpful sizes and resolutions. */
 	export interface IProfileImage {
 		/** 60x60. */
@@ -22,7 +22,7 @@ export namespace SpruceSchemas.Core {
 	}
 }
 
-export namespace SpruceSchemas.Core.ProfileImage {
+declare namespace SpruceSchemas.Core.ProfileImage {
 	/** The interface for the schema definition for a Profile Image Sizes */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'profileImage'
@@ -64,7 +64,7 @@ export namespace SpruceSchemas.Core.ProfileImage {
 	export type Instance = Schema<SpruceSchemas.Core.ProfileImage.IDefinition>
 }
 
-export namespace SpruceSchemas.Core {
+declare namespace SpruceSchemas.Core {
 	/** A human being. */
 	export interface IUser {
 		/** Id. */
@@ -84,7 +84,7 @@ export namespace SpruceSchemas.Core {
 	}
 }
 
-export namespace SpruceSchemas.Core.User {
+declare namespace SpruceSchemas.Core.User {
 	/** The interface for the schema definition for a User */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'user'
@@ -145,7 +145,7 @@ export namespace SpruceSchemas.Core.User {
 	export type Instance = Schema<SpruceSchemas.Core.User.IDefinition>
 }
 
-export namespace SpruceSchemas.Core {
+declare namespace SpruceSchemas.Core {
 	/** An ability Sprucebot has learned. */
 	export interface ISkill {
 		/** Id. */
@@ -163,7 +163,7 @@ export namespace SpruceSchemas.Core {
 	}
 }
 
-export namespace SpruceSchemas.Core.Skill {
+declare namespace SpruceSchemas.Core.Skill {
 	/** The interface for the schema definition for a Skill */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'skill'
@@ -216,7 +216,7 @@ export namespace SpruceSchemas.Core.Skill {
 	export type Instance = Schema<SpruceSchemas.Core.Skill.IDefinition>
 }
 
-export namespace SpruceSchemas.Core {
+declare namespace SpruceSchemas.Core {
 	/** A physical location where people meet. An organization has at least one of them. */
 	export interface ILocation {
 		/** Id. */
@@ -322,7 +322,7 @@ export namespace SpruceSchemas.Core {
 	}
 }
 
-export namespace SpruceSchemas.Core.Location {
+declare namespace SpruceSchemas.Core.Location {
 	/** The interface for the schema definition for a Location */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'location'
@@ -519,7 +519,7 @@ export namespace SpruceSchemas.Core.Location {
 	export type Instance = Schema<SpruceSchemas.Core.Location.IDefinition>
 }
 
-export namespace SpruceSchemas.Core {
+declare namespace SpruceSchemas.Core {
 	/**  */
 	export interface IAcl {
 		/** Permissions grouped by slug. */
@@ -527,7 +527,7 @@ export namespace SpruceSchemas.Core {
 	}
 }
 
-export namespace SpruceSchemas.Core.Acl {
+declare namespace SpruceSchemas.Core.Acl {
 	/** The interface for the schema definition for a Access control list lookup table */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'acl'
@@ -545,7 +545,7 @@ export namespace SpruceSchemas.Core.Acl {
 	export type Instance = Schema<SpruceSchemas.Core.Acl.IDefinition>
 }
 
-export namespace SpruceSchemas.Core {
+declare namespace SpruceSchemas.Core {
 	/** A position at a company. The answer to the question; What is your job? */
 	export interface IJob {
 		/** Id. */
@@ -563,7 +563,7 @@ export namespace SpruceSchemas.Core {
 	}
 }
 
-export namespace SpruceSchemas.Core.Job {
+declare namespace SpruceSchemas.Core.Job {
 	/** The interface for the schema definition for a Job */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'job'
@@ -625,7 +625,7 @@ export namespace SpruceSchemas.Core.Job {
 	export type Instance = Schema<SpruceSchemas.Core.Job.IDefinition>
 }
 
-export namespace SpruceSchemas.Core {
+declare namespace SpruceSchemas.Core {
 	/** A location a person has given access to themselves. */
 	export interface IUserLocation {
 		/** Id. */
@@ -647,7 +647,7 @@ export namespace SpruceSchemas.Core {
 	}
 }
 
-export namespace SpruceSchemas.Core.UserLocation {
+declare namespace SpruceSchemas.Core.UserLocation {
 	/** The interface for the schema definition for a User location */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'userLocation'
@@ -730,7 +730,7 @@ export namespace SpruceSchemas.Core.UserLocation {
 	export type Instance = Schema<SpruceSchemas.Core.UserLocation.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A photo of a person that is generally round */
 	export interface IAvatar {
 		/** Source. */
@@ -758,7 +758,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Avatar {
+declare namespace SpruceSchemas.Local.Avatar {
 	/** The interface for the schema definition for a Avatar */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'avatar'
@@ -851,7 +851,7 @@ export namespace SpruceSchemas.Local.Avatar {
 	export type Instance = Schema<SpruceSchemas.Local.Avatar.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface IBigFormControls {
 		/** Enable go back. Will enable/disable the back button to go to a previous question */
@@ -865,7 +865,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.BigFormControls {
+declare namespace SpruceSchemas.Local.BigFormControls {
 	/** The interface for the schema definition for a Big form controls */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'bigFormControls'
@@ -904,7 +904,7 @@ export namespace SpruceSchemas.Local.BigFormControls {
 	export type Instance = Schema<SpruceSchemas.Local.BigFormControls.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Ask questions one at a time */
 	export interface IBigForm {
 		/** Header controls. */
@@ -923,7 +923,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.BigForm {
+declare namespace SpruceSchemas.Local.BigForm {
 	/** The interface for the schema definition for a Big form */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'bigForm'
@@ -976,7 +976,7 @@ export namespace SpruceSchemas.Local.BigForm {
 	export type Instance = Schema<SpruceSchemas.Local.BigForm.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A confirmation dialog */
 	export interface IConfirmModal {
 		/** Title. Title of the confirmation dialog */
@@ -986,7 +986,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ConfirmModal {
+declare namespace SpruceSchemas.Local.ConfirmModal {
 	/** The interface for the schema definition for a ConfirmModal */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'confirm Modal'
@@ -1014,7 +1014,7 @@ export namespace SpruceSchemas.Local.ConfirmModal {
 	export type Instance = Schema<SpruceSchemas.Local.ConfirmModal.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** **Missing description** */
 	export interface IIcon {
 		/** Id. */
@@ -1030,7 +1030,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Icon {
+declare namespace SpruceSchemas.Local.Icon {
 	/** The interface for the schema definition for a Icon */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'Icon'
@@ -1075,7 +1075,7 @@ export namespace SpruceSchemas.Local.Icon {
 	export type Instance = Schema<SpruceSchemas.Local.Icon.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A interactive element you can touch or click to invoke an Action */
 	export interface IButton {
 		/** Id. */
@@ -1113,7 +1113,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Button {
+declare namespace SpruceSchemas.Local.Button {
 	/** The interface for the schema definition for a Button */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'button'
@@ -1247,7 +1247,7 @@ export namespace SpruceSchemas.Local.Button {
 	export type Instance = Schema<SpruceSchemas.Local.Button.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A contextual menu comprised of buttons (tip: set the action on each button). */
 	export interface IContextMenu {
 		/** Buttons. */
@@ -1271,7 +1271,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ContextMenu {
+declare namespace SpruceSchemas.Local.ContextMenu {
 	/** The interface for the schema definition for a ContextMenu */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'ContextMenu'
@@ -1353,7 +1353,7 @@ export namespace SpruceSchemas.Local.ContextMenu {
 	export type Instance = Schema<SpruceSchemas.Local.ContextMenu.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** The label for any input */
 	export interface ILabel {
 		/** Id. */
@@ -1365,7 +1365,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Label {
+declare namespace SpruceSchemas.Local.Label {
 	/** The interface for the schema definition for a Label */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'label'
@@ -1398,7 +1398,7 @@ export namespace SpruceSchemas.Local.Label {
 	export type Instance = Schema<SpruceSchemas.Local.Label.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Drop a file to upload */
 	export interface IDropzone {
 		/** Id. */
@@ -1478,7 +1478,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Dropzone {
+declare namespace SpruceSchemas.Local.Dropzone {
 	/** The interface for the schema definition for a Dropzone */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'dropzone'
@@ -1608,7 +1608,7 @@ export namespace SpruceSchemas.Local.Dropzone {
 	export type Instance = Schema<SpruceSchemas.Local.Dropzone.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Used for the empty state of lists */
 	export interface IEmptyState {
 		/** Heading. */
@@ -1622,7 +1622,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.EmptyState {
+declare namespace SpruceSchemas.Local.EmptyState {
 	/** The interface for the schema definition for a Empty state */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'emptyState'
@@ -1664,7 +1664,7 @@ export namespace SpruceSchemas.Local.EmptyState {
 	export type Instance = Schema<SpruceSchemas.Local.EmptyState.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** **Missing description** */
 	export interface IHeading {
 		/** Id. */
@@ -1682,7 +1682,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Heading {
+declare namespace SpruceSchemas.Local.Heading {
 	/** The interface for the schema definition for a Heading */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'Heading'
@@ -1743,7 +1743,7 @@ export namespace SpruceSchemas.Local.Heading {
 	export type Instance = Schema<SpruceSchemas.Local.Heading.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A basic image tag */
 	export interface IImage {
 		/** Id. */
@@ -1761,7 +1761,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Image {
+declare namespace SpruceSchemas.Local.Image {
 	/** The interface for the schema definition for a Image */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'Image'
@@ -1811,7 +1811,7 @@ export namespace SpruceSchemas.Local.Image {
 	export type Instance = Schema<SpruceSchemas.Local.Image.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Render markdown beautifully */
 	export interface IMarkdown {
 		/** Id. Unique ID for view caching. */
@@ -1821,7 +1821,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Markdown {
+declare namespace SpruceSchemas.Local.Markdown {
 	/** The interface for the schema definition for a Markdown */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'markdown'
@@ -1850,7 +1850,7 @@ export namespace SpruceSchemas.Local.Markdown {
 	export type Instance = Schema<SpruceSchemas.Local.Markdown.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Holds buttons and spans the top or bottom of the screen. */
 	export interface ISaveBar {
 		/** Message. Show a custom message across the bar */
@@ -1872,7 +1872,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SaveBar {
+declare namespace SpruceSchemas.Local.SaveBar {
 	/** The interface for the schema definition for a Save bar */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'saveBar'
@@ -1936,7 +1936,7 @@ export namespace SpruceSchemas.Local.SaveBar {
 	export type Instance = Schema<SpruceSchemas.Local.SaveBar.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Defaults to h2 */
 	export interface ISubheading {
 		/** Id. */
@@ -1954,7 +1954,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Subheading {
+declare namespace SpruceSchemas.Local.Subheading {
 	/** The interface for the schema definition for a Subheading */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'subheading'
@@ -2015,7 +2015,7 @@ export namespace SpruceSchemas.Local.Subheading {
 	export type Instance = Schema<SpruceSchemas.Local.Subheading.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A tabs control */
 	export interface ITab {
 		/** Text. The text shown on the tab */
@@ -2033,7 +2033,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Tab {
+declare namespace SpruceSchemas.Local.Tab {
 	/** The interface for the schema definition for a Tab */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'tab'
@@ -2086,7 +2086,7 @@ export namespace SpruceSchemas.Local.Tab {
 	export type Instance = Schema<SpruceSchemas.Local.Tab.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A tabs control */
 	export interface ITabs {
 		/** Tabs. */
@@ -2100,7 +2100,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Tabs {
+declare namespace SpruceSchemas.Local.Tabs {
 	/** The interface for the schema definition for a Tabs */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'tabs'
@@ -2141,7 +2141,7 @@ export namespace SpruceSchemas.Local.Tabs {
 	export type Instance = Schema<SpruceSchemas.Local.Tabs.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Basic text to be rendered */
 	export interface IText {
 		/** Id. */
@@ -2159,7 +2159,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Text {
+declare namespace SpruceSchemas.Local.Text {
 	/** The interface for the schema definition for a Text */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'text'
@@ -2211,7 +2211,7 @@ export namespace SpruceSchemas.Local.Text {
 	export type Instance = Schema<SpruceSchemas.Local.Text.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** The header of a list */
 	export interface IListHeader {
 		/** Title. Title to render in the header */
@@ -2225,7 +2225,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ListHeader {
+declare namespace SpruceSchemas.Local.ListHeader {
 	/** The interface for the schema definition for a List header */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'listHeader'
@@ -2270,7 +2270,7 @@ export namespace SpruceSchemas.Local.ListHeader {
 	export type Instance = Schema<SpruceSchemas.Local.ListHeader.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A great way to render a on/off style question or control */
 	export interface IToggle {
 		/** Id. */
@@ -2291,7 +2291,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Toggle {
+declare namespace SpruceSchemas.Local.Toggle {
 	/** The interface for the schema definition for a Toggle */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'Toggle'
@@ -2341,7 +2341,7 @@ export namespace SpruceSchemas.Local.Toggle {
 	export type Instance = Schema<SpruceSchemas.Local.Toggle.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A radio control. Give a bunch the same name to keep them as part of the same group */
 	export interface IListItemRadio {
 		/** Change handler. */
@@ -2371,7 +2371,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ListItemRadio {
+declare namespace SpruceSchemas.Local.ListItemRadio {
 	/** The interface for the schema definition for a Radio */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'listItemRadio'
@@ -2445,7 +2445,7 @@ export namespace SpruceSchemas.Local.ListItemRadio {
 	export type Instance = Schema<SpruceSchemas.Local.ListItemRadio.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A checkbox! */
 	export interface IListItemCheckbox {
 		/** Change handler. */
@@ -2477,7 +2477,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ListItemCheckbox {
+declare namespace SpruceSchemas.Local.ListItemCheckbox {
 	/** The interface for the schema definition for a Checkbox */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'listItemCheckbox'
@@ -2556,7 +2556,7 @@ export namespace SpruceSchemas.Local.ListItemCheckbox {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A warning message that can go on a list item */
 	export interface IListItemWarning {
 		/** Title. */
@@ -2568,7 +2568,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ListItemWarning {
+declare namespace SpruceSchemas.Local.ListItemWarning {
 	/** The interface for the schema definition for a List item warning */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'listItemWarning'
@@ -2600,7 +2600,7 @@ export namespace SpruceSchemas.Local.ListItemWarning {
 	export type Instance = Schema<SpruceSchemas.Local.ListItemWarning.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A list of information or inputs */
 	export interface IList {
 		/** Id. */
@@ -2630,7 +2630,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.List {
+declare namespace SpruceSchemas.Local.List {
 	/** The interface for the schema definition for a List */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'list'
@@ -2719,7 +2719,7 @@ export namespace SpruceSchemas.Local.List {
 	export type Instance = Schema<SpruceSchemas.Local.List.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface IExpandableListItem {
 		/** Id. */
@@ -2789,7 +2789,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ExpandableListItem {
+declare namespace SpruceSchemas.Local.ExpandableListItem {
 	/** The interface for the schema definition for a Expandable list item */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'expandableListItem'
@@ -2994,7 +2994,7 @@ export namespace SpruceSchemas.Local.ExpandableListItem {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** For hints and error messages after inputs (if both set, only error shows) */
 	export interface IInputHelper {
 		/** Hint. */
@@ -3010,7 +3010,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.InputHelper {
+declare namespace SpruceSchemas.Local.InputHelper {
 	/** The interface for the schema definition for a Input helper */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'inputHelper'
@@ -3057,7 +3057,7 @@ export namespace SpruceSchemas.Local.InputHelper {
 	export type Instance = Schema<SpruceSchemas.Local.InputHelper.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A checkbox! */
 	export interface ICheckbox {
 		/** Change handler. */
@@ -3089,7 +3089,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Checkbox {
+declare namespace SpruceSchemas.Local.Checkbox {
 	/** The interface for the schema definition for a Checkbox */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'checkbox'
@@ -3165,7 +3165,7 @@ export namespace SpruceSchemas.Local.Checkbox {
 	export type Instance = Schema<SpruceSchemas.Local.Checkbox.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A radio control. Give a bunch the same name to keep them as part of the same group */
 	export interface IRadio {
 		/** Change handler. */
@@ -3195,7 +3195,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Radio {
+declare namespace SpruceSchemas.Local.Radio {
 	/** The interface for the schema definition for a Radio */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'radio'
@@ -3268,7 +3268,7 @@ export namespace SpruceSchemas.Local.Radio {
 	export type Instance = Schema<SpruceSchemas.Local.Radio.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A button with a dropdown of actions on the right */
 	export interface ISplitButton {
 		/** Id. */
@@ -3290,7 +3290,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SplitButton {
+declare namespace SpruceSchemas.Local.SplitButton {
 	/** The interface for the schema definition for a Split button */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'splitButton'
@@ -3368,7 +3368,7 @@ export namespace SpruceSchemas.Local.SplitButton {
 	export type Instance = Schema<SpruceSchemas.Local.SplitButton.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Header of a card */
 	export interface ICardHeader {
 		/** Title. Title for the card */
@@ -3384,7 +3384,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CardHeader {
+declare namespace SpruceSchemas.Local.CardHeader {
 	/** The interface for the schema definition for a cardHeader */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'CardHeader'
@@ -3434,7 +3434,7 @@ export namespace SpruceSchemas.Local.CardHeader {
 	export type Instance = Schema<SpruceSchemas.Local.CardHeader.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Header of a card */
 	export interface IOnboardingCardStep {
 		/** Id. */
@@ -3456,7 +3456,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.OnboardingCardStep {
+declare namespace SpruceSchemas.Local.OnboardingCardStep {
 	/** The interface for the schema definition for a OnboardingCardStep */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'onboardingCardStep'
@@ -3528,7 +3528,7 @@ export namespace SpruceSchemas.Local.OnboardingCardStep {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Header of a card */
 	export interface IOnboardingCard {
 		/** Title. Title of the entire card */
@@ -3538,7 +3538,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.OnboardingCard {
+declare namespace SpruceSchemas.Local.OnboardingCard {
 	/** The interface for the schema definition for a OnboardingCard */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'OnboardingCard'
@@ -3570,7 +3570,7 @@ export namespace SpruceSchemas.Local.OnboardingCard {
 	export type Instance = Schema<SpruceSchemas.Local.OnboardingCard.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Header of a card */
 	export interface IScoreCard {
 		/** Scores. */
@@ -3578,7 +3578,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ScoreCard {
+declare namespace SpruceSchemas.Local.ScoreCard {
 	/** The interface for the schema definition for a ScoreCard */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'ScoreCard'
@@ -3600,7 +3600,7 @@ export namespace SpruceSchemas.Local.ScoreCard {
 	export type Instance = Schema<SpruceSchemas.Local.ScoreCard.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Call out information so it&#x27;s impossible to miss! */
 	export interface IToast {
 		/** Headline. Headline text */
@@ -3625,7 +3625,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Toast {
+declare namespace SpruceSchemas.Local.Toast {
 	/** The interface for the schema definition for a Toast */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'toast'
@@ -3697,7 +3697,7 @@ export namespace SpruceSchemas.Local.Toast {
 	export type Instance = Schema<SpruceSchemas.Local.Toast.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Hold all the information for creating body components */
 	export interface ICardBuilderBody {
 		/** Id. */
@@ -3727,7 +3727,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CardBuilderBody {
+declare namespace SpruceSchemas.Local.CardBuilderBody {
 	/** The interface for the schema definition for a Card builder body */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'cardBuilderBody'
@@ -3812,7 +3812,7 @@ export namespace SpruceSchemas.Local.CardBuilderBody {
 	export type Instance = Schema<SpruceSchemas.Local.CardBuilderBody.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A group of buttons presented in a few cool ways (see kind) */
 	export interface IButtonGroup {
 		/** Buttons. */
@@ -3831,7 +3831,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ButtonGroup {
+declare namespace SpruceSchemas.Local.ButtonGroup {
 	/** The interface for the schema definition for a Button group */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'buttonGroup'
@@ -3885,7 +3885,7 @@ export namespace SpruceSchemas.Local.ButtonGroup {
 	export type Instance = Schema<SpruceSchemas.Local.ButtonGroup.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Footer used for the card builder */
 	export interface ICardBuilderFooter {
 		/** Button group. Render buttons in the Card Footer */
@@ -3895,7 +3895,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CardBuilderFooter {
+declare namespace SpruceSchemas.Local.CardBuilderFooter {
 	/** The interface for the schema definition for a CardBuilder footer */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'cardBuilderFooter'
@@ -3925,7 +3925,7 @@ export namespace SpruceSchemas.Local.CardBuilderFooter {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Build a card to show something to the user */
 	export interface ICardBuilder {
 		/** Id. */
@@ -3943,7 +3943,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CardBuilder {
+declare namespace SpruceSchemas.Local.CardBuilder {
 	/** The interface for the schema definition for a CardBuilder */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'cardBuilder'
@@ -4000,7 +4000,7 @@ export namespace SpruceSchemas.Local.CardBuilder {
 	export type Instance = Schema<SpruceSchemas.Local.CardBuilder.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Some front end components emit uiEnhancement events to allow skills to enhance them during presentation. */
 	export interface IUIEnhancementSection {
 		/** Id. The ID of the section that is acting as a placeholder for ui enhancements */
@@ -4030,7 +4030,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.UIEnhancementSection {
+declare namespace SpruceSchemas.Local.UIEnhancementSection {
 	/** The interface for the schema definition for a User interface enhancement section */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'uIEnhancementSection'
@@ -4100,7 +4100,7 @@ export namespace SpruceSchemas.Local.UIEnhancementSection {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Avatar tied to a core user */
 	export interface IUserAvatar {
 		/** User. */
@@ -4130,7 +4130,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.UserAvatar {
+declare namespace SpruceSchemas.Local.UserAvatar {
 	/** The interface for the schema definition for a User avatar */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'userAvatar'
@@ -4230,7 +4230,7 @@ export namespace SpruceSchemas.Local.UserAvatar {
 	export type Instance = Schema<SpruceSchemas.Local.UserAvatar.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A block of time that comprises a calendar event. A calendar event can have an arbitrary number of blocks. */
 	export interface ICalendarEventBlock {
 		/** Id. An optional identifier for this block */
@@ -4250,7 +4250,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CalendarEventBlock {
+declare namespace SpruceSchemas.Local.CalendarEventBlock {
 	/** The interface for the schema definition for a Calendar event block */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'calendarEventBlock'
@@ -4320,7 +4320,7 @@ export namespace SpruceSchemas.Local.CalendarEventBlock {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** All the details attached to an event. Shown on click of the event. */
 	export interface ICalendarEventDetails {
 		/** Id. An optional ID for this item; used to allow association with UI Enhancements */
@@ -4340,7 +4340,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CalendarEventDetails {
+declare namespace SpruceSchemas.Local.CalendarEventDetails {
 	/** The interface for the schema definition for a Calendar event details */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'calendarEventDetails'
@@ -4389,7 +4389,7 @@ export namespace SpruceSchemas.Local.CalendarEventDetails {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** How an event will be rendered in the calendar. Each time represents a standard state of an event. */
 	export interface ICalendarEvent {
 		/** Id. Id of the calendar event */
@@ -4428,7 +4428,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CalendarEvent {
+declare namespace SpruceSchemas.Local.CalendarEvent {
 	/** The interface for the schema definition for a CalendarEvent */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'CalendarEvent'
@@ -4549,7 +4549,7 @@ export namespace SpruceSchemas.Local.CalendarEvent {
 	export type Instance = Schema<SpruceSchemas.Local.CalendarEvent.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** I universal way to hold visual information, use card builder to create cards */
 	export interface ICard {
 		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
@@ -4570,7 +4570,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Card {
+declare namespace SpruceSchemas.Local.Card {
 	/** The interface for the schema definition for a Card */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'card'
@@ -4639,7 +4639,7 @@ export namespace SpruceSchemas.Local.Card {
 	export type Instance = Schema<SpruceSchemas.Local.Card.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** The body of a card. */
 	export interface ICardBody {
 		/** Id. */
@@ -4659,7 +4659,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CardBody {
+declare namespace SpruceSchemas.Local.CardBody {
 	/** The interface for the schema definition for a Card body */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'cardBody'
@@ -4725,14 +4725,14 @@ export namespace SpruceSchemas.Local.CardBody {
 	export type Instance = Schema<SpruceSchemas.Local.CardBody.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Header of a card */
 	export interface ICardFooter {
 		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
 	}
 }
 
-export namespace SpruceSchemas.Local.CardFooter {
+declare namespace SpruceSchemas.Local.CardFooter {
 	/** The interface for the schema definition for a cardFooter */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'cardFooter'
@@ -4751,7 +4751,7 @@ export namespace SpruceSchemas.Local.CardFooter {
 	export type Instance = Schema<SpruceSchemas.Local.CardFooter.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A card body is made up of several sections */
 	export interface ICardSection {
 		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
@@ -4760,7 +4760,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.CardSection {
+declare namespace SpruceSchemas.Local.CardSection {
 	/** The interface for the schema definition for a card section */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'cardSection'
@@ -4785,7 +4785,7 @@ export namespace SpruceSchemas.Local.CardSection {
 	export type Instance = Schema<SpruceSchemas.Local.CardSection.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Header of a card */
 	export interface IScoreCardPanel {
 		/** Id. */
@@ -4797,7 +4797,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ScoreCardPanel {
+declare namespace SpruceSchemas.Local.ScoreCardPanel {
 	/** The interface for the schema definition for a ScoreCardPanel */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'ScoreCardPanel'
@@ -4831,7 +4831,7 @@ export namespace SpruceSchemas.Local.ScoreCardPanel {
 	export type Instance = Schema<SpruceSchemas.Local.ScoreCardPanel.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** An input with autosuggest capabilities! */
 	export interface IAutosuggest {
 		/** Change handler. */
@@ -4898,7 +4898,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Autosuggest {
+declare namespace SpruceSchemas.Local.Autosuggest {
 	/** The interface for the schema definition for a Autosuggest */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'autosuggest'
@@ -4966,7 +4966,16 @@ export namespace SpruceSchemas.Local.Autosuggest {
 				type: SpruceSchema.FieldType.Raw
 				hint: 'Invoked when a person select a suggestion'
 				options: {
-					valueType: `(event: React.FormEvent<any>, data: { suggestion: Record<string, any>, suggestionValue: string, suggestionIndex: number, sectionIndex: number | null, method: 'click' | 'enter' }) => void`
+					valueType: `(
+			                					event: React.FormEvent<any>,
+			                					data: {
+			                						suggestion: Record<string, any>;
+			                						suggestionValue: string;
+			                						suggestionIndex: number;
+			                						sectionIndex: number | null;
+			                						method: 'click' | 'enter';
+			                					}
+			                				) => void`
 				}
 			}
 			/** Render suggestions. Should I even show the suggestions when typing */
@@ -5047,7 +5056,7 @@ export namespace SpruceSchemas.Local.Autosuggest {
 	export type Instance = Schema<SpruceSchemas.Local.Autosuggest.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Pick a date, any date! wrapper for react-dates */
 	export interface IDatePicker {
 		kind?: ('singleDate' | 'dateRange') | undefined | null
@@ -5073,7 +5082,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.DatePicker {
+declare namespace SpruceSchemas.Local.DatePicker {
 	/** The interface for the schema definition for a Date picker */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'datePicker'
@@ -5155,7 +5164,7 @@ export namespace SpruceSchemas.Local.DatePicker {
 	export type Instance = Schema<SpruceSchemas.Local.DatePicker.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface IFormDialogButtons {
 		/** Primary button. */
@@ -5165,7 +5174,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.FormDialogButtons {
+declare namespace SpruceSchemas.Local.FormDialogButtons {
 	/** The interface for the schema definition for a Form dialog buttons */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'formDialogButtons'
@@ -5192,7 +5201,7 @@ export namespace SpruceSchemas.Local.FormDialogButtons {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A form with fields */
 	export interface IForm {
 		/** Submit handler. */
@@ -5223,7 +5232,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Form {
+declare namespace SpruceSchemas.Local.Form {
 	/** The interface for the schema definition for a Form */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'form'
@@ -5317,7 +5326,7 @@ export namespace SpruceSchemas.Local.Form {
 	export type Instance = Schema<SpruceSchemas.Local.Form.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface IFormBuilderSection {
 		/** Title. */
@@ -5329,7 +5338,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.FormBuilderSection {
+declare namespace SpruceSchemas.Local.FormBuilderSection {
 	/** The interface for the schema definition for a Form builder section */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'formBuilderSection'
@@ -5367,7 +5376,7 @@ export namespace SpruceSchemas.Local.FormBuilderSection {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Build a form to collect some deets */
 	export interface IFormBuilder {
 		/** Submit handler. */
@@ -5402,7 +5411,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.FormBuilder {
+declare namespace SpruceSchemas.Local.FormBuilder {
 	/** The interface for the schema definition for a Form builder */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'formBuilder'
@@ -5513,7 +5522,7 @@ export namespace SpruceSchemas.Local.FormBuilder {
 	export type Instance = Schema<SpruceSchemas.Local.FormBuilder.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Mixin for inputs that support events */
 	export interface IInputEvents {
 		/** Change handler. */
@@ -5529,7 +5538,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.InputEvents {
+declare namespace SpruceSchemas.Local.InputEvents {
 	/** The interface for the schema definition for a Input events */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'inputEvents'
@@ -5558,7 +5567,7 @@ export namespace SpruceSchemas.Local.InputEvents {
 	export type Instance = Schema<SpruceSchemas.Local.InputEvents.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Collect a phone number with area and country codes */
 	export interface IPhoneInput {
 		/** Label. */
@@ -5576,7 +5585,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.PhoneInput {
+declare namespace SpruceSchemas.Local.PhoneInput {
 	/** The interface for the schema definition for a Phone input */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'phoneInput'
@@ -5629,7 +5638,7 @@ export namespace SpruceSchemas.Local.PhoneInput {
 	export type Instance = Schema<SpruceSchemas.Local.PhoneInput.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Show a text input as a search field */
 	export interface ISearch {
 		/** Change handler. */
@@ -5673,7 +5682,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Search {
+declare namespace SpruceSchemas.Local.Search {
 	/** The interface for the schema definition for a Search input */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'search'
@@ -5794,7 +5803,7 @@ export namespace SpruceSchemas.Local.Search {
 	export type Instance = Schema<SpruceSchemas.Local.Search.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface ISelectOption {
 		/** Value. */
@@ -5804,7 +5813,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SelectOption {
+declare namespace SpruceSchemas.Local.SelectOption {
 	/** The interface for the schema definition for a Select option */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'selectOption'
@@ -5831,7 +5840,7 @@ export namespace SpruceSchemas.Local.SelectOption {
 	export type Instance = Schema<SpruceSchemas.Local.SelectOption.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A form select */
 	export interface ISelect {
 		id?: string | undefined | null
@@ -5854,7 +5863,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Select {
+declare namespace SpruceSchemas.Local.Select {
 	/** The interface for the schema definition for a Select */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'select'
@@ -5922,7 +5931,7 @@ export namespace SpruceSchemas.Local.Select {
 	export type Instance = Schema<SpruceSchemas.Local.Select.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A simple sliding control */
 	export interface ISlider {
 		/** Change handler. */
@@ -5952,7 +5961,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Slider {
+declare namespace SpruceSchemas.Local.Slider {
 	/** The interface for the schema definition for a Slider */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'slider'
@@ -6029,7 +6038,7 @@ export namespace SpruceSchemas.Local.Slider {
 	export type Instance = Schema<SpruceSchemas.Local.Slider.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Small pill like control with text and onClick functionality */
 	export interface ITag {
 		/** Id. */
@@ -6045,7 +6054,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Tag {
+declare namespace SpruceSchemas.Local.Tag {
 	/** The interface for the schema definition for a Tag */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'tag'
@@ -6096,7 +6105,7 @@ export namespace SpruceSchemas.Local.Tag {
 	export type Instance = Schema<SpruceSchemas.Local.Tag.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A reusable component that holds an html &lt;input /&gt; element and decorates it. */
 	export interface ITextInput {
 		/** Change handler. */
@@ -6167,7 +6176,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.TextInput {
+declare namespace SpruceSchemas.Local.TextInput {
 	/** The interface for the schema definition for a Input inner */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'textInput'
@@ -6312,7 +6321,7 @@ export namespace SpruceSchemas.Local.TextInput {
 	export type Instance = Schema<SpruceSchemas.Local.TextInput.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Big box to type lots of text (with voice support) */
 	export interface ITextarea {
 		/** Id. */
@@ -6332,7 +6341,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Textarea {
+declare namespace SpruceSchemas.Local.Textarea {
 	/** The interface for the schema definition for a Textarea */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'textarea'
@@ -6389,7 +6398,7 @@ export namespace SpruceSchemas.Local.Textarea {
 	export type Instance = Schema<SpruceSchemas.Local.Textarea.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A layout is the start of it all */
 	export interface ILayout {
 		/** Children. */
@@ -6407,7 +6416,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Layout {
+declare namespace SpruceSchemas.Local.Layout {
 	/** The interface for the schema definition for a Layout */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'layout'
@@ -6469,7 +6478,7 @@ export namespace SpruceSchemas.Local.Layout {
 	export type Instance = Schema<SpruceSchemas.Local.Layout.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A way to add spacing to your layouts */
 	export interface ILayoutSpacing {
 		/** Direction. */
@@ -6494,7 +6503,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.LayoutSpacing {
+declare namespace SpruceSchemas.Local.LayoutSpacing {
 	/** The interface for the schema definition for a Layout spacing */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'layoutSpacing'
@@ -6544,7 +6553,7 @@ export namespace SpruceSchemas.Local.LayoutSpacing {
 	export type Instance = Schema<SpruceSchemas.Local.LayoutSpacing.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface ISidebarHeader {
 		/** Title. */
@@ -6558,7 +6567,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SidebarHeader {
+declare namespace SpruceSchemas.Local.SidebarHeader {
 	/** The interface for the schema definition for a Sidebar header */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sidebarHeader'
@@ -6596,7 +6605,7 @@ export namespace SpruceSchemas.Local.SidebarHeader {
 	export type Instance = Schema<SpruceSchemas.Local.SidebarHeader.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** An element that makes up the sidebar */
 	export interface ISidebarSection {
 		/** Items. */
@@ -6638,7 +6647,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SidebarSection {
+declare namespace SpruceSchemas.Local.SidebarSection {
 	/** The interface for the schema definition for a Sidebar item */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sidebarSection'
@@ -6716,7 +6725,7 @@ export namespace SpruceSchemas.Local.SidebarSection {
 	export type Instance = Schema<SpruceSchemas.Local.SidebarSection.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A way to build layouts */
 	export interface ILayoutBuilder {
 		/** Items. */
@@ -6746,7 +6755,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.LayoutBuilder {
+declare namespace SpruceSchemas.Local.LayoutBuilder {
 	/** The interface for the schema definition for a Layout builder */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'layoutBuilder'
@@ -6776,7 +6785,7 @@ export namespace SpruceSchemas.Local.LayoutBuilder {
 	export type Instance = Schema<SpruceSchemas.Local.LayoutBuilder.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A section that makes up a layout */
 	export interface ILayoutSection {
 		/** Id. */
@@ -6792,7 +6801,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.LayoutSection {
+declare namespace SpruceSchemas.Local.LayoutSection {
 	/** The interface for the schema definition for a Layout section */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'layoutSection'
@@ -6837,7 +6846,7 @@ export namespace SpruceSchemas.Local.LayoutSection {
 	export type Instance = Schema<SpruceSchemas.Local.LayoutSection.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** A list is comprised of list items (or expandable list items). This is that list item. */
 	export interface IListItem {
 		/** Id. */
@@ -6901,7 +6910,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ListItem {
+declare namespace SpruceSchemas.Local.ListItem {
 	/** The interface for the schema definition for a List item */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'listItem'
@@ -7087,289 +7096,7 @@ export namespace SpruceSchemas.Local.ListItem {
 	export type Instance = Schema<SpruceSchemas.Local.ListItem.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
-	/**  */
-	export interface ISkillViewHeader {
-		/** Title. */
-		title?: string | undefined | null
-		/** Back link href. */
-		backLinkHref?: string | undefined | null
-		/** Back link text. */
-		backLinkText?: string | undefined | null
-		/** Collapsed. */
-		isCollapsed?: boolean | undefined | null
-
-		className?: string | undefined | null
-		/** Primary button. */
-		primaryButton?: SpruceSchemas.Local.IButton | undefined | null
-		/** Bottom border. */
-		hasBottomBorder?: boolean | undefined | null
-		/** Sidebar expander button. The button I'll use to let the person toggle the sidebar's visibility. */
-		sidebarExpanderButton?: SpruceSchemas.Local.IButton | undefined | null
-		/** Back click handler. */
-		onClickBack?:
-			| ((e: React.MouseEvent<HTMLButtonElement>) => void)
-			| undefined
-			| null
-		/** Tabs. */
-		tabs?: SpruceSchemas.Local.ITab[] | undefined | null
-	}
-}
-
-export namespace SpruceSchemas.Local.SkillViewHeader {
-	/** The interface for the schema definition for a Skill view header */
-	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-		id: 'skillViewHeader'
-		name: 'Skill view header'
-		fields: {
-			/** Title. */
-			title: {
-				label: 'Title'
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** Back link href. */
-			backLinkHref: {
-				label: 'Back link href'
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** Back link text. */
-			backLinkText: {
-				label: 'Back link text'
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** Collapsed. */
-			isCollapsed: {
-				label: 'Collapsed'
-				type: SpruceSchema.FieldType.Boolean
-				options: undefined
-			}
-			/** . */
-			className: {
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** Primary button. */
-			primaryButton: {
-				label: 'Primary button'
-				type: SpruceSchema.FieldType.Schema
-				options: { schemas: SpruceSchemas.Local.Button.IDefinition[] }
-			}
-			/** Bottom border. */
-			hasBottomBorder: {
-				label: 'Bottom border'
-				type: SpruceSchema.FieldType.Boolean
-				options: undefined
-			}
-			/** Sidebar expander button. The button I'll use to let the person toggle the sidebar's visibility. */
-			sidebarExpanderButton: {
-				label: 'Sidebar expander button'
-				type: SpruceSchema.FieldType.Schema
-				hint: "The button I'll use to let the person toggle the sidebar's visibility."
-				options: { schemas: SpruceSchemas.Local.Button.IDefinition[] }
-			}
-			/** Back click handler. */
-			onClickBack: {
-				label: 'Back click handler'
-				type: SpruceSchema.FieldType.EventCallback
-				options: {
-					event: `React.MouseEvent<...>`
-					element: `HTMLButtonElement`
-				}
-			}
-			/** Tabs. */
-			tabs: {
-				label: 'Tabs'
-				type: SpruceSchema.FieldType.Schema
-				isArray: true
-				options: { schemas: SpruceSchemas.Local.Tab.IDefinition[] }
-			}
-		}
-	}
-
-	/** The type of a schema instance built off this definition */
-	export type Instance = Schema<SpruceSchemas.Local.SkillViewHeader.IDefinition>
-}
-
-export namespace SpruceSchemas.Local {
-	/** A view you&#x27;re presenting to a person on an unknown set of devices */
-	export interface ISkillView {
-		/** Centered. Is all content centered? */
-		isCentered?: boolean | undefined | null
-
-		className?: string | undefined | null
-
-		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
-
-		sidebarChildren?:
-			| generated_import_3.INodeFieldDefinitionValue
-			| undefined
-			| null
-		/** Header. */
-		header?: SpruceSchemas.Local.ISkillViewHeader | undefined | null
-		/** Collapse sidebar. Will hide the sidebar */
-		isSidebarCollapsed?: boolean | undefined | null
-		/** Collapse header. Will hide the header */
-		isHeaderCollapsed?: boolean | undefined | null
-	}
-}
-
-export namespace SpruceSchemas.Local.SkillView {
-	/** The interface for the schema definition for a Skill view */
-	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-		id: 'skillView'
-		name: 'Skill view'
-		description: "A view you're presenting to a person on an unknown set of devices"
-		fields: {
-			/** Centered. Is all content centered? */
-			isCentered: {
-				label: 'Centered'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Is all content centered?'
-				options: undefined
-			}
-			/** . */
-			className: {
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** . */
-			children: {
-				type: SpruceSchema.FieldType.Node
-				options: undefined
-			}
-			/** . */
-			sidebarChildren: {
-				type: SpruceSchema.FieldType.Node
-				options: undefined
-			}
-			/** Header. */
-			header: {
-				label: 'Header'
-				type: SpruceSchema.FieldType.Schema
-				options: { schemas: SpruceSchemas.Local.SkillViewHeader.IDefinition[] }
-			}
-			/** Collapse sidebar. Will hide the sidebar */
-			isSidebarCollapsed: {
-				label: 'Collapse sidebar'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Will hide the sidebar'
-				options: undefined
-			}
-			/** Collapse header. Will hide the header */
-			isHeaderCollapsed: {
-				label: 'Collapse header'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Will hide the header'
-				options: undefined
-			}
-		}
-	}
-
-	/** The type of a schema instance built off this definition */
-	export type Instance = Schema<SpruceSchemas.Local.SkillView.IDefinition>
-}
-
-export namespace SpruceSchemas.Local {
-	/** A view you&#x27;re presenting to a person on an unknown set of devices */
-	export interface ISkillViewBuilder {
-		/** Centered. Is all content centered? */
-		isCentered?: boolean | undefined | null
-
-		className?: string | undefined | null
-
-		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
-
-		sidebarChildren?:
-			| generated_import_3.INodeFieldDefinitionValue
-			| undefined
-			| null
-		/** Header. */
-		header?: SpruceSchemas.Local.ISkillViewHeader | undefined | null
-		/** Collapse sidebar. Will hide the sidebar */
-		isSidebarCollapsed?: boolean | undefined | null
-		/** Collapse header. Will hide the header */
-		isHeaderCollapsed?: boolean | undefined | null
-		/** Content layout. */
-		contentLayout?: SpruceSchemas.Local.ILayoutBuilder | undefined | null
-		/** Content layout. */
-		sidebarLayout?: SpruceSchemas.Local.ILayoutBuilder | undefined | null
-	}
-}
-
-export namespace SpruceSchemas.Local.SkillViewBuilder {
-	/** The interface for the schema definition for a Skill view builder */
-	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-		id: 'skillViewBuilder'
-		name: 'Skill view builder'
-		description: "A view you're presenting to a person on an unknown set of devices"
-		fields: {
-			/** Centered. Is all content centered? */
-			isCentered: {
-				label: 'Centered'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Is all content centered?'
-				options: undefined
-			}
-			/** . */
-			className: {
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** . */
-			children: {
-				type: SpruceSchema.FieldType.Node
-				options: undefined
-			}
-			/** . */
-			sidebarChildren: {
-				type: SpruceSchema.FieldType.Node
-				options: undefined
-			}
-			/** Header. */
-			header: {
-				label: 'Header'
-				type: SpruceSchema.FieldType.Schema
-				options: { schemas: SpruceSchemas.Local.SkillViewHeader.IDefinition[] }
-			}
-			/** Collapse sidebar. Will hide the sidebar */
-			isSidebarCollapsed: {
-				label: 'Collapse sidebar'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Will hide the sidebar'
-				options: undefined
-			}
-			/** Collapse header. Will hide the header */
-			isHeaderCollapsed: {
-				label: 'Collapse header'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Will hide the header'
-				options: undefined
-			}
-			/** Content layout. */
-			contentLayout: {
-				label: 'Content layout'
-				type: SpruceSchema.FieldType.Schema
-				options: { schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[] }
-			}
-			/** Content layout. */
-			sidebarLayout: {
-				label: 'Content layout'
-				type: SpruceSchema.FieldType.Schema
-				options: { schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[] }
-			}
-		}
-	}
-
-	/** The type of a schema instance built off this definition */
-	export type Instance = Schema<
-		SpruceSchemas.Local.SkillViewBuilder.IDefinition
-	>
-}
-
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** An element that makes up the sidebar */
 	export interface ISidebarItem {
 		/** Subitems. Rendered under the text as subitems */
@@ -7389,7 +7116,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SidebarItem {
+declare namespace SpruceSchemas.Local.SidebarItem {
 	/** The interface for the schema definition for a Sidebar item */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sidebarItem'
@@ -7448,7 +7175,7 @@ export namespace SpruceSchemas.Local.SidebarItem {
 	export type Instance = Schema<SpruceSchemas.Local.SidebarItem.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** On the left or right side of a layout */
 	export interface ISidebar {
 		/** . Optional header that will only appear on mobile */
@@ -7483,7 +7210,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.Sidebar {
+declare namespace SpruceSchemas.Local.Sidebar {
 	/** The interface for the schema definition for a Sidebar */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sidebar'
@@ -7591,7 +7318,289 @@ export namespace SpruceSchemas.Local.Sidebar {
 	export type Instance = Schema<SpruceSchemas.Local.Sidebar.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
+	/**  */
+	export interface ISkillViewHeader {
+		/** Title. */
+		title?: string | undefined | null
+		/** Back link href. */
+		backLinkHref?: string | undefined | null
+		/** Back link text. */
+		backLinkText?: string | undefined | null
+		/** Collapsed. */
+		isCollapsed?: boolean | undefined | null
+
+		className?: string | undefined | null
+		/** Primary button. */
+		primaryButton?: SpruceSchemas.Local.IButton | undefined | null
+		/** Bottom border. */
+		hasBottomBorder?: boolean | undefined | null
+		/** Sidebar expander button. The button I'll use to let the person toggle the sidebar's visibility. */
+		sidebarExpanderButton?: SpruceSchemas.Local.IButton | undefined | null
+		/** Back click handler. */
+		onClickBack?:
+			| ((e: React.MouseEvent<HTMLButtonElement>) => void)
+			| undefined
+			| null
+		/** Tabs. */
+		tabs?: SpruceSchemas.Local.ITab[] | undefined | null
+	}
+}
+
+declare namespace SpruceSchemas.Local.SkillViewHeader {
+	/** The interface for the schema definition for a Skill view header */
+	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+		id: 'skillViewHeader'
+		name: 'Skill view header'
+		fields: {
+			/** Title. */
+			title: {
+				label: 'Title'
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** Back link href. */
+			backLinkHref: {
+				label: 'Back link href'
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** Back link text. */
+			backLinkText: {
+				label: 'Back link text'
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** Collapsed. */
+			isCollapsed: {
+				label: 'Collapsed'
+				type: SpruceSchema.FieldType.Boolean
+				options: undefined
+			}
+			/** . */
+			className: {
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** Primary button. */
+			primaryButton: {
+				label: 'Primary button'
+				type: SpruceSchema.FieldType.Schema
+				options: { schemas: SpruceSchemas.Local.Button.IDefinition[] }
+			}
+			/** Bottom border. */
+			hasBottomBorder: {
+				label: 'Bottom border'
+				type: SpruceSchema.FieldType.Boolean
+				options: undefined
+			}
+			/** Sidebar expander button. The button I'll use to let the person toggle the sidebar's visibility. */
+			sidebarExpanderButton: {
+				label: 'Sidebar expander button'
+				type: SpruceSchema.FieldType.Schema
+				hint: "The button I'll use to let the person toggle the sidebar's visibility."
+				options: { schemas: SpruceSchemas.Local.Button.IDefinition[] }
+			}
+			/** Back click handler. */
+			onClickBack: {
+				label: 'Back click handler'
+				type: SpruceSchema.FieldType.EventCallback
+				options: {
+					event: `React.MouseEvent<...>`
+					element: `HTMLButtonElement`
+				}
+			}
+			/** Tabs. */
+			tabs: {
+				label: 'Tabs'
+				type: SpruceSchema.FieldType.Schema
+				isArray: true
+				options: { schemas: SpruceSchemas.Local.Tab.IDefinition[] }
+			}
+		}
+	}
+
+	/** The type of a schema instance built off this definition */
+	export type Instance = Schema<SpruceSchemas.Local.SkillViewHeader.IDefinition>
+}
+
+declare namespace SpruceSchemas.Local {
+	/** A view you&#x27;re presenting to a person on an unknown set of devices */
+	export interface ISkillView {
+		/** Centered. Is all content centered? */
+		isCentered?: boolean | undefined | null
+
+		className?: string | undefined | null
+
+		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
+
+		sidebarChildren?:
+			| generated_import_3.INodeFieldDefinitionValue
+			| undefined
+			| null
+		/** Header. */
+		header?: SpruceSchemas.Local.ISkillViewHeader | undefined | null
+		/** Collapse sidebar. Will hide the sidebar */
+		isSidebarCollapsed?: boolean | undefined | null
+		/** Collapse header. Will hide the header */
+		isHeaderCollapsed?: boolean | undefined | null
+	}
+}
+
+declare namespace SpruceSchemas.Local.SkillView {
+	/** The interface for the schema definition for a Skill view */
+	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+		id: 'skillView'
+		name: 'Skill view'
+		description: "A view you're presenting to a person on an unknown set of devices"
+		fields: {
+			/** Centered. Is all content centered? */
+			isCentered: {
+				label: 'Centered'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Is all content centered?'
+				options: undefined
+			}
+			/** . */
+			className: {
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** . */
+			children: {
+				type: SpruceSchema.FieldType.Node
+				options: undefined
+			}
+			/** . */
+			sidebarChildren: {
+				type: SpruceSchema.FieldType.Node
+				options: undefined
+			}
+			/** Header. */
+			header: {
+				label: 'Header'
+				type: SpruceSchema.FieldType.Schema
+				options: { schemas: SpruceSchemas.Local.SkillViewHeader.IDefinition[] }
+			}
+			/** Collapse sidebar. Will hide the sidebar */
+			isSidebarCollapsed: {
+				label: 'Collapse sidebar'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Will hide the sidebar'
+				options: undefined
+			}
+			/** Collapse header. Will hide the header */
+			isHeaderCollapsed: {
+				label: 'Collapse header'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Will hide the header'
+				options: undefined
+			}
+		}
+	}
+
+	/** The type of a schema instance built off this definition */
+	export type Instance = Schema<SpruceSchemas.Local.SkillView.IDefinition>
+}
+
+declare namespace SpruceSchemas.Local {
+	/** A view you&#x27;re presenting to a person on an unknown set of devices */
+	export interface ISkillViewBuilder {
+		/** Centered. Is all content centered? */
+		isCentered?: boolean | undefined | null
+
+		className?: string | undefined | null
+
+		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
+
+		sidebarChildren?:
+			| generated_import_3.INodeFieldDefinitionValue
+			| undefined
+			| null
+		/** Header. */
+		header?: SpruceSchemas.Local.ISkillViewHeader | undefined | null
+		/** Collapse sidebar. Will hide the sidebar */
+		isSidebarCollapsed?: boolean | undefined | null
+		/** Collapse header. Will hide the header */
+		isHeaderCollapsed?: boolean | undefined | null
+		/** Content layout. */
+		contentLayout?: SpruceSchemas.Local.ILayoutBuilder | undefined | null
+		/** Content layout. */
+		sidebarLayout?: SpruceSchemas.Local.ILayoutBuilder | undefined | null
+	}
+}
+
+declare namespace SpruceSchemas.Local.SkillViewBuilder {
+	/** The interface for the schema definition for a Skill view builder */
+	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+		id: 'skillViewBuilder'
+		name: 'Skill view builder'
+		description: "A view you're presenting to a person on an unknown set of devices"
+		fields: {
+			/** Centered. Is all content centered? */
+			isCentered: {
+				label: 'Centered'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Is all content centered?'
+				options: undefined
+			}
+			/** . */
+			className: {
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** . */
+			children: {
+				type: SpruceSchema.FieldType.Node
+				options: undefined
+			}
+			/** . */
+			sidebarChildren: {
+				type: SpruceSchema.FieldType.Node
+				options: undefined
+			}
+			/** Header. */
+			header: {
+				label: 'Header'
+				type: SpruceSchema.FieldType.Schema
+				options: { schemas: SpruceSchemas.Local.SkillViewHeader.IDefinition[] }
+			}
+			/** Collapse sidebar. Will hide the sidebar */
+			isSidebarCollapsed: {
+				label: 'Collapse sidebar'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Will hide the sidebar'
+				options: undefined
+			}
+			/** Collapse header. Will hide the header */
+			isHeaderCollapsed: {
+				label: 'Collapse header'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Will hide the header'
+				options: undefined
+			}
+			/** Content layout. */
+			contentLayout: {
+				label: 'Content layout'
+				type: SpruceSchema.FieldType.Schema
+				options: { schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[] }
+			}
+			/** Content layout. */
+			sidebarLayout: {
+				label: 'Content layout'
+				type: SpruceSchema.FieldType.Schema
+				options: { schemas: SpruceSchemas.Local.LayoutBuilder.IDefinition[] }
+			}
+		}
+	}
+
+	/** The type of a schema instance built off this definition */
+	export type Instance = Schema<
+		SpruceSchemas.Local.SkillViewBuilder.IDefinition
+	>
+}
+
+declare namespace SpruceSchemas.Local {
 	/** Make it great! */
 	export interface ISprucebotAvatar {
 		/** Id. */
@@ -7603,7 +7612,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SprucebotAvatar {
+declare namespace SpruceSchemas.Local.SprucebotAvatar {
 	/** The interface for the schema definition for a SprucebotAvatar */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sprucebotAvatar'
@@ -7665,7 +7674,7 @@ export namespace SpruceSchemas.Local.SprucebotAvatar {
 	export type Instance = Schema<SpruceSchemas.Local.SprucebotAvatar.IDefinition>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface ISprucebotTypedMessageSentence {
 		/** . A way to override the Sprucebot avatar for this sentence */
@@ -7677,7 +7686,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SprucebotTypedMessageSentence {
+declare namespace SpruceSchemas.Local.SprucebotTypedMessageSentence {
 	/** The interface for the schema definition for a Sprucebot Typed sentence */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sprucebotTypedMessageSentence'
@@ -7713,7 +7722,7 @@ export namespace SpruceSchemas.Local.SprucebotTypedMessageSentence {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/** Avatar that makes size optional for use with the Sprucebot Typed Message component */
 	export interface ISprucebotTypedMessageAvatar {
 		/** Id. */
@@ -7725,7 +7734,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SprucebotTypedMessageAvatar {
+declare namespace SpruceSchemas.Local.SprucebotTypedMessageAvatar {
 	/** The interface for the schema definition for a Typed message avatar */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sprucebotTypedMessageAvatar'
@@ -7788,7 +7797,7 @@ export namespace SpruceSchemas.Local.SprucebotTypedMessageAvatar {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface ISprucebotTypedMessage {
 		/** Id. */
@@ -7811,7 +7820,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.SprucebotTypedMessage {
+declare namespace SpruceSchemas.Local.SprucebotTypedMessage {
 	/** The interface for the schema definition for a Sprucebot typed message */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'sprucebotTypedMessage'
@@ -7885,7 +7894,7 @@ export namespace SpruceSchemas.Local.SprucebotTypedMessage {
 	>
 }
 
-export namespace SpruceSchemas.Local {
+declare namespace SpruceSchemas.Local {
 	/**  */
 	export interface IToastHeader {
 		/** Headline. Headline text */
@@ -7895,7 +7904,7 @@ export namespace SpruceSchemas.Local {
 	}
 }
 
-export namespace SpruceSchemas.Local.ToastHeader {
+declare namespace SpruceSchemas.Local.ToastHeader {
 	/** The interface for the schema definition for a Toast header */
 	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
 		id: 'toastHeader'

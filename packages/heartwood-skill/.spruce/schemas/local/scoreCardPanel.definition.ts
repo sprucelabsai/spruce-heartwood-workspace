@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 
 
 const scoreCardPanelDefinition: SpruceSchemas.Local.ScoreCardPanel.IDefinition  = {
@@ -10,20 +10,20 @@ const scoreCardPanelDefinition: SpruceSchemas.Local.ScoreCardPanel.IDefinition  
 	            /** Id. */
 	            'id': {
 	                label: 'Id',
-	                type: SpruceSchema.FieldType.Id,
+	                type: FieldType.Id,
 	                options: undefined
 	            },
 	            /** Label. The label for this score, e.g. Today's Sales */
 	            'label': {
 	                label: 'Label',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                hint: 'The label for this score, e.g. Today\'s Sales',
 	                options: undefined
 	            },
 	            /** Value. The score, e.g. $234.30 */
 	            'value': {
 	                label: 'Value',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                hint: 'The score, e.g. $234.30',
 	                options: undefined
 	            },

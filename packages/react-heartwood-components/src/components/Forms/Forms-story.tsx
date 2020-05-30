@@ -28,7 +28,7 @@ import {
 	FormLayoutGroup,
 	FormLayoutItem
 } from './index'
-import countries from '../../../.storybook/data/countries'
+import countries from '../../../../../.storybook/data/countries'
 
 const spacingOptions = {
 	Base: null,

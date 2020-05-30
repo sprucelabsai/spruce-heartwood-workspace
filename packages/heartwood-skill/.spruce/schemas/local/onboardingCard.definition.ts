@@ -1,5 +1,5 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
-import * as SpruceSchema from '@sprucelabs/schema'
+import { FieldType } from '#spruce/schemas/fields/fieldType'
 import onboardingCardStepDefinitionLocal from '#spruce/schemas/local/onboardingCardStep.definition'
 
 const onboardingCardDefinition: SpruceSchemas.Local.OnboardingCard.IDefinition  = {
@@ -10,14 +10,14 @@ const onboardingCardDefinition: SpruceSchemas.Local.OnboardingCard.IDefinition  
 	            /** Title. Title of the entire card */
 	            'title': {
 	                label: 'Title',
-	                type: SpruceSchema.FieldType.Text,
+	                type: FieldType.Text,
 	                hint: 'Title of the entire card',
 	                options: undefined
 	            },
 	            /** Steps. Steps for onboarding */
 	            'steps': {
 	                label: 'Steps',
-	                type: SpruceSchema.FieldType.Schema,
+	                type: FieldType.Schema,
 	                isRequired: true,
 	                hint: 'Steps for onboarding',
 	                isArray: true,
