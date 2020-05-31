@@ -19,9 +19,9 @@
         "url": "https://github.com/sprucelabsai/spruce-heartwood-workspace/issues"
     },
     "scripts": {
-        "build": "npm run build:babel",
+        "build": "npm run clean && npm run build:babel",
         "build:node": "tsc | true",
-        "build:babel": "npm run clean && babel --root-mode upward --source-maps --extensions \".js\",\".ts\" . --copy-files --out-dir ./build",
+        "build:babel": "babel --root-mode upward --source-maps --extensions \".js\",\".ts\" . --copy-files --no-copy-ignored --out-dir ./build",
         "watch": "chokidar 'src/**/*' 'index.ts' '.spruce' -c 'npm run build'",
         "clean": "rm -rf build/",
         "lint": "eslint '**/*.ts' && tsc -p . --noEmit",
@@ -34,7 +34,7 @@
         "@sprucelabs/schema": "^2.0.0"
     },
     "devDependencies": {
-        "@sprucelabs/test": "^2.1.0-prerelease-assert-type.1",
+        "@sprucelabs/test": "^2.6.0",
         "chokidar-cli": "^2.1.0",
         "conventional-changelog-sprucelabs": "^1.1.0",
         "eslint": "^5",

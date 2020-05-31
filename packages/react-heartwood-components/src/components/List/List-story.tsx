@@ -10,12 +10,12 @@ import {
 	selectableList,
 	serviceList,
 	settingsList
-} from '../../../../../.storybook/data/lists'
+} from '../../../.storybook/data/lists'
 import {
 	userList,
 	userList02,
 	userList03
-} from '../../../../../.storybook/data/people'
+} from '../../../.storybook/data/people'
 import Tabs from '../Tabs/Tabs'
 import ListHeader from './components/ListHeader/ListHeader'
 import ListItem from './components/ListItem/ListItem'

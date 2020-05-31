@@ -19,16 +19,15 @@
         "url": "https://github.com/sprucelabsai/workspace.sprucebot-skills-kit/issues"
     },
     "scripts": {
-        "build": "npm run clean && npm run icons && npm run compile_javascript && npm run build:babel",
-        "build:babel": "babel --root-mode upward --source-maps --extensions \".js\",\".tsx\",\".ts\" ./src --copy-files --out-dir ./lib && tsc",
+        "build": "npm run clean && npm run icons && npm run build:babel",
+        "build:babel": "babel --root-mode upward --source-maps --extensions \".js\",\".tsx\",\".ts\" ./src --copy-files --no-copy-ignored --out-dir ./lib",
+        "build:storybook": "npm run icons && build-storybook",
         "icons": "node ./generators/icons.js",
-        "clean": "rm -rf lib/*",
+        "clean": "rm -rf lib/",
         "lint": "eslint --max-warnings=0 --ext=.js,.jsx,.ts,.tsx src && tsc -p . --noEmit",
         "lint:fix": "eslint --fix --max-warnings=0 --ext=.js,.jsx,.ts,.tsx src",
-        "#test": "jest",
-        "watch": "npm run build && chokidar 'src/**/*.(js|jsx|ts|tsx)' -c 'npm run compile_javascript'",
-        "storybook": "npm run icons && start-storybook -p 6006 -s ./static",
-        "build-storybook": "npm run icons && build-storybook"
+		"watch": "npm run build && chokidar 'src/**/*.(js|jsx|ts|tsx)' -c 'npm run compile_javascript'",
+		"storybook": "npm run icons && start-storybook -p 6006 -s ./static"
     },
     "dependencies": {
         "@babel/polyfill": "^7.0.0",
@@ -77,7 +76,6 @@
         "husky": "^0.14.3",
         "jest": "^24.5.0",
         "prettier": "^1.19",
-        "react-docgen-typescript-loader": "^3.1.1",
         "react-test-renderer": "^16.0.0",
         "sass-loader": "^8.0.2",
         "typescript": "^3.8",

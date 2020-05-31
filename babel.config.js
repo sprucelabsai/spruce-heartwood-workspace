@@ -15,38 +15,40 @@ const resolverPlugin = [
             // didn't change
             if (resolved === path) {
                 return false;
-			}
-			console.log('From', path,'\n\n','To', resolved, '\n\n\n')
+            }
             return pathUtil.relative(path, resolved);
         },
     },
 ];
 
 module.exports = (api) => {
+    // console.log(process.env)
+    // throw new Error(process.env)
     api.cache(false);
     return {
         ignore: [
             "**/*.test.ts",
             "**/*.test.tsx",
-            "**/*-story.tsx",
             "**/*.types.ts",
-			// "**/build/**",
-			"**/*.d.ts",
-			/.*node_modules\/(?!@sprucelabs).*/gm
-		],
-		presets: [
-			"@babel/preset-env",
-			"@babel/preset-typescript",
-			"@babel/preset-react",
-		],
-		plugins: ["./plugins/copySchema", resolverPlugin],
-        // overrides: [
-        //     {
-		// 		exclude: function (path) {
-		// 			console.log('EXCLUDE', path)
-		// 			return true
-		// 		},
-        //     },
-        // ],
+            "**/*.d.ts",
+            /.*\-story\.tsx/i,
+            /.*node_modules\/(?!@sprucelabs).*/gi,
+        ],
+        presets: [
+            "@babel/preset-env",
+            "@babel/preset-typescript",
+            "@babel/preset-react",
+        ],
+        plugins: [
+            "./babel-plugins/copySchema",
+            resolverPlugin,
+            "@babel/plugin-transform-runtime",
+        ],
+        overrides: [
+            {
+                test: /\.tsx/gi,
+                plugins: ["@babel/plugin-proposal-class-properties"],
+            },
+        ],
     };
 };

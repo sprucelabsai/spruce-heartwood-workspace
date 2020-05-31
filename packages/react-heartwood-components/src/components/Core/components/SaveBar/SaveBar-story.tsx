@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs/react'
-import StylesProvider from '../../../../../../../.storybook/StylesProvider'
+import StylesProvider from '../../../../../.storybook/StylesProvider'
 import SaveBar from './SaveBar'
 
 const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>

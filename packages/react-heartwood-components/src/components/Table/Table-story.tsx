@@ -3,7 +3,7 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 import { Formik } from 'formik'
 import React, { Fragment } from 'react'
-import { generateLocations } from '../../../../../.storybook/data/tableData'
+import { generateLocations } from '../../../.storybook/data/tableData'
 import Button from '../Button/Button'
 import Card, { CardBody, CardHeader } from '../Card'
 import {

@@ -12,7 +12,7 @@ import {
 	FormLayoutItem
 } from '../Forms'
 
-import countries from '../../../../../.storybook/data/countries'
+import countries from '../../../.storybook/data/countries'
 
 const renderSuggestion = (suggestion: any) => {
 	if (suggestion.isEmptyMessage) {
