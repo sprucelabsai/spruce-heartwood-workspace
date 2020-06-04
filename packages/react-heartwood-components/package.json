@@ -26,8 +26,8 @@
         "clean": "rm -rf lib/",
         "lint": "eslint --max-warnings=0 --ext=.js,.jsx,.ts,.tsx src && tsc -p . --noEmit",
         "lint:fix": "eslint --fix --max-warnings=0 --ext=.js,.jsx,.ts,.tsx src",
-		"watch": "npm run build && chokidar 'src/**/*.(js|jsx|ts|tsx)' -c 'npm run compile_javascript'",
-		"storybook": "npm run icons && start-storybook -p 6006 -s ./static"
+        "watch": "npm run build && chokidar 'src/**/*.(js|jsx|ts|tsx)' -c 'npm run compile_javascript'",
+        "storybook": "npm run icons && start-storybook -p 6006 -s ./static"
     },
     "dependencies": {
         "@babel/polyfill": "^7.0.0",
@@ -44,6 +44,7 @@
         "memoize-one": "^4.0.2",
         "moment": "^2.22.1",
         "moment-timezone": "^0.5.21",
+        "raf": "^3.4.1",
         "react": "^16.13.1",
         "react-autosuggest": "^9.4.2",
         "react-avatar-editor": "^11.0.4",
@@ -80,7 +81,16 @@
         "sass-loader": "^8.0.2",
         "typescript": "^3.8",
         "uuid": "^3.3.2",
-        "webpack": "^4.29.6"
+        "webpack": "^4.29.6",
+        "@storybook/addon-knobs": "^5.3.19",
+        "@storybook/addon-links": "^5.3.19",
+        "@storybook/addon-viewport": "^5.3.19",
+        "@storybook/addons": "^5.3.19",
+        "@storybook/react": "^5.3.19",
+        "react-docgen-typescript-loader": "^3.7.2",
+        "storybook-addon-jsx": "^7.2.3",
+        "storybook-addon-react-docgen": "^1.2.33",
+        "storybook-readme": "^5.0.8"
     },
     "jest": {
         "roots": [

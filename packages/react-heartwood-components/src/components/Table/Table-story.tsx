@@ -156,59 +156,6 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 					loading={false}
 					pageSize={schedule.length}
 					showPagination={false}
-					subComponentForRow={row => {
-						return (
-							<CardBody>
-								<Formik
-									onSubmit={values => {
-										console.log('Form submitted', values)
-									}}
-									initialValues={row.original}
-									validate={values => {
-										console.log('Validate values: ', values)
-										this.handleValidation(location, row.original.id)
-									}}
-									render={(formikProps: Record<string, any>) => {
-										const { handleChange, values } = formikProps
-
-										return (
-											<form onSubmit={formikProps.handleSubmit}>
-												<FormLayout>
-													<FormLayoutGroup>
-														<FormLayoutItem>
-															<TextInput
-																id="store-hours"
-																label={{
-																	text: `${row.original.day} Store Hours`
-																}}
-																onChange={handleChange}
-																name="hours"
-																value={values.hours || ''}
-															/>
-														</FormLayoutItem>
-														<FormLayoutItem spacerTop={true}>
-															<Button
-																kind={'primary'}
-																onClick={() =>
-																	this.handleSaveHours(
-																		location,
-																		row.original.id,
-																		values
-																	)
-																}
-																isDisabled={!row.original.isDirty}
-																text="Save"
-															/>
-														</FormLayoutItem>
-													</FormLayoutGroup>
-												</FormLayout>
-											</form>
-										)
-									}}
-								/>
-							</CardBody>
-						)
-					}}
 					rowIsDirty={row => {
 						return row.original.isDirty
 					}}

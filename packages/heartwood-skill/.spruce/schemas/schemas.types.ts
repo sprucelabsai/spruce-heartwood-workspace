@@ -7088,6 +7088,228 @@ export namespace SpruceSchemas.Local.ListItem {
 }
 
 export namespace SpruceSchemas.Local {
+	/** An element that makes up the sidebar */
+	export interface ISidebarItem {
+		/** Subitems. Rendered under the text as subitems */
+		items?: SpruceSchemas.Local.ISidebarItem[] | undefined | null
+		/** Icon. */
+		icon?: SpruceSchemas.Local.IIcon | undefined | null
+		/** Button. */
+		button?: SpruceSchemas.Local.IButton | undefined | null
+
+		className?: string | undefined | null
+		/** Text. Rendered in the body of this item */
+		text?: string | undefined | null
+		/** Href. */
+		href?: string | undefined | null
+		/** Current. If this item is the current one, it is rendered differently to call it out */
+		isCurrent?: boolean | undefined | null
+	}
+}
+
+export namespace SpruceSchemas.Local.SidebarItem {
+	/** The interface for the schema definition for a Sidebar item */
+	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+		id: 'sidebarItem'
+		name: 'Sidebar item'
+		description: 'An element that makes up the sidebar'
+		fields: {
+			/** Subitems. Rendered under the text as subitems */
+			items: {
+				label: 'Subitems'
+				type: SpruceSchema.FieldType.Schema
+				hint: 'Rendered under the text as subitems'
+				isArray: true
+				options: { schemas: SpruceSchemas.Local.SidebarItem.IDefinition[] }
+			}
+			/** Icon. */
+			icon: {
+				label: 'Icon'
+				type: SpruceSchema.FieldType.Schema
+				options: { schemas: SpruceSchemas.Local.Icon.IDefinition[] }
+			}
+			/** Button. */
+			button: {
+				label: 'Button'
+				type: SpruceSchema.FieldType.Schema
+				options: { schemas: SpruceSchemas.Local.Button.IDefinition[] }
+			}
+			/** . */
+			className: {
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** Text. Rendered in the body of this item */
+			text: {
+				label: 'Text'
+				type: SpruceSchema.FieldType.Text
+				hint: 'Rendered in the body of this item'
+				options: undefined
+			}
+			/** Href. */
+			href: {
+				label: 'href'
+				type: SpruceSchema.FieldType.Text
+				options: undefined
+			}
+			/** Current. If this item is the current one, it is rendered differently to call it out */
+			isCurrent: {
+				label: 'Current'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'If this item is the current one, it is rendered differently to call it out'
+				options: undefined
+			}
+		}
+	}
+
+	/** The type of a schema instance built off this definition */
+	export type Instance = Schema<SpruceSchemas.Local.SidebarItem.IDefinition>
+}
+
+export namespace SpruceSchemas.Local {
+	/** On the left or right side of a layout */
+	export interface ISidebar {
+		/** . Optional header that will only appear on mobile */
+		mobileHeader?: SpruceSchemas.Local.ISidebarHeader | undefined | null
+		/** Label. Items to display in the sidebar */
+		items?: SpruceSchemas.Local.ISidebarItem[] | undefined | null
+		/** Sections. Sections to display in the sidebar */
+		sections?: SpruceSchemas.Local.ISidebarSection[] | undefined | null
+		/** Back link. Back link item to handle navigation back to previous location */
+		backLink?: SpruceSchemas.Local.ISidebarItem | undefined | null
+		/** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+		side?: ('left' | 'right') | undefined | null
+		/** Large. Set true to make the sidebar larger. Defaults to false. */
+		isLarge?: boolean | undefined | null
+		/** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+		isCollapsible?: boolean | undefined | null
+		/** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+		isExpanded?: boolean | undefined | null
+		/** Expanded on mobile. Set true to expand the sidebar on small screens */
+		isMobileExpanded?: boolean | undefined | null
+
+		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
+
+		footerChildren?:
+			| generated_import_3.INodeFieldDefinitionValue
+			| undefined
+			| null
+		/** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+		onToggleExpanded?: (() => void) | undefined | null
+		/** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+		onForceCollapse?: (() => void) | undefined | null
+	}
+}
+
+export namespace SpruceSchemas.Local.Sidebar {
+	/** The interface for the schema definition for a Sidebar */
+	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
+		id: 'sidebar'
+		name: 'Sidebar'
+		description: 'On the left or right side of a layout'
+		fields: {
+			/** . Optional header that will only appear on mobile */
+			mobileHeader: {
+				type: SpruceSchema.FieldType.Schema
+				hint: 'Optional header that will only appear on mobile'
+				options: { schemas: SpruceSchemas.Local.SidebarHeader.IDefinition[] }
+			}
+			/** Label. Items to display in the sidebar */
+			items: {
+				label: 'Label'
+				type: SpruceSchema.FieldType.Schema
+				hint: 'Items to display in the sidebar'
+				isArray: true
+				options: { schemas: SpruceSchemas.Local.SidebarItem.IDefinition[] }
+			}
+			/** Sections. Sections to display in the sidebar */
+			sections: {
+				label: 'Sections'
+				type: SpruceSchema.FieldType.Schema
+				hint: 'Sections to display in the sidebar'
+				isArray: true
+				options: { schemas: SpruceSchemas.Local.SidebarSection.IDefinition[] }
+			}
+			/** Back link. Back link item to handle navigation back to previous location */
+			backLink: {
+				label: 'Back link'
+				type: SpruceSchema.FieldType.Schema
+				hint: 'Back link item to handle navigation back to previous location'
+				options: { schemas: SpruceSchemas.Local.SidebarItem.IDefinition[] }
+			}
+			/** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
+			side: {
+				label: 'Side'
+				type: SpruceSchema.FieldType.Select
+				hint: "Set which side the sidebar is on. Must be either 'left' or 'right'"
+				options: {
+					choices: [
+						{ value: 'left'; label: 'Left' },
+						{ value: 'right'; label: 'Right' }
+					]
+				}
+			}
+			/** Large. Set true to make the sidebar larger. Defaults to false. */
+			isLarge: {
+				label: 'Large'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Set true to make the sidebar larger. Defaults to false.'
+				options: undefined
+			}
+			/** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
+			isCollapsible: {
+				label: 'Collapsed'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.'
+				options: undefined
+			}
+			/** Expanded on desktop. Set true to expand the sidebar (large screens only) */
+			isExpanded: {
+				label: 'Expanded on desktop'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Set true to expand the sidebar (large screens only)'
+				defaultValue: true
+				options: undefined
+			}
+			/** Expanded on mobile. Set true to expand the sidebar on small screens */
+			isMobileExpanded: {
+				label: 'Expanded on mobile'
+				type: SpruceSchema.FieldType.Boolean
+				hint: 'Set true to expand the sidebar on small screens'
+				options: undefined
+			}
+			/** . */
+			children: {
+				type: SpruceSchema.FieldType.Node
+				options: undefined
+			}
+			/** . */
+			footerChildren: {
+				type: SpruceSchema.FieldType.Node
+				options: undefined
+			}
+			/** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
+			onToggleExpanded: {
+				label: 'Expander handler'
+				type: SpruceSchema.FieldType.Callback
+				hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)'
+				options: { signature: `() => void` }
+			}
+			/** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
+			onForceCollapse: {
+				label: 'Force close handler'
+				type: SpruceSchema.FieldType.Callback
+				hint: 'Expect you to collapse the bar no matter what (isExpanded to false)'
+				options: { signature: `() => void` }
+			}
+		}
+	}
+
+	/** The type of a schema instance built off this definition */
+	export type Instance = Schema<SpruceSchemas.Local.Sidebar.IDefinition>
+}
+
+export namespace SpruceSchemas.Local {
 	/**  */
 	export interface ISkillViewHeader {
 		/** Title. */
@@ -7367,228 +7589,6 @@ export namespace SpruceSchemas.Local.SkillViewBuilder {
 	export type Instance = Schema<
 		SpruceSchemas.Local.SkillViewBuilder.IDefinition
 	>
-}
-
-export namespace SpruceSchemas.Local {
-	/** An element that makes up the sidebar */
-	export interface ISidebarItem {
-		/** Subitems. Rendered under the text as subitems */
-		items?: SpruceSchemas.Local.ISidebarItem[] | undefined | null
-		/** Icon. */
-		icon?: SpruceSchemas.Local.IIcon | undefined | null
-		/** Button. */
-		button?: SpruceSchemas.Local.IButton | undefined | null
-
-		className?: string | undefined | null
-		/** Text. Rendered in the body of this item */
-		text?: string | undefined | null
-		/** Href. */
-		href?: string | undefined | null
-		/** Current. If this item is the current one, it is rendered differently to call it out */
-		isCurrent?: boolean | undefined | null
-	}
-}
-
-export namespace SpruceSchemas.Local.SidebarItem {
-	/** The interface for the schema definition for a Sidebar item */
-	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-		id: 'sidebarItem'
-		name: 'Sidebar item'
-		description: 'An element that makes up the sidebar'
-		fields: {
-			/** Subitems. Rendered under the text as subitems */
-			items: {
-				label: 'Subitems'
-				type: SpruceSchema.FieldType.Schema
-				hint: 'Rendered under the text as subitems'
-				isArray: true
-				options: { schemas: SpruceSchemas.Local.SidebarItem.IDefinition[] }
-			}
-			/** Icon. */
-			icon: {
-				label: 'Icon'
-				type: SpruceSchema.FieldType.Schema
-				options: { schemas: SpruceSchemas.Local.Icon.IDefinition[] }
-			}
-			/** Button. */
-			button: {
-				label: 'Button'
-				type: SpruceSchema.FieldType.Schema
-				options: { schemas: SpruceSchemas.Local.Button.IDefinition[] }
-			}
-			/** . */
-			className: {
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** Text. Rendered in the body of this item */
-			text: {
-				label: 'Text'
-				type: SpruceSchema.FieldType.Text
-				hint: 'Rendered in the body of this item'
-				options: undefined
-			}
-			/** Href. */
-			href: {
-				label: 'href'
-				type: SpruceSchema.FieldType.Text
-				options: undefined
-			}
-			/** Current. If this item is the current one, it is rendered differently to call it out */
-			isCurrent: {
-				label: 'Current'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'If this item is the current one, it is rendered differently to call it out'
-				options: undefined
-			}
-		}
-	}
-
-	/** The type of a schema instance built off this definition */
-	export type Instance = Schema<SpruceSchemas.Local.SidebarItem.IDefinition>
-}
-
-export namespace SpruceSchemas.Local {
-	/** On the left or right side of a layout */
-	export interface ISidebar {
-		/** . Optional header that will only appear on mobile */
-		mobileHeader?: SpruceSchemas.Local.ISidebarHeader | undefined | null
-		/** Label. Items to display in the sidebar */
-		items?: SpruceSchemas.Local.ISidebarItem[] | undefined | null
-		/** Sections. Sections to display in the sidebar */
-		sections?: SpruceSchemas.Local.ISidebarSection[] | undefined | null
-		/** Back link. Back link item to handle navigation back to previous location */
-		backLink?: SpruceSchemas.Local.ISidebarItem | undefined | null
-		/** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
-		side?: ('left' | 'right') | undefined | null
-		/** Large. Set true to make the sidebar larger. Defaults to false. */
-		isLarge?: boolean | undefined | null
-		/** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
-		isCollapsible?: boolean | undefined | null
-		/** Expanded on desktop. Set true to expand the sidebar (large screens only) */
-		isExpanded?: boolean | undefined | null
-		/** Expanded on mobile. Set true to expand the sidebar on small screens */
-		isMobileExpanded?: boolean | undefined | null
-
-		children?: generated_import_3.INodeFieldDefinitionValue | undefined | null
-
-		footerChildren?:
-			| generated_import_3.INodeFieldDefinitionValue
-			| undefined
-			| null
-		/** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
-		onToggleExpanded?: (() => void) | undefined | null
-		/** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
-		onForceCollapse?: (() => void) | undefined | null
-	}
-}
-
-export namespace SpruceSchemas.Local.Sidebar {
-	/** The interface for the schema definition for a Sidebar */
-	export interface IDefinition extends SpruceSchema.ISchemaDefinition {
-		id: 'sidebar'
-		name: 'Sidebar'
-		description: 'On the left or right side of a layout'
-		fields: {
-			/** . Optional header that will only appear on mobile */
-			mobileHeader: {
-				type: SpruceSchema.FieldType.Schema
-				hint: 'Optional header that will only appear on mobile'
-				options: { schemas: SpruceSchemas.Local.SidebarHeader.IDefinition[] }
-			}
-			/** Label. Items to display in the sidebar */
-			items: {
-				label: 'Label'
-				type: SpruceSchema.FieldType.Schema
-				hint: 'Items to display in the sidebar'
-				isArray: true
-				options: { schemas: SpruceSchemas.Local.SidebarItem.IDefinition[] }
-			}
-			/** Sections. Sections to display in the sidebar */
-			sections: {
-				label: 'Sections'
-				type: SpruceSchema.FieldType.Schema
-				hint: 'Sections to display in the sidebar'
-				isArray: true
-				options: { schemas: SpruceSchemas.Local.SidebarSection.IDefinition[] }
-			}
-			/** Back link. Back link item to handle navigation back to previous location */
-			backLink: {
-				label: 'Back link'
-				type: SpruceSchema.FieldType.Schema
-				hint: 'Back link item to handle navigation back to previous location'
-				options: { schemas: SpruceSchemas.Local.SidebarItem.IDefinition[] }
-			}
-			/** Side. Set which side the sidebar is on. Must be either 'left' or 'right' */
-			side: {
-				label: 'Side'
-				type: SpruceSchema.FieldType.Select
-				hint: "Set which side the sidebar is on. Must be either 'left' or 'right'"
-				options: {
-					choices: [
-						{ value: 'left'; label: 'Left' },
-						{ value: 'right'; label: 'Right' }
-					]
-				}
-			}
-			/** Large. Set true to make the sidebar larger. Defaults to false. */
-			isLarge: {
-				label: 'Large'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Set true to make the sidebar larger. Defaults to false.'
-				options: undefined
-			}
-			/** Collapsed. Enables the user to collapse the sidebar on desktop. Defaults to true. */
-			isCollapsible: {
-				label: 'Collapsed'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Enables the user to collapse the sidebar on desktop. Defaults to true.'
-				options: undefined
-			}
-			/** Expanded on desktop. Set true to expand the sidebar (large screens only) */
-			isExpanded: {
-				label: 'Expanded on desktop'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Set true to expand the sidebar (large screens only)'
-				defaultValue: true
-				options: undefined
-			}
-			/** Expanded on mobile. Set true to expand the sidebar on small screens */
-			isMobileExpanded: {
-				label: 'Expanded on mobile'
-				type: SpruceSchema.FieldType.Boolean
-				hint: 'Set true to expand the sidebar on small screens'
-				options: undefined
-			}
-			/** . */
-			children: {
-				type: SpruceSchema.FieldType.Node
-				options: undefined
-			}
-			/** . */
-			footerChildren: {
-				type: SpruceSchema.FieldType.Node
-				options: undefined
-			}
-			/** Expander handler. Expected to expand/collapse the sidebar by setting (isExpanded to true/false) */
-			onToggleExpanded: {
-				label: 'Expander handler'
-				type: SpruceSchema.FieldType.Callback
-				hint: 'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)'
-				options: { signature: `() => void` }
-			}
-			/** Force close handler. Expect you to collapse the bar no matter what (isExpanded to false) */
-			onForceCollapse: {
-				label: 'Force close handler'
-				type: SpruceSchema.FieldType.Callback
-				hint: 'Expect you to collapse the bar no matter what (isExpanded to false)'
-				options: { signature: `() => void` }
-			}
-		}
-	}
-
-	/** The type of a schema instance built off this definition */
-	export type Instance = Schema<SpruceSchemas.Local.Sidebar.IDefinition>
 }
 
 export namespace SpruceSchemas.Local {

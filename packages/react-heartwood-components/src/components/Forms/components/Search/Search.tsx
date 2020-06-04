@@ -6,13 +6,11 @@ import {
 	searchDefinition
 } from '@sprucelabs/heartwood-skill'
 import TextInput from '../TextInput/TextInput'
-import FieldClassMap from '#spruce:schema/fields/fieldClassMap'
 
 interface ISearchState {
 	value: string
 }
 
-console.log(FieldClassMap)
 const defaults = defaultProps(searchDefinition)
 
 export default class Search extends Component<

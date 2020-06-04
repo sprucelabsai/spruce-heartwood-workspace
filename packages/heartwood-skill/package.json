@@ -21,7 +21,7 @@
     "scripts": {
         "build": "npm run clean && npm run build:babel",
         "build:node": "tsc | true",
-        "build:babel": "babel --root-mode upward --source-maps --extensions \".js\",\".ts\" . --copy-files --no-copy-ignored --out-dir ./build",
+        "build:babel": "babel . --root-mode upward --source-maps --extensions \".js\",\".ts\" --copy-files --out-dir ./build",
         "watch": "chokidar 'src/**/*' 'index.ts' '.spruce' -c 'npm run build'",
         "clean": "rm -rf build/",
         "lint": "eslint '**/*.ts' && tsc -p . --noEmit",

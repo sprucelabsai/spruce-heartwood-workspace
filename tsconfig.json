@@ -28,6 +28,6 @@
             ]
         }
     },
-    "include": ["./*.ts", "./**/*.ts", "./*.tsx", "./**/*.tsx"],
-    "exclude": ["**/node_modules/**"]
+    "include": ["*.ts", "**/*.ts", "*.tsx", "**/*.tsx"],
+    "exclude": ["node_modules"]
 }
