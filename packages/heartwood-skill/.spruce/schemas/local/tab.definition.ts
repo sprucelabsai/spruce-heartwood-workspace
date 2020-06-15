@@ -1,5 +1,6 @@
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
 import { FieldType } from '#spruce/schemas/fields/fieldType'
+import iconDefinitionLocal from '#spruce/schemas/local/icon.definition'
 
 const tabDefinition: SpruceSchemas.Local.Tab.IDefinition = {
 	id: 'tab',

@@ -16,6 +16,7 @@ const override = {
 		new webpack.DefinePlugin({
 			"process.env": {
 				STYLESHEETS: JSON.stringify(process.env.STYLESHEETS),
+				IN_WEBPACK: JSON.stringify('true')
 			},
 		}),
 	],

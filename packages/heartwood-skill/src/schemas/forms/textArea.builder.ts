@@ -2,8 +2,8 @@ import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
 import labelDefinition from './label.definition'
 import inputHelperDefinition from './inputHelper.definition'
 
-const textareaDefinition = buildSchemaDefinition({
-	id: 'textarea',
+const textAreaDefinition = buildSchemaDefinition({
+	id: 'textArea',
 	name: 'Textarea',
 	description: 'Big box to type lots of text (with voice support)',
 	fields: {
@@ -46,4 +46,4 @@ const textareaDefinition = buildSchemaDefinition({
 	}
 })
 
-export default textareaDefinition
+export default textAreaDefinition

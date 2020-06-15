@@ -90,6 +90,18 @@ module.exports = (api) => {
 				decoratorsBeforeExport: false
 			}],
 			"@babel/plugin-proposal-class-properties",
+			[
+				"inline-react-svg",
+				{
+					"svgo": {
+						"plugins": [
+							{
+								"removeAttrs": { "attrs": ["stroke", "fill"] }
+							}
+						]
+					}
+				}
+			]
 		],
 		env: {
 			build: {

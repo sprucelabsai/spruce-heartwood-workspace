@@ -3,7 +3,7 @@ import { FieldType } from '#spruce/schemas/fields/fieldType'
 import labelDefinitionLocal from '#spruce/schemas/local/label.definition'
 import inputHelperDefinitionLocal from '#spruce/schemas/local/inputHelper.definition'
 
-const textareaDefinition: SpruceSchemas.Local.Textarea.IDefinition = {
+const textAreaDefinition: SpruceSchemas.Local.Textarea.IDefinition = {
 	id: 'textarea',
 	name: 'Textarea',
 	description: 'Big box to type lots of text (with voice support)',
@@ -54,4 +54,4 @@ const textareaDefinition: SpruceSchemas.Local.Textarea.IDefinition = {
 	}
 }
 
-export default textareaDefinition
+export default textAreaDefinition
