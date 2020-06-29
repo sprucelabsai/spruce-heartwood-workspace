@@ -1,5 +1,3 @@
-import React, { Fragment } from 'react'
-import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
 	text,
@@ -8,6 +6,9 @@ import {
 	number,
 	select
 } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React, { Fragment } from 'react'
+import countries from '../../../.storybook/data/countries'
 import Button from '../Button/Button'
 import {
 	Autosuggest,
@@ -28,7 +29,6 @@ import {
 	FormLayoutGroup,
 	FormLayoutItem
 } from './index'
-import countries from '../../../.storybook/data/countries'
 
 const spacingOptions = {
 	Base: null,

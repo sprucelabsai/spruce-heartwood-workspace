@@ -1,7 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-import SprucebotTypedMessage from '../../SprucebotTypedMessage/SprucebotTypedMessage'
 import { buildDuration, SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import SprucebotTypedMessage from '../../SprucebotTypedMessage/SprucebotTypedMessage'
 
 export interface IBigFormSlideHeaderProps {
 	/** What question are we asking (fed to typed message) */

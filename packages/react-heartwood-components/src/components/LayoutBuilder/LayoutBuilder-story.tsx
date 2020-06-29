@@ -1,8 +1,8 @@
+import { buildCard } from '@sprucelabs/heartwood-skill'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import LayoutBuilder from './LayoutBuilder'
-import { buildCard } from '@sprucelabs/heartwood-skill'
 
 const stories = storiesOf('LayoutBuilder', module)
 

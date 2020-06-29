@@ -1,6 +1,6 @@
-import React from 'react'
-import cx from 'classnames'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
 
 // Card Section
 const CardSection = (

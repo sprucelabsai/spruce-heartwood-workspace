@@ -1,8 +1,7 @@
-import React from 'react'
-import { filter, orderBy } from 'lodash'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, number } from '@storybook/addon-knobs'
-
+import { storiesOf } from '@storybook/react'
+import { filter, orderBy } from 'lodash'
+import React from 'react'
 import RecordTable, {
 	IRecordTableFetchOptions,
 	IRecordTableFetchResults

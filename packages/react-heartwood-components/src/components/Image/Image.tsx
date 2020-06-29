@@ -1,5 +1,5 @@
-import React from 'react'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import React from 'react'
 
 const Image = (props: SpruceSchemas.Local.IImage): React.ReactElement => {
 	const { id, alt, src, width, height } = props

@@ -1,5 +1,3 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
 	text,
@@ -8,6 +6,8 @@ import {
 	object,
 	array
 } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
 import Dropzone from './Dropzone'
 
 interface IDropzoneExampleProps {}

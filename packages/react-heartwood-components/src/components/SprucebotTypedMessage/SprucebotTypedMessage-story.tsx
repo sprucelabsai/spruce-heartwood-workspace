@@ -1,13 +1,13 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withKnobs, object, boolean, select } from '@storybook/addon-knobs'
-import SprucebotTypedMessage from './SprucebotTypedMessage'
-import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { TextInput } from '../Forms'
-import Card, { CardBody, CardFooter } from '../Card'
 import { SpruceSchemas, buildDuration } from '@sprucelabs/heartwood-skill'
-import SkillView from '../SkillView'
+import { withKnobs, object, boolean, select } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import ButtonGroup from '../ButtonGroup/ButtonGroup'
+import Card, { CardBody, CardFooter } from '../Card'
+import { TextInput } from '../Forms'
 import Layout from '../Layout/Layout'
+import SkillView from '../SkillView'
+import SprucebotTypedMessage from './SprucebotTypedMessage'
 
 const stories = storiesOf('SprucebotTypedMessage', module)
 

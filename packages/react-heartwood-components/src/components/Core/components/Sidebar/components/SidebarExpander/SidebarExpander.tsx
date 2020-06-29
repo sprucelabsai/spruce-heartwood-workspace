@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
-import Button from '../../../../../Button/Button'
 import ToggleCollapseIcon from '../../../../../../../static/assets/icons/ic_keyboard_arrow_right.svg'
+import Button from '../../../../../Button/Button'
 
 type Props = {
 	/** Set true to expand the sidebar */

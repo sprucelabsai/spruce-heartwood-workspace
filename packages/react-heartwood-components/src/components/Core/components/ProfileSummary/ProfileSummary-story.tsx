@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs/react'
-import ProfileSummary from './ProfileSummary'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import defaultImageLg from '../../../../../static/assets/users/user-placeholder--96w.png'
+import ProfileSummary from './ProfileSummary'
 
 const stories = storiesOf('Profile Summary', module)
 

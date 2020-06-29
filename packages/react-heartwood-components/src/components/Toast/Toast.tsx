@@ -1,7 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-import Button from '../Button/Button'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import Button from '../Button/Button'
 
 const ToastHeader = (
 	props: SpruceSchemas.Local.IToastHeader

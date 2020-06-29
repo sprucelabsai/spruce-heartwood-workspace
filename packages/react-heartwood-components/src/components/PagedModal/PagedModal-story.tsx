@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs/react'
-import PagedModal from './PagedModal'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
 import { TextInput, FormLayout, FormLayoutItem } from '../Forms'
+import PagedModal from './PagedModal'
 
 interface IPageModalExampleProps {}
 

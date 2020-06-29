@@ -1,6 +1,6 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
 import LayoutBuilder from '../../../LayoutBuilder/LayoutBuilder'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const LayoutSpacing = (props: SpruceSchemas.Local.ILayoutSpacing) => {
 	const { direction, amount, children, layoutBuilder } = props

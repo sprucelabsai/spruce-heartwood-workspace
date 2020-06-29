@@ -1,10 +1,10 @@
 // TODO: Figure out how to split tabs up based on what's visible in the viewport
-import React, { Component, Fragment } from 'react'
-import debounce from 'lodash/debounce'
-import cx from 'classnames'
-import Tab from './components/Tab/Tab'
-import ContextMenu from '../ContextMenu/ContextMenu'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import debounce from 'lodash/debounce'
+import React, { Component, Fragment } from 'react'
+import ContextMenu from '../ContextMenu/ContextMenu'
+import Tab from './components/Tab/Tab'
 
 export interface ITabsState {
 	activeTabIndex: number

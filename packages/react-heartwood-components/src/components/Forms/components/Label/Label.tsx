@@ -1,5 +1,5 @@
-import React from 'react'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import React from 'react'
 
 const Label = (props: SpruceSchemas.Local.ILabel) => {
 	const { id, text, postLabel } = props

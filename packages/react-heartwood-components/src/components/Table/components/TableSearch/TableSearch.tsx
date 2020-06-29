@@ -1,6 +1,6 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React, { ReactElement } from 'react'
 import { default as Autosuggest } from '../../../Forms/components/Autosuggest/Autosuggest'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface ITableSearchProps extends SpruceSchemas.Local.IAutosuggest {}
 

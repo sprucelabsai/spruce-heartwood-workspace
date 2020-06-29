@@ -1,9 +1,9 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React, { Fragment } from 'react'
 import ExpandableListItem from './components/ExpandableListItem/ExpandableListItem'
 import ListHeader from './components/ListHeader/ListHeader'
 import ListItem from './components/ListItem/ListItem'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 // TODO can we delete this?
 export const ListWrapper = (props): React.ReactElement => (

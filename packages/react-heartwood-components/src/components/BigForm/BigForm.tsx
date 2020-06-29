@@ -1,18 +1,18 @@
-import React, { ReactElement } from 'react'
-import cx from 'classnames'
-import BigFormSlide, { BigFormSlidePosition } from './components/BigFormSlide'
-import BigFormSlideBody from './components/BigFormSlideBody'
-import BigFormSlideHeader, {
-	IBigFormSlideHeaderProps
-} from './components/BigFormSlideHeader'
-import BigFormControls from './components/BigFormControls'
-import SprucebotTypedMessage from '../SprucebotTypedMessage/SprucebotTypedMessage'
 import {
 	definitionChoicesToHash,
 	SpruceSchemas,
 	buildDuration,
 	defaultProps
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { ReactElement } from 'react'
+import SprucebotTypedMessage from '../SprucebotTypedMessage/SprucebotTypedMessage'
+import BigFormControls from './components/BigFormControls'
+import BigFormSlide, { BigFormSlidePosition } from './components/BigFormSlide'
+import BigFormSlideBody from './components/BigFormSlideBody'
+import BigFormSlideHeader, {
+	IBigFormSlideHeaderProps
+} from './components/BigFormSlideHeader'
 
 export const BigFormTransitionStyle = definitionChoicesToHash(
 	SpruceSchemas.Local.BigForm.definition,

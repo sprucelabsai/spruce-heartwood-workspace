@@ -1,12 +1,12 @@
 // NOTE: Relies on https://github.com/mosch/react-avatar-editor
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React, { Component } from 'react'
 import AvatarEditor from 'react-avatar-editor'
+import RotateLeftIcon from '../../../static/assets/icons/Design/Rotate/rotate-back.svg'
+import RotateRightIcon from '../../../static/assets/icons/Design/Rotate/rotate-forward.svg'
 import Button from '../Button/Button'
 import Dropzone from '../Dropzone/Dropzone'
 import { Slider } from '../Forms'
-import RotateLeftIcon from '../../../static/assets/icons/Design/Rotate/rotate-back.svg'
-import RotateRightIcon from '../../../static/assets/icons/Design/Rotate/rotate-forward.svg'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IImageCropperProps {
 	/** The image. If null, this will render a Dropzone. */

@@ -1,7 +1,7 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import labelDefinition from './label.definition'
-import inputHelperDefinition from './inputHelper.definition'
 import inputEventsDefinition from './inputEvents.definition'
+import inputHelperDefinition from './inputHelper.definition'
+import labelDefinition from './label.definition'
 
 const radioDefinition = buildSchemaDefinition({
 	id: 'radio',

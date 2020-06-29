@@ -1,10 +1,10 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import React, { Component } from 'react'
 import Lottie from 'react-lottie'
-import cx from 'classnames'
-import chillAnimation from './animations/chill.json'
 import accomplishedAnimation from './animations/accomplished.json'
+import chillAnimation from './animations/chill.json'
 import contemplativeAnimation from './animations/contemplative.json'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 const ANIMATION_MAP = {
 	chill: chillAnimation,

@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 export interface IFormLayoutGroupProps {
 	/** Contents of the FormLayoutGroup. Should be FormLayoutItem components */

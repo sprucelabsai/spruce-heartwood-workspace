@@ -1,6 +1,6 @@
-import React from 'react'
-import cx from 'classnames'
 import { SpruceSchemas, stripNulls } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
 
 const Toggle = (props: SpruceSchemas.Local.IToggle): React.ReactElement => {
 	const { id, className, helper, label, ...rest } = stripNulls(props)

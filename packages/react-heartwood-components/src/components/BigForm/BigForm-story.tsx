@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withKnobs, number, select, boolean } from '@storybook/addon-knobs'
-import BigForm, { BigFormTransitionStyle } from './BigForm'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { withKnobs, number, select, boolean } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import BigForm, { BigFormTransitionStyle } from './BigForm'
 
 const stories = storiesOf('BigForm', module)
 

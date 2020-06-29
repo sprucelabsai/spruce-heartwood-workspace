@@ -1,15 +1,15 @@
 // Uses React Table. See https://react-table.js.org/#/story/readme details.
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import React, { Component, Fragment, ReactElement } from 'react'
 import ReactTable, { TableProps } from 'react-table'
 import { CSSTransition } from 'react-transition-group'
-import cx from 'classnames'
+import Card from '../Card/Card'
+import ContextMenu from '../ContextMenu/ContextMenu'
+import EmptyState from '../EmptyState/EmptyState'
 import { Checkbox } from '../Forms'
 import Icon from '../Icon/Icon'
-import Card from '../Card/Card'
 import Pagination from '../Pagination/Pagination'
-import EmptyState from '../EmptyState/EmptyState'
-import ContextMenu from '../ContextMenu/ContextMenu'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface ITableProps extends Partial<TableProps> {
 	/** Table data */

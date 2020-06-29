@@ -1,3 +1,4 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React, { Component } from 'react'
 import {
 	List,
@@ -11,7 +12,6 @@ import MessageBuilder, {
 	IFromProps
 } from '../../../Message/Message'
 import Text from '../../../Text/Text'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IFeedBuilderMessageProps extends IMessageProps {
 	/** Unique id for the message */

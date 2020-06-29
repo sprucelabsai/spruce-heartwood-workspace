@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { createPortal } from 'react-dom'
-import debounce from 'lodash/debounce'
-import { default as ReactAutosuggest } from 'react-autosuggest'
-import cx from 'classnames'
-import Button from '../../../Button/Button'
-import ClearIcon from '../../../../../static/assets/icons/ic_cancel.svg'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
-import Label from '../Label/Label'
-import InputHelper from '../InputHelper/InputHelper'
+import cx from 'classnames'
+import debounce from 'lodash/debounce'
+import React, { Component } from 'react'
+import { default as ReactAutosuggest } from 'react-autosuggest'
+import { createPortal } from 'react-dom'
+import ClearIcon from '../../../../../static/assets/icons/ic_cancel.svg'
+import Button from '../../../Button/Button'
 import Icon from '../../../Icon/Icon'
+import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 interface IAutosuggestInterfaceState {
 	value: string

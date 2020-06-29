@@ -1,9 +1,9 @@
-import React from 'react'
-import cx from 'classnames'
-import ArrowIcon from '../../../../../static/assets/icons/ic_arrow_drop_down.svg'
 import { SpruceSchemas, stripNulls } from '@sprucelabs/heartwood-skill'
-import Label from '../Label/Label'
+import cx from 'classnames'
+import React from 'react'
+import ArrowIcon from '../../../../../static/assets/icons/ic_arrow_drop_down.svg'
 import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 const Select = (props: SpruceSchemas.Local.ISelect) => {
 	const {

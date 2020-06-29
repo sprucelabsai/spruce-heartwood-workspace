@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
 import FontFaceObserver from 'fontfaceobserver'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
 type LoadResult = {

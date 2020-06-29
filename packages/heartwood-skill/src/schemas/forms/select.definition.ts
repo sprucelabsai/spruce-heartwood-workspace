@@ -1,6 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import labelDefinition from './label.definition'
 import inputHelperDefinition from './inputHelper.definition'
+import labelDefinition from './label.definition'
 
 const selectDefinition = buildSchemaDefinition({
 	id: 'select',

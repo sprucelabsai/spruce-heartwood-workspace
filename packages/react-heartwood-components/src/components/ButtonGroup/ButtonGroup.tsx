@@ -1,8 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import { unionArray } from '../..'
 import Button from '../Button/Button'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const ButtonGroup = (
 	props: SpruceSchemas.Local.IButtonGroup

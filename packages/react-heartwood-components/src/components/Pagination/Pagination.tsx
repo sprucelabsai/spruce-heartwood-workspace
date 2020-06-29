@@ -1,11 +1,11 @@
-import React from 'react'
-import cx from 'classnames'
-import Button from '../Button/Button'
-import Text, { Span } from '../Text/Text'
-import ArrowNext from '../../../static/assets/icons/ic_arrow_forward.svg'
-import ArrowBack from '../../../static/assets/icons/ic_arrow_back.svg'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import ArrowBack from '../../../static/assets/icons/ic_arrow_back.svg'
+import ArrowNext from '../../../static/assets/icons/ic_arrow_forward.svg'
+import Button from '../Button/Button'
 import { TextInput } from '../Forms'
+import Text, { Span } from '../Text/Text'
 
 export interface IPaginationProps {
 	/** The current page */

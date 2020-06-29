@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react'
-import Hamburger from './components/Hamburger/Hamburger'
-import DefaultLockup from './components/DefaultLockup/DefaultLockup'
-import UserMenu from './components/UserMenu/UserMenu'
-import LocationMenu from './components/LocationMenu/LocationMenu'
-import Button from '../../../Button/Button'
 import cx from 'classnames'
+import React, { Component, Fragment } from 'react'
+import Button from '../../../Button/Button'
+import DefaultLockup from './components/DefaultLockup/DefaultLockup'
+import Hamburger from './components/Hamburger/Hamburger'
+import LocationMenu from './components/LocationMenu/LocationMenu'
+import UserMenu from './components/UserMenu/UserMenu'
 
 interface IHeaderPrimaryState {
 	isMenuExpanded: boolean

@@ -1,12 +1,12 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React, { Component } from 'react'
+import { unionArray } from '../../..'
+import Button from '../../Button/Button'
+import Tabs from '../../Tabs/Tabs'
 import Card from '../Card'
-import CardHeader from './CardHeader'
 import CardBody from './CardBody'
 import CardFooter from './CardFooter'
-import Tabs from '../../Tabs/Tabs'
-import Button from '../../Button/Button'
-import { unionArray } from '../../..'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import CardHeader from './CardHeader'
 
 interface IOnboardingCardState {
 	currentStep: number

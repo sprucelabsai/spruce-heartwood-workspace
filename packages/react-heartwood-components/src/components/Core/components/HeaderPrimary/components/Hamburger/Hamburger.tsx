@@ -1,6 +1,6 @@
 import React from 'react'
-import MenuIcon from '../../../../../../../static/assets/icons/ic_menu.svg'
 import CloseIcon from '../../../../../../../static/assets/icons/ic_close.svg'
+import MenuIcon from '../../../../../../../static/assets/icons/ic_menu.svg'
 
 interface IHamburgerProps {
 	/** Set true when the sidebar is visible */

@@ -1,13 +1,13 @@
 // @flow
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs/react'
-import StylesProvider from '../../../../../.storybook/StylesProvider'
-import Sidebar from './Sidebar'
-import HomeIcon from '../../../../../static/assets/icons/Interface-Essential/Home/house-1--16w.svg'
-import TeamsIcon from '../../../../../static/assets/icons/Work-Office-Companies/Human-Resources/human-resources-search-team--16w.svg'
-import NotificationsIcon from '../../../../../static/assets/icons/Messages-Chat-Smileys/Conversation/conversation-text--16w.svg'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { withKnobs } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
+import StylesProvider from '../../../../../.storybook/StylesProvider'
+import HomeIcon from '../../../../../static/assets/icons/Interface-Essential/Home/house-1--16w.svg'
+import NotificationsIcon from '../../../../../static/assets/icons/Messages-Chat-Smileys/Conversation/conversation-text--16w.svg'
+import TeamsIcon from '../../../../../static/assets/icons/Work-Office-Companies/Human-Resources/human-resources-search-team--16w.svg'
+import Sidebar from './Sidebar'
 
 const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>
 

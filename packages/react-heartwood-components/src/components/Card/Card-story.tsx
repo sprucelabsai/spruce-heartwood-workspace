@@ -1,3 +1,4 @@
+import { buildCard } from '@sprucelabs/heartwood-skill'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React, { Fragment } from 'react'
@@ -17,7 +18,6 @@ import Subheading from '../Subheading/Subheading'
 import Text from '../Text/Text'
 import TextContainer from '../TextContainer/TextContainer'
 import { Card, CardBuilder, OnboardingCard, Scores } from './index'
-import { buildCard } from '@sprucelabs/heartwood-skill'
 
 const cards1 = buildCard({
 	header: {

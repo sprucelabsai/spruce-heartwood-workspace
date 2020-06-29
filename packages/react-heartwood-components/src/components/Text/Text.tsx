@@ -1,9 +1,8 @@
-import React, { Fragment, ReactNode /*, HTMLProps*/ } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
-
+import React, { Fragment, ReactNode /*, HTMLProps*/ } from 'react'
 import Button from '../Button/Button'
 import TextStyle from '../TextStyle/TextStyle'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 // Components available for templating
 const TextComponentKey = {

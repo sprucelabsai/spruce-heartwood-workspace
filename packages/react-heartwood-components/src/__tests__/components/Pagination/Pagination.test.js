@@ -1,7 +1,6 @@
 import 'jsdom-global/register'
-import React from 'react'
 import { shallow } from 'enzyme'
-
+import React from 'react'
 import Pagination from '../../../components/Pagination/Pagination'
 
 describe('Pagination tests', () => {

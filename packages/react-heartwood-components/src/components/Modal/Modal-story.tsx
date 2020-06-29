@@ -1,9 +1,8 @@
-import React, { Fragment, Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, object } from '@storybook/addon-knobs/react'
-import Modal from './Modal'
+import { storiesOf } from '@storybook/react'
+import React, { Fragment, Component } from 'react'
+import countries from '../../../.storybook/data/countries'
 import Button from '../Button/Button'
-import Autosuggest from '../Forms/components/Autosuggest/Autosuggest'
 import {
 	Checkbox,
 	TextInput,
@@ -11,8 +10,8 @@ import {
 	FormLayout,
 	FormLayoutItem
 } from '../Forms'
-
-import countries from '../../../.storybook/data/countries'
+import Autosuggest from '../Forms/components/Autosuggest/Autosuggest'
+import Modal from './Modal'
 
 const renderSuggestion = (suggestion: any) => {
 	if (suggestion.isEmptyMessage) {

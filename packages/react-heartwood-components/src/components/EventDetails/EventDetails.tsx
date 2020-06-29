@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import cx from 'classnames'
-
-import EventDetailsItem from './components/EventDetailsItem/EventDetailsItem'
-import { unionArray } from '../..'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { Component } from 'react'
+import { unionArray } from '../..'
+import EventDetailsItem from './components/EventDetailsItem/EventDetailsItem'
 
 interface IEventDetailsState {}
 

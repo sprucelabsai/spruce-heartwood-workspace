@@ -1,8 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
 import Avatar from '../../../Avatar/Avatar'
 import Button from '../../../Button/Button'
 import Text from '../../../Text/Text'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IProfileSummaryProps {
 	/** User profile image */

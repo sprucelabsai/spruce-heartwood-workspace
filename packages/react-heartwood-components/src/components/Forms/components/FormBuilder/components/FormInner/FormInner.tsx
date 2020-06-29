@@ -1,5 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { FormikProps } from 'formik'
 import React from 'react'
-
+import Button from '../../../../../Button/Button'
+import { List } from '../../../../../List'
 import {
 	TextInput,
 	FormLayout,
@@ -8,14 +11,7 @@ import {
 	Select,
 	DurationInput
 } from '../../../../index'
-
-import { List } from '../../../../../List'
-
-import Button from '../../../../../Button/Button'
-
-import { FormikProps } from 'formik'
 import { IFormLayoutProps } from '../../../FormLayout/FormLayout'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IFormValues {
 	[key: string]: string
