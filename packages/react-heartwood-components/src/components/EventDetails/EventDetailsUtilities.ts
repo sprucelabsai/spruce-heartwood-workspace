@@ -1,5 +1,5 @@
-import { cloneDeep, compact, concat, each, find } from 'lodash'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { cloneDeep, compact, concat, each, find } from 'lodash'
 
 type DetailItem = SpruceSchemas.Local.ICalendarEventDetails['items'][number]
 

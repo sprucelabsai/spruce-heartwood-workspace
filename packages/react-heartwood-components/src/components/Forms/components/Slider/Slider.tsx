@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
 import { SpruceSchemas, stripNulls } from '@sprucelabs/heartwood-skill'
+import React, { Component } from 'react'
 import Label from '../Label/Label'
 
 interface ISliderState {

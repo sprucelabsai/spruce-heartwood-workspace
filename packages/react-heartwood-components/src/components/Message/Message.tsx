@@ -1,13 +1,11 @@
-import React from 'react'
-import moment from 'moment-timezone'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
-
+import moment from 'moment-timezone'
+import React from 'react'
 import Avatar from '../Avatar/Avatar'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
-
 import { IMessageReply } from './components/MessageBuilder'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface IFromProps {
 	/** Unique id of the sender */

@@ -1,10 +1,9 @@
-import React, { Component, FormEvent } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import { range, findIndex } from 'lodash'
 import memoize from 'memoize-one'
-
-import Autosuggest from '../Autosuggest/Autosuggest'
+import React, { Component, FormEvent } from 'react'
 import Button from '../../../Button/Button'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import Autosuggest from '../Autosuggest/Autosuggest'
 
 interface IDurationInputProps
 	extends Partial<

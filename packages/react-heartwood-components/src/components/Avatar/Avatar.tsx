@@ -1,8 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-
-import ImageSSR from '../../components/ImageSSR/ImageSSR'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import ImageSSR from '../../components/ImageSSR/ImageSSR'
 
 const Avatar = (props: SpruceSchemas.Local.IAvatar): React.ReactElement => {
 	const {

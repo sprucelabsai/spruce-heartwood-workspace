@@ -1,8 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import uniqBy from 'lodash/uniqBy'
 import React, { Component } from 'react'
 import { VelocityTransitionGroup } from 'velocity-react'
-import uniqBy from 'lodash/uniqBy'
 import Toast from '../../Toast'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 type ToastProps = SpruceSchemas.Local.IToast
 

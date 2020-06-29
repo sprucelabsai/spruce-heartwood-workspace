@@ -1,6 +1,5 @@
 import React from 'react'
 import ListItem from '../List/components/ListItem/ListItem'
-
 import { IRecordSelectionListItemProps } from './RecordSelectionList'
 
 const RecordSelectionListItem = (

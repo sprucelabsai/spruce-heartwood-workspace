@@ -1,8 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
-import SidebarSection from '../SidebarSection/SidebarSection'
 import Button from '../../../../../Button/Button'
 import Text from '../../../../../Text/Text'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import SidebarSection from '../SidebarSection/SidebarSection'
 
 const SidebarHeader = (
 	props: SpruceSchemas.Local.ISidebarHeader

@@ -1,7 +1,3 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
-import { generateLocations } from '../../../.storybook/data/tableData'
-import { map, sampleSize, cloneDeep } from 'lodash'
 import {
 	withKnobs,
 	text,
@@ -9,11 +5,14 @@ import {
 	object,
 	select
 } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import { map, sampleSize, cloneDeep } from 'lodash'
+import React, { Component } from 'react'
 import { userList, userList02 } from '../../../.storybook/data/people'
-
+import { generateLocations } from '../../../.storybook/data/tableData'
 import Card, { CardHeader, CardBody, CardSection } from '../Card'
-import TruncatedList from './TruncatedList'
 import { IRecordSelectionListItemProps } from '../RecordSelectionList/RecordSelectionList'
+import TruncatedList from './TruncatedList'
 
 const stories = storiesOf('TruncatedList', module)
 

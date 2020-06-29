@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import StylesProvider from '../../../../../.storybook/StylesProvider'
 import SaveBar from './SaveBar'
 

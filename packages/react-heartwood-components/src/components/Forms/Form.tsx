@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import Layout from '../Layout/Layout'
-import { SaveBar } from '../Core'
-import Modal from '../Modal/Modal'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import React, { Fragment } from 'react'
+import { SaveBar } from '../Core'
+import Layout from '../Layout/Layout'
+import Modal from '../Modal/Modal'
 
 const defaults = defaultProps(SpruceSchemas.Local.Form.definition)
 

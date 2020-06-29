@@ -1,13 +1,13 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import moment from 'moment'
 import React, { Component } from 'react'
 import 'react-dates/initialize'
 import {
 	DayPickerSingleDateController,
 	DayPickerRangeController
 } from 'react-dates'
-import moment from 'moment'
-import ArrowNext from '../../../../../static/assets/icons/ic_arrow_forward.svg'
 import ArrowBack from '../../../../../static/assets/icons/ic_arrow_back.svg'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import ArrowNext from '../../../../../static/assets/icons/ic_arrow_forward.svg'
 
 interface IDatePickerState {
 	date: Record<string, any>

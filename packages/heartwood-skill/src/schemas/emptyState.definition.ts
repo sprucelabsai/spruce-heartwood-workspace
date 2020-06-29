@@ -1,6 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import iconDefinition from './icon.definition'
 import buttonDefinition from './forms/button.definition'
+import iconDefinition from './icon.definition'
 
 const emptyStateDefinition = buildSchemaDefinition({
 	id: 'emptyState',

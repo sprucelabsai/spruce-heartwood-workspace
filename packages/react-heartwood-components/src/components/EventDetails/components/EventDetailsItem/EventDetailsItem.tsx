@@ -1,3 +1,7 @@
+import {
+	SpruceSchemas,
+	calendarEventDetailItems
+} from '@sprucelabs/heartwood-skill'
 import React, { Fragment } from 'react'
 import Button from '../../../Button/Button'
 import { CardBuilder } from '../../../Card'
@@ -7,11 +11,6 @@ import SplitButton from '../../../SplitButton/SplitButton'
 import Text from '../../../Text/Text'
 // TODO: fix toast types to be able to be used here
 import Toast from '../../../Toast/Toast'
-
-import {
-	SpruceSchemas,
-	calendarEventDetailItems
-} from '@sprucelabs/heartwood-skill'
 
 const MDTextContainer = (
 	props: SpruceSchemas.Local.IMarkdown

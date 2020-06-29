@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import cx from 'classnames'
-import CardHeader from './components/CardHeader'
-import CardBody from './components/CardBody'
-import CardSection from './components/CardSection'
-import CardFooter from './components/CardFooter'
 import {
 	SpruceSchemas,
 	defaultProps,
 	DefaultProps
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { Component } from 'react'
+import CardBody from './components/CardBody'
+import CardFooter from './components/CardFooter'
+import CardHeader from './components/CardHeader'
+import CardSection from './components/CardSection'
 
 interface ICardDefaultProps {
 	isCentered: boolean

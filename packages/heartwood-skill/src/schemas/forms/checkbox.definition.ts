@@ -1,6 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import inputHelperDefinition from './inputHelper.definition'
 import inputEventsDefinition from './inputEvents.definition'
+import inputHelperDefinition from './inputHelper.definition'
 
 const checkboxDefinition = buildSchemaDefinition({
 	id: 'checkbox',

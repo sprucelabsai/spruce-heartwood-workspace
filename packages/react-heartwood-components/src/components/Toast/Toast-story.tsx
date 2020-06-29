@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import Toast from './Toast'
 import ToastWrapper from './components/ToastWrapper/ToastWrapper'
+import Toast from './Toast'
 
 const stories = storiesOf('Toast', module)
 

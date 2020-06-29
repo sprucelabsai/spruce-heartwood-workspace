@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
-import cx from 'classnames'
-import Button from '../../Button/Button'
-import Icon from '../../Icon/Icon'
-import ContextMenu from '../../ContextMenu/ContextMenu'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { Fragment } from 'react'
+import Button from '../../Button/Button'
+import ContextMenu from '../../ContextMenu/ContextMenu'
+import Icon from '../../Icon/Icon'
 
 // Card Header
 const CardHeader = (

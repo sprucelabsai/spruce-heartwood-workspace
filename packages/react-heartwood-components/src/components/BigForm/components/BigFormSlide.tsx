@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react'
 import cx from 'classnames'
-import BigFormSlideHeader from './BigFormSlideHeader'
+import React, { ReactElement } from 'react'
 import BigFormSlideBody from './BigFormSlideBody'
+import BigFormSlideHeader from './BigFormSlideHeader'
 
 export enum BigFormSlidePosition {
 	Past = 'past',

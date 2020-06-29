@@ -1,7 +1,7 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import LayoutSection from './components/LayoutSection/LayoutSection'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 const Layout = (props: SpruceSchemas.Local.ILayout) => {
 	const {

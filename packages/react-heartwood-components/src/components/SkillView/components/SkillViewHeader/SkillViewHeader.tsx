@@ -1,10 +1,10 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import BackIcon from '../../../../../static/assets/icons/ic_keyboard_arrow_left.svg'
 import Button from '../../../Button/Button'
 import Icon from '../../../Icon/Icon'
 import Tabs from '../../../Tabs/Tabs'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const SkillViewHeader = (props: SpruceSchemas.Local.ISkillViewHeader) => {
 	const {

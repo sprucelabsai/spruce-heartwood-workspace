@@ -1,5 +1,5 @@
-import React from 'react'
 import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import React from 'react'
 
 const defaults = defaultProps(SpruceSchemas.Local.FormBuilder.definition)
 

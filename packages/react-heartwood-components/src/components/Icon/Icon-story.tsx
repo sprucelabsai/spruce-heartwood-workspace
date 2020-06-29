@@ -1,10 +1,9 @@
-import React from 'react'
-import { each, keys, map } from 'lodash'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, select } from '@storybook/addon-knobs/react'
-import Icon from './Icon'
-
+import { storiesOf } from '@storybook/react'
+import { each, keys, map } from 'lodash'
+import React from 'react'
 import * as icons from '../../icons.js'
+import Icon from './Icon'
 
 import './demo.scss'
 

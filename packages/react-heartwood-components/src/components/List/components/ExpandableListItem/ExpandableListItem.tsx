@@ -1,6 +1,6 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React, { Component } from 'react'
 import ListItem from '../ListItem/ListItem'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IExpandableListItemState {
 	/** Is the list item expanded */

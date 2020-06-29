@@ -1,14 +1,14 @@
-import React from 'react'
-import cx from 'classnames'
-import Label from '../Label/Label'
-import Icon from '../../../Icon/Icon'
-import Button from '../../../Button/Button'
-import InputHelper from '../InputHelper/InputHelper'
 import {
 	SpruceSchemas,
 	defaultProps,
 	stripNulls
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import Button from '../../../Button/Button'
+import Icon from '../../../Icon/Icon'
+import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 const defaults = defaultProps(SpruceSchemas.Local.TextInput.definition)
 

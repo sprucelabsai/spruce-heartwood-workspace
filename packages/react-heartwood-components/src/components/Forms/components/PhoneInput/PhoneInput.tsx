@@ -1,9 +1,9 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import React, { Component } from 'react'
 import ReactPhoneInput from 'react-phone-number-input'
-import cx from 'classnames'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
-import Label from '../Label/Label'
 import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 // For validating and formatting
 export {

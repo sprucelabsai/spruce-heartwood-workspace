@@ -1,6 +1,3 @@
-import React, { Component } from 'react'
-import { map, sampleSize } from 'lodash'
-import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
 	boolean,
@@ -8,13 +5,15 @@ import {
 	text,
 	object
 } from '@storybook/addon-knobs/react'
-
+import { storiesOf } from '@storybook/react'
+import { map, sampleSize } from 'lodash'
+import React, { Component } from 'react'
 import { generateLocations } from '../../../.storybook/data/tableData'
+import Card, { CardHeader, CardBody } from '../Card'
+import Modal from '../Modal/Modal'
 import RecordSelectionList, {
 	IRecordSelectionListItemProps
 } from './RecordSelectionList'
-import Modal from '../Modal/Modal'
-import Card, { CardHeader, CardBody } from '../Card'
 
 const stories = storiesOf('RecordSelectionList', module)
 

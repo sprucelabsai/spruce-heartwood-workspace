@@ -1,6 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import listItemDefinition from './listItem.definition'
 import iconDefinition from '../icon.definition'
+import listItemDefinition from './listItem.definition'
 
 const expandableListItemDefinition = buildSchemaDefinition({
 	id: 'expandableListItem',

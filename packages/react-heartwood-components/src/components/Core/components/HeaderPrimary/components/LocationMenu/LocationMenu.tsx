@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
+import React, { Component } from 'react'
 import { VelocityTransitionGroup } from 'velocity-react'
+import Button from '../../../../../Button/Button'
 import Card from '../../../../../Card/Card'
 import List from '../../../../../List/List'
-import Button from '../../../../../Button/Button'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ILocationMenuProps {
 	isMenuVisible: boolean

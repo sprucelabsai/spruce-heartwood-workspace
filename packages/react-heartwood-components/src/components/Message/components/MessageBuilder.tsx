@@ -1,12 +1,11 @@
-import React, { Fragment } from 'react'
-
 import cx from 'classnames'
-
+import React, { Fragment } from 'react'
+// eslint-disable-next-line import/order
 import Message from '../Message'
-
 import {} from '../Message'
 
 // COMPONENTS THAT CAN GO INTO THIS COMPONENT, KEEP MINIMAL
+/* eslint import/order: 0 */
 import Text from '../../Text/Text'
 import TextStyle from '../../TextStyle/TextStyle'
 import Button from '../../Button/Button'

@@ -1,12 +1,12 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import React, { Component, Fragment } from 'react'
 import ReactDropzone, { DropEvent } from 'react-dropzone'
-import cx from 'classnames'
-import Button from '../Button/Button'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
-import DefaultIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-upload.svg'
-import UploadedIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-check.svg'
-import DropIcon from '../../../static/assets/icons/Interface-Essential/Select/cursor-select-4.svg'
 import WarnIcon from '../../../static/assets/icons/Interface-Essential/Alerts/alert-triangle--56w.svg'
+import DropIcon from '../../../static/assets/icons/Interface-Essential/Select/cursor-select-4.svg'
+import UploadedIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-check.svg'
+import DefaultIcon from '../../../static/assets/icons/Interface-Essential/Time-Files/time-clock-file-upload.svg'
+import Button from '../Button/Button'
 import Label from '../Forms/components/Label/Label'
 
 interface IDropZoneState {

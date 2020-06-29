@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 interface ILoaderProps {
 	/* Set to true if loader is on a dark background */

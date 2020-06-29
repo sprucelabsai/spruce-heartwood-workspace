@@ -1,12 +1,10 @@
-import React, { Component, Fragment, ReactElement } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
-
+import React, { Component, Fragment, ReactElement } from 'react'
 import Button from '../Button/Button'
 import EmptyState from '../EmptyState/EmptyState'
 import RecordSelectionList from '../RecordSelectionList/RecordSelectionList'
-
 import { IRecordSelectionListItemProps } from '../RecordSelectionList/RecordSelectionList'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ITruncatedListProps {
 	/** Optional class name for the component */

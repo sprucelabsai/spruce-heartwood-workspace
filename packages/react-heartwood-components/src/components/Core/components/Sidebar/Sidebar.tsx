@@ -1,3 +1,4 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import Button from '../../../Button/Button'
@@ -5,7 +6,6 @@ import Text from '../../../Text/Text'
 import SidebarExpander from './components/SidebarExpander/SidebarExpander'
 import SidebarItem from './components/SidebarItem/SidebarItem'
 import SidebarSection from './components/SidebarSection/SidebarSection'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 const defaults = defaultProps(SpruceSchemas.Local.Sidebar.definition)
 

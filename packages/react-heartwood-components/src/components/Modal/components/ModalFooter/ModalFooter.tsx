@@ -1,6 +1,6 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
 import Button from '../../../Button/Button'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface IModalFooterProps {
 	/** The primary action in the footer */

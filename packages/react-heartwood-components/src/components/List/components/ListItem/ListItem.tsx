@@ -1,3 +1,4 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React, { Fragment } from 'react'
 import Avatar from '../../../Avatar/Avatar'
@@ -5,9 +6,8 @@ import Button from '../../../Button/Button'
 import ContextMenu from '../../../ContextMenu/ContextMenu'
 import { Checkbox, Radio, Toggle } from '../../../Forms'
 import Icon from '../../../Icon/Icon'
-import List from '../../List'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 import Image from '../../../Image/Image'
+import List from '../../List'
 
 const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 	const {

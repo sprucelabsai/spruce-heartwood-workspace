@@ -1,15 +1,13 @@
-import React, { Component } from 'react'
-import Typing from './react-typing-animation/Typing'
-
-import cx from 'classnames'
-import compact from 'lodash/compact'
-
-import SprucebotAvatar from '../SprucebotAvatar/SprucebotAvatar'
 import {
 	SpruceSchemas,
 	defaultProps,
 	definitionChoicesToHash
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import compact from 'lodash/compact'
+import React, { Component } from 'react'
+import SprucebotAvatar from '../SprucebotAvatar/SprucebotAvatar'
+import Typing from './react-typing-animation/Typing'
 
 type Message = SpruceSchemas.Local.ISprucebotTypedMessage
 type Sentence = SpruceSchemas.Local.ISprucebotTypedMessageSentence

@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 const Cursor = (props: { className: string }) => (
 	<div className={cx(props.className, 'cursor')}>|</div>

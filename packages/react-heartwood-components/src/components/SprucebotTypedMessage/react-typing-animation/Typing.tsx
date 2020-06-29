@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
 import requestAnimationFrame from 'raf'
-
-import { randomize, extractText, replaceTreeText } from './utils'
+import React, { Component } from 'react'
 import { default as Backspace } from './Backspace'
-import { default as Reset } from './Reset'
-import { default as Delay } from './Delay'
-import { default as Speed } from './Speed'
 import { default as Cursor } from './Cursor'
+import { default as Delay } from './Delay'
+import { default as Reset } from './Reset'
+import { default as Speed } from './Speed'
+import { randomize, extractText, replaceTreeText } from './utils'
 
 export enum Step {
 	Line = 'line',

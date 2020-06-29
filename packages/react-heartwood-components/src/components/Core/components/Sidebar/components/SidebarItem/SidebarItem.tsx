@@ -1,8 +1,8 @@
-import React from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
+import React from 'react'
 import Button from '../../../../../Button/Button'
 import Icon from '../../../../../Icon/Icon'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const isCurrentParent = (items: SpruceSchemas.Local.ISidebarItem[]) => {
 	if (items) {

@@ -1,9 +1,9 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React, { Component, Fragment } from 'react'
 import { createPortal } from 'react-dom'
 import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
 
 const splitButtonDefaultProps = defaultProps(
 	SpruceSchemas.Local.SplitButton.definition

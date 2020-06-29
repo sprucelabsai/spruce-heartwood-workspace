@@ -1,7 +1,7 @@
-import * as React from 'react'
-import cx from 'classnames'
-import Modal, { IModalProps } from '../Modal/Modal'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import * as React from 'react'
+import Modal, { IModalProps } from '../Modal/Modal'
 
 interface IModalPageProps {
 	/** The title for this page */

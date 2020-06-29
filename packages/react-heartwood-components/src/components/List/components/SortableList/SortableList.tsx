@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
+import React, { Component, Fragment } from 'react'
 import {
 	SortableContainer,
 	SortableElement,
@@ -7,7 +8,6 @@ import {
 } from 'react-sortable-hoc'
 import ListHeader from '../ListHeader/ListHeader'
 import ListItem from '../ListItem/ListItem'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface ISortableListProps extends SpruceSchemas.Local.IList {
 	/** OnConfirm callback */

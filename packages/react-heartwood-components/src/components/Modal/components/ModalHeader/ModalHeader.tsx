@@ -1,8 +1,8 @@
-import React from 'react'
 import cx from 'classnames'
-import Button from '../../../Button/Button'
+import React from 'react'
 import ArrowBack from '../../../../../static/assets/icons/ic_arrow_back.svg'
 import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
+import Button from '../../../Button/Button'
 
 export interface IModalHeaderProps {
 	/** Title text */

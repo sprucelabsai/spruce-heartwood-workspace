@@ -1,3 +1,4 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
 import { unionArray } from '../../..'
 import Button from '../../Button/Button'
@@ -13,7 +14,6 @@ import CardFooter from './CardFooter'
 import CardHeader from './CardHeader'
 import OnboardingCard from './OnboardingCard'
 import Scores from './Scores'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 type CardBuilderBodyItem = SpruceSchemas.Local.ICardBuilderBody['items'][number]
 

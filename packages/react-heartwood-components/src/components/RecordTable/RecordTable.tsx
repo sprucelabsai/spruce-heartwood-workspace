@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react'
-import { default as Table, ITableProps } from '../Table/Table'
+import { SortingRule } from 'react-table'
+import Button from '../Button/Button'
+import EmptyState from '../EmptyState/EmptyState'
+import { TextInput } from '../Forms'
+import Loader from '../Loader/Loader'
 import {
 	default as TableSearch,
 	ITableSearchProps
 } from '../Table/components/TableSearch/TableSearch'
+import { default as Table, ITableProps } from '../Table/Table'
 import Tabs from '../Tabs/Tabs'
-import { TextInput } from '../Forms'
-import Button from '../Button/Button'
-import EmptyState from '../EmptyState/EmptyState'
-import Loader from '../Loader/Loader'
-import { SortingRule } from 'react-table'
 
 const RECORD_TABLE_INITIAL_LIMIT = 50
 

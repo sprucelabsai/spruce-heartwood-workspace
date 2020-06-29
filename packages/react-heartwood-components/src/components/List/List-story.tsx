@@ -1,3 +1,4 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React, { Component, Fragment } from 'react'
@@ -21,7 +22,6 @@ import ListHeader from './components/ListHeader/ListHeader'
 import ListItem from './components/ListItem/ListItem'
 import SortableList from './components/SortableList/SortableList'
 import List, { ListWrapper } from './List'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const stories = storiesOf('List', module)
 

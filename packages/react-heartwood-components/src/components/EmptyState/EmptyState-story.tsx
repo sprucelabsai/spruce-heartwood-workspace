@@ -1,9 +1,9 @@
-import React from 'react'
-import { each, keys } from 'lodash'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, object } from '@storybook/addon-knobs'
-import EmptyState from './EmptyState'
+import { storiesOf } from '@storybook/react'
+import { each, keys } from 'lodash'
+import React from 'react'
 import * as icons from '../../icons.js'
+import EmptyState from './EmptyState'
 
 const options = {}
 

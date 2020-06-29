@@ -1,6 +1,6 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import toastHeaderDefinition from './toastHeader.definition'
 import buttonDefinition from '../forms/button.definition'
+import toastHeaderDefinition from './toastHeader.definition'
 
 const toastDefinition = buildSchemaDefinition({
 	id: 'toast',

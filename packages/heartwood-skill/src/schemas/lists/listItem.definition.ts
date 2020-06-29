@@ -1,13 +1,13 @@
 import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import buttonDefinition from '../forms/button.definition'
-import iconDefinition from '../icon.definition'
-import toggleDefinition from '../forms/toggle.definition'
-import contextMenuDefinition from '../contextMenu.definition'
-import radioDefinition from '../forms/radio.definition'
-import checkboxDefinition from '../forms/checkbox.definition'
-import listItemWarningDefinition from './listItemWarning.definition'
 import avatarDefinition from '../avatar.definition'
+import contextMenuDefinition from '../contextMenu.definition'
+import buttonDefinition from '../forms/button.definition'
+import checkboxDefinition from '../forms/checkbox.definition'
+import radioDefinition from '../forms/radio.definition'
+import toggleDefinition from '../forms/toggle.definition'
+import iconDefinition from '../icon.definition'
 import imageDefinition from '../image.definition'
+import listItemWarningDefinition from './listItemWarning.definition'
 
 const listItemDefinition = buildSchemaDefinition({
 	id: 'listItem',

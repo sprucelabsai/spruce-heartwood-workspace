@@ -1,10 +1,10 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import { debounce } from 'lodash'
 import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IContextMenuState {
 	/** Show the menu */

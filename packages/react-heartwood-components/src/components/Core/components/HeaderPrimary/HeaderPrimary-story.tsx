@@ -1,9 +1,9 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, object, text } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import StylesProvider from '../../../../../.storybook/StylesProvider'
-import HeaderPrimary from './HeaderPrimary'
 import user01image from '../../../../../static/assets/users/user-01--96w.png'
+import HeaderPrimary from './HeaderPrimary'
 
 const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>
 

@@ -1,7 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-import Avatar from './Avatar'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import Avatar from './Avatar'
 
 const UserAvatar = (props: SpruceSchemas.Local.IUserAvatar) => {
 	const { user, ...avatar } = props

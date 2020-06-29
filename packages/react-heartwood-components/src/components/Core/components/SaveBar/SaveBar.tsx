@@ -1,9 +1,9 @@
+import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import cx from 'classnames'
-import Button from '../../../Button/Button'
 import { CSSTransition } from 'react-transition-group'
-import { SpruceSchemas, defaultProps } from '@sprucelabs/heartwood-skill'
+import Button from '../../../Button/Button'
 
 interface ISaveBarState {}
 
