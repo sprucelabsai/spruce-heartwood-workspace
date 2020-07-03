@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@sprucelabs/test": "^2.1.0-prerelease-assert-type.1",
+    "arkit": "^1.6.4",
     "chokidar-cli": "^2.1.0",
     "concurrently": "^5.0.2",
     "conventional-changelog-sprucelabs": "^1.1.0",
