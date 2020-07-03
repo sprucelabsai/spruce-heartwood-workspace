@@ -9,6 +9,7 @@
     "gulp-cli": "2.0.1"
   },
   "devDependencies": {
+    "arkit": "^1.6.4",
     "autoprefixer": "^9.3.1",
     "cssnano": "^4.1.7",
     "fs-extra": "^7.0.1",
