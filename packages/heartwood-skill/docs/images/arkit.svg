@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="172px" preserveAspectRatio="none" style="width:754px;height:172px;" version="1.1" viewBox="0 0 754 172" width="754px" zoomAndPan="magnify"><defs/><g><ellipse cx="408.7487" cy="21.242" fill="#F8F8F8" rx="27.7487" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="35" x="391.2487" y="24.9842">index</text><ellipse cx="46.4767" cy="75.742" fill="#F8F8F8" rx="40.4767" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="53" x="19.9767" y="79.4842">buildCard</text><ellipse cx="163.4281" cy="75.6856" fill="#F8F8F8" rx="63.9281" ry="15.1856" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="98" x="114.4281" y="79.4278">buildEventDetails</text><ellipse cx="314.7321" cy="75.4464" fill="#F8F8F8" rx="75.2321" ry="17.4464" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="125" x="252.2321" y="79.1886">buildEventDetailsItem</text><ellipse cx="408.659" cy="139.0318" fill="#F8F8F8" rx="98.159" ry="22.0318" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="176" x="320.659" y="142.774">calendarEventDetails.definition</text><ellipse cx="481.4117" cy="75.742" fill="#F8F8F8" rx="53.9117" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="445.4117" y="79.4842">defaultProps</text><!--MD5=[2f533a7c8f9ae50f100e314edda4ee66]
+entity _stripNulls--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="73" x="548" y="58.5"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="53" x="558" y="80.5059">stripNulls</text><ellipse cx="688.6295" cy="75.4259" fill="#F8F8F8" rx="55.1295" ry="13.4259" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="75" x="651.1295" y="79.1681">utilities.types</text><!--MD5=[a348411933964e39d9634175b839b368]
+link <b>index</b> to buildCard--><path d="M381.187,23.066 C326.122,25.665 198.112,33.979 93.5,58 C87.5736,59.361 81.3572,61.2188 75.4571,63.1982 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;buildCard" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="70.5887,64.8813,80.4017,65.7211,75.3143,63.2476,77.7878,58.1602,70.5887,64.8813" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[2d5125cd4f07f15f7eb24deef79a6a68]
+link <b>index</b> to buildEventDetails--><path d="M383.819,26.846 C349.89,33.56 286.961,46.203 233.5,58 C226.268,59.596 218.63,61.3378 211.162,63.0727 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;buildEventDetails" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="206.026,64.2708,215.6998,66.1193,210.895,63.1337,213.8805,58.3289,206.026,64.2708" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[2d1948c4c1253a9dfe5d3a1ef1f688d0]
+link <b>index</b> to buildEventDetailsItem--><path d="M391.695,31.386 C379.252,38.335 361.912,48.02 346.819,56.45 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;buildEventDetailsItem" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="342.215,59.021,352.0229,58.1243,346.5802,56.5827,348.1217,51.14,342.215,59.021" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[5ef9777ee8c6d08a733fbf3498af19ba]
+link <b>index</b> to calendarEventDetails.definition--><path d="M408.5,34.414 C408.5,52.671 408.5,87.2088 408.5,111.3651 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;calendarEventDetails.definition" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="408.5,116.6563,412.5,107.6563,408.5,111.6563,404.5,107.6563,408.5,116.6563" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[482ac267c74182aff0a78aea87657d66]
+link <b>index</b> to defaultProps--><path d="M422.922,32.372 C433.876,40.25 449.08,51.184 461.253,59.939 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;defaultProps" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="465.587,63.0557,460.6153,54.5538,461.5276,60.1366,455.9448,61.0489,465.587,63.0557" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[6a454698a60626cf2af18971956326f2]
+link <b>index</b> to _stripNulls--><path d="M432.259,27.653 C459.034,34.203 503.749,45.684 541.5,58 C542.032,58.174 542.567,58.35 543.105,58.529 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;_stripNulls" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="547.996,60.201,540.7758,53.5026,543.2653,58.5822,538.1857,61.0717,547.996,60.201" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[ddd57e667bbf3cd843fe71e4c476d1ca]
+link <b>index</b> to utilities.types--><path d="M434.619,25.421 C475.84,31.016 558.401,43.016 627.5,58 C634.73,59.568 642.384,61.4548 649.737,63.3838 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;utilities.types" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="654.771,64.7225,647.1005,58.5449,649.9388,63.4382,645.0455,66.2765,654.771,64.7225" style="stroke: #000000; stroke-width: 1.0;"/><script type="text/plantuml"><![CDATA[MD5=[c7c630d8cd49d3982c966eaf6a5e0041]
+@startuml
+
+scale max 1920 width
+top to bottom direction
+
+skinparam nodesep 12
+skinparam ranksep 24
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Tahoma
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam dpi 150
+skinparam arrowColor black
+skinparam arrowThickness 0.5
+skinparam packageTitleAlignment left
+
+skinparam usecase {
+  borderThickness 0.5
+}
+
+skinparam rectangle {
+  borderThickness 0.5
+}
+
+skinparam component {
+  borderThickness 1
+}
+
+
+(<b>index</b>)
+(buildCard)
+(buildEventDetails)
+(buildEventDetailsItem)
+(calendarEventDetails.definition)
+(defaultProps)
+rectangle "stripNulls" as _stripNulls
+(utilities.types)
+
+
+(<b>index</b>) --[thickness=1]> (buildCard)
+(<b>index</b>) --[thickness=1]> (buildEventDetails)
+(<b>index</b>) --[thickness=1]> (buildEventDetailsItem)
+(<b>index</b>) ---[thickness=1]> (calendarEventDetails.definition)
+(<b>index</b>) --[thickness=1]> (defaultProps)
+(<b>index</b>) --[thickness=1]> _stripNulls
+(<b>index</b>) --[thickness=1]> (utilities.types)
+
+@enduml
+
+
+' View and edit on https://arkit.pro
+]]></script></g></svg>
