@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build.disabled": "npm run clean && npm run build.node",
-    "build": "npm run build:node",
+    "build": "npm run build.node",
     "build.node": "tsc | true",
     "watch": "chokidar 'src/**/*' 'index.ts' '.spruce' -c 'npm run build'",
     "clean": "rm -rf build/",
