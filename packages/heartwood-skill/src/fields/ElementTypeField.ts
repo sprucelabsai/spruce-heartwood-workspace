@@ -1,5 +1,5 @@
 import React from 'react'
-import { FieldType } from '#spruce:schema/fields/fieldType'
+import FieldType from '#spruce:schema/fields/fieldType'
 import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
 import {
 	IFieldTemplateDetailOptions,

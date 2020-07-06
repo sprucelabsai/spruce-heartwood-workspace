@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import buttonDefinition from './button.definition'
-import inputEventsDefinition from './inputEvents.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import buttonDefinition from './button.builder'
+import inputEventsDefinition from './inputEvents.builder'
 
 const textInputDefinition = buildSchemaDefinition({
 	id: 'textInput',

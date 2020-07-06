@@ -1,4 +1,5 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const bigFormDefinition = buildSchemaDefinition({
 	id: 'bigForm',

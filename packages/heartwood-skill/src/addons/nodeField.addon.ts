@@ -1,4 +1,4 @@
-import { registerFieldType } from '@sprucelabs/schema'
+import registerFieldType from '@sprucelabs/schema/src/utilities/registerFieldType'
 import NodeField from '../fields/NodeField'
 
 export default registerFieldType({

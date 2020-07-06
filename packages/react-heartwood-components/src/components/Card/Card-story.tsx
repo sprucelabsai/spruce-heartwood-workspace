@@ -20,19 +20,32 @@ import { Card, CardBuilder, OnboardingCard, Scores } from './index'
 import { buildCard } from '@sprucelabs/heartwood-skill'
 
 const cards1 = buildCard({
+	willMountHook: heartwood => {
+		heartwood.setState('buttonText', 'Click here!')
+	},
+	didMountHook: async heartwood => {
+		heartwood.setState({ isLoading: true })
+		const uiEnhancements = await heartwood.mercury.emit(response => {
+			heartwood.setState({ uiEnhancements: response })
+		})
+		heartwood.setState({ uiEnhancements, isLoading: false })
+	},
 	header: {
 		title: 'Introducing the Card Builder! (Note: WIP)',
-		labelText: '',
+		labelTextHook: hw => (hw.getState('isLoading') ? 'Loading braaaah!!' : ''),
 		buttons: [
 			{
 				id: 'foo',
 				type: 'button',
-				text: 'More Info',
+				textHook: heartwood => heartwood.getState('buttonText'),
 				href: '#',
 				htmlAttributes: {
 					target: '_blank'
 				},
-				isSmall: true
+				isSmall: true,
+				onClickHook: heartwood => {
+					heartwood.setState({ buttonText: 'You clicked it!' })
+				}
 			}
 		]
 	},

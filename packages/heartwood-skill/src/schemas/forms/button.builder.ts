@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import iconDefinition from '../icon.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import iconDefinition from '../icon.builder'
 
 const buttonDefinition = buildSchemaDefinition({
 	id: 'button',

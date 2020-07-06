@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import inputEventsDefinition from './inputEvents.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import inputEventsDefinition from './inputEvents.builder'
 
 const autosuggestDefinition = buildSchemaDefinition({
 	id: 'autosuggest',

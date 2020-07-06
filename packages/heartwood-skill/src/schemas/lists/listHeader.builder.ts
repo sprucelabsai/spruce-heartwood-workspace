@@ -1,5 +1,5 @@
 import { FieldType, buildSchemaDefinition } from '@sprucelabs/schema'
-import buttonDefinition from '../forms/button.definition'
+import buttonDefinition from '../forms/button.builder'
 
 const listHeaderDefinition = buildSchemaDefinition({
 	id: 'listHeader',

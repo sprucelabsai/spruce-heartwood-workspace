@@ -1,7 +1,8 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import listHeaderDefinition from './listHeader.definition'
-import radioDefinition from '../forms/radio.definition'
-import checkboxDefinition from '../forms/checkbox.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import listHeaderDefinition from './listHeader.builder'
+import radioDefinition from '../forms/radio.builder'
+import checkboxDefinition from '../forms/checkbox.builder'
 
 const listDefinition = buildSchemaDefinition({
 	id: 'list',

@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import iconDefinition from './icon.definition'
-import buttonDefinition from './forms/button.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import iconDefinition from './icon.builder'
+import buttonDefinition from './forms/button.builder'
 
 const emptyStateDefinition = buildSchemaDefinition({
 	id: 'emptyState',

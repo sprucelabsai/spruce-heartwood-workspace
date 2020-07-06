@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import layoutSectionDefinition from './layoutSection.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import layoutSectionDefinition from './layoutSection.builder'
 
 const layoutDefinition = buildSchemaDefinition({
 	id: 'layout',

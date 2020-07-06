@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import { calendarEventDetailItems } from './calendars/calendarEventDetails.definition'
-import { cardBuilderBodyItems } from './cards/cardBuilder.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import { calendarEventDetailItems } from './calendars/calendarEventDetails.builder'
+import { cardBuilderBodyItems } from './cards/cardBuilder.builder'
 
 const uIEnhancementSectionDefinition = buildSchemaDefinition({
 	id: 'uIEnhancementSection',

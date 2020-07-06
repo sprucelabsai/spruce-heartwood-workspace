@@ -1,5 +1,5 @@
 /** Field Types */
-export enum FieldType {
+enum FieldType {
 	/** An address with geocoding ability *coming soon* */
 	Address = 'address',
 	/** A true/false. Converts false string to false, all other strings to true. */
@@ -28,12 +28,6 @@ export enum FieldType {
 	Select = 'select',
 	/** A text field. Converts non-strings into strings by calling toString(). Size set by options. */
 	Text = 'text',
-	/** Set my signature to \'(someArg: SomeType, maybeOption?: boolean) => Promise<AnotherType>\' and I\'ll do the rest! */
-	Callback = 'callback',
-	/** A React.ElementType (you can use it as a jsx element) */
-	ElementType = 'elementType',
-	/** A universal event handler */
-	EventCallback = 'eventCallback',
-	/** A React.Node */
-	Node = 'node'
 }
+
+export default FieldType

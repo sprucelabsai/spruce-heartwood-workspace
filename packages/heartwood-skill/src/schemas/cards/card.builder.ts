@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import cardHeaderDefinition from './cardHeader.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import cardHeaderDefinition from './cardHeader.builder'
 
 const cardDefinition = buildSchemaDefinition({
 	id: 'card',

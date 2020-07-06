@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import cardBodyDefinition from './cardBody.definition'
-import buttonGroupDefinition from '../forms/buttonGroup.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import cardBodyDefinition from './cardBody.builder'
+import buttonGroupDefinition from '../forms/buttonGroup.builder'
 export const cardBuilderBodyItems: string[] = [
 	'button',
 	'image',

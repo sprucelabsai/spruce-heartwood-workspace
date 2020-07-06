@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import { sidebarSpacingChoices } from './sidebar.definition'
-import layoutBuilderDefinition from '../layouts/layoutBuilder.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import { sidebarSpacingChoices } from './sidebar.builder'
+import layoutBuilderDefinition from '../layouts/layoutBuilder.builder'
 
 const sidebarDefinition = buildSchemaDefinition({
 	id: 'sidebarSection',

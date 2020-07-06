@@ -1,5 +1,5 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import headingDefinition from './heading.definition'
+import headingDefinition from './heading.builder'
 
 const subheadingDefinition = buildSchemaDefinition({
 	id: 'subheading',

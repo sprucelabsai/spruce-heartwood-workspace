@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import inputHelperDefinition from './inputHelper.definition'
-import labelDefinition from './label.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import inputHelperDefinition from './inputHelper.builder'
+import labelDefinition from './label.builder'
 
 const toggleDefinition = buildSchemaDefinition({
 	id: 'Toggle',

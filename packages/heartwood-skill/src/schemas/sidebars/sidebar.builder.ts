@@ -3,7 +3,7 @@ import {
 	FieldType,
 	ISelectFieldDefinitionChoice
 } from '@sprucelabs/schema'
-import sidebarHeaderDefinition from './sidebarHeader.definition'
+import sidebarHeaderDefinition from './sidebarHeader.builder'
 
 export const sidebarSpacingChoices: ISelectFieldDefinitionChoice[] = [
 	{ value: 'base', label: 'Base' },

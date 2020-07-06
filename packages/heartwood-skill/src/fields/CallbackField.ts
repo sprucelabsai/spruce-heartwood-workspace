@@ -1,9 +1,9 @@
 import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
 import {
 	IFieldDefinition,
-	IFieldTemplateDetailOptions,
-	FieldType
+	IFieldTemplateDetailOptions
 } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 type ICallbackFieldDefinitionValue = () => any
 

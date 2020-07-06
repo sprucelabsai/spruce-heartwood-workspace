@@ -1,9 +1,9 @@
 import {
-	FieldType,
 	IFieldTemplateDetailOptions,
 	IFieldDefinition
 } from '@sprucelabs/schema'
 import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
+import FieldType from '#spruce/schemas/fields/fieldType'
 
 export type IEventCallbackName =
 	| 'React.SyntheticEvent<...>'

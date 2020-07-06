@@ -1,7 +1,8 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import labelDefinition from './label.definition'
-import inputHelperDefinition from './inputHelper.definition'
-import inputEventsDefinition from './inputEvents.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import labelDefinition from './label.builder'
+import inputHelperDefinition from './inputHelper.builder'
+import inputEventsDefinition from './inputEvents.builder'
 
 const radioDefinition = buildSchemaDefinition({
 	id: 'radio',

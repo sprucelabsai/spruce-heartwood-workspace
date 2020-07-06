@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import labelDefinition from './label.definition'
-import inputEventsDefinition from './inputEvents.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import labelDefinition from './label.builder'
+import inputEventsDefinition from './inputEvents.builder'
 
 const sliderDefinition = buildSchemaDefinition({
 	id: 'slider',

@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import skillViewHeaderDefinition from './skillViewHeader.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import skillViewHeaderDefinition from './skillViewHeader.builder'
 
 const skillViewDefinition = buildSchemaDefinition({
 	id: 'skillView',

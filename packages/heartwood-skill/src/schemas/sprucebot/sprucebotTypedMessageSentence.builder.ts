@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import sprucebotAvatarDefinition from './sprucebotAvatar.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import sprucebotAvatarDefinition from './sprucebotAvatar.builder'
 
 const sprucebotTypeMessageSentenceDefinition = buildSchemaDefinition({
 	id: 'sprucebotTypedMessageSentence',

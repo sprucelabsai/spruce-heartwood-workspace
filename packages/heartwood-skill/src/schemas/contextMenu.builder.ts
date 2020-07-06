@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import buttonDefinition from './forms/button.definition'
-import iconDefinition from './icon.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import buttonDefinition from './forms/button.builder'
+import iconDefinition from './icon.builder'
 
 const contextMenuDefinition = buildSchemaDefinition({
 	id: 'ContextMenu',

@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import tabDefinition from './tab.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import tabDefinition from './tab.builder'
 
 const tabsDefinition = buildSchemaDefinition({
 	id: 'tabs',

@@ -1,6 +1,7 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import formDefinition from './form.definition'
-import formBuilderSectionDefinition from './formBuilderSection.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import formDefinition from './form.builder'
+import formBuilderSectionDefinition from './formBuilderSection.builder'
 
 const formBuilderDefinition = buildSchemaDefinition({
 	id: 'formBuilder',

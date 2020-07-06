@@ -1,5 +1,6 @@
-import { buildSchemaDefinition, FieldType } from '@sprucelabs/schema'
-import textInputDefinition from './textInput.definition'
+import { buildSchemaDefinition } from '@sprucelabs/schema'
+import FieldType from '#spruce:schema/fields/fieldType'
+import textInputDefinition from './textInput.builder'
 
 const searchDefinition = buildSchemaDefinition({
 	id: 'search',
