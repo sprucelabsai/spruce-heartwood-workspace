@@ -1,4 +1,4 @@
-import registerFieldType  from '@sprucelabs/schema/build/utilities/registerFieldType'
+import registerFieldType from '@sprucelabs/schema/build/utilities/registerFieldType'
 import EventCallbackField from '../fields/EventCallbackField'
 
 export default registerFieldType({
