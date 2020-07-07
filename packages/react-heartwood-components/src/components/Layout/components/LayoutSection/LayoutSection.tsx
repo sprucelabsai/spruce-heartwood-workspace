@@ -1,6 +1,6 @@
-import React from 'react'
-import cx from 'classnames'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
 import LayoutBuilder from '../../../LayoutBuilder/LayoutBuilder'
 
 const LayoutSection = (props: SpruceSchemas.Local.ILayoutSection) => {
@@ -9,7 +9,7 @@ const LayoutSection = (props: SpruceSchemas.Local.ILayoutSection) => {
 	return (
 		<div
 			className={cx('layout__section', className, {
-				'layout__section--secondary': isSecondary
+				'layout__section--secondary': isSecondary,
 			})}
 		>
 			{children}
@@ -20,7 +20,7 @@ const LayoutSection = (props: SpruceSchemas.Local.ILayoutSection) => {
 
 LayoutSection.displayName = 'Layout.Section'
 LayoutSection.defaultProps = {
-	isSecondary: false
+	isSecondary: false,
 }
 
 export default LayoutSection

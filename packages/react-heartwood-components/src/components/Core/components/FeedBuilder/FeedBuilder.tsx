@@ -1,17 +1,17 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React, { Component } from 'react'
 import {
 	List,
 	AutoSizer,
 	CellMeasurer,
 	CellMeasurerCache,
-	InfiniteLoader
+	InfiniteLoader,
 } from 'react-virtualized'
 import MessageBuilder, {
 	IMessageProps,
-	IFromProps
+	IFromProps,
 } from '../../../Message/Message'
 import Text from '../../../Text/Text'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IFeedBuilderMessageProps extends IMessageProps {
 	/** Unique id for the message */
@@ -76,7 +76,7 @@ const formatMessages = (messages: Array<IFeedBuilderMessageProps>) => {
 				// Remove the image
 				formattedMessage.from = {
 					...formattedMessage.from,
-					image: null
+					image: null,
 				}
 			}
 		}
@@ -100,9 +100,9 @@ const groupMessages = (messages: IFeedBuilderMessageProps[]) => {
 			lastWeek: '[Last] dddd',
 			sameElse: message.dateSent.isSame(new Date(), 'year')
 				? 'ddd, MMMM DD'
-				: 'ddd, MMMM DD, YYYY'
+				: 'ddd, MMMM DD, YYYY',
 		})
-		const match = Object.values(groups).findIndex(value => value === daySent)
+		const match = Object.values(groups).findIndex((value) => value === daySent)
 		if (match === -1) {
 			groups[idx] = daySent
 		}
@@ -115,13 +115,13 @@ const groupMessages = (messages: IFeedBuilderMessageProps[]) => {
 			lastWeek: '[Last] dddd',
 			sameElse: message.dateSent.isSame(new Date(), 'year')
 				? 'ddd, MMMM DD'
-				: 'ddd, MMMM DD, YYYY'
+				: 'ddd, MMMM DD, YYYY',
 		})
-		const match = groupedMessages.find(group => group.name === daySent)
+		const match = groupedMessages.find((group) => group.name === daySent)
 		if (!match) {
 			groupedMessages.push({
 				name: daySent,
-				messages: [idx]
+				messages: [idx],
 			})
 		} else {
 			match.messages.push(idx)
@@ -138,11 +138,11 @@ export default class FeedBuilder extends Component<
 	public static defaultProps = {
 		messages: [],
 		emptyText: 'No messages',
-		pageSize: 50
+		pageSize: 50,
 	}
 	public list: any
 	public cache = new CellMeasurerCache({
-		fixedWidth: true
+		fixedWidth: true,
 	})
 	public state = {
 		rows: [],
@@ -150,7 +150,7 @@ export default class FeedBuilder extends Component<
 		rowCount: 0,
 		scrollToIndex: 1,
 		isLoading: false,
-		allLoaded: false
+		allLoaded: false,
 	}
 
 	private infiniteLoader?: React.RefObject<HTMLDivElement>
@@ -172,7 +172,7 @@ export default class FeedBuilder extends Component<
 				scrollToIndex: messages.length + 1,
 				groups,
 				isLoading: false,
-				allLoaded: true
+				allLoaded: true,
 			}
 		}
 		return {
@@ -180,7 +180,7 @@ export default class FeedBuilder extends Component<
 			rowCount: messages.length,
 			scrollToIndex: messages.length + 1,
 			groups,
-			isLoading: false
+			isLoading: false,
 		}
 	}
 
@@ -207,14 +207,14 @@ export default class FeedBuilder extends Component<
 
 		if (this.list) {
 			this.setState({
-				isLoading: true
+				isLoading: true,
 			})
 			onRowsRequested()
 			this.cache.clearAll()
 			this.list.recomputeRowHeights(0)
 			this.list.forceUpdateGrid()
 		}
-		return new Promise(resolve => resolve)
+		return new Promise((resolve) => resolve)
 	}
 
 	public renderRow = ({ index, key, parent, style, isScrolling }) => {
@@ -233,7 +233,7 @@ export default class FeedBuilder extends Component<
 					className="message-feed__message-wrapper"
 					style={{
 						...style,
-						visibility: isScrolling ? 'visible' : 'visible'
+						visibility: isScrolling ? 'visible' : 'visible',
 					}}
 				>
 					{groupMatch && (
@@ -252,7 +252,7 @@ export default class FeedBuilder extends Component<
 			<div className="message-feed__wrapper">
 				<div className="message-feed">
 					<InfiniteLoader
-						ref={ref => (this.infiniteLoader = ref)}
+						ref={(ref) => (this.infiniteLoader = ref)}
 						isRowLoaded={this.isRowLoaded}
 						loadMoreRows={this.loadMoreRows}
 						rowCount={rowCount + 1}
@@ -266,7 +266,7 @@ export default class FeedBuilder extends Component<
 								{({ height, width }) => (
 									<div ref={registerChild}>
 										<List
-											ref={ref => (this.list = ref)}
+											ref={(ref) => (this.list = ref)}
 											className="message-feed__virtual-list"
 											deferredMeasurementCache={this.cache}
 											height={height}

@@ -8,18 +8,18 @@ const labelDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Label',
-			isRequired: true
+			isRequired: true,
 		},
 		postLabel: {
 			type: FieldType.Text,
-			label: 'Post label text'
-		}
-	}
+			label: 'Post label text',
+		},
+	},
 })
 
 export default labelDefinition

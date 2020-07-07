@@ -18,35 +18,35 @@ const bigFormDefinition = buildSchemaDefinition({
 							type: FieldType.Boolean,
 							label: 'Enable go back',
 							hint:
-								'Will enable/disable the back button to go to a previous question'
+								'Will enable/disable the back button to go to a previous question',
 						},
 						canGoNext: {
 							type: FieldType.Boolean,
 							label: 'Enable go next',
-							hint: 'Will enable/disable the button to go to the next question'
+							hint: 'Will enable/disable the button to go to the next question',
 						},
 						onBack: {
 							type: FieldType.Callback,
 							label: 'Back handler',
 							options: {
-								signature: '() => void'
-							}
+								signature: '() => void',
+							},
 						},
 						onNext: {
 							type: FieldType.Callback,
 							label: 'Next handler',
 							options: {
-								signature: '() => void'
-							}
-						}
-					}
-				})
-			}
+								signature: '() => void',
+							},
+						},
+					},
+				}),
+			},
 		},
 		useOneSprucebot: {
 			type: FieldType.Boolean,
 			label: 'Use one Sprucebot',
-			hint: 'Sprucebot will stay in place and delete, then type each question'
+			hint: 'Sprucebot will stay in place and delete, then type each question',
 		},
 		transitionStyle: {
 			type: FieldType.Select,
@@ -57,19 +57,19 @@ const bigFormDefinition = buildSchemaDefinition({
 					{ label: 'Stack', value: 'stack' },
 					{ label: 'SlideLeft', value: 'slide-left' },
 					{ label: 'SlideUp', value: 'slide-up' },
-					{ label: 'Swap', value: 'swap' }
-				]
-			}
+					{ label: 'Swap', value: 'swap' },
+				],
+			},
 		},
 		currentSlide: {
 			type: FieldType.Number,
 			label: 'Current slide',
-			defaultValue: 0
+			defaultValue: 0,
 		},
 		children: {
-			type: FieldType.Node
-		}
-	}
+			type: FieldType.Node,
+		},
+	},
 })
 
 export default bigFormDefinition

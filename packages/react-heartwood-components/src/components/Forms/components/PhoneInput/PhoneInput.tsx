@@ -1,14 +1,14 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import React, { Component } from 'react'
 import ReactPhoneInput from 'react-phone-number-input'
-import cx from 'classnames'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
-import Label from '../Label/Label'
 import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 // For validating and formatting
 export {
 	formatPhoneNumber,
-	formatPhoneNumberIntl
+	formatPhoneNumberIntl,
 } from 'react-phone-number-input'
 
 // This is a barebones copy of react-phone-number-input's method API:
@@ -31,13 +31,13 @@ export default class PhoneInput extends Component<
 
 		this.state = {
 			phone: props.defaultValue || '',
-			error: ''
+			error: '',
 		}
 	}
 
 	public handleChange = (phoneNumber: string) => {
 		this.setState({
-			phone: phoneNumber
+			phone: phoneNumber,
 		})
 	}
 
@@ -49,7 +49,7 @@ export default class PhoneInput extends Component<
 			<div
 				className={cx('text-input', {
 					'text-input--has-error': !!helper?.error,
-					'text-input-small': isSmall
+					'text-input-small': isSmall,
 				})}
 			>
 				<Label {...label} />

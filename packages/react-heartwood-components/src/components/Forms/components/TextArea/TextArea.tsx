@@ -1,13 +1,13 @@
-import React from 'react'
-import cx from 'classnames'
 import {
 	SpruceSchemas,
 	defaultProps,
 	stripNulls,
-	textAreaDefinition
+	textAreaDefinition,
 } from '@sprucelabs/heartwood-skill'
-import Label from '../Label/Label'
+import cx from 'classnames'
+import React from 'react'
 import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 const defaults = defaultProps(textAreaDefinition)
 
@@ -16,11 +16,11 @@ const TextArea = (props: SpruceSchemas.Local.ITextarea & typeof defaults) => {
 
 	const parentClass = cx('text-input', {
 		className,
-		'text-input--has-error': !!helper?.error
+		'text-input--has-error': !!helper?.error,
 	})
 
 	const inputClass = cx('text-area__input', {
-		'text-area__input-no-resize': !isResizeable
+		'text-area__input-no-resize': !isResizeable,
 	})
 
 	return (

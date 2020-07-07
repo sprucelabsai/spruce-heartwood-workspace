@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import FeedBuilder from './FeedBuilder'
-import StylesProvider from '../../../../../.storybook/StylesProvider'
+import React, { Component } from 'react'
 import { generateMessages } from '../../../../../.storybook/data/feed'
+import StylesProvider from '../../../../../.storybook/StylesProvider'
+import FeedBuilder from './FeedBuilder'
 
-const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>
+const ProvideStyles = (storyFn) => <StylesProvider>{storyFn()}</StylesProvider>
 
 const stories = storiesOf('Feed Builder', module)
 
@@ -22,11 +22,11 @@ class FeedBuilderExample extends Component<
 	IFeedBuilderExampleState
 > {
 	public state = {
-		messages: generateMessages({ count: 50, interval: 31 })
+		messages: generateMessages({ count: 50, interval: 31 }),
 	}
 
 	public onRowsRequested = () => {
-		this.setState(prevState => {
+		this.setState((prevState) => {
 			const lastMessageDate =
 				prevState.messages[prevState.messages.length - 1].dateSent
 			const lastMessageIndex = prevState.messages.length
@@ -34,13 +34,13 @@ class FeedBuilderExample extends Component<
 				count: 50,
 				interval: 31,
 				startDate: lastMessageDate,
-				startIndex: lastMessageIndex
+				startIndex: lastMessageIndex,
 			})
 			return {
 				messages:
 					prevState.messages.length < 500
 						? [...prevState.messages].concat(newMessages)
-						: prevState.messages
+						: prevState.messages,
 			}
 		})
 	}

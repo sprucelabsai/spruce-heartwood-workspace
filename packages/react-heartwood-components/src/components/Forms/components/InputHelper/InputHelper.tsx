@@ -1,9 +1,9 @@
-import React from 'react'
 import {
 	SpruceSchemas,
 	defaultProps,
-	inputHelperDefinition
+	inputHelperDefinition,
 } from '@sprucelabs/heartwood-skill'
+import React from 'react'
 
 const defaults = defaultProps(inputHelperDefinition)
 

@@ -1,10 +1,10 @@
 // TODO: Figure out how to split tabs up based on what's visible in the viewport
-import React, { Component, Fragment } from 'react'
-import debounce from 'lodash/debounce'
-import cx from 'classnames'
-import Tab from './components/Tab/Tab'
-import ContextMenu from '../ContextMenu/ContextMenu'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import debounce from 'lodash/debounce'
+import React, { Component, Fragment } from 'react'
+import ContextMenu from '../ContextMenu/ContextMenu'
+import Tab from './components/Tab/Tab'
 
 export interface ITabsState {
 	activeTabIndex: number
@@ -16,7 +16,7 @@ export interface ITabsState {
 }
 
 const getActiveTabIndex = (tabs: Array<SpruceSchemas.Local.ITab>) => {
-	const activeTabIndex = tabs.findIndex(tab => tab.isCurrent)
+	const activeTabIndex = tabs.findIndex((tab) => tab.isCurrent)
 	return activeTabIndex
 }
 
@@ -27,7 +27,7 @@ export default class Tabs extends Component<
 	public static defaultProps = {
 		isPadded: true,
 		isTruncatable: true,
-		className: ''
+		className: '',
 	}
 
 	public state: ITabsState = {
@@ -36,7 +36,7 @@ export default class Tabs extends Component<
 		disclosureTabWidth: [],
 		hiddenTabIndices: [],
 		isContextTabVisible: true,
-		tabWidths: []
+		tabWidths: [],
 	}
 
 	public tabGroup: any
@@ -77,7 +77,7 @@ export default class Tabs extends Component<
 			const children = wrapper.childNodes
 			const childrenArray = Array.prototype.slice.call(children)
 			const tabWidths: number[] = []
-			childrenArray.forEach(child => {
+			childrenArray.forEach((child) => {
 				if (!child.classList.contains('context-tab')) {
 					tabWidths.push(child.offsetWidth)
 				}
@@ -87,7 +87,7 @@ export default class Tabs extends Component<
 				{
 					tabWidths,
 					contextTabWidth,
-					isContextTabVisible: totalTabsWidth > wrapperWidth
+					isContextTabVisible: totalTabsWidth > wrapperWidth,
 				},
 				() => this.handleMeasurement()
 			)
@@ -110,7 +110,7 @@ export default class Tabs extends Component<
 			if (wrapperWidth > totalTabsWidth) {
 				this.setState({
 					hiddenTabIndices: [],
-					isContextTabVisible: false
+					isContextTabVisible: false,
 				})
 			} else {
 				tabs.forEach((tab, idx) => {
@@ -121,13 +121,13 @@ export default class Tabs extends Component<
 				})
 				this.setState({
 					hiddenTabIndices,
-					isContextTabVisible: true
+					isContextTabVisible: true,
 				})
 			}
 		}
 	}
 
-	public setRef = ref => {
+	public setRef = (ref) => {
 		this.tabGroup = ref
 		setTimeout(() => this.handleInitialMeasurement(), 250)
 	}
@@ -136,9 +136,9 @@ export default class Tabs extends Component<
 		const { tabs, isPadded, isTruncatable, className } = this.props
 		const { hiddenTabIndices, isContextTabVisible, activeTabIndex } = this.state
 		const hiddenTabs: SpruceSchemas.Local.ITab[] = []
-		const activeTab = tabs.find(tab => tab.isCurrent)
+		const activeTab = tabs.find((tab) => tab.isCurrent)
 		if (hiddenTabIndices.length > 0) {
-			hiddenTabIndices.forEach(idx => {
+			hiddenTabIndices.forEach((idx) => {
 				if (idx !== activeTabIndex) {
 					hiddenTabs.push(tabs[idx])
 				}
@@ -160,7 +160,7 @@ export default class Tabs extends Component<
 					ref={this.setRef}
 					className={cx('tab-group', className, {
 						'tab-group--is-padded': isPadded,
-						'tab-group--spacing-even': hiddenTabIndices.length > 0
+						'tab-group--spacing-even': hiddenTabIndices.length > 0,
 					})}
 				>
 					{tabsToShow.map((tab, idx) => {
@@ -171,9 +171,9 @@ export default class Tabs extends Component<
 					})}
 					{isTruncatable && (
 						<li
-							ref={ref => (this.contextTab = ref)}
+							ref={(ref) => (this.contextTab = ref)}
 							className={cx('tab context-tab', {
-								'context-tab--is-visible': isContextTabVisible
+								'context-tab--is-visible': isContextTabVisible,
 							})}
 						>
 							<ContextMenu buttons={hiddenTabs} />

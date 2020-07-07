@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
 import moment from 'moment'
+import React, { Fragment } from 'react'
 
 interface ILegalProps {
 	/** Class for the text */

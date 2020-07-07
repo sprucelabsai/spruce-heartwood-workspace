@@ -1,8 +1,8 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import labelDefinition from './label.builder'
-import inputHelperDefinition from './inputHelper.builder'
 import inputEventsDefinition from './inputEvents.builder'
+import inputHelperDefinition from './inputHelper.builder'
+import labelDefinition from './label.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const radioDefinition = buildSchemaDefinition({
 	id: 'radio',
@@ -13,42 +13,42 @@ const radioDefinition = buildSchemaDefinition({
 		...inputEventsDefinition.fields,
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		name: {
 			type: FieldType.Text,
 			label: 'Name',
-			hint: 'A name attached to this radio button'
+			hint: 'A name attached to this radio button',
 		},
 		label: {
 			type: FieldType.Schema,
 			label: 'Label',
 			options: {
-				schema: labelDefinition
-			}
+				schema: labelDefinition,
+			},
 		},
 		isDisabled: {
 			type: FieldType.Boolean,
 			label: 'Is disabled',
-			hint: 'is this control disabled?'
+			hint: 'is this control disabled?',
 		},
 		isChecked: {
 			type: FieldType.Boolean,
 			label: 'Is checked',
-			hint: 'Is this control checked?'
+			hint: 'Is this control checked?',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		helper: {
 			type: FieldType.Schema,
 			label: 'Helper',
 			options: {
-				schema: inputHelperDefinition
-			}
-		}
-	}
+				schema: inputHelperDefinition,
+			},
+		},
+	},
 })
 
 export default radioDefinition

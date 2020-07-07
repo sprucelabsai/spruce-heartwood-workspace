@@ -29,7 +29,7 @@ const Scores = (props: IScoresProps): React.ReactElement => {
 	const { scores } = props
 	return (
 		<div className="card__scores">
-			{scores.map(score => (
+			{scores.map((score) => (
 				<ScorePanel key={score.id} {...score} />
 			))}
 		</div>

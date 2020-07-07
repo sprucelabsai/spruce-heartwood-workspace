@@ -1,6 +1,6 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
 import { Tag } from '../../../Forms'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ITableFiltersProps {
 	/** Filters applied to the table */

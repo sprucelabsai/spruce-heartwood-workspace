@@ -1,3 +1,8 @@
+import {
+	SpruceSchemas,
+	defaultProps,
+	sidebarDefinition,
+} from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import Button from '../../../Button/Button'
@@ -5,11 +10,6 @@ import Text from '../../../Text/Text'
 import SidebarExpander from './components/SidebarExpander/SidebarExpander'
 import SidebarItem from './components/SidebarItem/SidebarItem'
 import SidebarSection from './components/SidebarSection/SidebarSection'
-import {
-	SpruceSchemas,
-	defaultProps,
-	sidebarDefinition
-} from '@sprucelabs/heartwood-skill'
 
 const defaults = defaultProps(sidebarDefinition)
 
@@ -27,7 +27,7 @@ const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 		side,
 		mobileHeader,
 		onToggleExpanded,
-		onForceCollapse
+		onForceCollapse,
 	} = props
 
 	return (
@@ -37,7 +37,7 @@ const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 				'sidebar--right': side === 'right',
 				'sidebar--large': isLarge,
 				'sidebar--is-collapsed': !isExpanded,
-				'sidebar--is-mobile-expanded': isMobileExpanded
+				'sidebar--is-mobile-expanded': isMobileExpanded,
 			})}
 		>
 			{mobileHeader && (
@@ -59,7 +59,7 @@ const Sidebar = (props: SpruceSchemas.Local.ISidebar) => {
 								icon={
 									backLink.icon || {
 										name: 'arrow_back',
-										className: 'sidebar-item__icon--fill'
+										className: 'sidebar-item__icon--fill',
 									}
 								}
 								{...backLink}

@@ -8,37 +8,37 @@ module.exports = {
 		return `<!-- Start: @${item.handle} -->\n<div style="margin-top: 2rem;">${markup}</div>\n<!-- End: @${item.handle} -->\n`
 	},
 	context: {
-		image
+		image,
 	},
 	variants: [
 		{
 			name: 'Has Image',
 			context: {
-				image
-			}
+				image,
+			},
 		},
 		{
 			name: 'Has Name',
 			context: {
 				image,
-				name: 'Madaline Gibson'
-			}
+				name: 'Madaline Gibson',
+			},
 		},
 		{
 			name: 'Has Name + Text',
 			context: {
 				image,
 				name: 'Vicenta Maggio',
-				text: 'Services: Beard Tinting, Head Shave'
-			}
+				text: 'Services: Beard Tinting, Head Shave',
+			},
 		},
 		{
 			name: 'Has Image',
 			context: {
 				image,
 				showIndicator: true,
-				isOnline: true
-			}
+				isOnline: true,
+			},
 		},
 		{
 			name: 'Has Name',
@@ -46,8 +46,8 @@ module.exports = {
 				image,
 				name: 'Madaline Gibson',
 				showIndicator: true,
-				isOnline: true
-			}
+				isOnline: true,
+			},
 		},
 		{
 			name: 'Has Name + Text',
@@ -56,23 +56,23 @@ module.exports = {
 				name: 'Vicenta Maggio',
 				text: 'Services: Beard Tinting, Head Shave',
 				showIndicator: true,
-				isOnline: true
-			}
+				isOnline: true,
+			},
 		},
 		{
 			name: 'Has Image',
 			context: {
 				image,
-				showIndicator: true
-			}
+				showIndicator: true,
+			},
 		},
 		{
 			name: 'Has Name',
 			context: {
 				image,
 				name: 'Madaline Gibson',
-				showIndicator: true
-			}
+				showIndicator: true,
+			},
 		},
 		{
 			name: 'Has Name + Text',
@@ -80,8 +80,8 @@ module.exports = {
 				image,
 				name: 'Vicenta Maggio',
 				text: 'Services: Beard Tinting, Head Shave',
-				showIndicator: true
-			}
+				showIndicator: true,
+			},
 		},
 		{
 			name: 'Has Name, Vert',
@@ -89,8 +89,8 @@ module.exports = {
 				image,
 				name: 'Madaline Gibson',
 				showIndicator: true,
-				isVertical: true
-			}
+				isVertical: true,
+			},
 		},
 		{
 			name: 'Has Name + Text, Vert',
@@ -99,16 +99,16 @@ module.exports = {
 				name: 'Vicenta Maggio',
 				text: 'Services: Beard Tinting, Head Shave',
 				showIndicator: true,
-				isVertical: true
-			}
+				isVertical: true,
+			},
 		},
 		{
 			name: 'Large',
 			context: {
 				image,
 				showIndicator: true,
-				isLarge: true
-			}
+				isLarge: true,
+			},
 		},
 		{
 			name: 'Large, Name',
@@ -117,8 +117,8 @@ module.exports = {
 				name: 'Vicenta Maggio',
 				showIndicator: true,
 				isVertical: true,
-				isLarge: true
-			}
+				isLarge: true,
+			},
 		},
 		{
 			name: 'Large, Name + Text',
@@ -128,8 +128,8 @@ module.exports = {
 				text: 'Services: Beard Tinting, Head Shave',
 				showIndicator: true,
 				isVertical: true,
-				isLarge: true
-			}
-		}
-	]
+				isLarge: true,
+			},
+		},
+	],
 }

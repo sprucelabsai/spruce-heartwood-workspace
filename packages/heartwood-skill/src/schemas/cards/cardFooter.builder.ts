@@ -6,9 +6,9 @@ const cardFooterDefinition = buildSchemaDefinition({
 	description: 'Header of a card',
 	fields: {
 		children: {
-			type: FieldType.Node
-		}
-	}
+			type: FieldType.Node,
+		},
+	},
 })
 
 export default cardFooterDefinition

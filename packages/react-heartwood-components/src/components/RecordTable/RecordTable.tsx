@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react'
-import { default as Table, ITableProps } from '../Table/Table'
-import {
-	default as TableSearch,
-	ITableSearchProps
-} from '../Table/components/TableSearch/TableSearch'
-import Tabs from '../Tabs/Tabs'
-import { TextInput } from '../Forms'
+import { SortingRule } from 'react-table'
 import Button from '../Button/Button'
 import EmptyState from '../EmptyState/EmptyState'
+import { TextInput } from '../Forms'
 import Loader from '../Loader/Loader'
-import { SortingRule } from 'react-table'
+import {
+	default as TableSearch,
+	ITableSearchProps,
+} from '../Table/components/TableSearch/TableSearch'
+import { default as Table, ITableProps } from '../Table/Table'
+import Tabs from '../Tabs/Tabs'
 
 const RECORD_TABLE_INITIAL_LIMIT = 50
 
@@ -155,7 +155,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 		noFilteredMatchesHeadline: 'No matches found',
 		noFilteredMatchesIcon: 'no_matches',
 		noFilteredMatchesPrimaryActionText: 'Show All',
-		searchPlaceholder: 'Filter table...'
+		searchPlaceholder: 'Filter table...',
 	}
 
 	public constructor(props: IRecordTableProps) {
@@ -171,21 +171,21 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 			visibleRows: props.initialVisibleRows,
 			totalRows: props.totalRows,
 			currentFilter: '',
-			expandedRows: {}
+			expandedRows: {},
 		}
 	}
 
 	public refresh = async () => {
 		this.setState({ loading: true })
 		const { visibleRows, totalRows } = await this.fetchRecords({
-			page: this.state.currentPage
+			page: this.state.currentPage,
 		})
 		this.setState({ loading: false, visibleRows, totalRows })
 	}
 
 	public navigateToPage = async ({
 		search,
-		page
+		page,
 	}: {
 		search?: string
 		page: number
@@ -195,18 +195,18 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 		try {
 			const { visibleRows, totalRows } = await this.fetchRecords({
 				search,
-				page
+				page,
 			})
 
 			onNavigateToPage({
-				currentPage: page
+				currentPage: page,
 			})
 
 			this.setState({
 				currentPage: page,
 				visibleRows,
 				totalRows,
-				expandedRows: {}
+				expandedRows: {},
 			})
 		} catch (e) {
 			// Nothing
@@ -217,7 +217,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 		this.setState(
 			{
 				currentPage: 0,
-				currentFilter: filter
+				currentFilter: filter,
 			},
 			() => {
 				this.refresh()
@@ -255,7 +255,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 			visibleRows,
 			totalRows,
 			currentFilter,
-			expandedRows
+			expandedRows,
 		} = this.state
 
 		const defaultTableSearchProps: ITableSearchProps = {
@@ -265,20 +265,20 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 			getSuggestions: this.handleSearchSuggestions,
 			renderSuggestion: this.renderSuggestion,
 			onSuggestionSelected: () => {},
-			id: ''
+			id: '',
 		}
 
 		return (
 			<Fragment>
 				{tabs && (
 					<Tabs
-						tabs={tabs.map(tab => {
+						tabs={tabs.map((tab) => {
 							return {
 								...tab,
 								isCurrent: selectedTab === tab.key,
-								onClick: e => {
+								onClick: (e) => {
 									this.handleClickTab(e, tab)
-								}
+								},
 							}
 						})}
 						isPadded
@@ -309,7 +309,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 								isSmall
 								className="text-input__clear-btn"
 								icon={{
-									name: 'close'
+									name: 'close',
 								}}
 								onClick={() => {
 									this.updateFilter('')
@@ -326,13 +326,13 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 					defaultSorted={[
 						{
 							id: sortColumn,
-							desc: false
-						}
+							desc: false,
+						},
 					]}
 					expanded={expandedRows}
-					onExpandedChange={newExpanded => {
+					onExpandedChange={(newExpanded) => {
 						this.setState({
-							expandedRows: newExpanded
+							expandedRows: newExpanded,
 						})
 					}}
 					pageSize={Math.min(visibleRows.length, limit)}
@@ -348,7 +348,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 						onPageButtonClick: (pageIdx: number) => {
 							this.navigateToPage({ page: pageIdx })
 						},
-						totalPages: Math.ceil(totalRows / limit)
+						totalPages: Math.ceil(totalRows / limit),
 					}}
 					manual
 					loading={loading}
@@ -373,7 +373,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 						subheadline: this.getNoDataSubheadline(),
 						primaryAction: this.getNoDataPrimaryAction(),
 						primaryActionButtonKind: noDataPrimaryActionButtonKind,
-						primaryActionButtonIcon: noDataPrimaryActionButtonIcon
+						primaryActionButtonIcon: noDataPrimaryActionButtonIcon,
 					})}
 					{...rest}
 				/>
@@ -390,7 +390,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 			cancel =
 				onClickTab(e, {
 					payload: tab.payload,
-					key: tab.key
+					key: tab.key,
 				}) === false
 		}
 
@@ -404,7 +404,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 
 	private fetchRecords = async ({
 		search,
-		page
+		page,
 	}: {
 		search?: string
 		page: number
@@ -414,7 +414,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 			sortColumn,
 			limit,
 			selectedTab,
-			currentFilter
+			currentFilter,
 		} = this.state
 
 		const offset = limit * page
@@ -425,7 +425,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 			limit,
 			offset,
 			selectedTab,
-			search: search || currentFilter
+			search: search || currentFilter,
 		})
 
 		return data
@@ -437,7 +437,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 			sortDirection: 'asc' | 'desc'
 		} = {
 			sortColumn: sorted[0].id,
-			sortDirection: sorted[0].desc ? 'desc' : 'asc'
+			sortDirection: sorted[0].desc ? 'desc' : 'asc',
 		}
 
 		this.setState(sort, this.refresh)
@@ -447,7 +447,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 		const { currentPage } = this.state
 		const { visibleRows } = await this.fetchRecords({
 			page: currentPage,
-			search: value
+			search: value,
 		})
 
 		const suggestions =
@@ -455,15 +455,15 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 				? visibleRows.map((record: Record<string, any>) => {
 						return {
 							text: record.name,
-							record
+							record,
 						}
 				  })
 				: [
 						{
 							text: 'NO RESULTS',
 							isEmptyMessage: true,
-							value
-						}
+							value,
+						},
 				  ]
 
 		return suggestions
@@ -477,7 +477,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 					className="autosuggest__list-item-inner"
 					text={suggestion.text}
 				/>
-			)
+			),
 		} = this.props
 
 		if (suggestion.isEmptyMessage && suggestion.value) {
@@ -536,7 +536,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 		const {
 			noDataSubheadline,
 			noFilteredMatchesSubheadline,
-			fetchError
+			fetchError,
 		} = this.props
 		return fetchError
 			? 'It looks like something went wrong.'
@@ -549,12 +549,12 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 		const {
 			noDataPrimaryAction,
 			noFilteredMatchesPrimaryActionText,
-			fetchError
+			fetchError,
 		} = this.props
 		return fetchError
 			? {
 					text: 'Try again',
-					onClick: () => window.location.reload()
+					onClick: () => window.location.reload(),
 			  }
 			: this.isFiltered()
 			? {
@@ -562,7 +562,7 @@ class RecordTable extends Component<IRecordTableProps, IRecordTableState> {
 					onClick: () => {
 						this.updateFilter('')
 					},
-					type: 'submit'
+					type: 'submit',
 			  }
 			: noDataPrimaryAction
 	}

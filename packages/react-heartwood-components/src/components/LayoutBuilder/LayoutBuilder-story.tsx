@@ -1,8 +1,8 @@
+import { buildCard } from '@sprucelabs/heartwood-skill'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import LayoutBuilder from './LayoutBuilder'
-import { buildCard } from '@sprucelabs/heartwood-skill'
 
 const stories = storiesOf('LayoutBuilder', module)
 
@@ -10,7 +10,7 @@ const cards = buildCard({
 	id: 'foo',
 	header: {
 		title: 'This is a basic card',
-		labelText: ''
+		labelText: '',
 	},
 	body: {
 		items: [
@@ -18,10 +18,10 @@ const cards = buildCard({
 				schemaId: 'text',
 				values: {
 					id: 'first',
-					text: `This was built by the CardBuilder (via the SkillViewBuilder)!`
-				}
-			}
-		]
+					text: `This was built by the CardBuilder (via the SkillViewBuilder)!`,
+				},
+			},
+		],
 	},
 	footer: {
 		buttonGroup: {
@@ -32,11 +32,11 @@ const cards = buildCard({
 					text: 'Fire a JS Callback!',
 					onClick: () => window.alert('clicked'),
 					kind: 'secondary',
-					isSmall: true
-				}
-			]
-		}
-	}
+					isSmall: true,
+				},
+			],
+		},
+	},
 })
 
 stories.addDecorator(withKnobs)
@@ -46,8 +46,8 @@ stories.add('Simply rendering a cardbuilder', () => (
 		items={[
 			{
 				schemaId: 'cardBuilder',
-				values: cards
-			}
+				values: cards,
+			},
 		]}
 	/>
 ))
@@ -65,10 +65,10 @@ stories.add('Three-up cards, with a button underneath', () => (
 								items: [
 									{
 										schemaId: 'cardBuilder',
-										values: cards
-									}
-								]
-							}
+										values: cards,
+									},
+								],
+							},
 						},
 						{
 							isSecondary: true,
@@ -76,10 +76,10 @@ stories.add('Three-up cards, with a button underneath', () => (
 								items: [
 									{
 										schemaId: 'cardBuilder',
-										values: cards
-									}
-								]
-							}
+										values: cards,
+									},
+								],
+							},
 						},
 						{
 							isSecondary: true,
@@ -87,19 +87,21 @@ stories.add('Three-up cards, with a button underneath', () => (
 								items: [
 									{
 										schemaId: 'cardBuilder',
-										values: cards
-									}
-								]
-							}
+										values: cards,
+									},
+								],
+							},
 						},
 						{
 							layoutBuilder: {
-								items: [{ schemaId: 'button', values: { text: 'This is it!' } }]
-							}
-						}
-					]
-				}
-			}
+								items: [
+									{ schemaId: 'button', values: { text: 'This is it!' } },
+								],
+							},
+						},
+					],
+				},
+			},
 
 			// {
 			// 	type: IHWLayoutBuilderSectionType.Layout,

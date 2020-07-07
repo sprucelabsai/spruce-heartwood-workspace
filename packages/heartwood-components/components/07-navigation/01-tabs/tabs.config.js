@@ -9,17 +9,17 @@ module.exports = {
 			{
 				text: 'Team',
 				isCurrent: true,
-				href: '#'
+				href: '#',
 			},
 			{
 				text: 'Guests',
-				href: '#'
+				href: '#',
 			},
 			{
 				text: 'Everyone',
-				href: '#'
-			}
-		]
+				href: '#',
+			},
+		],
 	},
 	variants: [
 		{
@@ -29,19 +29,19 @@ module.exports = {
 				tabs: [
 					{
 						text: 'Active',
-						isCurrent: true
+						isCurrent: true,
 					},
 					{
-						text: 'Current'
+						text: 'Current',
 					},
 					{
-						text: 'Previous'
+						text: 'Previous',
 					},
 					{
-						text: 'Cancelled'
-					}
-				]
-			}
-		}
-	]
+						text: 'Cancelled',
+					},
+				],
+			},
+		},
+	],
 }

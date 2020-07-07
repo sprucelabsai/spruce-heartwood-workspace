@@ -9,14 +9,14 @@ const confirmDialogDefinition = buildSchemaDefinition({
 		title: {
 			type: FieldType.Text,
 			label: 'Title',
-			hint: 'Title of the confirmation dialog'
+			hint: 'Title of the confirmation dialog',
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
-			hint: 'Text shown in the dialog'
-		}
-	}
+			hint: 'Text shown in the dialog',
+		},
+	},
 })
 
 export default confirmDialogDefinition

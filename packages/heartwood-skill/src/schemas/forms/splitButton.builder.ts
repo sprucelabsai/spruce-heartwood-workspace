@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import buttonDefinition from './button.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const splitButtonDefinition = buildSchemaDefinition({
 	id: 'splitButton',
@@ -9,7 +9,7 @@ const splitButtonDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		defaultButton: {
 			type: FieldType.Schema,
@@ -17,8 +17,8 @@ const splitButtonDefinition = buildSchemaDefinition({
 			isRequired: true,
 			hint: 'The main action readily surfaced to the user',
 			options: {
-				schema: buttonDefinition
-			}
+				schema: buttonDefinition,
+			},
 		},
 		buttons: {
 			type: FieldType.Schema,
@@ -27,39 +27,39 @@ const splitButtonDefinition = buildSchemaDefinition({
 			hint: 'All the secondary nested buttons',
 			defaultValue: [],
 			options: {
-				schema: buttonDefinition
-			}
+				schema: buttonDefinition,
+			},
 		},
 		kind: {
 			type: FieldType.Select,
 			label: 'Kind',
 			hint: 'Sets the visual hierarchy of the button',
 			options: {
-				choices: buttonDefinition.fields.kind.options.choices
-			}
+				choices: buttonDefinition.fields.kind.options.choices,
+			},
 		},
 		isFullWidth: {
 			type: FieldType.Boolean,
 			label: 'Is full width',
-			hint: "Set true to fill the parent's width"
+			hint: "Set true to fill the parent's width",
 		},
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Is small',
-			hint: 'Sets the visual hierarchy of the button'
+			hint: 'Sets the visual hierarchy of the button',
 		},
 		onClick: {
 			...buttonDefinition.fields.onClick,
-			label: 'Click handler'
+			label: 'Click handler',
 		},
 		usePortal: {
 			type: FieldType.Boolean,
 			label: 'Portal',
 			hint:
 				'Render in a react-portal, not sure why this is needed or not just always true',
-			isPrivate: true
-		}
-	}
+			isPrivate: true,
+		},
+	},
 })
 
 export default splitButtonDefinition

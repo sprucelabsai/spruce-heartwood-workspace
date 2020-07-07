@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import cx from 'classnames'
 import {
 	SpruceSchemas,
 	defaultProps,
-	searchDefinition
+	searchDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { Component } from 'react'
 import TextInput from '../TextInput/TextInput'
 
 interface ISearchState {
@@ -20,19 +20,19 @@ export default class Search extends Component<
 	public static defaultProps = defaults
 
 	public state = {
-		value: this.props.value || ''
+		value: this.props.value || '',
 	}
 
 	public handleChange = (e: any) => {
 		const value = e.target.value
 		this.setState({
-			value
+			value,
 		})
 	}
 
 	public handleClear = () => {
 		this.setState({
-			value: ''
+			value: '',
 		})
 	}
 
@@ -48,7 +48,7 @@ export default class Search extends Component<
 					clearButton={{
 						icon:
 							(value && value.length > 0 && { name: 'cancel' }) || undefined,
-						onClick: this.handleClear
+						onClick: this.handleClear,
 					}}
 					onChange={this.handleChange}
 					value={value}

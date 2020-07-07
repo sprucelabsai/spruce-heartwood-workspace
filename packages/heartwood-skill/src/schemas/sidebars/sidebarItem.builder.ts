@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import buttonDefinition from '../forms/button.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const sidebarDefinition = buildSchemaDefinition({
 	id: 'sidebarItem',
@@ -13,44 +13,44 @@ const sidebarDefinition = buildSchemaDefinition({
 			hint: 'Rendered under the text as subitems',
 			isArray: true,
 			options: {
-				schemaId: 'sidebarItem'
-			}
+				schemaId: 'sidebarItem',
+			},
 		},
 		icon: {
 			type: FieldType.Schema,
 			label: 'Icon',
 			options: {
-				schemaId: 'icon'
-			}
+				schemaId: 'icon',
+			},
 		},
 		button: {
 			type: FieldType.Schema,
 			label: 'Button',
 			options: {
-				schema: buttonDefinition
-			}
+				schema: buttonDefinition,
+			},
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
-			hint: 'Rendered in the body of this item'
+			hint: 'Rendered in the body of this item',
 		},
 		href: {
 			type: FieldType.Text,
 			isPrivate: true,
-			label: 'href'
+			label: 'href',
 		},
 		isCurrent: {
 			type: FieldType.Boolean,
 			label: 'Current',
 			hint:
-				'If this item is the current one, it is rendered differently to call it out'
-		}
-	}
+				'If this item is the current one, it is rendered differently to call it out',
+		},
+	},
 })
 
 export default sidebarDefinition

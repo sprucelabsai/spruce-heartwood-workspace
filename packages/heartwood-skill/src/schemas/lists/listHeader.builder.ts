@@ -10,18 +10,18 @@ const listHeaderDefinition = buildSchemaDefinition({
 			type: FieldType.Text,
 			label: 'Title',
 			isRequired: true,
-			hint: 'Title to render in the header'
+			hint: 'Title to render in the header',
 		},
 		subtitle: {
 			type: FieldType.Text,
 			label: 'Subtitle',
-			hint: 'Optional subtitle text'
+			hint: 'Optional subtitle text',
 		},
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Is small',
 			hint: 'Set true for small lists',
-			defaultValue: false
+			defaultValue: false,
 		},
 		buttons: {
 			type: FieldType.Schema,
@@ -29,10 +29,10 @@ const listHeaderDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Buttons to associate with the list header',
 			options: {
-				schema: buttonDefinition
-			}
-		}
-	}
+				schema: buttonDefinition,
+			},
+		},
+	},
 })
 
 export default listHeaderDefinition

@@ -7,7 +7,7 @@ export {
 	default as PhoneInput,
 	formatPhoneNumber,
 	formatPhoneNumberIntl,
-	isValidPhoneNumber
+	isValidPhoneNumber,
 } from './components/PhoneInput/PhoneInput'
 export { default as Radio } from './components/Radio/Radio'
 export { default as Search } from './components/Search/Search'
@@ -21,5 +21,5 @@ export { default as Toggle } from './components/Toggle/Toggle'
 export {
 	default as FormLayout,
 	FormLayoutGroup,
-	FormLayoutItem
+	FormLayoutItem,
 } from './components/FormLayout'

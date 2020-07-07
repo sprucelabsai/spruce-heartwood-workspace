@@ -1,10 +1,10 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import BackIcon from '../../../../../static/assets/icons/ic_keyboard_arrow_left.svg'
 import Button from '../../../Button/Button'
 import Icon from '../../../Icon/Icon'
 import Tabs from '../../../Tabs/Tabs'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const SkillViewHeader = (props: SpruceSchemas.Local.ISkillViewHeader) => {
 	const {
@@ -17,7 +17,7 @@ const SkillViewHeader = (props: SpruceSchemas.Local.ISkillViewHeader) => {
 		primaryButton,
 		sidebarExpanderButton,
 		tabs,
-		title
+		title,
 	} = props
 
 	const backLinkClass = 'page__header-back-link'
@@ -62,20 +62,20 @@ const SkillViewHeader = (props: SpruceSchemas.Local.ISkillViewHeader) => {
 			className={cx(
 				'page__header',
 				{
-					'page__header--is-collapsed': isCollapsed
+					'page__header--is-collapsed': isCollapsed,
 				},
 				className
 			)}
 		>
 			<div
 				className={cx('page__header-inner', {
-					'page__header-inner--is-collapsed': isCollapsed
+					'page__header-inner--is-collapsed': isCollapsed,
 				})}
 			>
 				{anchor && anchor}
 				<div
 					className={cx('page__header-main', {
-						'page__header-main--has-bottom-border': hasBottomBorder
+						'page__header-main--has-bottom-border': hasBottomBorder,
 					})}
 				>
 					<div className="page__header-title-wrapper">
@@ -107,7 +107,7 @@ SkillViewHeader.defaultProps = {
 	backLinkHref: '',
 	primaryAction: null,
 	hasBottomBorder: false,
-	tabs: []
+	tabs: [],
 }
 
 export default SkillViewHeader

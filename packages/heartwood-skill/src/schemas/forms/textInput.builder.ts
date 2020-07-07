@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import buttonDefinition from './button.builder'
 import inputEventsDefinition from './inputEvents.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const textInputDefinition = buildSchemaDefinition({
 	id: 'textInput',
@@ -12,20 +12,20 @@ const textInputDefinition = buildSchemaDefinition({
 		...inputEventsDefinition.fields,
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		name: {
 			type: FieldType.Text,
-			label: 'Name'
+			label: 'Name',
 		},
 		enableAutoComplete: {
 			type: FieldType.Boolean,
 			label: 'Autocomplete',
-			defaultValue: true
+			defaultValue: true,
 		},
 		placeholder: {
 			type: FieldType.Text,
-			label: 'Placeholder'
+			label: 'Placeholder',
 		},
 		type: {
 			type: FieldType.Select,
@@ -56,17 +56,17 @@ const textInputDefinition = buildSchemaDefinition({
 					{ value: 'text', label: 'text' },
 					{ value: 'time', label: 'time' },
 					{ value: 'url', label: 'url' },
-					{ value: 'week', label: 'week' }
-				]
-			}
+					{ value: 'week', label: 'week' },
+				],
+			},
 		},
 		iconBefore: {
 			type: FieldType.Schema,
 			label: 'Before icon',
 			hint: 'The icon shown before the input',
 			options: {
-				schemaId: 'icon'
-			}
+				schemaId: 'icon',
+			},
 		},
 		clearButton: {
 			type: FieldType.Schema,
@@ -74,48 +74,48 @@ const textInputDefinition = buildSchemaDefinition({
 			hint:
 				'Drops in a clear button after the field, but requires you to handle the clear.',
 			options: {
-				schema: buttonDefinition
-			}
+				schema: buttonDefinition,
+			},
 		},
 
 		appendix: {
 			type: FieldType.Text,
 			label: 'Appendix',
-			hint: 'Shown under the input.'
+			hint: 'Shown under the input.',
 		},
 		helper: {
 			type: FieldType.Schema,
 			label: 'Helper',
 			hint: 'Shows hints or error messages. If both set, error wins.',
 			options: {
-				schemaId: 'inputHelper'
-			}
+				schemaId: 'inputHelper',
+			},
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		label: {
 			type: FieldType.Schema,
 			label: 'Label',
 			options: {
-				schemaId: 'label'
-			}
+				schemaId: 'label',
+			},
 		},
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Small',
-			hint: 'Render a small variation'
+			hint: 'Render a small variation',
 		},
 		value: {
 			type: FieldType.Text,
-			label: 'Value'
+			label: 'Value',
 		},
 		isReadOnly: {
 			type: FieldType.Boolean,
-			label: 'Read only'
-		}
-	}
+			label: 'Read only',
+		},
+	},
 })
 
 export default textInputDefinition

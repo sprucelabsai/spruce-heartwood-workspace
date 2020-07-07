@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, select } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import SprucebotAvatar from './SprucebotAvatar'
 
 const stories = storiesOf('SprucebotAvatar', module)
@@ -15,7 +15,7 @@ stories.add('SprucebotAvatar', () => (
 			{
 				small: 'small',
 				medium: 'medium',
-				large: 'large'
+				large: 'large',
 			},
 			'medium'
 		)}
@@ -25,7 +25,7 @@ stories.add('SprucebotAvatar', () => (
 				chill: 'chill',
 				contemplative: 'contemplative',
 				curious: 'curious',
-				accomplished: 'accomplished'
+				accomplished: 'accomplished',
 			},
 			'chill'
 		)}

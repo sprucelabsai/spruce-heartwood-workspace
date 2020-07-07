@@ -1,8 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import uniqBy from 'lodash/uniqBy'
 import React, { Component } from 'react'
 import { VelocityTransitionGroup } from 'velocity-react'
-import uniqBy from 'lodash/uniqBy'
 import Toast from '../../Toast'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 type ToastProps = SpruceSchemas.Local.IToast
 
@@ -27,7 +27,7 @@ export default class ToastWrapper extends Component<
 > {
 	public state: IToastWrapperState = {
 		toasts: [],
-		timeouts: {}
+		timeouts: {},
 	}
 
 	public timeouts = {}
@@ -38,7 +38,7 @@ export default class ToastWrapper extends Component<
 	): { toasts: ToastProps[]; timeouts: any[] } {
 		const uniqToasts = uniqBy(props.toasts, 'id')
 		const timeouts = { ...state.timeouts }
-		uniqToasts.forEach(toast => {
+		uniqToasts.forEach((toast) => {
 			if (toast.timeout !== 'never') {
 				timeouts[toast.id] = setTimeout(
 					() => {
@@ -69,19 +69,19 @@ export default class ToastWrapper extends Component<
 					enter={{
 						animation: {
 							opacity: 1,
-							translateX: 0
+							translateX: 0,
 						},
-						duration: 300
+						duration: 300,
 					}}
 					leave={{
 						animation: {
 							opacity: 0,
-							translateX: '-4px'
+							translateX: '-4px',
 						},
-						duration: 0
+						duration: 0,
 					}}
 				>
-					{toasts.map(toast => (
+					{toasts.map((toast) => (
 						<div key={toast.id} className="toast-wrapper">
 							<Toast
 								onClickDismiss={() => this.onRemoveClick(toast.id)}

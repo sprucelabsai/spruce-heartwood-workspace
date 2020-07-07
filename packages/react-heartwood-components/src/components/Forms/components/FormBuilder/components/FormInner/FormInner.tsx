@@ -1,21 +1,17 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { FormikProps } from 'formik'
 import React from 'react'
-
+import Button from '../../../../../Button/Button'
+import { List } from '../../../../../List'
 import {
 	TextInput,
 	FormLayout,
 	FormLayoutGroup,
 	FormLayoutItem,
 	Select,
-	DurationInput
+	DurationInput,
 } from '../../../../index'
-
-import { List } from '../../../../../List'
-
-import Button from '../../../../../Button/Button'
-
-import { FormikProps } from 'formik'
 import { IFormLayoutProps } from '../../../FormLayout/FormLayout'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IFormValues {
 	[key: string]: string
@@ -67,7 +63,7 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 	public handleChange = (e: any) => {
 		const { onBlur, name } = this.props
 		const {
-			formikProps: { setFieldValue }
+			formikProps: { setFieldValue },
 		} = this.props
 		setFieldValue(name, e.target.checked)
 		onBlur(e)
@@ -85,8 +81,8 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 					{
 						title: label || '',
 						subtitle: helper,
-						toggle: toggleProps
-					}
+						toggle: toggleProps,
+					},
 				]}
 			/>
 		)
@@ -96,7 +92,7 @@ class BooleanField extends React.PureComponent<BooleanProps> {
 class FormInner extends React.PureComponent<IFormInnerProps> {
 	public static defaultProps = {
 		primaryCTA: null,
-		secondaryCTA: null
+		secondaryCTA: null,
 	}
 
 	public handleChange = (
@@ -114,7 +110,7 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 				break
 		}
 		const {
-			formikProps: { setFieldValue }
+			formikProps: { setFieldValue },
 		} = this.props
 
 		setFieldValue(name, value, shouldValidate)
@@ -127,7 +123,7 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 			text: TextInput,
 			boolean: BooleanField,
 			select: Select,
-			duration: DurationInput
+			duration: DurationInput,
 		}
 		const { formikProps } = this.props
 		const Handler = (child && child.type && Elements[child.type]) || TextInput
@@ -141,7 +137,7 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 			formikProps,
 			fields,
 			primaryCTA,
-			secondaryCTA
+			secondaryCTA,
 		} = this.props
 
 		const {
@@ -150,14 +146,14 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 			errors,
 			touched,
 			isValid,
-			isSubmitting
+			isSubmitting,
 		} = formikProps
 
 		return (
 			<FormLayout {...formLayout}>
 				{fields &&
 					fields.length > 0 &&
-					fields.map(field => {
+					fields.map((field) => {
 						const { type, props } = field
 						return (
 							<FormLayoutItem key={field.name}>
@@ -176,8 +172,8 @@ class FormInner extends React.PureComponent<IFormInnerProps> {
 										},
 										onBlur: handleBlur,
 										value: values ? values[field.name] : '',
-										error: touched[field.name] && errors[field.name]
-									}
+										error: touched[field.name] && errors[field.name],
+									},
 								})}
 							</FormLayoutItem>
 						)

@@ -1,12 +1,10 @@
-import React, { Component, Fragment, ReactElement } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
-
+import React, { Component, Fragment, ReactElement } from 'react'
 import Button from '../Button/Button'
 import EmptyState from '../EmptyState/EmptyState'
 import RecordSelectionList from '../RecordSelectionList/RecordSelectionList'
-
 import { IRecordSelectionListItemProps } from '../RecordSelectionList/RecordSelectionList'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ITruncatedListProps {
 	/** Optional class name for the component */
@@ -64,7 +62,7 @@ export default class TruncatedList extends Component<
 		isTruncated: false,
 		canRemove: false,
 		recordSelectionListItems: [],
-		noItemsText: 'Nothing to see here.'
+		noItemsText: 'Nothing to see here.',
 	}
 
 	private recordSelectionListRef: React.RefObject<RecordSelectionList>
@@ -96,7 +94,7 @@ export default class TruncatedList extends Component<
 			showSelectedCount,
 			onSelect,
 			onRemove,
-			noItemsText
+			noItemsText,
 		} = this.props
 		const parentClass = cx('truncated-list', className)
 		return (
@@ -117,7 +115,7 @@ export default class TruncatedList extends Component<
 							canRemove={canRemove}
 							showSelectedCount={showSelectedCount}
 							onSelect={onSelect}
-							onRemove={async id => {
+							onRemove={async (id) => {
 								if (onRemove) {
 									await onRemove(id)
 									if (this.recordSelectionListRef.current) {

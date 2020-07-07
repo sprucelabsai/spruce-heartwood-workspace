@@ -10,14 +10,14 @@ module.exports = {
 		placeholder: 'johndoe@gmail.com',
 		type: 'email',
 		id: 'email-address',
-		name: 'emailAddress'
+		name: 'emailAddress',
 	},
 	variants: [
 		{
 			name: 'small',
 			context: {
-				class: 'text-input-small'
-			}
+				class: 'text-input-small',
+			},
 		},
 		{
 			name: 'with helper',
@@ -27,23 +27,23 @@ module.exports = {
 				placeholder: 'Pat',
 				helper: 'We use this information to improve your shopping experience',
 				id: 'first-name',
-				name: 'firstName'
-			}
+				name: 'firstName',
+			},
 		},
 		{
 			name: 'with error',
 			context: {
 				class: 'text-input--has-error',
 				value: 'jon ronson',
-				error: 'Please include a valid email address'
-			}
+				error: 'Please include a valid email address',
+			},
 		},
 		{
 			name: 'read only',
 			context: {
 				value: 'hello@sprucelabs.ai',
-				readonly: true
-			}
-		}
-	]
+				readonly: true,
+			},
+		},
+	],
 }

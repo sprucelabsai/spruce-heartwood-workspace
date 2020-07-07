@@ -1,8 +1,8 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import listHeaderDefinition from './listHeader.builder'
-import radioDefinition from '../forms/radio.builder'
 import checkboxDefinition from '../forms/checkbox.builder'
+import radioDefinition from '../forms/radio.builder'
+import listHeaderDefinition from './listHeader.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const listDefinition = buildSchemaDefinition({
 	id: 'list',
@@ -11,15 +11,15 @@ const listDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		header: {
 			type: FieldType.Schema,
 			label: 'Header',
 			hint: 'List Header',
 			options: {
-				schema: listHeaderDefinition
-			}
+				schema: listHeaderDefinition,
+			},
 		},
 		items: {
 			type: FieldType.Schema,
@@ -28,33 +28,33 @@ const listDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'List items',
 			options: {
-				schemaId: 'expandableListItem'
-			}
+				schemaId: 'expandableListItem',
+			},
 		},
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Is small',
-			hint: 'Set true to make the list smaller'
+			hint: 'Set true to make the list smaller',
 		},
 		areSeparatorsVisible: {
 			type: FieldType.Boolean,
 			label: 'Are separators visible',
 			hint: 'Set to true to show separators between list items',
-			defaultValue: true
+			defaultValue: true,
 		},
 		className: {
 			type: FieldType.Text,
 			label: 'Class name',
-			isPrivate: true
+			isPrivate: true,
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		isLoading: {
 			type: FieldType.Boolean,
 			label: 'Is loading',
-			hint: 'Show loading'
+			hint: 'Show loading',
 		},
 		selectable: {
 			type: FieldType.Schema,
@@ -62,18 +62,18 @@ const listDefinition = buildSchemaDefinition({
 			hint:
 				'Optional: set whether to use checkbox or radio for selectable list items',
 			options: {
-				schemas: [checkboxDefinition, radioDefinition]
-			}
+				schemas: [checkboxDefinition, radioDefinition],
+			},
 		},
 		onClick: {
 			type: FieldType.EventCallback,
 			label: 'Click handler',
 			options: {
 				event: 'React.MouseEvent<...>',
-				element: 'HTMLDivElement'
-			}
-		}
-	}
+				element: 'HTMLDivElement',
+			},
+		},
+	},
 })
 
 export default listDefinition

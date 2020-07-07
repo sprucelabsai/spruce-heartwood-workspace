@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withKnobs, number, select, boolean } from '@storybook/addon-knobs'
-import BigForm, { BigFormTransitionStyle } from './BigForm'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { withKnobs, number, select, boolean } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import BigForm, { BigFormTransitionStyle } from './BigForm'
 
 const stories = storiesOf('BigForm', module)
 
@@ -20,7 +20,7 @@ class Controller extends React.Component<IControllerProps, IControllerState> {
 	public constructor(props) {
 		super(props)
 		this.state = {
-			currentSlide: 0
+			currentSlide: 0,
 		}
 	}
 
@@ -46,7 +46,7 @@ class Controller extends React.Component<IControllerProps, IControllerState> {
 					canGoBack: currentSlide > 0,
 					canGoNext: currentSlide < totalSlides - 1,
 					onBack: this.handleBack,
-					onNext: this.handleNext
+					onNext: this.handleNext,
 				}}
 				transitionStyle={transitionStyle ?? undefined}
 			>
@@ -78,7 +78,7 @@ stories.add('BigForm', () => (
 		currentSlide={number('currentSlide', 0)}
 		controls={{
 			canGoBack: false,
-			canGoNext: false
+			canGoNext: false,
 		}}
 		useOneSprucebot={boolean('useOneSprucebot', false)}
 		transitionStyle={select(
@@ -87,7 +87,7 @@ stories.add('BigForm', () => (
 				'BigFormTransitionStyle.Stack': BigFormTransitionStyle.Stack,
 				'BigFormTransitionStyle.SlideLeft': BigFormTransitionStyle.SlideLeft,
 				'BigFormTransitionStyle.SlideUp': BigFormTransitionStyle.SlideUp,
-				'BigFormTransitionStyle.Swap': BigFormTransitionStyle.Swap
+				'BigFormTransitionStyle.Swap': BigFormTransitionStyle.Swap,
 			},
 			BigFormTransitionStyle.Stack
 		)}
@@ -116,7 +116,7 @@ stories.add('With controller', () => (
 				'BigFormTransitionStyle.Stack': BigFormTransitionStyle.Stack,
 				'BigFormTransitionStyle.SlideLeft': BigFormTransitionStyle.SlideLeft,
 				'BigFormTransitionStyle.SlideUp': BigFormTransitionStyle.SlideUp,
-				'BigFormTransitionStyle.Swap': BigFormTransitionStyle.Swap
+				'BigFormTransitionStyle.Swap': BigFormTransitionStyle.Swap,
 			},
 			BigFormTransitionStyle.Stack
 		)}

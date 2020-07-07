@@ -1,9 +1,9 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React, { ChangeEvent, Component } from 'react'
 import CheckIconYes from '../../../../../static/assets/icons/ic_check_box.svg'
 import CheckIconNo from '../../../../../static/assets/icons/ic_check_box_outline_blank.svg'
 import CheckIconMaybe from '../../../../../static/assets/icons/ic_indeterminate_check_box.svg'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ICheckboxState {}
 
@@ -44,7 +44,7 @@ export default class Checkbox extends Component<
 			isDisabled,
 			label,
 			name,
-			helper
+			helper,
 		} = this.props
 		const parentClass = cx('checkbox-item', className)
 

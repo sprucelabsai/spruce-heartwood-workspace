@@ -1,14 +1,13 @@
-import React, { Fragment, ReactNode /*, HTMLProps*/ } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
-
+import React, { Fragment, ReactNode /*, HTMLProps*/ } from 'react'
 import Button from '../Button/Button'
 import TextStyle from '../TextStyle/TextStyle'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 // Components available for templating
 const TextComponentKey = {
 	style: TextStyle,
-	button: Button
+	button: Button,
 }
 
 const renderText = (child): ReactNode => {
@@ -34,10 +33,10 @@ const TemplateEngine = (text = '', context = {}): ReactNode[] => {
 
 	let cursor = 0
 
-	const add = function(line: string, templateVar?: string): void {
+	const add = function (line: string, templateVar?: string): void {
 		if (line !== '') {
 			children.push({
-				props: { element: 'span', children: line.replace(/"/g, '\\"') }
+				props: { element: 'span', children: line.replace(/"/g, '\\"') },
 			})
 		}
 		if (templateVar && context[templateVar]) {

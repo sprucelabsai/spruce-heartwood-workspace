@@ -10,14 +10,14 @@ module.exports = {
 		placeholder: 'my-shopify-shop',
 		name: 'shopify-url',
 		id: 'shopifyUrl',
-		appendix: '.myshopify.com'
+		appendix: '.myshopify.com',
 	},
 	variants: [
 		{
 			name: 'small',
 			context: {
-				class: 'text-input-small'
-			}
-		}
-	]
+				class: 'text-input-small',
+			},
+		},
+	],
 }

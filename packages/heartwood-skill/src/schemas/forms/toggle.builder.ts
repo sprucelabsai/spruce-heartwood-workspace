@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import inputHelperDefinition from './inputHelper.builder'
 import labelDefinition from './label.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const toggleDefinition = buildSchemaDefinition({
 	id: 'Toggle',
@@ -10,29 +10,29 @@ const toggleDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		name: {
 			type: FieldType.Text,
-			label: 'Name'
+			label: 'Name',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		label: {
 			type: FieldType.Schema,
 			label: 'Label',
 			options: {
-				schema: labelDefinition
-			}
+				schema: labelDefinition,
+			},
 		},
 		helper: {
 			type: FieldType.Schema,
 			label: 'Helper',
 			options: {
-				schema: inputHelperDefinition
-			}
+				schema: inputHelperDefinition,
+			},
 		},
 		onClick: {
 			type: FieldType.EventCallback,
@@ -40,10 +40,10 @@ const toggleDefinition = buildSchemaDefinition({
 			hint: 'Optional on click to invoke when tapped',
 			options: {
 				event: 'React.MouseEvent<...>',
-				element: 'HTMLInputElement'
-			}
-		}
-	}
+				element: 'HTMLInputElement',
+			},
+		},
+	},
 })
 
 export default toggleDefinition

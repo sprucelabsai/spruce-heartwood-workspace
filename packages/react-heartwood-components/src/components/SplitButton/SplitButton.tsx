@@ -1,13 +1,13 @@
+import {
+	SpruceSchemas,
+	defaultProps,
+	splitButtonDefinition,
+} from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React, { Component, Fragment } from 'react'
 import { createPortal } from 'react-dom'
 import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import {
-	SpruceSchemas,
-	defaultProps,
-	splitButtonDefinition
-} from '@sprucelabs/heartwood-skill'
 
 const splitButtonDefaultProps = defaultProps(splitButtonDefinition)
 
@@ -32,7 +32,7 @@ export default class SplitButton extends Component<
 > {
 	public static defaultProps = {
 		isFullWidth: false,
-		isSmall: false
+		isSmall: false,
 	}
 	public ref = React.createRef<HTMLDivElement>()
 	public menuRef = React.createRef<HTMLDivElement>()
@@ -42,9 +42,9 @@ export default class SplitButton extends Component<
 		menuPosition: {
 			top: 0,
 			left: 0,
-			width: 0
+			width: 0,
 		},
-		highlightedActionIndex: -1
+		highlightedActionIndex: -1,
 	}
 
 	public componentWillUnmount = () => {
@@ -64,7 +64,7 @@ export default class SplitButton extends Component<
 			this.setState(
 				{
 					isVisible: false,
-					highlightedActionIndex: -1
+					highlightedActionIndex: -1,
 				},
 				() => this.manageListeners()
 			)
@@ -78,22 +78,22 @@ export default class SplitButton extends Component<
 		// Down arrow
 		if (e.keyCode === 40) {
 			// Update the highlighted suggestion
-			this.setState(prevState => ({
+			this.setState((prevState) => ({
 				highlightedActionIndex:
 					prevState.highlightedActionIndex === buttons.length - 1
 						? 0
-						: prevState.highlightedActionIndex + 1
+						: prevState.highlightedActionIndex + 1,
 			}))
 		}
 
 		// Up arrow
 		if (e.keyCode === 38) {
 			// Update the highlighted suggestion
-			this.setState(prevState => ({
+			this.setState((prevState) => ({
 				highlightedActionIndex:
 					prevState.highlightedActionIndex <= 0
 						? buttons.length - 1
-						: prevState.highlightedActionIndex - 1
+						: prevState.highlightedActionIndex - 1,
 			}))
 		}
 
@@ -102,7 +102,7 @@ export default class SplitButton extends Component<
 			this.setState(
 				{
 					isVisible: false,
-					highlightedActionIndex: -1
+					highlightedActionIndex: -1,
 				},
 				() => this.manageListeners()
 			)
@@ -160,22 +160,22 @@ export default class SplitButton extends Component<
 		const menuPosition = {
 			left: buttonPosition.left,
 			top: buttonPosition.bottom + scrollTop + 2,
-			width: buttonPosition.width
+			width: buttonPosition.width,
 		}
 
 		this.setState({
-			menuPosition
+			menuPosition,
 		})
 	}
 
 	public toggleActionsVisibility = () => {
 		this.getMenuPosition()
 		this.setState(
-			prevState => ({
+			(prevState) => ({
 				isVisible: !prevState.isVisible,
 				highlightedActionIndex: prevState.isVisible
 					? -1
-					: prevState.highlightedActionIndex
+					: prevState.highlightedActionIndex,
 			}),
 			() => this.manageListeners()
 		)
@@ -187,7 +187,7 @@ export default class SplitButton extends Component<
 		this.setState(
 			{
 				isVisible: false,
-				highlightedActionIndex: -1
+				highlightedActionIndex: -1,
 			},
 			() => onClick && onClick(e)
 		)
@@ -200,7 +200,7 @@ export default class SplitButton extends Component<
 			kind,
 			isFullWidth,
 			isSmall,
-			usePortal
+			usePortal,
 		} = this.props
 		const { isVisible, menuPosition, highlightedActionIndex } = this.state
 
@@ -220,7 +220,7 @@ export default class SplitButton extends Component<
 		return (
 			<div
 				className={cx('split-button', {
-					'split-button--is-full-width': isFullWidth
+					'split-button--is-full-width': isFullWidth,
 				})}
 				ref={this.ref}
 			>
@@ -251,7 +251,7 @@ export default class SplitButton extends Component<
 										position: 'absolute',
 										top: `${menuPosition.top}px`,
 										left: `${menuPosition.left}px`,
-										width: `${menuPosition.width}px`
+										width: `${menuPosition.width}px`,
 									}}
 								>
 									<ButtonGroup
@@ -271,7 +271,7 @@ export default class SplitButton extends Component<
 									position: 'relative',
 									top: '2px',
 									left: '0',
-									width: `${menuPosition.width}px`
+									width: `${menuPosition.width}px`,
 								}}
 							>
 								<ButtonGroup

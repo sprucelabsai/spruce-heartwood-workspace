@@ -2,7 +2,7 @@
 import {
 	// WithKnobsOptions,
 	object,
-	withKnobs
+	withKnobs,
 } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 import moment from 'moment-timezone'
@@ -19,7 +19,7 @@ const fromImage =
 const messageJSON = {
 	from: {
 		name: fromName,
-		image: fromImage
+		image: fromImage,
 	},
 	dateSent: moment(),
 	message: {
@@ -27,23 +27,23 @@ const messageJSON = {
 		context: {
 			name: {
 				type: 'text',
-				props: { element: 'a', children: 'Dorian Feeney' }
+				props: { element: 'a', children: 'Dorian Feeney' },
 			},
 			appointment: {
 				type: 'text',
-				props: { element: 'a', children: 'upcoming appointment' }
+				props: { element: 'a', children: 'upcoming appointment' },
 			},
 			date: {
 				type: 'textStyle',
-				props: { type: 'strong', children: 'February 12th' }
-			}
-		}
+				props: { type: 'strong', children: 'February 12th' },
+			},
+		},
 	},
 	detail: 'Booked via Booking Skill',
 	primaryAction: {
 		text: 'Confirm Appointment',
 		href: '#',
-		target: '_blank'
+		target: '_blank',
 	},
 	replies: [
 		{
@@ -52,9 +52,9 @@ const messageJSON = {
 			context: {
 				call: {
 					type: 'button',
-					props: { href: '#', text: 'Call Dorian', target: '_blank' }
-				}
-			}
+					props: { href: '#', text: 'Call Dorian', target: '_blank' },
+				},
+			},
 		},
 		{
 			type: 'warn',
@@ -62,9 +62,9 @@ const messageJSON = {
 			context: {
 				call: {
 					type: 'button',
-					props: { href: '#', text: 'Call Dorian', target: '_blank' }
-				}
-			}
+					props: { href: '#', text: 'Call Dorian', target: '_blank' },
+				},
+			},
 		},
 		{
 			type: 'success',
@@ -72,25 +72,25 @@ const messageJSON = {
 			context: {
 				teammate: {
 					type: 'button',
-					props: { href: '#', text: 'Camila Hintz', target: '_blank' }
-				}
-			}
-		}
+					props: { href: '#', text: 'Camila Hintz', target: '_blank' },
+				},
+			},
+		},
 	],
 	attachments: [
 		{
 			type: 'image',
 			props: {
 				src:
-					'https://c8.alamy.com/comp/CRJ923/young-customer-service-man-with-brace-doing-the-ok-sign-CRJ923.jpg'
-			}
-		}
-	]
+					'https://c8.alamy.com/comp/CRJ923/young-customer-service-man-with-brace-doing-the-ok-sign-CRJ923.jpg',
+			},
+		},
+	],
 }
 
 const stories = storiesOf('Message', module)
 
-stories.addDecorator(story => (
+stories.addDecorator((story) => (
 	<Page>
 		<SkillViewContent>
 			<Layout>

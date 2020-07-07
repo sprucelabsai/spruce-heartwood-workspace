@@ -1,11 +1,11 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import defaultProps from '@sprucelabs/heartwood-skill/build/src/utilities/defaultProps'
 import cx from 'classnames'
 import React, { Fragment } from 'react'
+import buttonDefinition from '#spruce/schemas/local/button.definition'
+import BasicAnchor from '../_utilities/Anchor'
 import CircleLoader from '../CircleLoader/CircleLoader'
 import Icon from '../Icon/Icon'
-import BasicAnchor from '../_utilities/Anchor'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
-import buttonDefinition from '@sprucelabs/heartwood-skill/build/.spruce/schemas/local/button.definition'
-import defaultProps from '@sprucelabs/heartwood-skill/build/src/utilities/defaultProps'
 
 const defaults = defaultProps(buttonDefinition)
 
@@ -36,10 +36,10 @@ const Button = (props: SpruceSchemas.Local.IButton): React.ReactElement => {
 		'btn-full-width': isFullWidth,
 		'btn--loading': isLoading,
 		'btn-small': isSmall,
-		'btn-icon-only': (!children && !text) || isIconOnly
+		'btn-icon-only': (!children && !text) || isIconOnly,
 	})
 	const textClass = cx('btn__text', {
-		'visually-hidden': isIconOnly
+		'visually-hidden': isIconOnly,
 	})
 
 	const handleClick = (e: React.MouseEvent): any => {
@@ -68,7 +68,7 @@ const Button = (props: SpruceSchemas.Local.IButton): React.ReactElement => {
 								className={cx(
 									{
 										['btn__icon']: true,
-										'btn__line-icon': icon.isLineIcon
+										'btn__line-icon': icon.isLineIcon,
 									},
 									icon.className
 								)}

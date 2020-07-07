@@ -1,7 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-import SprucebotTypedMessage from '../../SprucebotTypedMessage/SprucebotTypedMessage'
 import { buildDuration, SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import SprucebotTypedMessage from '../../SprucebotTypedMessage/SprucebotTypedMessage'
 
 export interface IBigFormSlideHeaderProps {
 	/** What question are we asking (fed to typed message) */
@@ -16,7 +16,7 @@ export interface IBigFormSlideHeaderProps {
 
 const defaults = {
 	sprucebotSize: 'medium',
-	sprucebotStateOfMind: 'chill'
+	sprucebotStateOfMind: 'chill',
 }
 
 class BigFormSlideHeader extends React.Component<
@@ -41,7 +41,7 @@ class BigFormSlideHeader extends React.Component<
 			question,
 			sprucebotSize,
 			sprucebotStateOfMind,
-			children
+			children,
 		} = this.props
 
 		return (
@@ -54,12 +54,12 @@ class BigFormSlideHeader extends React.Component<
 					size={sprucebotSize}
 					defaultAvatar={{
 						id: 'question',
-						stateOfMind: sprucebotStateOfMind
+						stateOfMind: sprucebotStateOfMind,
 					}}
 					sentences={[
 						{
-							words: question
-						}
+							words: question,
+						},
 					]}
 				/>
 				{children}

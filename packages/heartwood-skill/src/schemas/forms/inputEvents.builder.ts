@@ -11,18 +11,18 @@ const inputEventsDefinition = buildSchemaDefinition({
 			label: 'Change handler',
 			options: {
 				event: 'React.ChangeEvent<...>',
-				element: 'HTMLInputElement'
-			}
+				element: 'HTMLInputElement',
+			},
 		},
 		onBlur: {
 			type: FieldType.EventCallback,
 			label: 'Blur handler',
 			options: {
 				event: 'React.FocusEvent<...>',
-				element: 'HTMLInputElement'
-			}
-		}
-	}
+				element: 'HTMLInputElement',
+			},
+		},
+	},
 })
 
 export default inputEventsDefinition

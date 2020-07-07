@@ -9,8 +9,8 @@ module.exports = {
 		{
 			name: 'No Back',
 			context: {
-				disableBack: true
-			}
+				disableBack: true,
+			},
 		},
 		{
 			name: 'Pages',
@@ -18,80 +18,80 @@ module.exports = {
 				pages: [
 					{
 						text: '1',
-						isCurrent: true
+						isCurrent: true,
 					},
 					{
-						text: '2'
+						text: '2',
 					},
 					{
-						text: '3'
+						text: '3',
 					},
 					{
-						text: null
+						text: null,
 					},
 					{
-						text: '22'
+						text: '22',
 					},
 					{
-						text: '23'
+						text: '23',
 					},
 					{
-						text: '24'
-					}
-				]
-			}
+						text: '24',
+					},
+				],
+			},
 		},
 		{
 			name: 'Pages 02',
 			context: {
 				pages: [
 					{
-						text: '1'
+						text: '1',
 					},
 					{
-						text: null
+						text: null,
 					},
 					{
-						text: '24'
+						text: '24',
 					},
 					{
 						text: '25',
-						isCurrent: true
+						isCurrent: true,
 					},
 					{
-						text: '26'
+						text: '26',
 					},
 					{
-						text: null
+						text: null,
 					},
 					{
-						text: '68'
-					}
-				]
-			}
+						text: '68',
+					},
+				],
+			},
 		},
 		{
 			name: 'Pages 03',
 			context: {
 				pages: [
 					{
-						text: '1'
+						text: '1',
 					},
 					{
-						text: '2'
+						text: '2',
 					},
 					{
 						text: '3',
-						isCurrent: true
+						isCurrent: true,
 					},
 					{
-						text: '4'
+						text: '4',
 					},
 					{
-						text: '5'
-					}
-				]
-			}
+						text: '5',
+					},
+				],
+			},
 		},
 		{
 			name: 'Jump',
@@ -99,31 +99,31 @@ module.exports = {
 				showJump: true,
 				pages: [
 					{
-						text: '1'
+						text: '1',
 					},
 					{
-						text: null
+						text: null,
 					},
 					{
-						text: '24'
+						text: '24',
 					},
 					{
 						text: '25',
-						isCurrent: true
+						isCurrent: true,
 					},
 					{
-						text: '26'
+						text: '26',
 					},
 					{
-						text: null
+						text: null,
 					},
 					{
-						text: '68'
-					}
-				]
-			}
-		}
-	]
+						text: '68',
+					},
+				],
+			},
+		},
+	],
 }
 
 // TODO: Add the Jump functionality

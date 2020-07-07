@@ -1,13 +1,13 @@
 import {
 	buildSchemaDefinition,
 	FieldType,
-	ISelectFieldDefinitionChoice
+	ISelectFieldDefinitionChoice,
 } from '@sprucelabs/schema'
 import sidebarHeaderDefinition from './sidebarHeader.builder'
 
 export const sidebarSpacingChoices: ISelectFieldDefinitionChoice[] = [
 	{ value: 'base', label: 'Base' },
-	{ value: 'loose', label: 'Loose' }
+	{ value: 'loose', label: 'Loose' },
 ]
 
 const sidebarDefinition = buildSchemaDefinition({
@@ -19,8 +19,8 @@ const sidebarDefinition = buildSchemaDefinition({
 			type: FieldType.Schema,
 			hint: 'Optional header that will only appear on mobile',
 			options: {
-				schema: sidebarHeaderDefinition
-			}
+				schema: sidebarHeaderDefinition,
+			},
 		},
 		items: {
 			type: FieldType.Schema,
@@ -28,8 +28,8 @@ const sidebarDefinition = buildSchemaDefinition({
 			hint: 'Items to display in the sidebar',
 			isArray: true,
 			options: {
-				schemaId: 'sidebarItem'
-			}
+				schemaId: 'sidebarItem',
+			},
 		},
 		sections: {
 			type: FieldType.Schema,
@@ -37,16 +37,16 @@ const sidebarDefinition = buildSchemaDefinition({
 			hint: 'Sections to display in the sidebar',
 			isArray: true,
 			options: {
-				schemaId: 'sidebarSection'
-			}
+				schemaId: 'sidebarSection',
+			},
 		},
 		backLink: {
 			type: FieldType.Schema,
 			label: 'Back link',
 			hint: 'Back link item to handle navigation back to previous location',
 			options: {
-				schemaId: 'sidebarItem'
-			}
+				schemaId: 'sidebarItem',
+			},
 		},
 		side: {
 			type: FieldType.Select,
@@ -55,39 +55,39 @@ const sidebarDefinition = buildSchemaDefinition({
 			options: {
 				choices: [
 					{ value: 'left', label: 'Left' },
-					{ value: 'right', label: 'Right' }
-				]
-			}
+					{ value: 'right', label: 'Right' },
+				],
+			},
 		},
 		isLarge: {
 			type: FieldType.Boolean,
 			label: 'Large',
-			hint: 'Set true to make the sidebar larger. Defaults to false.'
+			hint: 'Set true to make the sidebar larger. Defaults to false.',
 		},
 		isCollapsible: {
 			type: FieldType.Boolean,
 			label: 'Collapsed',
 			hint:
-				'Enables the user to collapse the sidebar on desktop. Defaults to true.'
+				'Enables the user to collapse the sidebar on desktop. Defaults to true.',
 		},
 		isExpanded: {
 			type: FieldType.Boolean,
 			label: 'Expanded on desktop',
 			hint: 'Set true to expand the sidebar (large screens only)',
-			defaultValue: true
+			defaultValue: true,
 		},
 		isMobileExpanded: {
 			type: FieldType.Boolean,
 			label: 'Expanded on mobile',
-			hint: 'Set true to expand the sidebar on small screens'
+			hint: 'Set true to expand the sidebar on small screens',
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		footerChildren: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		onToggleExpanded: {
 			type: FieldType.Callback,
@@ -95,8 +95,8 @@ const sidebarDefinition = buildSchemaDefinition({
 			hint:
 				'Expected to expand/collapse the sidebar by setting (isExpanded to true/false)',
 			options: {
-				signature: '() => void'
-			}
+				signature: '() => void',
+			},
 		},
 		onForceCollapse: {
 			type: FieldType.Callback,
@@ -104,10 +104,10 @@ const sidebarDefinition = buildSchemaDefinition({
 			hint:
 				'Expect you to collapse the bar no matter what (isExpanded to false)',
 			options: {
-				signature: '() => void'
-			}
-		}
-	}
+				signature: '() => void',
+			},
+		},
+	},
 })
 
 export default sidebarDefinition

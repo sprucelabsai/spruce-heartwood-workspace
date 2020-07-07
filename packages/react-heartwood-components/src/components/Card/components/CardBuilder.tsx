@@ -1,3 +1,4 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
 import { unionArray } from '../../..'
 import Button from '../../Button/Button'
@@ -13,7 +14,6 @@ import CardFooter from './CardFooter'
 import CardHeader from './CardHeader'
 import OnboardingCard from './OnboardingCard'
 import Scores from './Scores'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 type CardBuilderBodyItem = SpruceSchemas.Local.ICardBuilderBody['items'][number]
 
@@ -24,7 +24,7 @@ const components: Record<CardBuilderBodyItem['schemaId'], React.ElementType> = {
 	text: Text,
 	scoreCard: Scores,
 	toast: Toast,
-	list: List
+	list: List,
 }
 
 const renderItem = (item: CardBuilderBodyItem): React.ReactElement => {
@@ -65,14 +65,14 @@ export default class CardBuilder extends React.Component<
 			isFullBleed = false,
 			areSectionSeparatorsVisible = false,
 			hasTopPadding = true,
-			hasBottomPadding = true
+			hasBottomPadding = true,
 		} = body || {
 			items: undefined,
 			isSectioned: true,
 			isFullBleed: false,
 			areSectionSeparatorsVisible: false,
 			hasTopPadding: true,
-			hasBottomPadding: true
+			hasBottomPadding: true,
 		}
 
 		const { children } = body || { children: undefined }
@@ -97,7 +97,7 @@ export default class CardBuilder extends React.Component<
 					>
 						{children}
 						{Array.isArray(items)
-							? unionArray(items).map(item => renderItem(item))
+							? unionArray(items).map((item) => renderItem(item))
 							: items}
 					</CardBody>
 				)}

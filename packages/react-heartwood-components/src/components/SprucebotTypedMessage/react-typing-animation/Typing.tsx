@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
 import requestAnimationFrame from 'raf'
-
-import { randomize, extractText, replaceTreeText } from './utils'
+import React, { Component } from 'react'
 import { default as Backspace } from './Backspace'
-import { default as Reset } from './Reset'
-import { default as Delay } from './Delay'
-import { default as Speed } from './Speed'
 import { default as Cursor } from './Cursor'
+import { default as Delay } from './Delay'
+import { default as Reset } from './Reset'
+import { default as Speed } from './Speed'
+import { randomize, extractText, replaceTreeText } from './utils'
 
 export enum Step {
 	Line = 'line',
-	Char = 'char'
+	Char = 'char',
 }
 
 export interface ICursor {
@@ -58,7 +57,7 @@ class Typing extends Component<IProps, IState> {
 		onPausedTyping: () => {},
 		onBeforeType: () => {},
 		onAfterType: () => {},
-		onFinishedTyping: () => {}
+		onFinishedTyping: () => {},
 	}
 
 	public static Backspace = Backspace
@@ -85,8 +84,8 @@ class Typing extends Component<IProps, IState> {
 				preEraseLineNum: 0,
 				delay: Typing.defaultProps.startDelay,
 				speed: Typing.defaultProps.speed,
-				step: Step.Char
-			}
+				step: Step.Char,
+			},
 		}
 	}
 
@@ -103,11 +102,11 @@ class Typing extends Component<IProps, IState> {
 		this.hasMounted = false
 	}
 
-	public updateState = async state => {
+	public updateState = async (state) => {
 		if (!this.hasMounted) {
 			return
 		}
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			this.setState(state, resolve)
 		})
 	}
@@ -136,7 +135,7 @@ class Typing extends Component<IProps, IState> {
 		}
 	}
 
-	public addToTypingQueue = async lines => {
+	public addToTypingQueue = async (lines) => {
 		const { toType } = this.state
 		const newToType = [...toType, ...lines]
 		return this.updateState({ toType: newToType, isFinished: false })
@@ -156,7 +155,7 @@ class Typing extends Component<IProps, IState> {
 		await this.updateState({ text: [] })
 
 		// Give pause time to hit if a timeout as pending
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			setTimeout(async () => {
 				await this.resetState()
 				if (!wasPaused) {
@@ -177,8 +176,8 @@ class Typing extends Component<IProps, IState> {
 				preEraseLineNum: 0,
 				delay: this.props.startDelay,
 				speed: this.props.speed,
-				step: 'char'
-			}
+				step: 'char',
+			},
 		})
 
 	public beginTyping = async () => {
@@ -233,7 +232,7 @@ class Typing extends Component<IProps, IState> {
 			return
 		}
 
-		return new Promise(resolve => {
+		return new Promise((resolve) => {
 			setTimeout(async () => {
 				if (this.isPaused) {
 					return
@@ -260,7 +259,7 @@ class Typing extends Component<IProps, IState> {
 		if (this.isPaused) {
 			return
 		}
-		return new Promise(async resolve => {
+		return new Promise(async (resolve) => {
 			const toType = [...this.state.toType]
 			const text = [...this.state.text]
 			const cursor = { ...this.state.cursor }
@@ -288,7 +287,7 @@ class Typing extends Component<IProps, IState> {
 		if (this.isPaused) {
 			return
 		}
-		return new Promise(async resolve => {
+		return new Promise(async (resolve) => {
 			const text = [...this.state.text]
 			const cursor = { ...this.state.cursor }
 

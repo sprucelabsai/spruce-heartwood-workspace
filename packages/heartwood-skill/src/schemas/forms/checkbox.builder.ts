@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import inputHelperDefinition from './inputHelper.builder'
 import inputEventsDefinition from './inputEvents.builder'
+import inputHelperDefinition from './inputHelper.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const checkboxDefinition = buildSchemaDefinition({
 	id: 'checkbox',
@@ -10,45 +10,45 @@ const checkboxDefinition = buildSchemaDefinition({
 	fields: {
 		...inputEventsDefinition.fields,
 		id: {
-			type: FieldType.Id
+			type: FieldType.Id,
 		},
 		name: {
 			type: FieldType.Text,
-			label: 'Name'
+			label: 'Name',
 		},
 		label: {
 			type: FieldType.Schema,
 			label: 'Label',
 			options: {
-				schemaId: 'label'
-			}
+				schemaId: 'label',
+			},
 		},
 		isDisabled: {
 			type: FieldType.Boolean,
-			label: 'Disabled'
+			label: 'Disabled',
 		},
 		isIndeterminate: {
 			type: FieldType.Boolean,
 			label: 'Indeterminate',
 			hint:
-				"Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it."
+				"Is showing that half checked state you've seen on checkboxes. It generally has a horizontal line through it.",
 		},
 		isChecked: {
 			type: FieldType.Boolean,
-			label: 'Checked'
+			label: 'Checked',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		helper: {
 			type: FieldType.Schema,
 			label: 'Helper',
 			options: {
-				schema: inputHelperDefinition
-			}
-		}
-	}
+				schema: inputHelperDefinition,
+			},
+		},
+	},
 })
 
 export default checkboxDefinition

@@ -1,6 +1,6 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React, { Component } from 'react'
 import ListItem from '../ListItem/ListItem'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IExpandableListItemState {
 	/** Is the list item expanded */
@@ -12,12 +12,12 @@ export default class ExpandableListItem extends Component<
 	IExpandableListItemState
 > {
 	public state = {
-		isExpanded: false
+		isExpanded: false,
 	}
 
 	public toggleExpanded = () => {
-		this.setState(prevState => ({
-			isExpanded: !prevState.isExpanded
+		this.setState((prevState) => ({
+			isExpanded: !prevState.isExpanded,
 		}))
 	}
 
@@ -46,10 +46,10 @@ export default class ExpandableListItem extends Component<
 					{
 						icon,
 						kind: isExpanded ? undefined : 'simple',
-						onClick: this.toggleExpanded
-					}
+						onClick: this.toggleExpanded,
+					},
 				]}
-				onClick={e => onClick?.(e as any)}
+				onClick={(e) => onClick?.(e as any)}
 			/>
 		)
 	}

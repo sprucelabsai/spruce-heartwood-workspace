@@ -1,7 +1,7 @@
-import * as React from 'react'
-import cx from 'classnames'
-import Modal, { IModalProps } from '../Modal/Modal'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import * as React from 'react'
+import Modal, { IModalProps } from '../Modal/Modal'
 
 interface IModalPageProps {
 	/** The title for this page */
@@ -36,7 +36,7 @@ interface IPageModalProps extends IModalProps {
 
 export default class PagedModal extends React.PureComponent<IPageModalProps> {
 	public static defaultProps = {
-		size: 'medium'
+		size: 'medium',
 	}
 
 	public render() {
@@ -47,10 +47,10 @@ export default class PagedModal extends React.PureComponent<IPageModalProps> {
 			pages,
 			onRequestClose,
 			canGoBack,
-			onClickBack
+			onClickBack,
 		} = this.props
 
-		const currentPage = pages.find(page => page.isCurrent)
+		const currentPage = pages.find((page) => page.isCurrent)
 
 		return (
 			<Modal
@@ -69,7 +69,7 @@ export default class PagedModal extends React.PureComponent<IPageModalProps> {
 					<Modal.Body
 						key={`${idx}`}
 						className={cx('paged-modal__page', {
-							'paged-modal__page--is-current': page.isCurrent
+							'paged-modal__page--is-current': page.isCurrent,
 						})}
 					>
 						{page.body}

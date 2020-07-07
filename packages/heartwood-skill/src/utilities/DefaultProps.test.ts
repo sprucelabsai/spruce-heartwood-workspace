@@ -1,14 +1,14 @@
 import '@sprucelabs/path-resolver/register'
+import { ISchemaDefinition } from '@sprucelabs/schema'
 import BaseTest, { ISpruce, test, assert } from '@sprucelabs/test'
 import cardDefinition from '../schemas/cards/card.definition'
-import { ISchemaDefinition } from '@sprucelabs/schema'
 import defaultProps from './defaultProps'
 
 export default class DefaultPropsTest extends BaseTest {
 	@test('can get card default values', cardDefinition, {
 		isCentered: false,
 		isExpandable: false,
-		defaultExpanded: true
+		defaultExpanded: true,
 	})
 	protected static async testDefaultValues(
 		spruce: ISpruce,

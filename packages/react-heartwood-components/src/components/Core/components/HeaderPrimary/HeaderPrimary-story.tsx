@@ -1,11 +1,11 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, object, text } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import StylesProvider from '../../../../../.storybook/StylesProvider'
-import HeaderPrimary from './HeaderPrimary'
 import user01image from '../../../../../static/assets/users/user-01--96w.png'
+import HeaderPrimary from './HeaderPrimary'
 
-const ProvideStyles = storyFn => <StylesProvider>{storyFn()}</StylesProvider>
+const ProvideStyles = (storyFn) => <StylesProvider>{storyFn()}</StylesProvider>
 
 const stories = storiesOf('Header Primary', module)
 
@@ -15,17 +15,17 @@ stories.addDecorator(withKnobs)
 const user = {
 	name: 'Madaline Gibson',
 	image: user01image,
-	tel: '(605) 230-5253'
+	tel: '(605) 230-5253',
 }
 
 const location = {
 	name: 'Chimera Hair Salon at the Point',
-	address: '7678 N High St, Denver, CO'
+	address: '7678 N High St, Denver, CO',
 }
 const organization = {
 	name: 'Chimera Hair Salon',
 	image:
-		'https://www.logoground.com/uploads/2018130762018-04-113965123chimera%20logo%20chimera%20logo.jpg'
+		'https://www.logoground.com/uploads/2018130762018-04-113965123chimera%20logo%20chimera%20logo.jpg',
 }
 
 stories

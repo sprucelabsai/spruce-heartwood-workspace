@@ -8,22 +8,22 @@ const textDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Text,
-			label: 'Id'
+			label: 'Id',
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
 			hint:
-				'the text to render, supports {{handlebars}} and pulls off {{context}}'
+				'the text to render, supports {{handlebars}} and pulls off {{context}}',
 		},
 		className: {
-			type: FieldType.Text
+			type: FieldType.Text,
 		},
 		isInline: {
 			type: FieldType.Boolean,
 			label: 'Inline',
 			defaultValue: false,
-			hint: 'If true, renders text in a <span /> vs a <p />'
+			hint: 'If true, renders text in a <span /> vs a <p />',
 		},
 		context: {
 			type: FieldType.Raw,
@@ -31,14 +31,14 @@ const textDefinition = buildSchemaDefinition({
 			hint:
 				'A key/value pair used to populate the {{handlebars}} placeholders of the text prop',
 			options: {
-				valueType: 'Record<string, any>'
-			}
+				valueType: 'Record<string, any>',
+			},
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
-		}
-	}
+			isPrivate: true,
+		},
+	},
 })
 
 export default textDefinition

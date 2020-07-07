@@ -8,13 +8,13 @@ module.exports = {
 		actions: [
 			{
 				text: 'Confirm Changes',
-				className: 'btn-primary'
+				className: 'btn-primary',
 			},
 			{
 				text: 'Cancel',
-				className: 'btn-secondary'
-			}
-		]
+				className: 'btn-secondary',
+			},
+		],
 	},
 	variants: [
 		{
@@ -24,18 +24,18 @@ module.exports = {
 				actions: [
 					{
 						text: 'Option One',
-						className: 'btn-secondary'
+						className: 'btn-secondary',
 					},
 					{
 						text: 'Option Two',
-						className: 'btn-secondary'
+						className: 'btn-secondary',
 					},
 					{
 						text: 'Option Three',
-						className: 'btn-secondary'
-					}
-				]
-			}
+						className: 'btn-secondary',
+					},
+				],
+			},
 		},
 		{
 			name: 'Floating',
@@ -44,18 +44,18 @@ module.exports = {
 				actions: [
 					{
 						text: 'Edit Service',
-						className: 'btn-simple btn-full-width'
+						className: 'btn-simple btn-full-width',
 					},
 					{
 						text: 'Hide Service',
-						className: 'btn-simple btn-full-width'
+						className: 'btn-simple btn-full-width',
 					},
 					{
 						text: 'Move to Category',
-						className: 'btn-simple btn-full-width'
-					}
-				]
-			}
-		}
-	]
+						className: 'btn-simple btn-full-width',
+					},
+				],
+			},
+		},
+	],
 }

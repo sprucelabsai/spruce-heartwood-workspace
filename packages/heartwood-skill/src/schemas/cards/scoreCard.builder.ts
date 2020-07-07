@@ -11,10 +11,10 @@ const scoreCardDefinition = buildSchemaDefinition({
 			isRequired: true,
 			isArray: true,
 			options: {
-				schemaId: 'ScoreCardPanel'
-			}
-		}
-	}
+				schemaId: 'ScoreCardPanel',
+			},
+		},
+	},
 })
 
 export default scoreCardDefinition

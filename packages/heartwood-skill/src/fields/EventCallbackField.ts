@@ -1,6 +1,6 @@
 import {
 	IFieldTemplateDetailOptions,
-	IFieldDefinition
+	IFieldDefinition,
 } from '@sprucelabs/schema'
 import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
 import FieldType from '#spruce/schemas/fields/fieldType'
@@ -164,14 +164,14 @@ export default class EventCallbackField extends AbstractField<
 	) {
 		const {
 			definition: {
-				options: { event, element }
-			}
+				options: { event, element },
+			},
 		} = options
 
 		return {
 			valueType: `((e: ${!event ? 'Partial' : event.replace('<...>', '')}<${
 				!element ? 'any' : element.replace(/\.\.\./g, '')
-			}>) => void)${options.definition.isArray ? '[]' : ''}`
+			}>) => void)${options.definition.isArray ? '[]' : ''}`,
 		}
 	}
 }

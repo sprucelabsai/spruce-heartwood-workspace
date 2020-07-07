@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, number } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import Pagination from './Pagination'
 
 const stories = storiesOf('Pagination', module)
@@ -15,7 +15,7 @@ stories.add('Pagination', () => (
 		showJump={boolean('showJump', false)}
 		onClickNext={() => console.log('You clicked next')}
 		onClickBack={() => console.log('You clicked back')}
-		onPageButtonClick={page => console.log('You clicked ', page)}
-		onJump={value => console.log('Use jump: ', value)}
+		onPageButtonClick={(page) => console.log('You clicked ', page)}
+		onJump={(value) => console.log('Use jump: ', value)}
 	/>
 ))

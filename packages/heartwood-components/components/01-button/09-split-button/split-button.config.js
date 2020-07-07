@@ -6,26 +6,26 @@ module.exports = {
 	},
 	context: {
 		defaultAction: 'Check guest in',
-		btnClass: 'btn-primary'
+		btnClass: 'btn-primary',
 	},
 	variants: [
 		{
 			name: 'secondary',
 			context: {
-				btnClass: 'btn-secondary'
-			}
+				btnClass: 'btn-secondary',
+			},
 		},
 		{
 			name: 'primary small',
 			context: {
-				btnClass: 'btn-primary btn-small'
-			}
+				btnClass: 'btn-primary btn-small',
+			},
 		},
 		{
 			name: 'secondary small',
 			context: {
-				btnClass: 'btn-secondary btn-small'
-			}
-		}
-	]
+				btnClass: 'btn-secondary btn-small',
+			},
+		},
+	],
 }

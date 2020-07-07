@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import iconDefinition from './icon.builder'
 import buttonDefinition from './forms/button.builder'
+import iconDefinition from './icon.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const emptyStateDefinition = buildSchemaDefinition({
 	id: 'emptyState',
@@ -12,34 +12,34 @@ const emptyStateDefinition = buildSchemaDefinition({
 			type: FieldType.Text,
 			label: 'Heading',
 			isRequired: true,
-			defaultValue: 'Nothing to see here'
+			defaultValue: 'Nothing to see here',
 		},
 		subheading: {
 			type: FieldType.Text,
-			label: 'Subheading'
+			label: 'Subheading',
 		},
 		icon: {
 			type: FieldType.Schema,
 			label: 'Icon',
 			options: {
-				schema: iconDefinition
+				schema: iconDefinition,
 			},
 			defaultValue: {
 				name: 'empty_box',
-				isLineIcon: true
-			}
+				isLineIcon: true,
+			},
 		},
 		primaryButton: {
 			type: FieldType.Schema,
 			label: 'Primary button',
 			options: {
-				schema: buttonDefinition
+				schema: buttonDefinition,
 			},
 			defaultValue: {
-				kind: 'simple'
-			}
-		}
-	}
+				kind: 'simple',
+			},
+		},
+	},
 })
 
 export default emptyStateDefinition

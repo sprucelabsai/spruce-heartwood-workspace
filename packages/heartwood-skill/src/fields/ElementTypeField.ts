@@ -1,10 +1,10 @@
-import React from 'react'
-import FieldType from '#spruce:schema/fields/fieldType'
-import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
 import {
 	IFieldTemplateDetailOptions,
-	IFieldDefinition
+	IFieldDefinition,
 } from '@sprucelabs/schema'
+import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
+import React from 'react'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 export type IElementTypeFieldDefinition = IFieldDefinition<
 	React.ElementType
@@ -25,7 +25,7 @@ export default class ElementTypeField extends AbstractField<
 		options: IFieldTemplateDetailOptions<IElementTypeFieldDefinition>
 	) {
 		return {
-			valueType: `React.ElementType${options.definition.isArray ? '[]' : ''}`
+			valueType: `React.ElementType${options.definition.isArray ? '[]' : ''}`,
 		}
 	}
 }

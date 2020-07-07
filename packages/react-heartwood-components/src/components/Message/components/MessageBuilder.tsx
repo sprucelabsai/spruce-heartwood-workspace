@@ -1,9 +1,6 @@
-import React, { Fragment } from 'react'
-
 import cx from 'classnames'
-
+import React, { Fragment } from 'react'
 import Message from '../Message'
-
 import {} from '../Message'
 
 // COMPONENTS THAT CAN GO INTO THIS COMPONENT, KEEP MINIMAL
@@ -67,14 +64,14 @@ export interface IMessageBuilderProps {
 const MessageBuilderKey = {
 	text: Text,
 	textStyle: TextStyle,
-	button: Button
+	button: Button,
 }
 
 const MessageAttachmentKey = {
-	image: Image
+	image: Image,
 }
 
-const renderMessageChild = child => {
+const renderMessageChild = (child) => {
 	const Handler =
 		(child && child.type && MessageBuilderKey[child.type]) || Fragment
 	return typeof Handler === 'function' ? (
@@ -84,11 +81,11 @@ const renderMessageChild = child => {
 	)
 }
 
-const renderAttachmentChild = child => {
+const renderAttachmentChild = (child) => {
 	const Handler =
 		(child && child.type && MessageAttachmentKey[child.type]) || Fragment
 	const className = cx(child.props.className, {
-		'message__attachment-image': child.type === 'image'
+		'message__attachment-image': child.type === 'image',
 	})
 	return typeof Handler === 'function' ? (
 		Handler({ className, ...child.props })
@@ -106,10 +103,10 @@ const TemplateEngine = (
 	let cursor = 0
 	let match
 
-	const add = function(line, js?: string) {
+	const add = function (line, js?: string) {
 		if (line !== '') {
 			children.push({
-				props: { element: 'span', children: line.replace(/"/g, '\\"') }
+				props: { element: 'span', children: line.replace(/"/g, '\\"') },
 			})
 		}
 		if (js && context[js]) {
@@ -134,7 +131,7 @@ const MessageBuilder = (props: IMessageBuilderProps) => {
 		primaryButton,
 		replies,
 		attachments,
-		isFromSprucebot
+		isFromSprucebot,
 	} = props
 
 	const { text: messageText, context: messageContext } = message || {}
@@ -143,10 +140,10 @@ const MessageBuilder = (props: IMessageBuilderProps) => {
 	let messageAttachments: React.ReactNode[] = []
 
 	if (replies) {
-		messageReplies = replies.map(reply => {
+		messageReplies = replies.map((reply) => {
 			return {
 				type: reply.type,
-				children: TemplateEngine(reply.text, reply.context)
+				children: TemplateEngine(reply.text, reply.context),
 			}
 		})
 	}

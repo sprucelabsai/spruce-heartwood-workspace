@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from 'react'
-import Hamburger from './components/Hamburger/Hamburger'
-import DefaultLockup from './components/DefaultLockup/DefaultLockup'
-import UserMenu from './components/UserMenu/UserMenu'
-import LocationMenu from './components/LocationMenu/LocationMenu'
-import Button from '../../../Button/Button'
 import cx from 'classnames'
+import React, { Component, Fragment } from 'react'
+import Button from '../../../Button/Button'
+import DefaultLockup from './components/DefaultLockup/DefaultLockup'
+import Hamburger from './components/Hamburger/Hamburger'
+import LocationMenu from './components/LocationMenu/LocationMenu'
+import UserMenu from './components/UserMenu/UserMenu'
 
 interface IHeaderPrimaryState {
 	isMenuExpanded: boolean
@@ -70,13 +70,13 @@ export default class HeaderPrimary extends Component<
 		skillsHref: '',
 		loginHref: '/',
 		loginCTA: 'Log In / Signup',
-		locationManagementHref: ''
+		locationManagementHref: '',
 	}
 
 	public state = {
 		isMenuExpanded: false,
 		isUserMenuVisible: false,
-		isLocationMenuVisible: false
+		isLocationMenuVisible: false,
 	}
 
 	public ref: any
@@ -90,7 +90,7 @@ export default class HeaderPrimary extends Component<
 		) {
 			this.setState(
 				{
-					isUserMenuVisible: false
+					isUserMenuVisible: false,
 				},
 				() => this.manageListeners()
 			)
@@ -101,7 +101,7 @@ export default class HeaderPrimary extends Component<
 		if ((e as KeyboardEvent).key === 'Escape') {
 			this.setState(
 				{
-					isLocationMenuVisible: false
+					isLocationMenuVisible: false,
 				},
 				() => this.manageListeners()
 			)
@@ -114,8 +114,8 @@ export default class HeaderPrimary extends Component<
 
 	public toggleUserMenuVisibility = () => {
 		this.setState(
-			prevState => ({
-				isUserMenuVisible: !prevState.isUserMenuVisible
+			(prevState) => ({
+				isUserMenuVisible: !prevState.isUserMenuVisible,
 			}),
 			() => this.manageListeners()
 		)
@@ -123,8 +123,8 @@ export default class HeaderPrimary extends Component<
 
 	public toggleLocationMenuVisibility = () => {
 		this.setState(
-			prevState => ({
-				isLocationMenuVisible: !prevState.isLocationMenuVisible
+			(prevState) => ({
+				isLocationMenuVisible: !prevState.isLocationMenuVisible,
 			}),
 			() => this.manageListeners()
 		)
@@ -201,15 +201,15 @@ export default class HeaderPrimary extends Component<
 			locationManagementHref,
 			loginHref,
 			loginCTA,
-			onClickSearch
+			onClickSearch,
 		} = this.props
 
 		return (
 			<header
 				className={cx('header-primary', {
-					'hamburger-enabled': enableHamburgerMenu
+					'hamburger-enabled': enableHamburgerMenu,
 				})}
-				ref={ref => (this.ref = ref)}
+				ref={(ref) => (this.ref = ref)}
 			>
 				{enableHamburgerMenu && (
 					<Hamburger
@@ -256,7 +256,7 @@ export default class HeaderPrimary extends Component<
 								menuIsVisible={isUserMenuVisible}
 								toggleMenu={this.toggleUserMenuVisibility}
 								userMenuItems={userMenuItems}
-								userMenuRef={userMenuRef => (this.userMenuRef = userMenuRef)}
+								userMenuRef={(userMenuRef) => (this.userMenuRef = userMenuRef)}
 								{...user}
 							/>
 						</Fragment>

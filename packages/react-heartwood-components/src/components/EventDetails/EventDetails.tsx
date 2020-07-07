@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import cx from 'classnames'
-
-import EventDetailsItem from './components/EventDetailsItem/EventDetailsItem'
-import { unionArray } from '../..'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { Component } from 'react'
+import { unionArray } from '../..'
+import EventDetailsItem from './components/EventDetailsItem/EventDetailsItem'
 
 interface IEventDetailsState {}
 
@@ -15,7 +14,7 @@ export default class EventDetails extends Component<
 		const { items, isLoading } = this.props
 
 		const className = cx('event-details', {
-			'loading-placeholder': isLoading
+			'loading-placeholder': isLoading,
 		})
 
 		return (
@@ -27,7 +26,7 @@ export default class EventDetails extends Component<
 							'event-details__button-wrapper':
 								item.schemaId === 'button' || item.schemaId === 'splitButton',
 							'event-details__markdown-wrapper': item.schemaId === 'markdown',
-							'event-details__card-wrapper': item.schemaId === 'cardBuilder'
+							'event-details__card-wrapper': item.schemaId === 'cardBuilder',
 						})}
 					>
 						<EventDetailsItem item={item} />

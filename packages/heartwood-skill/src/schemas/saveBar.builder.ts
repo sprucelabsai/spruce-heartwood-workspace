@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import buttonDefinition from './forms/button.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const saveBarDefinition = buildSchemaDefinition({
 	id: 'saveBar',
@@ -11,37 +11,37 @@ const saveBarDefinition = buildSchemaDefinition({
 			type: FieldType.Text,
 			label: 'Message',
 			hint: 'Show a custom message across the bar',
-			defaultValue: 'Unsaved changes'
+			defaultValue: 'Unsaved changes',
 		},
 		isVisible: {
 			type: FieldType.Boolean,
-			label: 'Visible'
+			label: 'Visible',
 		},
 		isDiscardDisabled: {
 			type: FieldType.Boolean,
-			label: 'Disable discard'
+			label: 'Disable discard',
 		},
 		isSaveDisabled: {
 			type: FieldType.Boolean,
-			label: 'Disable save'
+			label: 'Disable save',
 		},
 		isDiscarding: {
 			type: FieldType.Boolean,
-			label: 'Discard in progress'
+			label: 'Discard in progress',
 		},
 		isSaving: {
 			type: FieldType.Boolean,
-			label: 'Save in progress'
+			label: 'Save in progress',
 		},
 		onDiscard: {
 			...buttonDefinition.fields.onClick,
-			label: 'Discard handler'
+			label: 'Discard handler',
 		},
 		onSave: {
 			...buttonDefinition.fields.onClick,
-			label: 'Save handler'
-		}
-	}
+			label: 'Save handler',
+		},
+	},
 })
 
 export default saveBarDefinition

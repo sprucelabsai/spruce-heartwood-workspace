@@ -1,11 +1,11 @@
-import React from 'react'
-import Icon from '../Icon/Icon'
-import Button from '../Button/Button'
 import {
 	SpruceSchemas,
 	defaultProps,
-	emptyStateDefinition
+	emptyStateDefinition,
 } from '@sprucelabs/heartwood-skill'
+import React from 'react'
+import Button from '../Button/Button'
+import Icon from '../Icon/Icon'
 
 const EmptyState = (
 	props: SpruceSchemas.Local.IEmptyState

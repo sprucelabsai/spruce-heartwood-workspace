@@ -8,26 +8,26 @@ const headingDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		html: {
 			type: FieldType.Text,
 			label: 'Html',
 			hint: 'HTML rendered directly',
-			isPrivate: true
+			isPrivate: true,
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
-			hint: 'Text rendered in the header'
+			hint: 'Text rendered in the header',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		weight: {
 			type: FieldType.Select,
@@ -38,32 +38,32 @@ const headingDefinition = buildSchemaDefinition({
 				choices: [
 					{
 						label: 'H1',
-						value: 'h1'
+						value: 'h1',
 					},
 					{
 						label: 'H2',
-						value: 'h2'
+						value: 'h2',
 					},
 					{
 						label: 'H3',
-						value: 'h3'
+						value: 'h3',
 					},
 					{
 						label: 'H4',
-						value: 'h4'
+						value: 'h4',
 					},
 					{
 						label: 'H5',
-						value: 'h5'
+						value: 'h5',
 					},
 					{
 						label: 'H6',
-						value: 'h6'
-					}
-				]
-			}
-		}
-	}
+						value: 'h6',
+					},
+				],
+			},
+		},
+	},
 })
 
 export default headingDefinition

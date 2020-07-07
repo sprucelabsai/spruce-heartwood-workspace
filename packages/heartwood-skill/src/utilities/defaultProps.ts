@@ -1,6 +1,6 @@
 import Schema, {
 	ISchemaDefinition,
-	SchemaDefinitionDefaultValues
+	SchemaDefinitionDefaultValues,
 } from '@sprucelabs/schema'
 
 /** Returns only the default props for a schema to be passed to a react component */
@@ -9,6 +9,6 @@ export default function defaultPropsForDefinition<T extends ISchemaDefinition>(
 ): SchemaDefinitionDefaultValues<T> {
 	const instance = new Schema(definition)
 	return instance.getDefaultValues({
-		createSchemaInstances: false
+		createSchemaInstances: false,
 	})
 }

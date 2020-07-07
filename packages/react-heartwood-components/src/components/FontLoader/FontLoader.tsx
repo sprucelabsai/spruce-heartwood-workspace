@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
 import FontFaceObserver from 'fontfaceobserver'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
 type LoadResult = {
@@ -30,7 +30,7 @@ export default class FontLoader extends Component<
 	IFrontLoaderState
 > {
 	public state = {
-		results: []
+		results: [],
 	}
 
 	public async componentDidMount() {
@@ -41,12 +41,12 @@ export default class FontLoader extends Component<
 			document.body.classList.add('fonts-loading')
 		}
 
-		fonts.forEach(font => {
+		fonts.forEach((font) => {
 			// Define each font to load
 			const { name, weight, style } = font
 			const fontToObserve = new FontFaceObserver(name, {
 				weight,
-				style
+				style,
 			})
 
 			// Add font to array
@@ -55,10 +55,10 @@ export default class FontLoader extends Component<
 
 		// Load all the fonts
 		Promise.all(fontsToObserve)
-			.then(fonts => {
+			.then((fonts) => {
 				console.log('Fonts loaded: ', fonts)
 			})
-			.catch(err => {
+			.catch((err) => {
 				console.error(err)
 			})
 			.finally(() => {
@@ -73,10 +73,10 @@ export default class FontLoader extends Component<
 	public render() {
 		const { fonts } = this.props
 
-		if (fonts.some(font => font.link)) {
+		if (fonts.some((font) => font.link)) {
 			return (
 				<Helmet>
-					{fonts.map(font => (
+					{fonts.map((font) => (
 						<link key={font.link.href} {...font.link} />
 					))}
 				</Helmet>

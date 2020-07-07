@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import cx from 'classnames'
-import CardHeader from './components/CardHeader'
-import CardBody from './components/CardBody'
-import CardSection from './components/CardSection'
-import CardFooter from './components/CardFooter'
 import {
 	SpruceSchemas,
 	defaultProps,
-	cardDefinition
+	cardDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { Component } from 'react'
+import CardBody from './components/CardBody'
+import CardFooter from './components/CardFooter'
+import CardHeader from './components/CardHeader'
+import CardSection from './components/CardSection'
 
 interface ICardDefaultProps {
 	isCentered: boolean
@@ -37,13 +37,13 @@ export default class Card extends Component<
 	public constructor(props: SpruceSchemas.Local.ICard & typeof defaults) {
 		super(props)
 		this.state = {
-			isExpanded: props.defaultExpanded ?? true
+			isExpanded: props.defaultExpanded ?? true,
 		}
 	}
 
 	public toggleExpanded = () => {
-		this.setState(prevState => ({
-			isExpanded: !prevState.isExpanded
+		this.setState((prevState) => ({
+			isExpanded: !prevState.isExpanded,
 		}))
 	}
 
@@ -55,7 +55,7 @@ export default class Card extends Component<
 			isSmall,
 			className,
 			isExpandable,
-			header = {}
+			header = {},
 		} = this.props
 
 		const { isExpanded } = this.state
@@ -65,7 +65,7 @@ export default class Card extends Component<
 					'card--centered': isCentered,
 					'card--critical': isCritical,
 					'card--small': isSmall,
-					'card--is-collapsed': isExpandable && !isExpanded
+					'card--is-collapsed': isExpandable && !isExpanded,
 				})}
 			>
 				{isExpandable && (
@@ -76,10 +76,10 @@ export default class Card extends Component<
 								icon: {
 									name: isExpanded
 										? 'keyboard_arrow_down'
-										: 'keyboard_arrow_right'
+										: 'keyboard_arrow_right',
 								},
-								onClick: () => this.toggleExpanded()
-							}
+								onClick: () => this.toggleExpanded(),
+							},
 						]}
 					/>
 				)}

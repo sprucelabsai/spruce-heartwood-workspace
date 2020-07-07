@@ -1,6 +1,6 @@
 module.exports = {
 	title: 'Form',
 	context: {
-		options: ['Select an option', 'Group Manager', 'Manager', 'Teammate']
-	}
+		options: ['Select an option', 'Group Manager', 'Manager', 'Teammate'],
+	},
 }

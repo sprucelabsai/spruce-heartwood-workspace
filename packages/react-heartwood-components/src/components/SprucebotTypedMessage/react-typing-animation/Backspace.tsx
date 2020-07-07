@@ -20,7 +20,7 @@ Backspace.updateCursor = (cursor: ICursor, options: IBackspaceProps) => {
 		delay:
 			typeof delay == 'number' && delay > 0
 				? cursor.delay + delay
-				: cursor.delay
+				: cursor.delay,
 	}
 }
 

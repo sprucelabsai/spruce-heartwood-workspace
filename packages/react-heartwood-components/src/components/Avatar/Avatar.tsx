@@ -1,8 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-
-import ImageSSR from '../../components/ImageSSR/ImageSSR'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import ImageSSR from '../../components/ImageSSR/ImageSSR'
 
 const Avatar = (props: SpruceSchemas.Local.IAvatar): React.ReactElement => {
 	const {
@@ -23,10 +22,10 @@ const Avatar = (props: SpruceSchemas.Local.IAvatar): React.ReactElement => {
 	const wrapperClass = cx('avatar-wrapper', className, {
 		'avatar-wrapper-large': isLarge,
 		'avatar-wrapper-has-text': text,
-		'avatar-wrapper-vertical': isVertical
+		'avatar-wrapper-vertical': isVertical,
 	})
 	const indicatorClass = cx('avatar__indicator', {
-		'avatar__indicator--is-online': status === 'online'
+		'avatar__indicator--is-online': status === 'online',
 	})
 	let imgWidth = 40
 	let imgHeight = 40
@@ -73,7 +72,7 @@ Avatar.defaultProps = {
 	name: '',
 	text: '',
 	width: null,
-	height: null
+	height: null,
 }
 
 export default Avatar

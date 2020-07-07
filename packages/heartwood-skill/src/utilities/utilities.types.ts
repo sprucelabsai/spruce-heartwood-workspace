@@ -3,5 +3,5 @@ export {
 	ISchemaFieldDefinitionValueUnion as ComponentUnion,
 	selectChoicesToHash,
 	definitionChoicesToHash,
-	buildDuration
+	buildDuration,
 } from '@sprucelabs/schema'

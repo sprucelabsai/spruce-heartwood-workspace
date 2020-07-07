@@ -1,11 +1,11 @@
-import cx from 'classnames'
-import React from 'react'
-import LayoutSection from './components/LayoutSection/LayoutSection'
 import {
 	SpruceSchemas,
 	defaultProps,
-	layoutDefinition
+	layoutDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import LayoutSection from './components/LayoutSection/LayoutSection'
 
 const Layout = (props: SpruceSchemas.Local.ILayout) => {
 	const {
@@ -14,7 +14,7 @@ const Layout = (props: SpruceSchemas.Local.ILayout) => {
 		isFullBleed,
 		width,
 		className,
-		sections
+		sections,
 	} = props
 
 	return (
@@ -24,12 +24,12 @@ const Layout = (props: SpruceSchemas.Local.ILayout) => {
 				'layout--wide': width === 'wide',
 				'layout--tight': width === 'tight',
 				'layout--full-width': width === 'fullWidth',
-				'layout--full-bleed': isFullBleed
+				'layout--full-bleed': isFullBleed,
 			})}
 		>
 			{children}
 			{sections &&
-				sections.map(section => (
+				sections.map((section) => (
 					<LayoutSection key={section.id ?? undefined} {...section} />
 				))}
 		</div>

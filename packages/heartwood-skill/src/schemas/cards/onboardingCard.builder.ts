@@ -8,7 +8,7 @@ const onboardingCardDefinition = buildSchemaDefinition({
 		title: {
 			type: FieldType.Text,
 			label: 'Title',
-			hint: 'Title of the entire card'
+			hint: 'Title of the entire card',
 		},
 		steps: {
 			type: FieldType.Schema,
@@ -17,10 +17,10 @@ const onboardingCardDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Steps for onboarding',
 			options: {
-				schemaId: 'onboardingCardStep'
-			}
-		}
-	}
+				schemaId: 'onboardingCardStep',
+			},
+		},
+	},
 })
 
 export default onboardingCardDefinition

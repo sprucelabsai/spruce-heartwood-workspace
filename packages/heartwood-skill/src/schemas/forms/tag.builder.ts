@@ -8,15 +8,15 @@ const tagDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		text: {
 			type: FieldType.Text,
-			label: 'Text'
+			label: 'Text',
 		},
 		kind: {
 			type: FieldType.Select,
@@ -25,17 +25,17 @@ const tagDefinition = buildSchemaDefinition({
 			options: {
 				choices: [
 					{ value: 'primary', label: 'Primary' },
-					{ value: 'secondary', label: 'Secondary' }
-				]
-			}
+					{ value: 'secondary', label: 'Secondary' },
+				],
+			},
 		},
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Small',
 			hint: 'Render small variation of the tag',
-			defaultValue: false
-		}
-	}
+			defaultValue: false,
+		},
+	},
 })
 
 export default tagDefinition

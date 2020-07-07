@@ -13,8 +13,8 @@ module.exports = {
 			context: {
 				element: 'strong',
 				className: 'text__style--strong',
-				text: 'This text is some important text. 12345678910'
-			}
+				text: 'This text is some important text. 12345678910',
+			},
 		},
 		{
 			name: 'emphasized',
@@ -22,8 +22,8 @@ module.exports = {
 			context: {
 				element: 'em',
 				className: 'text__style--emphasis',
-				text: 'This text is emphasized. 12345678910'
-			}
-		}
-	]
+				text: 'This text is emphasized. 12345678910',
+			},
+		},
+	],
 }

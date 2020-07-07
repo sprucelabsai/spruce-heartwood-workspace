@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import labelDefinition from './label.builder'
 import inputHelperDefinition from './inputHelper.builder'
+import labelDefinition from './label.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const selectDefinition = buildSchemaDefinition({
 	id: 'select',
@@ -9,42 +9,42 @@ const selectDefinition = buildSchemaDefinition({
 	description: 'A form select',
 	fields: {
 		id: {
-			type: FieldType.Id
+			type: FieldType.Id,
 		},
 		isSimple: {
 			type: FieldType.Boolean,
 			label: 'Simple',
-			hint: 'Render a simpler variation'
+			hint: 'Render a simpler variation',
 		},
 		isDisabled: {
 			type: FieldType.Boolean,
-			label: 'Disabled'
+			label: 'Disabled',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		label: {
 			type: FieldType.Schema,
 			label: 'Label',
 			options: {
-				schema: labelDefinition
-			}
+				schema: labelDefinition,
+			},
 		},
 		value: {
 			type: FieldType.Text,
-			label: 'Value'
+			label: 'Value',
 		},
 		placeholder: {
 			type: FieldType.Text,
-			label: 'Placeholder'
+			label: 'Placeholder',
 		},
 		helper: {
 			type: FieldType.Schema,
 			label: 'Helper',
 			options: {
-				schema: inputHelperDefinition
-			}
+				schema: inputHelperDefinition,
+			},
 		},
 		options: {
 			type: FieldType.Schema,
@@ -58,18 +58,18 @@ const selectDefinition = buildSchemaDefinition({
 						value: {
 							type: FieldType.Text,
 							label: 'Value',
-							isRequired: true
+							isRequired: true,
 						},
 						label: {
 							type: FieldType.Text,
 							label: 'Label',
-							isRequired: true
-						}
-					}
-				}
-			}
-		}
-	}
+							isRequired: true,
+						},
+					},
+				},
+			},
+		},
+	},
 })
 
 export default selectDefinition

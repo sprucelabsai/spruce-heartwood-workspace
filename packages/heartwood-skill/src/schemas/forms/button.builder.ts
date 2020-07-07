@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import iconDefinition from '../icon.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const buttonDefinition = buildSchemaDefinition({
 	id: 'button',
@@ -10,7 +10,7 @@ const buttonDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		kind: {
 			type: FieldType.Select,
@@ -21,62 +21,62 @@ const buttonDefinition = buildSchemaDefinition({
 				choices: [
 					{
 						label: 'Primary',
-						value: 'primary'
+						value: 'primary',
 					},
 					{
 						label: 'Secondary',
-						value: 'secondary'
+						value: 'secondary',
 					},
 					{
 						label: 'Simple',
-						value: 'simple'
+						value: 'simple',
 					},
 					{
 						label: 'Caution',
-						value: 'caution'
-					}
-				]
-			}
+						value: 'caution',
+					},
+				],
+			},
 		},
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Is small',
-			hint: 'Set true to make the button less tall.'
+			hint: 'Set true to make the button less tall.',
 		},
 		isFullWidth: {
 			type: FieldType.Boolean,
 			label: 'Is full width',
-			hint: "Set true to make the button fill its parent's width."
+			hint: "Set true to make the button fill its parent's width.",
 		},
 		isLoading: {
 			type: FieldType.Boolean,
 			label: 'Is loading',
 			hint:
-				'Set true to hide any text or icon in the button and show a loader instead.'
+				'Set true to hide any text or icon in the button and show a loader instead.',
 		},
 		isIconOnly: {
 			type: FieldType.Boolean,
 			label: 'Is icon only',
 			hint:
-				'Set true to hide any text in the button. Text should still be provided for accessibility.'
+				'Set true to hide any text in the button. Text should still be provided for accessibility.',
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
-			hint: 'Text for the button.'
+			hint: 'Text for the button.',
 		},
 		href: {
 			type: FieldType.Text,
 			label: 'Href',
-			hint: 'Will render a link. May be relative or absolute.'
+			hint: 'Will render a link. May be relative or absolute.',
 		},
 		icon: {
 			type: FieldType.Schema,
 			label: 'Icon',
 			hint: 'Icon for the button.',
 			options: {
-				schema: iconDefinition
-			}
+				schema: iconDefinition,
+			},
 		},
 		type: {
 			type: FieldType.Select,
@@ -87,52 +87,52 @@ const buttonDefinition = buildSchemaDefinition({
 				choices: [
 					{
 						label: 'Button',
-						value: 'button'
+						value: 'button',
 					},
 					{
 						label: 'Submit',
-						value: 'submit'
+						value: 'submit',
 					},
 					{
 						label: 'Reset',
-						value: 'reset'
-					}
-				]
-			}
+						value: 'reset',
+					},
+				],
+			},
 		},
 		isDisabled: {
 			type: FieldType.Boolean,
 			label: 'Is disabled',
-			hint: 'Set true to disable the button'
+			hint: 'Set true to disable the button',
 		},
 		className: {
 			type: FieldType.Text,
 			label: 'classname',
-			isPrivate: true
+			isPrivate: true,
 		},
 		onClick: {
 			type: FieldType.EventCallback,
 			label: 'On click handler',
 			options: {
 				event: 'React.MouseEvent<...>',
-				element: 'Element'
-			}
+				element: 'Element',
+			},
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		AnchorComponent: {
 			type: FieldType.ElementType,
 			hint: 'Lets you override the element used when rendering a link',
-			isPrivate: true
+			isPrivate: true,
 		},
 		target: {
 			type: FieldType.Text,
 			label: 'Target',
-			hint: '_blank|_self|_parent|_top|framename'
-		}
-	}
+			hint: '_blank|_self|_parent|_top|framename',
+		},
+	},
 })
 
 export default buttonDefinition

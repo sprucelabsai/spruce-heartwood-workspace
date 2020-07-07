@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import skillViewHeaderDefinition from './skillViewHeader.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const skillViewDefinition = buildSchemaDefinition({
 	id: 'skillView',
@@ -11,38 +11,38 @@ const skillViewDefinition = buildSchemaDefinition({
 		isCentered: {
 			type: FieldType.Boolean,
 			label: 'Centered',
-			hint: 'Is all content centered?'
+			hint: 'Is all content centered?',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		sidebarChildren: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		header: {
 			type: FieldType.Schema,
 			label: 'Header',
 			options: {
-				schema: skillViewHeaderDefinition
-			}
+				schema: skillViewHeaderDefinition,
+			},
 		},
 		isSidebarCollapsed: {
 			type: FieldType.Boolean,
 			label: 'Collapse sidebar',
-			hint: 'Will hide the sidebar'
+			hint: 'Will hide the sidebar',
 		},
 		isHeaderCollapsed: {
 			type: FieldType.Boolean,
 			label: 'Collapse header',
-			hint: 'Will hide the header'
-		}
-	}
+			hint: 'Will hide the header',
+		},
+	},
 })
 
 export default skillViewDefinition

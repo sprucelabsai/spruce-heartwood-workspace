@@ -11,32 +11,32 @@ module.exports = {
 			name: 'default',
 			label: 'Text Container',
 			context: {
-				headingText: 'Text Container'
-			}
+				headingText: 'Text Container',
+			},
 		},
 		{
 			name: 'tight',
 			label: 'Text Container - Tight Spacing',
 			context: {
 				modifierClass: 'text-container--spacing-tight',
-				headingText: 'Text Container - Tight Spacing'
-			}
+				headingText: 'Text Container - Tight Spacing',
+			},
 		},
 		{
 			name: 'loose',
 			label: 'Text Container - Loose Spacing',
 			context: {
 				modifierClass: 'text-container--spacing-loose',
-				headingText: 'Text Container - Loose Spacing'
-			}
+				headingText: 'Text Container - Loose Spacing',
+			},
 		},
 		{
 			name: 'centered',
 			label: 'Text Container - Centered',
 			context: {
 				modifierClass: 'text-container--centered',
-				headingText: 'Text Container'
-			}
-		}
-	]
+				headingText: 'Text Container',
+			},
+		},
+	],
 }

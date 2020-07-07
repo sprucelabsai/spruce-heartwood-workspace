@@ -17,7 +17,7 @@ export const calendarEventDetailItems: [
 	'cardBuilder',
 	'toast',
 	'text',
-	'markdown'
+	'markdown',
 ]
 
 const calendarEventDetailsDefinition = buildSchemaDefinition({
@@ -30,12 +30,12 @@ const calendarEventDetailsDefinition = buildSchemaDefinition({
 			type: FieldType.Text,
 			label: 'Id',
 			hint:
-				'An optional ID for this item; used to allow association with UI Enhancements'
+				'An optional ID for this item; used to allow association with UI Enhancements',
 		},
 		isLoading: {
 			type: FieldType.Boolean,
 			label: 'Loading',
-			hint: 'Hides everything while loading'
+			hint: 'Hides everything while loading',
 		},
 		items: {
 			type: FieldType.Schema,
@@ -44,10 +44,10 @@ const calendarEventDetailsDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'The items that make up the event details',
 			options: {
-				schemaIds: calendarEventDetailItems
-			}
-		}
-	}
+				schemaIds: calendarEventDetailItems,
+			},
+		},
+	},
 })
 
 export default calendarEventDetailsDefinition

@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 export interface ITextContainerProps {
 	/** Contents of the component. */
@@ -23,7 +23,7 @@ const TextContainer = (props: ITextContainerProps) => {
 			className={cx('text-container', className, {
 				'text-container--centered': isCentered,
 				'text-container--spacing-tight': spacing === 'tight',
-				'text-container--spacing-loose': spacing === 'loose'
+				'text-container--spacing-loose': spacing === 'loose',
 			})}
 		>
 			{children}
@@ -32,7 +32,7 @@ const TextContainer = (props: ITextContainerProps) => {
 }
 
 TextContainer.defaultProps = {
-	isCentered: false
+	isCentered: false,
 }
 
 export default TextContainer

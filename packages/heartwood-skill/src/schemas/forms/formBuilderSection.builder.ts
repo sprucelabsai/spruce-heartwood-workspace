@@ -7,7 +7,7 @@ const formBuilderSectionDefinition = buildSchemaDefinition({
 	fields: {
 		title: {
 			type: FieldType.Text,
-			label: 'Title'
+			label: 'Title',
 		},
 		spacing: {
 			type: FieldType.Select,
@@ -16,20 +16,20 @@ const formBuilderSectionDefinition = buildSchemaDefinition({
 				choices: [
 					{
 						value: 'tight',
-						label: 'Tight'
+						label: 'Tight',
 					},
 					{
 						value: 'base',
-						label: 'Base'
-					}
-				]
-			}
+						label: 'Base',
+					},
+				],
+			},
 		},
 		fields: {
 			type: FieldType.Boolean,
-			isArray: true
-		}
-	}
+			isArray: true,
+		},
+	},
 })
 
 export default formBuilderSectionDefinition

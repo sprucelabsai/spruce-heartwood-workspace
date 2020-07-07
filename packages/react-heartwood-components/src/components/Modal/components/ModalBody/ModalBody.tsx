@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 export interface IModalBodyProps {
 	/** Modal children */
@@ -20,7 +20,7 @@ const ModalBody = (props: IModalBodyProps) => (
 		className={cx(
 			'modal-body',
 			{
-				'modal-body--full-bleed': props.fullBleed
+				'modal-body--full-bleed': props.fullBleed,
 			},
 			props.className
 		)}

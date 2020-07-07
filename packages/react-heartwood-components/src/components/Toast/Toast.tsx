@@ -1,11 +1,11 @@
-import React from 'react'
-import cx from 'classnames'
-import Button from '../Button/Button'
 import {
 	SpruceSchemas,
 	defaultProps,
-	toastDefinition
+	toastDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import Button from '../Button/Button'
 
 const ToastHeader = (
 	props: SpruceSchemas.Local.IToastHeader
@@ -28,14 +28,14 @@ const Toast = (props: SpruceSchemas.Local.IToast): React.ReactElement => {
 		kind,
 		text,
 		onClickFollowup,
-		followupText
+		followupText,
 	} = props
 
 	const toastClass = cx('toast', {
 		'toast-positive': kind === 'positive',
 		'toast-negative': kind === 'negative',
 		'toast-warn': kind === 'warn',
-		'toast-info': kind === 'info'
+		'toast-info': kind === 'info',
 	})
 	return (
 		<div className={toastClass}>

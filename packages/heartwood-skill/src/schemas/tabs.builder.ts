@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import tabDefinition from './tab.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const tabsDefinition = buildSchemaDefinition({
 	id: 'tabs',
@@ -13,24 +13,24 @@ const tabsDefinition = buildSchemaDefinition({
 			isRequired: true,
 			isArray: true,
 			options: {
-				schema: tabDefinition
-			}
+				schema: tabDefinition,
+			},
 		},
 		isPadded: {
 			type: FieldType.Boolean,
 			label: 'Horizontal padding',
-			hint: 'Adds horizontal padding'
+			hint: 'Adds horizontal padding',
 		},
 		isTruncatable: {
 			type: FieldType.Boolean,
 			label: 'Truncate tabs',
-			hint: "Should tabs render 3 dots if they all don't fit"
+			hint: "Should tabs render 3 dots if they all don't fit",
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
-		}
-	}
+			isPrivate: true,
+		},
+	},
 })
 
 export default tabsDefinition

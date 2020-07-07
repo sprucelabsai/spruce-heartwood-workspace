@@ -9,7 +9,7 @@ export default {
 	addressCountry: 'US',
 	geo: {
 		lat: 39.7695943,
-		lng: -104.9500088
+		lng: -104.9500088,
 	},
 	OrganizationId: 'bc02c800-60f2-4e37-8ed1-a32f6a50e0a2',
 	isPublic: false,
@@ -23,8 +23,8 @@ export default {
 		profile150:
 			'https://s3.amazonaws.com/sprucebot-dev/default-profile--X150.jpg',
 		'profile150@2x':
-			'https://s3.amazonaws.com/sprucebot-dev/default-profile--X150@2x.jpg'
+			'https://s3.amazonaws.com/sprucebot-dev/default-profile--X150@2x.jpg',
 	},
 	phoneNumber: null,
-	enableLockScreen: true
+	enableLockScreen: true,
 }

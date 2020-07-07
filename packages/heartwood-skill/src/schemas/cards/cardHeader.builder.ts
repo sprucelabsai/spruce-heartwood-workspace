@@ -9,20 +9,20 @@ const cardHeaderDefinition = buildSchemaDefinition({
 		title: {
 			type: FieldType.Text,
 			label: 'Title',
-			hint: 'Title for the card'
+			hint: 'Title for the card',
 		},
 		labelText: {
 			type: FieldType.Text,
 			label: 'Label text',
-			hint: 'Optional label to show above title'
+			hint: 'Optional label to show above title',
 		},
 		labelIcon: {
 			type: FieldType.Schema,
 			label: 'Label icon',
 			hint: 'Optional icon to show above the title and before the label',
 			options: {
-				schemaId: 'Icon'
-			}
+				schemaId: 'Icon',
+			},
 		},
 		buttons: {
 			type: FieldType.Schema,
@@ -30,18 +30,18 @@ const cardHeaderDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Render buttons in the Card Header',
 			options: {
-				schema: buttonDefinition
-			}
+				schema: buttonDefinition,
+			},
 		},
 		contextMenu: {
 			type: FieldType.Schema,
 			label: 'Context menu',
 			hint: 'Renders a Context Menu in the Card Header',
 			options: {
-				schemaId: 'contextMenu'
-			}
-		}
-	}
+				schemaId: 'contextMenu',
+			},
+		},
+	},
 })
 
 export default cardHeaderDefinition

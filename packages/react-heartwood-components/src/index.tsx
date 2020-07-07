@@ -10,7 +10,7 @@ export {
 	CardFooter,
 	CardBuilder,
 	OnboardingCard,
-	Scores
+	Scores,
 } from './components/Card'
 export { default as ContextMenu } from './components/ContextMenu/ContextMenu'
 export {
@@ -21,7 +21,7 @@ export {
 	SidebarSection,
 	SidebarHeader,
 	SaveBar,
-	ProfileSummary
+	ProfileSummary,
 } from './components/Core'
 export { default as Dropzone } from './components/Dropzone/Dropzone'
 export { default as FontLoader } from './components/FontLoader/FontLoader'
@@ -46,7 +46,7 @@ export {
 	formatPhoneNumber,
 	formatPhoneNumberIntl,
 	isValidPhoneNumber,
-	DatePicker
+	DatePicker,
 } from './components/Forms'
 export { default as Icon } from './components/Icon/Icon'
 export { default as Heading } from './components/Heading/Heading'
@@ -65,7 +65,7 @@ export {
 	ListHeader,
 	ListItem,
 	ListWrapper,
-	SortableList
+	SortableList,
 } from './components/List'
 export { default as Loader } from './components/Loader/Loader'
 export { default as Modal } from './components/Modal/Modal'
@@ -83,11 +83,11 @@ export {
 	default as RecordTable,
 	IRecordTableFetchOptions,
 	IRecordTableFetchResults,
-	IRecordTableProps
+	IRecordTableProps,
 } from './components/RecordTable/RecordTable'
 export {
 	default as RecordSelectionList,
-	IRecordSelectionListItemProps
+	IRecordSelectionListItemProps,
 } from './components/RecordSelectionList/RecordSelectionList'
 export { default as RecordSelectionListItem } from './components/RecordSelectionList/RecordSelectionListItem'
 export { default as EmptyState } from './components/EmptyState/EmptyState'

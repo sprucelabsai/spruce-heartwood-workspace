@@ -10,15 +10,15 @@ module.exports = {
 		type: 'text',
 		id: 'credit-card',
 		name: 'creditCard',
-		creditCard: true
+		creditCard: true,
 	},
 	variants: [
 		{
 			name: 'read only',
 			context: {
 				readonly: true,
-				value: 'XXXX XXXX XXXX 1234'
-			}
-		}
-	]
+				value: 'XXXX XXXX XXXX 1234',
+			},
+		},
+	],
 }

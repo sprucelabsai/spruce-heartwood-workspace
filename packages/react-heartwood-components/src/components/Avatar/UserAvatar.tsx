@@ -1,7 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-import Avatar from './Avatar'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import Avatar from './Avatar'
 
 const UserAvatar = (props: SpruceSchemas.Local.IUserAvatar) => {
 	const { user, ...avatar } = props
@@ -14,7 +14,7 @@ const UserAvatar = (props: SpruceSchemas.Local.IUserAvatar) => {
 		<Avatar
 			src={profileImage}
 			className={cx(avatar.className, {
-				'default-avatar': !profileImages || !profileImages.profile150
+				'default-avatar': !profileImages || !profileImages.profile150,
 			})}
 			{...avatar}
 		/>

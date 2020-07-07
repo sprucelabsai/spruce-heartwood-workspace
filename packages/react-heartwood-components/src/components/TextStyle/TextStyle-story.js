@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import TextStyle from './TextStyle'
 const stories = storiesOf('TextStyle', module)
 

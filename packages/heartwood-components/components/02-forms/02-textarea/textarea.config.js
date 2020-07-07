@@ -4,6 +4,6 @@ module.exports = {
 		name: 'category',
 		id: 'cat',
 		label: 'Category',
-		placeholder: 'Optional category description…'
-	}
+		placeholder: 'Optional category description…',
+	},
 }

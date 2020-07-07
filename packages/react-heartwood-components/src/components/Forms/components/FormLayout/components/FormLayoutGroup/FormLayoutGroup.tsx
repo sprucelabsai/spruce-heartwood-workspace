@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 export interface IFormLayoutGroupProps {
 	/** Contents of the FormLayoutGroup. Should be FormLayoutItem components */
@@ -18,7 +18,7 @@ const FormLayoutGroup = (props: IFormLayoutGroupProps) => {
 	return (
 		<div
 			className={cx('form-layout__group', className, {
-				'form-layout__group--condensed': isCondensed
+				'form-layout__group--condensed': isCondensed,
 			})}
 		>
 			{children}
@@ -27,7 +27,7 @@ const FormLayoutGroup = (props: IFormLayoutGroupProps) => {
 }
 
 FormLayoutGroup.defaultProps = {
-	isCondensed: false
+	isCondensed: false,
 }
 
 export default FormLayoutGroup

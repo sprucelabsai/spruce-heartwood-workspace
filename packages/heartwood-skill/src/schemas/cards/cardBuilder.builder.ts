@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import cardBodyDefinition from './cardBody.builder'
 import buttonGroupDefinition from '../forms/buttonGroup.builder'
+import cardBodyDefinition from './cardBody.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 export const cardBuilderBodyItems: string[] = [
 	'button',
 	'image',
@@ -9,7 +9,7 @@ export const cardBuilderBodyItems: string[] = [
 	'text',
 	'scoreCard',
 	'toast',
-	'list'
+	'list',
 ]
 
 const cardBuilderDefinition = buildSchemaDefinition({
@@ -19,15 +19,15 @@ const cardBuilderDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		header: {
 			type: FieldType.Schema,
 			label: 'Header',
 			hint: 'Card Header props',
 			options: {
-				schemaId: 'cardHeader'
-			}
+				schemaId: 'cardHeader',
+			},
 		},
 		headerImage: {
 			type: FieldType.Schema,
@@ -35,16 +35,16 @@ const cardBuilderDefinition = buildSchemaDefinition({
 			hint:
 				'optionally pass props to an image tag to be rendered in the header',
 			options: {
-				schemaId: 'image'
-			}
+				schemaId: 'image',
+			},
 		},
 		onboarding: {
 			type: FieldType.Schema,
 			label: 'Onboarding',
 			hint: 'all onboarding props',
 			options: {
-				schemaId: 'onboardingCard'
-			}
+				schemaId: 'onboardingCard',
+			},
 		},
 		body: {
 			type: FieldType.Schema,
@@ -64,12 +64,12 @@ const cardBuilderDefinition = buildSchemaDefinition({
 							isArray: true,
 							hint: 'Children to show in the Card',
 							options: {
-								schemaIds: cardBuilderBodyItems
-							}
-						}
-					}
-				})
-			}
+								schemaIds: cardBuilderBodyItems,
+							},
+						},
+					},
+				}),
+			},
 		},
 		footer: {
 			type: FieldType.Schema,
@@ -86,19 +86,19 @@ const cardBuilderDefinition = buildSchemaDefinition({
 							label: 'Button group',
 							hint: 'Render buttons in the Card Footer',
 							options: {
-								schema: buttonGroupDefinition
-							}
+								schema: buttonGroupDefinition,
+							},
 						},
 						helper: {
 							type: FieldType.Text,
 							label: 'Helper',
-							hint: 'Helper for the footer'
-						}
-					}
-				})
-			}
-		}
-	}
+							hint: 'Helper for the footer',
+						},
+					},
+				}),
+			},
+		},
+	},
 })
 
 export default cardBuilderDefinition

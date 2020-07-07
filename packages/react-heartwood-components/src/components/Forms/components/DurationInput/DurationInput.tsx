@@ -1,10 +1,9 @@
-import React, { Component, FormEvent } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import { range, findIndex } from 'lodash'
 import memoize from 'memoize-one'
-
-import Autosuggest from '../Autosuggest/Autosuggest'
+import React, { Component, FormEvent } from 'react'
 import Button from '../../../Button/Button'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import Autosuggest from '../Autosuggest/Autosuggest'
 
 interface IDurationInputProps
 	extends Partial<
@@ -64,22 +63,22 @@ export default class DurationInput extends Component<
 		maxMinutes: 180,
 		skipMinutes: 5,
 		noResultsTitle: 'Invalid duration.',
-		noResultsSubtitle: 'Please adjust your search and try again.'
+		noResultsSubtitle: 'Please adjust your search and try again.',
 	}
 
 	public generateSuggestions = memoize((min, max, skip) => {
-		return range(min, max + skip, skip).map(minutes => {
+		return range(min, max + skip, skip).map((minutes) => {
 			const duration = DurationInput.minutesToStr(minutes)
 			return {
 				text: duration,
 				search: duration.replace(/[^0-9hm]/g, ''),
-				minutes
+				minutes,
 			}
 		})
 	})
 
 	public searchSuggestions: (query: string) => Record<string, any>[] = memoize(
-		value => {
+		(value) => {
 			const { minMinutes, maxMinutes, skipMinutes } = this.props
 
 			const search = value.replace(/[^0-9hm]/g, '')
@@ -96,7 +95,7 @@ export default class DurationInput extends Component<
 			)
 
 			const results = suggestions.filter(
-				suggestion => suggestion.search.search(search) > -1
+				(suggestion) => suggestion.search.search(search) > -1
 			)
 
 			return results
@@ -109,7 +108,7 @@ export default class DurationInput extends Component<
 		this.state = {
 			value: val ? DurationInput.minutesToStr(val) : '',
 			prevPropsValue: props.value,
-			validationError: null
+			validationError: null,
 		}
 	}
 
@@ -117,7 +116,7 @@ export default class DurationInput extends Component<
 		if (props.value !== state.prevPropsValue) {
 			return {
 				prevPropsValue: props.value,
-				value: DurationInput.minutesToStr(props.value)
+				value: DurationInput.minutesToStr(props.value),
 			}
 		}
 		return null
@@ -168,18 +167,18 @@ export default class DurationInput extends Component<
 			maxMinutes,
 			skipMinutes
 		)
-		const idx = findIndex(suggestions, suggestion => suggestion.text === str)
+		const idx = findIndex(suggestions, (suggestion) => suggestion.text === str)
 
 		const suggestion = suggestions[idx]
 		return suggestion.minutes
 	}
 
-	public handleChange = e => {
+	public handleChange = (e) => {
 		const { value } = e.target
 		this.setState({ value })
 	}
 
-	public handleBlur = e => {
+	public handleBlur = (e) => {
 		const { onBlur, onChange, required } = this.props
 
 		const value = e.target.value
@@ -227,8 +226,8 @@ export default class DurationInput extends Component<
 			return [
 				{
 					text: 'NO RESULTS',
-					isEmptyMessage: true
-				}
+					isEmptyMessage: true,
+				},
 			]
 		}
 		return matches
@@ -263,7 +262,7 @@ export default class DurationInput extends Component<
 				helper={{ error: validationError || error }}
 				defaultSuggestions={suggestions}
 				renderSuggestion={this.renderSuggestion}
-				getSuggestionValue={value => value.text}
+				getSuggestionValue={(value) => value.text}
 				getSuggestions={this.handleGetSuggestions}
 				onSuggestionSelected={this.handleSelectSuggestion}
 				placeholder={

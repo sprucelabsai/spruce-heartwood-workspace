@@ -10,7 +10,7 @@ import {
 	FormLayout,
 	FormLayoutGroup,
 	FormLayoutItem,
-	TextInput
+	TextInput,
 } from '../Forms'
 import LayoutSection from '../Layout/components/LayoutSection/LayoutSection'
 import Layout from '../Layout/Layout'
@@ -32,26 +32,26 @@ const columns = [
 		maxWidth: 400,
 		Cell: function PublicNameCell(row) {
 			return <a href="#">{row.value}</a>
-		}
+		},
 	},
 	{
 		Header: 'Store',
 		accessor: 'storeNumber',
 		minWidth: 80,
-		maxWidth: 100
+		maxWidth: 100,
 	},
 	{
 		Header: 'Status',
 		accessor: 'status',
 		minWidth: 80,
-		maxWidth: 100
+		maxWidth: 100,
 	},
 	{
 		Header: 'Address',
 		accessor: 'address',
 		minWidth: 420,
-		maxWidth: 500
-	}
+		maxWidth: 500,
+	},
 ]
 
 type State = {
@@ -64,16 +64,16 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 	public constructor(props) {
 		super(props)
 		this.state = {
-			locations: generateLocations({ amount: 149 })
+			locations: generateLocations({ amount: 149 }),
 		}
 	}
 
 	public handleChangeHours = (e, location, dayId) => {
 		const { locations } = this.state
 
-		locations.forEach(l => {
+		locations.forEach((l) => {
 			if (l.id === location.id) {
-				const updatedSchedule = l.schedule.map(day => {
+				const updatedSchedule = l.schedule.map((day) => {
 					const updatedDay = day
 					if (day.id === dayId) {
 						l.isDirty = true
@@ -95,9 +95,10 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 
 		const { locations } = this.state
 
-		const updatedLocation = locations.find(l => l.id === location.id)
+		const updatedLocation = locations.find((l) => l.id === location.id)
 		const updatedScheduleDay =
-			updatedLocation && updatedLocation.schedule.find(day => day.id === dayId)
+			updatedLocation &&
+			updatedLocation.schedule.find((day) => day.id === dayId)
 
 		if (updatedLocation && updatedScheduleDay && !updatedScheduleDay.isDirty) {
 			updatedLocation.isDirty = true
@@ -115,9 +116,10 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 	) => {
 		const { locations } = this.state
 
-		const updatedLocation = locations.find(l => l.id === location.id)
+		const updatedLocation = locations.find((l) => l.id === location.id)
 		const updatedScheduleDay =
-			updatedLocation && updatedLocation.schedule.find(day => day.id === dayId)
+			updatedLocation &&
+			updatedLocation.schedule.find((day) => day.id === dayId)
 
 		if (updatedLocation && updatedScheduleDay) {
 			updatedScheduleDay.hours = values.hours || ''
@@ -143,20 +145,20 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 							Header: 'Day',
 							accessor: 'day',
 							minWidth: 100,
-							maxWidth: 300
+							maxWidth: 300,
 						},
 						{
 							Header: 'Hours',
 							accessor: 'hours',
 							minWidth: 100,
-							maxWidth: 500
-						}
+							maxWidth: 500,
+						},
 					]}
 					collapseOnDataChange={false}
 					loading={false}
 					pageSize={schedule.length}
 					showPagination={false}
-					rowIsDirty={row => {
+					rowIsDirty={(row) => {
 						return row.original.isDirty
 					}}
 				/>
@@ -178,8 +180,8 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 				defaultSorted={[
 					{
 						id: 'publicName',
-						desc: false
-					}
+						desc: false,
+					},
 				]}
 				loading={false}
 				collapseOnDataChange={false}
@@ -187,9 +189,9 @@ class ExpandableEditableTable extends React.Component<Props, State> {
 					showPages: true,
 					onPageButtonClick: () => console.log('onPageButtonClick'),
 					totalPages: Math.ceil(locations.length / 50),
-					currentPage: 0
+					currentPage: 0,
 				}}
-				rowIsDirty={row => {
+				rowIsDirty={(row) => {
 					return row.original.isDirty
 				}}
 				subComponentForRow={this.renderStoreScheduleForRow}
@@ -212,7 +214,7 @@ stories
 								tabs={[
 									{ text: 'All locations', isCurrent: true },
 									{ text: 'Midwest' },
-									{ text: 'Northeast' }
+									{ text: 'Northeast' },
 								]}
 								isPadded
 							/>
@@ -220,11 +222,11 @@ stories
 						<TableSearch
 							id="location-search"
 							placeholder="Search locations…"
-							getSuggestions={val => {
+							getSuggestions={(val) => {
 								console.log(val)
 								return []
 							}}
-							getSuggestionValue={suggestion => {
+							getSuggestionValue={(suggestion) => {
 								console.log(suggestion)
 								return 'suggestion'
 							}}
@@ -240,8 +242,8 @@ stories
 									{ text: 'City: Bolingbrook' },
 									{ text: 'City: Chicago' },
 									{
-										text: 'Chimera Hair Salon'
-									}
+										text: 'Chimera Hair Salon',
+									},
 								]}
 							/>
 						)}
@@ -255,15 +257,15 @@ stories
 							defaultSorted={[
 								{
 									id: 'publicName',
-									desc: false
-								}
+									desc: false,
+								},
 							]}
 							loading={false}
 							paginationProps={{
 								showPages: true,
 								onPageButtonClick: () => console.log('onPageButtonClick'),
 								totalPages: Math.ceil(staticLocations.length / 50),
-								currentPage: 0
+								currentPage: 0,
 							}}
 						/>
 					</Card>
@@ -294,7 +296,7 @@ stories
 							tabs={[
 								{ text: 'All locations', isCurrent: true },
 								{ text: 'Midwest' },
-								{ text: 'Northeast' }
+								{ text: 'Northeast' },
 							]}
 							isPadded
 						/>
@@ -302,11 +304,11 @@ stories
 					<TableSearch
 						id="location-search"
 						placeholder="Search locations…"
-						getSuggestions={async val => {
+						getSuggestions={async (val) => {
 							console.log(val)
 							return []
 						}}
-						getSuggestionValue={suggestion => {
+						getSuggestionValue={(suggestion) => {
 							console.log(suggestion)
 							return 'suggestion'
 						}}
@@ -322,8 +324,8 @@ stories
 								{ text: 'City: Bolingbrook' },
 								{ text: 'City: Chicago' },
 								{
-									text: 'Chimera Hair Salon'
-								}
+									text: 'Chimera Hair Salon',
+								},
 							]}
 						/>
 					)}
@@ -337,35 +339,35 @@ stories
 						defaultSorted={[
 							{
 								id: 'publicName',
-								desc: false
-							}
+								desc: false,
+							},
 						]}
 						loading={false}
 						paginationProps={{
 							showPages: true,
 							onPageButtonClick: () => console.log('onPageButtonClick'),
 							totalPages: Math.ceil(staticLocations.length / 50),
-							currentPage: 0
+							currentPage: 0,
 						}}
 						isSelectable
 						kind="location"
 						bulkActions={[
 							{
 								text: 'Add to location group',
-								onClick: () => console.log('Click')
+								onClick: () => console.log('Click'),
 							},
 							{
 								text: 'Make locations live',
-								onClick: () => console.log('Click')
+								onClick: () => console.log('Click'),
 							},
 							{
 								text: 'Hide locations',
-								onClick: () => console.log('Click')
+								onClick: () => console.log('Click'),
 							},
 							{
 								text: 'Delete locations',
-								onClick: () => console.log('Click')
-							}
+								onClick: () => console.log('Click'),
+							},
 						]}
 					/>
 				</Card>

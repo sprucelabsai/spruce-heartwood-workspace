@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import { sidebarSpacingChoices } from './sidebar.builder'
 import layoutBuilderDefinition from '../layouts/layoutBuilder.builder'
+import { sidebarSpacingChoices } from './sidebar.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const sidebarDefinition = buildSchemaDefinition({
 	id: 'sidebarSection',
@@ -11,39 +11,39 @@ const sidebarDefinition = buildSchemaDefinition({
 		...layoutBuilderDefinition.fields,
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		isCentered: {
 			type: FieldType.Boolean,
 			label: 'Centered',
 			hint: 'Center everything horizontally',
-			defaultValue: false
+			defaultValue: false,
 		},
 		isOnlyForMobile: {
 			type: FieldType.Boolean,
 			label: 'Mobile only',
 			hint: 'Will hide on desktop if true',
-			defaultValue: false
+			defaultValue: false,
 		},
 		horizontalSpacing: {
 			type: FieldType.Select,
 			defaultValue: 'base',
 			options: {
-				choices: sidebarSpacingChoices
-			}
+				choices: sidebarSpacingChoices,
+			},
 		},
 		verticalSpacing: {
 			type: FieldType.Select,
 			defaultValue: 'base',
 			options: {
-				choices: sidebarSpacingChoices
-			}
+				choices: sidebarSpacingChoices,
+			},
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
-		}
-	}
+			isPrivate: true,
+		},
+	},
 })
 
 export default sidebarDefinition

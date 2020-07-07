@@ -1,3 +1,8 @@
+import {
+	SpruceSchemas,
+	defaultProps,
+	listDefinition,
+} from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React, { Fragment } from 'react'
 import Avatar from '../../../Avatar/Avatar'
@@ -5,13 +10,8 @@ import Button from '../../../Button/Button'
 import ContextMenu from '../../../ContextMenu/ContextMenu'
 import { Checkbox, Radio, Toggle } from '../../../Forms'
 import Icon from '../../../Icon/Icon'
-import List from '../../List'
-import {
-	SpruceSchemas,
-	defaultProps,
-	listDefinition
-} from '@sprucelabs/heartwood-skill'
 import Image from '../../../Image/Image'
+import List from '../../List'
 
 const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 	const {
@@ -35,7 +35,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 		subtitle,
 		title,
 		toggle,
-		warnings
+		warnings,
 	} = props
 
 	let checkboxProps: SpruceSchemas.Local.ICheckbox | undefined
@@ -54,7 +54,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 		'list-item--primary-action': primaryButton,
 		'list-item--separator-hidden': !isSeparatorVisible,
 		'list-item--has-avatar': !!avatar,
-		'loading-placeholder': isLoading
+		'loading-placeholder': isLoading,
 	})
 
 	const ListItemInner = (): React.ReactElement => (
@@ -67,7 +67,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 							name={icon.name}
 							isLineIcon={icon.isLineIcon}
 							className={cx('list-item__icon', icon.className, {
-								'list-item__icon--hidden': isIconHidden
+								'list-item__icon--hidden': isIconHidden,
 							})}
 						/>
 					)}
@@ -83,14 +83,14 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 						<Checkbox
 							{...(isDisabled ? { isDisabled: true } : {})}
 							{...checkboxProps}
-							onChange={e => onClick?.(e as any)}
+							onChange={(e) => onClick?.(e as any)}
 						/>
 					)}
 					{radioProps && (
 						<Radio
 							{...(isDisabled ? { disabled: true } : {})}
 							{...radioProps}
-							onChange={e => onClick?.(e as any)}
+							onChange={(e) => onClick?.(e as any)}
 						/>
 					)}
 					{avatar && <Avatar width={32} height={32} {...avatar} />}
@@ -102,7 +102,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 					<p>
 						<label
 							className={cx('list-item__title', {
-								'u-color-warning-dark': warnings && warnings.title
+								'u-color-warning-dark': warnings && warnings.title,
 							})}
 							htmlFor={selectable.values.id}
 						>
@@ -112,7 +112,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 				) : (
 					<p
 						className={cx('list-item__title', {
-							'u-color-warning-dark': warnings && warnings.title
+							'u-color-warning-dark': warnings && warnings.title,
 						})}
 					>
 						{title}
@@ -124,7 +124,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 							<p>
 								<label
 									className={cx('list-item__subtitle', {
-										'u-color-warning-dark': warnings && warnings.subtitle
+										'u-color-warning-dark': warnings && warnings.subtitle,
 									})}
 									htmlFor={selectable.values.id}
 								>
@@ -134,7 +134,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 						) : (
 							<p
 								className={cx('list-item__subtitle', {
-									'u-color-warning-dark': warnings && warnings.subtitle
+									'u-color-warning-dark': warnings && warnings.subtitle,
 								})}
 								dangerouslySetInnerHTML={{ __html: subtitle }}
 							/>
@@ -144,7 +144,7 @@ const ListItem = (props: SpruceSchemas.Local.IListItem): React.ReactElement => {
 				{note && (
 					<p
 						className={cx('list-item__note', {
-							'u-color-warning-dark': warnings && warnings.note
+							'u-color-warning-dark': warnings && warnings.note,
 						})}
 						dangerouslySetInnerHTML={{ __html: note }}
 					/>

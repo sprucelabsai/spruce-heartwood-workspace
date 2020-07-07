@@ -1,22 +1,22 @@
 import {
 	buildSchemaDefinition,
 	FieldType,
-	ISelectFieldDefinitionChoice
+	ISelectFieldDefinitionChoice,
 } from '@sprucelabs/schema'
 
 export const sizeChoices: ISelectFieldDefinitionChoice[] = [
 	{
 		value: 'small',
-		label: 'Small'
+		label: 'Small',
 	},
 	{
 		value: 'medium',
-		label: 'Medium'
+		label: 'Medium',
 	},
 	{
 		value: 'large',
-		label: 'Large'
-	}
+		label: 'Large',
+	},
 ]
 
 const sprucebotAvatarDefinition = buildSchemaDefinition({
@@ -26,7 +26,7 @@ const sprucebotAvatarDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		stateOfMind: {
 			type: FieldType.Select,
@@ -39,24 +39,24 @@ const sprucebotAvatarDefinition = buildSchemaDefinition({
 					{
 						value: 'chill',
 						label:
-							'Chill - Sprucebot is saying something informative or a salutation'
+							'Chill - Sprucebot is saying something informative or a salutation',
 					},
 					{
 						value: 'contemplative',
-						label: 'Contemplative - Sprucebot is loading or sending data'
+						label: 'Contemplative - Sprucebot is loading or sending data',
 					},
 					{
 						value: 'curious',
 						label:
-							'Curious - Sprucebot is asking a question or waiting for input'
+							'Curious - Sprucebot is asking a question or waiting for input',
 					},
 					{
 						value: 'accomplished',
 						label:
-							'Accomplished - Sprucebot is celebrating because a process has finished'
-					}
-				]
-			}
+							'Accomplished - Sprucebot is celebrating because a process has finished',
+					},
+				],
+			},
 		},
 		size: {
 			type: FieldType.Select,
@@ -64,10 +64,10 @@ const sprucebotAvatarDefinition = buildSchemaDefinition({
 			isRequired: true,
 			defaultValue: 'medium',
 			options: {
-				choices: sizeChoices
-			}
-		}
-	}
+				choices: sizeChoices,
+			},
+		},
+	},
 })
 
 export default sprucebotAvatarDefinition

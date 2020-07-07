@@ -1,8 +1,8 @@
-import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
 import {
 	IFieldDefinition,
-	IFieldTemplateDetailOptions
+	IFieldTemplateDetailOptions,
 } from '@sprucelabs/schema'
+import AbstractField from '@sprucelabs/schema/build/fields/AbstractField'
 import FieldType from '#spruce:schema/fields/fieldType'
 
 type ICallbackFieldDefinitionValue = () => any
@@ -29,7 +29,7 @@ export default class CallbackField extends AbstractField<
 		return {
 			valueType: `(${options.definition.options.signature})${
 				options.definition.isArray ? '[]' : ''
-			}`
+			}`,
 		}
 	}
 }

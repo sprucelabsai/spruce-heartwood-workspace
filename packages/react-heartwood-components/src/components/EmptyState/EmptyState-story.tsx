@@ -1,13 +1,13 @@
-import React from 'react'
-import { each, keys } from 'lodash'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, object } from '@storybook/addon-knobs'
-import EmptyState from './EmptyState'
+import { storiesOf } from '@storybook/react'
+import { each, keys } from 'lodash'
+import React from 'react'
 import * as icons from '../../icons.js'
+import EmptyState from './EmptyState'
 
 const options = {}
 
-each(keys(icons), icon => {
+each(keys(icons), (icon) => {
 	options[icon] = icon
 })
 
@@ -29,7 +29,7 @@ stories.add('No matches', () => (
 		primaryButton={object('primary button action', {
 			text: 'Show all',
 			onClick: () => {},
-			type: 'submit'
+			type: 'submit',
 		})}
 	/>
 ))
@@ -43,7 +43,7 @@ stories.add('API Failure', () => (
 			text: 'Try Again',
 			onClick: () => {},
 			type: 'submit',
-			kind: 'primary'
+			kind: 'primary',
 		})}
 	/>
 ))

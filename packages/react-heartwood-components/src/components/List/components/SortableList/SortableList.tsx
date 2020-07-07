@@ -1,13 +1,13 @@
-import React, { Component, Fragment } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
+import React, { Component, Fragment } from 'react'
 import {
 	SortableContainer,
 	SortableElement,
-	arrayMove
+	arrayMove,
 } from 'react-sortable-hoc'
 import ListHeader from '../ListHeader/ListHeader'
 import ListItem from '../ListItem/ListItem'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface ISortableListProps extends SpruceSchemas.Local.IList {
 	/** OnConfirm callback */
@@ -56,19 +56,19 @@ const headerButtons = ({
 	isSorting,
 	onClickToggle,
 	onClickCancel,
-	onClickConfirm
+	onClickConfirm,
 }): any => {
 	if (isSorting) {
 		return [
 			{
 				text: 'Cancel',
-				onClick: onClickCancel
+				onClick: onClickCancel,
 			},
 			{
 				text: 'Confirm',
 				kind: 'simple',
-				onClick: onClickConfirm
-			}
+				onClick: onClickConfirm,
+			},
 		]
 	}
 
@@ -76,8 +76,8 @@ const headerButtons = ({
 		{
 			text: 'Change Order',
 			kind: 'simple',
-			onClick: onClickToggle
-		}
+			onClick: onClickToggle,
+		},
 	]
 }
 
@@ -87,26 +87,26 @@ export default class SortableComponent extends Component<
 > {
 	public state = {
 		items: this.props.items || [],
-		isSorting: false
+		isSorting: false,
 	}
 
 	public toggleSorting = () => {
-		this.setState(prevState => ({
-			isSorting: !prevState.isSorting
+		this.setState((prevState) => ({
+			isSorting: !prevState.isSorting,
 		}))
 	}
 
 	public onCancel = () => {
 		this.setState({
 			items: this.props.items,
-			isSorting: false
+			isSorting: false,
 		})
 	}
 
 	public onConfirm = () => {
 		const { onConfirm } = this.props
 		this.setState({
-			isSorting: false
+			isSorting: false,
 		})
 		// Do other stuff with the API to save changes
 		if (onConfirm) {
@@ -120,7 +120,7 @@ export default class SortableComponent extends Component<
 
 	public onSortEnd = ({ oldIndex, newIndex }: any) => {
 		this.setState({
-			items: arrayMove(this.state.items, oldIndex, newIndex)
+			items: arrayMove(this.state.items, oldIndex, newIndex),
 		})
 	}
 
@@ -128,7 +128,7 @@ export default class SortableComponent extends Component<
 		const { isSorting } = this.state
 		const { header, className, isSmall } = this.props
 		const parentClass = cx('list sortable-list', className, {
-			'list-small': isSmall
+			'list-small': isSmall,
 		})
 		return (
 			<Fragment>
@@ -139,16 +139,16 @@ export default class SortableComponent extends Component<
 							isSorting,
 							onClickToggle: this.toggleSorting,
 							onClickConfirm: this.onConfirm,
-							onClickCancel: this.onCancel
+							onClickCancel: this.onCancel,
 						})}
 						{...header}
 					/>
 				)}
 				<SortableList
 					parentClass={parentClass}
-					items={[...this.state.items].map(item => ({
+					items={[...this.state.items].map((item) => ({
 						isDraggable: isSorting,
-						...item
+						...item,
 					}))}
 					disabled={!isSorting}
 					onSortStart={this.onSortStart}

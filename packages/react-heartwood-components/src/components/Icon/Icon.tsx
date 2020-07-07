@@ -1,8 +1,7 @@
-import React, { Fragment } from 'react'
-import cx from 'classnames'
-
-import * as icons from '../../icons.js'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { Fragment } from 'react'
+import * as icons from '../../icons.js'
 
 const Icon = (props: SpruceSchemas.Local.IIcon): React.ReactElement => {
 	const { name, customIcon, isLineIcon, className, ...rest } = props
@@ -23,7 +22,7 @@ const Icon = (props: SpruceSchemas.Local.IIcon): React.ReactElement => {
 				'icon--no-fill':
 					typeof isLineIcon !== 'undefined' ? isLineIcon : !isFillIcon,
 				'icon--stroke':
-					typeof isLineIcon !== 'undefined' ? isLineIcon : !isFillIcon
+					typeof isLineIcon !== 'undefined' ? isLineIcon : !isFillIcon,
 			})}
 			{...rest}
 		/>

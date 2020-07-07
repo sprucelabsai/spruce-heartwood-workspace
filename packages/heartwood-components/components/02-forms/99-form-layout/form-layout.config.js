@@ -9,15 +9,15 @@ module.exports = {
 		formLayoutItems: [
 			{
 				textInput: {
-					label: 'Input Label'
-				}
+					label: 'Input Label',
+				},
 			},
 			{
 				textInput: {
-					label: 'Input Label'
-				}
-			}
-		]
+					label: 'Input Label',
+				},
+			},
+		],
 	},
 	variants: [
 		{
@@ -27,16 +27,16 @@ module.exports = {
 				formLayoutItems: [
 					{
 						textInput: {
-							label: 'Input Label'
-						}
+							label: 'Input Label',
+						},
 					},
 					{
 						textInput: {
-							label: 'Input Label'
-						}
-					}
-				]
-			}
+							label: 'Input Label',
+						},
+					},
+				],
+			},
 		},
 		{
 			name: 'Field Group',
@@ -48,18 +48,18 @@ module.exports = {
 						formLayoutItems: [
 							{
 								textInput: {
-									label: 'Input Label'
-								}
+									label: 'Input Label',
+								},
 							},
 							{
 								textInput: {
-									label: 'Input Label'
-								}
-							}
-						]
-					}
-				]
-			}
+									label: 'Input Label',
+								},
+							},
+						],
+					},
+				],
+			},
 		},
 		{
 			name: 'Field Group Condensed',
@@ -71,28 +71,28 @@ module.exports = {
 						formLayoutItems: [
 							{
 								textInput: {
-									label: 'Input Label'
-								}
+									label: 'Input Label',
+								},
 							},
 							{
 								textInput: {
-									label: 'Input Label'
-								}
+									label: 'Input Label',
+								},
 							},
 							{
 								textInput: {
-									label: 'Input Label'
-								}
+									label: 'Input Label',
+								},
 							},
 							{
 								textInput: {
-									label: 'Input Label'
-								}
-							}
-						]
-					}
-				]
-			}
-		}
-	]
+									label: 'Input Label',
+								},
+							},
+						],
+					},
+				],
+			},
+		},
+	],
 }

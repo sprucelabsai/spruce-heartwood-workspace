@@ -8,14 +8,14 @@ module.exports = {
 	context: {
 		text: 'Small Buttons',
 		className: 'btn-primary btn-small',
-		type: 'button'
+		type: 'button',
 	},
 	variants: [
 		{
 			name: 'secondary',
 			context: {
-				className: 'btn-secondary btn-small'
-			}
-		}
-	]
+				className: 'btn-secondary btn-small',
+			},
+		},
+	],
 }

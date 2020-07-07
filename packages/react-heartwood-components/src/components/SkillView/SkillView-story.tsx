@@ -11,7 +11,7 @@ import SkillViewBuilder from './index'
 const buttonKinds = {
 	Primary: 'primary',
 	Secondary: 'secondary',
-	Simple: 'simple'
+	Simple: 'simple',
 }
 
 const stories = storiesOf('Page', module)
@@ -29,7 +29,7 @@ stories
 			header={{
 				className: 'custom-classname',
 				title: text('title', 'Page Title'),
-				isCollapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false),
 			}}
 		>
 			<SkillViewBuilder.Content>
@@ -48,7 +48,7 @@ stories
 				backLinkHref: '#',
 				backLinkText: text('backLinkText', 'Back'),
 				hasBottomBorder: boolean('hasBottomBorder', false),
-				isCollapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false),
 			}}
 		>
 			<SkillViewBuilder.Content>
@@ -68,10 +68,10 @@ stories
 					text: boolean('text', 'Do something'),
 					kind: select('kind', buttonKinds, 'primary'),
 					icon: text('icon', ''),
-					isSmall: boolean('isSmall', true)
+					isSmall: boolean('isSmall', true),
 				},
 				hasBottomBorder: boolean('hasBottomBorder', false),
-				isCollapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false),
 			}}
 		>
 			<SkillViewBuilder.Content>
@@ -94,10 +94,10 @@ stories
 					text: boolean('text', 'Do something'),
 					kind: select('kind', buttonKinds, 'primary'),
 					icon: text('icon', ''),
-					isSmall: boolean('isSmall', true)
+					isSmall: boolean('isSmall', true),
 				},
 				hasBottomBorder: boolean('hasBottomBorder', false),
-				isCollapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false),
 			}}
 		>
 			<SkillViewBuilder.Content>
@@ -116,7 +116,7 @@ stories
 				flexDirection: 'row',
 				flex: 1,
 				overflow: 'hidden',
-				height: '50vh'
+				height: '50vh',
 			}}
 		>
 			<SkillViewBuilder
@@ -129,10 +129,10 @@ stories
 						text: boolean('text', 'Do something'),
 						kind: select('kind', buttonKinds, 'primary'),
 						icon: text('icon', ''),
-						isSmall: boolean('isSmall', true)
+						isSmall: boolean('isSmall', true),
 					},
 					hasBottomBorder: boolean('hasBottomBorder', false),
-					isCollapsed: boolean('isCollapsed', false)
+					isCollapsed: boolean('isCollapsed', false),
 				}}
 			>
 				<SkillViewBuilder.Content>
@@ -193,7 +193,7 @@ stories
 				backLinkHref: '#',
 				backLinkText: text('backLinkText', 'Back'),
 				tabs: manyTabs,
-				isCollapsed: boolean('isCollapsed', false)
+				isCollapsed: boolean('isCollapsed', false),
 			}}
 		>
 			<SkillViewBuilder.Content>

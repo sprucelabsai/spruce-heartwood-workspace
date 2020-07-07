@@ -1,6 +1,6 @@
 const buttons = document.getElementsByTagName('button')
 
-const handleClick = button => {
+const handleClick = (button) => {
 	const parent = button.parentNode
 	parent.classList.toggle('accordion__item--expanded')
 }

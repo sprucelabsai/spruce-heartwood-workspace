@@ -1,8 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import RadioIconYes from '../../../../../static/assets/icons/ic_radio_button_checked.svg'
 import RadioIconNo from '../../../../../static/assets/icons/ic_radio_button_unchecked.svg'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const Radio = (props: SpruceSchemas.Local.IRadio): React.ReactElement => {
 	const {
@@ -13,7 +13,7 @@ const Radio = (props: SpruceSchemas.Local.IRadio): React.ReactElement => {
 		label,
 		name,
 		onChange,
-		helper
+		helper,
 	} = props
 	const parentClass = cx('checkbox-item', className)
 	return (

@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react'
-import ImageCropper from './ImageCropper'
-import AvatarIcon from '../../../static/assets/icons/Users/Geometric-Close-Up-Single-User-Actions-Neutral/single-neutral-actions-image--56w.svg'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
 import ShopIcon from '../../../static/assets/icons/Shopping-E-Commerce/Shops/shop-1--56w.svg'
+import AvatarIcon from '../../../static/assets/icons/Users/Geometric-Close-Up-Single-User-Actions-Neutral/single-neutral-actions-image--56w.svg'
+import ImageCropper from './ImageCropper'
 
 const stories = storiesOf('ImageCropper', module)
 
@@ -22,16 +22,16 @@ class ImageCropperExample extends Component<
 	IImageCropperExampleState
 > {
 	public state = {
-		image: null
+		image: null,
 	}
 
 	public handleDrop = (files: any) => {
-		files.forEach(file => {
+		files.forEach((file) => {
 			const reader = new FileReader()
 			reader.onload = () => {
 				const fileAsDataURL = reader.result
 				this.setState({
-					image: fileAsDataURL
+					image: fileAsDataURL,
 				})
 			}
 			reader.readAsDataURL(file)
@@ -66,8 +66,8 @@ class ImageCropperExample extends Component<
 							<AvatarIcon className="dropzone__icon" />
 						) : (
 							<ShopIcon className="dropzone__icon" />
-						)
-					}
+						),
+					},
 				}}
 				color={[249, 250, 252, 1]}
 			/>
@@ -103,8 +103,8 @@ stories
 						<AvatarIcon className="dropzone__icon" />
 					) : (
 						<ShopIcon className="dropzone__icon" />
-					)
-				}
+					),
+				},
 			}}
 			color={[249, 250, 252, 1]}
 		/>

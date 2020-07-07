@@ -8,29 +8,29 @@ const iconDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		name: {
 			type: FieldType.Text,
 			label: 'Name',
 			hint:
-				'The name of the icon to render. If not found, this will return null.'
+				'The name of the icon to render. If not found, this will return null.',
 		},
 		isLineIcon: {
 			type: FieldType.Boolean,
 			label: 'Is line icon',
-			hint: 'Set true to render an icon with a stroke, but no fill'
+			hint: 'Set true to render an icon with a stroke, but no fill',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		customIcon: {
 			type: FieldType.Node,
 			isPrivate: true,
-			hint: 'Lets you pass an icon node'
-		}
-	}
+			hint: 'Lets you pass an icon node',
+		},
+	},
 })
 
 export default iconDefinition

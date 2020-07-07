@@ -1,17 +1,17 @@
+import {
+	SpruceSchemas,
+	defaultProps,
+	datePickerDefinition,
+} from '@sprucelabs/heartwood-skill'
+import moment from 'moment'
 import React, { Component } from 'react'
 import 'react-dates/initialize'
 import {
 	DayPickerSingleDateController,
-	DayPickerRangeController
+	DayPickerRangeController,
 } from 'react-dates'
-import moment from 'moment'
-import ArrowNext from '../../../../../static/assets/icons/ic_arrow_forward.svg'
 import ArrowBack from '../../../../../static/assets/icons/ic_arrow_back.svg'
-import {
-	SpruceSchemas,
-	defaultProps,
-	datePickerDefinition
-} from '@sprucelabs/heartwood-skill'
+import ArrowNext from '../../../../../static/assets/icons/ic_arrow_forward.svg'
 
 interface IDatePickerState {
 	date: Record<string, any>
@@ -37,7 +37,7 @@ export default class DatePicker extends Component<
 			date: this.props.date || moment(),
 			startDate: this.props.startDate ?? undefined,
 			endDate: this.props.endDate ?? undefined,
-			focusedInput: 'startDate'
+			focusedInput: 'startDate',
 		}
 
 		this.datePickerRef = React.createRef()
@@ -50,15 +50,15 @@ export default class DatePicker extends Component<
 	}
 
 	public toggleFocus = () => {
-		this.setState(prevState => ({
-			isFocused: !prevState.isFocused
+		this.setState((prevState) => ({
+			isFocused: !prevState.isFocused,
 		}))
 	}
 
-	public handleFocusChange = focusedInput => {
+	public handleFocusChange = (focusedInput) => {
 		this.setState({
 			// Force the focusedInput to always be truthy so that dates are always selectable
-			focusedInput: !focusedInput ? 'startDate' : focusedInput
+			focusedInput: !focusedInput ? 'startDate' : focusedInput,
 		})
 	}
 
@@ -66,7 +66,7 @@ export default class DatePicker extends Component<
 		this.datePickerRef.current.setState({ currentMonth: date })
 
 		this.setState({
-			date
+			date,
 		})
 		if (this.props.onSelectDate) {
 			this.props.onSelectDate(date)
@@ -76,7 +76,7 @@ export default class DatePicker extends Component<
 	public handleDatesChange = async ({ startDate, endDate }) => {
 		this.setState({
 			startDate,
-			endDate
+			endDate,
 		})
 
 		if (this.props.onSelectDateRange) {
@@ -94,7 +94,7 @@ export default class DatePicker extends Component<
 				date={date}
 				initialVisibleMonth={() => date}
 				focused={isFocused}
-				onDateChange={date => this.handleDateChange(date)}
+				onDateChange={(date) => this.handleDateChange(date)}
 				onFocusChange={this.toggleFocus}
 				navNext={<ArrowNext />}
 				navPrev={<ArrowBack />}

@@ -11,20 +11,20 @@ module.exports = {
 		type: 'tel',
 		phoneNumber: true,
 		id: 'phone-number',
-		name: 'phoneNumber'
+		name: 'phoneNumber',
 	},
 	variants: [
 		{
 			name: 'small',
 			context: {
-				class: 'text-input-small'
-			}
+				class: 'text-input-small',
+			},
 		},
 		{
 			name: 'focused',
 			context: {
-				class: 'text-input--is-focused'
-			}
-		}
-	]
+				class: 'text-input--is-focused',
+			},
+		},
+	],
 }

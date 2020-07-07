@@ -1,5 +1,5 @@
 module.exports = {
 	context: {
-		content: '<p>Page Content</p>'
-	}
+		content: '<p>Page Content</p>',
+	},
 }

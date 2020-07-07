@@ -1,20 +1,19 @@
-import React, { Component } from 'react'
-import { map, sampleSize } from 'lodash'
-import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
 	boolean,
 	select,
 	text,
-	object
+	object,
 } from '@storybook/addon-knobs/react'
-
+import { storiesOf } from '@storybook/react'
+import { map, sampleSize } from 'lodash'
+import React, { Component } from 'react'
 import { generateLocations } from '../../../.storybook/data/tableData'
-import RecordSelectionList, {
-	IRecordSelectionListItemProps
-} from './RecordSelectionList'
-import Modal from '../Modal/Modal'
 import Card, { CardHeader, CardBody } from '../Card'
+import Modal from '../Modal/Modal'
+import RecordSelectionList, {
+	IRecordSelectionListItemProps,
+} from './RecordSelectionList'
 
 const stories = storiesOf('RecordSelectionList', module)
 
@@ -46,7 +45,7 @@ class RecordListItemsExample extends Component<
 	public constructor(props) {
 		super(props)
 
-		let selectedIds = props.locations.map(loc => loc.node.id)
+		let selectedIds = props.locations.map((loc) => loc.node.id)
 
 		if (props.canSelect === 'one') {
 			selectedIds = sampleSize(selectedIds, 1)
@@ -55,8 +54,8 @@ class RecordListItemsExample extends Component<
 		}
 
 		const unselectedIds = props.locations
-			.map(loc => loc.node.id)
-			.filter(locationId => selectedIds.indexOf(locationId) === -1)
+			.map((loc) => loc.node.id)
+			.filter((locationId) => selectedIds.indexOf(locationId) === -1)
 
 		const unselectableIds = sampleSize(unselectedIds, unselectedIds.length / 2)
 
@@ -71,7 +70,7 @@ class RecordListItemsExample extends Component<
 			totalRecordCount,
 			onSearchChange,
 			maxRowsVisible,
-			searchValue
+			searchValue,
 		} = this.props
 
 		const { selectedIds, locations, unselectableIds } = this.state
@@ -87,10 +86,10 @@ class RecordListItemsExample extends Component<
 				loadRecordListItems={async ({
 					limit,
 					offset,
-					search
+					search,
 				}): Promise<IRecordSelectionListItemProps[]> => {
 					// Artificial API wait time
-					await new Promise(resolve =>
+					await new Promise((resolve) =>
 						setTimeout(() => {
 							resolve()
 						}, Math.random() * 1000)
@@ -99,7 +98,7 @@ class RecordListItemsExample extends Component<
 					let results: Record<string, any>[] = []
 
 					if (search) {
-						const filteredLocations = locations.filter(location => {
+						const filteredLocations = locations.filter((location) => {
 							return location.node.publicName.match(new RegExp(search, 'ig'))
 						})
 
@@ -108,7 +107,7 @@ class RecordListItemsExample extends Component<
 						results = locations.slice(offset, offset + limit)
 					}
 
-					const recordListItems = results.map(result => {
+					const recordListItems = results.map((result) => {
 						return {
 							id: result.node.id,
 							title: result.node.publicName,
@@ -117,7 +116,7 @@ class RecordListItemsExample extends Component<
 							note:
 								unselectableIds.indexOf(result.node.id) >= 0
 									? 'Location already in group!'
-									: ''
+									: '',
 						}
 					})
 
@@ -125,13 +124,15 @@ class RecordListItemsExample extends Component<
 				}}
 				canSelect={canSelect}
 				canRemove={canRemove}
-				onSelect={id => {
+				onSelect={(id) => {
 					// Typically you'd want "many" or "one", so you'd only need one side
 					// of this conditional.
 					if (canSelect === 'many') {
 						if (selectedIds.indexOf(id) >= 0) {
 							this.setState({
-								selectedIds: selectedIds.filter(selectedId => selectedId !== id)
+								selectedIds: selectedIds.filter(
+									(selectedId) => selectedId !== id
+								),
 							})
 						} else {
 							this.setState({ selectedIds: [...selectedIds, id] })
@@ -140,14 +141,14 @@ class RecordListItemsExample extends Component<
 						this.setState({ selectedIds: [id] })
 					}
 				}}
-				onRemove={id => {
+				onRemove={(id) => {
 					// The component maintains state of the records it has loaded, but
 					// it's up to you to remove them from your list in your local state.
 					// Also, if for some reason you want to have selection alongside deletion,
 					// you should be sure to clear out the selection at the same time.
 					this.setState({
-						selectedIds: selectedIds.filter(selectedId => selectedId !== id),
-						locations: locations.filter(location => location.id !== id)
+						selectedIds: selectedIds.filter((selectedId) => selectedId !== id),
+						locations: locations.filter((location) => location.id !== id),
 					})
 				}}
 				totalRecordCount={totalRecordCount}
@@ -160,8 +161,8 @@ class RecordListItemsExample extends Component<
 					heading: "Nothin' here...",
 					icon: { name: 'no_matches' },
 					primaryButton: {
-						text: "Show all, y'all!"
-					}
+						text: "Show all, y'all!",
+					},
 				}}
 			/>
 		)
@@ -176,8 +177,8 @@ stories.add('In a Card', () => (
 				<RecordListItemsExample
 					canSelect={select('Can Select', [null, 'many', 'one'], null)}
 					canRemove={boolean('Can Remove', false)}
-					locations={map(generateLocations({ amount: 50 }), o => ({
-						node: { ...o }
+					locations={map(generateLocations({ amount: 50 }), (o) => ({
+						node: { ...o },
 					}))}
 					totalRecordCount={50}
 					maxRowsVisible={select('Max Rows Visible', [null, 3, 'auto'], 3)}
@@ -202,7 +203,7 @@ class ExternalStateExample extends React.Component {
 				<input
 					type="text"
 					value={searchValue}
-					onChange={e => {
+					onChange={(e) => {
 						this.setState({ searchValue: e.target.value })
 					}}
 				/>
@@ -215,13 +216,13 @@ class ExternalStateExample extends React.Component {
 						<RecordListItemsExample
 							canSearch={false}
 							searchValue={searchValue}
-							onSearchChange={newSearchValue => {
+							onSearchChange={(newSearchValue) => {
 								this.setState({ searchValue: newSearchValue })
 							}}
 							canSelect={select('Can Select', [null, 'many', 'one'], null)}
 							canRemove={boolean('Can Remove', false)}
-							locations={map(generateLocations({ amount: 50 }), o => ({
-								node: { ...o }
+							locations={map(generateLocations({ amount: 50 }), (o) => ({
+								node: { ...o },
 							}))}
 							totalRecordCount={50}
 							maxRowsVisible={select('Max Rows Visible', [null, 3, 'auto'], 3)}
@@ -244,8 +245,8 @@ stories.add('In a Modal', () => (
 			<RecordListItemsExample
 				canSelect={select('Can Select', [null, 'many', 'one'], 'many')}
 				canRemove={boolean('Can Remove', true)}
-				locations={map(generateLocations({ amount: 100 }), o => ({
-					node: { ...o }
+				locations={map(generateLocations({ amount: 100 }), (o) => ({
+					node: { ...o },
 				}))}
 				totalRecordCount={100}
 				maxRowsVisible={select('Max Rows Visible', [null, 3, 'auto'], 3)}
@@ -275,8 +276,8 @@ stories.add('Empty State', () => (
 							text: text(
 								'emptyState:primaryAction text',
 								'Do something about it'
-							)
-						}
+							),
+						},
 					}}
 				/>
 			</CardBody>
@@ -305,7 +306,7 @@ class RecordSelectionListSearchExample extends Component<
 					}
 
 					// Artificial API wait time
-					await new Promise(resolve =>
+					await new Promise((resolve) =>
 						setTimeout(() => {
 							resolve()
 						}, Math.random() * 1000)
@@ -314,7 +315,7 @@ class RecordSelectionListSearchExample extends Component<
 					let results: Record<string, any>[] = []
 
 					if (search) {
-						const filteredLocations = locations.filter(location => {
+						const filteredLocations = locations.filter((location) => {
 							return location.node.publicName.match(new RegExp(search, 'ig'))
 						})
 
@@ -323,11 +324,11 @@ class RecordSelectionListSearchExample extends Component<
 						results = locations.slice(offset, offset + limit)
 					}
 
-					const recordListItems = results.map(result => {
+					const recordListItems = results.map((result) => {
 						return {
 							id: result.node.id,
 							title: result.node.publicName,
-							subtitle: result.node.address
+							subtitle: result.node.address,
 						}
 					})
 
@@ -339,8 +340,8 @@ class RecordSelectionListSearchExample extends Component<
 					heading: "Nothin' here...",
 					icon: { name: 'no_matches' },
 					primaryButton: {
-						text: "Show all, y'all!"
-					}
+						text: "Show all, y'all!",
+					},
 				}}
 			/>
 		)
@@ -353,8 +354,8 @@ stories.add('Only Showing Records When Searching', () => (
 			<CardHeader title="Card Title" />
 			<CardBody>
 				<RecordSelectionListSearchExample
-					locations={map(generateLocations({ amount: 50 }), o => ({
-						node: { ...o }
+					locations={map(generateLocations({ amount: 50 }), (o) => ({
+						node: { ...o },
 					}))}
 				/>
 			</CardBody>

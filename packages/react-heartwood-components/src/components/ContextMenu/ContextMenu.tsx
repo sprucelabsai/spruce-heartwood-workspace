@@ -1,10 +1,10 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import { debounce } from 'lodash'
 import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import Button from '../Button/Button'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface IContextMenuState {
 	/** Show the menu */
@@ -29,7 +29,7 @@ export default class ContextMenu extends Component<
 		isBottomAligned: false,
 		isTextOnly: false,
 		isSmall: false,
-		className: ''
+		className: '',
 	}
 
 	public ref: React.RefObject<HTMLDivElement> = React.createRef()
@@ -43,8 +43,8 @@ export default class ContextMenu extends Component<
 		overflowLeft: false,
 		menuPosition: {
 			top: null,
-			left: null
-		}
+			left: null,
+		},
 	}
 
 	public constructor(props: SpruceSchemas.Local.IContextMenu) {
@@ -108,11 +108,11 @@ export default class ContextMenu extends Component<
 				: triggerPosition.y + triggerPosition.height,
 			left: isRightAligned
 				? triggerPosition.x + triggerPosition.width
-				: triggerPosition.x
+				: triggerPosition.x,
 		}
 
 		this.setState({
-			menuPosition
+			menuPosition,
 		})
 	}
 
@@ -160,20 +160,20 @@ export default class ContextMenu extends Component<
 			}
 		}
 
-		this.setState(prevState => ({
+		this.setState((prevState) => ({
 			overflowLeft,
 			overflowBottom,
 			menuPosition: {
 				top: newTop || prevState.menuPosition.top,
-				left: newLeft || prevState.menuPosition.left
-			}
+				left: newLeft || prevState.menuPosition.left,
+			},
 		}))
 	}
 
 	public handleClickOutside = (): void => {
 		this.setState(
 			{
-				isVisible: false
+				isVisible: false,
 			},
 			() => this.manageListeners()
 		)
@@ -183,7 +183,7 @@ export default class ContextMenu extends Component<
 		if (e.key === 'Escape') {
 			this.setState(
 				{
-					isVisible: false
+					isVisible: false,
 				},
 				() => this.manageListeners()
 			)
@@ -194,8 +194,8 @@ export default class ContextMenu extends Component<
 		// Const { onToggleContextMenuVisible } = this.props
 
 		this.setState(
-			prevState => ({
-				isVisible: !prevState.isVisible
+			(prevState) => ({
+				isVisible: !prevState.isVisible,
 			}),
 			() => {
 				this.manageListeners()
@@ -223,7 +223,7 @@ export default class ContextMenu extends Component<
 		}
 	}
 
-	public handleClickAction = callback => {
+	public handleClickAction = (callback) => {
 		if (this.props.closeOnSelect) {
 			this.handleToggle()
 		}
@@ -240,10 +240,10 @@ export default class ContextMenu extends Component<
 			text,
 			onClick,
 			buttons,
-			className
+			className,
 		} = this.props
 		const buttonClass = cx('context-menu', className, {
-			'context-menu--is-visible': isVisible
+			'context-menu--is-visible': isVisible,
 		})
 
 		// TODO calculate position to know how to align
@@ -253,7 +253,7 @@ export default class ContextMenu extends Component<
 		const menuClass = cx('context-menu__menu', {
 			'context-menu__menu-left': isRightAligned || overflowLeft,
 			'context-menu__menu-large': size === 'large',
-			'context-menu__menu-top': isBottomAligned || overflowBottom
+			'context-menu__menu-top': isBottomAligned || overflowBottom,
 		})
 
 		return (
@@ -282,12 +282,12 @@ export default class ContextMenu extends Component<
 								left:
 									typeof menuPosition.left === 'number'
 										? `${(menuPosition.left || 0) + 4}px`
-										: 'auto'
+										: 'auto',
 							}}
 						>
 							<ButtonGroup
 								kind={'floating'}
-								buttons={buttons.map(button => {
+								buttons={buttons.map((button) => {
 									const btnAction = { ...button }
 									const oldOnclick = btnAction.onClick
 									btnAction.onClick = () => {

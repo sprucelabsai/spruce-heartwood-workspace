@@ -1,5 +1,5 @@
-import React from 'react'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import React from 'react'
 
 // Card Footer
 const CardFooter = (

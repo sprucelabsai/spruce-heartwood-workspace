@@ -1,11 +1,11 @@
-import React from 'react'
-import cx from 'classnames'
-import Button from '../Button/Button'
-import Text, { Span } from '../Text/Text'
-import ArrowNext from '../../../static/assets/icons/ic_arrow_forward.svg'
-import ArrowBack from '../../../static/assets/icons/ic_arrow_back.svg'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import ArrowBack from '../../../static/assets/icons/ic_arrow_back.svg'
+import ArrowNext from '../../../static/assets/icons/ic_arrow_forward.svg'
+import Button from '../Button/Button'
 import { TextInput } from '../Forms'
+import Text, { Span } from '../Text/Text'
 
 export interface IPaginationProps {
 	/** The current page */
@@ -49,7 +49,7 @@ const Pagination = (props: IPaginationProps) => {
 		onClickBack,
 		onPageButtonClick,
 		onJump,
-		isSimple
+		isSimple,
 	} = props
 	const pagesArray: number[] = []
 	let displayPages: DisplayPage[] = []
@@ -58,7 +58,7 @@ const Pagination = (props: IPaginationProps) => {
 	}
 	if (currentPage <= 2 || totalPages - currentPage <= 2) {
 		displayPages = pagesArray.filter(
-			page =>
+			(page) =>
 				page === 0 ||
 				page === 1 ||
 				page === 2 ||
@@ -72,7 +72,7 @@ const Pagination = (props: IPaginationProps) => {
 		}
 	} else {
 		displayPages = pagesArray.filter(
-			page =>
+			(page) =>
 				page === 0 ||
 				page === totalPages - 1 ||
 				page === currentPage ||
@@ -90,7 +90,7 @@ const Pagination = (props: IPaginationProps) => {
 	return (
 		<div
 			className={cx('pagination-wrapper', {
-				'pagination-wrapper-minimal': !showPages
+				'pagination-wrapper-minimal': !showPages,
 			})}
 		>
 			<Button
@@ -133,7 +133,7 @@ const Pagination = (props: IPaginationProps) => {
 			{showJump && onJump && (
 				<form
 					className="pagination__jump-wrapper"
-					onSubmit={e => {
+					onSubmit={(e) => {
 						e.preventDefault()
 						for (let i = 0; i < e.currentTarget.elements.length; i++) {
 							// TODO: What is the proper type here for "Element" to access name, value, placeholder?
@@ -154,7 +154,7 @@ const Pagination = (props: IPaginationProps) => {
 						name="jump"
 						enableAutoComplete={false}
 						placeholder={currentPage.toString()}
-						onBlur={e => {
+						onBlur={(e) => {
 							onJump(+(e.currentTarget.value || e.currentTarget.placeholder))
 						}}
 					/>

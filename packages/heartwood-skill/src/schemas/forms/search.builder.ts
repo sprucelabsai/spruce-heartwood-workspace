@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import textInputDefinition from './textInput.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const searchDefinition = buildSchemaDefinition({
 	id: 'search',
@@ -14,9 +14,9 @@ const searchDefinition = buildSchemaDefinition({
 			isPrivate: true,
 			isRequired: true,
 			defaultValue: 'search',
-			value: 'search'
-		}
-	}
+			value: 'search',
+		},
+	},
 })
 
 export default searchDefinition

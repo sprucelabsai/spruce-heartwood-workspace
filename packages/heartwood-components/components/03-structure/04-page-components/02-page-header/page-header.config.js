@@ -1,6 +1,6 @@
 module.exports = {
 	context: {
-		title: 'Page Title'
+		title: 'Page Title',
 	},
 	variants: [
 		{
@@ -10,9 +10,9 @@ module.exports = {
 				title: 'Page Title',
 				backLink: {
 					href: '#',
-					title: 'Previous Page'
-				}
-			}
-		}
-	]
+					title: 'Previous Page',
+				},
+			},
+		},
+	],
 }

@@ -1,15 +1,15 @@
 // Uses React Table. See https://react-table.js.org/#/story/readme details.
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import React, { Component, Fragment, ReactElement } from 'react'
 import ReactTable, { TableProps } from 'react-table'
 import { CSSTransition } from 'react-transition-group'
-import cx from 'classnames'
+import Card from '../Card/Card'
+import ContextMenu from '../ContextMenu/ContextMenu'
+import EmptyState from '../EmptyState/EmptyState'
 import { Checkbox } from '../Forms'
 import Icon from '../Icon/Icon'
-import Card from '../Card/Card'
 import Pagination from '../Pagination/Pagination'
-import EmptyState from '../EmptyState/EmptyState'
-import ContextMenu from '../ContextMenu/ContextMenu'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface ITableProps extends Partial<TableProps> {
 	/** Table data */
@@ -84,7 +84,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 		noDataHeadline: 'Nothing to see here',
 		noDataPrimaryAction: null,
 		noDataPrimaryActionButtonKind: 'simple',
-		noDataPrimaryActionButtonIcon: null
+		noDataPrimaryActionButtonIcon: null,
 	}
 
 	private table: any
@@ -94,7 +94,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 
 		this.state = {
 			selectedIds: props.initialSelectedIds || [],
-			allRowsSelected: false
+			allRowsSelected: false,
 		}
 	}
 
@@ -140,7 +140,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 						onChange={() => this.handleSelectAll()}
 					/>
 				),
-				Cell: props => {
+				Cell: (props) => {
 					const { original, pageSize } = props
 					const { id } = original
 					return (
@@ -152,7 +152,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 					)
 				},
 				sortable: false,
-				width: 36
+				width: 36,
 			})
 		}
 
@@ -192,7 +192,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 									/>
 								)}
 							</Fragment>
-						)
+						),
 					}
 				}
 				return { ...col, Header: null }
@@ -201,7 +201,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 
 		return (
 			<ReactTable
-				ref={ref => (this.table = ref)}
+				ref={(ref) => (this.table = ref)}
 				data={data}
 				columns={columnsToRender}
 				className={cx('table', className)}
@@ -210,25 +210,25 @@ export default class Table extends Component<ITableProps, ITableState> {
 					sortable: false,
 					resizable: false,
 					filterable: false,
-					width: 40
+					width: 40,
 				}}
 				getTableProps={() => ({
-					className: 'table__inner'
+					className: 'table__inner',
 				})}
 				getTbodyProps={() => ({
-					className: 'table__body'
+					className: 'table__body',
 				})}
 				getTheadTrProps={() => ({
 					className: cx('table-header-row', {
 						'table-header-row--has-selections':
-							isSelectable && selectedIds.length > 0
-					})
+							isSelectable && selectedIds.length > 0,
+					}),
 				})}
 				getTheadThProps={(state, rowInfo, column) => ({
 					className: cx('table-header-cell', {
-						'table-checkbox-cell': column && column.id === 'checkbox'
+						'table-checkbox-cell': column && column.id === 'checkbox',
 					}),
-					width: 'auto'
+					width: 'auto',
 				})}
 				getTrGroupProps={(state, rowInfo) => {
 					const expanded = state.expanded[rowInfo.viewIndex]
@@ -239,8 +239,8 @@ export default class Table extends Component<ITableProps, ITableState> {
 					return {
 						className: cx('table-row-group', {
 							'table-row-group--expanded': expanded,
-							'table-row-group--is-dirty': isDirty
-						})
+							'table-row-group--is-dirty': isDirty,
+						}),
 					}
 				}}
 				getTrProps={(state, rowInfo) => {
@@ -252,26 +252,26 @@ export default class Table extends Component<ITableProps, ITableState> {
 					return {
 						className: cx('table-row', {
 							'table-row--expanded': expanded,
-							'table-row--is-dirty': isDirty
+							'table-row--is-dirty': isDirty,
 						}),
-						onClick: this.handleClickRow
+						onClick: this.handleClickRow,
 					}
 				}}
 				getTdProps={(state, rowInfo, column) => ({
 					className: cx('table-cell', {
 						'table-checkbox-cell': column.id === 'checkbox',
-						'table-expander-cell': column.expander
+						'table-expander-cell': column.expander,
 					}),
-					width: 'auto'
+					width: 'auto',
 				})}
 				getPaginationProps={() => ({
-					className: 'table__pagination'
+					className: 'table__pagination',
 				})}
-				getLoadingProps={state => {
+				getLoadingProps={(state) => {
 					return {
 						className: state.loading
 							? 'table-loader--is-visible'
-							: 'table-loader'
+							: 'table-loader',
 					}
 				}}
 				getNoDataProps={() => ({
@@ -280,11 +280,11 @@ export default class Table extends Component<ITableProps, ITableState> {
 					subheadline: noDataSubheadline,
 					primaryAction: noDataPrimaryAction,
 					primaryActionButtonKind: noDataPrimaryActionButtonKind,
-					primaryActionButtonIcon: noDataPrimaryActionButtonIcon
+					primaryActionButtonIcon: noDataPrimaryActionButtonIcon,
 				})}
 				SubComponent={
 					subComponentForRow
-						? row => (
+						? (row) => (
 								<CSSTransition
 									in={true}
 									appear={true}
@@ -306,7 +306,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 						className={'table-expander-row'}
 					/>
 				}
-				ThComponent={tableProps => {
+				ThComponent={(tableProps) => {
 					const { toggleSort, className, ...rest } = tableProps
 					const isSortable =
 						className && className.indexOf('-cursor-pointer') > -1
@@ -322,7 +322,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 									(isSortable || isSortedAsc || isSortedDesc) &&
 									selectedIds.length === 0,
 								'table-header-cell--is-sorted-asc': isSortedAsc,
-								'table-header-cell--is-sorted-desc': isSortedDesc
+								'table-header-cell--is-sorted-desc': isSortedDesc,
 							})}
 							{...rest}
 						>
@@ -334,14 +334,14 @@ export default class Table extends Component<ITableProps, ITableState> {
 										className={cx('table-header-cell__icon', {
 											'table-header-cell__icon--is-visible':
 												isSortedAsc || isSortedDesc,
-											'table-header-cell__icon--is-reversed': isSortedDesc
+											'table-header-cell__icon--is-reversed': isSortedDesc,
 										})}
 									/>
 								)}
 						</div>
 					)
 				}}
-				PaginationComponent={tableProps =>
+				PaginationComponent={(tableProps) =>
 					tableProps.page === 0 && totalRows <= tableProps.pageSize ? null : (
 						<div className="table-pagination__wrapper">
 							<Pagination {...paginationProps} {...tableProps} />
@@ -356,7 +356,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 	private handleChange = ({ id }: any) => {
 		const { onSelection, totalRows } = this.props
 		this.setState(
-			prevState => {
+			(prevState) => {
 				const idx = prevState.selectedIds.indexOf(id)
 				let newIds = [...prevState.selectedIds]
 				if (idx > -1) {
@@ -370,7 +370,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 				}
 				return {
 					selectedIds: newIds,
-					allRowsSelected: newIds.length === totalRows
+					allRowsSelected: newIds.length === totalRows,
 				}
 			},
 			() => {
@@ -387,15 +387,15 @@ export default class Table extends Component<ITableProps, ITableState> {
 		const startIdx = currentPage * pageSize
 		const currentRows = allRows
 			.slice(startIdx, startIdx + pageSize)
-			.map(item => item._original)
-		const visibleIds = currentRows.map(row => row.id)
+			.map((item) => item._original)
+		const visibleIds = currentRows.map((row) => row.id)
 
 		this.setState(
-			prevState => ({
+			(prevState) => ({
 				selectedIds:
 					prevState.selectedIds.length > 0
 						? []
-						: [...prevState.selectedIds, ...visibleIds]
+						: [...prevState.selectedIds, ...visibleIds],
 			}),
 			() => {
 				onSelection && onSelection({ selectedIds: this.state.selectedIds })
@@ -412,7 +412,7 @@ export default class Table extends Component<ITableProps, ITableState> {
 
 		onClickRow(e, {
 			idx,
-			item: this.props.data[idx]
+			item: this.props.data[idx],
 		})
 
 		handleOriginal && handleOriginal(e)

@@ -1,11 +1,10 @@
-import React from 'react'
-import { filter, orderBy } from 'lodash'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, number } from '@storybook/addon-knobs'
-
+import { storiesOf } from '@storybook/react'
+import { filter, orderBy } from 'lodash'
+import React from 'react'
 import RecordTable, {
 	IRecordTableFetchOptions,
-	IRecordTableFetchResults
+	IRecordTableFetchResults,
 } from './RecordTable'
 
 const stories = storiesOf('RecordTable', module)
@@ -20,7 +19,7 @@ interface IDummyRecordTableRecord {
 stories.add('Basic RecordTable', () => {
 	const records: IDummyRecordTableRecord[] = [...Array(1000)].map(() => ({
 		name: `${Math.floor(Math.random() * 1000)}-Dummy`,
-		count: Math.floor(Math.random() * 1000)
+		count: Math.floor(Math.random() * 1000),
 	}))
 
 	// Faked API, made syncronous to populate initial state of the table.
@@ -39,7 +38,7 @@ stories.add('Basic RecordTable', () => {
 		if (options.selectedTab === 'empty') {
 			return {
 				visibleRows: [],
-				totalRows: 0
+				totalRows: 0,
 			}
 		}
 		return {
@@ -47,7 +46,7 @@ stories.add('Basic RecordTable', () => {
 				options.offset,
 				options.offset + options.limit
 			),
-			totalRows: filteredRecords.length
+			totalRows: filteredRecords.length,
 		}
 	}
 
@@ -55,7 +54,7 @@ stories.add('Basic RecordTable', () => {
 		offset: 0,
 		limit: 10,
 		sortColumn: 'name',
-		sortDirection: 'asc'
+		sortDirection: 'asc',
 	})
 
 	const timeout = number('API Simulated Timeout (MS)', 50)
@@ -63,8 +62,8 @@ stories.add('Basic RecordTable', () => {
 	return (
 		<div>
 			<RecordTable
-				fetchRecords={async options => {
-					await new Promise(resolve => {
+				fetchRecords={async (options) => {
+					await new Promise((resolve) => {
 						setTimeout(resolve, timeout)
 					})
 
@@ -82,12 +81,12 @@ stories.add('Basic RecordTable', () => {
 				tabs={[
 					{
 						key: 'all',
-						text: 'All things'
+						text: 'All things',
 					},
 					{
 						key: 'empty',
-						text: 'No things'
-					}
+						text: 'No things',
+					},
 				]}
 				columns={[
 					{
@@ -97,7 +96,7 @@ stories.add('Basic RecordTable', () => {
 							record: IDummyRecordTableRecord
 						) {
 							return <div>{record.name}</div>
-						}
+						},
 					},
 					{
 						Header: 'Count',
@@ -106,15 +105,15 @@ stories.add('Basic RecordTable', () => {
 							record: IDummyRecordTableRecord
 						) {
 							return <div>{record.count}</div>
-						}
-					}
+						},
+					},
 				]}
 				noDataIcon="trip_pin_multiple_light_large"
 				noDataHeadline={'No data!'}
 				noDataPrimaryAction={{
 					text: 'Try Again',
 					onClick: () => {},
-					type: 'submit'
+					type: 'submit',
 				}}
 			/>
 		</div>
@@ -140,8 +139,8 @@ stories.add('Empty RecordTable', () => {
 				tabs={[
 					{
 						key: 'all',
-						text: 'All things'
-					}
+						text: 'All things',
+					},
 				]}
 				columns={[
 					{
@@ -151,7 +150,7 @@ stories.add('Empty RecordTable', () => {
 							record: IDummyRecordTableRecord
 						) {
 							return <div>{record.name}</div>
-						}
+						},
 					},
 					{
 						Header: 'Count',
@@ -160,8 +159,8 @@ stories.add('Empty RecordTable', () => {
 							record: IDummyRecordTableRecord
 						) {
 							return <div>{record.count}</div>
-						}
-					}
+						},
+					},
 				]}
 			/>
 		</div>
@@ -187,8 +186,8 @@ stories.add('Empty RecordTable w/ Customized Empty States', () => {
 				tabs={[
 					{
 						key: 'all',
-						text: 'All things'
-					}
+						text: 'All things',
+					},
 				]}
 				columns={[
 					{
@@ -198,7 +197,7 @@ stories.add('Empty RecordTable w/ Customized Empty States', () => {
 							record: IDummyRecordTableRecord
 						) {
 							return <div>{record.name}</div>
-						}
+						},
 					},
 					{
 						Header: 'Count',
@@ -207,8 +206,8 @@ stories.add('Empty RecordTable w/ Customized Empty States', () => {
 							record: IDummyRecordTableRecord
 						) {
 							return <div>{record.count}</div>
-						}
-					}
+						},
+					},
 				]}
 				noFilteredMatchesIcon="vip"
 				noFilteredMatchesHeadline="Couldn't find that stuff!!!"
@@ -219,7 +218,7 @@ stories.add('Empty RecordTable w/ Customized Empty States', () => {
 				noDataPrimaryAction={{
 					text: 'Try Again',
 					onClick: () => {},
-					type: 'submit'
+					type: 'submit',
 				}}
 			/>
 		</div>

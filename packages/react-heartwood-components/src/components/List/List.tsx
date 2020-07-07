@@ -1,13 +1,13 @@
+import {
+	SpruceSchemas,
+	defaultProps,
+	listDefinition,
+} from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React, { Fragment } from 'react'
 import ExpandableListItem from './components/ExpandableListItem/ExpandableListItem'
 import ListHeader from './components/ListHeader/ListHeader'
 import ListItem from './components/ListItem/ListItem'
-import {
-	SpruceSchemas,
-	defaultProps,
-	listDefinition
-} from '@sprucelabs/heartwood-skill'
 
 // TODO can we delete this?
 export const ListWrapper = (props): React.ReactElement => (
@@ -25,7 +25,7 @@ const List = (props: SpruceSchemas.Local.IList): React.ReactElement => {
 		areSeparatorsVisible: areSeparatorsVisibleProp,
 		children,
 		selectable,
-		isLoading
+		isLoading,
 	} = props
 
 	// Separators are true by default
@@ -37,7 +37,7 @@ const List = (props: SpruceSchemas.Local.IList): React.ReactElement => {
 	const parentClass = cx('list', className, {
 		'list-small': isSmall,
 		'list--separators-hidden': !areSeparatorsVisible,
-		'loading-placeholder': isLoading
+		'loading-placeholder': isLoading,
 	})
 
 	return (
@@ -53,15 +53,15 @@ const List = (props: SpruceSchemas.Local.IList): React.ReactElement => {
 											schemaId: 'listItemCheckbox',
 											values: {
 												...selectable.values,
-												id: item.id ?? `selectable-${idx}`
-											}
+												id: item.id ?? `selectable-${idx}`,
+											},
 									  }
 									: {
 											schemaId: 'listItemRadio',
 											values: {
 												...selectable.values,
-												id: item.id ?? `selectable-${idx}`
-											}
+												id: item.id ?? `selectable-${idx}`,
+											},
 									  }
 						}
 						if (!item.isExpandable) {

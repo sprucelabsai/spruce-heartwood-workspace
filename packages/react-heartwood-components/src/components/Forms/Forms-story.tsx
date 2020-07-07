@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react'
-import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
 	text,
 	boolean,
 	object,
 	number,
-	select
+	select,
 } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React, { Fragment } from 'react'
+import countries from '../../../.storybook/data/countries'
 import Button from '../Button/Button'
 import {
 	Autosuggest,
@@ -26,13 +27,12 @@ import {
 	Toggle,
 	FormLayout,
 	FormLayoutGroup,
-	FormLayoutItem
+	FormLayoutItem,
 } from './index'
-import countries from '../../../.storybook/data/countries'
 
 const spacingOptions = {
 	Base: null,
-	Tight: 'tight'
+	Tight: 'tight',
 }
 
 const renderSuggestion = (suggestion: any) => {
@@ -67,16 +67,16 @@ stories
 			id="suggest"
 			label={object('label', { text: 'Country' })}
 			helper={object('inputHelper', {
-				helper: 'We use this information to improve your shopping experience.'
+				helper: 'We use this information to improve your shopping experience.',
 			})}
 			placeholder={text('placeholder', 'Select your country')}
 			defaultSuggestions={object('defaultSuggestions', countries)}
 			shouldRenderSuggestions={true}
 			renderSuggestion={renderSuggestion}
-			getSuggestionValue={value => value.text}
-			getSuggestions={value => {
+			getSuggestionValue={(value) => value.text}
+			getSuggestions={(value) => {
 				const results = countries.filter(
-					suggestion =>
+					(suggestion) =>
 						suggestion.text.toLowerCase().slice(0, value.length) ===
 						value.toLowerCase()
 				)
@@ -86,8 +86,8 @@ stories
 					return [
 						{
 							text: 'NO RESULTS',
-							isEmptyMessage: true
-						}
+							isEmptyMessage: true,
+						},
 					]
 				}
 				return results
@@ -101,10 +101,10 @@ stories
 			defaultSuggestions={object('defaultSuggestions', countries)}
 			shouldRenderSuggestions={true}
 			renderSuggestion={renderSuggestion}
-			getSuggestionValue={value => value.text}
-			getSuggestions={value => {
+			getSuggestionValue={(value) => value.text}
+			getSuggestions={(value) => {
 				const results = countries.filter(
-					suggestion =>
+					(suggestion) =>
 						suggestion.text.toLowerCase().slice(0, value.length) ===
 						value.toLowerCase()
 				)
@@ -114,14 +114,14 @@ stories
 					return [
 						{
 							text: 'NO RESULTS',
-							isEmptyMessage: true
-						}
+							isEmptyMessage: true,
+						},
 					]
 				}
 				return results
 			}}
 			icon={{
-				name: 'search'
+				name: 'search',
 			}}
 		/>
 	))
@@ -145,13 +145,13 @@ stories
 				name={text('name', 'inputName')}
 				label={object('label', {
 					text: 'First Name',
-					postLabel: ''
+					postLabel: '',
 				})}
 				placeholder={text('placeholder', 'i.e. Annie')}
 				value={text('value', '')}
 				helper={object('helper', {
 					hint: 'Let me help you understand why we are asking for this.',
-					error: ''
+					error: '',
 				})}
 				isReadOnly={boolean('isReadOnly', false)}
 				isSmall={boolean('isSmall', false)}
@@ -212,7 +212,7 @@ stories
 				name="radio"
 				label={object('label', {
 					text: 'label: option two',
-					postText: 'Option Two'
+					postText: 'Option Two',
 				})}
 			/>
 			<Radio
@@ -220,7 +220,7 @@ stories
 				name="radio"
 				label={object('label', {
 					text: 'label: option three',
-					postText: 'Option Three'
+					postText: 'Option Three',
 				})}
 			/>
 		</Fragment>
@@ -232,7 +232,7 @@ stories
 				name="optionOne"
 				label={object('label', {
 					text: 'Option One',
-					postLabel: 'Post text one'
+					postLabel: 'Post text one',
 				})}
 				isDisabled={boolean('isDisabled: option one', false)}
 			/>
@@ -241,7 +241,7 @@ stories
 				name="optionTwo"
 				label={object('label', {
 					text: 'label: option two',
-					postText: 'Option Two'
+					postText: 'Option Two',
 				})}
 				isDisabled={boolean('isDisabled: option two', false)}
 			/>
@@ -250,7 +250,7 @@ stories
 				name="optionThree"
 				label={object('label', {
 					text: 'label: option three',
-					postText: 'Option Three'
+					postText: 'Option Three',
 				})}
 				isDisabled={boolean('isDisabled: option three', false)}
 				isIndeterminate
@@ -306,11 +306,11 @@ stories
 				options={object('options', {
 					us: 'United States',
 					ca: 'Canada',
-					nj: 'New Jersey'
+					nj: 'New Jersey',
 				})}
 				isSimple={boolean('isSimple', false)}
 				helper={object('helper', {
-					error: ''
+					error: '',
 				})}
 				isDisabled={boolean('isDisabled', false)}
 			/>

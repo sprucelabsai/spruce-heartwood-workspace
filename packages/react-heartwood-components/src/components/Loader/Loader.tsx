@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 interface ILoaderProps {
 	/* Set to true if loader is on a dark background */
@@ -15,7 +15,7 @@ const Loader = (props: ILoaderProps) => {
 		<span
 			className={cx('loader', {
 				'loader--light': isLight,
-				'loader--centered': isCentered
+				'loader--centered': isCentered,
 			})}
 		>
 			<span className="loader__dot" />
@@ -26,7 +26,7 @@ const Loader = (props: ILoaderProps) => {
 }
 
 Loader.defaultProps = {
-	isLight: false
+	isLight: false,
 }
 
 export default Loader

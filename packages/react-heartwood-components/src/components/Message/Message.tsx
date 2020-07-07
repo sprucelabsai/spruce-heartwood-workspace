@@ -1,13 +1,11 @@
-import React from 'react'
-import moment from 'moment-timezone'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
-
+import moment from 'moment-timezone'
+import React from 'react'
 import Avatar from '../Avatar/Avatar'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
-
 import { IMessageReply } from './components/MessageBuilder'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 export interface IFromProps {
 	/** Unique id of the sender */
@@ -62,7 +60,7 @@ export const Message = (props: IMessageProps) => {
 		attachments,
 		detail,
 		primaryButton,
-		isFromSprucebot
+		isFromSprucebot,
 	} = props
 
 	if (typeof from === 'undefined') {
@@ -71,7 +69,7 @@ export const Message = (props: IMessageProps) => {
 
 	const { name: fromName, image: fromImage, alt: fromAlt } = from
 
-	const renderReply = reply => {
+	const renderReply = (reply) => {
 		const { type, children } = reply
 		let icon: string | null = null
 		let iconClass: string | null = null
@@ -107,7 +105,7 @@ export const Message = (props: IMessageProps) => {
 		)
 	}
 
-	const renderAttachment = attachment => {
+	const renderAttachment = (attachment) => {
 		return <div className="message__attachment">{attachment}</div>
 	}
 
@@ -133,7 +131,7 @@ export const Message = (props: IMessageProps) => {
 					renderImage({
 						image: fromImage,
 						alt: fromAlt || fromName || '',
-						isFromSprucebot
+						isFromSprucebot,
 					})
 				) : (
 					<span className="message__original-timestamp">
@@ -176,7 +174,7 @@ export const Message = (props: IMessageProps) => {
 }
 
 Message.defaultProps = {
-	isFromSprucebot: false
+	isFromSprucebot: false,
 }
 
 export default Message

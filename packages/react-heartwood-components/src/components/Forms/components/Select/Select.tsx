@@ -1,9 +1,9 @@
-import React from 'react'
-import cx from 'classnames'
-import ArrowIcon from '../../../../../static/assets/icons/ic_arrow_drop_down.svg'
 import { SpruceSchemas, stripNulls } from '@sprucelabs/heartwood-skill'
-import Label from '../Label/Label'
+import cx from 'classnames'
+import React from 'react'
+import ArrowIcon from '../../../../../static/assets/icons/ic_arrow_drop_down.svg'
 import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 const Select = (props: SpruceSchemas.Local.ISelect) => {
 	const {
@@ -18,7 +18,7 @@ const Select = (props: SpruceSchemas.Local.ISelect) => {
 	} = stripNulls(props)
 	const parentClass = cx('select text-input__inner', className, {
 		'select-simple': isSimple,
-		'select--has-error': helper?.error
+		'select--has-error': helper?.error,
 	})
 
 	let defaultSelectProps = {}
@@ -44,7 +44,7 @@ const Select = (props: SpruceSchemas.Local.ISelect) => {
 							{placeholder}
 						</option>
 					)}
-					{Object.keys(options).map(key => (
+					{Object.keys(options).map((key) => (
 						<option value={key} key={`${key}`}>
 							{options[key]}
 						</option>

@@ -17,11 +17,11 @@ const layoutBuilderDefinition = buildSchemaDefinition({
 					'layout',
 					'layoutSpacing',
 					'sidebarHeader',
-					'sidebarSection'
-				]
-			}
-		}
-	}
+					'sidebarSection',
+				],
+			},
+		},
+	},
 })
 
 export default layoutBuilderDefinition

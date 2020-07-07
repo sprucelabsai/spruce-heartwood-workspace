@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, object } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import { manyTabs } from '../../../.storybook/data/tabs'
 import Tabs from './Tabs'
 
@@ -14,7 +14,7 @@ stories
 			tabs={object('tabs', [
 				{ text: 'Team', isCurrent: true },
 				{ text: 'Guests' },
-				{ text: 'Everyone', onClick: () => console.log('Click') }
+				{ text: 'Everyone', onClick: () => console.log('Click') },
 			])}
 		/>
 	))

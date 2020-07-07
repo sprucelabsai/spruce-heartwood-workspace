@@ -1,12 +1,12 @@
-import React from 'react'
-import cx from 'classnames'
-import Button from '../../../Button/Button'
-import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
 import {
 	defaultProps,
 	SpruceSchemas,
-	tagDefinition
+	tagDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
+import Button from '../../../Button/Button'
 
 const defaults = defaultProps(tagDefinition)
 
@@ -15,7 +15,7 @@ const Tag = (props: SpruceSchemas.Local.ITag = { ...defaults }) => {
 	const parentClass = cx('tag', className, {
 		'tag-primary': kind === 'primary',
 		'tag-secondary': kind === 'secondary',
-		'tag-small': isSmall
+		'tag-small': isSmall,
 	})
 	return (
 		<div className={parentClass}>
@@ -24,7 +24,7 @@ const Tag = (props: SpruceSchemas.Local.ITag = { ...defaults }) => {
 				className="tag__btn"
 				isSmall={isSmall}
 				icon={{
-					customIcon: CloseIcon
+					customIcon: CloseIcon,
 				}}
 			/>
 		</div>

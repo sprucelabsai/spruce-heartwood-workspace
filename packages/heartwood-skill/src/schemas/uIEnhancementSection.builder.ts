@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import { calendarEventDetailItems } from './calendars/calendarEventDetails.builder'
 import { cardBuilderBodyItems } from './cards/cardBuilder.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const uIEnhancementSectionDefinition = buildSchemaDefinition({
 	id: 'uIEnhancementSection',
@@ -13,7 +13,7 @@ const uIEnhancementSectionDefinition = buildSchemaDefinition({
 			type: FieldType.Id,
 			label: 'Id',
 			hint:
-				'The ID of the section that is acting as a placeholder for ui enhancements'
+				'The ID of the section that is acting as a placeholder for ui enhancements',
 		},
 		calendarEventDetailItems: {
 			type: FieldType.Schema,
@@ -22,8 +22,8 @@ const uIEnhancementSectionDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Calendar items to add as enhancements',
 			options: {
-				schemaIds: calendarEventDetailItems
-			}
+				schemaIds: calendarEventDetailItems,
+			},
 		},
 		cardBuilderBodyItems: {
 			type: FieldType.Schema,
@@ -32,8 +32,8 @@ const uIEnhancementSectionDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Card builder items to add as enhancements',
 			options: {
-				schemaIds: cardBuilderBodyItems
-			}
+				schemaIds: cardBuilderBodyItems,
+			},
 		},
 		contextMenuItems: {
 			type: FieldType.Schema,
@@ -42,10 +42,10 @@ const uIEnhancementSectionDefinition = buildSchemaDefinition({
 			isArray: true,
 			hint: 'Context menu items to add as enhancements',
 			options: {
-				schemaId: 'button'
-			}
-		}
-	}
+				schemaId: 'button',
+			},
+		},
+	},
 })
 
 export default uIEnhancementSectionDefinition

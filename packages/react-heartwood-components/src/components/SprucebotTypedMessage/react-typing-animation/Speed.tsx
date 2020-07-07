@@ -5,7 +5,7 @@ const Speed = () => <noscript />
 Speed.updateCursor = (cursor, { ms }) => {
 	return {
 		...cursor,
-		speed: ms
+		speed: ms,
 	}
 }
 

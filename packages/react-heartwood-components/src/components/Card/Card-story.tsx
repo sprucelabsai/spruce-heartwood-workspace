@@ -1,3 +1,4 @@
+import { buildCard } from '@sprucelabs/heartwood-skill'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React, { Fragment } from 'react'
@@ -17,47 +18,47 @@ import Subheading from '../Subheading/Subheading'
 import Text from '../Text/Text'
 import TextContainer from '../TextContainer/TextContainer'
 import { Card, CardBuilder, OnboardingCard, Scores } from './index'
-import { buildCard } from '@sprucelabs/heartwood-skill'
 
 const cards1 = buildCard({
-	willMountHook: heartwood => {
+	willMountHook: (heartwood) => {
 		heartwood.setState('buttonText', 'Click here!')
 	},
-	didMountHook: async heartwood => {
+	didMountHook: async (heartwood) => {
 		heartwood.setState({ isLoading: true })
-		const uiEnhancements = await heartwood.mercury.emit(response => {
+		const uiEnhancements = await heartwood.mercury.emit((response) => {
 			heartwood.setState({ uiEnhancements: response })
 		})
 		heartwood.setState({ uiEnhancements, isLoading: false })
 	},
 	header: {
 		title: 'Introducing the Card Builder! (Note: WIP)',
-		labelTextHook: hw => (hw.getState('isLoading') ? 'Loading braaaah!!' : ''),
+		labelTextHook: (hw) =>
+			hw.getState('isLoading') ? 'Loading braaaah!!' : '',
 		buttons: [
 			{
 				id: 'foo',
 				type: 'button',
-				textHook: heartwood => heartwood.getState('buttonText'),
+				textHook: (heartwood) => heartwood.getState('buttonText'),
 				href: '#',
 				htmlAttributes: {
-					target: '_blank'
+					target: '_blank',
 				},
 				isSmall: true,
-				onClickHook: heartwood => {
+				onClickHook: (heartwood) => {
 					heartwood.setState({ buttonText: 'You clicked it!' })
-				}
-			}
-		]
+				},
+			},
+		],
 	},
 	body: {
 		items: [
 			{
 				schemaId: 'text',
 				values: {
-					text: `The Card Builder enables Skill devs to build cards using JSON. It should not be used for core cards.`
-				}
-			}
-		]
+					text: `The Card Builder enables Skill devs to build cards using JSON. It should not be used for core cards.`,
+				},
+			},
+		],
 	},
 	footer: {
 		buttonGroup: {
@@ -67,25 +68,25 @@ const cards1 = buildCard({
 					type: 'button',
 					text: 'Fire a JS Callback!',
 					htmlAttributes: {
-						onClick: () => window.alert('clicked!')
+						onClick: () => window.alert('clicked!'),
 					},
 					kind: 'secondary',
-					isSmall: true
-				}
-			]
-		}
-	}
+					isSmall: true,
+				},
+			],
+		},
+	},
 })
 
 const cards2 = buildCard({
 	header: {
-		title: 'Your sales for today!'
+		title: 'Your sales for today!',
 	},
 	body: {
 		items: [
 			{
 				schemaId: 'text',
-				values: { text: 'This is your typical score card' }
+				values: { text: 'This is your typical score card' },
 			},
 			{
 				schemaId: 'scoreCard',
@@ -93,12 +94,12 @@ const cards2 = buildCard({
 					scores: [
 						{ label: 'Today', value: '$1,848' },
 						{ label: 'This Week', value: '$5,778' },
-						{ label: 'This Month', value: '$25,068' }
-					]
-				}
-			}
-		]
-	}
+						{ label: 'This Month', value: '$25,068' },
+					],
+				},
+			},
+		],
+	},
 })
 
 const cards3 = buildCard({
@@ -111,30 +112,30 @@ const cards3 = buildCard({
 				isComplete: true,
 				tabTitle: 'Add your first location',
 				panelTitle: 'It is time to add your location.',
-				panelCopy: "It's going to be so great, you know it!"
+				panelCopy: "It's going to be so great, you know it!",
 			},
 			{
 				id: '2',
 				tabTitle: 'Set up your team',
 				tabIcon: { id: 'foo', name: 'location', isLineIcon: true },
 				panelTitle: 'Team setup is the best',
-				panelCopy: 'Teammwork makes the dream work!'
+				panelCopy: 'Teammwork makes the dream work!',
 			},
 			{
 				id: '3',
 				tabIcon: { id: 'foo', name: 'launch', isLineIcon: true },
 				tabTitle: 'Go live',
 				panelTitle: "You're ready to go live!",
-				panelCopy: 'Do it! Do it!'
-			}
-		]
-	}
+				panelCopy: 'Do it! Do it!',
+			},
+		],
+	},
 })
 
 const cards4 = buildCard({
 	id: 'foo',
 	header: {
-		labelText: 'The last example!'
+		labelText: 'The last example!',
 	},
 	body: {
 		items: [
@@ -143,30 +144,30 @@ const cards4 = buildCard({
 				values: {
 					id: '',
 					header: {
-						title: 'This is a list!'
+						title: 'This is a list!',
 					},
 					items: [
 						{
 							id: 'number_one',
 							title: 'This is so cool!',
 							subtitle: 'For sure!',
-							icon: { id: 'foo', name: 'complete', isLineIcon: true }
+							icon: { id: 'foo', name: 'complete', isLineIcon: true },
 						},
 						{
 							id: 'number_two',
 							title: 'Takes all the props a List can take!',
-							icon: { id: 'foo', name: 'complete', isLineIcon: true }
-						}
-					]
-				}
+							icon: { id: 'foo', name: 'complete', isLineIcon: true },
+						},
+					],
+				},
 			},
 			{
 				schemaId: 'text',
 				values: {
-					text: 'Following up with text component!'
-				}
-			}
-		]
+					text: 'Following up with text component!',
+				},
+			},
+		],
 	},
 	footer: {
 		buttonGroup: {
@@ -176,17 +177,17 @@ const cards4 = buildCard({
 					type: 'button',
 					text: 'Do things',
 					kind: 'secondary',
-					isSmall: true
-				}
-			]
-		}
-	}
+					isSmall: true,
+				},
+			],
+		},
+	},
 })
 
 const cards5 = buildCard({
 	id: 'foo',
 	header: {
-		title: 'Danger Zone'
+		title: 'Danger Zone',
 	},
 	footer: {
 		buttonGroup: {
@@ -197,16 +198,16 @@ const cards5 = buildCard({
 					text: 'Delete this thing forever',
 					icon: {
 						id: 'foo',
-						name: 'remove'
+						name: 'remove',
 					},
 					kind: 'caution',
-					isSmall: true
-				}
-			]
+					isSmall: true,
+				},
+			],
 		},
 		helper:
-			'This is a permanent thing you are doing, be sure you want to do the thing'
-	}
+			'This is a permanent thing you are doing, be sure you want to do the thing',
+	},
 })
 
 const stories = storiesOf('Card', module)
@@ -217,7 +218,7 @@ const stories = storiesOf('Card', module)
 // 	})
 // )
 
-stories.addDecorator(story => (
+stories.addDecorator((story) => (
 	<SkillView>
 		<SkillViewContent>
 			<Layout>
@@ -254,8 +255,8 @@ stories
 				title={text('title', 'Value of future appointments')}
 				buttons={object('buttons', [
 					{
-						text: 'Go to reports'
-					}
+						text: 'Go to reports',
+					},
 				])}
 			/>
 			<Card.Body>
@@ -268,18 +269,18 @@ stories
 						{
 							id: '1',
 							label: 'Today',
-							value: '$1,848'
+							value: '$1,848',
 						},
 						{
 							id: '2',
 							label: 'This Week',
-							value: '$5,778'
+							value: '$5,778',
 						},
 						{
 							id: '3',
 							label: 'This Month',
-							value: '$25,068'
-						}
+							value: '$25,068',
+						},
 					])}
 				/>
 			</Card.Body>
@@ -291,8 +292,8 @@ stories
 				title={text('title', 'Your upcoming appointments')}
 				buttons={object('buttons', [
 					{
-						text: 'View in calendar'
-					}
+						text: 'View in calendar',
+					},
 				])}
 			/>
 			<Card.Body>
@@ -365,7 +366,7 @@ stories
 					boolean('Label Icon', false)
 						? {
 								customIcon: LockIcon2,
-								isLineIcon: true
+								isLineIcon: true,
 						  }
 						: undefined
 				}
@@ -376,13 +377,13 @@ stories
 								{
 									kind: 'simple',
 									text: 'Go to team',
-									isSmall: true
-								}
+									isSmall: true,
+								},
 						  ]
 						: undefined
 				}
 				contextMenu={object('contextMenu', {
-					buttons: [{ text: 'One' }, { text: 'Two' }, { text: 'Three' }]
+					buttons: [{ text: 'One' }, { text: 'Two' }, { text: 'Three' }],
 				})}
 			/>
 			<Card.Body>

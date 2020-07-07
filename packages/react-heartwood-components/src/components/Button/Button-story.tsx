@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import Button from './Button'
 
 const btnText = text('text', 'Hello World')
@@ -23,7 +23,7 @@ stories
 			icon={{
 				id: 'example',
 				name: text('icon', null),
-				className: text('iconClassName', 'btn__line-icon')
+				className: text('iconClassName', 'btn__line-icon'),
 			}}
 			href={text('href', '')}
 			target={text('target', '')}
@@ -41,7 +41,7 @@ stories
 			icon={{
 				id: 'example',
 				name: text('icon', null),
-				className: text('iconClassName', 'btn__line-icon')
+				className: text('iconClassName', 'btn__line-icon'),
 			}}
 			href={text('href', '')}
 			target={text('target', '')}
@@ -59,7 +59,7 @@ stories
 			icon={{
 				id: 'example',
 				name: text('icon', null),
-				className: text('iconClassName', 'btn__line-icon')
+				className: text('iconClassName', 'btn__line-icon'),
 			}}
 			href={text('href', '')}
 			target={text('target', '')}
@@ -77,7 +77,7 @@ stories
 			icon={{
 				id: 'example',
 				name: text('icon', null),
-				className: text('iconClassName', 'btn__line-icon')
+				className: text('iconClassName', 'btn__line-icon'),
 			}}
 			href={text('href', '')}
 			target={text('target', '')}
@@ -95,7 +95,7 @@ stories
 			icon={{
 				id: 'example',
 				name: text('icon', null),
-				className: text('iconClassName', 'btn__line-icon')
+				className: text('iconClassName', 'btn__line-icon'),
 			}}
 			href={text('href', '')}
 			target={text('target', '')}

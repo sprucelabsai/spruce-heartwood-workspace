@@ -1,19 +1,18 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
-import { generateLocations } from '../../../.storybook/data/tableData'
-import { map, sampleSize, cloneDeep } from 'lodash'
 import {
 	withKnobs,
 	text,
 	boolean,
 	object,
-	select
+	select,
 } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import { map, sampleSize, cloneDeep } from 'lodash'
+import React, { Component } from 'react'
 import { userList, userList02 } from '../../../.storybook/data/people'
-
+import { generateLocations } from '../../../.storybook/data/tableData'
 import Card, { CardHeader, CardBody, CardSection } from '../Card'
-import TruncatedList from './TruncatedList'
 import { IRecordSelectionListItemProps } from '../RecordSelectionList/RecordSelectionList'
+import TruncatedList from './TruncatedList'
 
 const stories = storiesOf('TruncatedList', module)
 
@@ -41,7 +40,7 @@ class TruncatedListExample extends Component<
 	public constructor(props) {
 		super(props)
 
-		let selectedIds = props.recordSelectionListItems.map(loc => loc.id)
+		let selectedIds = props.recordSelectionListItems.map((loc) => loc.id)
 
 		if (props.canSelect === 'one') {
 			selectedIds = sampleSize(selectedIds, 1)
@@ -50,8 +49,8 @@ class TruncatedListExample extends Component<
 		}
 
 		const unselectedIds = props.recordSelectionListItems
-			.map(loc => loc.id)
-			.filter(locationId => selectedIds.indexOf(locationId) === -1)
+			.map((loc) => loc.id)
+			.filter((locationId) => selectedIds.indexOf(locationId) === -1)
 
 		const unselectableIds = props.canSelect
 			? sampleSize(unselectedIds, unselectedIds.length / 2)
@@ -60,7 +59,7 @@ class TruncatedListExample extends Component<
 		this.state = {
 			selectedIds,
 			loadedRecordSelectionListItems: cloneDeep(props.recordSelectionListItems),
-			unselectableIds
+			unselectableIds,
 		}
 	}
 
@@ -70,12 +69,12 @@ class TruncatedListExample extends Component<
 			canSelect,
 			canRemove,
 			noItemsText,
-			truncatedActionItemType
+			truncatedActionItemType,
 		} = this.props
 		const {
 			selectedIds,
 			loadedRecordSelectionListItems,
-			unselectableIds
+			unselectableIds,
 		} = this.state
 
 		return (
@@ -88,13 +87,15 @@ class TruncatedListExample extends Component<
 				isTruncated={loadedRecordSelectionListItems.length > 5}
 				canSelect={canSelect}
 				canRemove={canRemove}
-				onSelect={id => {
+				onSelect={(id) => {
 					// Typically you'd want "many" or "one", so you'd only need one side
 					// of this conditional.
 					if (canSelect === 'many') {
 						if (selectedIds.indexOf(id) >= 0) {
 							this.setState({
-								selectedIds: selectedIds.filter(selectedId => selectedId !== id)
+								selectedIds: selectedIds.filter(
+									(selectedId) => selectedId !== id
+								),
 							})
 						} else {
 							this.setState({ selectedIds: [...selectedIds, id] })
@@ -103,16 +104,16 @@ class TruncatedListExample extends Component<
 						this.setState({ selectedIds: [id] })
 					}
 				}}
-				onRemove={id => {
+				onRemove={(id) => {
 					// The component maintains state of the records it has loaded, but
 					// it's up to you to remove them from your list in your local state.
 					// Also, if for some reason you want to have selection alongside deletion,
 					// you should be sure to clear out the selection at the same time.
 					this.setState({
-						selectedIds: selectedIds.filter(selectedId => selectedId !== id),
+						selectedIds: selectedIds.filter((selectedId) => selectedId !== id),
 						loadedRecordSelectionListItems: loadedRecordSelectionListItems.filter(
-							locationItem => locationItem.id !== id
-						)
+							(locationItem) => locationItem.id !== id
+						),
 					})
 				}}
 				truncatedActionText={`See all${
@@ -138,8 +139,8 @@ stories
 						buttons={object('buttons', [
 							{
 								text: 'Add a location',
-								kind: 'simple'
-							}
+								kind: 'simple',
+							},
 						])}
 					/>
 					<CardBody>
@@ -150,10 +151,10 @@ stories
 							canRemove={boolean('Can Remove', true)}
 							recordSelectionListItems={map(
 								generateLocations({ amount: 10 }),
-								location => ({
+								(location) => ({
 									id: location.id,
 									title: location.publicName,
-									subtitle: location.address
+									subtitle: location.address,
 								})
 							)}
 						/>
@@ -171,8 +172,8 @@ stories
 						buttons={object('buttons', [
 							{
 								text: 'Add managers',
-								kind: 'simple'
-							}
+								kind: 'simple',
+							},
 						])}
 					/>
 					<CardBody isSectioned={false} areSectionSeparatorsVisible={true}>
@@ -185,11 +186,11 @@ stories
 								canRemove={boolean('Can Remove', true)}
 								recordSelectionListItems={map(
 									[...userList, ...userList02],
-									user => ({
+									(user) => ({
 										id: user.id,
 										avatar: user.avatar,
 										title: user.title,
-										subtitle: 'Manager'
+										subtitle: 'Manager',
 									})
 								)}
 							/>
@@ -203,11 +204,11 @@ stories
 								canRemove={boolean('Can Remove', true)}
 								recordSelectionListItems={map(
 									[...userList, ...userList02],
-									user => ({
+									(user) => ({
 										id: user.id,
 										avatar: user.avatar,
 										title: user.title,
-										subtitle: 'Group Manager'
+										subtitle: 'Group Manager',
 									})
 								)}
 							/>

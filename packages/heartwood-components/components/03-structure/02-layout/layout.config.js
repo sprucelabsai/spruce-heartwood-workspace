@@ -12,32 +12,32 @@ module.exports = {
 				card: {
 					title: 'Get the most out of Sprucebot',
 					children: [
-						'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+						'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 					],
 					footerActions: [
 						{
 							text: 'Get some skills',
-							className: 'btn-secondary btn-small'
-						}
-					]
-				}
+							className: 'btn-secondary btn-small',
+						},
+					],
+				},
 			},
 			{
 				secondary: false,
 				card: {
 					title: 'Get the most out of Sprucebot',
 					children: [
-						'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+						'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 					],
 					footerActions: [
 						{
 							text: 'Get some skills',
-							className: 'btn-secondary btn-small'
-						}
-					]
-				}
-			}
-		]
+							className: 'btn-secondary btn-small',
+						},
+					],
+				},
+			},
+		],
 	},
 	variants: [
 		{
@@ -49,33 +49,33 @@ module.exports = {
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
 					},
 					{
 						secondary: true,
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
-					}
-				]
-			}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
+					},
+				],
+			},
 		},
 		{
 			name: '3 Columns Equal Width',
@@ -86,48 +86,48 @@ module.exports = {
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
 					},
 					{
 						secondary: true,
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
 					},
 					{
 						secondary: true,
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
-					}
-				]
-			}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
+					},
+				],
+			},
 		},
 		{
 			name: '2 Columns Primary and Secondary Width',
@@ -138,33 +138,33 @@ module.exports = {
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								']Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								']Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
 					},
 					{
 						secondary: true,
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
-					}
-				]
-			}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
+					},
+				],
+			},
 		},
 		{
 			name: 'Tight',
@@ -176,18 +176,18 @@ module.exports = {
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
-					}
-				]
-			}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
+					},
+				],
+			},
 		},
 		{
 			name: 'Wide',
@@ -199,18 +199,18 @@ module.exports = {
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
-					}
-				]
-			}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
+					},
+				],
+			},
 		},
 		{
 			name: 'Full-Width',
@@ -222,18 +222,18 @@ module.exports = {
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
-					}
-				]
-			}
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
+					},
+				],
+			},
 		},
 		{
 			name: 'Full-Bleed',
@@ -245,18 +245,18 @@ module.exports = {
 						card: {
 							title: 'Get the most out of Sprucebot',
 							children: [
-								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.'
+								'Two roads diverged in a wood, and I took the one less traveled by, And that has made all the difference.',
 							],
 							footerActions: [
 								{
 									text: 'Get some skills',
-									className: 'btn-secondary btn-small'
-								}
-							]
-						}
-					}
-				]
-			}
-		}
-	]
+									className: 'btn-secondary btn-small',
+								},
+							],
+						},
+					},
+				],
+			},
+		},
+	],
 }

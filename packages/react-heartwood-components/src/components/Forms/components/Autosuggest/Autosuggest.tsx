@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import { createPortal } from 'react-dom'
-import debounce from 'lodash/debounce'
-import { default as ReactAutosuggest } from 'react-autosuggest'
-import cx from 'classnames'
-import Button from '../../../Button/Button'
-import ClearIcon from '../../../../../static/assets/icons/ic_cancel.svg'
 import {
 	SpruceSchemas,
 	defaultProps,
-	autosuggestDefinition
+	autosuggestDefinition,
 } from '@sprucelabs/heartwood-skill'
-import Label from '../Label/Label'
-import InputHelper from '../InputHelper/InputHelper'
+import cx from 'classnames'
+import debounce from 'lodash/debounce'
+import React, { Component } from 'react'
+import { default as ReactAutosuggest } from 'react-autosuggest'
+import { createPortal } from 'react-dom'
+import ClearIcon from '../../../../../static/assets/icons/ic_cancel.svg'
+import Button from '../../../Button/Button'
 import Icon from '../../../Icon/Icon'
+import InputHelper from '../InputHelper/InputHelper'
+import Label from '../Label/Label'
 
 interface IAutosuggestInterfaceState {
 	value: string
@@ -32,15 +32,15 @@ interface IThemeProps {
 
 const theme = (props: IThemeProps): any => ({
 	container: cx('text-input', {
-		'text-input-small': props.isSmall
+		'text-input-small': props.isSmall,
 	}),
 	input: cx('text-input__inner text-input__input', {
-		'text-input__inner--has-icon': props.hasIcon
+		'text-input__inner--has-icon': props.hasIcon,
 	}),
 	suggestionsContainer: 'autosuggest',
 	suggestionsContainerOpen: 'autosuggest--show-suggestions',
 	suggestionsList: 'autosuggest__list',
-	suggestion: 'autosuggest__list-item'
+	suggestion: 'autosuggest__list-item',
 })
 
 interface IAutoSuggestRefCurrent extends ReactAutosuggest<any, any> {
@@ -82,8 +82,8 @@ export default class Autosuggest extends Component<
 			containerPlacement: {
 				top: 0,
 				left: 0,
-				width: 0
-			}
+				width: 0,
+			},
 		}
 	}
 
@@ -105,7 +105,7 @@ export default class Autosuggest extends Component<
 			value,
 			suggestions,
 			showClearButton,
-			containerPlacement
+			containerPlacement,
 		} = this.state
 
 		const {
@@ -119,7 +119,7 @@ export default class Autosuggest extends Component<
 			wrapperClassName,
 			className,
 			isDisabled,
-			icon
+			icon,
 		} = this.props
 
 		const inputProps = {
@@ -127,12 +127,12 @@ export default class Autosuggest extends Component<
 			value,
 			onChange: this.onChange,
 			onBlur: this.onBlur,
-			disabled: isDisabled ?? undefined
+			disabled: isDisabled ?? undefined,
 		}
 
 		const parentClass = cx('text-input', {
 			className,
-			'text-input--has-error': !!helper?.error
+			'text-input--has-error': !!helper?.error,
 		})
 
 		return (
@@ -156,7 +156,7 @@ export default class Autosuggest extends Component<
 									style={{
 										top: `${containerPlacement.top + 8}px`,
 										left: `${containerPlacement.left}px`,
-										width: `${containerPlacement.width}px`
+										width: `${containerPlacement.width}px`,
 									}}
 									{...containerProps}
 								>
@@ -175,7 +175,7 @@ export default class Autosuggest extends Component<
 							className="text-input__clear-btn"
 							icon={{
 								customIcon: ClearIcon,
-								name: 'clear_icon'
+								name: 'clear_icon',
 							}}
 							onClick={this.handleClearInput}
 						/>
@@ -220,8 +220,8 @@ export default class Autosuggest extends Component<
 			containerPlacement: {
 				top: inputPosition.y + inputPosition.height + scrollY,
 				left: inputPosition.x + scrollX,
-				width: inputPosition.width
-			}
+				width: inputPosition.width,
+			},
 		})
 	}
 
@@ -231,14 +231,14 @@ export default class Autosuggest extends Component<
 
 	private onChange = (event: any, { newValue }: any) => {
 		this.setState({
-			value: newValue
+			value: newValue,
 		})
 	}
 
 	private onBlur = () => {
-		this.setState(prevState => ({
+		this.setState((prevState) => ({
 			showClearButton:
-				prevState.value && prevState.value.length > 0 ? true : false
+				prevState.value && prevState.value.length > 0 ? true : false,
 		}))
 	}
 
@@ -248,7 +248,7 @@ export default class Autosuggest extends Component<
 		const { getSuggestions } = this.props
 		const suggestions = getSuggestions && (await getSuggestions(value))
 		await this.setState({
-			suggestions: suggestions || []
+			suggestions: suggestions || [],
 		})
 
 		this.getContainerPlacement()
@@ -258,7 +258,7 @@ export default class Autosuggest extends Component<
 	private onSuggestionsClearRequested = () => {
 		const { defaultSuggestions } = this.props
 		this.setState({
-			suggestions: defaultSuggestions
+			suggestions: defaultSuggestions,
 		})
 	}
 
@@ -295,7 +295,7 @@ export default class Autosuggest extends Component<
 				if (isSmoothScrollSupported) {
 					scrollNode.scrollTo({
 						top: inputTop,
-						behavior: 'smooth'
+						behavior: 'smooth',
 					})
 				} else {
 					scrollNode.scrollTo(0, inputTop)
@@ -304,7 +304,7 @@ export default class Autosuggest extends Component<
 		}
 	}
 
-	private findOverflowParent = node => {
+	private findOverflowParent = (node) => {
 		if (node == null || typeof node === 'undefined' || node.nodeType !== 1) {
 			return null
 		}
@@ -321,7 +321,7 @@ export default class Autosuggest extends Component<
 	private handleClearInput = () => {
 		this.setState({
 			value: '',
-			showClearButton: false
+			showClearButton: false,
 		})
 	}
 }

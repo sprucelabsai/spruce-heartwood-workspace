@@ -6,7 +6,7 @@ export default function stripNulls<T extends {}>(
 	options: T | null | undefined
 ): NoNulls<T> {
 	const cleaned: Partial<T> = {}
-	Object.keys(options || {}).forEach(key => {
+	Object.keys(options || {}).forEach((key) => {
 		// @ts-ignore
 		if (options[key] !== null) {
 			// @ts-ignore

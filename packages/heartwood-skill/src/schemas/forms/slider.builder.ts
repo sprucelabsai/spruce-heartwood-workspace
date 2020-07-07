@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import labelDefinition from './label.builder'
 import inputEventsDefinition from './inputEvents.builder'
+import labelDefinition from './label.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const sliderDefinition = buildSchemaDefinition({
 	id: 'slider',
@@ -11,42 +11,42 @@ const sliderDefinition = buildSchemaDefinition({
 		...inputEventsDefinition.fields,
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		label: {
 			type: FieldType.Schema,
 			label: 'Label',
 			options: {
-				schema: labelDefinition
-			}
+				schema: labelDefinition,
+			},
 		},
 		name: {
 			type: FieldType.Text,
-			label: 'Name'
+			label: 'Name',
 		},
 		min: {
 			type: FieldType.Number,
 			label: 'Minimum',
 			hint: 'The left most value of the slider',
-			isRequired: true
+			isRequired: true,
 		},
 		max: {
 			type: FieldType.Number,
 			label: 'Maximum',
 			hint: 'The right most value of the slider',
-			isRequired: true
+			isRequired: true,
 		},
 		value: {
 			type: FieldType.Number,
 			label: 'Value',
 			hint: 'The value of the slider',
-			isRequired: true
+			isRequired: true,
 		},
 		isDisabled: {
 			type: FieldType.Boolean,
-			label: 'Disabled'
-		}
-	}
+			label: 'Disabled',
+		},
+	},
 })
 
 export default sliderDefinition

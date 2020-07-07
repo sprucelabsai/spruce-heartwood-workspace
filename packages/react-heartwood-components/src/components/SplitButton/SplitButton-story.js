@@ -1,20 +1,19 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text } from '@storybook/addon-knobs/react'
-
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import SplitButton from './SplitButton'
 
 const buttons = [
 	{
 		text: 'Another action',
-		onClick: () => console.log('CLICK')
+		onClick: () => console.log('CLICK'),
 	},
 	{
-		text: 'Third action'
+		text: 'Third action',
 	},
 	{
-		text: 'Yet another action'
-	}
+		text: 'Yet another action',
+	},
 ]
 
 const stories = storiesOf('SplitButton', module)
@@ -25,7 +24,7 @@ stories
 	.add('Primary', () => (
 		<SplitButton
 			defaultAction={{
-				text: text('defaultActionText', 'Do the default action')
+				text: text('defaultActionText', 'Do the default action'),
 			}}
 			buttons={buttons}
 			kind="primary"
@@ -34,7 +33,7 @@ stories
 	.add('Primary Small', () => (
 		<SplitButton
 			defaultAction={{
-				text: text('defaultActionText', 'Do the default action')
+				text: text('defaultActionText', 'Do the default action'),
 			}}
 			buttons={buttons}
 			kind="primary"
@@ -44,7 +43,7 @@ stories
 	.add('Secondary', () => (
 		<SplitButton
 			defaultAction={{
-				text: text('defaultActionText', 'Do the default action')
+				text: text('defaultActionText', 'Do the default action'),
 			}}
 			buttons={buttons}
 			kind="secondary"
@@ -53,7 +52,7 @@ stories
 	.add('Secondary Small', () => (
 		<SplitButton
 			defaultAction={{
-				text: text('defaultActionText', 'Do the default action')
+				text: text('defaultActionText', 'Do the default action'),
 			}}
 			buttons={buttons}
 			kind="secondary"

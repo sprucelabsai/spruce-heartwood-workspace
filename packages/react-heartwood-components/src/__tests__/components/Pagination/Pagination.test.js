@@ -1,7 +1,6 @@
 import 'jsdom-global/register'
-import React from 'react'
 import { shallow } from 'enzyme'
-
+import React from 'react'
 import Pagination from '../../../components/Pagination/Pagination'
 
 describe('Pagination tests', () => {
@@ -21,7 +20,7 @@ describe('Pagination tests', () => {
 			onClickNext,
 			onClickBack,
 			currentPage: 0,
-			totalPages: 3
+			totalPages: 3,
 		}
 
 		renderedComponent = shallow(<Pagination {...props} />)
@@ -65,7 +64,7 @@ describe('When on the first page', () => {
 			onClickNext,
 			onClickBack,
 			currentPage: 0,
-			totalPages: 3
+			totalPages: 3,
 		}
 
 		renderedComponent = shallow(<Pagination {...props} />)
@@ -97,7 +96,7 @@ describe('When between the first and last page', () => {
 			onClickNext,
 			onClickBack,
 			currentPage: 1,
-			totalPages: 3
+			totalPages: 3,
 		}
 
 		renderedComponent = shallow(<Pagination {...props} />)
@@ -128,7 +127,7 @@ describe('When on the last page', () => {
 			onClickNext,
 			onClickBack,
 			currentPage: 3,
-			totalPages: 3
+			totalPages: 3,
 		}
 
 		renderedComponent = shallow(<Pagination {...props} />)

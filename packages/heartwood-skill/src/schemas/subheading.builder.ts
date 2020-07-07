@@ -11,9 +11,9 @@ const subheadingDefinition = buildSchemaDefinition({
 		weight: {
 			...headingDefinition.fields.weight,
 			defaultValue: 'h2',
-			hint: 'The weight of the sub heading, H2 and beyond'
-		}
-	}
+			hint: 'The weight of the sub heading, H2 and beyond',
+		},
+	},
 })
 
 export default subheadingDefinition

@@ -9,19 +9,19 @@ const inputHelperDefinition = buildSchemaDefinition({
 	fields: {
 		hint: {
 			type: FieldType.Text,
-			label: 'Hint'
+			label: 'Hint',
 		},
 		error: {
 			type: FieldType.Text,
-			label: 'Error message'
+			label: 'Error message',
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		htmlFor: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		ElementTag: {
 			type: FieldType.Select,
@@ -30,11 +30,11 @@ const inputHelperDefinition = buildSchemaDefinition({
 			options: {
 				choices: [
 					{ value: 'p', label: '<p/>' },
-					{ value: 'label', label: '<label/>' }
-				]
-			}
-		}
-	}
+					{ value: 'label', label: '<label/>' },
+				],
+			},
+		},
+	},
 })
 
 export default inputHelperDefinition

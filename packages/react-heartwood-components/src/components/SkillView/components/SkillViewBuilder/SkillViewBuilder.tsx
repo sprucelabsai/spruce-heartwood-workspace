@@ -1,10 +1,10 @@
-import React from 'react'
-import LayoutBuilder from '../../../LayoutBuilder/LayoutBuilder'
 import {
 	SpruceSchemas,
 	defaultProps,
-	skillViewBuilderDefinition
+	skillViewBuilderDefinition,
 } from '@sprucelabs/heartwood-skill'
+import React from 'react'
+import LayoutBuilder from '../../../LayoutBuilder/LayoutBuilder'
 import SkillView from '../../SkillView'
 
 const defaults = defaultProps(skillViewBuilderDefinition)

@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import layoutSectionDefinition from './layoutSection.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const layoutDefinition = buildSchemaDefinition({
 	id: 'layout',
@@ -10,18 +10,18 @@ const layoutDefinition = buildSchemaDefinition({
 		children: {
 			type: FieldType.Node,
 			label: 'Children',
-			isPrivate: true
+			isPrivate: true,
 		},
 		isCentered: {
 			type: FieldType.Boolean,
 			label: 'Is centered',
 			hint: 'A hint',
-			defaultValue: false
+			defaultValue: false,
 		},
 		isFullBleed: {
 			type: FieldType.Boolean,
 			label: 'Is full bleed',
-			defaultValue: false
+			defaultValue: false,
 		},
 		sections: {
 			type: FieldType.Schema,
@@ -29,12 +29,12 @@ const layoutDefinition = buildSchemaDefinition({
 			hint: 'Layout sections that makeup this layout',
 			isArray: true,
 			options: {
-				schema: layoutSectionDefinition
-			}
+				schema: layoutSectionDefinition,
+			},
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		width: {
 			type: FieldType.Select,
@@ -44,24 +44,24 @@ const layoutDefinition = buildSchemaDefinition({
 				choices: [
 					{
 						value: 'base',
-						label: 'Base'
+						label: 'Base',
 					},
 					{
 						value: 'wide',
-						label: 'Wide'
+						label: 'Wide',
 					},
 					{
 						value: 'tight',
-						label: 'Tight'
+						label: 'Tight',
 					},
 					{
 						value: 'fullWidth',
-						label: 'Full width'
-					}
-				]
-			}
-		}
-	}
+						label: 'Full width',
+					},
+				],
+			},
+		},
+	},
 })
 
 export default layoutDefinition

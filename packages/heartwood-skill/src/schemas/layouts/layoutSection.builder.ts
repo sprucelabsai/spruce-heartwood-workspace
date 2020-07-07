@@ -8,31 +8,31 @@ const layoutSectionDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Text,
-			label: 'Id'
+			label: 'Id',
 		},
 		children: {
 			type: FieldType.Node,
 			label: 'Children',
-			isPrivate: true
+			isPrivate: true,
 		},
 		className: {
 			type: FieldType.Text,
 			label: 'Classname',
-			isPrivate: true
+			isPrivate: true,
 		},
 		isSecondary: {
 			type: FieldType.Boolean,
 			label: 'Is secondary',
-			hint: 'Makes this section thinner'
+			hint: 'Makes this section thinner',
 		},
 		layoutBuilder: {
 			type: FieldType.Schema,
 			label: 'Layout builder',
 			options: {
-				schemaId: 'layoutBuilder'
-			}
-		}
-	}
+				schemaId: 'layoutBuilder',
+			},
+		},
+	},
 })
 
 export default layoutSectionDefinition

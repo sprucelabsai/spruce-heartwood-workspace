@@ -18,28 +18,28 @@ const layoutSpacingDefinition = buildSchemaDefinition({
 					{ value: 'top', label: 'Top' },
 					{ value: 'right', label: 'Right' },
 					{ value: 'bottom', label: 'Bottom' },
-					{ value: 'left', label: 'Left' }
-				]
-			}
+					{ value: 'left', label: 'Left' },
+				],
+			},
 		},
 		amount: {
 			type: FieldType.Number,
 			label: 'Spacing amount',
 			isRequired: true,
-			hint: 'The amount of spacing to apply (0-12)'
+			hint: 'The amount of spacing to apply (0-12)',
 		},
 		layoutBuilder: {
 			type: FieldType.Schema,
 			label: 'Layout builder',
 			options: {
-				schemaId: 'layoutBuilder'
-			}
+				schemaId: 'layoutBuilder',
+			},
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
-		}
-	}
+			isPrivate: true,
+		},
+	},
 })
 
 export default layoutSpacingDefinition

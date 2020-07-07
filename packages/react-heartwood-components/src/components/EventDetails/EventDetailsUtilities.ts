@@ -1,5 +1,5 @@
-import { cloneDeep, compact, concat, each, find } from 'lodash'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { cloneDeep, compact, concat, each, find } from 'lodash'
 
 type DetailItem = SpruceSchemas.Local.ICalendarEventDetails['items'][number]
 
@@ -17,12 +17,12 @@ export function applyUIEnhancementsToEventDetails(
 
 	// This loop applies the `contextMenuItems` enhancements to the appropriate
 	// context menus in the event details.
-	mutatedEventDetailItems.forEach(eventDetailItem => {
+	mutatedEventDetailItems.forEach((eventDetailItem) => {
 		if (eventDetailItem.schemaId === 'list') {
 			eventDetailItem.values.items &&
-				eventDetailItem.values.items.forEach(item => {
+				eventDetailItem.values.items.forEach((item) => {
 					const matchingUIEnhancement = find(UIEnhancementSections, {
-						id: eventDetailItem.values.id || undefined
+						id: eventDetailItem.values.id || undefined,
 					})
 
 					if (matchingUIEnhancement && item.contextMenu) {
@@ -39,12 +39,12 @@ export function applyUIEnhancementsToEventDetails(
 	// the inputs'.
 	let mutatedEventDetailItemsWithAdditionalEventDetailItems: any = []
 
-	each(mutatedEventDetailItems, eventDetailItem => {
+	each(mutatedEventDetailItems, (eventDetailItem) => {
 		mutatedEventDetailItemsWithAdditionalEventDetailItems.push(eventDetailItem)
 
 		if (eventDetailItem && typeof eventDetailItem === 'object') {
 			const matchingUIEnhancement = find(UIEnhancementSections, {
-				id: eventDetailItem.id || undefined
+				id: eventDetailItem.id || undefined,
 			})
 
 			if (

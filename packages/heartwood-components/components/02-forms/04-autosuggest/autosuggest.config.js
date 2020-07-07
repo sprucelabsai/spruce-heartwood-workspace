@@ -249,8 +249,8 @@ module.exports = {
 			{ text: 'Western Sahara' },
 			{ text: 'Yemen' },
 			{ text: 'Zambia' },
-			{ text: 'Zimbabwe' }
-		]
+			{ text: 'Zimbabwe' },
+		],
 	},
 	variants: [
 		{
@@ -258,8 +258,8 @@ module.exports = {
 			label: 'Country',
 			placeholder: 'Select your Country',
 			context: {
-				options: null
-			}
-		}
-	]
+				options: null,
+			},
+		},
+	],
 }

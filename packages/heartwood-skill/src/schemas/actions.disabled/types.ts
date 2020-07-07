@@ -10,7 +10,7 @@ export enum ActionType {
 	BigSearch = 'BigSearch',
 	QuickEditUser = 'QuickEditUser',
 	DismissComponent = 'DismissComponent',
-	CalendarJumpTo = 'CalendarJumpTo'
+	CalendarJumpTo = 'CalendarJumpTo',
 }
 
 /** A route in the platform */

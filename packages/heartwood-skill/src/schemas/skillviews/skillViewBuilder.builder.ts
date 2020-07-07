@@ -1,6 +1,6 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import skillViewDefinition from './SkillView.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const skillViewBuilderDefinition = buildSchemaDefinition({
 	id: 'skillViewBuilder',
@@ -13,17 +13,17 @@ const skillViewBuilderDefinition = buildSchemaDefinition({
 			type: FieldType.Schema,
 			label: 'Content layout',
 			options: {
-				schemaId: 'layoutBuilder'
-			}
+				schemaId: 'layoutBuilder',
+			},
 		},
 		sidebarLayout: {
 			type: FieldType.Schema,
 			label: 'Content layout',
 			options: {
-				schemaId: 'layoutBuilder'
-			}
-		}
-	}
+				schemaId: 'layoutBuilder',
+			},
+		},
+	},
 })
 
 export default skillViewBuilderDefinition

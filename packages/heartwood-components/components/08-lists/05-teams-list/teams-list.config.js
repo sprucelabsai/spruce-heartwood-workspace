@@ -13,9 +13,9 @@ module.exports = {
 					{
 						icon:
 							'<path fill="none" d="M20.3758 7.24829V1.62329H14.7508" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" d="M20.3758 1.62329L12.8758 9.12329" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" fill-rule="evenodd" clip-rule="evenodd" d="M1.62584 13.1233C1.62584 12.2949 2.29741 11.6233 3.12584 11.6233H8.87584C9.70427 11.6233 10.3758 12.2949 10.3758 13.1233V18.8733C10.3758 19.7017 9.70427 20.3733 8.87584 20.3733H3.12584C2.29741 20.3733 1.62584 19.7017 1.62584 18.8733V13.1233Z" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
-						href: '#'
-					}
-				]
+						href: '#',
+					},
+				],
 			},
 			{
 				title: 'Zencorporation',
@@ -27,9 +27,9 @@ module.exports = {
 					{
 						icon:
 							'<path fill="none" d="M20.3758 7.24829V1.62329H14.7508" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" d="M20.3758 1.62329L12.8758 9.12329" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" fill-rule="evenodd" clip-rule="evenodd" d="M1.62584 13.1233C1.62584 12.2949 2.29741 11.6233 3.12584 11.6233H8.87584C9.70427 11.6233 10.3758 12.2949 10.3758 13.1233V18.8733C10.3758 19.7017 9.70427 20.3733 8.87584 20.3733H3.12584C2.29741 20.3733 1.62584 19.7017 1.62584 18.8733V13.1233Z" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
-						href: '#'
-					}
-				]
+						href: '#',
+					},
+				],
 			},
 			{
 				title: 'Statholdings',
@@ -41,10 +41,10 @@ module.exports = {
 					{
 						icon:
 							'<path fill="none" d="M20.3758 7.24829V1.62329H14.7508" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" d="M20.3758 1.62329L12.8758 9.12329" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" fill-rule="evenodd" clip-rule="evenodd" d="M1.62584 13.1233C1.62584 12.2949 2.29741 11.6233 3.12584 11.6233H8.87584C9.70427 11.6233 10.3758 12.2949 10.3758 13.1233V18.8733C10.3758 19.7017 9.70427 20.3733 8.87584 20.3733H3.12584C2.29741 20.3733 1.62584 19.7017 1.62584 18.8733V13.1233Z" stroke="#0076D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
-						href: '#'
-					}
-				]
-			}
-		]
-	}
+						href: '#',
+					},
+				],
+			},
+		],
+	},
 }

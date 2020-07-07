@@ -1,24 +1,22 @@
-import React, { Component, Fragment, ChangeEvent } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
 import { debounce, get } from 'lodash'
-
+import React, { Component, Fragment, ChangeEvent } from 'react'
 import {
 	List,
 	AutoSizer,
 	CellMeasurer,
 	CellMeasurerCache,
-	InfiniteLoader
+	InfiniteLoader,
 } from 'react-virtualized'
-import cx from 'classnames'
 import { checkDeprecatedProps } from '../../utilities'
-
-import { TextInput, Radio, Checkbox } from '../Forms'
-import TextContainer from '../TextContainer/TextContainer'
-import Text from '../Text/Text'
 import Button from '../Button/Button'
-import ListItem from '../List/components/ListItem/ListItem'
 import EmptyState from '../EmptyState/EmptyState'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import { TextInput, Radio, Checkbox } from '../Forms'
 import Label from '../Forms/components/Label/Label'
+import ListItem from '../List/components/ListItem/ListItem'
+import Text from '../Text/Text'
+import TextContainer from '../TextContainer/TextContainer'
 
 export interface IRecordSelectionListItemProps
 	extends SpruceSchemas.Local.IListItem {
@@ -45,7 +43,7 @@ export interface IRecordSelectionListProps {
 	loadRecordListItems?: ({
 		offset,
 		limit,
-		search
+		search,
 	}: {
 		offset: number
 		limit: number
@@ -141,14 +139,14 @@ export default class RecordSelectionList extends Component<
 		showSelectedCount: false,
 		hideSearchResultsEmptyState: false,
 		hideDataEmptyState: false,
-		recordsPerRequest: 10
+		recordsPerRequest: 10,
 	}
 
 	private listContainer: any
 	private virtualizedList: any
 	private infiniteLoader: any
 	private cache = new CellMeasurerCache({
-		fixedWidth: true
+		fixedWidth: true,
 	})
 
 	private loadSearchResults = debounce(
@@ -156,7 +154,7 @@ export default class RecordSelectionList extends Component<
 			// When we search, we'll want to reset the list, so back to offset 0!
 			const newRows = await this.loadRecordsRequest({
 				offset: 0,
-				search: value
+				search: value,
 			})
 
 			if (uniqueId === this.state.loadingId) {
@@ -186,24 +184,24 @@ export default class RecordSelectionList extends Component<
 			deprecatedProps: {
 				renderRecord: {
 					details:
-						'Use loadRecordListItems to manage loading and rendering of record list item.'
+						'Use loadRecordListItems to manage loading and rendering of record list item.',
 				},
 				getRecordId: {
 					details:
-						'Use loadRecordListItems to manage loading and rendering of record list item.'
+						'Use loadRecordListItems to manage loading and rendering of record list item.',
 				},
 				loadRecords: {
 					details:
-						'Use loadRecordListItems to manage loading and rendering of record list item.'
-				}
-			}
+						'Use loadRecordListItems to manage loading and rendering of record list item.',
+				},
+			},
 		})
 
 		this.state = {
 			loadedRecords: [],
 			isLoading: true,
 			search: props.searchValue,
-			listHeight: 1
+			listHeight: 1,
 		}
 	}
 
@@ -212,12 +210,12 @@ export default class RecordSelectionList extends Component<
 
 		const initialRecords = await this.loadRecordsRequest({
 			search,
-			offset: 0
+			offset: 0,
 		})
 
 		await this.setState({
 			loadedRecords: initialRecords || [],
-			isLoading: false
+			isLoading: false,
 		})
 
 		const newListHeight = this.getVisibleRecordHeight()
@@ -245,7 +243,7 @@ export default class RecordSelectionList extends Component<
 	}
 
 	public async reset({
-		persistSearch = false
+		persistSearch = false,
 	}: {
 		/** Persist the value of the search when resetting. Defaults `false`. */
 		persistSearch?: boolean
@@ -288,7 +286,7 @@ export default class RecordSelectionList extends Component<
 			searchPlaceholder,
 			selectedIds = [],
 			showSelectedCount,
-			totalRecordCount
+			totalRecordCount,
 		} = this.props
 
 		const { loadedRecords, search, listHeight, isLoading } = this.state
@@ -306,9 +304,9 @@ export default class RecordSelectionList extends Component<
 				className={cx('record-selection__list', {
 					'record-selection__list--is-infinite': maxRowsVisible,
 					'record-selection__list--is-searchable': canSearch,
-					'record-selection__list--is-showing-selected-count': showSelectedCount
+					'record-selection__list--is-showing-selected-count': showSelectedCount,
 				})}
-				ref={ref => (this.listContainer = ref)}
+				ref={(ref) => (this.listContainer = ref)}
 			>
 				{showSelectedCount && (
 					<TextContainer>
@@ -335,10 +333,10 @@ export default class RecordSelectionList extends Component<
 				{loadedRecords.length > 0 ? (
 					<Fragment>
 						{!maxRowsVisible ? (
-							loadedRecords.map(record => {
+							loadedRecords.map((record) => {
 								return this.renderInnerRow({
 									record,
-									style: {}
+									style: {},
 								})
 							})
 						) : (
@@ -350,7 +348,7 @@ export default class RecordSelectionList extends Component<
 									: {})}
 							>
 								<InfiniteLoader
-									ref={ref => (this.infiniteLoader = ref)}
+									ref={(ref) => (this.infiniteLoader = ref)}
 									isRowLoaded={isRowLoaded}
 									loadMoreRows={() => this.handleInfiniteLoad()}
 									rowCount={totalRecordCount || Infinity}
@@ -361,7 +359,7 @@ export default class RecordSelectionList extends Component<
 											{({ height, width }) => {
 												return (
 													<List
-														ref={ref => {
+														ref={(ref) => {
 															registerChild(ref)
 															this.virtualizedList = ref
 														}}
@@ -372,7 +370,7 @@ export default class RecordSelectionList extends Component<
 														rowHeight={this.cache.rowHeight}
 														rowCount={loadedRecords.length}
 														rowRenderer={this.renderRow}
-														onRowsRendered={args => {
+														onRowsRendered={(args) => {
 															onRowsRendered(args)
 														}}
 														selectedIds={JSON.stringify(selectedIds)}
@@ -401,7 +399,7 @@ export default class RecordSelectionList extends Component<
 												onClick: () => {
 													this.updateSearchValue('')
 												},
-												...get(noSearchResultsEmptyState, 'primaryButton', {})
+												...get(noSearchResultsEmptyState, 'primaryButton', {}),
 											}}
 										/>
 								  )
@@ -427,7 +425,7 @@ export default class RecordSelectionList extends Component<
 			{
 				search: value,
 				isLoading: true,
-				loadingId: uniqueId
+				loadingId: uniqueId,
 			},
 			async () => {
 				if (onSearchChange) {
@@ -436,7 +434,7 @@ export default class RecordSelectionList extends Component<
 
 				this.loadSearchResults({
 					value,
-					uniqueId
+					uniqueId,
 				})
 			}
 		)
@@ -462,7 +460,7 @@ export default class RecordSelectionList extends Component<
 		const { loadRecords, loadRecordListItems, recordsPerRequest } = this.props
 		const requestArgs = {
 			limit: recordsPerRequest,
-			...options
+			...options,
 		}
 
 		if (loadRecords) {
@@ -476,7 +474,7 @@ export default class RecordSelectionList extends Component<
 		index,
 		key,
 		parent,
-		style
+		style,
 	}: {
 		index: number
 		key: string
@@ -506,7 +504,7 @@ export default class RecordSelectionList extends Component<
 
 	private renderInnerRow = ({
 		record,
-		style
+		style,
 	}: {
 		record: any
 		style: Record<string, any>
@@ -523,7 +521,7 @@ export default class RecordSelectionList extends Component<
 			onRemove,
 			renderRecord,
 			loadRecords,
-			loadRecordListItems
+			loadRecordListItems,
 		} = this.props
 
 		if (loadRecordListItems && record.id) {
@@ -544,7 +542,7 @@ export default class RecordSelectionList extends Component<
 										onSelect(recordId, record)
 								  }
 								: () => null,
-							isChecked: selectedIds && selectedIds.indexOf(recordId) >= 0
+							isChecked: selectedIds && selectedIds.indexOf(recordId) >= 0,
 						}}
 						selectableType={canSelect === 'one' ? 'radio' : 'checkbox'}
 						isDisabled={
@@ -560,25 +558,25 @@ export default class RecordSelectionList extends Component<
 											isSmall: true,
 											icon: {
 												name: 'cancel_solid',
-												className: 'btn__line-icon'
+												className: 'btn__line-icon',
 											},
 											onClick: () => {
 												this.setState(
 													{
 														loadedRecords: loadedRecords.filter(
-															loadedRecord => loadedRecord.id !== recordId
-														)
+															(loadedRecord) => loadedRecord.id !== recordId
+														),
 													},
 													() => {
 														this.setState({
-															listHeight: this.getVisibleRecordHeight()
+															listHeight: this.getVisibleRecordHeight(),
 														})
 													}
 												)
 
 												onRemove(recordId, record)
-											}
-										}
+											},
+										},
 								  ]
 								: []
 						}
@@ -629,8 +627,8 @@ export default class RecordSelectionList extends Component<
 								this.setState(
 									{
 										loadedRecords: loadedRecords.filter(
-											loadedRecord => getRecordId(loadedRecord) !== recordId
-										)
+											(loadedRecord) => getRecordId(loadedRecord) !== recordId
+										),
 									},
 									() => {
 										this.setState({ listHeight: this.getVisibleRecordHeight() })
@@ -659,16 +657,16 @@ export default class RecordSelectionList extends Component<
 
 		const newRows = await this.loadRecordsRequest({
 			offset: loadedRecords.length,
-			search
+			search,
 		})
 
 		this.setState({
-			isLoading: false
+			isLoading: false,
 		})
 
 		if (newRows && newRows.length > 0) {
 			this.setState({
-				loadedRecords: [...loadedRecords, ...newRows]
+				loadedRecords: [...loadedRecords, ...newRows],
 			})
 		}
 

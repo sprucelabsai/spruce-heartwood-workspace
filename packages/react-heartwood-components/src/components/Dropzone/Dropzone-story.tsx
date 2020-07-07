@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import {
 	withKnobs,
 	text,
 	boolean,
 	number,
 	object,
-	array
+	array,
 } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
 import Dropzone from './Dropzone'
 
 interface IDropzoneExampleProps {}
@@ -23,7 +23,7 @@ class DropzoneExample extends Component<
 	public interval: any
 	public state = {
 		uploadProgress: 0,
-		fileWasUploaded: false
+		fileWasUploaded: false,
 	}
 
 	public fakeUpload = () => {
@@ -32,11 +32,11 @@ class DropzoneExample extends Component<
 			clearInterval(this.interval)
 			this.setState({
 				uploadProgress: 0,
-				fileWasUploaded: true
+				fileWasUploaded: true,
 			})
 		} else {
-			this.setState(prevState => ({
-				uploadProgress: prevState.uploadProgress + 1
+			this.setState((prevState) => ({
+				uploadProgress: prevState.uploadProgress + 1,
 			}))
 		}
 	}

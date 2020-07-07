@@ -8,7 +8,7 @@ module.exports = {
 	preview: '@main-preview',
 	context: {
 		element: 'h2',
-		text: 'Welcome Back!'
+		text: 'Welcome Back!',
 	},
 	variants: [
 		{
@@ -16,8 +16,8 @@ module.exports = {
 			label: 'Heading as H3',
 			context: {
 				element: 'h3',
-				text: "You're Still Here?"
-			}
-		}
-	]
+				text: "You're Still Here?",
+			},
+		},
+	],
 }

@@ -1,11 +1,11 @@
-import cx from 'classnames'
-import React from 'react'
-import LayoutBuilder from '../../../../../LayoutBuilder/LayoutBuilder'
 import {
 	defaultProps,
 	SpruceSchemas,
-	sidebarSectionDefinition
+	sidebarSectionDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import LayoutBuilder from '../../../../../LayoutBuilder/LayoutBuilder'
 
 const defaults = defaultProps(sidebarSectionDefinition)
 
@@ -17,7 +17,7 @@ const SidebarSection = (props: SpruceSchemas.Local.ISidebarSection) => {
 		isOnlyForMobile,
 		horizontalSpacing,
 		verticalSpacing,
-		items
+		items,
 	} = props
 	return (
 		<div
@@ -25,7 +25,7 @@ const SidebarSection = (props: SpruceSchemas.Local.ISidebarSection) => {
 				'sidebar-section--show-only-on-mobile': isOnlyForMobile,
 				'sidebar-section--centered': isCentered,
 				'sidebar-section--horizontal-loose': horizontalSpacing === 'loose',
-				'sidebar-section--vertical-loose': verticalSpacing === 'loose'
+				'sidebar-section--vertical-loose': verticalSpacing === 'loose',
 			})}
 		>
 			{children}

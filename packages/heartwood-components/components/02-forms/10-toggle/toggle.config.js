@@ -7,22 +7,22 @@ module.exports = {
 	},
 	context: {
 		on: true,
-		id: 'toggle'
+		id: 'toggle',
 	},
 	variants: [
 		{
 			name: 'off',
 			context: {
 				id: 'toggle 2',
-				on: false
-			}
+				on: false,
+			},
 		},
 		{
 			name: 'with text',
 			context: {
 				id: 'toggle 3',
-				postText: 'Night Mode'
-			}
-		}
-	]
+				postText: 'Night Mode',
+			},
+		},
+	],
 }

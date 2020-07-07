@@ -1,17 +1,17 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withKnobs, object, boolean, select } from '@storybook/addon-knobs'
-import SprucebotTypedMessage from './SprucebotTypedMessage'
-import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import { TextInput } from '../Forms'
-import Card, { CardBody, CardFooter } from '../Card'
 import {
 	SpruceSchemas,
 	buildDuration,
-	sprucebotTypeMessageDefinition
+	sprucebotTypeMessageDefinition,
 } from '@sprucelabs/heartwood-skill'
-import SkillView from '../SkillView'
+import { withKnobs, object, boolean, select } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+import ButtonGroup from '../ButtonGroup/ButtonGroup'
+import Card, { CardBody, CardFooter } from '../Card'
+import { TextInput } from '../Forms'
 import Layout from '../Layout/Layout'
+import SkillView from '../SkillView'
+import SprucebotTypedMessage from './SprucebotTypedMessage'
 
 const stories = storiesOf('SprucebotTypedMessage', module)
 
@@ -25,28 +25,28 @@ stories.add('SprucebotTypedMessage', () => (
 		size={select(
 			'size',
 			sprucebotTypeMessageDefinition.fields.size.options.choices.map(
-				c => c.value
+				(c) => c.value
 			),
 			'medium'
 		)}
 		startDelay={object('startDelay', buildDuration({ ms: 1000 }))}
 		defaultAvatar={object('defaultAvatar', {
 			id: 'default-avatar',
-			stateOfMind: 'chill'
+			stateOfMind: 'chill',
 		})}
 		sentences={[
 			object('sentences[0]', {
 				words: 'Hey there! How are you?',
-				endDelayMs: 2000
+				endDelayMs: 2000,
 			}),
 			object('sentences[1]', {
 				words: 'Hey there! Wait, before you answer that I wanted to say...',
-				endDelayMs: 4000
+				endDelayMs: 4000,
 			}),
 			object('sentences[2]', {
 				words: 'Experience!!',
-				endDelayMs: 2500
-			})
+				endDelayMs: 2500,
+			}),
 		]}
 	/>
 ))
@@ -66,7 +66,7 @@ class MessageController extends React.Component<
 	public constructor(props: IMessageControllerState) {
 		super(props)
 		this.state = {
-			playing: true
+			playing: true,
 		}
 	}
 
@@ -95,21 +95,21 @@ class MessageController extends React.Component<
 					size={'large'}
 					defaultAvatar={{
 						id: 'avatar',
-						stateOfMind: 'chill'
+						stateOfMind: 'chill',
 					}}
 					sentences={[
 						{
 							words: 'this is the first sentence',
-							endDelay: buildDuration({ ms: 2000 })
+							endDelay: buildDuration({ ms: 2000 }),
 						},
 						{
 							words: 'this is the second sentence',
-							endDelay: buildDuration({ ms: 2000 })
+							endDelay: buildDuration({ ms: 2000 }),
 						},
 						{
 							words: 'this is the third sentence',
-							endDelay: buildDuration({ ms: 2000 })
-						}
+							endDelay: buildDuration({ ms: 2000 }),
+						},
 					]}
 				/>
 				<div className="controls">
@@ -118,18 +118,18 @@ class MessageController extends React.Component<
 							{
 								text: 'Play',
 								kind: playing ? 'primary' : 'secondary',
-								onClick: this.play
+								onClick: this.play,
 							},
 							{
 								text: 'Pause',
 								kind: !playing ? 'primary' : 'secondary',
-								onClick: this.pause
+								onClick: this.pause,
 							},
 							{
 								text: 'Reset',
 								kind: 'secondary',
-								onClick: this.reset
-							}
+								onClick: this.reset,
+							},
 						]}
 					/>
 				</div>
@@ -158,9 +158,9 @@ class AddSentenceController extends React.Component<
 			nextSentence: 'this is the next sentence',
 			sentences: [
 				{
-					words: 'this is the first sentence'
-				}
-			]
+					words: 'this is the first sentence',
+				},
+			],
 		}
 	}
 
@@ -169,7 +169,7 @@ class AddSentenceController extends React.Component<
 
 		if (this.messageRef.current) {
 			await this.messageRef.current.addToTypingQueue({
-				words: nextSentence
+				words: nextSentence,
 			})
 
 			this.messageRef.current.play()
@@ -187,7 +187,7 @@ class AddSentenceController extends React.Component<
 					size={'large'}
 					defaultAvatar={{
 						id: 'avatar',
-						stateOfMind: 'chill'
+						stateOfMind: 'chill',
 					}}
 					sentences={sentences}
 				/>
@@ -196,9 +196,9 @@ class AddSentenceController extends React.Component<
 						<TextInput
 							id="next-sentence"
 							label={{ text: 'next sentence' }}
-							onChange={e =>
+							onChange={(e) =>
 								this.setState({
-									nextSentence: (e.target as HTMLInputElement).value
+									nextSentence: (e.target as HTMLInputElement).value,
 								})
 							}
 							value={nextSentence}
@@ -210,8 +210,8 @@ class AddSentenceController extends React.Component<
 								{
 									text: 'Add sentence',
 									kind: 'primary',
-									onClick: this.addSentence
-								}
+									onClick: this.addSentence,
+								},
 							]}
 						/>
 					</CardFooter>

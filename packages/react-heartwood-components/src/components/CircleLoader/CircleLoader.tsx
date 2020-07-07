@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 export interface ICircleLoaderProps {
 	/** Optional; makes the loader white instead of primary color */
@@ -11,7 +11,7 @@ const CircleLoader = (props: ICircleLoaderProps): React.ReactElement => {
 	return (
 		<div
 			className={cx('circle-loader', {
-				'circle-loader--light': light
+				'circle-loader--light': light,
 			})}
 		>
 			<div />
@@ -20,7 +20,7 @@ const CircleLoader = (props: ICircleLoaderProps): React.ReactElement => {
 }
 
 CircleLoader.defaultProps = {
-	light: false
+	light: false,
 }
 
 export default CircleLoader

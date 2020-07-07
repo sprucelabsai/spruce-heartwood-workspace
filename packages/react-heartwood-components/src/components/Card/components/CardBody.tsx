@@ -1,7 +1,7 @@
-import React from 'react'
-import cx from 'classnames'
-import CardSection from './CardSection'
 import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import CardSection from './CardSection'
 
 const CardBody = (props: SpruceSchemas.Local.ICardBody): React.ReactElement => {
 	const {
@@ -10,12 +10,12 @@ const CardBody = (props: SpruceSchemas.Local.ICardBody): React.ReactElement => {
 		hasTopPadding,
 		hasBottomPadding,
 		areSectionSeparatorsVisible,
-		isFullBleed = false
+		isFullBleed = false,
 	} = props
 	const className = cx('card__body', {
 		'card__body--section-separators-visible': areSectionSeparatorsVisible,
 		'card__body--no-top-padding': !hasTopPadding,
-		'card__body--no-bottom-padding': !hasBottomPadding
+		'card__body--no-bottom-padding': !hasBottomPadding,
 	})
 	return (
 		<div className={className}>
@@ -33,7 +33,7 @@ CardBody.defaultProps = {
 	isSectioned: true,
 	areSectionSeparatorsVisible: false,
 	hasTopPadding: true,
-	hasBottomPadding: true
+	hasBottomPadding: true,
 }
 
 export default CardBody

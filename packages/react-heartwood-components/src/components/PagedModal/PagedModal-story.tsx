@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs/react'
-import PagedModal from './PagedModal'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
 import { TextInput, FormLayout, FormLayoutItem } from '../Forms'
+import PagedModal from './PagedModal'
 
 interface IPageModalExampleProps {}
 
@@ -15,13 +15,13 @@ class PageModalExample extends Component<
 	IPageMoodalExampleState
 > {
 	public state = {
-		currentPageIndex: 0
+		currentPageIndex: 0,
 	}
 
 	public handleBack = () => {
-		this.setState(prevState => ({
+		this.setState((prevState) => ({
 			currentPageIndex:
-				prevState.currentPageIndex > 0 ? prevState.currentPageIndex - 1 : 0
+				prevState.currentPageIndex > 0 ? prevState.currentPageIndex - 1 : 0,
 		}))
 	}
 
@@ -51,8 +51,8 @@ class PageModalExample extends Component<
 						),
 						footerPrimaryAction: {
 							text: 'Next',
-							onClick: () => this.setState({ currentPageIndex: 1 })
-						}
+							onClick: () => this.setState({ currentPageIndex: 1 }),
+						},
 					},
 					{
 						title: 'Page 2',
@@ -66,9 +66,9 @@ class PageModalExample extends Component<
 						),
 						footerPrimaryAction: {
 							text: 'Submit',
-							onClick: () => console.log('Submit!')
-						}
-					}
+							onClick: () => console.log('Submit!'),
+						},
+					},
 				]}
 			/>
 		)
@@ -81,6 +81,6 @@ stories.addDecorator(withKnobs)
 
 stories.add('Page Modal', () => <PageModalExample />, {
 	jsx: {
-		skip: 1
-	}
+		skip: 1,
+	},
 })

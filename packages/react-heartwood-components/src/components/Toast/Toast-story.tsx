@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
+import React, { Component } from 'react'
 import ButtonGroup from '../ButtonGroup/ButtonGroup'
-import Toast from './Toast'
 import ToastWrapper from './components/ToastWrapper/ToastWrapper'
+import Toast from './Toast'
 
 const stories = storiesOf('Toast', module)
 
@@ -19,7 +19,7 @@ interface IToasterState {
 
 class Toaster extends Component<IToasterProps, IToasterState> {
 	public state = {
-		toasts: []
+		toasts: [],
 	}
 
 	public addToast = (
@@ -31,30 +31,30 @@ class Toaster extends Component<IToasterProps, IToasterState> {
 			positive: '2',
 			negative: '3',
 			warn: '4',
-			info: '5'
+			info: '5',
 		}
 		const headlines = {
 			neutral: 'Neat',
 			positive: 'Great!',
 			negative: 'Oh No!',
 			warn: 'Uh-oh',
-			info: 'Did you know?'
+			info: 'Did you know?',
 		}
 		const texts = {
 			neutral: 'Something just happened and it was fine.',
 			positive: 'You did something amazing. Congrats!',
 			negative: 'Run away! This is awful.',
 			warn: 'Something is not quite right',
-			info: 'Penguins cannot fly'
+			info: 'Penguins cannot fly',
 		}
 		const timeouts = {
 			neutral: 'never',
 			positive: 10000,
 			negative: 3000,
 			warn: 'never',
-			info: 2000
+			info: 2000,
 		}
-		this.setState(prevState => {
+		this.setState((prevState) => {
 			const newToasts = [...prevState.toasts]
 			newToasts.push({
 				headline: headlines[kind],
@@ -62,20 +62,20 @@ class Toaster extends Component<IToasterProps, IToasterState> {
 				kind,
 				id: ids[kind],
 				followupAction: showFollowup ? () => console.log('Undo') : null,
-				timeout: timeouts[kind]
+				timeout: timeouts[kind],
 			})
 			return {
-				toasts: newToasts
+				toasts: newToasts,
 			}
 		})
 	}
 
 	// TODO: Hook up this functionality
 	public removeToast = () => {
-		this.setState(prevState => {
+		this.setState((prevState) => {
 			const toasts = [...prevState.toasts]
 			return {
-				toasts
+				toasts,
 			}
 		})
 	}
@@ -88,26 +88,26 @@ class Toaster extends Component<IToasterProps, IToasterState> {
 					buttons={[
 						{
 							text: 'Add Toast',
-							onClick: () => this.addToast('neutral')
+							onClick: () => this.addToast('neutral'),
 						},
 						{
 							text: 'Add Happy Toast',
-							onClick: () => this.addToast('positive')
+							onClick: () => this.addToast('positive'),
 						},
 						{
 							text: 'Add Sad Toast',
-							onClick: () => this.addToast('negative')
+							onClick: () => this.addToast('negative'),
 						},
 						{
 							kind: 'secondary',
 							text: 'Add Warning Toast',
-							onClick: () => this.addToast('warn')
+							onClick: () => this.addToast('warn'),
 						},
 						{
 							kind: 'secondary',
 							text: 'Add Info Toast',
-							onClick: () => this.addToast('info')
-						}
+							onClick: () => this.addToast('info'),
+						},
 					]}
 				/>
 				<ToastWrapper toasts={toasts} handleRemove={this.removeToast} />
@@ -138,7 +138,7 @@ stories
 	))
 	.add('All Kinds', () => (
 		<div style={{ padding: '1rem' }}>
-			{toastKinds.map(kind => (
+			{toastKinds.map((kind) => (
 				<div key={kind} style={{ padding: '1rem' }}>
 					<Toast
 						id="toast"

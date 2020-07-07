@@ -8,32 +8,32 @@ const imageDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		src: {
 			type: FieldType.Text,
 			label: 'Src',
 			isRequired: true,
-			hint: 'Where to pull the image from'
+			hint: 'Where to pull the image from',
 		},
 		alt: {
 			type: FieldType.Text,
 			label: 'Alt',
-			hint: 'Rendered as the alt tag for hovers'
+			hint: 'Rendered as the alt tag for hovers',
 		},
 		width: {
 			type: FieldType.Number,
-			isPrivate: true
+			isPrivate: true,
 		},
 		height: {
 			type: FieldType.Number,
-			isPrivate: true
+			isPrivate: true,
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
-		}
-	}
+			isPrivate: true,
+		},
+	},
 })
 
 export default imageDefinition

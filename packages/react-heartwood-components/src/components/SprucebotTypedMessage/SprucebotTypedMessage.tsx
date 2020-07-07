@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
-import Typing from './react-typing-animation/Typing'
-
-import cx from 'classnames'
-import compact from 'lodash/compact'
-
-import SprucebotAvatar from '../SprucebotAvatar/SprucebotAvatar'
 import {
 	SpruceSchemas,
 	defaultProps,
 	definitionChoicesToHash,
-	sprucebotTypeMessageDefinition
+	sprucebotTypeMessageDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import compact from 'lodash/compact'
+import React, { Component } from 'react'
+import SprucebotAvatar from '../SprucebotAvatar/SprucebotAvatar'
+import Typing from './react-typing-animation/Typing'
 
 type Message = SpruceSchemas.Local.ISprucebotTypedMessage
 type Sentence = SpruceSchemas.Local.ISprucebotTypedMessageSentence
@@ -37,7 +35,7 @@ export default class SprucebotTypedMessage extends Component<
 		this.state = {
 			sentenceIdxBeingTyped: 0,
 			lastLineNum: 0,
-			sentenceQueue: []
+			sentenceQueue: [],
 		}
 	}
 
@@ -85,7 +83,7 @@ export default class SprucebotTypedMessage extends Component<
 		}
 	}
 
-	public componentDidUpdate = prevProps => {
+	public componentDidUpdate = (prevProps) => {
 		// If paused prop changed at all, it wins (calling play manually starts it again)
 		if (prevProps.paused !== this.props.paused) {
 			switch (this.props.paused) {
@@ -195,7 +193,7 @@ export default class SprucebotTypedMessage extends Component<
 		if (defaultAvatar) {
 			avatar = {
 				size: size && SIZE_MAP[size],
-				...defaultAvatar
+				...defaultAvatar,
 			}
 		}
 
@@ -206,7 +204,7 @@ export default class SprucebotTypedMessage extends Component<
 		) {
 			avatar = {
 				...(avatar || {}),
-				...sentences[sentenceIdxBeingTyped].avatar
+				...sentences[sentenceIdxBeingTyped].avatar,
 			}
 		}
 
@@ -234,7 +232,7 @@ export default class SprucebotTypedMessage extends Component<
 					: 0
 			this.setState({
 				lastLineNum: line,
-				sentenceIdxBeingTyped: newIdx
+				sentenceIdxBeingTyped: newIdx,
 			})
 		}
 	}
@@ -248,7 +246,7 @@ export default class SprucebotTypedMessage extends Component<
 				className={cx('sprucebot-typed-message', {
 					small: size === 'small',
 					medium: size === 'medium',
-					large: size === 'large'
+					large: size === 'large',
 				})}
 			>
 				{avatar && <SprucebotAvatar {...avatar} />}

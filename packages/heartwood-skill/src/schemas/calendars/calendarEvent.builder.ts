@@ -10,23 +10,23 @@ const calendarEventDefinition = buildSchemaDefinition({
 		id: {
 			type: FieldType.Id,
 			label: 'Id',
-			hint: 'Id of the calendar event'
+			hint: 'Id of the calendar event',
 		},
 		startAt: {
 			type: FieldType.DateTime,
 			label: 'Starts at',
-			isRequired: true
+			isRequired: true,
 		},
 		collection: {
 			type: FieldType.Text,
 			label: 'Collection',
 			hint:
-				'A way to arbitrarily bundle events. Events with the same collection are all highlighted at the same time in the calendar'
+				'A way to arbitrarily bundle events. Events with the same collection are all highlighted at the same time in the calendar',
 		},
 		isResizable: {
 			type: FieldType.Boolean,
 			label: 'Is resizable',
-			hint: 'Can this event be resized on the calendar?'
+			hint: 'Can this event be resized on the calendar?',
 		},
 		kind: {
 			type: FieldType.Select,
@@ -36,47 +36,47 @@ const calendarEventDefinition = buildSchemaDefinition({
 				choices: [
 					{
 						label: 'How a calendar event renders by default.',
-						value: 'default'
+						value: 'default',
 					},
 					{
 						label: 'If an event is not confirmed.',
-						value: 'tentative'
+						value: 'tentative',
 					},
 					{
 						label: 'When an event is happening right now',
-						value: 'active'
+						value: 'active',
 					},
 					{
 						label:
 							'If the event represents a time when the person is not available for additional events (usually matches isBusy)',
-						value: 'unavailable'
+						value: 'unavailable',
 					},
 					{
 						label:
 							'If the event represents a time where the user us unavailable (break or block)',
-						value: 'blocked'
+						value: 'blocked',
 					},
 					{
 						label:
 							"The event is ready to go, everyone has confirmed, it just hasn't happened yet",
-						value: 'upcoming'
+						value: 'upcoming',
 					},
 					{
 						label: 'If the event is in the past',
-						value: 'past'
+						value: 'past',
 					},
 					{
 						label:
 							'The user should pay attention to this event (maybe the event is unconfirmed and starting in 30 minutes!)',
-						value: 'warn'
+						value: 'warn',
 					},
 					{
 						label:
 							'Renders the event in red (the event could have already started but attendees have not confirmed)',
-						value: 'critical'
-					}
-				]
-			}
+						value: 'critical',
+					},
+				],
+			},
 		},
 		blocks: {
 			type: FieldType.Schema,
@@ -86,35 +86,35 @@ const calendarEventDefinition = buildSchemaDefinition({
 			hint:
 				'A calendar is comprised of blocks of time. You need at least 1 block to have a valid event.',
 			options: {
-				schemaId: 'calendarEventBlock'
-			}
+				schemaId: 'calendarEventBlock',
+			},
 		},
 		details: {
 			type: FieldType.Schema,
 			label: 'Details',
 			hint: 'Additional details shown after someone taps on an event',
 			options: {
-				schemaId: 'calendarEventDetails'
-			}
+				schemaId: 'calendarEventDetails',
+			},
 		},
 		userId: {
 			type: FieldType.Id,
 			label: 'User id',
 			isRequired: true,
-			hint: 'The ID of the user this event will render under'
+			hint: 'The ID of the user this event will render under',
 		},
 		isDraft: {
 			type: FieldType.Boolean,
 			label: 'Is draft',
 			hint:
-				"If this is a draft event (meaning it's not booked, but being setup)"
+				"If this is a draft event (meaning it's not booked, but being setup)",
 		},
 		hasBorder: {
 			type: FieldType.Boolean,
 			label: 'Has border',
-			hint: 'Should I render a border for this event?'
-		}
-	}
+			hint: 'Should I render a border for this event?',
+		},
+	},
 })
 
 export default calendarEventDefinition

@@ -1,13 +1,13 @@
 import {
 	SpruceSchemas,
 	buildEventDetailsItem,
-	buildEventDetails
+	buildEventDetails,
 } from '@sprucelabs/heartwood-skill'
 
 const avatar: SpruceSchemas.Local.IAvatar = {
 	src:
 		'https://images.unsplash.com/photo-1542080681-b52d382432af?ixlib=rb-1.2.1&auto=format&fit=crop&w=96&h=96&q=80',
-	alt: 'dummy avatar'
+	alt: 'dummy avatar',
 }
 
 const services = buildEventDetailsItem('list', {
@@ -17,7 +17,7 @@ const services = buildEventDetailsItem('list', {
 			icon: {
 				name: 'unordered_list',
 				isLineIcon: true,
-				id: 'unordered'
+				id: 'unordered',
 			},
 			title: 'Accent Highlight',
 			subtitle: '$65 | 1hr',
@@ -30,21 +30,21 @@ const services = buildEventDetailsItem('list', {
 				buttons: [
 					{
 						id: 'save-teammate',
-						text: 'Change teammate'
+						text: 'Change teammate',
 					},
 					{
 						id: 'remove-appointment',
-						text: 'Remove from appointment'
-					}
-				]
-			}
+						text: 'Remove from appointment',
+					},
+				],
+			},
 		},
 		{
 			id: 'second',
 			icon: {
 				id: 'second-icon',
 				name: 'unordered_list',
-				isLineIcon: true
+				isLineIcon: true,
 			},
 			isIconHidden: true,
 			title: 'Haircut',
@@ -58,14 +58,14 @@ const services = buildEventDetailsItem('list', {
 				buttons: [
 					{
 						id: 'change-teammate',
-						text: 'Change teammate'
+						text: 'Change teammate',
 					},
 					{
 						id: 'remove',
-						text: 'Remove from appointment'
-					}
-				]
-			}
+						text: 'Remove from appointment',
+					},
+				],
+			},
 		},
 		{
 			id: 'last',
@@ -74,10 +74,10 @@ const services = buildEventDetailsItem('list', {
 			primaryAction: {
 				id: 'add',
 				icon: { id: 'add', name: 'add' },
-				kind: 'simple'
-			}
-		}
-	]
+				kind: 'simple',
+			},
+		},
+	],
 })
 
 const inclusiveStatuses = buildEventDetailsItem('list', {
@@ -89,9 +89,9 @@ const inclusiveStatuses = buildEventDetailsItem('list', {
 				schemaId: 'listItemCheckbox',
 				values: {
 					id: 'confirmed',
-					isChecked: true
-				}
-			}
+					isChecked: true,
+				},
+			},
 		},
 		{
 			id: 'checked-in',
@@ -100,11 +100,11 @@ const inclusiveStatuses = buildEventDetailsItem('list', {
 				schemaId: 'listItemCheckbox',
 				values: {
 					id: 'checked-in',
-					isChecked: false
-				}
-			}
-		}
-	]
+					isChecked: false,
+				},
+			},
+		},
+	],
 })
 
 const exclusiveStatuses = buildEventDetailsItem('list', {
@@ -116,9 +116,9 @@ const exclusiveStatuses = buildEventDetailsItem('list', {
 			selectable: {
 				schemaId: 'listItemRadio',
 				values: {
-					id: 'onTime'
-				}
-			}
+					id: 'onTime',
+				},
+			},
 		},
 		{
 			id: 'late',
@@ -126,9 +126,9 @@ const exclusiveStatuses = buildEventDetailsItem('list', {
 			selectable: {
 				schemaId: 'listItemRadio',
 				values: {
-					id: 'late'
-				}
-			}
+					id: 'late',
+				},
+			},
 		},
 		{
 			id: 'ghosted',
@@ -136,11 +136,11 @@ const exclusiveStatuses = buildEventDetailsItem('list', {
 			selectable: {
 				schemaId: 'listItemRadio',
 				values: {
-					id: 'ghosted'
-				}
-			}
-		}
-	]
+					id: 'ghosted',
+				},
+			},
+		},
+	],
 })
 
 const paidStatuses: SpruceSchemas.Local.IListItem[] = [
@@ -148,8 +148,8 @@ const paidStatuses: SpruceSchemas.Local.IListItem[] = [
 		id: 'unpaid',
 		title: 'Unpaid',
 		icon: { name: 'edit' },
-		isIconHidden: true
-	}
+		isIconHidden: true,
+	},
 ]
 
 const statusLists: SpruceSchemas.Local.IList[] = [
@@ -157,24 +157,24 @@ const statusLists: SpruceSchemas.Local.IList[] = [
 		selectable: {
 			schemaId: 'checkbox',
 			values: {
-				id: 'first'
-			}
+				id: 'first',
+			},
 		},
 		items: inclusiveStatuses.items,
-		areSeparatorsVisible: false
+		areSeparatorsVisible: false,
 	},
 	{
 		selectable: {
 			schemaId: 'radio',
-			values: {}
+			values: {},
 		},
 		items: exclusiveStatuses.items,
-		areSeparatorsVisible: false
+		areSeparatorsVisible: false,
 	},
 	{
 		items: paidStatuses,
-		areSeparatorsVisible: false
-	}
+		areSeparatorsVisible: false,
+	},
 ]
 
 export const appointmentDetails = buildEventDetails({
@@ -196,13 +196,13 @@ export const appointmentDetails = buildEventDetails({
 							size: 'large',
 							buttons: [
 								{
-									text: 'Edit guest'
+									text: 'Edit guest',
 								},
 								{
-									text: 'Book for someone else'
-								}
-							]
-						}
+									text: 'Book for someone else',
+								},
+							],
+						},
 					},
 					{
 						id: 'pinned-note',
@@ -212,12 +212,12 @@ export const appointmentDetails = buildEventDetails({
 						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: 'simple'
-							}
-						]
-					}
-				]
-			}
+								kind: 'simple',
+							},
+						],
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -235,13 +235,13 @@ export const appointmentDetails = buildEventDetails({
 							size: 'large',
 							buttons: [
 								{
-									text: 'Edit guest'
+									text: 'Edit guest',
 								},
 								{
-									text: 'Book for someone else'
-								}
-							]
-						}
+									text: 'Book for someone else',
+								},
+							],
+						},
 					},
 					{
 						id: 'pinned-note',
@@ -251,12 +251,12 @@ export const appointmentDetails = buildEventDetails({
 						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: 'simple'
-							}
-						]
-					}
-				]
-			}
+								kind: 'simple',
+							},
+						],
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -271,18 +271,18 @@ export const appointmentDetails = buildEventDetails({
 							{
 								id: 'first',
 								icon: { name: 'edit' },
-								kind: 'simple'
-							}
-						]
-					}
-				]
-			}
+								kind: 'simple',
+							},
+						],
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
 			values: {
-				items: services.items
-			}
+				items: services.items,
+			},
 		},
 		{
 			schemaId: 'list',
@@ -296,16 +296,16 @@ export const appointmentDetails = buildEventDetails({
 						collapsedIcon: { name: 'edit' },
 						expandedIcon: { name: 'close' },
 						lists: statusLists,
-						isExpandable: true
-					}
-				]
-			}
+						isExpandable: true,
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'markdown',
 			values: {
-				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr'
-			}
+				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr',
+			},
 		},
 		{
 			schemaId: 'splitButton',
@@ -314,28 +314,28 @@ export const appointmentDetails = buildEventDetails({
 				isFullWidth: true,
 				defaultButton: {
 					text: 'Check guest in',
-					isFullWidth: true
+					isFullWidth: true,
 				},
 				buttons: [
 					{
-						text: 'Unconfirm appointment'
+						text: 'Unconfirm appointment',
 					},
 					{
-						text: 'Mark guest as late'
+						text: 'Mark guest as late',
 					},
 					{
-						text: 'Mark as no show'
+						text: 'Mark as no show',
 					},
 					{
-						text: 'Book again'
+						text: 'Book again',
 					},
 					{
-						text: 'Cancel appointment'
-					}
-				]
-			}
-		}
-	]
+						text: 'Cancel appointment',
+					},
+				],
+			},
+		},
+	],
 })
 
 export const warningAppointmentDetails = buildEventDetails({
@@ -356,13 +356,13 @@ export const warningAppointmentDetails = buildEventDetails({
 							size: 'large',
 							buttons: [
 								{
-									text: 'Edit guest'
+									text: 'Edit guest',
 								},
 								{
-									text: 'Book for someone else'
-								}
-							]
-						}
+									text: 'Book for someone else',
+								},
+							],
+						},
 					},
 					{
 						id: 'second',
@@ -372,12 +372,12 @@ export const warningAppointmentDetails = buildEventDetails({
 						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: 'simple'
-							}
-						]
-					}
-				]
-			}
+								kind: 'simple',
+							},
+						],
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'cardBuilder',
@@ -394,7 +394,7 @@ export const warningAppointmentDetails = buildEventDetails({
 										icon: {
 											id: 'foo',
 											name: 'calendar',
-											isLineIcon: true
+											isLineIcon: true,
 										},
 										title: 'Web, Nov 28, 2018',
 										subtitle: '11am–12:15pm',
@@ -403,17 +403,17 @@ export const warningAppointmentDetails = buildEventDetails({
 												id: 'foo',
 												icon: {
 													id: 'foo',
-													name: 'edit'
+													name: 'edit',
 												},
-												kind: 'simple'
-											}
+												kind: 'simple',
+											},
 										],
 										warnings: {
-											title: true
-										}
-									}
-								]
-							}
+											title: true,
+										},
+									},
+								],
+							},
 						},
 						{
 							schemaId: 'toast',
@@ -422,10 +422,10 @@ export const warningAppointmentDetails = buildEventDetails({
 								headline: 'Uh-oh',
 								text: 'Vicenta Maggio will be double-booked at this time',
 								kind: 'warn',
-								canRemove: false
-							}
-						}
-					]
+								canRemove: false,
+							},
+						},
+					],
 				},
 				footer: {
 					buttonGroup: {
@@ -434,18 +434,18 @@ export const warningAppointmentDetails = buildEventDetails({
 								text: 'Dismiss',
 								kind: 'simple',
 								isSmall: true,
-								id: 'foo'
+								id: 'foo',
 							},
 							{
 								text: 'Find a different time',
 								kind: 'secondary',
 								isSmall: true,
-								id: 'bar'
-							}
-						]
-					}
-				}
-			}
+								id: 'bar',
+							},
+						],
+					},
+				},
+			},
 		},
 		{
 			schemaId: 'list',
@@ -459,16 +459,16 @@ export const warningAppointmentDetails = buildEventDetails({
 						subtitle: 'Confirmed',
 						collapsedIcon: { name: 'edit' },
 						expandedIcon: { name: 'close' },
-						lists: statusLists
-					}
-				]
-			}
+						lists: statusLists,
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'markdown',
 			values: {
-				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr'
-			}
+				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr',
+			},
 		},
 		{
 			schemaId: 'splitButton',
@@ -477,28 +477,28 @@ export const warningAppointmentDetails = buildEventDetails({
 				isFullWidth: true,
 				defaultButton: {
 					text: 'Check guest in',
-					isFullWidth: true
+					isFullWidth: true,
 				},
 				buttons: [
 					{
-						text: 'Unconfirm appointment'
+						text: 'Unconfirm appointment',
 					},
 					{
-						text: 'Mark guest as late'
+						text: 'Mark guest as late',
 					},
 					{
-						text: 'Mark as no show'
+						text: 'Mark as no show',
 					},
 					{
-						text: 'Book again'
+						text: 'Book again',
 					},
 					{
-						text: 'Cancel appointment'
-					}
-				]
-			}
-		}
-	]
+						text: 'Cancel appointment',
+					},
+				],
+			},
+		},
+	],
 })
 
 export const pastAppointmentDetails = buildEventDetails({
@@ -516,9 +516,9 @@ export const pastAppointmentDetails = buildEventDetails({
 						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: 'simple'
-							}
-						]
+								kind: 'simple',
+							},
+						],
 					},
 					{
 						id: 'second',
@@ -528,12 +528,12 @@ export const pastAppointmentDetails = buildEventDetails({
 						buttons: [
 							{
 								icon: { name: 'edit' },
-								kind: 'simple'
-							}
-						]
-					}
-				]
-			}
+								kind: 'simple',
+							},
+						],
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -544,10 +544,10 @@ export const pastAppointmentDetails = buildEventDetails({
 						id: 'first',
 						icon: { name: 'calendar', isLineIcon: true },
 						title: 'Web, Nov 28, 2018',
-						subtitle: '11am–12:15pm'
-					}
-				]
-			}
+						subtitle: '11am–12:15pm',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -559,7 +559,7 @@ export const pastAppointmentDetails = buildEventDetails({
 						icon: { name: 'unordered_list', isLineIcon: true },
 						title: 'Accent Highlight',
 						subtitle: '$65 | 1hr',
-						note: 'Vicenta Maggio'
+						note: 'Vicenta Maggio',
 					},
 					{
 						id: 'second',
@@ -567,10 +567,10 @@ export const pastAppointmentDetails = buildEventDetails({
 						isIconHidden: true,
 						title: 'Haircut',
 						subtitle: '$40 | 1hr',
-						note: 'Vicenta Maggio'
-					}
-				]
-			}
+						note: 'Vicenta Maggio',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -581,17 +581,17 @@ export const pastAppointmentDetails = buildEventDetails({
 						id: 'first',
 						icon: { name: 'payment_success_solid' },
 						title: 'Status',
-						subtitle: 'Paid'
-					}
-				]
-			}
+						subtitle: 'Paid',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'markdown',
 			values: {
 				id: 'subtotalAndDuration',
-				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr'
-			}
+				source: '**Subtotal: ** $65\n\n**Duration: ** 2hr',
+			},
 		},
 		{
 			schemaId: 'splitButton',
@@ -601,16 +601,16 @@ export const pastAppointmentDetails = buildEventDetails({
 				isFullWidth: true,
 				defaultButton: {
 					text: 'Book again',
-					isFullWidth: true
+					isFullWidth: true,
 				},
 				actions: [
 					{
-						text: 'Edit past appointment'
-					}
-				]
-			}
-		}
-	]
+						text: 'Edit past appointment',
+					},
+				],
+			},
+		},
+	],
 })
 
 export const lunchBreakDetails = buildEventDetails({
@@ -625,10 +625,10 @@ export const lunchBreakDetails = buildEventDetails({
 						icon: { name: 'calendar' },
 						title: 'Sat, Jul 6, 2019',
 						subtitle: '8am–8pm',
-						note: 'Repeats every Saturday until 8/31/2019'
-					}
-				]
-			}
+						note: 'Repeats every Saturday until 8/31/2019',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -639,10 +639,10 @@ export const lunchBreakDetails = buildEventDetails({
 						id: 'first',
 						avatar,
 						title: 'Vicenta Maggio',
-						subtitle: 'Stylist'
-					}
-				]
-			}
+						subtitle: 'Stylist',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -653,10 +653,10 @@ export const lunchBreakDetails = buildEventDetails({
 						id: 'first',
 						icon: { name: 'info' },
 						title: 'Paid break',
-						subtitle: 'Teammates are paid during their lunch breaks'
-					}
-				]
-			}
+						subtitle: 'Teammates are paid during their lunch breaks',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'button',
@@ -664,10 +664,10 @@ export const lunchBreakDetails = buildEventDetails({
 				id: 'actions',
 				text: 'Reschedule',
 				kind: 'secondary',
-				isFullWidth: true
-			}
-		}
-	]
+				isFullWidth: true,
+			},
+		},
+	],
 })
 
 export const ptoBlockDetails = buildEventDetails({
@@ -682,10 +682,10 @@ export const ptoBlockDetails = buildEventDetails({
 						icon: { name: 'calendar' },
 						title: 'Sat, Jul 6, 2019',
 						subtitle: '8am–8pm',
-						note: 'Repeats every Saturday until 8/31/2019'
-					}
-				]
-			}
+						note: 'Repeats every Saturday until 8/31/2019',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -696,10 +696,10 @@ export const ptoBlockDetails = buildEventDetails({
 						id: 'person',
 						avatar,
 						title: 'Vicenta Maggio',
-						subtitle: 'Stylist'
-					}
-				]
-			}
+						subtitle: 'Stylist',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'list',
@@ -710,10 +710,10 @@ export const ptoBlockDetails = buildEventDetails({
 						id: 'breakType',
 						icon: { name: 'info' },
 						title: 'Paid time off',
-						subtitle: '32 hours of PTO'
-					}
-				]
-			}
+						subtitle: '32 hours of PTO',
+					},
+				],
+			},
 		},
 		{
 			schemaId: 'button',
@@ -721,8 +721,8 @@ export const ptoBlockDetails = buildEventDetails({
 				id: 'actions',
 				text: 'Edit PTO Block',
 				kind: 'secondary',
-				isFullWidth: true
-			}
-		}
-	]
+				isFullWidth: true,
+			},
+		},
+	],
 })

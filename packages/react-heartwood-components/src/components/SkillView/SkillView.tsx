@@ -1,12 +1,12 @@
+import {
+	SpruceSchemas,
+	defaultProps,
+	skillViewDefinition,
+} from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import SkillViewContent from './components/SkillViewContent/SkillViewContent'
 import SkillViewHeader from './components/SkillViewHeader/SkillViewHeader'
-import {
-	SpruceSchemas,
-	defaultProps,
-	skillViewDefinition
-} from '@sprucelabs/heartwood-skill'
 
 const defaults = defaultProps(skillViewDefinition)
 
@@ -18,14 +18,14 @@ export const SkillView = (props: SpruceSchemas.Local.ISkillView) => {
 		header,
 		isSidebarCollapsed,
 		sidebarChildren,
-		isHeaderCollapsed
+		isHeaderCollapsed,
 	} = props
 	return (
 		<div
 			className={cx('page', className, {
 				'page--centered': isCentered,
 				'page--no-header': isHeaderCollapsed,
-				'page--sidebar-is-collapsed': isSidebarCollapsed
+				'page--sidebar-is-collapsed': isSidebarCollapsed,
 			})}
 		>
 			<div className={'page__content-container'}>

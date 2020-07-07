@@ -6,27 +6,27 @@ module.exports = {
 	},
 	context: {
 		tagText: 'Spruced Up Shave',
-		class: 'tag-primary'
+		class: 'tag-primary',
 	},
 	variants: [
 		{
 			name: 'Small',
 			context: {
-				isSmall: true
-			}
+				isSmall: true,
+			},
 		},
 		{
 			name: 'Secondary',
 			context: {
-				class: 'tag-secondary'
-			}
+				class: 'tag-secondary',
+			},
 		},
 		{
 			name: 'Secondary Small',
 			context: {
 				class: 'tag-secondary',
-				isSmall: true
-			}
-		}
-	]
+				isSmall: true,
+			},
+		},
+	],
 }

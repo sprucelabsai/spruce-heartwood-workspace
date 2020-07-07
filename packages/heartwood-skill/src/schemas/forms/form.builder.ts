@@ -12,37 +12,37 @@ const formDefinition = buildSchemaDefinition({
 			isRequired: true,
 			options: {
 				event: 'React.FormEvent<...>',
-				element: 'HTMLFormElement'
-			}
+				element: 'HTMLFormElement',
+			},
 		},
 		className: {
 			type: FieldType.Text,
-			isPrivate: true
+			isPrivate: true,
 		},
 		onReset: {
 			type: FieldType.Raw,
 			label: 'Reset handler',
 			options: {
-				valueType: '() => void'
-			}
+				valueType: '() => void',
+			},
 		},
 		onValidate: {
 			type: FieldType.Raw,
 			label: 'Validate',
 			options: {
-				valueType: '(values: Record<string, any>) => Promise<void> | void'
-			}
+				valueType: '(values: Record<string, any>) => Promise<void> | void',
+			},
 		},
 		children: {
 			type: FieldType.Node,
-			isPrivate: true
+			isPrivate: true,
 		},
 		initialValues: {
 			type: FieldType.Raw,
 			label: 'Initial values',
 			options: {
-				valueType: 'Record<string, any>'
-			}
+				valueType: 'Record<string, any>',
+			},
 		},
 		renderAs: {
 			type: FieldType.Select,
@@ -53,24 +53,24 @@ const formDefinition = buildSchemaDefinition({
 				choices: [
 					{ value: 'page', label: 'Full page' },
 					{ value: 'default', label: 'Default' },
-					{ value: 'dialog', label: 'Dialog body' }
-				]
-			}
+					{ value: 'dialog', label: 'Dialog body' },
+				],
+			},
 		},
 		isDirty: {
 			type: FieldType.Boolean,
 			label: 'Dirty',
-			hint: 'Has this field been edited/updated?'
+			hint: 'Has this field been edited/updated?',
 		},
 		isValid: {
 			type: FieldType.Boolean,
 			label: 'Valid',
-			hint: 'Is the form valid (will disable submit buttons)'
+			hint: 'Is the form valid (will disable submit buttons)',
 		},
 		isBusy: {
 			type: FieldType.Boolean,
 			label: 'Busy',
-			hint: 'Is the form busy (will show progress over buttons)'
+			hint: 'Is the form busy (will show progress over buttons)',
 		},
 		dialogButtons: {
 			type: FieldType.Schema,
@@ -84,21 +84,21 @@ const formDefinition = buildSchemaDefinition({
 							type: FieldType.Schema,
 							label: 'Primary button',
 							options: {
-								schemaId: 'button'
-							}
+								schemaId: 'button',
+							},
 						},
 						secondary: {
 							type: FieldType.Schema,
 							label: 'Secondary button',
 							options: {
-								schemaId: 'button'
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+								schemaId: 'button',
+							},
+						},
+					},
+				},
+			},
+		},
+	},
 })
 
 export default formDefinition

@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 export interface IFormLayoutItemProps {
 	/** Contents of the Form Layout Item */
@@ -18,7 +18,7 @@ const FormLayoutItem = (props: IFormLayoutItemProps) => {
 	return (
 		<div
 			className={cx('form-layout__item', className, {
-				'form-layout__item--spacer-top': spacerTop
+				'form-layout__item--spacer-top': spacerTop,
 			})}
 			{...rest}
 		>

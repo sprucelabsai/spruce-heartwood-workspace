@@ -1,6 +1,6 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean } from '@storybook/addon-knobs/react'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import Loader from './Loader'
 
 const stories = storiesOf('Loader', module)
@@ -16,7 +16,7 @@ stories.add('Loader', () => {
 				padding: '2rem',
 				width: '100%',
 				height: '100%',
-				position: 'absolute'
+				position: 'absolute',
 			}}
 		>
 			<Loader isLight={isLight} isCentered={boolean('isCentered', false)} />

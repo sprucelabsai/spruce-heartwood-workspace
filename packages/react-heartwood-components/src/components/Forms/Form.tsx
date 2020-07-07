@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react'
-import Layout from '../Layout/Layout'
-import { SaveBar } from '../Core'
-import Modal from '../Modal/Modal'
 import {
 	SpruceSchemas,
 	defaultProps,
-	formDefinition
+	formDefinition,
 } from '@sprucelabs/heartwood-skill'
+import React, { Fragment } from 'react'
+import { SaveBar } from '../Core'
+import Layout from '../Layout/Layout'
+import Modal from '../Modal/Modal'
 
 const defaults = defaultProps(formDefinition)
 
@@ -29,7 +29,7 @@ export default class Form extends React.Component<
 			isDirty,
 			children,
 			isValid,
-			isBusy
+			isBusy,
 		} = this.props
 
 		return (
@@ -63,12 +63,12 @@ export default class Form extends React.Component<
 									type: 'submit',
 									...dialogButtons?.primary,
 									isDisabled: !isValid || isBusy,
-									isLoading: isBusy
+									isLoading: isBusy,
 								}}
 								secondaryAction={
 									dialogButtons?.secondary && {
 										...dialogButtons.secondary,
-										isDisabled: isBusy
+										isDisabled: isBusy,
 									}
 								}
 							/>

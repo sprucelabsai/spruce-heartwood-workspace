@@ -5,5 +5,5 @@ export default registerFieldType({
 	type: 'ElementType',
 	class: ElementTypeField,
 	package: '@sprucelabs/heartwood-skill',
-	importAs: 'HeartwoodSchemas'
+	importAs: 'HeartwoodSchemas',
 })

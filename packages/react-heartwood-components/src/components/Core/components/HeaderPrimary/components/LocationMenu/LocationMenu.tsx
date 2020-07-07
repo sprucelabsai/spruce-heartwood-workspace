@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
+import React, { Component } from 'react'
 import { VelocityTransitionGroup } from 'velocity-react'
+import Button from '../../../../../Button/Button'
 import Card from '../../../../../Card/Card'
 import List from '../../../../../List/List'
-import Button from '../../../../../Button/Button'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 interface ILocationMenuProps {
 	isMenuVisible: boolean
@@ -23,7 +23,7 @@ export default class LocationMenu extends Component<
 	ILocationMenuState
 > {
 	public state = {
-		menuPosX: 0
+		menuPosX: 0,
 	}
 	public menuWrapper: any
 
@@ -54,11 +54,11 @@ export default class LocationMenu extends Component<
 		}
 		if (diffX > 0) {
 			this.setState({
-				menuPosX: diffX
+				menuPosX: diffX,
 			})
 		} else if (menuPosX > 0) {
 			this.setState({
-				menuPosX: 0
+				menuPosX: 0,
 			})
 		}
 	}
@@ -69,18 +69,18 @@ export default class LocationMenu extends Component<
 			onClick,
 			locationManagementHref,
 			locationName,
-			locationAddress
+			locationAddress,
 		} = this.props
 		const { menuPosX } = this.state
 		return (
 			<div
 				className="header-primary__shortcut-btn-wrapper"
-				ref={ref => (this.menuWrapper = ref)}
+				ref={(ref) => (this.menuWrapper = ref)}
 			>
 				<Button
 					onClick={onClick}
 					className={cx('header-primary__shortcut-btn', {
-						'header-primary__shortcut-btn--is-active': isMenuVisible
+						'header-primary__shortcut-btn--is-active': isMenuVisible,
 					})}
 					icon={{ name: 'location' }}
 					text="Location"
@@ -90,16 +90,16 @@ export default class LocationMenu extends Component<
 					enter={{
 						animation: {
 							opacity: 1,
-							translateY: '0px'
+							translateY: '0px',
 						},
-						duration: 200
+						duration: 200,
 					}}
 					leave={{
 						animation: {
 							opacity: 0,
-							translateY: '4px'
+							translateY: '4px',
 						},
-						duration: 0
+						duration: 0,
 					}}
 				>
 					{isMenuVisible && (
@@ -107,7 +107,7 @@ export default class LocationMenu extends Component<
 							<div
 								className="header-primary__location-menu-position"
 								style={{
-									transform: `translate(${-menuPosX}px, 0)`
+									transform: `translate(${-menuPosX}px, 0)`,
 								}}
 							>
 								<Card className="header-primary__location-menu">
@@ -119,9 +119,9 @@ export default class LocationMenu extends Component<
 												subtitle: locationAddress,
 												icon: {
 													name: 'location',
-													isLineIcon: true
-												}
-											}
+													isLineIcon: true,
+												},
+											},
 										]}
 									/>
 									<Button

@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import cx from 'classnames'
-import Button from '../../../Button/Button'
-import { CSSTransition } from 'react-transition-group'
 import {
 	SpruceSchemas,
 	defaultProps,
-	saveBarDefinition
+	saveBarDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { CSSTransition } from 'react-transition-group'
+import Button from '../../../Button/Button'
 
 interface ISaveBarState {}
 
@@ -33,7 +33,7 @@ export default class SaveBar extends React.PureComponent<
 			isDiscardDisabled,
 			isSaveDisabled,
 			onDiscard,
-			onSave
+			onSave,
 		} = this.props
 
 		if (!this._element) {

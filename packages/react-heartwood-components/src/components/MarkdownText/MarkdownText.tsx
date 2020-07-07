@@ -1,6 +1,6 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const MarkdownText = (
 	props: SpruceSchemas.Local.IMarkdown

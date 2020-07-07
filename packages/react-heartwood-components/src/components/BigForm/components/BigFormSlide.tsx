@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react'
 import cx from 'classnames'
-import BigFormSlideHeader from './BigFormSlideHeader'
+import React, { ReactElement } from 'react'
 import BigFormSlideBody from './BigFormSlideBody'
+import BigFormSlideHeader from './BigFormSlideHeader'
 
 export enum BigFormSlidePosition {
 	Past = 'past',
 	Present = 'present',
-	Future = 'future'
+	Future = 'future',
 }
 
 export interface IBigFormSlideProps {
@@ -38,7 +38,7 @@ class BigFormSlide extends React.Component<IBigFormSlideProps> {
 	public render(): React.ReactElement {
 		const { children: childrenProp, position, onSubmit } = this.props
 
-		const children = React.Children.map(childrenProp, child => {
+		const children = React.Children.map(childrenProp, (child) => {
 			if (
 				child &&
 				(child as ReactElement).type &&
@@ -48,11 +48,11 @@ class BigFormSlide extends React.Component<IBigFormSlideProps> {
 				const props =
 					(child as ReactElement).type === BigFormSlideHeader
 						? {
-								ref: this.headerRef
+								ref: this.headerRef,
 						  }
 						: {
 								ref: this.bodyRef,
-								onSubmit
+								onSubmit,
 						  }
 
 				return React.cloneElement(child as ReactElement, props)
@@ -66,7 +66,7 @@ class BigFormSlide extends React.Component<IBigFormSlideProps> {
 				className={cx('slide', {
 					'is-past': position === BigFormSlidePosition.Past,
 					'is-present': position === BigFormSlidePosition.Present,
-					'is-future': position === BigFormSlidePosition.Future
+					'is-future': position === BigFormSlidePosition.Future,
 				})}
 			>
 				{children}

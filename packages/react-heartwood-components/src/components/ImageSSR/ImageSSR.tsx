@@ -25,7 +25,7 @@ const ImageSSR = (props: IImageSSRProps) => {
 					width=${width}
 					height=${height}
 					/>
-				`
+				`,
 			}}
 		/>
 	)

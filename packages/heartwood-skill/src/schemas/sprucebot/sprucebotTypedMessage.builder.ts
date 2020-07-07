@@ -1,9 +1,9 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import sprucebotAvatarDefinition, {
-	sizeChoices
+	sizeChoices,
 } from './sprucebotAvatar.builder'
 import sprucebotTypeMessageSentenceDefinition from './sprucebotTypedMessageSentence.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const sprucebotTypeMessageDefinition = buildSchemaDefinition({
 	id: 'sprucebotTypedMessage',
@@ -12,7 +12,7 @@ const sprucebotTypeMessageDefinition = buildSchemaDefinition({
 	fields: {
 		id: {
 			type: FieldType.Id,
-			label: 'Id'
+			label: 'Id',
 		},
 		sentences: {
 			type: FieldType.Schema,
@@ -22,8 +22,8 @@ const sprucebotTypeMessageDefinition = buildSchemaDefinition({
 			hint:
 				'Sprucebot will type out these sentences one at a time preserving what is similar between each one (in bold)',
 			options: {
-				schema: sprucebotTypeMessageSentenceDefinition
-			}
+				schema: sprucebotTypeMessageSentenceDefinition,
+			},
 		},
 		defaultAvatar: {
 			type: FieldType.Schema,
@@ -39,35 +39,35 @@ const sprucebotTypeMessageDefinition = buildSchemaDefinition({
 						...sprucebotAvatarDefinition.fields,
 						size: {
 							...sprucebotAvatarDefinition.fields.size,
-							isRequired: false
-						}
-					}
-				}
-			}
+							isRequired: false,
+						},
+					},
+				},
+			},
 		},
 		startDelay: {
 			type: FieldType.Duration,
 			label: 'Start delay',
 			hint: 'How long should I wait before starting to type?',
-			defaultValue: { ms: 1000 }
+			defaultValue: { ms: 1000 },
 		},
 		loop: {
 			type: FieldType.Boolean,
-			label: 'Loop'
+			label: 'Loop',
 		},
 		size: {
 			type: FieldType.Select,
 			label: 'Size',
 			defaultValue: 'small',
 			options: {
-				choices: sizeChoices
-			}
+				choices: sizeChoices,
+			},
 		},
 		paused: {
 			type: FieldType.Boolean,
-			label: 'Paused'
-		}
-	}
+			label: 'Paused',
+		},
+	},
 })
 
 export default sprucebotTypeMessageDefinition

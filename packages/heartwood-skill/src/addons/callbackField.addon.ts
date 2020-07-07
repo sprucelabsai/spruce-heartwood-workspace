@@ -5,5 +5,5 @@ export default registerFieldType({
 	type: 'Callback',
 	class: CallbackField,
 	package: '@sprucelabs/heartwood-skill',
-	importAs: 'HeartwoodSchemas'
+	importAs: 'HeartwoodSchemas',
 })

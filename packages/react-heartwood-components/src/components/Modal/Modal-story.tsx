@@ -1,18 +1,17 @@
-import React, { Fragment, Component } from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, text, boolean, object } from '@storybook/addon-knobs/react'
-import Modal from './Modal'
+import { storiesOf } from '@storybook/react'
+import React, { Fragment, Component } from 'react'
+import countries from '../../../.storybook/data/countries'
 import Button from '../Button/Button'
-import Autosuggest from '../Forms/components/Autosuggest/Autosuggest'
 import {
 	Checkbox,
 	TextInput,
 	TextArea,
 	FormLayout,
-	FormLayoutItem
+	FormLayoutItem,
 } from '../Forms'
-
-import countries from '../../../.storybook/data/countries'
+import Autosuggest from '../Forms/components/Autosuggest/Autosuggest'
+import Modal from './Modal'
 
 const renderSuggestion = (suggestion: any) => {
 	if (suggestion.isEmptyMessage) {
@@ -48,12 +47,12 @@ interface IModalExampleState {
 
 class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 	public state = {
-		isOpen: false
+		isOpen: false,
 	}
 
 	public toggleVisibility = () => {
-		this.setState(prevState => ({
-			isOpen: !prevState.isOpen
+		this.setState((prevState) => ({
+			isOpen: !prevState.isOpen,
 		}))
 	}
 
@@ -61,7 +60,7 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 
 	public onRequestClose = () => {
 		this.setState({
-			isOpen: false
+			isOpen: false,
 		})
 	}
 	public render() {
@@ -102,12 +101,12 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 										id="teaser"
 										label={{
 											text: 'Teaser',
-											postLabel: '0/64'
+											postLabel: '0/64',
 										}}
 										placeholder="Haircuts, shaves, and touch-ups."
 										helper={{
 											hint:
-												'Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters.'
+												'Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters.',
 										}}
 									/>
 								</FormLayoutItem>
@@ -118,7 +117,7 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 										placeholder="Optional category description…"
 										helper={{
 											hint:
-												'Add a short teaser for your guests to see when they browse your services.'
+												'Add a short teaser for your guests to see when they browse your services.',
 										}}
 										rows={3}
 									/>
@@ -129,7 +128,7 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 										label={{
 											text: 'Hide this category',
 											postLabel:
-												'It will still be visible to your teammates, but will be hidden from guests.'
+												'It will still be visible to your teammates, but will be hidden from guests.',
 										}}
 									/>
 								</FormLayoutItem>
@@ -140,13 +139,13 @@ class ModalExample extends Component<IModalExampleProps, IModalExampleState> {
 								primaryAction={{
 									text: 'Create Category',
 									onClick: () => console.log('Next'),
-									type: 'submit'
+									type: 'submit',
 								}}
 								secondaryAction={
 									hasSecondaryButton
 										? {
 												text: 'Cancel',
-												onClick: () => console.log('Cancel')
+												onClick: () => console.log('Cancel'),
 										  }
 										: undefined
 								}
@@ -203,12 +202,12 @@ stories
 								id="teaser"
 								label={{
 									text: 'Teaser',
-									postLabel: '0/64'
+									postLabel: '0/64',
 								}}
 								placeholder="Haircuts, shaves, and touch-ups."
 								helper={{
 									hint:
-										'Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters.'
+										'Add a short teaser for your guests to see when they browse your services. Please limit to 64 characters.',
 								}}
 							/>
 						</FormLayoutItem>
@@ -219,7 +218,7 @@ stories
 								placeholder="Optional category description…"
 								helper={{
 									hint:
-										'Add a short teaser for your guests to see when they browse your services.'
+										'Add a short teaser for your guests to see when they browse your services.',
 								}}
 								rows={3}
 							/>
@@ -232,10 +231,10 @@ stories
 								defaultSuggestions={object('defaultSuggestions', countries)}
 								shouldRenderSuggestions={true}
 								renderSuggestion={renderSuggestion}
-								getSuggestionValue={value => value.text}
-								getSuggestions={value => {
+								getSuggestionValue={(value) => value.text}
+								getSuggestions={(value) => {
 									const results = countries.filter(
-										suggestion =>
+										(suggestion) =>
 											suggestion.text.toLowerCase().slice(0, value.length) ===
 											value.toLowerCase()
 									)
@@ -245,8 +244,8 @@ stories
 										return [
 											{
 												text: 'NO RESULTS',
-												isEmptyMessage: true
-											}
+												isEmptyMessage: true,
+											},
 										]
 									}
 									return results
@@ -259,7 +258,7 @@ stories
 								label={{
 									text: 'Hide this category',
 									postLabel:
-										'It will still be visible to your teammates, but will be hidden from guests.'
+										'It will still be visible to your teammates, but will be hidden from guests.',
 								}}
 							/>
 						</FormLayoutItem>
@@ -270,11 +269,11 @@ stories
 						primaryAction={object('primaryAction', {
 							text: 'Create Category',
 							onClick: () => console.log('Next'),
-							type: 'submit'
+							type: 'submit',
 						})}
 						secondaryAction={object('secondaryAction', {
 							text: 'Cancel',
-							onClick: () => console.log('Cancel')
+							onClick: () => console.log('Cancel'),
 						})}
 					/>
 				)}

@@ -1,3 +1,4 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React, { Component, Fragment } from 'react'
@@ -9,19 +10,18 @@ import {
 	nestedList,
 	selectableList,
 	serviceList,
-	settingsList
+	settingsList,
 } from '../../../.storybook/data/lists'
 import {
 	userList,
 	userList02,
-	userList03
+	userList03,
 } from '../../../.storybook/data/people'
 import Tabs from '../Tabs/Tabs'
 import ListHeader from './components/ListHeader/ListHeader'
 import ListItem from './components/ListItem/ListItem'
 import SortableList from './components/SortableList/SortableList'
 import List, { ListWrapper } from './List'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const stories = storiesOf('List', module)
 
@@ -38,23 +38,23 @@ class TabbedList extends Component<ITabbedProps, ITabbedState> {
 		tabs: [
 			{
 				text: 'Guests',
-				panel: <List items={userList} />
+				panel: <List items={userList} />,
 			},
 			{
 				text: 'Team',
-				panel: <List items={userList02} />
+				panel: <List items={userList02} />,
 			},
 			{
 				text: 'Settings',
-				panel: <List items={userList03} />
-			}
+				panel: <List items={userList03} />,
+			},
 		],
-		activeTabIndex: 0
+		activeTabIndex: 0,
 	}
 
 	public handleTabClick = (idx: number) => {
 		this.setState({
-			activeTabIndex: idx
+			activeTabIndex: idx,
 		})
 	}
 
@@ -69,7 +69,7 @@ class TabbedList extends Component<ITabbedProps, ITabbedState> {
 						tabs={tabs.map((tab, idx) => ({
 							isCurrent: idx === activeTabIndex,
 							onClick: () => this.handleTabClick(idx),
-							...tab
+							...tab,
 						}))}
 					/>
 				</Fragment>
@@ -154,28 +154,28 @@ stories
 				buttons: [
 					{
 						text: 'Today',
-						kind: 'simple'
+						kind: 'simple',
 					},
 					{
 						icon: {
 							name: 'calendar',
-							isLineIcon: true
+							isLineIcon: true,
 						},
-						kind: 'simple'
+						kind: 'simple',
 					},
 					{
 						icon: {
-							name: 'arrow_back'
+							name: 'arrow_back',
 						},
-						kind: 'simple'
+						kind: 'simple',
 					},
 					{
 						icon: {
-							customIcon: 'arrow_forward'
+							customIcon: 'arrow_forward',
 						},
-						kind: 'simple'
-					}
-				]
+						kind: 'simple',
+					},
+				],
 			}}
 			isSmall={boolean('isSmall', false)}
 			items={object('items', userList)}
@@ -186,7 +186,7 @@ stories
 		<List
 			selectable={object('selectable', {
 				schemaId: 'checkbox',
-				values: {}
+				values: {},
 			})}
 			items={object('selectable items', selectableList)}
 			isSmall={boolean('isSmall', false)}

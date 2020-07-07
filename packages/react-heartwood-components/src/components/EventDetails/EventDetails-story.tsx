@@ -1,16 +1,15 @@
-import React from 'react'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import EventDetails from './EventDetails'
+import React from 'react'
 import { Sidebar, SidebarHeader } from '../Core'
-
+import EventDetails from './EventDetails'
 import {
 	appointmentDetails,
 	warningAppointmentDetails,
 	pastAppointmentDetails,
 	lunchBreakDetails,
-	ptoBlockDetails
+	ptoBlockDetails,
 } from './eventDetailsMock'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
 
 const stories = storiesOf('EventDetails', module)
 

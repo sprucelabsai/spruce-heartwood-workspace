@@ -1,8 +1,8 @@
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
 import React from 'react'
 import { unionArray } from '../..'
 import Button from '../Button/Button'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const ButtonGroup = (
 	props: SpruceSchemas.Local.IButtonGroup
@@ -12,7 +12,7 @@ const ButtonGroup = (
 	const parentClass = cx('button-group', {
 		'button-group-segmented': kind === 'segmented',
 		'button-group-floating': kind === 'floating',
-		'button-group--is-full-width': isFullWidth
+		'button-group--is-full-width': isFullWidth,
 	})
 	return (
 		<ul className={parentClass}>
@@ -21,7 +21,7 @@ const ButtonGroup = (
 					<li
 						key={button.id ?? undefined}
 						className={cx('button-group__item', {
-							'button-group__item--is-highlighted': highlightedIndex === idx
+							'button-group__item--is-highlighted': highlightedIndex === idx,
 						})}
 					>
 						<Button
@@ -45,7 +45,7 @@ const ButtonGroup = (
 ButtonGroup.defaultProps = {
 	kind: 'default',
 	isFullWidth: false,
-	highlightedIndex: -1
+	highlightedIndex: -1,
 }
 
 export default ButtonGroup

@@ -1,8 +1,8 @@
-import React from 'react'
 import cx from 'classnames'
-import Button from '../../../Button/Button'
+import React from 'react'
 import ArrowBack from '../../../../../static/assets/icons/ic_arrow_back.svg'
 import CloseIcon from '../../../../../static/assets/icons/ic_close.svg'
+import Button from '../../../Button/Button'
 
 export interface IModalHeaderProps {
 	/** Title text */
@@ -24,7 +24,7 @@ const ModalHeader = (props: IModalHeaderProps) => {
 	return (
 		<div
 			className={cx('modal-header', {
-				'modal-header--is-paginated': isPaginated
+				'modal-header--is-paginated': isPaginated,
 			})}
 		>
 			<div className="modal-header__title-wrapper">
@@ -32,7 +32,7 @@ const ModalHeader = (props: IModalHeaderProps) => {
 					<Button
 						isSmall
 						className={cx('modal-header__back-btn', {
-							'modal-header__back-btn--is-hidden': !onClickBack
+							'modal-header__back-btn--is-hidden': !onClickBack,
 						})}
 						icon={{ customIcon: ArrowBack }}
 						isDisabled={!onClickBack}
@@ -52,7 +52,7 @@ const ModalHeader = (props: IModalHeaderProps) => {
 
 ModalHeader.displayName = 'Modal.Header'
 ModalHeader.defaultProps = {
-	isPaginated: false
+	isPaginated: false,
 }
 
 export default ModalHeader

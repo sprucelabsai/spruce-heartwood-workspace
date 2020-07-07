@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import buttonDefinition from './forms/button.builder'
 import iconDefinition from './icon.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const contextMenuDefinition = buildSchemaDefinition({
 	id: 'ContextMenu',
@@ -15,8 +15,8 @@ const contextMenuDefinition = buildSchemaDefinition({
 			isRequired: true,
 			isArray: true,
 			options: {
-				schema: buttonDefinition
-			}
+				schema: buttonDefinition,
+			},
 		},
 		size: {
 			type: FieldType.Select,
@@ -26,48 +26,48 @@ const contextMenuDefinition = buildSchemaDefinition({
 				choices: [
 					{
 						label: 'Medium',
-						value: 'medium'
+						value: 'medium',
 					},
 					{
 						label: 'Large',
-						value: 'large'
-					}
-				]
-			}
+						value: 'large',
+					},
+				],
+			},
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
-			hint: 'Adds text to the collapsed menu'
+			hint: 'Adds text to the collapsed menu',
 		},
 		icon: {
 			type: FieldType.Schema,
 			label: 'Icon',
 			hint: 'Overrides the default icon',
 			options: {
-				schema: iconDefinition
-			}
+				schema: iconDefinition,
+			},
 		},
 		isSimple: {
 			type: FieldType.Boolean,
 			label: 'Is simple',
-			hint: 'Set true to make the button blue'
+			hint: 'Set true to make the button blue',
 		},
 		isSmall: {
 			type: FieldType.Boolean,
 			label: 'Is small',
-			hint: 'Set true to make the button smaller'
+			hint: 'Set true to make the button smaller',
 		},
 		closeOnSelect: {
 			type: FieldType.Boolean,
 			label: 'Close on select',
 			hint: 'Set to true makes the menu close when any option is selected',
-			defaultValue: true
+			defaultValue: true,
 		},
 		className: {
 			type: FieldType.Text,
 			label: 'Classname',
-			isPrivate: true
+			isPrivate: true,
 		},
 		onClick: {
 			type: FieldType.EventCallback,
@@ -75,10 +75,10 @@ const contextMenuDefinition = buildSchemaDefinition({
 			isPrivate: true,
 			options: {
 				event: 'React.MouseEvent<...>',
-				element: 'HTMLDivElement'
-			}
-		}
-	}
+				element: 'HTMLDivElement',
+			},
+		},
+	},
 })
 
 export default contextMenuDefinition

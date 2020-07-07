@@ -8,7 +8,7 @@ module.exports = {
 	preview: '@main-preview',
 	context: {
 		element: 'h3',
-		text: "Here's a section worth looking at"
+		text: "Here's a section worth looking at",
 	},
 	variants: [
 		{
@@ -16,8 +16,8 @@ module.exports = {
 			label: 'Subheading as H4',
 			context: {
 				element: 'h3',
-				text: 'Do you fancy this section instead?'
-			}
-		}
-	]
+				text: 'Do you fancy this section instead?',
+			},
+		},
+	],
 }

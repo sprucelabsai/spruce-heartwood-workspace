@@ -1,7 +1,7 @@
 module.exports = {
 	context: {
 		content: 'Page Content',
-		hasHeader: true
+		hasHeader: true,
 	},
 	variants: [
 		{
@@ -9,8 +9,8 @@ module.exports = {
 			label: 'No Header',
 			context: {
 				title: 'No Header',
-				hasHeader: false
-			}
-		}
-	]
+				hasHeader: false,
+			},
+		},
+	],
 }

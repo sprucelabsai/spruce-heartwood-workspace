@@ -1,5 +1,5 @@
-import React from 'react'
 import cx from 'classnames'
+import React from 'react'
 
 export interface IFormLayoutProps {
 	/** Contents of the Form Layout. Should be FormLayoutItem or FormLayoutGroup components */
@@ -18,7 +18,7 @@ const FormLayout = (props: IFormLayoutProps) => {
 	return (
 		<div
 			className={cx('form-layout', className, {
-				'form-layout--spacing-tight': spacing === 'tight'
+				'form-layout--spacing-tight': spacing === 'tight',
 			})}
 			{...rest}
 		>
@@ -28,7 +28,7 @@ const FormLayout = (props: IFormLayoutProps) => {
 }
 
 FormLayout.defaultProps = {
-	spacing: 'base'
+	spacing: 'base',
 }
 
 export default FormLayout

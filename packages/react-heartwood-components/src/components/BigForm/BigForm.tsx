@@ -1,19 +1,19 @@
-import React, { ReactElement } from 'react'
-import cx from 'classnames'
-import BigFormSlide, { BigFormSlidePosition } from './components/BigFormSlide'
-import BigFormSlideBody from './components/BigFormSlideBody'
-import BigFormSlideHeader, {
-	IBigFormSlideHeaderProps
-} from './components/BigFormSlideHeader'
-import BigFormControls from './components/BigFormControls'
-import SprucebotTypedMessage from '../SprucebotTypedMessage/SprucebotTypedMessage'
 import {
 	definitionChoicesToHash,
 	SpruceSchemas,
 	buildDuration,
 	defaultProps,
-	bigFormDefinition
+	bigFormDefinition,
 } from '@sprucelabs/heartwood-skill'
+import cx from 'classnames'
+import React, { ReactElement } from 'react'
+import SprucebotTypedMessage from '../SprucebotTypedMessage/SprucebotTypedMessage'
+import BigFormControls from './components/BigFormControls'
+import BigFormSlide, { BigFormSlidePosition } from './components/BigFormSlide'
+import BigFormSlideBody from './components/BigFormSlideBody'
+import BigFormSlideHeader, {
+	IBigFormSlideHeaderProps,
+} from './components/BigFormSlideHeader'
 
 export const BigFormTransitionStyle = definitionChoicesToHash(
 	bigFormDefinition,
@@ -53,7 +53,7 @@ class BigForm extends React.Component<
 	public constructor(props: SpruceSchemas.Local.IBigForm & typeof defaults) {
 		super(props)
 		this.state = {
-			currentSlide: this.props.currentSlide || 0
+			currentSlide: this.props.currentSlide || 0,
 		}
 	}
 
@@ -80,11 +80,11 @@ class BigForm extends React.Component<
 	public getHeaderProps = () => {
 		const headers: IBigFormSlideHeaderProps[] = []
 
-		React.Children.forEach(this.props.children, child => {
+		React.Children.forEach(this.props.children, (child) => {
 			if (child && (child as ReactElement).type === BigFormSlide) {
 				React.Children.forEach(
 					(child as ReactElement).props.children,
-					child => {
+					(child) => {
 						if (child && (child as ReactElement).type === BigFormSlideHeader) {
 							headers.push((child as ReactElement).props)
 						}
@@ -114,7 +114,7 @@ class BigForm extends React.Component<
 				if (destinationHeaderProps && this.theOneSprucebotRef.current) {
 					await this.theOneSprucebotRef.current.pause()
 					await this.theOneSprucebotRef.current.addToTypingQueue({
-						words: destinationHeaderProps.question
+						words: destinationHeaderProps.question,
 					})
 
 					this.theOneSprucebotRef.current.play()
@@ -141,7 +141,7 @@ class BigForm extends React.Component<
 			children: childrenProps,
 			controls,
 			transitionStyle,
-			useOneSprucebot
+			useOneSprucebot,
 		} = this.props
 
 		const { currentSlide } = this.state
@@ -161,7 +161,7 @@ class BigForm extends React.Component<
 				// If we are using one sprucebot, filter out all header fields
 				if (useOneSprucebot) {
 					children = []
-					React.Children.forEach(slideElement.props.children, child => {
+					React.Children.forEach(slideElement.props.children, (child) => {
 						if (!child || (child as ReactElement).type !== BigFormSlideHeader) {
 							children.push(child)
 						}
@@ -172,7 +172,7 @@ class BigForm extends React.Component<
 					onSubmit: this.handleSubmitSlide,
 					children,
 					position,
-					ref: (ref: BigFormSlide) => (this.slideRefs[idx] = ref)
+					ref: (ref: BigFormSlide) => (this.slideRefs[idx] = ref),
 				})
 			}
 			return child
@@ -181,7 +181,7 @@ class BigForm extends React.Component<
 		return (
 			<div
 				className={cx('big-form', transitionStyle, {
-					'one-sprucebot': useOneSprucebot
+					'one-sprucebot': useOneSprucebot,
 				})}
 				ref={this.bigFormRef}
 			>
@@ -196,7 +196,7 @@ class BigForm extends React.Component<
 							size={'medium'}
 							defaultAvatar={{
 								id: 'the-one-default',
-								stateOfMind: 'chill'
+								stateOfMind: 'chill',
 							}}
 							sentences={[]}
 						/>

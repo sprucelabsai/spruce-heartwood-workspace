@@ -5,7 +5,7 @@ const formBuilderElement = buildSchemaDefinition({
 	name: 'Form builder element',
 	description:
 		'All field types must mixin this definition to support working in the FormBuilder',
-	fields: {}
+	fields: {},
 })
 
 export default formBuilderElement

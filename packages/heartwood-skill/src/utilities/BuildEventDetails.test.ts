@@ -6,8 +6,8 @@ export default class BuildEventDetailsTest extends BaseTest {
 	protected static async testBuildingDetails() {
 		const details = buildEventDetailsItem('list', {
 			header: {
-				title: 'Hell world!?'
-			}
+				title: 'Hell world!?',
+			},
 		})
 		assert.isOk(details)
 	}

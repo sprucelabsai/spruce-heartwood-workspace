@@ -8,17 +8,17 @@ const listItemWarningDefinition = buildSchemaDefinition({
 	fields: {
 		title: {
 			type: FieldType.Boolean,
-			label: 'Title'
+			label: 'Title',
 		},
 		subtitle: {
 			type: FieldType.Boolean,
-			label: 'Subtitle'
+			label: 'Subtitle',
 		},
 		note: {
 			type: FieldType.Boolean,
-			label: 'Note'
-		}
-	}
+			label: 'Note',
+		},
+	},
 })
 
 export default listItemWarningDefinition

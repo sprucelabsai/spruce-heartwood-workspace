@@ -1,17 +1,17 @@
-import React from 'react'
+import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 import cx from 'classnames'
+import React from 'react'
 import Button from '../../../../../Button/Button'
 import Icon from '../../../../../Icon/Icon'
-import { SpruceSchemas } from '@sprucelabs/heartwood-skill'
 
 const isCurrentParent = (items: SpruceSchemas.Local.ISidebarItem[]) => {
 	if (items) {
-		if (items.find(item => item.isCurrent)) {
+		if (items.find((item) => item.isCurrent)) {
 			return true
 		}
-		items.forEach(item => {
+		items.forEach((item) => {
 			if (item.items) {
-				if (item.items.find(item => item.isCurrent)) {
+				if (item.items.find((item) => item.isCurrent)) {
 					return true
 				}
 			}
@@ -24,7 +24,7 @@ const SidebarItem = (props: SpruceSchemas.Local.ISidebarItem) => {
 	const { text, href, button, icon, isCurrent, items, className } = props
 	const parentClass = cx('sidebar-item', className, {
 		'sidebar-item--is-current': isCurrent,
-		'sidebar-item--is-current-parent': items && isCurrentParent(items)
+		'sidebar-item--is-current-parent': items && isCurrentParent(items),
 	})
 	return (
 		<li className={parentClass}>
@@ -46,7 +46,7 @@ const SidebarItem = (props: SpruceSchemas.Local.ISidebarItem) => {
 						const subClass = cx('sidebar__sub-list-item', {
 							'sidebar-item--is-current': item.isCurrent,
 							'sidebar-item--is-current-parent':
-								item.items && isCurrentParent(item.items)
+								item.items && isCurrentParent(item.items),
 						})
 						return (
 							<li key={idx} className={subClass}>
@@ -65,7 +65,7 @@ const SidebarItem = (props: SpruceSchemas.Local.ISidebarItem) => {
 												'sidebar__sub-list-item',
 												item.className,
 												{
-													'sidebar-item--is-current': item.isCurrent
+													'sidebar-item--is-current': item.isCurrent,
 												}
 											)
 											return (
@@ -96,7 +96,7 @@ SidebarItem.defaultProps = {
 	icon: null,
 	isCurrent: false,
 	items: [],
-	action: null
+	action: null,
 }
 
 export default SidebarItem

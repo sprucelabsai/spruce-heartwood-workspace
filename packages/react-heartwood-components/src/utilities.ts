@@ -1,14 +1,14 @@
 export const checkDeprecatedProps = ({
 	componentName,
 	props,
-	deprecatedProps
+	deprecatedProps,
 }: {
 	componentName: string
 	props: Record<string, any>
 	deprecatedProps: Record<string, any>
 }) => {
 	const propKeys = Object.keys(props)
-	propKeys.forEach(key => {
+	propKeys.forEach((key) => {
 		const deprecatedProp = deprecatedProps[key]
 		if (deprecatedProp) {
 			console.warn(

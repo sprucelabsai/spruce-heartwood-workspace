@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
 import formDefinition from './form.builder'
 import formBuilderSectionDefinition from './formBuilderSection.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const formBuilderDefinition = buildSchemaDefinition({
 	id: 'formBuilder',
@@ -18,9 +18,9 @@ const formBuilderDefinition = buildSchemaDefinition({
 				choices: [
 					{ value: 'page', label: 'Full page' },
 					{ value: 'default', label: 'Default' },
-					{ value: 'dialog', label: 'Dialog body' }
-				]
-			}
+					{ value: 'dialog', label: 'Dialog body' },
+				],
+			},
 		},
 		dialogButtons: {
 			type: FieldType.Schema,
@@ -34,27 +34,27 @@ const formBuilderDefinition = buildSchemaDefinition({
 							type: FieldType.Schema,
 							label: 'Primary button',
 							options: {
-								schemaId: 'button'
-							}
+								schemaId: 'button',
+							},
 						},
 						secondary: {
 							type: FieldType.Schema,
 							label: 'Secondary button',
 							options: {
-								schemaId: 'button'
-							}
-						}
-					}
-				}
-			}
+								schemaId: 'button',
+							},
+						},
+					},
+				},
+			},
 		},
 		schema: {
 			type: FieldType.Raw,
 			label: 'Schema definition',
 			isRequired: true,
 			options: {
-				valueType: 'SpruceSchema.ISchemaDefinition'
-			}
+				valueType: 'SpruceSchema.ISchemaDefinition',
+			},
 		},
 		sections: {
 			type: FieldType.Schema,
@@ -62,10 +62,10 @@ const formBuilderDefinition = buildSchemaDefinition({
 			isArray: true,
 			isRequired: true,
 			options: {
-				schema: formBuilderSectionDefinition
-			}
-		}
-	}
+				schema: formBuilderSectionDefinition,
+			},
+		},
+	},
 })
 
 export default formBuilderDefinition

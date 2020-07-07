@@ -1,7 +1,7 @@
 import { buildSchemaDefinition } from '@sprucelabs/schema'
-import FieldType from '#spruce:schema/fields/fieldType'
-import toastHeaderDefinition from './toastHeader.builder'
 import buttonDefinition from '../forms/button.builder'
+import toastHeaderDefinition from './toastHeader.builder'
+import FieldType from '#spruce:schema/fields/fieldType'
 
 const toastDefinition = buildSchemaDefinition({
 	id: 'toast',
@@ -13,34 +13,35 @@ const toastDefinition = buildSchemaDefinition({
 			type: FieldType.Id,
 			label: 'Id',
 			hint: 'Unique id for UI caching',
-			isRequired: true
+			isRequired: true,
 		},
 		text: {
 			type: FieldType.Text,
 			label: 'Text',
-			hint: 'Optional; Text after the headline'
+			hint: 'Optional; Text after the headline',
 		},
 		kind: {
 			type: FieldType.Text,
 			label: 'Kind',
-			hint: 'Sets the variation of toast'
+			hint: 'Sets the variation of toast',
 		},
 		followupText: {
 			type: FieldType.Text,
 			label: 'Followup text',
-			hint: 'Text for the followup action'
+			hint: 'Text for the followup action',
 		},
 		onClickFollowup: {
 			...buttonDefinition.fields.onClick,
 			label: 'Followup handler',
-			hint: 'Callback to be invoked when hitting the followup CTA'
+			hint: 'Callback to be invoked when hitting the followup CTA',
 		},
 		onRemove: {
 			...buttonDefinition.fields.onClick,
 			label: 'Remove handler',
-			hint: 'Callback invoked when remove is clicked (cannot block the removal)'
-		}
-	}
+			hint:
+				'Callback invoked when remove is clicked (cannot block the removal)',
+		},
+	},
 })
 
 export default toastDefinition

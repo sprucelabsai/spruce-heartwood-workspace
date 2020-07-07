@@ -1,17 +1,17 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { withKnobs, boolean, select } from '@storybook/addon-knobs/react'
-import TextContainer from './TextContainer'
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 import Heading from '../Heading/Heading'
 import Subheading from '../Subheading/Subheading'
 import Text from '../Text/Text'
+import TextContainer from './TextContainer'
 
 const stories = storiesOf('Text Container', module)
 
 const spacingOptions = {
 	Base: null,
 	Tight: 'tight',
-	Loose: 'loose'
+	Loose: 'loose',
 }
 
 stories.addDecorator(withKnobs)

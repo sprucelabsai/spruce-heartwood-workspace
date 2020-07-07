@@ -5,7 +5,7 @@ const shortid = {
 	generate: () => {
 		shortid.count++
 		return `shortid-${shortid.count}`
-	}
+	},
 }
 
 const voidHTMLElements = [
@@ -24,10 +24,10 @@ const voidHTMLElements = [
 	'param',
 	'source',
 	'track',
-	'wbr'
+	'wbr',
 ]
 
-const flatten = arr =>
+const flatten = (arr) =>
 	arr.reduce(
 		(acc, item) =>
 			acc.concat(
@@ -38,11 +38,11 @@ const flatten = arr =>
 		[]
 	)
 
-const removeUndefined = arr => arr.filter(node => node !== undefined)
+const removeUndefined = (arr) => arr.filter((node) => node !== undefined)
 
-const isTypingComponent = struct =>
+const isTypingComponent = (struct) =>
 	['Backspace', 'Delay', 'Speed', 'Reset'].some(
-		sub => struct.type && struct.type.getName && struct.type.getName() === sub
+		(sub) => struct.type && struct.type.getName && struct.type.getName() === sub
 	)
 
 export const randomInRange = (min, max) =>
@@ -76,11 +76,12 @@ export const extractText = (...args) => {
 			) {
 				return '\n'
 			}
-			return Children.map((node as React.ReactElement).props.children, child =>
-				traverse(child)
+			return Children.map(
+				(node as React.ReactElement).props.children,
+				(child) => traverse(child)
 			)
 		} else if (Array.isArray(node)) {
-			return node.map(el => traverse(el))
+			return node.map((el) => traverse(el))
 		}
 		return String(node)
 	}
@@ -106,7 +107,7 @@ export const replaceTreeText = (tree, txt, cursor, hideCursor) => {
 				if (text.length === 1) {
 					return Children.toArray([
 						text.shift() === '' ? undefined : node,
-						hideCursor ? null : cursor
+						hideCursor ? null : cursor,
 					])
 				}
 				return text.shift() === '' ? undefined : node
@@ -116,16 +117,16 @@ export const replaceTreeText = (tree, txt, cursor, hideCursor) => {
 				node.type,
 				{
 					...(node as React.ReactElement).props,
-					key: node.key || `Typing.${shortid.generate()}`
+					key: node.key || `Typing.${shortid.generate()}`,
 				},
 				removeUndefined(
 					Children.toArray(
 						(node as React.ReactElement).props.children
-					).map(child => traverse(child, text))
+					).map((child) => traverse(child, text))
 				)
 			)
 		} else if (Array.isArray(node)) {
-			return removeUndefined(node.map(el => traverse(el, text)))
+			return removeUndefined(node.map((el) => traverse(el, text)))
 		}
 		return text.length === 1
 			? Children.toArray([text.shift(), hideCursor ? null : cursor])
