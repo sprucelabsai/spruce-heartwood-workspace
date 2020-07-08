@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="103px" preserveAspectRatio="none" style="width:728px;height:103px;" version="1.1" viewBox="0 0 728 103" width="728px" zoomAndPan="magnify"><defs/><g><ellipse cx="384.7487" cy="21.242" fill="#F8F8F8" rx="27.7487" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="35" x="367.2487" y="24.9842">index</text><ellipse cx="46.4767" cy="75.742" fill="#F8F8F8" rx="40.4767" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="53" x="19.9767" y="79.4842">buildCard</text><ellipse cx="163.4281" cy="75.6856" fill="#F8F8F8" rx="63.9281" ry="15.1856" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="98" x="114.4281" y="79.4278">buildEventDetails</text><ellipse cx="314.7321" cy="75.4464" fill="#F8F8F8" rx="75.2321" ry="17.4464" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="125" x="252.2321" y="79.1886">buildEventDetailsItem</text><ellipse cx="455.4117" cy="75.742" fill="#F8F8F8" rx="53.9117" ry="13.242" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="419.4117" y="79.4842">defaultProps</text><!--MD5=[2f533a7c8f9ae50f100e314edda4ee66]
+entity _stripNulls--><rect fill="#F8F8F8" height="34.4844" rx="3" ry="3" style="stroke: #000000; stroke-width: 0.5;" width="73" x="522" y="58.5"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="53" x="532" y="80.5059">stripNulls</text><ellipse cx="662.6295" cy="75.4259" fill="#F8F8F8" rx="55.1295" ry="13.4259" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="75" x="625.1295" y="79.1681">utilities.types</text><!--MD5=[a348411933964e39d9634175b839b368]
+link <b>index</b> to buildCard--><path d="M357.279,23.4162 C305.371,26.5447 188.906,35.6258 93.5,58 C87.58,59.3883 81.3665,61.2587 75.4671,63.2417 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;buildCard" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="70.599,64.9257,80.4122,65.7634,75.3242,63.291,77.7967,58.2031,70.599,64.9257" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[2d5125cd4f07f15f7eb24deef79a6a68]
+link <b>index</b> to buildEventDetails--><path d="M360.428,27.7184 C324.809,36.1801 257.334,52.2092 211.398,63.1215 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;buildEventDetails" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="206.465,64.2933,216.1459,66.1047,211.3296,63.1376,214.2967,58.3213,206.465,64.2933" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[2d1948c4c1253a9dfe5d3a1ef1f688d0]
+link <b>index</b> to buildEventDetailsItem--><path d="M370.67,32.3723 C361.877,38.9676 350.227,47.7048 339.817,55.5119 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;buildEventDetailsItem" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="335.747,58.5646,345.347,56.3646,339.747,55.5646,340.547,49.9646,335.747,58.5646" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[482ac267c74182aff0a78aea87657d66]
+link <b>index</b> to defaultProps--><path d="M398.527,32.3723 C409.109,40.197 423.769,51.0366 435.567,59.7609 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;defaultProps" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="439.772,62.8699,434.9138,54.3026,435.7518,59.8971,430.1573,60.735,439.772,62.8699" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[6a454698a60626cf2af18971956326f2]
+link <b>index</b> to _stripNulls--><path d="M408.374,27.81 C434.793,34.4127 478.525,45.858 515.5,58 C516.032,58.1746 516.567,58.352 517.104,58.532 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;_stripNulls" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="521.992,60.2112,514.7796,53.5044,517.2632,58.5869,512.1807,61.0705,521.992,60.2112" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[ddd57e667bbf3cd843fe71e4c476d1ca]
+link <b>index</b> to utilities.types--><path d="M410.379,25.4411 C451.222,31.0629 533.027,43.0984 601.5,58 C608.729,59.5733 616.383,61.4627 623.735,63.3925 " fill="none" id="&lt;b&gt;index&lt;/b&gt;-&gt;utilities.types" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="628.769,64.7315,621.1002,58.5517,623.9371,63.4458,619.0431,66.2827,628.769,64.7315" style="stroke: #000000; stroke-width: 1.0;"/><script type="text/plantuml"><![CDATA[MD5=[60e197e298e9188c29b37a49ce500361]
+@startuml
+
+scale max 1920 width
+top to bottom direction
+
+skinparam nodesep 12
+skinparam ranksep 24
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Tahoma
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam dpi 150
+skinparam arrowColor black
+skinparam arrowThickness 0.5
+skinparam packageTitleAlignment left
+
+skinparam usecase {
+  borderThickness 0.5
+}
+
+skinparam rectangle {
+  borderThickness 0.5
+}
+
+skinparam component {
+  borderThickness 1
+}
+
+
+(<b>index</b>)
+(buildCard)
+(buildEventDetails)
+(buildEventDetailsItem)
+(defaultProps)
+rectangle "stripNulls" as _stripNulls
+(utilities.types)
+
+
+(<b>index</b>) --[thickness=1]> (buildCard)
+(<b>index</b>) --[thickness=1]> (buildEventDetails)
+(<b>index</b>) --[thickness=1]> (buildEventDetailsItem)
+(<b>index</b>) --[thickness=1]> (defaultProps)
+(<b>index</b>) --[thickness=1]> _stripNulls
+(<b>index</b>) --[thickness=1]> (utilities.types)
+
+@enduml
+
+
+' View and edit on https://arkit.pro
+]]></script></g></svg>
