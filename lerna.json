@@ -1,17 +1,13 @@
 {
-	"lerna": "2.9.0",
-	"npmClient": "yarn",
-	"useWorkspaces": true,
-	"version": "10.2.0",
-	"command": {
-		"publish": {
-			"allowBranch": [
-				"dev",
-				"canary",
-				"prerelease-*"
-			],
-			"conventionalCommits": true,
-			"changelogPreset": "sprucelabs"
-		}
-	}
+  "lerna": "2.9.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "10.2.0",
+  "command": {
+    "publish": {
+      "allowBranch": ["master"],
+      "conventionalCommits": true,
+      "changelogPreset": "sprucelabs"
+    }
+  }
 }
